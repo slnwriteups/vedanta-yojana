@@ -16,6 +16,11 @@ const config = getDefaultConfig(__dirname);
 config.watchFolders = [
   path.join(REPO_ROOT, "content"),
   path.join(REPO_ROOT, "content-lib"),
+  // Phase 6B: the real image files the content records reference by
+  // sourceAssetUuid (see mobile/content-lib/image-manifest.generated.ts).
+  // Not part of Phase 6A's scope, added only once a screen actually
+  // needed to render an image.
+  path.join(REPO_ROOT, "public", "images"),
 ];
 
 /**

@@ -1,13 +1,9 @@
 /**
- * Theme placeholder -- Phase 6A foundation only.
- *
- * Mirrors the light-mode token VALUES already established in the Next.js
- * reference app (app/globals.css's :root block) so the two apps start
- * from the same restrained, scholarly palette rather than two
- * independently-invented ones. This is deliberately NOT a real mobile
- * theme system yet -- no dark-mode switching, no typography scale, no
- * spacing scale, no component-level tokens. Building that out belongs to
- * a later phase once actual screens exist to apply it to.
+ * Theme foundation -- Phase 6B expands Phase 6A's placeholder with the
+ * reusable tokens the real screens need (typography sizes, spacing,
+ * radius), still deliberately NOT final branding: no dark-mode switching,
+ * no per-component styles baked in here. Colors are unchanged from
+ * Phase 6A, still mirroring app/globals.css's :root light-mode values.
  */
 export const colors = {
   background: "#fbfaf7",
@@ -16,4 +12,27 @@ export const colors = {
   muted: "#6b6259",
   border: "#e3dcd0",
   accent: "#7a3b2e",
+} as const;
+
+export const typography = {
+  title: 22,
+  heading: 17,
+  body: 15,
+  small: 13,
+  eyebrow: 12,
+} as const;
+
+export const spacing = {
+  xs: 4,
+  sm: 8,
+  md: 12,
+  lg: 16,
+  xl: 24,
+  xxl: 32,
+} as const;
+
+export const radius = {
+  sm: 6,
+  md: 10,
+  lg: 14,
 } as const;
