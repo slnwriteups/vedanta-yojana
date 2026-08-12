@@ -1,0 +1,68 @@
+{
+  "slug": "sri-rangam",
+  "displayName": "Sri Rangam",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page5",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Sri Ranganathar Perumaal",
+    "thayaar": "Sri Ranagnayaki Thayaar",
+    "vimanam": "Pranavaakara Vimanam",
+    "theertham": "Chandra Pushkarani",
+    "travelNote": "This kshethram is located 8 km from Trichy."
+  },
+  "sthalaPuranam": "The idol as we see it today is said to have originated from the milky oceans of Sri Vaikuntham. Lord Brahma then took the idol to worship, and for many eons, was worshipped by Lord Brahma in Satyalokam. A time came when the great king Ikshvaku approached Lord Brahma and asked him to install the idol of the Lord in Bhoolokam. Considering the king’s request, Lord Brahma obliged and installed the idol of the Lord along with the Pranavaakara Vimanam at Ayodhya, along the banks of the river Saryu. The Lord then remained in Ayodhya even till Lord Rama was the king of Ayodhya. After the battle with Ravana, the Lord returned to Ayodhya to be coronated formally. Here, he gifted all his army generals with something unique and meaningful. When Vibishana’s turn came during the distribution of divine gifts after Lord Rama’s victory over Ravana, he humbly requested Lord Rama to give him the idol of Sri Ranganathar so that he could take it back to Lanka for worship. Lord Rama, recognizing Vibishana's unwavering devotion and righteousness, agreed without hesitation. Thus, the divine idol, along with the Pranavakara Vimanam—a sanctified structure shaped in the form of the sacred syllable Pranavam (a-u-m)—was entrusted to Vibishana, who then began his journey southward aboard the Pushpaka Vimanam. As Vibishana reached the sacred banks of the river Cauvery, it was the auspicious month of Panguni. According to the ancient traditions upheld by Lord Rama and his Ikshvaku lineage, this period marked the celebration of the grand Brahmotsavam festival. In reverence to this dharmic custom, Vibishana paused his journey and conducted a nine-day festival in honor of the Lord on the riverbank. During the course of these festivities, the idol and the Pranavakara Vimanam were placed at a site later known as Sesha Peetam, near the sacred tank Chandrapushkarani. But when Vibishana attempted to resume his journey, he found the Vimanam immovable—it had firmly anchored itself to the earth. Overcome with grief and confusion, Vibishana was then graced with a divine vision of Lord Vishnu, who appeared before him. The Lord consoled His devotee, declaring that He had chosen this very spot to be His eternal abode. He assured Vibishana that although He would remain in Bharata Varsha, He would face southward toward Lanka as a mark of blessing and everlasting connection. Touched by this revelation, Vibishana accepted the divine will with devotion and humility. It is believed that to this day, Vibishana comes at midnight to offer his prayers to Lord Ranganathar in an invisible, celestial form. Thus, the reclining Lord of Srirangam, ensconced in the Pranavakara Vimanam that embodies the essence of the Pranavam (a-u-m), took His place on the banks of the Cauvery by His own will. This sacred event established Srirangam as the foremost among the 108 Divya Desams—a sanctum where divine grace, eternal dharma, and boundless devotion converge. This temple is enormous in size and is the largest temple complex, spanning 156 acres, surrounded by seven concentric walls (the outermost wall has a perimeter of over 3 km) and 21 gopurams. It has seven Prakarams or Tiru Veedhis surrounding the sanctum, with a total length of approximately 9 km. The 236-foot-high, thirteen-tiered Rajagopuram, built at the southern rampart, is a notable recent addition. It is significant that Ramanuja completely overhauled the administrative system in this temple. The physical remains of Ramanuja, who lived for nearly 120 years, are still preserved in a sitting posture in the sannidhi dedicated to him on the southwest corner of the fifth prakaram. Furthermore, Arayar Sevai, an ancient art form that involves rendering and expressing the Naalaayira Divya Prabandham through dance, originated at this kshethram under the auspices of Nathamuni. *Swayamvyaktha kshethram, according to the Sri Vaishnavas There are certain idols of the Lord that nobody has carved, or there is no godly origin, sagely origin, or humane origin to the idols, as the Lord Himself has incarnated into these places. The list of these kshethrams is as follows: \n1) Vanamamalai \n2) Sri Rangam \n3) Sri Mushnam \n4) Tirumala \n5) Naimisharanyam (as a forest)\n 6) Pushkar (as water) \n7) Badri \n8) Muktinath",
+  "azhwarPasuram": "Periya Azhwar: 35 Pasurams\nSri Andal: 10 Pasurams\nKulasekara Azhwar: 31 Pasurams\nTirumazhisai Azhwar: 14 Pasurams\nThondaradipodi Azhwar: 55 Pasurams\nTiruppaan Azhwar: 10 Pasurams\nTirumangai Azhwar: 73 Pasurams\nPoigai Azhwar: 1 pasuram\nBhoodath Azhwaar: 4 Pasurams\nPey Azhwar: 2 Pasurams\nNam Azhwar: 12 Pasurams\nTotal: 247 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/rz8jztJi9YXfxL1S8"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "sri-rangam-1",
+      "sourceAssetUuid": "bd461fd2-8370-4078-8c8d-137f8ad35570",
+      "sourceOriginalName": "108-1.jpeg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "sri-rangam-2",
+      "sourceAssetUuid": "8abfcfe2-876c-4191-b45a-5c660cd1d554",
+      "sourceOriginalName": "108-1T.jpeg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvarangampaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvarangampaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvarangampaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvarangampaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

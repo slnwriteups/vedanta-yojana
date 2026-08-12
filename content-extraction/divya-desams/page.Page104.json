@@ -1,0 +1,141 @@
+{
+  "pageId": "page.Page104",
+  "title": "Tiruchalagramam (Mukthinath)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page104",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "5660f4c8-e6ef-4b61-b9a1-b9acc40857af",
+    "f4d98aaa-ad7b-4987-b9f6-5c450ca94928",
+    "8497549f-2431-4a27-b201-836ffb2de8b7"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruccaalagraamampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruccaalagraamampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruccaalagraamampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruccaalagraamampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/UAhoYf2s7NyTZroL7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruchalagramam (Mukthinath)",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://5660f4c8-e6ef-4b61-b9a1-b9acc40857af"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Moolavar: Sri Mukti Narayana Perumal\nThayaar: Sridevi Nachiyar\nVimanam: Kanaka Vimanam\nPushkarani: Chakra Theertham / Sahasradhaare\n\nTravel: To reach this kshethram, one must travel to Pokhara, Nepal. From Pokhara, they must fly to Jomsom. From Jomsom, they will have to get to the temple by mini-bus / van.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 10 pasuram\nPeriya Azhwar: 2 Pasurams\nTotal: 12 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nAccording to legend, it is said that Gandaki Nadi performed tapas to the Lord. When the Lord appeared before her, she asked that He stay in her womb always. The Lord told her that, as she is a river, her riverbed represents her womb. He told her that He would reside in the stones at the bottom of the river in the form of Shalagramam. To date, whenever a devotee visits this kshethram, they take back with them the various kinds of shalagramams.\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://f4d98aaa-ad7b-4987-b9f6-5c450ca94928"
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://8497549f-2431-4a27-b201-836ffb2de8b7"
+    },
+    {
+      "order": 12,
+      "depth": 1,
+      "type": "text",
+      "content": "Surrounding the temple, there are 108 springs called Sahasradhara, which are perennial and have pure water throughout the year. The water is considered to be holy; thus, whenever a devotee visits this kshethram, they perform prokshanam of this water at each of the 108 springs.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

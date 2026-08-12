@@ -1,0 +1,195 @@
+{
+  "pageId": "page.Page81",
+  "title": "Tirukurungudi",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page81",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "d987d273-5b71-4f52-a503-4a451c2bc8f8",
+    "faa3807f-7f53-4f0c-a7a8-8aa4dfb9e63b",
+    "ff6ec552-5307-4c17-93f3-cabf86aa15b4",
+    "a8efa729-6dac-4dba-8fa4-4a12525a30c5",
+    "109818cd-f049-4c46-9f09-f139ad682515"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://maps.app.goo.gl/5F2fcynJvWxzZc886",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://maps.app.goo.gl/pbyJWkJGwh8xyoHNA",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkurungudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkurungudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkurungudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkurungudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirukurungudi",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://d987d273-5b71-4f52-a503-4a451c2bc8f8"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Azhagiya Nambi / Malai Mel Nambi / Sri Vaishnava Nambi\nThayaar: Kurungudi Nachiyar\nVimanam: Panchakedhaka Vimanam\nPushkarani: Tiruparkadal Theertham\n\nTravel: This kshethram is located 10 km from Nanguneri, via Erawadi, in the Tirunelveli District.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 25 Pasurams\nPeriya Azhwar: 1 pasuram\nNam Azhwar: 13 Pasurams\nTirumazhisai Azhwar: 1 pasuram\nTotal: 40 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://faa3807f-7f53-4f0c-a7a8-8aa4dfb9e63b"
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe Sthala Puranam of this kshethram is found in Varaha Puranam. It is known as Kaisika Maahathmiyam.\nKaisika Ekadesi is celebrated in the Tamil Month of Kaarthigai on the succeeding Ekadesi in the Sukla Paksham. This is named after the Kaisika Puranam, which is the 48th Chapter in the Sri Varaha Puranam. The message behind the day reinforces the fact that caste is not a hindrance in attaining the lotus feet of Sriman Narayana, and true Bhakti alone is enough. This story took place in the Divyadesam of Thirukurungudi, one of the Nava Tirupati in Thirunelveli. Nambaduvaan was born in a low chandala kulam but was a devotee of Sriman Narayana. On every Ekadasi, he observed Vratham, sleeping not a single night, singing the glory of the Lord, and thinking about Him. On one Karthigai Ekadasi, Nambaduvaan left for the Kurungudi Nambi temple to observe his fast and recite some Pasurams using various Paan on Sri Kurungudi Nambi.On his way, Nampaduvan was confronted by a Brahma Rakshas. This Rakshas, who has been starved of food, tells Nampaaduvaan that he would devour him. Nampaduvan humbly requests that he has the duty of nama sankeerthanam. Nampaduvan pleads with the rakshas that he would return after his vratham and darshan of Kurungudi Nambi. He promises that he would indeed return; he mentions the various sins that he would incur if he were not to return. But for none of Nampaduvan’s promises, BrahmaRakshas was not satisfied. At last, Nambaduvaan promised that “Whoever thinks/says that Supreme Lord Sriman Narayanan is equivalent/on par with or inferior to other devathas, that paaapam would catch me!” After hearing this, Brahma Rakshas was moved and impressed by such a firm promise and said, 'Now I believe in you; you can go now and return soon.' I will wait for you till your return.” Nambaduvaan happily went to Sri Kurungudi temple, observed his jakratha vratham, and completed his vratham with singular determination. He returned as stated to BrahmaRakshas. Nampaduvan went and offered himself to the Rakshas. But his hunger had vanished, and instead, he was moved by the truthfulness of the Vishnu devotee. The Brahma Rakshas then told his story – he was a Brahmin who had been cursed to become a Brahma Rakshas by his elders because he had not performed the yajnas carefully. The Rakshas then asked Nampaduvan to give the reward of one of his prayers so that he could get liberation. Hearing the pleas of the BrahmaRakshas, Nambaduvan said that he never sang for any palam. However, he will still request Thirukurungudi Nambi to absolve the BrahmaRakshas of his sins. Nambi gives the palam of the last pasuram and relieves BrahmaRakshas of its sins. This story strongly reiterates that true Bhakti is sufficient to attain Him, and a person's caste is entirely insignificant. It is believed that those who read or listen to ‘Kaisika Purana’ on that day will be showered with the Lord’s abundant mercy! The story of Nampaduvan is narrated and acted in Vishnu Temples in South India on the Kaisika Ekadasi. Sri Parasara Bhattar chanted the Kaisika Puranam before Lord Ranganatha, and this tradition continues to date with the descendants of Bhattar chanting the puranam on Kaisika Dwadashi day at Srirangam each year. Kaisika Ekadasi is considered even more significant to Vaishnavas than Vaikunta Ekadasi, as it implies the steadfast Bhakti towards Sriman Narayana and His abundant mercy on His devotees.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 12,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://ff6ec552-5307-4c17-93f3-cabf86aa15b4"
+    },
+    {
+      "order": 13,
+      "depth": 1,
+      "type": "text",
+      "content": "\nVaishnava Nambi Temple\n\n",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 14,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://a8efa729-6dac-4dba-8fa4-4a12525a30c5"
+    },
+    {
+      "order": 15,
+      "depth": 1,
+      "type": "text",
+      "content": "Thirukurungudi Sri Vaishnava Nambi Dhivya Sevai in Kaisika Mandapam",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 16,
+      "depth": 1,
+      "type": "text",
+      "content": "This kshethram is one of the most important of all the Divyadesams. \nThe following summarizes the importance of this kshethram:\n1) It is said that Swami Bhagawad Ramanujacharya wanted uniformity in the way rituals were conducted throughout South India. To achieve this, he is said to have traveled to Tiruvananthapuram to plead with the Nambudri priests to follow practices as per the Pancharatra Agama Shastras. It is said that the Nambudri priests pleaded with Ananthapadmanabha Swamy to allow their prevailing traditions, which were being followed, to continue throughout Kerala. It is said that in the middle of the night, when Bhagawad Ramanujacharya was asleep, Kurungudi Nambi Swamy is said to have brought Bhagawad Ramanujacharya here to this kshethram. When Bhagawad Ramanujacharya awoke in the morning, he is said to have had a conversation with the Lord. The Lord tells Bhagawad Ramanujacharya that he has accomplished what He could not achieve in all His births. The Lord asks to be initiated into Sri Vaishnavism by Bhagawad Ramanujacharya. Bhagawad Ramanujacharya is said to have performed the Pancha-Samskara for the Lord here, thereby bestowing upon Him the name Sri Vaishnava Nambi.\n2) It is said that Nam Azhwar’s parents came to this kshetram to pray for the birth of a child. The Lord is said to have had a conversation with Nam Azhwar’s parents, asking them what kind of child they desired. The parents are said to have asked for a child who is just like the Lord Himself. As none in this universe is like the Lord, it is said that the Lord Himself incarnated as Nam Azhwar.\n3) This is the kshethram where Tirumangai Azhwar attained Paramapadam. There is a shrine here for Tirumangai Azhwar.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 17,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://109818cd-f049-4c46-9f09-f139ad682515"
+    },
+    {
+      "order": 18,
+      "depth": 1,
+      "type": "text",
+      "content": "Mahendragiri",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 19,
+      "depth": 1,
+      "type": "text",
+      "content": "There is a mention of this kshethram in the Ramayana. It is said that Hanuman jumped from Mahendragiri Parvatham to fly to Sri Lanka in search of Sita, the wife of Lord Rama. Mahendragiri Parvatham is located within this kshethram. This is also the site of the Malai Mel Nambi Temple.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

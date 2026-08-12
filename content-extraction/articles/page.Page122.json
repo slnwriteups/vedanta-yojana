@@ -1,0 +1,44 @@
+{
+  "pageId": "page.Page122",
+  "title": "The vital, crucial role of an Acharya",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page122",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "The vital, crucial role of an Acharya",
+      "textFontSizeHint": 18
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "A person who understands that he lacks the prescribed qualifications or ability to follow Karma, Jnana, and Bhakti but has the conviction and a longing desire to reach the Lord has a smooth and sure path laid out for him. All one must do is seek out an Acharya who will act as the spiritual guide. One must remain devoted and steadfast, with absolute faith that the Acharya will see them through in their spiritual journey to attain the Supreme. The only requirements are total desire, devotion, and faith in the Acharya. If a disciple follows the teachings of their Acharya, they will obtain all the benefits of dharma, artha, kama, and moksha. ",
+      "textFontSizeHint": 16
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page69",
+  "title": "Tiruvithuvakodu",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page69",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "fea05460-edcc-4c2d-8618-c881859a58ea"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvittuvakkodupaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/KjE2S6NxMqGdGjjk8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvittuvakkodupaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvittuvakkodupaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvittuvakkodupaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruvithuvakodu",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://fea05460-edcc-4c2d-8618-c881859a58ea"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Uyyavantha Perumal\nThayaar: Padmasini Thayaar\nVimanam: Tatvakanchana Vimanam\nPushkarani: Chakra Theertham\n\nTravel: This kshethram is located at Tirumithakode, 15 km from Shoranur in Kerala.\n\nAzhwar Pasuram: \nKulasekara Azhwar : 10 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nLegend tells the story of Ambareesha Maharaja, who was one of the greatest devotees of Lord Vishnu. It is said that one day, the Lord took the form of Indra, mounted Airavata, and appeared in front of Ambareesha Maharaja. The Lord then asked Ambareesha to ask for any wish. Ambareesha refused by saying he would not ask anyone but Lord Sriman Narayana for any sort of wish. The Lord was thus impressed by Ambareesha and revealed Himself in the form of Uyyavantha Perumal here at this kshethram. Ambareesha then asks the Lord to show Himself as His four Vyuhamurthys. Thus, the Lord shows Himself as Vasudeva, Sankarshana, Anirudha, and Pradyumna. As seen in the picture, there are four vyuhamurthys, which the five Pandava brothers established. The first Murthy was that of Sankarshana by Yudhishthira, followed by Vasudeva by Arjuna, Anirudha by Bheema, and Pradyumna by Nakula and Sahadeva.\n\n*** Another story that is connected to the kshethram is as follows. There was once a brahmin who came to South India from the temple of Kashi Vishwanathar. The brahmin is said to have been carrying an umbrella, which he left near the dwajasthambam and went to bathe in the Bharathapuzha River. When he came back, he noticed that the umbrella had become so heavy that he could not lift it, no matter how hard he tried. It is said that Kashi Vishwanathar was so attached to his devotee that He had placed Himself inside the umbrella. When the brahmin left the umbrella near the dwajasthambam, the Lord thought it was the ideal place for Him to establish Himself at the kshetram alongside Lord Vishnu; thus, a Lingam appeared, which is worshipped to this day.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

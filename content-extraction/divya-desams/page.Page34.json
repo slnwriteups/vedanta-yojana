@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page34",
+  "title": "Tiruvanpurushottamam",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page34",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "f8b48b07-5880-4278-86b7-9464bb9f2225"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvanpurudottamampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvanpurudottamampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/2up3NpQYMRgTDR9T7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirucemponceykoyilpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvanpurudottamampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruvanpurushottamam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://f8b48b07-5880-4278-86b7-9464bb9f2225"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Purushottaman\nThayaar: Purushottama Nayaki\nVimanam: Sanjeevinigrah Vimanam\nPushkarani: Tiruparkadal Theertham\n\nTravel: This kshethram is located 8 km from Sirkazhi.\n\nAzhwar Pasuram: \nTirumangai Azhwar – 10 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nIt is said that Vyagrapadar used to perform kainkaryam to the Lord here by making garlands. One day, when Vyagrapadar had gone out in search of flowers, his infant son, Upamanyu, started to cry from hunger. Thus, the Lord sent Purushottama Nayaki Thayaar to feed the infant milk and give him water to prevent dehydration. ",
+      "textFontSizeHint": 16
+    }
+  ]
+}

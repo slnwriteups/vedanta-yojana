@@ -1,0 +1,115 @@
+{
+  "pageId": "page.Page39",
+  "title": "Tirudevanaar Togai",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": false,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page39",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "69a7d7f8-c6c7-4dac-8a13-3c9ac77d9af4"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruttevanaartogaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruttevanaartogaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruttevanaartogaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruttevanaartogaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirudevanaar Togai",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://69a7d7f8-c6c7-4dac-8a13-3c9ac77d9af4"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Devinayakan\nThayaar: Sridevi Bhoodevi\nPushkarani: Shobana Pushkarani\nVimanam: Sobhana Vimanam\n\nTravel: 6 km from Sirkazhi\n\nAzhwar Pasuram:\nTirumangai Azhwar: 10 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nLegend has it that all the devas, along with Vasishta Muni, assembled here at this kshethram after the Samudra-Manthanam and worshipped the Lord here.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

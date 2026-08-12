@@ -1,0 +1,158 @@
+{
+  "pageId": "page.Page24",
+  "title": "Tanjai Mamanikoyil",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": false
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page24",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "52b34361-3124-4a27-ad70-865733c8c598",
+    "30fe54b9-8391-4104-8e1f-ad1a95a96fc6",
+    "3f9e5c10-46e3-449f-9c43-00a05fdaf607"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruttanjaimaamanikkoyilpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/518MyDnMu9pZFjXr8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Map 1"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruttanjaimaamanikkoyilpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruttanjaimaamanikkoyilpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruttanjaimaamanikkoyilpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/wiBgBMRr6VgqctMo7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Map 2"
+    },
+    {
+      "url": "https://maps.app.goo.gl/XRCBG212yMzhoyjr7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Map 3"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tanjai Mamanikoyil",
+      "textFontSizeHint": 28
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://52b34361-3124-4a27-ad70-865733c8c598"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://30fe54b9-8391-4104-8e1f-ad1a95a96fc6"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://3f9e5c10-46e3-449f-9c43-00a05fdaf607"
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nThis Kshethram is constituted of three temples.\n\n1) Tanjai Mamanikoyil\nMoolavar: Neelamegha Perumal\nThayaar: Senkamalavalli Thayaar\nVimanam: Soundarya Vimanam\nPushkarani: Kannika Pushkarani\n2) Manikkunram\nMoolavar: Manikkundra Perumal\nThayaar: Ambujavalli Thayaar\nVimanam: Manikoota Vimanam\nPushkarani: Sri Rama Theertham\n3) Thanjaiyazhinagar\nMoolavar: Narasimhar\nThayaar: Tanjainaayaki Thayaar\nVimanam: Vedasundara Vimanam\nPushkarani: Surya Pushkarani\nTravel: The three temples are 200 meters apart and are all located on the outskirts of Tanjavur.\n\nAzhwar Pasuram: \nThirumangai Azhwar – 3 Pasurams\nNammAzhwar – 1 pasuram\nBhoodathAzhwar – 1 pasuram.\nTotal – 5 Pasurams.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Map 1",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Map 2",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Map 3",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 12,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 13,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe legend is said to have taken place in Krita Yugam. Parashara Maharishi was said to have been performing tapas when three demons, known as Thanjakan, Dhandakan, and Gajamukhan, began to interrupt him. It is then that Parashara Maharishi asked Lord Vishnu to intervene and help him. The Lord mounted Garudan and first released his Sudarshana Chakram to deal with Thanjakan. On his deathbed, Thanjakan asked the Lord to name the land where he died after him. Thus, the land where he died became Tanjavur. Next, the Lord went after Dhandakan. The Lord took the form of Varaha and bore his teeth into Dhandakan, digging through the land and emerging out of Srimushnam just as He had after killing Hiranyaksha. Dhandakan asked for the land where he was buried to be named after him. Thus emerged the Dhandaka Vanam. The last demon, Gajamukhan, was killed by the Lord in his Narasimha form. Therefore, the three temples were combined to form one kshethram, known collectively as Tanjai Mamanikoyil.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

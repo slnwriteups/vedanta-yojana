@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page12",
+  "title": "Tirukkoodaloor",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page12",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "7ff08df4-86aa-44f3-9f79-0559a7aa9b76"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkavittalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkuudaluurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkuudaluurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/DcArxMJajbzUeQs5A",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkuudaluurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirukkoodaloor",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://7ff08df4-86aa-44f3-9f79-0559a7aa9b76"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram: \nMoolavar: Sri Vayyum Katha Perumal / Sri Jagath Rakshaka Perumal\nThayaar: Pushpavalli Thayaar\nVimanam: Suttha Sathva Vimanam\nPushkarani: Chakra Theertham\nSpecialty: Prayoga Chakram\nTravel: This kshethram is located 12 km from Tiruvaiyaru, en route to Kumbakonam, and accessible by road from Tanjavur.\n\nAzhwar Pasuram: \nThirumangai Azhwar- 10 pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\n It is said that Ambareesha was such an ardent devotee that the Sudharshana Chakra had made himself self-obligated to rush for Ambareesha’s protection. One day, the great sage Durvasa decided to pay a visit to Ambareesha. Ambareesha had undertaken the Dwadashi-Vratam, in which one must break the fast after Ekadashi and feed their people at the start of Dwadashi. Durvasa Maharishi told Ambareesha that he would take a bath and then join him in the Dwadashi-Vratam. Ambareesha agreed to wait for Durvasa Maharishi. Hours went by, but Durvasa Maharishi was nowhere to be seen. On the advice of Sage Vasishta, Ambareesha broke his fast by taking holy water. At this moment, Durvasa Maharishi arrived and, in his temper, threw a lock of his hair to the ground. This hair grew into a monstrous demon that chased Ambareesha to devour him. At this moment, the Sudharshana Chakra of the Lord came to Ambareesha’s rescue and cut the demon into tiny pieces. Further, the Chakra started to chase after Durvasa Maharishi. Durvasa Maharishi began to run and sought refuge with Lord Brahma, Lord Shiva, and ultimately at the heavenly abode of Lord Vishnu himself. Still, the Chakra continued to pursue Durvasa Maharishi. Lord Vishnu instructed Durvasa Maharishi to go and fall at Ambareesha’s feet and ask for his forgiveness. Durvasa Maharishi then falls at Ambareesha’s feet for his forgiveness. Ambareesha forgives Durvasa Maharishi, and the Sudharshana Chakra stops going after Durvasa Maharishi. It is said that \nAmbareesha used to pray to this Lord, and with this Lord’s grace, he was protected. ",
+      "textFontSizeHint": 16
+    }
+  ]
+}

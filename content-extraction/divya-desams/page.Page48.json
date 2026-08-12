@@ -1,0 +1,134 @@
+{
+  "pageId": "page.Page48",
+  "title": "Tiruttankaa(Tooppul)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page48",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "8addfcfc-51b2-4054-b6de-e75777b6e048",
+    "573d5ea0-69a2-40bb-b2d1-da6c83762939"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruttankaapaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruttankaapaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/3LzEWyQp4FP3RmUJ7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruttankaapaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruttankaapaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruttankaa(Tooppul)",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://8addfcfc-51b2-4054-b6de-e75777b6e048"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Deepaprakasar\nThayaar: Margatavalli Thayaar\nVimanam: Sreekara Vimanam\nPushkarani: Saraswati Theertham\n\nAzhwar Pasuram:\nTirumangai Azhwar: 2 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nIt is said that Devi Saraswati, in one of her attempts to stop the yagnam from reaching completion, took away all the light from the areas in and around Kanchipuram, resulting in pitch-black darkness. Thus, the Lord is said to have first appeared as a small kindling light, after which He grew and eliminated the darkness, once again assisting Lord Brahma in completing the yagnam.\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://573d5ea0-69a2-40bb-b2d1-da6c83762939"
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "text",
+      "content": "***\nSwami Vedanta Desikan:\nSwami Desikan is considered to be an incarnation of the divine bell of Sri Venkateshwara Swami of Tirumalai. Swami Desikan was born here in Tooppul to Sri Anantha Suri and Devi Totaramba. By birth, Swami Desikan was named Venkatanatha. When Swami Desikan was just five years of age, he was taken by his maternal uncle, Kidambi Appular, to attend a discourse by Nadadhoor Ammal, a revered Sri Vaishnava Scholar at the time. As soon as Nadadhoor Ammal saw Venkatanatha, he saw a divine radiance in the child and stopped his lecture to hug the child affectionately. After this, when Nadadhoor Ammal said that he had forgotten where he had stopped his lecture, Venkatanatha reminded him of where he had stopped. This act astonished the crowd, as they had never seen a five-year-old boy comprehend the deep intricacies of philosophical knowledge being discussed. It was then that Nadadhoor Ammal predicted and blessed Venkatanatha, stating that he would become the torch-bearer to spread Sri Vaishnavism everywhere in the future.\nAt each place, he composed numerous works in languages such as Tamil, Sanskrit, Prakrit, and Manipravalam (a blend of Sanskrit and Tamil), which revealed his ingenuity, creativity, logic, linguistic expertise, devotional fervor, and erudite scholarship.\nSome of his greatest works include:\n1) Hayagreeva Stotram\n2) Sudarshana Ashtakam\n3) Paduka Sahasram\n4) Abheetistavam\n5) Achyuta Shatakam\n6) Daya Shatakam\n7) Hamsa Sandesham\n8) Sri Stuti\n9) Yadavabyudayam\n10) Kamasikashatakam",
+      "textFontSizeHint": 16
+    }
+  ]
+}

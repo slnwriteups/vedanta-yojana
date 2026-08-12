@@ -1,0 +1,127 @@
+{
+  "pageId": "page.Page53",
+  "title": "Tiruooragam",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page53",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "aedf89f0-8d4c-4548-88cb-19bbfdf3fef1",
+    "741f5184-b64d-4de5-82c8-0afe77c00f03"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://maps.app.goo.gl/uMzyU3tGE9zx9wva9",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruyuuragampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruyuuragampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruyuuragampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruyuuragampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruooragam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://aedf89f0-8d4c-4548-88cb-19bbfdf3fef1"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://741f5184-b64d-4de5-82c8-0afe77c00f03"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Ulagalantha Perumal\nThayaar: Amudavalli Thayaar\nVimanam: Sarasreekara Vimanam\nPushkarani: Naga Theertham\n\nAzhwar Pasuram:\nTirumazhisai Azhwar: 2 Pasurams\nTirumangai Azhwar: 4 Pasurams\nTotal: 6 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nAccording to legend, when the Lord took Vamana Avataram, Bali could not see the Lord as he was under the Lord’s foot. Hence, after the Lord pushed Bali down to Pathalam, Bali requests the Lord to once again see Him as Ulangalanthan(The one who measured the three worlds). To fulfill his wish, the Lord revealed this form to Bali.\n\n*** \nThe Lord can also be seen here in a sarpam form(serpent form). It is said that if one prays here, one is relieved of all Sarpa-Dosham.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

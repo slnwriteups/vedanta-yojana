@@ -1,0 +1,148 @@
+{
+  "pageId": "page.Page103",
+  "title": "Tiruvadariyaashramam (Badrinath)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page103",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "892641a3-da6a-41ab-a646-7ea7c9f3379e",
+    "7360e2d3-b2f2-436f-8f9a-2625da61f782",
+    "2cd693df-0043-45fa-82f8-0a726905b841"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://maps.app.goo.gl/oVczDYzepLc2g6ti7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvadariyaashramampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvadariyaashramampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvadariyaashramampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvadariyaashramampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruvadariyaashramam (Badrinath)",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://892641a3-da6a-41ab-a646-7ea7c9f3379e"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://7360e2d3-b2f2-436f-8f9a-2625da61f782"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Badrinarayana Perumal\nThayaar: Aravindavalli Thayaar\nVimanam: Taptakanchana Vimanam\nPushkarani: Tapta Kundam\n\nTravel: This kshethram is located at an altitude of 10500 feet on the Himalayan Mountains at Badrinath.\nTo reach this kshethram, one must start their journey from Haridwar. From Haridwar, one must travel via Rishikesh, reach Devaprayag, stay overnight, preferably at Joshimath, and then reach Badrinath the following morning when the road gates open.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 21 Pasurams\nPeriya Azhwar: 1 pasuram\nTotal: 22 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nAccording to Srimad Bhagavatham, Lord Vishnu, in His incarnations as Nara and Narayana, performed deep tapas for time immemorial for the well-being of all living entities. According to legend, when Nara and Narayana were performing tapas in a place where Badri trees were growing. At one point, the sunlight became very intense. Thus, to protect the Lord from the sunlight, Lakshmi Devi is said to have taken the form of a Badri tree and grown in such a way as to provide shade to the Lord.\nThis fact is reiterated in the Mahabharata when Lord Krishna tells Arjuna that in their previous lives, Arjuna was the manifestation of Nara, and He was the manifestation of Narayana. The Pandavas are said to have visited this kshethram before embarking on their final journeys to Mana, from where they left their bodies to reach Paramapadam. Mana is 4 km from this kshethram.\nThis is one of the Swayam-Vyaktha Kshethrams. It is said that there are five Badri kshethrams. Together, they are known as Pancha Badri Kshethram. Vishal Badri (Badrinath Temple installed by Sri Adi Shankaracharya), Yogadhyan Badri (where the Lord is in a meditative posture), Bhavishya Badri (Badri of the future), Vridha Badri (the original shrine where Vishwakarma carved the idol), Adi Badri. It is said that the Lord appeared in Sri Adi Shankaracharya’s dream and told him that he would find His idol inside the tapta-kundam ( hot springs ) present outside, where the present-day temple is situated. It is said that Sri Adi Shankaracharya dipped in the spring multiple times before finding the Lord’s idol. To date, the pooja is performed by nambudhri brahmins who follow the Kerala style of pooja.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://2cd693df-0043-45fa-82f8-0a726905b841"
+    },
+    {
+      "order": 12,
+      "depth": 1,
+      "type": "text",
+      "content": "Badrinath Temple: Raval Ji opening and entering the temple in the early morning.",
+      "textFontSizeHint": 14
+    },
+    {
+      "order": 13,
+      "depth": 1,
+      "type": "text",
+      "content": "The only time one can see the true form of the Lord is during the Tirumanjanam/abhishekham, which takes place around 5 am.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

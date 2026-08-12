@@ -1,0 +1,61 @@
+{
+  "slug": "tiruaadanoor",
+  "displayName": "Tiruaadanoor",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page15",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Sri Aandalukum Aiyyan Perumal",
+    "thayaar": "Bharghavi/Ranganayaki Thayaar",
+    "vimanam": "Pranava Vimanam",
+    "theertham": "Surya Theertham",
+    "travelNote": "This temple is about 3 km from Kumbakonam."
+  },
+  "sthalaPuranam": "Once there was a dancer who wanted to impress the goddess, Maha Lakshmi. The dancer performed a very intricate set of dances, and soon the goddess appeared before her, presenting the dancer with a garland. Soon after this, it is said that Sage Durvasa was passing by and saw the lovely garland on the neck of the dancer. The dancer offered the sage the garland and left the scene. It is said that the garland possessed a very fragrant smell that attracted bees. Soon, the sage started to get irritated by the buzzing of the bees and was looking to dispose of the garland when Indra arrived atop his mount, Airavata. Durvasa presented the garland to Indra. Airavata took the garland, but instead of throwing it on Indra, it crushed it beneath its legs. Durvasa was immensely angered by this insult and cursed Indra, saying he and the world would lose all their wealth. As the phrasing of the curse was vague, all wealth-bearing substances and creatures, such as the Kalpa Vriksha, Kamadhenu, and even the Goddess Lakshmi, disappeared. To retrieve all his lost wealth, Indra prayed to Ranganayaki Thayaar, who instructed him to perform the Samurda Manthanam and attend her marriage to Lord Sriman Narayana. By doing so, he would regain his lost wealth. Another story tells that Kamadhenu had performed tapas here, as well as Agni had performed worship to the Lord here. From the following story, we can see that this temple predates even Sri Rangam.",
+  "azhwarPasuram": "Tirumangai Azhwar - 1",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/cQQYtiu1nXBRrhXv7"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruaadanoor-1",
+      "sourceAssetUuid": "4a736baa-eaac-4866-ab60-4196cbaf302d",
+      "sourceOriginalName": "108-11.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvaadanuurpaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvaadanuurpaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvaadanuurpaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvaadanuurpaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

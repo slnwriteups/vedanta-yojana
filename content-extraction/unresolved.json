@@ -1,0 +1,152 @@
+{
+  "count": 17,
+  "entries": [
+    {
+      "id": "page.Page117",
+      "type": "missing_page",
+      "whatWasFound": "page.Page117 does not exist anywhere in the source app definition: it is absent from appDefinition.screens (found=false) and absent from appDefinition.navigation.screens (found=false). Page numbering goes ...Page116, Page118... with no gap-filler or tombstone record.",
+      "whyUnresolved": "The source application itself has no record of this page ever existing under this pipeline's parsing. It cannot be determined from this bundle alone whether it was deleted during development, never created, or renumbered.",
+      "evidence": "appDefinition.screens keys (171 total, verified in content-extraction/_generated/app-definition.json); appDefinition.navigation.screens array.",
+      "furtherInvestigationNeeded": "Check SAP Build Apps project history/version control (if account access exists) for a deleted Page117."
+    },
+    {
+      "id": "page.Page0",
+      "type": "unclear_purpose",
+      "whatWasFound": "page.Page0 exists with title \"Global canvas\" and isGlobalCanvas: true. It has a single onPageDidMount event and one root component. AppGyver/SAP Build Apps' \"global canvas\" is a known platform concept for globally-available UI (e.g. shared overlays/modals), but this extraction did not further decode what, if anything, actually renders from it at runtime.",
+      "whyUnresolved": "Determining its rendered behavior requires either live-rendering the app in a browser or decoding the flow logic behind its onPageDidMount event (id 7265ca8.3943c9a), which was out of scope for content recovery.",
+      "evidence": "content-extraction/divya-desams (n/a) -- see content-extraction/_generated/app-definition.json screens[\"page.Page0\"].",
+      "furtherInvestigationNeeded": "Live-render the app in a browser and observe global-canvas behavior, or decode flow event 7265ca8.3943c9a."
+    },
+    {
+      "id": "page.Page0",
+      "type": "classification_system_global_canvas",
+      "title": "Global canvas",
+      "whatWasFound": "Global canvas page; its functional purpose beyond the isGlobalCanvas flag was not determined by this extraction.",
+      "whyUnresolved": "See content-extraction/scripts/05-classify-and-emit-records.js for the exact rule set and evidence fields recorded for this page.",
+      "evidence": "content-extraction/page-inventory.json, content-extraction/_generated/classification-summary.json",
+      "furtherInvestigationNeeded": "Confirm via the live app or original author whether this page has real content that this extraction failed to detect, or was simply left empty."
+    },
+    {
+      "id": "page.Page2",
+      "type": "classification_app_chrome",
+      "title": "Menu",
+      "whatWasFound": "Page contains 10 \"Lorem ipsum\" placeholder text block(s); content appears unfinished in the source application.",
+      "whyUnresolved": "See content-extraction/scripts/05-classify-and-emit-records.js for the exact rule set and evidence fields recorded for this page.",
+      "evidence": "content-extraction/page-inventory.json, content-extraction/_generated/classification-summary.json",
+      "furtherInvestigationNeeded": "This page's content was apparently never finished in the source SAP Build Apps project; the real content (if it exists) is not recoverable from this bundle."
+    },
+    {
+      "id": "page.Page3",
+      "type": "classification_navigation_hub",
+      "title": "108 Divyadesam",
+      "whatWasFound": "Page contains 216 \"Lorem ipsum\" placeholder text block(s); content appears unfinished in the source application.",
+      "whyUnresolved": "See content-extraction/scripts/05-classify-and-emit-records.js for the exact rule set and evidence fields recorded for this page.",
+      "evidence": "content-extraction/page-inventory.json, content-extraction/_generated/classification-summary.json",
+      "furtherInvestigationNeeded": "This page's content was apparently never finished in the source SAP Build Apps project; the real content (if it exists) is not recoverable from this bundle."
+    },
+    {
+      "id": "page.Page93",
+      "type": "classification_unresolved_possible_divya_desam",
+      "title": "Tirukoodal",
+      "whatWasFound": "Has a prapatti.com sloka/stotram PDF link, like the confirmed Divya Desam pages, but lacks BOTH a Google Maps link and hub-list membership, so it cannot be confidently distinguished from a non-temple stotram/sloka page using available structural evidence.",
+      "whyUnresolved": "See content-extraction/scripts/05-classify-and-emit-records.js for the exact rule set and evidence fields recorded for this page.",
+      "evidence": "content-extraction/page-inventory.json, content-extraction/_generated/classification-summary.json",
+      "furtherInvestigationNeeded": "Human review of the actual temple/content vs. the ambiguous structural signal."
+    },
+    {
+      "id": "page.Page112",
+      "type": "classification_unknown",
+      "title": "Visishtadvaita Philosophy",
+      "whatWasFound": "No confident classification rule matched and no non-placeholder text was found.",
+      "whyUnresolved": "See content-extraction/scripts/05-classify-and-emit-records.js for the exact rule set and evidence fields recorded for this page.",
+      "evidence": "content-extraction/page-inventory.json, content-extraction/_generated/classification-summary.json",
+      "furtherInvestigationNeeded": "This page's content was apparently never finished in the source SAP Build Apps project; the real content (if it exists) is not recoverable from this bundle."
+    },
+    {
+      "id": "page.Page115",
+      "type": "classification_unknown",
+      "title": "Mahabharatam",
+      "whatWasFound": "No confident classification rule matched and no non-placeholder text was found.",
+      "whyUnresolved": "See content-extraction/scripts/05-classify-and-emit-records.js for the exact rule set and evidence fields recorded for this page.",
+      "evidence": "content-extraction/page-inventory.json, content-extraction/_generated/classification-summary.json",
+      "furtherInvestigationNeeded": "This page's content was apparently never finished in the source SAP Build Apps project; the real content (if it exists) is not recoverable from this bundle."
+    },
+    {
+      "id": "page.Page116",
+      "type": "classification_unknown",
+      "title": "Ramayanam",
+      "whatWasFound": "No confident classification rule matched and no non-placeholder text was found.",
+      "whyUnresolved": "See content-extraction/scripts/05-classify-and-emit-records.js for the exact rule set and evidence fields recorded for this page.",
+      "evidence": "content-extraction/page-inventory.json, content-extraction/_generated/classification-summary.json",
+      "furtherInvestigationNeeded": "This page's content was apparently never finished in the source SAP Build Apps project; the real content (if it exists) is not recoverable from this bundle."
+    },
+    {
+      "id": "page.Page127",
+      "type": "classification_non_temple_content_candidate",
+      "title": "Guru Parampara",
+      "whatWasFound": "Page contains 68 \"Lorem ipsum\" placeholder text block(s); content appears unfinished in the source application.",
+      "whyUnresolved": "See content-extraction/scripts/05-classify-and-emit-records.js for the exact rule set and evidence fields recorded for this page.",
+      "evidence": "content-extraction/page-inventory.json, content-extraction/_generated/classification-summary.json",
+      "furtherInvestigationNeeded": "This page's content was apparently never finished in the source SAP Build Apps project; the real content (if it exists) is not recoverable from this bundle."
+    },
+    {
+      "id": "page.Page150",
+      "type": "classification_unresolved_possible_divya_desam",
+      "title": "Hayagriva Stotram",
+      "whatWasFound": "Has a prapatti.com sloka/stotram PDF link, like the confirmed Divya Desam pages, but lacks BOTH a Google Maps link and hub-list membership, so it cannot be confidently distinguished from a non-temple stotram/sloka page using available structural evidence.",
+      "whyUnresolved": "See content-extraction/scripts/05-classify-and-emit-records.js for the exact rule set and evidence fields recorded for this page.",
+      "evidence": "content-extraction/page-inventory.json, content-extraction/_generated/classification-summary.json",
+      "furtherInvestigationNeeded": "Human review of the actual temple/content vs. the ambiguous structural signal."
+    },
+    {
+      "id": "page.Page163",
+      "type": "classification_non_temple_content_candidate",
+      "title": "Charama Shlokams",
+      "whatWasFound": "Page contains 6 \"Lorem ipsum\" placeholder text block(s); content appears unfinished in the source application.",
+      "whyUnresolved": "See content-extraction/scripts/05-classify-and-emit-records.js for the exact rule set and evidence fields recorded for this page.",
+      "evidence": "content-extraction/page-inventory.json, content-extraction/_generated/classification-summary.json",
+      "furtherInvestigationNeeded": "This page's content was apparently never finished in the source SAP Build Apps project; the real content (if it exists) is not recoverable from this bundle."
+    },
+    {
+      "id": "page.Page168",
+      "type": "classification_non_temple_content_candidate",
+      "title": "Srimad Bhagavatham",
+      "whatWasFound": "Page contains 58 \"Lorem ipsum\" placeholder text block(s); content appears unfinished in the source application.",
+      "whyUnresolved": "See content-extraction/scripts/05-classify-and-emit-records.js for the exact rule set and evidence fields recorded for this page.",
+      "evidence": "content-extraction/page-inventory.json, content-extraction/_generated/classification-summary.json",
+      "furtherInvestigationNeeded": "This page's content was apparently never finished in the source SAP Build Apps project; the real content (if it exists) is not recoverable from this bundle."
+    },
+    {
+      "id": "navigation-hub-gaps",
+      "type": "structural_anomaly",
+      "whatWasFound": "The following pages were classified as divya_desam_candidate (via prapatti PDF link + Google Maps link) but are NOT present among page.Page3's (\"108 Divyadesam\") 105 \"Open page\" list-navigation targets, meaning a user browsing the in-app list would not reach them by scrolling it: page.Page24, page.Page97, page.Page101",
+      "whyUnresolved": "Cannot determine from the bundle alone whether this is an intentional omission, a data-entry gap in the original app, or reachable via some other in-app path not captured by this extraction (e.g. a \"next/previous\" button chain between temple pages was not decoded).",
+      "evidence": "content-extraction/navigation-map.json (internalPageNavigationEdges, page.Page3 edges)",
+      "furtherInvestigationNeeded": "Check the live app for alternate navigation paths to these pages (e.g. sequential next/prev), or treat as a known gap to fix in the new application."
+    },
+    {
+      "id": "image-duplicates",
+      "type": "duplicate_asset",
+      "whatWasFound": "1 group(s) of byte-identical images stored under different asset UUIDs: [{\"sha256\":\"1352bf964d53f4eadca40c5438bcb1a9a2d049443c7bcfb564b99ceb308d6d83\",\"assetUuids\":[\"3c76c159-5372-48be-ac49-139bc377dca3\",\"dc678ea5-14cf-4c1f-989d-86471d133d6d\"]}]",
+      "whyUnresolved": "The source asset registry treats these as distinct assets (different UUIDs, possibly different original names/upload dates); this extraction preserves that distinction rather than merging them.",
+      "evidence": "content-extraction/image-map.json (duplicateGroups)",
+      "furtherInvestigationNeeded": "Decide during content modeling whether to de-duplicate these images in the new application."
+    },
+    {
+      "id": "image-extension-mismatches",
+      "type": "mislabeled_asset",
+      "whatWasFound": "1 local image file(s) whose actual (magic-byte-sniffed) format does not match their file extension: [{\"assetUuid\":\"ac6b4755-696b-489a-8552-c4eeb5828381\",\"localFile\":\"images/ac6b4755-696b-489a-8552-c4eeb5828381.jpg\",\"declaredExtension\":\"jpg\",\"sniffedFileType\":\"gif\"}]",
+      "whyUnresolved": "The original file was not renamed/modified by this extraction per the task's safety rules; the mismatch is reported, not corrected.",
+      "evidence": "content-extraction/image-map.json (extensionMismatches)",
+      "furtherInvestigationNeeded": "Re-encode or re-extension the affected file when the new application is built, if it causes rendering issues."
+    },
+    {
+      "id": "page-content-parse-failures",
+      "type": "validation_note",
+      "whatWasFound": "No page failed to parse: all 171 screens' component trees were walked successfully.",
+      "whyUnresolved": "N/A -- included for completeness of the validation record.",
+      "evidence": "content-extraction/_generated/page-content.json",
+      "furtherInvestigationNeeded": "None."
+    }
+  ]
+}

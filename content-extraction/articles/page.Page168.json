@@ -1,0 +1,957 @@
+{
+  "pageId": "page.Page168",
+  "title": "Srimad Bhagavatham",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": true,
+  "placeholderTextBlockCount": 58,
+  "sourceLocation": {
+    "screensKey": "page.Page168",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "42f81564-ee3b-4ad2-bec7-4b50d10b24c1"
+  ],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [
+    {
+      "toPageId": "page.Page171",
+      "sourceComponentLabel": null
+    },
+    {
+      "toPageId": "page.Page169",
+      "sourceComponentLabel": null
+    },
+    {
+      "toPageId": "page.Page170",
+      "sourceComponentLabel": null
+    }
+  ],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://42f81564-ee3b-4ad2-bec7-4b50d10b24c1"
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "निगमकल्पतरोर्गलितं फलम्\nशुकमुखादमृतद्रवसंयुतम्।\nपिबत भागवतं रसमालयं\nमुहुरहो रसिका भुवि भावुकाः॥\nnigama-kalpa-taror galitaṁ phalam\nśuka-mukhād amṛta-drava-saṁyutam\npibata bhāgavataṁ rasam ālayam\nmuhur aho rasikā bhuvi bhāvukāḥ\nनारायणं नमस्कृत्य नरं चैव नरोत्तमम्।\nदेवीं सरस्वतीं व्यासं ततो जयमुदीरयेत्॥\nnārāyaṇaṁ namaskṛtya naraṁ caiva narottamam\ndevīṁ sarasvatīṁ vyāsaṁ tato jayam udīrayet\nव्यासं वशिष्ठनप्तारं शक्तेः पौत्रमकल्मषम्।\nपराशरात्मजं वन्दे शुकतातं तपोनिधिम्॥\nvyāsaṁ vaśiṣṭha-naptāraṁ śakteḥ pautram akalmaṣam\nparāśarātmajaṁ vande śukatātaṁ taponidhim",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 4,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 6,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 7,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 9,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 11,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 12,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 13,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 14,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 15,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 16,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 17,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 18,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 19,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 20,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 21,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 22,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 23,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 24,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 25,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 26,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 27,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 28,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 29,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 30,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 31,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 32,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 33,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 34,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 35,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 36,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 37,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 38,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 39,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 40,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 41,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 42,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 43,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 44,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 45,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 46,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 47,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 48,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 49,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 50,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 51,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 52,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 53,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 54,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 55,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 56,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 57,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 58,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 59,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 60,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 61,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 62,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 63,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 64,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 65,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 66,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 67,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 68,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 69,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 70,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 71,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 72,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 73,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 74,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 75,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 76,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 77,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 78,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 79,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 80,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 81,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 82,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 83,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 84,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 85,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 86,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 87,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 88,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 89,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 90,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 91,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 92,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 93,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 94,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 95,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 96,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 97,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 98,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 99,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 100,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 101,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 102,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 103,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 104,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 105,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 106,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 107,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 108,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 109,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 110,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 111,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 112,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 113,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 114,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 115,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 116,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 117,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 118,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 119,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 120,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 121,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 122,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 123,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 124,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 125,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 126,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 127,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 128,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 129,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 130,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 131,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 132,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 133,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 134,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 135,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 136,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 137,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 138,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 139,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 140,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 141,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 142,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    },
+    {
+      "order": 143,
+      "depth": 1,
+      "type": "view"
+    },
+    {
+      "order": 144,
+      "depth": 2,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 145,
+      "depth": 2,
+      "type": "view"
+    },
+    {
+      "order": 146,
+      "depth": 3,
+      "type": "text",
+      "content": "Lorem ipsum dolor sit amet",
+      "textFontSizeHint": 12
+    },
+    {
+      "order": 147,
+      "depth": 3,
+      "type": "icon",
+      "iconName": "angle-right",
+      "textFontSizeHint": 21
+    }
+  ]
+}

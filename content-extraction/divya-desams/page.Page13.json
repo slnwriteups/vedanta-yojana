@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page13",
+  "title": "Kapisthalam",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page13",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "dd97f69e-4f8f-4c08-9fd4-f35cbbbcc7b3"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkavittalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/EBm92dskcd5JNdUa7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkavittalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkavittalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkavittalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Kapisthalam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://dd97f69e-4f8f-4c08-9fd4-f35cbbbcc7b3"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram: \nMoolavar: Sri Gajendra Varadhan\nThayaar: Ramamanivalli Thayar\nVimanam: Gaganakruthi Vimanam\nPushkarani: Gajendra Pushkarani\nTravel: This kshethram is situated approximately 3 km from Papanasam, near Kumbakonam.\n\nAzhwar Pasuram: \nTirumangai Azhwar- 1 pasuram\n\nPratyaksham: Hanuman and Gajendran",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nIt is said that Lord Hanuman had performed tapas at this kshethram. When the Lord appeared in front of him, Lord Hanuman asked the Lord to re-enact the scene of Gajendra Moksham. \n\nThe story of Gajendra Moksham is as follows. King Indradyumna was a renowned ruler of the Pandya Dynasty. It is said that he was the one who constructed the Puri Jagannath Temple. One day, the King was engaged in deep meditation when Sage Agastya visited the Kingdom and sought hospitality from the king. The King was so deep in his meditation that he overlooked the Sage. The sage got irritated and cursed the king, saying he would be reborn as an elephant. Similarly, a Gandharva named Huhu was cursed by Sage Devala to turn into a crocodile as he attempted to break the Sage’s penance. Many years passed, and King Indradyumna reincarnated as an elephant who had once been the ruler of an elephant herd on the Mountain of Trikuta. Gajendra used to visit a lake on the mountain daily and offer the Lord a lotus as dakshina every day. On one such visit to the lake, a crocodile caught Gajendra’s leg. This crocodile was none other than the cursed Huhu. Gajendra started to wail in pain and called out to the Lord by holding up a lotus that he had just plucked to give to the Lord. Gajendra referred to the Lord as “Aadhimoola” and called out a plea for help. All the gods saw Gajendra's plight, but when they heard the call, Aadhimoola refused to help him as they were not qualified to do justice to that title. It is said that as soon as Lord Sriman Narayana heard the call of the devotee, he didn’t even wait for Garuda. He ran at the top of his speed, and soon Garuda caught up and took the Lord to the Trikuta mountain, where the Lord’s Sudarshana Chakra had already taken off, even before he could release it. The chakra killed the crocodile and released Huhu from the curse. It is also said that the lotus held by the Lord is the same Lotus that Gajendra presented to the Lord that day. Following this, Gajendra was granted moksham. ",
+      "textFontSizeHint": 16
+    }
+  ]
+}

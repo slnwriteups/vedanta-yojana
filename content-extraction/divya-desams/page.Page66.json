@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page66",
+  "title": "Tirukadalmallai",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page66",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "eadac604-7ed7-447a-831b-55e3a1e7318d"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkadalmallaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkadalmallaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/otRTp8vAMTskVQEL9",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkadalmallaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkadalmallaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirukadalmallai",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://eadac604-7ed7-447a-831b-55e3a1e7318d"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Sthalashayana Perumal\nThayaar: Nilamangai Thayaar\nVimanam: Gaganakriti Vimanam\nPushkarani: Pundareeka Pushkarani\n\nTravel: This kshethram is located in Mahabalipuram\n\nAzhwar Pasuram:\nTirumangai Azhwar: 26 Pasurams\nBoodath Azhwar: 1 pasuram\nTotal: 27 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam: \nAccording to legend, Pundareeka Maharshi, desirous of worshipping Lord Vishnu with lotus flowers, proceeded eastward and attempted to drain the waters of the ocean to make his way. The Lord came in the guise of an old man and asked for some food. The Maharishi went to fetch him some food, and when he returned, he found Lord Vishnu adorning Himself with the flowers and giving darshan as Ananthasayanam. Hence, this place gained the name Sthalasayanam.\n\n*** A peculiarity of this kshethram is that one can see the Lord in reclining posture without Adiseshan. The Lord is reclining on the ground; hence, he is known as Sthalashayana Perumal (Sthala meaning 'ground'). The Lord can be seen with four hands. His left hand displays the aahwaana-mudra, welcoming his devotees, and his right hand is seen in the varada-mudra along the left and right lengths of his bed.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

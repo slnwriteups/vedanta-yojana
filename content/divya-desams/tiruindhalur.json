@@ -1,0 +1,61 @@
+{
+  "slug": "tiruindhalur",
+  "displayName": "Tiruindhalur",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page30",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Parimala Ranganathar",
+    "thayaar": "Parimala Ranganayaki / Pundareekavalli",
+    "vimanam": "Vedachakra Vimanam",
+    "theertham": "Indupushkarani",
+    "travelNote": "This temple is located in Mayiladuthurai."
+  },
+  "sthalaPuranam": "According to legend, it is said that during the Krita Yugam, two demons by the name Madhu and Kaitabha stole the Vedas from Lord Brahma and disappeared into the Pralaya Samudram (Ocean of Deluge). It is said that Lord Maha Vishnu took the Matsya Avataram and retrieved the Vedas. It is also said that the Vedas had lost their fragrance as they were robbed. The Lord is then said to have taken the form of Parimala Ranganathan, restoring their fragrance and returning them to Lord Brahma. It is said that Ganga Devi is present near the head of the Lord. As seen at Tirucherai, Kaveri Devi was deemed greater than Ganga Devi. Hence, it is said that Ganga comes to this kshethram and bathes here in the Kaveri river to rid herself of her sins.\n\n*** A peculiarity seen here with Lord is that he is seen in the Veera Shayanam. Anywhere one goes and sees the Lord in Shayana Kolam, one can see that the Lord will not be holding His shankam and chakram. However, here at this kshethram, as He carries His weapons and is in a reclined posture, He is said to be in the Veera Shayanam.",
+  "azhwarPasuram": "Tirumangai Azhwar – 11 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/VtyMt9TFg3uKJ2ps6"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruindhalur-1",
+      "sourceAssetUuid": "8e24aaca-0b75-4fa5-9045-60681a2ee233",
+      "sourceOriginalName": "108-26.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvindaluurpaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvindaluurpaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvindaluurpaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvindaluurpaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

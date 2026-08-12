@@ -1,0 +1,274 @@
+{
+  "pageId": "page.Page108",
+  "title": "Singavelkundram (Ahobilam)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page108",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "835b32a4-464c-4955-9838-a3f0bca79684",
+    "0caa13ee-28b6-4e31-9e35-5b90ae5d3f84",
+    "95f7e933-29ac-4cfd-9ebe-29274275a378",
+    "2178bc05-33e5-419b-b7c4-1c0300479158",
+    "fc4e2781-5147-4446-972b-f3d593b2cef5",
+    "d7728582-5c96-4e46-a8d2-49fb3606fb1c",
+    "b979179e-5a5e-4743-a3a5-e8131109f05f",
+    "b0b3702d-0606-4e22-b6bd-b1af91765a04",
+    "e0064e04-28f2-4edb-b96e-78bb8e6a7310",
+    "5b2d6eb0-4f86-487f-9668-ce893311b2a3",
+    "174a45d8-7a89-42f2-83e0-90a4ff21c1c3",
+    "c1b51594-98bf-43cc-976e-0cb602ec5832",
+    "d8466433-7256-4f91-9e45-480f45c5a0af",
+    "7af7790e-2ee8-472f-af16-6ca47c281fc0"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruccingavelkunrampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/mbxQRENJMEgpdD5K7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruccingavelkunrampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruccingavelkunrampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruccingavelkunrampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Singavelkundram (Ahobilam)",
+      "textFontSizeHint": 18
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://835b32a4-464c-4955-9838-a3f0bca79684"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://0caa13ee-28b6-4e31-9e35-5b90ae5d3f84"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Prahaladavardhan\nThayaar: Amritavalli Nachiyar\nVimanam: Guhai Vimanam\nPushkarani: Indra Theertham\n\nTravel: This kshethram is located near Alagadda District in Andhra Pradesh.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 10 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "text",
+      "content": "thala Puranam:\nHiranyaksha’s brother, Hiranyakashipu, was a great demon emperor who dominated the earth. He performed great penance to Lord Brahma. After centuries of penance, Brahma finally appeared in front of Hiranyakashipu and told him that he had appeared to grant him a boon for the penance that Hiranyakashipu had performed. Hiranyakashipu asked for immortality. Brahma said it was against the law of nature and that it was not in his power to grant this boon, and asked him to rethink what he desired. Hiranyakashipu thought for a while and asked for a boon that would be equivalent to immortality. He asked that he shouldn’t be killed by man nor animal, not be killed inside the house nor outside, not be killed at day nor at night, not be killed in space nor on the surface of the earth. Further, he should not be killed by anything that Brahma created. Brahma granted this and disappeared. Soon, Hiranyakashipu became a tyrant and a ruthless king. He soon had a son named Prahalada. Prahalada was a great devotee of Lord Vishnu. Hiranyakashipu considered Lord Vishnu as his mortal enemy, as he had incarnated himself to kill his brother Hiranyaksha. When Prahalada was in his mother’s womb, Sage Narada had narrated tales of the Lord to his mother. As the mother heard the stories, so did the fetus. When Prahalada was admitted to Gurukulam, he changed the views of all his teachers and all the students, advising them to praise the Lord instead of his father. When Hiranyakashipu came to know of the events that were taking place in the Gurukulam, he took measures to try and kill his son. He tried to get him trampled by an elephant, feed him poison, imprison him without food, and throw him into a raging flame. None of his methods produced the results that he wanted. He then brings Prahalada to his royal court. He asked him how he was surviving all the deadly situations. He said the Lord was protecting him. He also said that the Lord is within everyone, including his father. Hiranyakashipu then drew his mace and pointed to a pillar and asked him if his Lord was present in that particular pillar. When Prahalada said yes, Hiranyakashipu smashed the pillar, and from that pillar, the Lord emerged in the form of a man-lion. The incarnation had the face of a lion and the body of a man. The Lord’s rage knew no bounds. He dragged Hiranyakashipu to the doorstep and sat on the separating junction, which is neither inside nor outside the home. The Lord placed Hiranyakashipu on his lap, which was neither in space nor on Earth. Then the Lord used his nails at a time of sunset, which was neither day nor night, and dug into the stomach of Hiranyakashipu, ripping out his intestines and putting an end to the tyrant.\nThe legend has it that Garuda was desirous of seeing Lord Vishnu in His Narasimha avataram; thus, he meditated upon Him at the Ugra Sthambham, and the Lord manifested Himself as nine forms of Narasimha.\n1. BHARGAVA NARASIMHA SWAMY\nThe Bhargava Narasimha Swamy is situated at a distance of two km from the Lower Ahobilam, on a hill, near the sacred pond, known as ‘Bhargava Theertham,’ where Bhargava Rama(Parashurama) performed his penance. Hence, the Lord of the temple is known as Bhargava Narasimha Swamy.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://95f7e933-29ac-4cfd-9ebe-29274275a378"
+    },
+    {
+      "order": 12,
+      "depth": 1,
+      "type": "text",
+      "content": "2. YOGANANDA NARASIMHA SWAMY\nThis temple is to the southeast of Lower Ahobilam at a distance of 2 km. The popular legend is that after killing Hiranyakasipu, Lord Narasimha taught Prahlada several yogic postures. Therefore, the Lord in this aspect is called Yogananda Narasimha.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 13,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://2178bc05-33e5-419b-b7c4-1c0300479158"
+    },
+    {
+      "order": 14,
+      "depth": 1,
+      "type": "text",
+      "content": "3. CHATHRAVATA NARASIMHA SWAMY\nAbout three km from Lower Ahobilam, the image of the deity is installed under a peepal tree, surrounded by thorny bushes. Hence, the Lord is called Chathravata Narasimha Swamy. The Lord can be seen placing the thalam with one of His hands. It is said that the Lord is enjoying the musical service of two yakshas named Haha and Huhu.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 15,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://fc4e2781-5147-4446-972b-f3d593b2cef5"
+    },
+    {
+      "order": 16,
+      "depth": 1,
+      "type": "text",
+      "content": "4. AHOBILA NARASIMHA SWAMY\nThe temple, situated on Upper Ahobilam, at a distance of eight kilometers from Lower Ahobilam, is the main temple and the earliest of the nine temples there. The Lord here appears in his fierce aspect, known as Ugra Narasimha, the presiding deity of the temple and also referred to as Ahobila Nrisimha Swamy. It is firmly believed that Lord Narasimha was ‘Swayambhu’ (self-manifest) here.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 17,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://d7728582-5c96-4e46-a8d2-49fb3606fb1c"
+    },
+    {
+      "order": 18,
+      "depth": 1,
+      "type": "text",
+      "content": "5. KRODAKARA (VARAHA) NARASIMHA SWAMY\nThe temple of this Lord is one kilometer away from the main temple of Ahobila Nrisimha Swamy on the Upper Ahobilam. The image of the deity features the Lord with tusk-like teeth (Varaha-Dhramshtram or Krodha), and the Lord is depicted alongside his Consort, Lakshmi. Hence, the Lord of the temple is known as Krodakara (Varaha) Narasimha Swamy here.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 19,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://b979179e-5a5e-4743-a3a5-e8131109f05f"
+    },
+    {
+      "order": 20,
+      "depth": 1,
+      "type": "text",
+      "content": "6. KARANJA NARASIMHA SWAMY\nThis shrine is situated approximately one kilometer from Upper Ahobilam and one furlong from the road leading to Lower Ahobilam. The image of the deity is installed under a tree called ‘Karanja Vruksham.’ Hence, this Lord is called Karanja Narasimha Swamy. The Lord is prathyaksham to Hanuman here. It is said that when Hanuman performed tapas here at this kshethram, Lord Narasimha appeared with a bow and arrow, signifying that He is Rama.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 21,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://b0b3702d-0606-4e22-b6bd-b1af91765a04"
+    },
+    {
+      "order": 22,
+      "depth": 1,
+      "type": "text",
+      "content": "7. MALOLA NARASIMHA SWAMY\nNearly two km from the main temple of Upper Ahobilam is the famous shrine of Malola Narasimha Swamy. The deity here appears in ‘Soumya’ (graceful) form. As Lord Narasimha is seen with his consort, Lakshmi, He is known as Malola Narasimha Swamy. The word ‘Malola’ means beloved to Lakshmi (Ma=Lakshmi, Lola=beloved). It is said that the ‘utsavamoorthi’ of the Lord appeared to Srimath Adivan Satakopa Jeeyar, the first Jeeyar of Ahobila Mutt. Right from the founder, i.e., the first Jeeyar of Ahobila Mutt, down to the 44th pontiff, Srivan Satakopa Sri Vedanta Desika Yatheendra Mahadesika, the present jeeyar, the utsavamoorthi of Malola Narasimha Swamy is worshipped, and it is taken by them whenever they are on religious tours, visiting the villages every year. Recently, the 45th Jeeyar Srivan Satakopa Sri Narayana Yatheendra Mahadesikan has taken over the worship.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 23,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://e0064e04-28f2-4edb-b96e-78bb8e6a7310"
+    },
+    {
+      "order": 24,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://5b2d6eb0-4f86-487f-9668-ce893311b2a3"
+    },
+    {
+      "order": 25,
+      "depth": 1,
+      "type": "text",
+      "content": "8. JWALA NARASIMHA SWAMY\nThe temple of Jwala Nrisimha Swamy lies higher up the hill above on a hill called ‘Achalachaya Meru.’ This is about four km from the Upper Ahobilam temple. This place is said to be the actual spot where the fierce anger of the Lord reached its culmination when he tore Hiranyakasipu.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 26,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://174a45d8-7a89-42f2-83e0-90a4ff21c1c3"
+    },
+    {
+      "order": 27,
+      "depth": 1,
+      "type": "text",
+      "content": "9. PAVANA NARASIMHA SWAMY\nThe shrine of Pavana Narasimha is situated on the banks of the river Pavana, approximately six kilometers from the Upper Ahobilam temple. Hence, the Lord of the shrine is known as Pavana Narasimha Swamy. It is said that Mahalakshmi reincarnated Herself as Chenchulakshmi into one of the local tribes that resided here. When Lord Narasimha was roaming the land in rage after killing Hiranyakashipu, Chenchulakshmi is said to have pacified the Lord and married Him.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 28,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://c1b51594-98bf-43cc-976e-0cb602ec5832"
+    },
+    {
+      "order": 29,
+      "depth": 1,
+      "type": "text",
+      "content": " UGRA STHAMBHAM\nAt a distance of eight km from the Upper Ahobilam temple, we can see a cleft of the mountain dividing it into two visible parts. It is a long-held view that from the cleft, the Lord appeared in the form of Narasimha, and this cleft is known as ‘Ugra Sthambham.’",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 30,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://d8466433-7256-4f91-9e45-480f45c5a0af"
+    },
+    {
+      "order": 31,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://7af7790e-2ee8-472f-af16-6ca47c281fc0"
+    }
+  ]
+}

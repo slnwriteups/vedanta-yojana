@@ -1,0 +1,55 @@
+{
+  "slug": "tiruparkadal-ksheerabdi",
+  "displayName": "107) Tiruparkadal (Ksheerabdi)",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page110",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Ksheerabdi Nathan",
+    "thayaar": "Kadalmagal Nachiyar",
+    "vimanam": "Ashtanga Vimanam",
+    "theertham": "Paarkadal Theertham\n\nThis kshethram cannot be attained with the physical body. Only the jeevaathma can make the journey to this kshethram as well as Sri Vaikuntham. Thus, these two kshethrams are referred to as Vinnulaga Tirupatigal."
+  },
+  "sthalaPuranam": "The Lord present here is said to be a vyuha-roopam of Paravasudevan who resides in Sri Vaikuntham. Empurumaan presents Himself as Vasudevan, Sankarshanan, Pradyumnan, and Anirudhan, who are said to be vyuha-roopam of the Lord. Vasudevan is the creator, Sankarshanan is the sustainer, Pradyumnan is the destroyer, and Anirudhan represents divine knowledge. These vyuha-roopam are further said to divide into three forms each. Vasudevan is said to represent equivalence to Keshava, Madhava, and Narayana. Sankarshanan is said to represent equivalence to Govinda, Vishnu, and Madhusoodhan. Pradyumana is said to represent equivalence to Trivikrama, Vamana, and Sridhara. Anirudhan is said to represent the equivalence to Rishikesha, Padmanabhan, and Damodara.\nThe twelve of these forms are referred to as the 12 Sooriyars and Chandirans, who are found in all 12 directions. They are responsible for bringing all Jeevaathmas into existence, guiding their lives, and calculating their Paavam and Punyam.\nThe Ashtaakshara mantram is said to always resonate in this kshethram. To reach this kshethram, one must learn the ashtaakshara mantram from a guru and meditate upon Sri Ksheerabdi Nathan.",
+  "azhwarPasuram": "Periya Azhwar: 5 Pasurams\nSri Andal: 3 Pasurams\nTirumangai Azhwar: 10 Pasurams\nNam Azhwar: 9 Pasurams\nTirumazhisai Azhwar: 13 Pasurams\nKulasekara Azhwar: 2 Pasurams\nThondaradipodi Azhwar: 1 pasuram\nPoigai Azhwar: 1 pasuram\nBhoodath Azhwar: 2 Pasurams\nPey Azhwar: 4 Pasurams\nTotal: 50 Pasurams",
+  "shrines": [],
+  "images": [
+    {
+      "assetId": "tiruparkadal-ksheerabdi-1",
+      "sourceAssetUuid": "ff8332c3-ec8a-4f3e-9369-edf3ea11971e",
+      "sourceOriginalName": "108-107.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruppaarkadalpaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruppaarkadalpaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruppaarkadalpaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruppaarkadalpaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

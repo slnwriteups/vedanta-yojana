@@ -1,0 +1,44 @@
+{
+  "pageId": "page.Page157",
+  "title": "Swami Desikan's Attainment of Paramapadam",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page157",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Swami Desikan's Attainment of Paramapadam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "When in Srivilliputtur, he composed \"Godha Sthuthi.\" The Choodik Kodutha Naachiyaar was so pleased that she ordained the Stotra to be recited during her Utsavam days, along with the Divya Prabhandams.\n\nHaving lived a whole and rich life for 101 years and satisfied with his work on earth, Swami Desika cast his tabernacle of flesh, praying to Udaiyavar and Appullaar by placing their Paadukas on his head which he kept on the lap of Nainarachar and his feet on the lap of Brahma Tantra Svatantrarar, while his Sishyas chanted Tiruvoimozhi and Upanishads. He attained Paramapadam in Sowmya year in the month Kartigai in the Tamizh month of Kartikai. In the Kali yugam year 4471, which corresponds to 1369 AD.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

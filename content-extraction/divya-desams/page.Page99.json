@@ -1,0 +1,162 @@
+{
+  "pageId": "page.Page99",
+  "title": "Tiruayodhi (Ayodhya)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page99",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "36782663-27f9-4f4a-a07d-4cdea30b26a9",
+    "a98dfccd-e02c-4ee0-8d0f-8438d8a196a2",
+    "681fd778-a7dd-4bb8-b590-7b6fcc8cf7bb",
+    "6eef4d6f-6930-4304-8ff3-fa6194e85e3a",
+    "e0b2a675-0e9c-4127-b845-a6bd5d81ab3e",
+    "4c6ecbb4-78fa-4d1d-9ca7-9bc69917f700"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvayoddhipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/k7h3VbXTgArk59Eu6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvayoddhipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvayoddhipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvayoddhipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruayodhi (Ayodhya)",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://36782663-27f9-4f4a-a07d-4cdea30b26a9"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://a98dfccd-e02c-4ee0-8d0f-8438d8a196a2"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://681fd778-a7dd-4bb8-b590-7b6fcc8cf7bb"
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://6eef4d6f-6930-4304-8ff3-fa6194e85e3a"
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Sri Ramar\nThayaar: Sita Devi\nVimanam: Pushkala Vimnama\nPushkarani: Saryu Theertham\n\nAzhwar Pasuram: \nTirumangai Azhwar: 1 pasuram\nNam Azhwar: 1 pasuram\nKulasekara Azhwar: 4 Pasurams\nPeriya Azhwar: 6 Pasurams\nThondaradipodi Azhwar: 1 pasuram\nTotal: 13 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 12,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe legend has it that Lord Vishnu extracted Ayodhya, a part of Vaikuntam, and presented it to Lord Brahma, who then gave it to his son, Swaayambhuva Manu, who brought it to Bhooloka and placed it on the banks of the Sarayu River. The original temples, on which the Azhwars composed the Divya Prabhandam, were destroyed by invaders. Now, there are shrines for Ranganathar and Rama in the Ammaji Temple, located on the banks of the River Sarayu as well as the newly constructed Ayodhya Ram Janmabhoomi Mandir.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 13,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://e0b2a675-0e9c-4127-b845-a6bd5d81ab3e"
+    },
+    {
+      "order": 14,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://4c6ecbb4-78fa-4d1d-9ca7-9bc69917f700"
+    },
+    {
+      "order": 15,
+      "depth": 1,
+      "type": "text",
+      "content": "This temple for Lord Hanuman is known as Hanuman Gadhi. The Lord here is said to be the protector of Ayodhya.\nPerforming go-dhaanam on the banks of the Saryu River is said to give the person performing dhaanam moksham.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

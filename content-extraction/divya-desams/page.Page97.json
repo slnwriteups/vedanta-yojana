@@ -1,0 +1,127 @@
+{
+  "pageId": "page.Page97",
+  "title": "Tirupullani",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": false
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page97",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "f9f9da3f-6e3b-409b-91ef-f18f0487c5d7",
+    "73a7f041-6686-4660-a718-50dd329b3ad5"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://maps.app.goo.gl/maV4fCJmDiDFkZtH6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppullaanipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppullaanipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppullaanipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppullaanipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirupullani",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://f9f9da3f-6e3b-409b-91ef-f18f0487c5d7"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://73a7f041-6686-4660-a718-50dd329b3ad5"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\n\nMoolavar: Sri Adi Jagannatha Perumal and Sri Darbhashayana Ramar\nThayaar: Kalyanavalli Nachiyar\nVimanam: Kalyana Vimanam\nPushkarani: Chakra Theertham\n\nTravel: This kshethram is located near Rameswaram, on the seashore.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 21 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nLegend has it that Adi Jagannatha Perumal is said to have been present at this kshetram even before Dasharatha came with Kaikeyi to conquer South India. It is noted that Dasharatha performed tapas to this Lord to have children.\nLegend tells that Lord Rama reached the seashore where Vibhishana performed sharanagathi. As the army contemplated how to cross the ocean, Vibhishana advised Lord Rama to pray to Samudraraja by performing praayopavesham (fast for three days and nights) to allow their passage over his waters to reach Lanka. Thus, Lord Rama is said to have sat in Padmasanam on a bed made of darbha grass with the Anjali mudra for three days. When Samudraraja did not show himself, in a rage, Lord Rama told Lakshmana to hand Him His bow and an arrow. The Lord mounts the arrow and tells Samudraraja that He would make all the water in the ocean evaporate if he did not show himself. As the Lord was about to fire His deadly weapon, Samudraraja appears and falls at Lord Rama’s feet and tells the army that Nal and Neel were phenomenal architects and that they could build a bridge that would float on the oceanic waters, granting Lord Rama and His army passage over the ocean to Sri Lanka. As Lord Rama sat on a bed made of darbha, this kshethram is called Pullaranya Kshethram.\n*** The water at this kshethram is considered very holy, as it was the starting point of the Ramasethu. Thus, taking a bath here or sethu-snanam is considered to absolve all sins. Along with sethu-snanam, performing tarpanam here at this kshetram is considered highly auspicious.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

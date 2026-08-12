@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page60",
+  "title": "Tiruputkuzhi",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page60",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "a42892da-fb1a-4920-b7e2-c8e5f6910b88"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirupputkuzipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirupputkuzipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/8Jxm5B5561oWWyLe9",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirupputkuzipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirupputkuzipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruputkuzhi",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://a42892da-fb1a-4920-b7e2-c8e5f6910b88"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Vijayaraghava Perumal\nThayaar: Maragathavalli Thayaar\nVimanam: Vijayakoti Vimanam\nPushkarani: Jatayu Theertham\n\nTravel: This kshethram is located 11 km from Kanchipuram on Katapadi road.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 2 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nDuring the Ramayana period, when Ravana abducted Devi Sita and started to fly away in the Pushpaka Vimanam, a vulture by the name of Jatayu stood in his way and put up a valiant battle against Ravana until Ravana cut off Jatayu’s wings, causing him to fall in the Panchavati forest. Jatayu held on to his life till he could see Lord Rama and tell him what had transpired so far. After relaying the information of Devi Sita’s kidnapping to Lord Rama, Jatayu lost his life. Lord Rama is then supposed to have cremated Jatayu, offering him salvation(moksham). The Lord here is holding Jatayu on His lap to cremate him.\n\n***A peculiarity of this kshethram is that Sridevi Thayaar and Bhudevi Thayaar have interchanged places, i.e., Bhudevi Thayaar is on the right, and Sridevi Thayaar is on the left. When one sees Sridevi Thayaar here, one can observe that she is standing about two feet behind the Lord, as She was unable to handle the heat of the pyre. \nOn new moon day (Amavasya), pilgrims congregate here at this kshethram to perform tharpanam(rites to the departed souls). In this temple, barren women receive the prasadam, which consists of roasted lentils soaked in water. While taken home, it is believed that if the lentils sprout, they will beget children.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

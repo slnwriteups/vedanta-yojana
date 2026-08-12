@@ -1,0 +1,60 @@
+{
+  "slug": "tirukakkarai-tirukatkarai",
+  "displayName": "Tirukakkarai (Tirukatkarai)",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page70",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Katkaraiyappan Perumal",
+    "thayaar": "Perunchelvanayaki Thayaar",
+    "vimanam": "Pushkala Vimanam",
+    "theertham": "Kapila Theertham",
+    "travelNote": "This kshethram is located 14 km from Irinjalakuda on the Thrissur-Ernakulam road.\n\nAzhwar pasuram:\nNam Azhwar: 10 Pasurams"
+  },
+  "sthalaPuranam": "It is said that Mahabali Chakravarthy had offered Lord Vamana three paces of land from where the Kapila Theertham pushkarani now stands. As the Lord took the three steps, with the first step, the Lord measured the entire earth; with the second step, He measured the heavens and hell. By the time he could take the third step, there was no more space where He could place His foot. Thus, He placed His foot on Mahabali Chakravarthy’s head upon his request, sending him to Patala-lokam. It is said that Mahabali then asked the Lord to come back one day to the world of the living to see his subjects. To fulfill this wish, the Lord let Mahabali visit his subjects on the day of Onam in the month of Avanni. It is said that Kapila Maharishi had performed tapas at this kshethram to see the Lord in His Vamana form.\n*** There is a very peculiar story of how the Nendram Vazha, a local variety of plantain, started to grow in this area. It is said that there was once an orchard that used to grow plantains. The yield of the orchard was terrible. The owner of the orchard came to this temple and prayed to Lord Vamana, offering Him a plantain made of gold. Lord Vamana is said to have opened His eyes upon seeing the golden plantain, which is said to have triggered an excellent yield of plantain henceforth. As the Lord opened His eyes, the fruit came to be known as Nethra Vazha, which over time has become Nendram Vazha.",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/FSN6fRLjXVVhGepq8"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirukakkarai-tirukatkarai-1",
+      "sourceAssetUuid": "bf484780-f6a6-4517-b3de-9e47dee2d7f9",
+      "sourceOriginalName": "108-67.webp",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkaatkaraipaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkaatkaraipaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkaatkaraipaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirukkaatkaraipaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "tiruvanpurushottamam",
+  "displayName": "Tiruvanpurushottamam",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page34",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Purushottaman",
+    "thayaar": "Purushottama Nayaki",
+    "vimanam": "Sanjeevinigrah Vimanam",
+    "theertham": "Tiruparkadal Theertham",
+    "travelNote": "This kshethram is located 8 km from Sirkazhi."
+  },
+  "sthalaPuranam": "It is said that Vyagrapadar used to perform kainkaryam to the Lord here by making garlands. One day, when Vyagrapadar had gone out in search of flowers, his infant son, Upamanyu, started to cry from hunger. Thus, the Lord sent Purushottama Nayaki Thayaar to feed the infant milk and give him water to prevent dehydration.",
+  "azhwarPasuram": "Tirumangai Azhwar – 10 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/2up3NpQYMRgTDR9T7"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruvanpurushottamam-1",
+      "sourceAssetUuid": "f8b48b07-5880-4278-86b7-9464bb9f2225",
+      "sourceOriginalName": "108-30.png",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvanpurudottamampaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvanpurudottamampaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirucemponceykoyilpaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvanpurudottamampaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

@@ -1,0 +1,77 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_DESCRIPTION, SITE_NAME, getSiteOrigin } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+/**
+ * Home page -- Phase 5J core shell.
+ *
+ * Replaces the Phase 5B route-placeholder list. Copy is intentionally
+ * generic and non-editorial: it restates the site's already-established
+ * scope (the 108 Divya Desams + a recovered library + supporting
+ * Knowledge material), not any specific temple/chapter content pulled
+ * from the source extraction.
+ */
+
+const SECTIONS = [
+  {
+    href: "/divya-desams",
+    title: "Divya Desams",
+    description:
+      "The 108 sacred abodes of Vishnu venerated by the Alwars, presented one temple at a time.",
+  },
+  {
+    href: "/library",
+    title: "Library",
+    description:
+      "A recovered book, presented chapter by chapter as it is prepared for publication.",
+  },
+  {
+    href: "/knowledge",
+    title: "Knowledge",
+    description:
+      "Supporting philosophical and devotional material related to Sanātana Dharma.",
+  },
+];
+
+export default function HomePage() {
+  const origin = getSiteOrigin();
+
+  return (
+    <div className="space-y-12">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: SITE_NAME,
+          description: SITE_DESCRIPTION,
+          ...(origin ? { url: origin } : {}),
+        }}
+      />
+      <div className="space-y-4">
+        <h1 className="page-title">Vedanta Yojana</h1>
+        <p className="prose-body max-w-2xl text-[var(--muted)]">
+          A developing reference for the 108 Divya Desams and related Vaishnava
+          teachings. Content on this site is currently in draft and under review.
+        </p>
+      </div>
+
+      <div className="grid gap-6 sm:grid-cols-3">
+        {SECTIONS.map((section) => (
+          <Link
+            key={section.href}
+            href={section.href}
+            className="block rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 transition-colors hover:border-[var(--accent)]"
+          >
+            <h2 className="section-heading">{section.title}</h2>
+            <p className="mt-2 text-sm text-[var(--muted)]">{section.description}</p>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}

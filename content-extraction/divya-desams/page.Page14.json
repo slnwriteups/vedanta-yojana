@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page14",
+  "title": "Tiruppullambhootangdi",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page14",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "88b6de44-39df-4880-8897-7ccc412c6dc1"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruppullambhuutangudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruppullambhuutangudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppullambhuutangudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/R4NuhiARYKW1rgci6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruppullambhuutangudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruppullambhootangdi",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://88b6de44-39df-4880-8897-7ccc412c6dc1"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Valvil Ramar\nThayaar: Hemambujavalli Thayaar\nVimanam: Sobhana Vimanam\nPushkarani: Jatayu Theertham\nPrathyaksham: Tirumangai Azhwar\nTravel: 5 km from Kumbakonam\n\nAzhwar Pasuram: \nTirumangai Azhwar- 10",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam: \nDuring the Ramayana period, when Ravana abducted Devi Sita and started to fly away in the Pushpaka Vimanam, a vulture by the name of Jatayu stood in his way and put up a valiant battle against Ravana until Ravana cut off Jatayu’s wings, causing him to fall in the Panchavati forest. Jatayu held on to his life till he could see Lord Rama and tell him what had transpired so far. After relaying the information of Devi Sita’s kidnapping to Lord Rama, Jatayu lost his life. Lord Rama is then supposed to have cremated Jatayu, offering him salvation(moksham). The Lord here is assuming a sleeping posture after performing the final rites for Jatayu. The Lord shows this entire scene to Tirumangai Azhwar.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

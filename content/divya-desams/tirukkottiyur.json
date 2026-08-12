@@ -1,0 +1,82 @@
+{
+  "slug": "tirukkottiyur",
+  "displayName": "Tirukkottiyur",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page96",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Sowmya Narayana Perumal",
+    "thayaar": "Tirumaamagal Nachiyar",
+    "vimanam": "Ashtanga Vimanam",
+    "theertham": "Deva Pushkarani",
+    "travelNote": "This kshethram is located between Karaikudi and Shiva Gangai."
+  },
+  "sthalaPuranam": "The legend has it that the Devas came together (goshti) to worship the Lord at this kshetram to rid the universe of the demon Hiranyakashipu. This temple is also considered Dakshina Badri. This is probably the most important kshetrham according to the Sri Vaishnava Parampara, as it is the kshetram where Swami Bhagawad Ramanujar first performed the Ashtakshara Mantropadesham. Let us see the story. Swami Ramanujar came here to this kshethram to seek education from Sri Tirukkotiyur Nambigal. Sri Tirukkotiyur Nambigal is said to have rejected giving Swami Ramanujar education seventeen times, sending him back to Sri Rangam. When Swami Ramanujar came back for the eighteenth time, Sri Tirukkotiyur Nambigal is said to have revealed the ashtakshara mantram and the charama shlokam to Swami Ramanujar and instructed him to keep it a secret. Swami Ramanujar realized that this mantram and shloka were the means to Sri Vaikuntham. Thus, Swami Ramanujar is said to have climbed up to the top of the Ashtanga Vimanam and openly revealed that he possessed the ashtakshara mantram as well as the charama shlokam and was willing to pass it on to anyone who so wished to listen to him. When Sri Tirukkotiyur Nambigal learned of this, he immediately pursued Swami Ramanujar. He told him that he was destined to go to hell because he had not listened to his guru’s wishes. Swami Ramanujar is then supposed to have said that he was more than ready to go to hell if he could provide the means for so many people to go to Vaikuntham. Sri Tirukkotiyur Nambigal then realizes his mistake and is said to have asked for forgiveness of Swami Ramanujar after seeing his broad outlook.\n\nAshtanga Vimanam with the arch from where Swami Ramnujar performed mantropadesham",
+  "azhwarPasuram": "Nam Azhwar: 10 Pasurams\nPeriya Azhwar: 1 Pasuram\nTirumangai Azhwar: 13 Pasurams\nBhoodathAzhwar: 2 Pasurams\nPey Azhwar: 1 pasuram\nTirumazhisai Azhwar: 1 pasuram\nTotal: 48 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/gHCV3BmaB1khFmWk9"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirukkottiyur-1",
+      "sourceAssetUuid": "8550d339-6acc-4312-b391-de69bab09493",
+      "sourceOriginalName": "108-93.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkottiyur-2",
+      "sourceAssetUuid": "f161f44d-0406-4f6e-85f5-779eda6961fc",
+      "sourceOriginalName": "108-93-2.jpeg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkottiyur-3",
+      "sourceAssetUuid": "4e9236b3-500e-4146-b27a-fa2774fac598",
+      "sourceOriginalName": "108-93-3.jpeg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkottiyur-4",
+      "sourceAssetUuid": "428e8d8d-a3f7-43f2-9136-87d897718658",
+      "sourceOriginalName": "108-93V.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirukkottiyuurpaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkottiyuurpaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkottiyuurpaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkottiyuurpaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

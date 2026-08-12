@@ -1,0 +1,59 @@
+{
+  "pageId": "page.Page165",
+  "title": "Krishna Charama Shlokam",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page165",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "3c76c159-5372-48be-ac49-139bc377dca3"
+  ],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Krishna Charama Shlokam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "The Krishna Charama Shlokam is considered to be the most revered among the three Charama Shlokas. Many scholars have given commentary on it from across different countries and across time immemorial. \nThis Charama Shlokam can be found in the Bhagavad Gita, the divine discourse given to Arjuna by Lord Krishna on the battlefield of Kurukshetra. Arjuna becomes overcome by emotion upon seeing members of his family in the opposition’s army. It is then that Lord Krishna tells Arjuna about Karma Yogam, Jnana Yogam, Bhakti Yogam, and various other methods on how to lead life. As a final commandment, the Lord tells Arjuna the Charama Shlokam, which is the principal guiding factor of Sri Vaishnava philosophy. \nThe Shloka is as follows, ",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://3c76c159-5372-48be-ac49-139bc377dca3"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "text",
+      "content": "The meaning of the shloka is as follows,\nGive up all (the other) dharmas and seek Me alone and My refuge. I will absolve you of all sins and liberate you. Do not despair. The Lord here tells Arjuna if one is not able to adhere to the principles of Jnana, Karma, and Bhakti, but in all profound heart surrenders his belief to the Lord, He will grant liberation from the cycle of life and death. ",
+      "textFontSizeHint": 16
+    }
+  ]
+}

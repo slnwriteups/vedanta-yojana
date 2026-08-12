@@ -1,0 +1,52 @@
+{
+  "pageId": "page.Page130",
+  "title": "Manakkal Nambigal",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page130",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "fd9923ff-c8cc-4197-b491-2902caff43a0"
+  ],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Manakkal Nambigal",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://fd9923ff-c8cc-4197-b491-2902caff43a0"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Manakkaal Nambi was born as Rama Misrar in Manakkaal near Trichy. He was the disciple of Uyyakondar, who was the prime disciple of Nathamunigal. Manakkaal Nambi served his Acharya for 12 years, during which his Acharya's wife attained Paramapadam. After his Acharya's wife attained Paramapadam, Manakkaal Nambi took care of his Acharya, his house, and his children. One day, Uyyakondar's children were crossing the Kaveri River when they came across a puddle, which they were hesitant to cross. Seeing this scene, Manakkaal Nambi fell face-first and asked the girls to use his body as a bridge to cross over to the other side. When Uyyakondar came to know of this incident, he was very impressed with his disciple and immediately performed the dwayamantropadesham. Before attaining Paramapadam, Uyyakondar instructs Manakkaal Nambi that he would become the Acharya to Yamunacharar(Alavandaar), who was Nathamunigal's grandson. He also instructed Manakkaal Nambi to perform panchasamskaram to Yamunacharyar and groom him to become the torch-bearer of the Sri Vaishnava Philosophy.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

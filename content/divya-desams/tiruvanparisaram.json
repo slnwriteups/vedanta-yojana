@@ -1,0 +1,61 @@
+{
+  "slug": "tiruvanparisaram",
+  "displayName": "Tiruvanparisaram",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page80",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Tiruvazhmarban",
+    "thayaar": "Kamalavalli Nachiyar",
+    "vimanam": "Indrakalyana Vimanam",
+    "theertham": "Lakshmi Theertham",
+    "travelNote": "This kshethram is located 4 km from Nagercoil."
+  },
+  "sthalaPuranam": "Legend tells the story of the Saptarishis wanting to see the Lord. It is said that they performed tapas at a place called Shuceendram, not too far from this kshethram. When their tapas was completed, Lord Shiva appeared. When the Saptarishis said they wanted to see Lord Vishnu, Lord Shiva directed them to this kshethram. Here again, the Saptarishis performed tapas, and the Lord appeared as Tiruvazhmarban with thayaar in His heart, granting darshanam for the Saptarishis.\n\n*** There is a shrine for Sri Rama, Lakshmana, Sita, Bharatha, and Shatrugna here at this temple. This kshethram is also the avatara-sthalam of Vodaya Nangayar, the mother of Nam Azhwar.",
+  "azhwarPasuram": "Nam Azhwar: 1 pasuram",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/yQSzMZSvD3jAGT2d9"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruvanparisaram-1",
+      "sourceAssetUuid": "5bcb4b91-3a2d-4e6f-84ca-bba08a088325",
+      "sourceOriginalName": "108-77.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvanparisaarampaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvanparisaarampaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvanparisaarampaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvanparisaarampaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

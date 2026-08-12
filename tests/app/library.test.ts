@@ -1,0 +1,173 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { loadBooks, loadBook, loadChapters, loadChapter } from "../../content-lib/loader/index.ts";
+
+/**
+ * Phase 5L -- tests for the Library/Book/Chapter presentation layer.
+ *
+ * Same approach as tests/app/divya-desams.test.ts: direct calls into the
+ * real loader against the real migrated baseline (proving the data the
+ * pages would render is correct), plus static source checks (proving the
+ * pages actually consume that loader and never hard-code a record). Live
+ * HTTP verification is done separately against a running dev server (see
+ * the Phase 5L report).
+ */
+
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+const BOOK_SLUG = "untitled-recovered-book-pending-editorial-title";
+const BOOK_JSON_PATH = path.join(
+  REPO_ROOT,
+  "content/library",
+  BOOK_SLUG,
+  "book.json"
+);
+const CHAPTER_JSON_PATH = path.join(
+  REPO_ROOT,
+  "content/library",
+  BOOK_SLUG,
+  "chapters/rama-charama-shlokam.json"
+);
+
+function read(relPath: string): string {
+  return fs.readFileSync(path.join(REPO_ROOT, relPath), "utf8");
+}
+
+function readJson(absPath: string): any {
+  return JSON.parse(fs.readFileSync(absPath, "utf8"));
+}
+
+// ---------------------------------------------------------------------------
+// 1-5. LIBRARY index.
+// ---------------------------------------------------------------------------
+
+test("1: the Library index page imports and calls loadBooks()", () => {
+  const source = read("app/library/page.tsx");
+  assert.ok(source.includes("loadBooks"));
+  assert.ok(source.includes("@/content-lib/loader"));
+});
+
+test("2: the current recovered book's title appears exactly, verbatim, in the real migrated data loadBooks() returns", () => {
+  const books = loadBooks();
+  assert.equal(books.length, 1);
+  assert.equal(books[0].title, "Untitled Recovered Book (pending editorial title)");
+});
+
+test("3: no application file hard-codes the book's title or slug", () => {
+  const indexSource = read("app/library/page.tsx");
+  const cardSource = read("components/library/BookCard.tsx");
+  const bookPageSource = read("app/library/[book]/page.tsx");
+  for (const source of [indexSource, cardSource, bookPageSource]) {
+    assert.ok(!source.includes("Untitled Recovered Book"), "found the book title hard-coded in application source");
+    assert.ok(!source.includes(BOOK_SLUG), "found the book slug hard-coded in application source");
+  }
+});
+
+test("4: the real book's status is draft (what DraftBadge, already reused from components/shared, will display)", () => {
+  const book = loadBook(BOOK_SLUG);
+  assert.ok(book);
+  assert.equal(book?.status, "draft");
+  const cardSource = read("components/library/BookCard.tsx");
+  assert.ok(cardSource.includes("DraftBadge"));
+});
+
+test("5: the Library index page has a graceful empty-state branch (source-level -- no rendering library is installed)", () => {
+  const source = read("app/library/page.tsx");
+  assert.ok(source.includes("No books are available yet"));
+});
+
+// ---------------------------------------------------------------------------
+// 6-11. BOOK detail.
+// ---------------------------------------------------------------------------
+
+test("6: the Book detail page resolves through loadBook()", () => {
+  const source = read("app/library/[book]/page.tsx");
+  assert.ok(source.includes("loadBook"));
+  const book = loadBook(BOOK_SLUG);
+  assert.ok(book);
+  assert.equal(book?.slug, BOOK_SLUG);
+});
+
+test("7: the Book detail page calls notFound() when loadBook() returns null", () => {
+  const source = read("app/library/[book]/page.tsx");
+  assert.ok(source.includes("notFound()"));
+  assert.equal(loadBook("does-not-exist"), null);
+});
+
+test("8: all 55 real chapters are returned by loadChapters() for the real book", () => {
+  assert.equal(loadChapters(BOOK_SLUG).length, 55);
+});
+
+test("9: chapter ordering from loadChapters() is strictly ascending by `order` (source/provenance ordering, not alphabetical)", () => {
+  const chapters = loadChapters(BOOK_SLUG);
+  for (let i = 1; i < chapters.length; i++) {
+    assert.ok(chapters[i].order > chapters[i - 1].order, `chapters[${i}].order (${chapters[i].order}) is not greater than chapters[${i - 1}].order (${chapters[i - 1].order})`);
+  }
+});
+
+test("10: chapter titles returned by the loader are byte-identical to the stored JSON -- never modified", () => {
+  const stored = readJson(CHAPTER_JSON_PATH);
+  const loaded = loadChapter(BOOK_SLUG, "rama-charama-shlokam");
+  assert.ok(loaded);
+  assert.equal(loaded?.title, stored.title);
+  assert.equal(loaded?.body, stored.body);
+});
+
+test("11: sourcePageId/extractionConfidence never appear in Library/Book/Chapter application source (only status/needsReview reach DraftBadge)", () => {
+  const files = [
+    "app/library/page.tsx",
+    "app/library/[book]/page.tsx",
+    "app/library/[book]/[chapter]/page.tsx",
+    "components/library/BookCard.tsx",
+    "components/library/ChapterListItem.tsx",
+  ];
+  for (const relPath of files) {
+    const source = read(relPath);
+    assert.ok(!source.includes("sourcePageId"), `${relPath} references sourcePageId`);
+    assert.ok(!source.includes("extractionConfidence"), `${relPath} references extractionConfidence`);
+  }
+});
+
+// ---------------------------------------------------------------------------
+// 12-18. CHAPTER detail.
+// ---------------------------------------------------------------------------
+
+test("12: the Chapter detail page resolves through loadChapter()", () => {
+  const source = read("app/library/[book]/[chapter]/page.tsx");
+  assert.ok(source.includes("loadChapter"));
+});
+
+test("13: the Chapter detail page calls notFound() for a missing book or missing chapter", () => {
+  const source = read("app/library/[book]/[chapter]/page.tsx");
+  const notFoundCalls = source.match(/notFound\(\)/g) ?? [];
+  assert.ok(notFoundCalls.length >= 2, "expected at least 2 notFound() calls (missing book, missing chapter)");
+  assert.equal(loadChapter(BOOK_SLUG, "does-not-exist"), null);
+  assert.equal(loadChapter("does-not-exist", "rama-charama-shlokam"), null);
+});
+
+test("14: chapter title is exact (re-confirms test 10 from the detail-page's own resolution path)", () => {
+  const stored = readJson(CHAPTER_JSON_PATH);
+  const loaded = loadChapter(BOOK_SLUG, stored.slug);
+  assert.equal(loaded?.title, stored.title);
+});
+
+test("15/16: chapter body and its paragraph structure are preserved -- the page passes chapter.body straight through, unmodified", () => {
+  const source = read("app/library/[book]/[chapter]/page.tsx");
+  assert.ok(source.includes("text={chapter.body}"), "expected the raw chapter.body to be passed through verbatim");
+  assert.ok(!/chapter\.body\.replace|chapter\.body\.trim|chapter\.body\.toLowerCase|chapter\.body\.toUpperCase/.test(source), "found a transformation applied to chapter.body");
+});
+
+test("17: chapter draft status reaches the page (DraftBadge reused)", () => {
+  const source = read("app/library/[book]/[chapter]/page.tsx");
+  assert.ok(source.includes("DraftBadge"));
+  const chapter = loadChapter(BOOK_SLUG, "rama-charama-shlokam");
+  assert.equal(chapter?.status, "draft");
+});
+
+test("18: no migration metadata appears in the Chapter detail page source", () => {
+  const source = read("app/library/[book]/[chapter]/page.tsx");
+  assert.ok(!source.includes("sourcePageId"));
+  assert.ok(!source.includes("extractionConfidence"));
+});

@@ -1,0 +1,52 @@
+{
+  "pageId": "page.Page132",
+  "title": "Birth of Swami Ramanujar",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page132",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "7f639891-560b-4c6e-b95f-fb24c20bf5a0"
+  ],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Birth of Swami Ramanujar",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://7f639891-560b-4c6e-b95f-fb24c20bf5a0"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Ramanujar is regarded as the greatest theologian of the Srivaishnava Lineage Sampradayam, which is one of the two theistic Schools of Vedanta following the philosophy of Visishtaadvaita — the other being the Dvaita system. The Srivaishnava Sampradayam arose in the Tamizh region of South India, and as a tradition, had its origin with twelve mystics known as the Azhwars. These Azhwars composed hymns in Tamizh expressing their love and devotion to God, particularly in the form of Sri Krishna. According to modern scholarship, they lived from about the 2nd to the 8th century CE, but ancient tradition ascribes to them a period from 430 BCE downwards. Their lives and compositions encompassed all forms of intense love for the Lord. This devotional approach has been categorized in later times by Chaitanya Mahaprabhu with attitudes known as Dasya, Apatya, Sakhya, Vatsalya, and Madhurya.\nSwami Ramanujar was the only child of a learned Yajur Vedi Brahmana named Asuri Kesava Dikshitar and his wife, Kantimati. Kesava Dikshitar was known by the title of Sarvakratu, meaning the performer of all Vedic sacrifices, by way of recognition of his expertise in Vedic rituals. He lived in the village of Sriperumbudur, which is situated about 30 miles to the southwest of the modern city of Chennai. This village is famous for its magnificent temple of Sri Adikeshava Perumal. Keshava Dikshitar had no children even after several years of marriage. Finally, he decided to seek the grace of Lord Parthasarathy, residing at Tiruvallikeni. Lord Sri Krishna appeared to him in a dream and said he was impressed with the devotion and steadfast observance of dharma that Keshava Dikshitar followed. He then told Keshava Dikshitar that He would reincarnate as his son to establish order in the times of Kali Yugam, which was dominated by adharma. He said that the son who would be born would become a great Acharya whom all would revere for time immemorial.\n\nAccordingly, a year later, in 1017, in the Chaitra month under the Tiruaadra nakshatram. \nKantimati gave birth to a son with the auspicious marks of Vishnu on his body; he was named Ramanuja, which was the name of Lakshmana, the younger brother of Sri Rama. Lakshmana was considered to be the incarnation of a part of Vishnu called Adisesha, who is the foremost servant of the Lord in Sri Vaikuntham.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

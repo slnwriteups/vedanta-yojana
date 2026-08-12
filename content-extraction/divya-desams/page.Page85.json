@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page85",
+  "title": "Tiruppulingudi",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page85",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "ef68270a-90e6-461a-a8df-3c7df8fb8722"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppulingudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruppulingudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/Jb2w5P4ZXoufwJxZ8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruppulingudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruppulingudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruppulingudi",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://ef68270a-90e6-461a-a8df-3c7df8fb8722"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram: \nMoolavar: Kaaisinavendan\nThayaar: Malarmagal Nachiyar\nVimanam: Vedasara Vimanam\nPushkarani: Varuna Theertham\n\nTravel: This kshethram is part of Nava Tirupati and is located approximately 4 km from Srivaikuntam.\n\nAzhwar Pasuram:\nNam Azhwar: 12 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe legend tells the story of a brahmin named Yagna Sarma. It is said that one evening, when Yagna Sarma and his wife were in a jovial state, Shakthi Maharishi(son of Vasishta Maharishi) is said to have visited their hermitage. Yagna Sarma and his wife failed to recognize that the sage had come to their doorstep and did not perform any kind of athithi-sathkaaram(service to the guest). Shakthi Maharishi, in a fit of rage, cursed Yagna Sarma that he would become a demon. Yagna Sarma begged for the sage’s forgiveness and asked him if there was any way out of this curse. The sage then tells Yagna Sarma that Indra would perform a yagnam at Tiruppulingudi, and he is to go and try to disrupt this yagnam. When this would happen, Indra would hurl his vajra-aayudam, releasing him from the effects of the curse. As the sage predicted, Yagna Sarma went in his demonic form to disrupt the yagnam, and Indra hurled his vajra-aayudam at the demon, killing Yagna Sarma. Indra was performing a prayashchita-yagnam as he had unknowingly killed a sage who was performing tapas in the form of a deer. When the yagnam reached its completion, the Lord is said to have appeared, granting atonement to Indra and moksham to Yagna Sarma.\nAnother story tells that there was a feud between Bhudevi and Sridevi. Bhudevi claimed that the Lord spends too much time with Sridevi and does not spend enough time with Her. The Lord is said to have solved the problem by placing Bhudevi on one side of His tiruvadigal(His lotus feet) and Sridevi on the other, and constantly looking at both of them, showing that in His eyes, both of them are equal. Thus, when one stands outside the garbha-griha, they cannot see the Lord’s tiruvadigal. To see the Lord’s tiruvadigal, there is a small window on the outside of the garbha-griha through which we can see His tiruvadigal while performing pradakshinam.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

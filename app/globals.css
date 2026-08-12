@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/*
+ * Restrained, scholarly/reference visual language for Phase 5J's core
+ * shell. Centralized here rather than scattered inline so the palette and
+ * type scale stay a single, intentional decision (per the Phase 5J brief,
+ * section 7). Nothing here is content-specific -- no Sanskrit/Tamil/
+ * Kannada/Pasuram-specific rules, which belong to a later presentation
+ * phase.
+ */
+:root {
+  --background: #fbfaf7;
+  --surface: #ffffff;
+  --foreground: #211c16;
+  --muted: #6b6259;
+  --border: #e3dcd0;
+  --accent: #7a3b2e;
+  --focus-ring: #7a3b2e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #17130f;
+    --surface: #1e1912;
+    --foreground: #ece5d8;
+    --muted: #a89c8c;
+    --border: #332c22;
+    --accent: #dd9a80;
+    --focus-ring: #dd9a80;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Visible focus indicator for every interactive element, everywhere --
+   never relying on a browser default that some UAs suppress. */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@layer components {
+  .site-container {
+    @apply mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .page-title {
+    @apply text-3xl font-semibold tracking-tight sm:text-4xl;
+  }
+
+  .section-heading {
+    @apply text-xl font-semibold tracking-tight sm:text-2xl;
+  }
+
+  .prose-body {
+    @apply text-base leading-relaxed;
+  }
+
+  .eyebrow {
+    @apply text-xs font-medium tracking-wide text-[var(--muted)] uppercase;
+  }
+
+  /* Hidden until keyboard-focused -- the "skip to content" link. */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-[var(--surface)] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:shadow-md;
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page65",
+  "title": "Tiruvidandai",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page65",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "39904cc2-6f82-428c-8a4c-8cf160d38911"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvidavendaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/gFscDfpnYGZwANEQA",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvidavendaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvidavendaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvidavendaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruvidandai",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://39904cc2-6f82-428c-8a4c-8cf160d38911"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Lakshmi Varaha Perumal / Nitya Kalyana Perumal\nThayaar: Komalavalli / Akilandakodi Brahmanda Nayagi Thayaar\nVimanam: Kalyana Vimanam\nPushkarani: Kalyana Theertham\n\nTravel: This kshethram is located 40 km from Chennai on the road to Mahabalipuram.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 13 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam: \nThe legend tells the tale of Gavala Maharishi, who had 360 daughters. When he was faced with the trouble of getting each of them married, he was directed to perform tapas to the Lord here at Tiruvidandai. Upon completion of his tapas, the Lord came to the Maharishi daily and personally married each of his 360 daughters. On the 360th day, a question arose whether there had to be 360 different households for each daughter. Thus, the Lord took each of the 360 daughters and consolidated them into a single person. This is how Akilavalli Nachiyar came to be. Here, the Lord can be seen with his right tiruvadi placed on the earth (Bhoomi Devi), and his left tiruvadi can be seen resting on the head of Adiseshan, with his spouse blessing them eternally.\n*** It is said that those who have been unable to get married can visit this kshethram and pray to the Lord and Thayaar here to find a suitable partner for marriage. The couple will be given two garlands and will be advised to revisit the temple after a while for the marriage to take fruit. The philosophy that can be seen at this kshethram is the relationship between the jeevaathma and Paramaathama. The 360 daughters here represent the various jeevaathmas, and the Lord is the Paramaathama. Each of the individual jeevaathmas longs to reach the Paramaathma, who will grant us moksham (Varaha Perumal, who lifted Bhoomi Devi from the waters of the deluge during pralayam, is the One who will liberate us from the ocean known as Samsara or life).",
+      "textFontSizeHint": 16
+    }
+  ]
+}

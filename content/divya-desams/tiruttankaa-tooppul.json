@@ -1,0 +1,67 @@
+{
+  "slug": "tiruttankaa-tooppul",
+  "displayName": "Tiruttankaa(Tooppul)",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page48",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Deepaprakasar",
+    "thayaar": "Margatavalli Thayaar",
+    "vimanam": "Sreekara Vimanam",
+    "theertham": "Saraswati Theertham"
+  },
+  "sthalaPuranam": "It is said that Devi Saraswati, in one of her attempts to stop the yagnam from reaching completion, took away all the light from the areas in and around Kanchipuram, resulting in pitch-black darkness. Thus, the Lord is said to have first appeared as a small kindling light, after which He grew and eliminated the darkness, once again assisting Lord Brahma in completing the yagnam.\n\n\n***\nSwami Vedanta Desikan:\nSwami Desikan is considered to be an incarnation of the divine bell of Sri Venkateshwara Swami of Tirumalai. Swami Desikan was born here in Tooppul to Sri Anantha Suri and Devi Totaramba. By birth, Swami Desikan was named Venkatanatha. When Swami Desikan was just five years of age, he was taken by his maternal uncle, Kidambi Appular, to attend a discourse by Nadadhoor Ammal, a revered Sri Vaishnava Scholar at the time. As soon as Nadadhoor Ammal saw Venkatanatha, he saw a divine radiance in the child and stopped his lecture to hug the child affectionately. After this, when Nadadhoor Ammal said that he had forgotten where he had stopped his lecture, Venkatanatha reminded him of where he had stopped. This act astonished the crowd, as they had never seen a five-year-old boy comprehend the deep intricacies of philosophical knowledge being discussed. It was then that Nadadhoor Ammal predicted and blessed Venkatanatha, stating that he would become the torch-bearer to spread Sri Vaishnavism everywhere in the future.\nAt each place, he composed numerous works in languages such as Tamil, Sanskrit, Prakrit, and Manipravalam (a blend of Sanskrit and Tamil), which revealed his ingenuity, creativity, logic, linguistic expertise, devotional fervor, and erudite scholarship.\nSome of his greatest works include:\n1) Hayagreeva Stotram\n2) Sudarshana Ashtakam\n3) Paduka Sahasram\n4) Abheetistavam\n5) Achyuta Shatakam\n6) Daya Shatakam\n7) Hamsa Sandesham\n8) Sri Stuti\n9) Yadavabyudayam\n10) Kamasikashatakam",
+  "azhwarPasuram": "Tirumangai Azhwar: 2 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/3LzEWyQp4FP3RmUJ7"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruttankaa-tooppul-1",
+      "sourceAssetUuid": "8addfcfc-51b2-4054-b6de-e75777b6e048",
+      "sourceOriginalName": "108-45.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruttankaa-tooppul-2",
+      "sourceAssetUuid": "573d5ea0-69a2-40bb-b2d1-da6c83762939",
+      "sourceOriginalName": "Vedanta Desikan.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruttankaapaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruttankaapaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruttankaapaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruttankaapaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

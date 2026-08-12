@@ -1,0 +1,51 @@
+{
+  "pageId": "page.Page167",
+  "title": "Conclusion",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page167",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Conclusion",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "The object and goal of life is that every human being should internally realize the divinity within himself and realize the unity with the Lord. The devotee who understands that he lacks the qualifications or the ability to follow Karma, Jnana, and Bhakti yogas as stipulated, but possesses a longing desire to be united with the Lord, has a sure and easy path laid out. All one has to do is seek out an Acharya and surrender to him with complete confidence, absolute faith, and devotion. The disciple must learn to appreciate the teachings of the Acharya and see the Acharya as an equivalent or a representative of the Lord Himself. Through being initiated by the Acharya and following his instructions, the disciple gains the fruits of dharma, artha, kama, and moksha. Ultimately, the Lord will shower his grace on such a person, granting moksham or eternal bliss.\nI would like to end this journey by paying obeisance to my Acharyas and the Lord.\n\n\" Acharyan Tiruvadigale Sharanam \"",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "pallāṇḍu pallāṇḍu pallāyirattāṇḍu pala kōṭi nūṟāyiram  \nmallāṇḍa tiṇtōḷ maṇivaṇṇā! uṉsēvaḍi sevvi tirukkāppu  \n\naṭiyōmōdum niṉṉōḍum pirivinṟi āyiram pallāṇḍu  \nvaṭivāy ninvala mārbinil\n vāzgiṉṟa maṅgaiyum pallāṇḍu  \nvaṭivār cōdi valatturaiyum śudaṟāziyum pallāṇḍu  \npaṭaipōr pukku muzaṅgum appāṉjaṉniyamum pallāṇḍē\n\nकायेन वाचा मनसेन्द्रियैर्वा\nबुद्ध्यात्मना वा प्रकृतेः स्वभावात् ।\nकरोमि यद्यत्सकलं परस्मै\nश्रीममन नरायणायेतिसमर्पयामि ॥\n\nसर्वं श्रीकृष्णार्पणम् अस्तु।।",
+      "textFontSizeHint": 16
+    }
+  ]
+}

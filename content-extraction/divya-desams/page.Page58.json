@@ -1,0 +1,139 @@
+{
+  "pageId": "page.Page58",
+  "title": "Tiruppavalvannam",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page58",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "5a5b5c44-0285-450b-bd67-8eda5e3add78",
+    "52e3cc07-674a-40c5-b1f8-77fe20e5b1fe"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://maps.app.goo.gl/e7hhjc97fWrEWJXS6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppavalavannampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruppavalavannampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruppavalavannampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruppavalavannampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/DpKZVWae6LtvbCma9",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruppavalvannam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://5a5b5c44-0285-450b-bd67-8eda5e3add78"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://52e3cc07-674a-40c5-b1f8-77fe20e5b1fe"
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Pavala Vanna Perumal, Pachai Vanna Perumal\nThayaar: Pavalavalli Thayaar\nVimanam: Pravaala Vimanam\nPushkarani: Chakra Theertham\n\nAzhwar Pasuram: \nTirumangai Azhwar: 1 pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThis kshethram comprises two temples, namely Pachivannam and Pavalavannam. The presiding deity is said to be prathyaksham for Brighu Maharishi and Ashwini Devatas here.\n*** This kshethram is special for Lakshmi Devi, as she is seated atop the Sri Yantram.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

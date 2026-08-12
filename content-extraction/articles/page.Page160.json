@@ -1,0 +1,52 @@
+{
+  "pageId": "page.Page160",
+  "title": "Guru Parampara from Ramanujacharya to Manavala Mamunigal (Tenkalai Sampradayam)",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page160",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "5baa2dca-9027-43b3-98f6-c53f96071fc2"
+  ],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Guru Parampara from Ramanujacharya to Manavala Mamunigal (Tenkalai Sampradayam)",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "Swami Ramanujar-> Embaar-> Parasara Bhattar-> Nanjiyar-> Nampillai-> Vadakkutiruviti Pillai-> Sri Pillailokacharyar -> Tirovazhimozhi Pillai-> Manavala Manmunnigal.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://5baa2dca-9027-43b3-98f6-c53f96071fc2"
+    }
+  ]
+}

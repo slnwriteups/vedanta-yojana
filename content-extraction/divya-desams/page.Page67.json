@@ -1,0 +1,139 @@
+{
+  "pageId": "page.Page67",
+  "title": "Tirukkadigai (Sholingapuram / Gadikachalam)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page67",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "be6d7871-7244-4084-9c69-d3ea957888b1",
+    "69698150-c5d4-4ce5-a78e-b48e3a2b54f4"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkadigaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkadigaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/JqS8XSWWk8NmDSb88",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkadigaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/FbauNU7N2Tbc6NEK6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkadigaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirukkadigai \n(Sholingapuram / Gadikachalam)",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://be6d7871-7244-4084-9c69-d3ea957888b1"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Sri Yoga Nrisimha Perumal & Yoga Anjaneyar\nThayaar: Amritavalli Thayaar\nVimanam: Simhagoshtakriti Vimanam\nPushkarani: Amrita Theertham\n\nTravel: This kshethram is located on Chennai-Katpadi Road near Arkonam.\n\nAzhwar Pasuram:\nTirumangai Azhwar : 3 Pasurams\nPey Azhwar: 1 pasuram\nTotal: 4 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://69698150-c5d4-4ce5-a78e-b48e3a2b54f4"
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe legend recounts the story of how the Lord appeared at this kshetram as the Saptarishis performed tapas, with the intention of seeing the Lord in the form of Sri Nrisimha. The rishis requested a local ruler to protect them from the prevailing demons in the area while they performed the necessary yagnams to please the Lord. The king tried his best to keep the rishis safe, but was defeated after some time. At this point, Lord Rama had just defeated Ravana and was on his way back to rule Ayodhya. Thus, He instructed Hanuman to go and protect the rishis from all and any danger that was prevalent in the area. It is said that Hanuman held the Shankam and Chakram at this kshethram to protect the rishis from every possible risk. After successful completion of the tapas and yagnams, Lord Nrisimha emerged seated in padmasana as Yoga Nrisimha.\n*** Another name of this kshethram is Gadikachalam, as Gadika means 24 minutes. It is said that if one spends 24 minutes at the top of the hill, it absolves all sins that one has committed throughout one's life. There are two hills at this kshethram: one large hill with 1,300 steps, which houses Sri Yoga Nrisimha Perumal, and a smaller hill with 750 steps, which houses Sri Yoga Anjaneya Perumal. This is the only place where one can see Anjaneyar with Shanku and Chakram seated in padmasana. Sri Anjaneyar faces Lord Nrisimha. It is said that Lord Nrisimha constantly blesses Lord Anjaneyar. It is said that if one visits both of these temples, they will never be plagued by any kind of ghosts, spirits, or ghouls of any kind.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

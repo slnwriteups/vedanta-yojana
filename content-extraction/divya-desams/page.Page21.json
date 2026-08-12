@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page21",
+  "title": "Tirukannapuram",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page21",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "da45c201-30f5-44a0-9440-192d3c859b9a"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkannapurampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkannapurampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkannapurampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/aMjckucKH2eg57Uh9",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkannapurampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirukannapuram",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://da45c201-30f5-44a0-9440-192d3c859b9a"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Sowriraja Perumal / Neelamegha Perumal\nThayaar: Kannapura Nayaki Thayaar\nVimanam: Uthbalavadaka Vimanam\nPushkarani: Nityapushkarani\nTravel: 6 km from Nannilam, close to Tiruvarur.\n\nAzhwar Pasuram:  \nPeriya Azhwar – 1 pasuram\nAndal – 1 pasuram \nKulasekarAzhwar – 11 Pasurams\nNammazhwar – 11 Pasurams \nThirumangai Azhwar – 104 Pasurams.\nTotal – 128 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nLegend has it that Uparisravas, a Fisherman King, performed the Ashwamedha sacrifice and begot a daughter named Padmini, whom he offered in marriage to Lord Vishnu at this shrine. It is believed that Neelamegha Perumal vanquished a demon called Veekatakshan with His chakram, and hence the presiding deity is found with the prayoga chakram. It is also thought that the Lord in the sanctum miraculously showed the growth of hair to protect the words of a devout priest, Rangabhattar. It is said that the local king was visiting the temple on a given day, and Rangabhattar had already given the garland the Lord adorned to his lover. When the king arrived at the temple, there was no garland to perform the required honors. He requested the king to perform pradakshinam of the temple, by which time he would arrange for a garland. He sent a boy to fetch the garland from his lover. When the garland was presented to the king, he found a strand of hair in it. The king then questioned Rangabhattar as to where that hair had come from, to which Rangabhattar said the hair was that of the Lord’s. When the king came to examine the same in the morning, he found hair behind the crown that was placed atop the Lord’s head.  Hence, the Lord attained the name Sowrirajan.\n\n***Tirumangai Azhwar is believed to have been initiated with the ashtaakshara mantram at this temple.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

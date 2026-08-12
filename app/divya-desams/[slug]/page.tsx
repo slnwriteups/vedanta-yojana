@@ -1,0 +1,95 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { loadDivyaDesam } from "@/content-lib/loader";
+import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
+import { DraftBadge } from "@/components/shared/DraftBadge";
+import { TempleInformation } from "@/components/divya-desams/TempleInformation";
+import { RecordImages } from "@/components/shared/RecordImages";
+import { LongFormSection } from "@/components/shared/LongFormSection";
+import { ShrineLinks } from "@/components/divya-desams/ShrineLinks";
+import { ResourceLinks } from "@/components/divya-desams/ResourceLinks";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { truncateForDescription } from "@/lib/metadata";
+
+/**
+ * Phase 5K -- real, loader-driven Divya Desam detail page.
+ *
+ * Every section below is independently optional and renders nothing when
+ * its underlying field is absent (see each component's own doc comment).
+ * This is what makes the three known multi-shrine records (Page24/38/40,
+ * empty templeInformation) and Page93 (no shrines, no fabricated Maps
+ * link) render as intentional, complete-looking pages rather than
+ * visibly broken ones -- without inventing anything to fill the gaps.
+ */
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const record = loadDivyaDesam(slug);
+  if (!record) return { title: "Divya Desam" };
+
+  // Real stored prose, mechanically truncated -- never an invented
+  // description. Falls back to azhwarPasuram, then omits description
+  // entirely, if sthalaPuranam is absent (e.g. the multi-shrine records).
+  const source = record.sthalaPuranam ?? record.azhwarPasuram;
+
+  return {
+    title: record.displayName,
+    description: source ? truncateForDescription(source) : undefined,
+    alternates: { canonical: `/divya-desams/${record.slug}` },
+  };
+}
+
+export default async function DivyaDesamDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const record = loadDivyaDesam(slug);
+  if (!record) notFound();
+
+  // "Place" is justified: a Divya Desam genuinely is a physical temple
+  // location. Only `name` and (when a real shrine Maps link exists)
+  // `hasMap` are included -- no fabricated postal address, geo
+  // coordinates, or phone number, none of which exist in the migrated
+  // data. Page93 and the multi-shrine records (empty shrines[] or
+  // ambiguous shrine data) simply omit `hasMap`.
+  const firstMapsLink = record.shrines[0]?.mapsLink;
+
+  return (
+    <div className="space-y-10">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Place",
+          name: record.displayName,
+          ...(firstMapsLink ? { hasMap: firstMapsLink } : {}),
+        }}
+      />
+      <Breadcrumbs
+        trail={[{ href: "/divya-desams", label: "Divya Desams" }]}
+        current={record.displayName}
+      />
+
+      <div className="space-y-2">
+        <DraftBadge status={record.status} needsReview={record.migration.needsReview} />
+        <h1 className="page-title">{record.displayName}</h1>
+      </div>
+
+      <TempleInformation info={record.templeInformation} />
+      <RecordImages images={record.images} />
+      {record.sthalaPuranam ? (
+        <LongFormSection heading="Sthala Puranam" text={record.sthalaPuranam} />
+      ) : null}
+      {record.azhwarPasuram ? (
+        <LongFormSection heading="Azhwar Pasuram" text={record.azhwarPasuram} />
+      ) : null}
+      <ShrineLinks shrines={record.shrines} />
+      <ResourceLinks resources={record.resources} />
+    </div>
+  );
+}

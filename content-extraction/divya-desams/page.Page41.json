@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page41",
+  "title": "Tiruvellakkulam",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page41",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "e9bea576-f3bf-4fc2-a07d-8b8e1a5a8661"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirumanikkuudampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirumanikkuudampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvellakkulampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvellakkulampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/SypxMuoKqhV7gdin6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruvellakkulam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://e9bea576-f3bf-4fc2-a07d-8b8e1a5a8661"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Annan Perumal\nThayaar: Alarmelmangai Thayaar\nVimanam: Tatvatyodaka Vimanam\nPushkarani: Tiruvellakkulam/Shweta Pushkarani\n\nTravel: This kshethram is located 11 km from Sirkazhi\n\nAzhwar Pasuram:\nTirumangai Azhwar: 10 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe legend has it that Swetan, the son of King Dundumaaran of the Ikshwaku Vamsham, was saved by the presiding deity from the clutches of death while meditating on the Mruthyunjaya mantram under a vilvamaram on the banks of the Pushkarini. Dundumaaran is said to have performed tapas for one month when the Lord appeared in front of the king and saved his son from the clutches of death.\n\n***Kumuthavalli Nachiyar was found on the banks of the pond and brought up by a Vaishnavite who later married Tirumangai Azhwar. \n\n*** Annan Perumal is considered to be elder to Thiruvinnagar (Uppiliappan) and Tirumalai (Srinivasar). Any prayer to be performed to either of the two can be performed here.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

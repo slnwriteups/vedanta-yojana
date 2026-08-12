@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page26",
+  "title": "Tiruvelliyangudi",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page26",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "eda2ca7f-b283-4576-bb7a-7be6fdb0ecfd"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvelliyangudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvelliyangudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/a8W8XuRUe73QWCkK8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvelliyangudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvelliyangudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": " Tiruvelliyangudi",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://eda2ca7f-b283-4576-bb7a-7be6fdb0ecfd"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Kolavilli Ramar*\nThayaar: Margathavalli Thayaar\nVimanam: Varthaga Vimanam\nPushkarani: Sukra, Brahma, Parashurama, Indra Theertham\nTravel: 20 km from Kumbakonam en route to Aaduthurai.\n\nAzhwar Pasuram:\nTirumangai Azhwar – 10 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThis kshethram is associated with the story of Vamana Avataram. Let us now see the story. It is said that the Lord took this form to defeat the demon king Bali. Bali was a mighty demon king. He was the grandson of Prahalada. Bali was such a powerful demon that he was individually capable of keeping all the Devas at bay. The Devas then approached Lord Vishnu to aid in defeating Bali. Bali was a Chiranjeevi, hence he could not be killed. He could merely be pushed down to Patala-Lokam. The Lord assured the Devas that he would look into the situation. At the same time, Aditi, the mother of the Devas, wanted to make sure that the Lord would be born to her. To ensure this, Aditi used the means of payovratam (a complete milk-based diet over twelve days). The Lord was born in Aditi’s womb to Aditi and Sage Kashyapa. The Lord was born as a dwarf. As soon as he was born, the Lord revealed to Aditi the various stages of his life, and he grew into a young boy. The upanayanam ceremony was performed, and each of the gods presented Vamana with a gift. Brahma gave him a kamandalam, and Brihaspati gave him the umbrella. Thus, the Lord set out to fulfill the promise given to the Devas. He reached Bali’s palace, where he was giving alms to the brahmins assembled. As the Lord reached the assembly, Shukracharya warned Bali that the person responsible for killing his grandfather had come to defeat him. He advised Bali not to give alms to him. Bali was honored that the Lord had come to his assembly. He proceeded with the program and soon reached Vamana. Bali asked him what he desired as alms. The boy replies, saying all he desires is three paces of land. Bali granted the boy’s wish. To prevent Bali from giving alms, Shukracharya assumed a tiny form and sat at the mouth of Bali’s kamandalam. When water did not come out of the kamandalam, Lord Vamana took a dharba grass and poked the opening of the kamandalam. In the process of poking the opening, Lord Vamana poked one of Shukracharya’s eyes. In pain, Shukracharya left the opening of the kamandalam. The boy started to grow. With the first step, he measured the entire earth. With the second step, he took the heavens. By the time he had to take the third step, there was no space left. Bali got onto his knees and, with a posture of namaskaram, bent his head and asked the Lord to place the third step on his head and push him into Patala-Lokam. The Lord, now in his Trivikrama form, fulfills Bali’s wish and places the third step on his head, sending him to Patala-Lokam. \nIt is said that Shukracharya performed tapas here, and the Lord appeared as Kolavilli Ramar, reclined in the bhujanga shayanam, and granted Shukracharya his eye once again.  \n\n***This is one of the special kshethrams in which one can find Lord Rama in a reclining posture.      ",
+      "textFontSizeHint": 16
+    }
+  ]
+}

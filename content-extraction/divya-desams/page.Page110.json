@@ -1,0 +1,108 @@
+{
+  "pageId": "page.Page110",
+  "title": "107) Tiruparkadal (Ksheerabdi)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": false,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page110",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "ff8332c3-ec8a-4f3e-9369-edf3ea11971e"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruppaarkadalpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppaarkadalpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruppaarkadalpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruppaarkadalpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruparkadal (Ksheerabdi)",
+      "textFontSizeHint": 18
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://ff8332c3-ec8a-4f3e-9369-edf3ea11971e"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "\n\nDetails of Kshethram:\nMoolavar: Ksheerabdi Nathan\nThayaar: Kadalmagal Nachiyar\nVimanam: Ashtanga Vimanam\nPushkarani: Paarkadal Theertham\n\nThis kshethram cannot be attained with the physical body. Only the jeevaathma can make the journey to this kshethram as well as Sri Vaikuntham. Thus, these two kshethrams are referred to as Vinnulaga Tirupatigal.\n\n\nAzhwar Pasuram:\nPeriya Azhwar: 5 Pasurams\nSri Andal: 3 Pasurams\nTirumangai Azhwar: 10 Pasurams\nNam Azhwar: 9 Pasurams\nTirumazhisai Azhwar: 13 Pasurams\nKulasekara Azhwar: 2 Pasurams\nThondaradipodi Azhwar: 1 pasuram\nPoigai Azhwar: 1 pasuram\nBhoodath Azhwar: 2 Pasurams\nPey Azhwar: 4 Pasurams\nTotal: 50 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam: \nThe Lord present here is said to be a vyuha-roopam of Paravasudevan who resides in Sri Vaikuntham. Empurumaan presents Himself as Vasudevan, Sankarshanan, Pradyumnan, and Anirudhan, who are said to be vyuha-roopam of the Lord. Vasudevan is the creator, Sankarshanan is the sustainer, Pradyumnan is the destroyer, and Anirudhan represents divine knowledge. These vyuha-roopam are further said to divide into three forms each. Vasudevan is said to represent equivalence to Keshava, Madhava, and Narayana. Sankarshanan is said to represent equivalence to Govinda, Vishnu, and Madhusoodhan. Pradyumana is said to represent equivalence to Trivikrama, Vamana, and Sridhara. Anirudhan is said to represent the equivalence to Rishikesha, Padmanabhan, and Damodara.\nThe twelve of these forms are referred to as the 12 Sooriyars and Chandirans, who are found in all 12 directions. They are responsible for bringing all Jeevaathmas into existence, guiding their lives, and calculating their Paavam and Punyam.\nThe Ashtaakshara mantram is said to always resonate in this kshethram. To reach this kshethram, one must learn the ashtaakshara mantram from a guru and meditate upon Sri Ksheerabdi Nathan.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

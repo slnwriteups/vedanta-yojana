@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page23",
+  "title": "Tirunaagai",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page23",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "9cd85747-ee57-4dcc-bad7-5d639d32927f"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirunaagaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirunaagaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirunaagaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirunaagaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/HvRvkdyauMT5UXgf6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirunaagai",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://9cd85747-ee57-4dcc-bad7-5d639d32927f"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Soundaraja Perumal / Neelamegha Perumal\nThayaar: Soundaryavalli Thayaar\nVimanam: Soundarya Vimanam\nPushkarani: Sarapushkarani\nTravel: This temple is located in the town of Nagapattinam\n\nAzhwar Pasuram:\nThirumangaialwar – 10 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nModern-day Nagapattinam was believed to be a dense forest back in the Krita Yugam known as Sundara-Aranyam. The town is said to have derived its name from Nagapattinam, as Nagaraja Adiseshan had performed tapas here in the Lord's honor.\n The Lord here is said to have shown Himself to Dhruva. The story is as follows.\nDhruva was the son of King Uttanapada. Uttanapada had two wives, named Suruchi and Suneethi. Suruchi was a very pompous and cruel person. She had a son named Uttama. Suruchi was hell-bent on outshining Suneethi in anything she did. On one occasion, when Uttanapada was sitting on the throne in the throne room, Dhruva approached Uttanapada and asked him if he could sit on his lap. No sooner had Dhruva asked than Suruchi dragged him away from his father and put Uttama on his father’s lap. She told Dhruva that he was in no way blessed to sit on his father’s lap and further went on to insult Suneethi by telling Dhruva that he wasn’t destined for greatness as he was born in Suneethi’s womb. She told him never to try approaching his father ever again. Dhruva innocently went to his mother and told her what had happened. She told Dhruva that if he couldn’t sit on his father’s lap, it was no big deal, as another father would accept anyone. She told Dhruva that Lord Sriman Narayana would never reject his requests. Hearing his mother’s words, Dhruva went into the forests, committed to performing penance to see the Lord. When Dhruva went into the forest, he was greeted by Narada, who described the Lord’s appearance to Dhruva. Sage Narada instructed Dhruva to visualize a dark-complexioned person with a conch-like neck, broad shoulders, slender hips, coral-like lips, lotus-like feet, and four hands holding the Shanka, Chakra, Gadha, and Padma in each hand.\nGiven the Lord’s appearance, Dhruva, without any second thought in his head, started his penance to see the Lord. The Lord was soon impressed by seeing a five-year-old boy and appeared before Dhruva. The boy, upon seeing the Lord, was dumbstruck and didn’t know what to say. The Lord then touched the boy’s cheek with the Panchajanyam and brought out the boy’s voice. The innocence and devotion shown by the boy touched the Lord, who granted him and his mother a special position beyond the Brahmandam and told him that it would become known as the Dhruva Mandalam. When the boy could not get any attention from his father, he turned to see the Lord, who granted him far more than he ever asked for.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

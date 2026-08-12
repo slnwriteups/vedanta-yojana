@@ -1,0 +1,60 @@
+{
+  "slug": "tirukaarvanam",
+  "displayName": "Tirukaarvanam",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page56",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Kalvar",
+    "thayaar": "Kamalavalli Thayaar",
+    "vimanam": "Pushkala Vimanam",
+    "theertham": "Gowrithadakam Theertham"
+  },
+  "sthalaPuranam": "This kshethram again does not have a particular sthala puranam of its own. This kshethram is closely related to Tiruneeragam and Tirukaaragam. Kaarvaanam means a sky filled with clouds. The world cannot survive without water, and clouds play a crucial role in bringing water to the world. Thus, the Lord standing here is an embodiment of rain clouds bringing rain to the world, helping it survive.",
+  "azhwarPasuram": "Tirumangai Azhwar: 1 pasuram",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/uMzyU3tGE9zx9wva9"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirukaarvanam-1",
+      "sourceAssetUuid": "769af03b-cb8b-4833-9b54-0ec053140c42",
+      "sourceOriginalName": "108-53.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkaarvaanampaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkaarvaanampaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirukkaarvaanampaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkaarvaanampaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

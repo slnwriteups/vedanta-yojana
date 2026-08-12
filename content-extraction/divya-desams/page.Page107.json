@@ -1,0 +1,231 @@
+{
+  "pageId": "page.Page107",
+  "title": "TiruDwarkai (Dwarka)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page107",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "09ccb601-6edb-4f27-82c5-70fea16440af",
+    "7d705247-8903-4277-8711-940c38cab01e",
+    "cdf1f59a-5d91-40ae-b496-941142fa9884",
+    "40eeb0a8-07fa-4f7b-8cde-8be24770b2be",
+    "af4ff1e1-5333-443f-81c1-35b47fa2c1b2",
+    "70fbc8af-ca51-4497-a88f-a4da9bf26618",
+    "72d34d82-e07f-40c2-92a3-89be428c9d94"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirudvaarakaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/eo26y6CsQXw2PN4o9",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirudvaarakaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/JuaUS7WBkewKKExr6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://maps.app.goo.gl/QD2GNWRh3tE8XttdA",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://maps.app.goo.gl/ADUR33CRCkgbnSa68",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirudvaarakaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirudvaarakaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/Qu23vvLsasBssKqW8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "TiruDwarkai (Dwarka)",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://09ccb601-6edb-4f27-82c5-70fea16440af"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://7d705247-8903-4277-8711-940c38cab01e"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://cdf1f59a-5d91-40ae-b496-941142fa9884"
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Dwarkadeesh / Kalyana Narayana Perumal\nThayaar: Rukmini Nachiyar\nVimanam: Hemakoota Vimanam\nPushkarani: Gomathi Theertham\n\nTravel: This kshethram is located in the Kathiawar Peninsula Region of Gujarat.\n \nAzhwar Pasuram:\nPeriya Azhwar: 5 Pasurams\nSri Andal: 4 Pasurams\nTirumangai Azhwar: 2 Pasurams\nNam Azhwar: 1 pasuram\nTirumazhisai Azhwar: 1 pasuram\nTotal: 13 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nLegend has it that Lord Krishna built the city of Dwarka with the assistance of Vishwakarma. After Lord Krishna had killed Kansa, his two wives became widows. Kansa’s wives were the daughters of Jarasandha. Jarasandha swore to exact revenge against Lord Krishna, who had caused his daughters to suffer a cruel fate. Jarasandha attacked Mathura seventeen times. Each of these seventeen times, Lord Krishna defended Mathura. After all these attacks, Lord Krishna deemed that Mathura was no longer fit for stay as Jarasandha would continue to attack the state. Lord Krishna orders Vishwakarma to claim land from Samudraraja and convert it into a grand city that would be safe from any form of invasion. Thus, Dwarka came into being. Dwarka is among the Mukthi Kshethrams along with Ayodhya, Mathura, Maya (Haridwar), Kashi, Kanchipuram, and Avantika (Ujjain).\nApart from this divyadesam, there are four other Dwarkas. Together, the five kshethrams are collectively known as PanchaDwarka.\nThe five Dwarkas include:\nDwarka\nRukmini Dwarka\nBeyt Dwarka\nDakor Dwarka\nShrinathji Dwarka\n\n\nRukmini Dwarka:\nThis kshethram is located 3.1 km from Dwarka. This Dwarka houses Rukmini Devi, whom Durvasa Maharishi cursed to stay away from Lord Krishna. Performing neer-daanam at this kshethram is of importance. Even the prasadam offered here is that of water",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 12,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://40eeb0a8-07fa-4f7b-8cde-8be24770b2be"
+    },
+    {
+      "order": 13,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 14,
+      "depth": 1,
+      "type": "text",
+      "content": "Beyt Dwarka:\nThis kshethram is located on an island off the coast of mainland India. To reach this kshetram, one must travel by boat from Okha Port or by road using the Sudarshana Setu. This kshethram was once connected to the mainland. It is said that after Lord Krishna left this world for Paramapadam, the land that connected the mainland to this kshethram was reclaimed by Samudraraja. This is the kshethram where Sudama visited the Lord to ask for alms. Sudama never asked for anything from the Lord, but he was presented with more than he could ever have asked for. It is said that Meerabai attained moksham here at this kshethram when she merged with the Lord.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 15,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://af4ff1e1-5333-443f-81c1-35b47fa2c1b2"
+    },
+    {
+      "order": 16,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 17,
+      "depth": 1,
+      "type": "text",
+      "content": "Dakor Dwarka:\nThis kshethram is located near Anand in Gujarat. The Lord is called Ranchodraiji. It is said that in the seventeenth encounter with Jarasandha, the Lord started to run from the battlefield when He was faced against an asuran called Kaalayavanan. It is said that the Lord left the battlefield near Mathura and ran till the Junagadh district in modern-day Gujarat. Here, there was an ancient sooryavanshi king named Muchukunda who lay asleep after gaining a boon from Indra. There was once a great battle between the devas and the asuras. To win the battle, Indra took the help of Lord Ram’s ancestor, King Muchukunda. After winning the battle for the devas, Indra gave Muchukunda the boon that he could sleep for a long time to take a rest after the long and drawn-out battle. When Muchukunda would awake from this sleep, the first thing he would lay his eyes would turn into ash. Lord Krishna ran into the cave and awoke Muchukunda from his sleep in such a way that the first person he would lay his eyes on would be Kaalayavanan. When Kaalayavanan came in Muchukunda’s line of sight, he turned to ash. The idol of the Lord present at Dakor Dwarka is said to have originally been in Dwarka. After the idol was brought to Dakor, another idol that Devi Rukmini was worshiping was installed in the temple at Dwarka.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 18,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://70fbc8af-ca51-4497-a88f-a4da9bf26618"
+    },
+    {
+      "order": 19,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 20,
+      "depth": 1,
+      "type": "text",
+      "content": "Shrinathji Dwarka:\nThis kshethram is located in Nathdwara, Rajasthan. This kshethram was established by Sri Vallabhacharya. The idol is said to have been installed in this temple by Meerabai. The idol is said to be a swayambhu moorthy, which is believed to have originated from the Govardhana Parvatham and became the object of worship in the Mevar Royal family, where Meerabai was born.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 21,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://72d34d82-e07f-40c2-92a3-89be428c9d94"
+    },
+    {
+      "order": 22,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    }
+  ]
+}

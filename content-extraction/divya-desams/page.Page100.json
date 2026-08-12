@@ -1,0 +1,141 @@
+{
+  "pageId": "page.Page100",
+  "title": "Tiru Naimisharanayam",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page100",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "32acffcc-6b53-4488-9e19-bc7b7076e50b",
+    "b2bf3025-0c13-4578-a8c2-73bc9554f9d1"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirunaimicaaranyampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirunaimicaaranyampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirunaimicaaranyampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/DhfQNXQXXfRJoag77",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirunaimicaaranyampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiru Naimisharanayam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://32acffcc-6b53-4488-9e19-bc7b7076e50b"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Sri Devaraja Perumal\nThayaar: Sri Hari Lakshmi\nVimanam: Sri Hari Vimanam\nPushkarani: Chakra Theertham, Gomathi River\n\nTravel: This kshethram is located 60 km from Lucknow between Sitapur and Khairatabad.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 10 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThis kshethram is said to be one of the eight Swayam Vyaktha kshetrams. The other swayam Vyaktha kshethram are Sri Rangam, Srimushnam, Salagramam, Thotadri (Vaanamamalai), Tirupati, Pushkaram, and Badri.\nThis Naimisharanya kshethram is said to be regarded as a Tapovanam. There are 9 tapovams. They are Dandakaranyam, Saindhavaranyam, Jambhukaranyam, Pushkararanyam, Utpalaranyam, Badrikaranyam, Gurujangalaranyam, Aruputharanyam and Naimisharanayam. It is believed that the perumal is found in the form of a forest. And this Naimisharanyam is viewed as a holy forest.This Naimisaranya kshethram is said to be regarded as Tapovanam. There are nine tapovams. They are Dandakaranyam, Saindhavaranyam, Jambhukaranyam, Pushkararanyam, Utpalaranyam, Badrikaranyam, Gurujangalaranyam, Aruputharanyam and Naimisaranayam. It is believed that the perumal is found in the form of a forest, and this Naimisharanyam is regarded as the holiest forest. The Emperumaan of this sthalam is giving his seva as the entire form of the Vanam (forest). In their old age, all the Maharishis, along with Sownakar, went towards Lord Brahma and asked him which is the best place suited for doing Yagam and tapas. As the answer, Lord Brahma took a dharbai grass and made it into a wheel shape, and rolled the dharbai grass. Lord Brahma said that after he rolls the grass, the place where it stops is considered the ideal location for performing tapas and yagam. He rolled the wheel, and it stopped at a particular place on Earth. That place is said to be Naimisharanyam. Nemi means a wheel, and Naimisham means the place where the wheel landed. Aaranyam means forest. Since Nemi, the Chakkaram that landed in Aaranya's forest, the sthalam is called Naimisharanyam. This Naimisaranyam is said to be the place where most of the rishis performed sacrifices, tapas, and meditation, and explained the meaning of the old Puranas and Vedas. The Lord gives his seva in the form of Nature. The Lord here gives his seva with the name as Sri Devaraja Perumal along with Sri Hari Lakshmi and gives his audience (prathyaksham) to Devendran, Sudharma, Devarishis, Soodhapuranika, and Vedavyasa.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://b2bf3025-0c13-4578-a8c2-73bc9554f9d1"
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "text",
+      "content": "Chakra Theertham",
+      "textFontSizeHint": 14
+    },
+    {
+      "order": 12,
+      "depth": 1,
+      "type": "text",
+      "content": "It is said that taking a bath in the Chakra Theertham absolves all sins.\nGayasuran did tapas in this sthalam. Sriman Narayanan gave His audience to him as his tapas fulfilled him. The Lord asked him what boon he wanted as a result of complete tapas. But Gayasooran answered the Almighty that he didn’t want any boon from him, as he was already so powerful. He asked that anyone who met him should be entitled to get moksham. The Lord did not want immoral souls to attain moksham just by meeting him. The Lord said that the boon that Gayasuran was asking for could not be fulfilled in the way he was asking. Gayasuran then asked the Lord to present the souls for whom shraadham is performed upon his body to be given moksham. The Lord then said that this would be possible. Thus, Gayasuran grew to an enormous size, and the Lord sent his chakram to kill the asura, and his body was cut into three parts. The three parts are Siro Gaya (the head part), Nabhi Gaya (the middle part), and Charana Gaya (the foot part). This sthalam, the Naimisaranyam, is said to be the Nabhi Gaya. The Gaya kshethram is said to be the Charana Gaya, and Badri is said to be Siro Gaya. Offering shraadham to departed souls in all these three sthalams is said to grant moksham to them.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

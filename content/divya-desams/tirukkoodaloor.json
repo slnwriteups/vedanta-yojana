@@ -1,0 +1,61 @@
+{
+  "slug": "tirukkoodaloor",
+  "displayName": "Tirukkoodaloor",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page12",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Sri Vayyum Katha Perumal / Sri Jagath Rakshaka Perumal",
+    "thayaar": "Pushpavalli Thayaar",
+    "vimanam": "Suttha Sathva Vimanam",
+    "theertham": "Chakra Theertham\nSpecialty: Prayoga Chakram",
+    "travelNote": "This kshethram is located 12 km from Tiruvaiyaru, en route to Kumbakonam, and accessible by road from Tanjavur."
+  },
+  "sthalaPuranam": "It is said that Ambareesha was such an ardent devotee that the Sudharshana Chakra had made himself self-obligated to rush for Ambareesha’s protection. One day, the great sage Durvasa decided to pay a visit to Ambareesha. Ambareesha had undertaken the Dwadashi-Vratam, in which one must break the fast after Ekadashi and feed their people at the start of Dwadashi. Durvasa Maharishi told Ambareesha that he would take a bath and then join him in the Dwadashi-Vratam. Ambareesha agreed to wait for Durvasa Maharishi. Hours went by, but Durvasa Maharishi was nowhere to be seen. On the advice of Sage Vasishta, Ambareesha broke his fast by taking holy water. At this moment, Durvasa Maharishi arrived and, in his temper, threw a lock of his hair to the ground. This hair grew into a monstrous demon that chased Ambareesha to devour him. At this moment, the Sudharshana Chakra of the Lord came to Ambareesha’s rescue and cut the demon into tiny pieces. Further, the Chakra started to chase after Durvasa Maharishi. Durvasa Maharishi began to run and sought refuge with Lord Brahma, Lord Shiva, and ultimately at the heavenly abode of Lord Vishnu himself. Still, the Chakra continued to pursue Durvasa Maharishi. Lord Vishnu instructed Durvasa Maharishi to go and fall at Ambareesha’s feet and ask for his forgiveness. Durvasa Maharishi then falls at Ambareesha’s feet for his forgiveness. Ambareesha forgives Durvasa Maharishi, and the Sudharshana Chakra stops going after Durvasa Maharishi. It is said that \nAmbareesha used to pray to this Lord, and with this Lord’s grace, he was protected.",
+  "azhwarPasuram": "Thirumangai Azhwar- 10 pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/DcArxMJajbzUeQs5A"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirukkoodaloor-1",
+      "sourceAssetUuid": "7ff08df4-86aa-44f3-9f79-0559a7aa9b76",
+      "sourceOriginalName": "108-8.jpeg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkavittalampaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirukkuudaluurpaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkuudaluurpaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkuudaluurpaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

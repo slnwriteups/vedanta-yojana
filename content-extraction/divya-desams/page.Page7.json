@@ -1,0 +1,127 @@
+{
+  "pageId": "page.Page7",
+  "title": "Tirukarambanur- Uttamarkovil",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page7",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "4ccfe4fe-e87f-49fc-880e-2b14e8226790",
+    "ca589d08-ea66-46e0-9551-c0bebf6f4ccd"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkarambanuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/JtR6GC14gzWTNByn8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkarambanuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkarambanuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkarambanuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirukarambanur- Uttamarkovil",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://4ccfe4fe-e87f-49fc-880e-2b14e8226790"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://ca589d08-ea66-46e0-9551-c0bebf6f4ccd"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "text",
+      "content": " Details of Kshethram:\nMoolavar: Purushottaman\nThayaar: Poornavalli Nachiyar\nVimanam: Uthiyoga Vimanam\nTravel: This kshethram is located 4 km from Sri Rangam. \n\nAzhwar Pasuram:\nTirumangai Azhwar: 1 pasuram\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe name of the kshethram is Tirukarambanur. This is because the Lord showed Himself to Maharishi Kadambha. Additionally, the Lord had taken the form of a Kadambha tree, to which Lord Brahma used to perform aaradhanam by pouring holy water from his kamandalam. Another story associated with this kshethram is similar to that of Tirukandiyoor. It is said that Lord Brahma once had five heads. In a rage, Lord Shiva once slapped Lord Brahma’s fifth head, as he also had five heads, and it stuck to his hand as a curse. The only way the Bramhakapalam falls from one’s hand is to beg for alms, and for that to fill up the kapalam. In his search for alms, Lord Shiva reached Karambanur. Here, when he begged Poornavalli thayaar for alms, the kapalam burst, and Lord Shiva was free of the curse. Thus, it is said that people without a means of obtaining food can come here to pray to Poornavalli Thayar to gain her blessings.\n* This is said to be the only temple where one can see the Trinity with their wives all under the same temple. There are temples where one can see Lord Vishnu, Lord Brahma, and Lord Shiva together. However, this is the only temple where you will see Lord Vishnu with Poornavalli Thayaar (Lakshmi), Lord Brahma with Saraswati, and Lord Shiva with Parvati.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

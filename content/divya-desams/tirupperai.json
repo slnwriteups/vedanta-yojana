@@ -1,0 +1,61 @@
+{
+  "slug": "tirupperai",
+  "displayName": "Tirupperai",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page89",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Makara Nedunkuzhaikkadan",
+    "thayaar": "Kuzhaikkaduvalli Nachiyar and Tirupperai Nachiyar",
+    "vimanam": "Bhadra Vimanam",
+    "theertham": "Sukra Pushkarini / Tamaraparani River",
+    "travelNote": "This kshethram is one of the Nava Tirupati temples and is located 5 km from Azhwar Tirunagari on the way to Tiruchendur from Tirunelveli."
+  },
+  "sthalaPuranam": "According to legend, Durvasa Maharishi is said to have once visited Karya-Vaikuntham, but Bhoodevi ignored his arrival and did not perform the required athithi-sathkaaram. Thus, Durvasa Maharishi is said to have cursed Bhoodevi, stating that she would become like Sridevi. When the Lord takes His avatars, He stands, sits, lies down, and performs all His activities on Bhoodevi, whereas He has allocated a small position in His heart for Sridevi. Upon hearing this curse, Bhoodevi pleads with the Maharishi to forgive her. Durvasa Maharishi tells Bhoodevi that once a curse is delivered, it cannot be taken back, but she could attain atonement if she performed tapas at Tirupperai. Thus, Bhoodevi is said to come to this kshethram and perform tapas by chanting the ashtakshara mantram. One day, when Bhoodevi went to bathe in the Tamaraparani River before offering her daily penance, She is said to have found a pair of kundalam (earrings) in the shape of makaram (a type of fish). She is said to have presented this makara-kundalam to the Lord, thus relieving Herself from the curse and giving Him the name Makara Nedunkuzhaikkadan.\n\n*** The importance of this kshethram lies in the practice of Varuna Japam. It is said that if one performs Varuna Japam at this kshethram, it will bring rain as desired. It is noted that Varuna sought the help of Makara Nedunkuzhaikkadan Perumal in his time of need.",
+  "azhwarPasuram": "Nam Azhwar: 11 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/KSQx9Gd93VYsSrM27"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirupperai-1",
+      "sourceAssetUuid": "ce331fd5-2421-4792-8ba4-213a242659a2",
+      "sourceOriginalName": "108-86.png",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirupperaipaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirupperaipaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirupperaipaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirupperaipaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

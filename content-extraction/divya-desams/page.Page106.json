@@ -1,0 +1,134 @@
+{
+  "pageId": "page.Page106",
+  "title": "Tiruvaipadi (Gokulam)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page106",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "6d8ba091-0ac6-40f0-9e28-682c87da15d6",
+    "4c75a216-695b-4fcd-b3c4-524c95567ea2"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvaayppaadipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/sWttX1xcKv4TTr2B9",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvaayppaadipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvaayppaadipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvaayppaadipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruvaipadi (Gokulam)",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://6d8ba091-0ac6-40f0-9e28-682c87da15d6"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\n*** The original temple, as described by the Azhwars, no longer stands today. However, the description remains, and the following can be found today, as mentioned in the Sthala Puranam.\n\nMoolavar: Nava Mohana Perumal with Balarama\nThayaar: Rukmini, Satyabhama, with Yashodha\nVimanam: Hemakooda Vimanam\nPushkarani: Yamuna Nadi\n\nTravel: This kshethram is located 12 km from Mathura.\n\nAzhwar Pasuram:\nPeriya Azhwar: 10 Pasurams\nSri Andal: 5 Pasurams\nTirumangai Azhwar – 7 Pasurams\nTotal: 22 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam: \nThis is the kshethram where Lord Sri Krishna grew up, slew demons, and performed his leelas. In the present day, we can see Shri Nand Yashodha Bhavan, the house where the Lord was brought and grew up. In the present-day scenario, this is the main temple. In the garbha gudi, we can see Lord Balarama alongside Yashodha and Nanda. Lord Krishna can be seen in a cradle with a rope, which is given to devotees to comfort the Lord. Another important place in this kshethram is the Raman Reti. This is the place where Lord Krishna played as a child. This is the place where Lord Krishna ate mud and showed Yashodha the entire creation by opening His mouth. It is customary to roll in the sand, as this is the place where the Lord stepped and played. People take the sand from this place asa form of  prasadam.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://4c75a216-695b-4fcd-b3c4-524c95567ea2"
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "text",
+      "content": "Raman Reti",
+      "textFontSizeHint": 14
+    }
+  ]
+}

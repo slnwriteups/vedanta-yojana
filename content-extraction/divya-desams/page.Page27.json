@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page27",
+  "title": "Tiruvazhundur(Therazhundur)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page27",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "4e73ddf8-6ad1-4a70-ab49-c8fc98c29a77"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvazunduurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvazunduurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvazunduurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvazunduurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/qKbinzJXyRsU5A7U8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruvazhundur\n(Therazhundur)",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://4e73ddf8-6ad1-4a70-ab49-c8fc98c29a77"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Aamaruviyappan\nThayaar: Senkamalavalli Thayaar\nVimanam: Garuda Vimanam\nPushkarani: Darshana Pushkarani\nTravel: This kshethram is located close to Mayiladuthurai, on the Kumbakonam road.\n\nAzhwar Pasuram:\nTirumangai Azhwar – 45 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nLegend has it that Lord Brahma caused the herds of cattle being grazed by Lord Krishna to disappear, upon which Lord Krishna created another herd. Finding this, Brahma apologized to Krishna and requested Him to take abode at Tiruvazhandur. In the sanctum, Prahlada is to the right of the moolavar and Garudan to His left. After witnessing Narasimha Avataram of the Lord, Prahlada asks to see the lord in a Shantha-Swaroopam (calm form), to which the Lord gave him darshanam at this kshethram. It is said that the vimanam of this kshethram was given by Garudan, hence the name Garuda Vimanam.\n\n*** This kshethram is also the birthplace of the great Tamizh poet Kambar, who has given us the magnum opus of Kamba Ramayanam, which rivals and trumps Valmiki Ramayanam in terms of poetic beauty. One can find a shrine dedicated to Kambar and his wife here at this kshethram.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

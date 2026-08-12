@@ -1,0 +1,61 @@
+{
+  "slug": "tirukkulandai",
+  "displayName": "Tirukkulandai",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page87",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Mayakoothan",
+    "thayaar": "Kulaindaivalli Nachiyar",
+    "vimanam": "Anandanilaya Vimanam",
+    "theertham": "Perungulam Theertham",
+    "travelNote": "This kshethram is one of the Nava Tirupati temples, located 11 km from Srivaikuntam."
+  },
+  "sthalaPuranam": "The legend has it that Kamalavathi, the daughter of a brahmin named Vedasaran, meditated on the Lord, intending to marry Him. Pleased with her prayers, the Lord embraced and married her. Hence, this place is called Balika Vanam. It is also said that the Lord slew a demon, Asmacharan, in a Mayayuddham and performed a dance similar to Rudra-tandavam after His victory. Hence, the deity is called Mayakoothan.",
+  "azhwarPasuram": "Nam Azhwar: 11 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/R7NqemQhwPkrV5Mt9"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirukkulandai-1",
+      "sourceAssetUuid": "0b23e413-f5b0-4cb2-a93f-2316567c5839",
+      "sourceOriginalName": "108-84.png",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkulandaipaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirukkulandaipaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkulandaipaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkulandaipaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

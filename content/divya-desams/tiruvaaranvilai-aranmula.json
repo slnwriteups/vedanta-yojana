@@ -1,0 +1,54 @@
+{
+  "slug": "tiruvaaranvilai-aranmula",
+  "displayName": "Tiruvaaranvilai (Aranmula)",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page76",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {},
+  "sthalaPuranam": "This kshethram is believed to have been built by Arjuna, one of the Pandavas. It is also believed that Lord Vishnu revealed Himself to Lord Brahma and Maharishi Vedavyasa at this kshethram.",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/sHvJryL8cR8seKUb8"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruvaaranvilai-aranmula-1",
+      "sourceAssetUuid": "12e0a499-2a9d-4f17-9238-64cb0f92abd9",
+      "sourceOriginalName": "108-73.png",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvaaranvilaipaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvaaranvilaipaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvaaranvilaipaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvaaranvilaipaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

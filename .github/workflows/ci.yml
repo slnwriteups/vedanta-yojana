@@ -1,0 +1,47 @@
+name: CI
+
+# Phase 5O -- minimum appropriate CI for this repository: checkout,
+# reproducible install, then the same four checks already established as
+# this project's authoritative validation commands (see package.json's
+# "ci" script, which reproduces this exact sequence locally). No
+# deployment step of any kind -- that is explicitly out of scope for this
+# phase (Phase 5P).
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: Test, typecheck, build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          # Matches .nvmrc / package.json's "engines" field -- this is
+          # the exact Node major version the application was built and
+          # tested against throughout this project. Node's zero-flag
+          # native TypeScript execution (used by every `node --test`
+          # script below) requires a sufficiently recent Node version;
+          # this pin is deliberately not an arbitrary/minimal lower
+          # bound guess.
+          node-version-file: ".nvmrc"
+          cache: "npm"
+
+      - name: Install dependencies (reproducible)
+        run: npm ci
+
+      - name: Content tests
+        run: npm run test:content
+
+      - name: Application tests
+        run: npm run test:app
+
+      - name: TypeScript
+        run: npm run typecheck
+
+      - name: Production build
+        run: npm run build

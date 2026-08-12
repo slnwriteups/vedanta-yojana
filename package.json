@@ -1,0 +1,33 @@
+{
+  "name": "vedanta-yojana",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Vedanta Yojana — application scaffold (Phase 5B-5E). Content migration has not yet occurred.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test:content": "node --test tests/content/*.test.ts tests/content/migration/*.test.ts",
+    "test:app": "node --test tests/app/*.test.ts",
+    "ci": "npm run test:content && npm run test:app && npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "next": "16.3.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "26.2.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2"
+  }
+}

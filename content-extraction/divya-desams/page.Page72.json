@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page72",
+  "title": "Tiruvallavazh",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page72",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "ddbe1f86-4a77-4dd7-ac3b-d3c9c1571e0c"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvallavaazpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvallavaazpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvallavaazpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/heWWxX6UJAuec6Zv5",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvallavaazpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruvallavazh",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://ddbe1f86-4a77-4dd7-ac3b-d3c9c1571e0c"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Sri Vallabhan\nThayaar: Selvathirukozhundu Nachiyar\nVimanam: Chathurangakola Vimanam\nPushkarani: Ghantakarna Theertham\n\nTravel: This kshethram is located in Tiruvalla town, near Kottayam, in Kerala.\n\nAzhwar Pasuram:\nNam Azhwar: 10 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nAccording to legend, Mangalathammai used to observe Ekadasi vratham and feed one Brahmachari on the Dwadasi day. Tolakarana, a demon, was creating hurdles to her vratham. Responding to her prayers, the Lord killed the demon and came for the feast in the form of a Brahmachari, and later gave darshan to her with Lakshmi adorning His chest and gained the name Tiruvazhmarban. The place Tiruvalla originates from the presiding deity Vallabha.\n*** According to legend, Ghantakarnan attained moksha at this kshetram.\nThe presiding deity is said to have been handmade by Vishwakarma, as instructed by Lord Krishna Himself. Vishwakarma wanted to establish the Lord at this kshetram at the end of the Dwapara Yuga, but it is said that Garuda hid the Lord until Kali Yuga had taken full effect. Later, Garudan established the Lord here.\nThis kshethram has a separate shrine dedicated to Sri Sudharshana Chakrath Azhwar.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

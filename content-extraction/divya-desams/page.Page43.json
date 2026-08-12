@@ -1,0 +1,127 @@
+{
+  "pageId": "page.Page43",
+  "title": "Tiruchitrakootam (Chidambaram)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page43",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "4f13db7c-0dbe-4efa-a538-902c9da7bb09",
+    "ebf5a1ff-1bfb-4f61-889c-72b1167cad0c"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruccitrakuudampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/YHXBSBGAudqZ4gwM9",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruccitrakuudampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruccitrakuudampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruccitrakuudampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruchitrakootam (Chidambaram)",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://4f13db7c-0dbe-4efa-a538-902c9da7bb09"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://ebf5a1ff-1bfb-4f61-889c-72b1167cad0c"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Govindaraja Perumal\nThayaar: Pundareekavalli Thayaar\nVimanam: Satvika Vimanam\nPushkarani: Pundareeka Pushkarani\n\nTravel: This kshethram is located in the Nataraja temple at Chidambaram.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 32 Pasurams\nKulasekara Azhwar: 11 Pasurams\nTotal: 43 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nLegend has it that Lord Shiva and Devi Parvati once engaged in a competition to determine who was the better dancer. When the world was asked, they all responded, saying Lord Shiva was the better dancer. In hopes of getting a second opinion, Devi Parvati suggests that the divine couple go to Vaikuntham and ask Lord Vishnu for his opinion, as His opinion was supreme, and nobody could question Him. When the question was put before the Lord, he said he would watch the divine couple dance and would decide then who among them was a better dancer. Thus, a mandapam was constructed by Vishvakarma, known as the Chitra Mandapam. The Lord descended from Vaikuntham along with Sridevi and Bhudevi reclining on Adiseshan. Lord Shiva appeared as Nataraja at the forefront of the Chitra Mandapam. All the devas and Lord Brahma descended to Bhulokam to witness the spectacle of Lord Nataraja and Devi Parvati’s dance. Thus, Lord Nataraja and Devi Parvati began dancing, and all those present to witness the spectacle watched in awe as the duo danced at a level never before seen. After the divine dance performance was concluded, Lord Vishnu asked everyone present at the event who they thought performed better. Everyone voted in favor of Lord Nataraja, and Lord Vishnu simply obliged by lifting his head. Devi Parvati, in anger, fled the scene and took the form of Devi Kali outside Chidambaram. Thus, one can still see a temple of Devi Kali here outside Chidambaram.\n\n*** The Lord here is said to be a direct reincarnation of Tirumalai Srinivasa Perumal. The Lord here is reclining on the seven-headed serpent Adiseshan, whereas the Lord standing at Tirumalai is standing atop seven hills. Govindaraja Perumal is depicted with Shankam and Chakram, one hand supporting his head and the other hand displaying the Varada Mudra. Similarly, Srinivasa Perumal can be seen with Shankam, Chakram, one hand tucked inside and another hand showcasing Varada Mudra.\nThis temple has a rich history. During the Chola rule, Kulothunga Chola II was said to have uprooted the presiding idol of the Lord from the Shrine at the Nataraja temple to show Shaiva dominance. It is said that Bhagavat Ramanujacharya took the utsava moorthy (Paartasarathy Perumal) to Govindrajapatnam at Tirupati. When the kings changed over time, Krishnappa Nayaka of the Madurai Nayaka dynasty played a crucial role in reinstalling the Lord in this temple. There was considerable resistance from the Shaivaites present at Chidambaram at the time to reinstalling an idol of Lord Vishnu in a temple dedicated to Lord Shiva. However, the king remained unmoved and reinstated the idol of the Lord, as seen in modern times.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "pageId": "page.Page105",
+  "title": "Tiruvadamadurai (Mathura and Vrindavan)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page105",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "8ad477a2-bd45-42f3-b1f9-dd6c436c0b4e",
+    "674a98fc-6308-4987-b052-82854d2e8b41"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://maps.app.goo.gl/T384uc7jpbbUpiXM6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvadamaduraipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvadamaduraipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvadamaduraipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvadamaduraipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/VkGjESLRC1QjgYpR7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Headline",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://8ad477a2-bd45-42f3-b1f9-dd6c436c0b4e"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://674a98fc-6308-4987-b052-82854d2e8b41"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Govardhanesha Perumal\nThayaar: Satyabhama Nachiyar\nVimanam: Govardhana Vimanam\nPushkarani: Yamuna Nadi\n\nTravel: Sri Krishna Janmabhoomi is located in Mathura, whereas the Divyadesam temple is situated in Vrindavan.\n\nAzhwar Pasuram:\nPeriya Azhwar: 16 Pasurams\nSri Andal: 19 Pasurams\nThondaradipodi Azhwar: 1 pasuram\nTirumangai Azhwar: 4 Pasurams\nNam Azhwar: 10 Pasurams\nTotal: 50 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe town of Mathura has been mentioned in all the previous yugams. It is said in Krita Yugam that Lord Vamana’s Sidhaashramam was present here. In the Treta Yugam, it is said that Shatrugna beat Lavanasuran and made Mathura his capital for twelve years. In Dwapara Yugam, Lord Sri Krishna was born here in this kshethram. Although the Lord was born here, the Divyadesam is located in Vrindavan, which is 10 km from Mathura. Mathura is said to be the center of Vraja Bhoomi. Vraja Bhoomi refers to an area of 184 km, which Lord Sri Krishna is said to have roamed with His bare feet.The temple from Azhwar pasurams does not stand today but there is a South-Indian style Rangji Mandir in Vrindavan that is very popular. ",
+      "textFontSizeHint": 16
+    }
+  ]
+}

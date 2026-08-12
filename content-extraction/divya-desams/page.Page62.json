@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page62",
+  "title": "Tiru Evvellur (Tiruvallur)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page62",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "a86d7ee3-64ec-4966-b6eb-c61bfced9e70"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruyevvulpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/oA7TAwJnyEK3Tce18",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruyevvulpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruyevvulpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruyevvulpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiru Evvellur (Tiruvallur)",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://a86d7ee3-64ec-4966-b6eb-c61bfced9e70"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Veeraraghava Perumal\nThayaar: Kanakavalli / Vasumathi Thayaar\nVimanam: Vijayakoti Vimanam\nPushkarani: Hru-Thapa-Nashini (Hru meaning mind or heart, Thapa meaning anything that is bothering / bothersome, Nashini meaning that which removes or destroys)\n\nTravel: This temple is located at Tiruvallur near Chennai.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 11 Pasurams\nTirumazhisai Azhwar: 1 pasuram\nTotal: 12 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nLegend tells the story of Salihotra Maharishi, who had his hermitage in this place. He used to grind rice for a living and offered half of the flour to the seekers, while he consumed the rest himself. He was an ardent devotee of Lord Vishnu. To test his devotion, the Lord appeared as a guest to him one day. He requested Salihotra Maharishi to offer him food, which the sage did. The guest felt hungry and requested the sage to provide more food. The sage offered the other half of the flour, which he used to consume himself. The guest asked for a place to rest(Evvul), and the sage readily offered his hermitage. On arriving at the hermitage, the guest revealed His true form and blessed the sage. \n\n*** This kshethram has a few specialties. It is said that if one bathes in the Hruthapanashini Pushkarani on Thai Ammavasi, all of their ailments will be cured. Another belief that has seen fruit here is when a person takes a handful of jaggery and dissolves it in the water on any Ammavasi, all their wishes come true. \nWhen Lord Shiva had Brahmahatya dosham for killing Daksha Prajapati, it is said that after he bathed in this Pushkarani, all his sins were absolved. \nAnother story tells the story of the Lord’s marriage to Vasumathi Thayaar. It is said that Thayaar belonged to a village called Dharmasenapuram, located near Tiruvallur. Vasumathi Thayaar was the daughter of the king of Dharmasenapuram. She wanted to get married to the Lord. Her father agreed, but he had a condition: his Son-in-law should not leave his kingdom and take his daughter with him. The Lord agreed to this condition and promised the king that He would never leave Tiruvallur.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

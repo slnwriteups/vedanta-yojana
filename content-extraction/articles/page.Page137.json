@@ -1,0 +1,44 @@
+{
+  "pageId": "page.Page137",
+  "title": "Swami Ramanujar takes up Sanyasam",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page137",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Swami Ramanujar takes up Sanyasam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "After getting panchasamskaaram done at the hands of Periya Nambi, Swami Ramanujar invites Periya Nambi to his house. Swami Ramanujar feels he could gain and learn a lot from an Acharya living under the same roof. Swami Ramanujar tells Periya Nambi that his home was partitioned into the ground and first floors. Swami Ramanujar tells Periya Nambi that he and his wife would occupy the ground floor, and Periya Nambi could move into the first floor. Periya Nambi agreed to Swami Ramanujar's arrangement and moved into Swami Ramanujar's house in Kanchipuram. Under Periya Nambi's tutelage, Swami Ramanujar learned about the Naalayira Divyaprabandhangal, except for the part of Tiruvaimozhi, he learned the various Brahmasutrams with their meaning to become capable of writing a commentary for them. He also learned about the contributions of all the Purvaacharyas.\nOne day, a poor Vaishnava came to Swami Ramanujar's doorstep seeking alms. The poor man called out from the door, and Rakshambal came out to answer before Swami Ramanujar. When the elderly man asked for some food, Rakshambal immediately said there was no food left in the kitchen. The poor man left the house hungry and empty-handed. Swami Ramanujar immediately rushed into the kitchen and saw that there was still food left in the pots. He questioned Rakshambal as to why she sent the poor man away empty-handed. She told Swami Ramanujar that the man might have been a Vaishnava, but he had been roaming the streets in search of food. He might have come in contact with other caste men. Hence, she refused to feed him. Swami Ramanujar again felt insulted but stayed silent for the second time.\nIn a few days, Swami Ramanujar had gone to the Varadaraja Perumal Temple as he usually would and performed kainkaryam to Varadaraja Perumal. During the time Swami Ramanujar was at the temple, Periya Nambi and his wife packed all their belongings and left to return to Sri Rangam. They thanked Rakshambal and told her that they were returning to Sri Rangam. When Swami Ramanujar returned home, he noticed that his Acharya and his Acharya-Patni were not at home. He immediately enquired with Rakshambal as to where they had gone. Rakshambal told Swami Ramanujar that they had left the house and gone back to Sri Rangam. Swami Ramanujar asked why they did that. Rakshambal tells Swami Ramanujar that she had gotten into a big argument with Periya Nambi's wife in the morning. She told Swami Ramanujar that as they were drawing water from the well in the morning, a few drops of water from Periya Nambi's wife's pot had accidentally dripped into her own pot. Getting angry, Rakshambal had called Periya Nambi's wife a blind hag who did not know the difference in caste between their families. After saying this, Rakshambal casually mentioned that she was glad that they had left the household. This last incident was more than Swami Ramanujar could handle. He wrote out all of his wealth in her name and told her that he had received a message from her father, stating that they wanted Rakshambal to come home, as her younger sister's marriage was soon approaching. As soon as Rakshambal had left for her parents' house, Swami Ramanujar immediately changed out of his current attire and took on kaashaayam, the saffron-colored wear of a sanyasi. He then went to Sri Varadaraja Perumal, held the tridhandam, and asked the Lord to grant him sanyasaashramam. Through the guidance of Tirukacchi Nambi, Varadaraja Perumal gave Swami Ramanujar the title of Yathiraja.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

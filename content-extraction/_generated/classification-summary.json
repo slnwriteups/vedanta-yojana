@@ -1,0 +1,15 @@
+{
+  "hubEdgeThreshold": 50,
+  "hubPageIds": [
+    "page.Page3"
+  ],
+  "byCategory": {
+    "system_global_canvas": 1,
+    "app_chrome": 2,
+    "navigation_hub": 1,
+    "non_temple_content_candidate": 56,
+    "divya_desam_candidate": 106,
+    "unresolved_possible_divya_desam": 2,
+    "unknown": 3
+  }
+}

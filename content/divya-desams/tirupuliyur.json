@@ -1,0 +1,68 @@
+{
+  "slug": "tirupuliyur",
+  "displayName": "Tirupuliyur",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page75",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Mayapiran",
+    "thayaar": "Porkodi Nachiyar",
+    "vimanam": "Purushothama Vimanam",
+    "theertham": "Pragna Saras",
+    "travelNote": "This kshethram is located 5 km from Chengannur in Kerala."
+  },
+  "sthalaPuranam": "As Bheema had also participated in deceiving Dronacharya during the Mahabharata, he had also incurred some amount of sin. To gain atonement for those sins, it is said that Bheema performed tapas here. Thus, the Lord appeared before him and blessed him, granting him atonement for his sins of killing his guru and a hundred brothers.\nThe legend has it that the Saptarishis worshipped the Lord, proclaiming that He is the Paratatvam, and the Lord took the name Mayapiran at this kshethram.\n\n\nOne can see this iconic mace outside the temple, showing that Bheema established it.",
+  "azhwarPasuram": "Nam Azhwar 10 Pasurams\n\n*** This is one of the Panch-Pandava Kshethrams. This kshethram is said to have been established by Bheema.",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/NjgGar3bAHPWRsZb6"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirupuliyur-1",
+      "sourceAssetUuid": "d7dd6f62-4cdc-4227-81d2-80fce7dea432",
+      "sourceOriginalName": "108-72.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirupuliyur-2",
+      "sourceAssetUuid": "86593853-0a97-434c-8992-4105a2b1fa6f",
+      "sourceOriginalName": "108-72M.jpeg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruppuliyuurpaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruppuliyuurpaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruppuliyuurpaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruppuliyuurpaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page68",
+  "title": "Tirunaavai",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page68",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "bdd0fd29-44bc-4a4f-91ef-08648e74b648"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://maps.app.goo.gl/kjLXcPLnnJVGbxeQ6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirunaavaaypaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirunaavaaypaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirunaavaaypaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirunaavaaypaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirunaavai",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://bdd0fd29-44bc-4a4f-91ef-08648e74b648"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Naavai Mukundan\nThayaar: Malarmangai Nachiyar\nVimanam: Veda Vimanam\nPushkarani: Sengamala Saras\n\nTravel: This kshethram is situated on the banks of the Bharathapuzha River, near Shoranur in Kerala, and is also a railway station on the Chennai-Calicut line.\n\nAzhwar Pasuram:\nNam Azhwar: 11 Pasurams\nTirumangai Azhwar: 2 Pasurams\nTotal: 13 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nLegend tells the story of nine yogis who offered worship to the Lord present at this kshethram and attained moksham. According to the rules of prathistapana (the process of establishing the Lord in stone), the Lord is established, and all associated rituals are performed, sealing the Lord in the garbha-griha for eight days. Thus, the first yogi performed prathistapana of the Lord and opened the door of the garbha-griha after eight days. When he opened the doors, he found the Lord missing. Similarly, eight of the nine yogis found the Lord missing from the garbha-griha. The ninth yogi performed the prathistapana of the Lord, but instead of waiting eight days, he opened the door on the third day. The yogi found that the Lord was slowly sinking into the earth in the garbha-griha. The yogi then concluded that the Lords previously established by the other eight yogis must have also sunk into the earth in the same manner. Thus, the yogi asked the Lord to stop sinking into the ground and asked Him to remain there at the kshethram to serve all the devotees who would visit the kshethram. Thus, when one visits this kshethram, they can only see the Lord above the waist.\nThis is the only temple in the Malainadu Divyadesams that houses Lakshmi Devi separately in a shrine.\n\n*** It is said the Lord here is prathyaksham to Gajendran and Sri Lakshmi. It is said that there was a competition between Gajendran and Lakshmi Devi as to who would present the Lord with a lotus first. One day, Gajendran asked the Lord to allow his devotee to perform kainkaryam (divine service to the Lord). Thus, the Lord requested Lakshmi Devi to come and sit next to Him and enjoy the divine service, and not to engage in any competition with the devotees.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

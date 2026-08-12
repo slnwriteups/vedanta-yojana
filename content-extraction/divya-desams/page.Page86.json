@@ -1,0 +1,153 @@
+{
+  "pageId": "page.Page86",
+  "title": "Tirutholaivillimangalam",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page86",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "75e94dac-8027-4c7f-a997-dff9daeb5d44",
+    "e642fb32-431c-486c-91fd-82891edc8fda"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://maps.app.goo.gl/ZMk5RjZnYSsN89Hd8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps- Aravindalochanan"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruttolaivillimangalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruttolaivillimangalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/xoezjM6XKAuLXdFZ9",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps- Devapiran"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruttolaivillimangalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruttolaivillimangalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirutholaivillimangalam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://75e94dac-8027-4c7f-a997-dff9daeb5d44"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Devapiran",
+      "textFontSizeHint": 14
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://e642fb32-431c-486c-91fd-82891edc8fda"
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "text",
+      "content": "Aravindalochanan",
+      "textFontSizeHint": 14
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\n\n***This kshethram comprises two temples\n\nMoolavar: Devapiran / Aravindalochanan\nThayaar: Karuthadankanni Nachiyar\nVimanam: Kumuda Vimanam\nPushkarani: Varuna Theertham / Thamaraparani River\n\nTravel: This kshethram is one of the Nava Tirupati temples and is located around 3 km from Srivaikuntam.\n\nAzhwar Pasuram:\nNam Azhwar: 11 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps- Aravindalochanan",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps- Devapiran",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 12,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 13,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam: \nThe legend has it that Kubera cursed a couple to assume the forms of a weight-measure (tulai) and a bow (Villu). When Athreya Suprapa Muni was performing a yagnam at this kshethram, he found the scale and the bow in the yagashala. When he touched them, they transformed into a man and a woman and were relieved of the curse. Thus, the kshethram obtained the name Tulaivillimangalam. It is also believed that the Ashwini Devatas worshipped Lord Vishnu at this kshetram with red lotus flowers (Senthamarai Kannan – Aravindalochanan). Lord Devapiran is said to have given darshanam to all the devas after the yagnam attained its completion.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page20",
+  "title": "Tirukannamangai",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page20",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "c6a2ac3c-92d6-497f-86ca-135afc1b8a82"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkannamangaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkannamangaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkannamangaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/4aw3z3uJNynJqxhh6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkannamangaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirukannamangai",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://c6a2ac3c-92d6-497f-86ca-135afc1b8a82"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram: \n\nMoolavar: Bhakthavathsala Perumal\nThayaar: Abhishekavalli Thayaar\nVimanam: Uthpala Vimanam\nPushkarani: Darshana Pushkarani\nTravel: 6 km west of Tiruvarur\n\nAzhwar Pasuram: \nThirumangai Azhwar – 14 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nDuring Samudra Manthanam, Mahalakshmi appeared from the Ksheerasagaram. Upon appearing, she was searching for Lord Vishnu so that she could be reunited with him once again. She sees the Lord but is embarrassed to put the Varamala around his neck as there were thirty-three crore gods(men) who were present there at the time. She thus decided to seek the Lord in private and went to Tirukanamangai, where she performed penance within the Darshana Pushkarani to bring the Lord there in solitude. The Lord appeared, and as Mahalakshmi was about to put the Varamala around the Lord’s neck, all the Devas appeared once more to witness the spectacle of the Lord’s marriage. The Lord thought that if the devas continued to stay in the form of men, Mahalakshmi would once again run away in embarrassment. Hence, he changed all the Devas into bees. As soon as this was done, Mahalakshmi married the Lord.\n\n***Even today, outside the shrine of Abhishekavalli Thayaar, one can find a hive of bees buzzing around, symbolizing the presence of the Devas at the temple to date.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

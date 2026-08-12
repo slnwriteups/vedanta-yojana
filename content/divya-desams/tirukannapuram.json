@@ -1,0 +1,61 @@
+{
+  "slug": "tirukannapuram",
+  "displayName": "Tirukannapuram",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page21",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Sowriraja Perumal / Neelamegha Perumal",
+    "thayaar": "Kannapura Nayaki Thayaar",
+    "vimanam": "Uthbalavadaka Vimanam",
+    "theertham": "Nityapushkarani",
+    "travelNote": "6 km from Nannilam, close to Tiruvarur."
+  },
+  "sthalaPuranam": "Legend has it that Uparisravas, a Fisherman King, performed the Ashwamedha sacrifice and begot a daughter named Padmini, whom he offered in marriage to Lord Vishnu at this shrine. It is believed that Neelamegha Perumal vanquished a demon called Veekatakshan with His chakram, and hence the presiding deity is found with the prayoga chakram. It is also thought that the Lord in the sanctum miraculously showed the growth of hair to protect the words of a devout priest, Rangabhattar. It is said that the local king was visiting the temple on a given day, and Rangabhattar had already given the garland the Lord adorned to his lover. When the king arrived at the temple, there was no garland to perform the required honors. He requested the king to perform pradakshinam of the temple, by which time he would arrange for a garland. He sent a boy to fetch the garland from his lover. When the garland was presented to the king, he found a strand of hair in it. The king then questioned Rangabhattar as to where that hair had come from, to which Rangabhattar said the hair was that of the Lord’s. When the king came to examine the same in the morning, he found hair behind the crown that was placed atop the Lord’s head.  Hence, the Lord attained the name Sowrirajan.\n\n***Tirumangai Azhwar is believed to have been initiated with the ashtaakshara mantram at this temple.",
+  "azhwarPasuram": "Periya Azhwar – 1 pasuram\nAndal – 1 pasuram \nKulasekarAzhwar – 11 Pasurams\nNammazhwar – 11 Pasurams \nThirumangai Azhwar – 104 Pasurams.\nTotal – 128 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/aMjckucKH2eg57Uh9"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirukannapuram-1",
+      "sourceAssetUuid": "da45c201-30f5-44a0-9440-192d3c859b9a",
+      "sourceOriginalName": "108-17.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkannapurampaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirukkannapurampaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkannapurampaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkannapurampaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

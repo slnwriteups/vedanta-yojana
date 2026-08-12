@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page10",
+  "title": "Tiruperrnagar- Koviladi",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page10",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "70694b73-6184-4e1c-ad67-26d90de225b6"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirupperpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/QD2uEW7N8FJsTgr1A",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirupperpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirupperpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirupperpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruperrnagar- Koviladi",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://70694b73-6184-4e1c-ad67-26d90de225b6"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram\nMoolavar: Appa Kuduthan\nThayaar: Kamalavalli Thayaar\nVimanam: Indra Vimanam\nPushkarani: Indra Theertham\nTravel: This kshethram is located near Trichy and is approximately 10 km from Lalgudi.\n\nAzhwar Pasuram: \nPeri Azhwar- 2 pasurams\nTirumangai Azhwar-19 pasurams\nTirumazhisai Azhwar-1 pasurams\nNam Azhwar-11 pasurams\nTotal: 33 pasurams\n\nPrathyaksham: Upamanyu, Markandeya Maharishi\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nOnce King Upamanyu (Pandya King) had gone hunting in the forest to hunt a rogue elephant, he accidentally killed a brahmin who was performing tapas by the banks of a river. In repentance for his act, the king renounced his throne and began roaming the vast expanse of his former kingdom. When the king reached Tiruperrnagar, Lord Shiva appeared in front of the king and told him to serve food to a  thousand brahmins daily with appam. The king started to follow the instructions that he had received. One day, Lord Vishnu decided to participate in the king’s daily meal service. The Lord came in the disguise of a brahmin and approached the king, saying He was very hungry and asked that He be fed. The king asked the brahmin to wait until he had fed the remaining brahmins who had assembled before Him. The Lord was very strong with His claim and demanded that He be fed first. The king obliged and served the brahmin food.\nTo the king’s astonishment, the brahmin ate all the food that was prepared for the gathered thousand brahmins. The king then asked the brahmin if he was satisfied with the meal. The Brahmin said he was still hungry and asked the king to give him an appam, as it had not been served to him. No sooner had the king obtained a pitcher (kudam) with the appam than the Brahmin snatched the kudam from the king’s hands. Immediately, the Lord turned into an idol reclining on Adiseshan, putting his hand inside the kudam. Hence, the Lord gained the name Appa Kuduthan. At the same time, Markandeya Maharishi was directed by Lord Shiva to pray to Lord Vishnu for the gift of longevity. When Markandeya Maharishi reached the kshethram, the Lord removed his hand from the kudam and blessed him with the longevity of life and also relieved the king of his Brahmahatidosham.\nAnother story tells the tale of Kamalavalli Thayaar asking the Lord to get her Parijaatham flowers. Parijaatham flowers are divine flowers that grow in the gardens of Indra. When the Lord approached Indra to obtain some flowers for Thayaar, Indra refused to acknowledge that the Paarijatham was a divine flower and did not belong in Bhoolokam. He further tried to hurl the Vajraayudham on the Lord when the Lord was persistent with His request. The Lord, in his shayanam, raised his left hand and plucked the Vajraayudham from Indra’s hand. Indra then provided the flowers, consisting of defeat at the Lord’s hands. Thus, the vimanam and pushkarani here are named in Indra’s honor as he provided the Parijaatham.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

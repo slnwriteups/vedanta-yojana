@@ -1,0 +1,72 @@
+{
+  "slug": "tirukkadigai-sholingapuram-gadikachalam",
+  "displayName": "Tirukkadigai (Sholingapuram / Gadikachalam)",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page67",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Sri Yoga Nrisimha Perumal & Yoga Anjaneyar",
+    "thayaar": "Amritavalli Thayaar",
+    "vimanam": "Simhagoshtakriti Vimanam",
+    "theertham": "Amrita Theertham",
+    "travelNote": "This kshethram is located on Chennai-Katpadi Road near Arkonam."
+  },
+  "sthalaPuranam": "The legend recounts the story of how the Lord appeared at this kshetram as the Saptarishis performed tapas, with the intention of seeing the Lord in the form of Sri Nrisimha. The rishis requested a local ruler to protect them from the prevailing demons in the area while they performed the necessary yagnams to please the Lord. The king tried his best to keep the rishis safe, but was defeated after some time. At this point, Lord Rama had just defeated Ravana and was on his way back to rule Ayodhya. Thus, He instructed Hanuman to go and protect the rishis from all and any danger that was prevalent in the area. It is said that Hanuman held the Shankam and Chakram at this kshethram to protect the rishis from every possible risk. After successful completion of the tapas and yagnams, Lord Nrisimha emerged seated in padmasana as Yoga Nrisimha.\n*** Another name of this kshethram is Gadikachalam, as Gadika means 24 minutes. It is said that if one spends 24 minutes at the top of the hill, it absolves all sins that one has committed throughout one's life. There are two hills at this kshethram: one large hill with 1,300 steps, which houses Sri Yoga Nrisimha Perumal, and a smaller hill with 750 steps, which houses Sri Yoga Anjaneya Perumal. This is the only place where one can see Anjaneyar with Shanku and Chakram seated in padmasana. Sri Anjaneyar faces Lord Nrisimha. It is said that Lord Nrisimha constantly blesses Lord Anjaneyar. It is said that if one visits both of these temples, they will never be plagued by any kind of ghosts, spirits, or ghouls of any kind.",
+  "azhwarPasuram": "Tirumangai Azhwar : 3 Pasurams\nPey Azhwar: 1 pasuram\nTotal: 4 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/JqS8XSWWk8NmDSb88"
+    },
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/FbauNU7N2Tbc6NEK6"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirukkadigai-sholingapuram-gadikachalam-1",
+      "sourceAssetUuid": "be6d7871-7244-4084-9c69-d3ea957888b1",
+      "sourceOriginalName": "108-64N.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkadigai-sholingapuram-gadikachalam-2",
+      "sourceAssetUuid": "69698150-c5d4-4ce5-a78e-b48e3a2b54f4",
+      "sourceOriginalName": "108-64H.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkadigaipaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirukkadigaipaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkadigaipaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkadigaipaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

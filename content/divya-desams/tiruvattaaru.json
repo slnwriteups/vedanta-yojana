@@ -1,0 +1,61 @@
+{
+  "slug": "tiruvattaaru",
+  "displayName": "Tiruvattaaru",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page79",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Sri Aadikeshava Perumal",
+    "thayaar": "Margathavalli Nachiyar",
+    "vimanam": "Ashtanga Vimanam",
+    "theertham": "Vattar Theertham",
+    "travelNote": "This kshethram is located at Tiruvattar, Kanyakumari District in Tamil Nadu."
+  },
+  "sthalaPuranam": "The legend tells the tale of the Lord defeating the demon named Adikeshi. After his death, Adikeshi's wife performs penance and asks the Ganga and Tamraparani rivers to flow in a circular pattern, engulfing the area. The Lord is said to have taken His reclining form and slept atop the demon, using Adisesha as His bed, at the meeting point of the rivers. Seeing that her efforts to take revenge were in vain, Adikeshi's wife is said to have surrendered to the Lord.\nAnother story tells us how the Lord came to take His current form. There was a Maharishi named Hathalekar, who was very short in stature but extremely learned from a young age. One day, the Lord decided to test Hathalekar Maharishi. He approached and began teasing the sage about his height. At one point, when the sage was standing next to a banana tree, the Lord asked if his parents were dwarves too, having given birth to someone of his stature. The sage, in a fit of anger, pointed at the tree and said, “These are my parents.”\nNot wanting to disappoint His devotee, the Lord caused the parents to emerge from the tree, and then gave him upadesham of the Ashtaakshara mantram, telling the sage that it had all been a test of his faith and devotion. The Lord, pleased with the sage, then instructed him to reconstruct His form as Adikesava Perumal.\nHathalekar used to perform aaradhanam daily to 16,008 shalagramams. It is said that the Lord was brought into His present form using these 16,008 shalagramams, along with a mixture of karungal (black teak wood) ash, mustard seeds, and jaggery.\nAs a result, there is no abhishekam performed for the murti at this kshetram. The Lord is preserved through the application of medicinal herbs and oils, as prescribed by the Ayurveda Shastram.\nThe Lord here is very similar to Sri Ananthapadmanabha Swamy at Thiruvananthapuram. The Adikesava Perumal murti is 22 feet long, compared to 18 feet at Thiruvananthapuram. Another difference lies in the Nabhi Kamalam (navel lotus) of Adikesava Perumal; Lord Brahma is not present, as this form of the Lord is said to have appeared before Brahma was created.\nThere are three doors through which devotees can have darshan—one to see the Lord's face, one for His navel, and another for His feet.\nIt is said that Sri Ananthapadmanabha Swamy reclines in such a direction that He faces Adikesava Perumal.",
+  "azhwarPasuram": "Nam Azhwar: 11 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/57Dr4TN8Yx2uGzUV7"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruvattaaru-1",
+      "sourceAssetUuid": "87c59c01-cdfd-4f94-b12e-ab2da3f1ff70",
+      "sourceOriginalName": "108-76.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvaattaarupaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvaattaarupaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvaattaarupaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvaattaarupaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

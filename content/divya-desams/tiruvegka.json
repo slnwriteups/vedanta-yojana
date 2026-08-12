@@ -1,0 +1,60 @@
+{
+  "slug": "tiruvegka",
+  "displayName": "Tiruvegka",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page54",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Yatotkaari Perumal / Sonnavannam Seida Perumal",
+    "thayaar": "Komalavalli Thayaar",
+    "vimanam": "Vedasaara Vimanam",
+    "theertham": "Poigai Pushkarani"
+  },
+  "sthalaPuranam": "According to legend, when all of Saraswati Devi’s efforts to stop Lord Brahma’s Ashwamedha Yagnam failed, she decided to flow like a river(a personification of the speed at which she could deliver any knowledge). Thus, she took the form of Vegavathy and decided to flow over the homa kundam. At this point, Lord Brahma requested the Lord to stop Devi Saraswati. Thus, the Lord took this form and acted as a dam, redirecting the flow of the river. Therefore, this kshethram came to be known as Vegavathy Annai, which later became Vegka.\nWhen Thirumizhisai Azhwar was living in Kanchipuram, an old lady who worked as a servant (Daasi) used to clean his house every day. She did this small act of service with full dedication. Pleased by her sincere effort, the Azhwar blessed her and transformed her into a young and beautiful woman.\nSoon, her beauty caught the attention of the king of the region. Surprised by her charm, the king married her, and she became the queen. After some time, the king came to know the story behind the transformation and was curious to meet Thirumizhisai Azhwar himself.\nNow, Kani Kannan—who was the Azhwar’s close disciple and companion—was called to the palace. The king asked him to request Azhwar to visit the palace and compose a poem in his praise. But Kani Kannan respectfully told the king that Thirumizhisai Azhwar only sings for the Lord Srivaikuntanathan (Sriman Narayana) and that it was not possible for him to write or sing anything to praise a human being.\nStill hoping, the king offered Kani Kannan gold, silver, diamonds, and all kinds of riches if he himself would sing in the king’s praise. But Kani Kannan firmly refused, saying he would not sing about any human, no matter the reward. This made the king angry. In his fury, he ordered Kani Kannan to leave Kanchipuram immediately.\nKani Kannan returned to Thirumizhisai Azhwar and explained everything that had happened. Hearing this, the Azhwar decided that if his devotee was being thrown out of the city, he too would leave along with him.\nBefore leaving, Thirumizhisai Azhwar composed a verse addressing the Lord Yathothakari Perumal (the presiding deity of the Thiruvekka temple). In it, he told the Lord that since Kani Kannan was leaving the city, and he himself was also leaving, Perumal too should get up from his serpent-bed (Adiseshan), roll it up, and leave Kanchipuram.\nTo everyone’s shock, the Lord actually obeyed. He rose from His resting posture, folded up His bed, and left the temple to follow His devotee.\nThe king and the people of Kanchipuram were shaken by this miracle. They ran after them, pleaded for forgiveness, and begged Kani Kannan and Azhwar to return. Moved by their repentance, Kani Kannan agreed to come back.\nWhen they returned, Thirumizhisai Azhwar once again sang to the Lord, asking Him to return to the temple and rest on Adiseshan as before. The Lord came back to the Thiruvekka temple and resumed His reclining posture.\nBecause the Lord acted exactly according to what the Azhwar said—first leaving, then returning—He came to be known as “Sonna Vannam Seitha Perumal”, which means \"The Lord who did exactly as He was told.\"\n\n*** A peculiarity of this kshethram is that when one sees the Lord reclining here, they can notice that the Lord is laterally inverted, i.e., the Lord’s tiruvadi( His lotus feet) are where His head usually rests and vice versa. This is because when Tirumazhisai Azhwar asked the Lord to return, he did not specify in which direction He must rest.",
+  "azhwarPasuram": "Tirumazhisai Azhwar : 3 Pasurams\nTirumangai Azhwar: 6 Pasurams\nPoigai Azhwar: 4 Pasurams\nNam Azhwar: 1 pasuram\nTotal: 14 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/TgEwbzc4wQwW4haH6"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruvegka-1",
+      "sourceAssetUuid": "12eb258e-07e7-400d-90b6-8de5f7ba4e9b",
+      "sourceOriginalName": "108-51.jpeg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvekkaapaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvekkaapaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvekkaapaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvekkaapaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

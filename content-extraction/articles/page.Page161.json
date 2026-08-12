@@ -1,0 +1,44 @@
+{
+  "pageId": "page.Page161",
+  "title": "Present Day Sri Vaishnava Mutts and Ashramams",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page161",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Present Day Sri Vaishnava Mutts and Ashramams",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "To help aspirants seek out an Acharya, the mutts and Ashramams and their Jeeyars help and serve the Sri Vaishnava community. At present, several Sri Vaishnava Mutts and Ashramams are serving the community. In addition to the Acharyas of these mutts and Ashramams, many independent grihastha-acharyas are helping society.\nEach of the Ashramams and mutts trace their roots back to Swami Ramanujar. Swami Ramanujar had appointed seventy-four Simhasanadhipatis to monitor, maintain, and propagate the Sri Vaishnava Parampara. Under Swami Desikan, the Parakala Mutt was established. The Ahobila Mutt, Srimad Andavan Ashramam, and the Sri Poundarikapuram Ashramam were established by the various successors of Swami Desikan. In the Tenkalai Sampradayam, Sri Manavala Mamunigal founded the Vanamamalai Mutt. \nAll one has to do is seek out and surrender to their Acharya, who, out of their infinite compassion, always welcomes the disciple and guides them in their spiritual journey.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

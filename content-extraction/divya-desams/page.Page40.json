@@ -1,0 +1,194 @@
+{
+  "pageId": "page.Page40",
+  "title": "Tiruttetriambalam Tirumanikoodam",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page40",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "f56fe075-2721-4ebe-b6ef-f2a057cd0f06",
+    "c7a8e2a5-43be-44d1-86ab-6fafbba18ba4"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirumanikkuudampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Devanagarii Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruttetriyambalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/WBYPyGGkE7z1gSQB6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirumanikkuudampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirumanikkuudampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruttetriyambalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruttetriyambalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirumanikkuudampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/B95hsgAqWCVYrsDY9",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruttetriyambalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruttetriambalam Tirumanikoodam\n",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://f56fe075-2721-4ebe-b6ef-f2a057cd0f06"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Pallikonda Ranganathar\nThayaar: Senkamalavalli\nVimanam: Veda Vimanam\nPushkarani: Surya Pushkarani\n\nTravel: 8 km from Sirkazhi\n\nAzhwar Pasuram: \nTirumangai Azhwar: 10 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://c7a8e2a5-43be-44d1-86ab-6fafbba18ba4"
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Varadarajan\nThayaar: Sridevi Bhoodevi\nVimanam: Kanaga Vimanam\nPushkarani: Chandra Pushkarani\n\nTravel: 8 km from Sirkazhi\n\nAzhwar pasuram:\nTirumangai Azhwar: 10 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 12,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 13,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 14,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 15,
+      "depth": 1,
+      "type": "button",
+      "label": "Devanagarii Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 16,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nAfter completing the churning process of the Samudra, Mathanam appeared Danavantri with a golden chalice containing Amrutham (The elixir of longevity). Both the Devas and the Danavas desired the elixir; hence, the Lord took the form of Mohini and gave the elixir only to the gods. It was during this that Rahu, a demon, disguised himself as a deva and tried to consume the elixir when he was caught in the act by Suryan and Chandran. The Lord releases his Chakram and cuts him in such a way that the upper part of the body and the lower part of the body become separate entities. Rahu swore that he would exact his revenge against Surya and Chandra. To exact his revenge, it is said that he eclipses the Sun and the Moon. It is said that Suryan and Chandran went into hiding at the Surya Pushkarani, and Chandra Pushkarani was present at Tiruttetriambalam and Tirumanikoodam. The Lords are said to have come to the rescue of Suryan and Chandran and assured them of their safety.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "tiruppirudi-joshimath",
+  "displayName": "Tiruppirudi (Joshimath)",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page101",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Narasimha Perumal",
+    "thayaar": "Parimalavalli Nachiyar",
+    "vimanam": "Govardhana Vimanam",
+    "theertham": "Indra Theertham",
+    "travelNote": "This kshethram is located in Joshimath en route to Badrinath in Uttarakhand."
+  },
+  "sthalaPuranam": "The shrine that we see today is said to have been established by Sri Adi Shankaracharya. We can see that Lord Narasimha is holding his chakram, which is said to be a prayoga-chakram that is spinning. During the winter season, Lord Badrinarayan’s Utsavar Moorthy is brought to this temple and worshipped here, as it becomes very cold, and Badrinath closes its doors after Deepavali.\nAccording to Tirumangai Azhwar’s pasuram, we can understand that the temple and Lord being described is not the Lord Narasimha who we see today. Tirumangai Azhwar describes the Lord to be reclining in the bujanga shayanam on Adisesha bearing a thousand heads. According to the pasuram, the kshethram could be situated at Manasarovar.\nHowever, since time immemorial, all our acharyas have been visiting this kshethram, situated in Joshimath.",
+  "azhwarPasuram": "Tirumangai Azhwar: 10 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/LDja38MariR8aqP18"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruppirudi-joshimath-1",
+      "sourceAssetUuid": "1488e430-c53c-4b58-8e0e-7e39bedddd8a",
+      "sourceOriginalName": "108-98.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruppirudi-joshimath-2",
+      "sourceAssetUuid": "7e730dfb-60e1-4c18-b560-e240114d35d6",
+      "sourceOriginalName": "108-98T.jpeg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruppirudipaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruppirudipaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruppirudipaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruppirudipaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

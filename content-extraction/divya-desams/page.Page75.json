@@ -1,0 +1,134 @@
+{
+  "pageId": "page.Page75",
+  "title": "Tirupuliyur",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page75",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "d7dd6f62-4cdc-4227-81d2-80fce7dea432",
+    "86593853-0a97-434c-8992-4105a2b1fa6f"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruppuliyuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruppuliyuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/NjgGar3bAHPWRsZb6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppuliyuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppuliyuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirupuliyur",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://d7dd6f62-4cdc-4227-81d2-80fce7dea432"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Mayapiran\nThayaar: Porkodi Nachiyar\nVimanam: Purushothama Vimanam\nPushkarani: Pragna Saras\n\nTravel: This kshethram is located 5 km from Chengannur in Kerala.\n\nAzhwar Pasuram:\nNam Azhwar 10 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "*** This is one of the Panch-Pandava Kshethrams. This kshethram is said to have been established by Bheema.\n\nSthala Puranam:\nAs Bheema had also participated in deceiving Dronacharya during the Mahabharata, he had also incurred some amount of sin. To gain atonement for those sins, it is said that Bheema performed tapas here. Thus, the Lord appeared before him and blessed him, granting him atonement for his sins of killing his guru and a hundred brothers.\nThe legend has it that the Saptarishis worshipped the Lord, proclaiming that He is the Paratatvam, and the Lord took the name Mayapiran at this kshethram.\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://86593853-0a97-434c-8992-4105a2b1fa6f"
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "text",
+      "content": "One can see this iconic mace outside the temple, showing that Bheema established it.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

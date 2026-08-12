@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page61",
+  "title": "Tirunindravur",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page61",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "d91b1bab-d57d-4ddd-a9e7-9dc8af79ad84"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruninravuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasurams"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruninravuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasurams"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruninravuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasurams"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruninravuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasurams"
+    },
+    {
+      "url": "https://maps.app.goo.gl/vGySFgDLxDDnWDws8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirunindravur",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://d91b1bab-d57d-4ddd-a9e7-9dc8af79ad84"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Bhakthavatsala Perumal\nThayaar: Sudhavalli / Ennaipetra Thayaar\nVimanam: Utpala Vimanam\nPushkarani: Varuna Pushkarani\n\nTravel: This kshethram is situated 25 km from Chennai, on the Chennai-Tiruvaloor Road. \n\nAzhwar Pasuram: \nTirumangai Azhwar: 2 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe legend has it that Varuna and Samudraraja worshipped Lord Vishnu at this kshethram. It is also believed that the Lord visiting this kshethram, followed by Lakshmi, made it His home, and hence the name Triu Ninravoor. It is said that Tirumangai Azhwar, after worshipping at this shrine, left without singing a pasuram. The Lord followed him to Mamallapuram, where he sang the pasuram, referring to this kshethram.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

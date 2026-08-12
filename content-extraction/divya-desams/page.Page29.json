@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page29",
+  "title": "Talaichchanga Naanmadiyam",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page29",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "0ab60d1d-d149-4cb3-afeb-4be9bb3732aa"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://maps.app.goo.gl/Qtvtorc6PVDL4Pxf7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruttalaiccanganaanmadiyampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruttalaiccanganaanmadiyampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruttalaiccanganaanmadiyampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruttalaiccanganaanmadiyampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Talaichchanga Naanmadiyam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://0ab60d1d-d149-4cb3-afeb-4be9bb3732aa"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Naanmadiya Perumal\nThayaar: Talaichanga Nachiyar\nVimanam: Chandra Vimanam\nPushkarani: Chandra Pushkarani\nTravel: This kshethram is located in Talaichchangaadu village, near Aakkur, close to Sirkazhi, between Chidambaram and Mayiladuthurai.\n\nAzhwar Pasuram: \nTirumangai Azhwar – 2 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam: \nIt is said that Chandran was the husband of the twenty-seven nakshatras, who were the daughters of Daksha Prajapati. It is noted that Chandran showed more affection towards Rohini and was ignoring his other twenty-six wives. Thus, Daksha Prajapati was angered by Chandran’s behavior and cursed him, saying he would suffer from Kshaya-Rogam(tuberculosis). It is said that to relieve himself of the curse, Chandran came here to this kshethram and prayed to the Lord after taking a dip in the temple’s pushkarani. The Lord is then said to have appeared here and relieved Chandran of his curse.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

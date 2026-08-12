@@ -1,0 +1,60 @@
+{
+  "slug": "tiruvelukkai",
+  "displayName": "Tiruvelukkai",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page49",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Azhagiyasinga Perumal",
+    "thayaar": "Amruthavalli Thayaar",
+    "vimanam": "Kanaka Vimanam",
+    "theertham": "Kanaka Saras"
+  },
+  "sthalaPuranam": "This kshethram derives its name from the root words \"Vel,\" meaning \"desire,\" and \"Irukkai,\" meaning \"place of stay.\" Thus, the kshethram became Velukkai. It is said that the Lord came here out of his desire to meditate after killing Hiranyakashipu. He also killed all the demons that infested the surrounding land.\nDevi Saraswati, in her first attempt to send demons, was unsuccessful, as Lord Ashtabhujar defeated all of them. In her second attempt to spoil the yagnam by creating darkness, she was again unsuccessful, as Lord Deepaprakasar provided a source of light. In a third attempt to stop the yagnam from taking place, She created a mighty demon named Kapalika and unleashed him upon the land. The Lord is then supposed to have taken the form of Nrisimha and killed the demon, therefore protecting the yagnam.\nIt is said that the Lord presiding over this kshethram was initially Lord Vishnu, facing east. However, when Brighu Maharishi asked to see him in the form of Nrisimha, he took the form of Azhagiyasinga Perumal.",
+  "azhwarPasuram": "Pey Azhwar : 3 Pasurams\nTirumangai Azhwar: 1 pasuram\nTotal: 4 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/5pN2c7C2Bk3Q6NS69"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruvelukkai-1",
+      "sourceAssetUuid": "28c6ad0d-7bd2-49b8-943a-671f914cd47b",
+      "sourceOriginalName": "108-46.jpeg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Devanagari",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvelukkaipaasurangal.pdf",
+      "sourceLabel": "Devanagarii Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruttankaapaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvelukkaipaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvelukkaipaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page32",
+  "title": "Tirukazhicheerama Vinnagaram",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page32",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "37f98544-fa5c-4642-9f5a-32c9fe8bcca9"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkaazicciiraamavinnagarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruyarimeyavinnagarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/V1KCdUe8DqsgjsuF6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkaazicciiraamavinnagarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruyarimeyavinnagarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirukazhicheerama Vinnagaram",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://37f98544-fa5c-4642-9f5a-32c9fe8bcca9"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Trivikramar\nThayaar: Lokanayaki Thayaar\nVimanam: Pushkalavartha Vimanam\nPushkarani: Shanka-Chakra Theertham\nTravel: This temple is located in the town of Sirkazhi\n\nAzhwar Pasuram: \nTirumangai Azhwar – 10 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe legend is that Lord Vishnu blessed Romesa Maharishi with a vision of Trivikrama with his left foot raised in the gesture of dominating the three worlds. Romesa Maharishi had once performed tapas here to seek the Lord. When the Lord appeared before Romesa Maharishi, he asked the Lord to bring down the pride and arrogance possessed by Lord Brahma, as he was the creator of the three worlds. The Lord told Romesa Maharishi that as and when a hair would fall from his head, the lifetime of Lord Brahma would be reduced by one year. It is said that Lord Brahma soon lost all of his pride and served his purpose diligently. After seeing the Lord, Romesa Maharishi requested to see the Lord in His Trivikraman form. Thus, the Lord showed Romesa Maharshi the form in which He was ready to measure the world by raising His left foot.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

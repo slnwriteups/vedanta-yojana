@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page37",
+  "title": "Tiruvaikuntha Vinnagaram",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page37",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "32e5d846-f122-4be3-a734-9a8c3d69b0a8"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvaikundavinnagarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvaikundavinnagarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvaikundavinnagarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvaikundavinnagarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/f6EpgdTKHwXucSKN8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruvaikuntha Vinnagaram",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://32e5d846-f122-4be3-a734-9a8c3d69b0a8"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Vaikunthanathar\nThayaar: Vaikunthavalli\nVimanam: Ananathasatyavarthaga Vimanam\nPushkarani: Lakshmi Pushkarani Viraja Theertham\n\nTravel: This kshethram is located 8 km from Sirkazhi\n\nAzhwar Pasuram:\nTirumangai Azhwar: 10 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe legend of this kshethram tells the tale of a king named Shwetaketu. Shwetaketu was said to have reached the gates of Karya-Vaikuntham(A replica of Sri Vaikuntham and is regarded to be the penultimate stage in one’s journey to reach moksham), but is said to have felt hunger. At this point, the king began to question why this was happening, as when one becomes eligible to enter Vaikuntham, they are supposed to be rid of all worldly senses, such as hunger and thirst. To have his problem resolved, the king visited Narada to find out why he was still feeling hungry. Narada told the king that during his lifetime, he had not performed the charitable duties of a king. Thus, he was still feeling worldly sensations. Narada advised the king to perform tapas at Nagavanam ( Naga in Sanskrit means elephant. In connection with Tirumanimada Kovil’s sthala puranam, Airavatha is said to have performed tapas here at Tirunangur to the Lord to redeem himself, as he had insulted Mahalakshmi without knowing that he had done so. Nagavanam, over time, has become Nangur.) to convince the Lord that he was worthy of attaining moksham. Thus, the king’s aathma is said to have descended to Bhulokam and performed tapas here at this kshethram to gain moksham. The Lord appeared as he would appear at Karya-Vaikuntham and granted moksham to the king. It is said that Utanka Maharishi guided the soul to the Lord.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

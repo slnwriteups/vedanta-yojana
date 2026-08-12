@@ -1,0 +1,61 @@
+{
+  "slug": "tirukadalmallai",
+  "displayName": "Tirukadalmallai",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page66",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Sthalashayana Perumal",
+    "thayaar": "Nilamangai Thayaar",
+    "vimanam": "Gaganakriti Vimanam",
+    "theertham": "Pundareeka Pushkarani",
+    "travelNote": "This kshethram is located in Mahabalipuram"
+  },
+  "sthalaPuranam": "According to legend, Pundareeka Maharshi, desirous of worshipping Lord Vishnu with lotus flowers, proceeded eastward and attempted to drain the waters of the ocean to make his way. The Lord came in the guise of an old man and asked for some food. The Maharishi went to fetch him some food, and when he returned, he found Lord Vishnu adorning Himself with the flowers and giving darshan as Ananthasayanam. Hence, this place gained the name Sthalasayanam.\n\n*** A peculiarity of this kshethram is that one can see the Lord in reclining posture without Adiseshan. The Lord is reclining on the ground; hence, he is known as Sthalashayana Perumal (Sthala meaning 'ground'). The Lord can be seen with four hands. His left hand displays the aahwaana-mudra, welcoming his devotees, and his right hand is seen in the varada-mudra along the left and right lengths of his bed.",
+  "azhwarPasuram": "Tirumangai Azhwar: 26 Pasurams\nBoodath Azhwar: 1 pasuram\nTotal: 27 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/otRTp8vAMTskVQEL9"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirukadalmallai-1",
+      "sourceAssetUuid": "eadac604-7ed7-447a-831b-55e3a1e7318d",
+      "sourceOriginalName": "108-63.png",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkadalmallaipaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkadalmallaipaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkadalmallaipaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirukkadalmallaipaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

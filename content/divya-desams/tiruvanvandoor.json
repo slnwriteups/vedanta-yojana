@@ -1,0 +1,61 @@
+{
+  "slug": "tiruvanvandoor",
+  "displayName": "Tiruvanvandoor",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page77",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Paambanaiyappan",
+    "thayaar": "Kamalavalli Nachiyar",
+    "vimanam": "Vedhaalaya Vimanam",
+    "theertham": "Pampa Theertham",
+    "travelNote": "This kshethram is located 5 km from Chengannur near Kottayam in Kerala."
+  },
+  "sthalaPuranam": "At the time of creation, Lord Brahma is said to have summoned his four sons, the Sanathkumaras, for a deliberation session to discuss what had to go into creation. It is said that his four sons refused to attend this session on the advice of Devarishi Narada, who instructed them to meditate upon Lord Vishnu rather than waste their time in unwanted deliberation. Thus, Lord Brahma summoned Devarishi Narada and cursed him to wander the three worlds, aimlessly preaching about the Lord. When the Devarishi arrived at this kshethram, he is said to have meditated upon the Lord here and requested Him to write a Purana. Thus, this kshethram is the site where Naradeeya Puranam was written. Another story recounts the tale of Markandeya Maharishi, who sought to see the Lord in His true form. Thus, Markandeya Maharishi is said to have meditated upon the Lord here. The Lord is said to have appeared in front of Markandeya Maharishi and inhaled him. In the nose of the Lord, Markandeya Maharishi is said to have seen the entire process of creation and destruction of the whole universe, along with the Lord’s form as a baby(His miracles as a child in His Krishna Avataram) to His Vishwaroopam form.",
+  "azhwarPasuram": "Nam Azhwar: 10 Pasurams\n\n***This is the last of the five Pancha-Pandava Kshethrams. Nakula established this temple.",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/N2WhqQU1XwxnvWTe7"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruvanvandoor-1",
+      "sourceAssetUuid": "6df7df8a-3e8c-42c9-bef6-9e2a6daa1b00",
+      "sourceOriginalName": "108-74.png",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvanvanduurpaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvanvanduurpaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvanvanduurpaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvanvanduurpaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

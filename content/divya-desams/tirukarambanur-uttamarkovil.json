@@ -1,0 +1,67 @@
+{
+  "slug": "tirukarambanur-uttamarkovil",
+  "displayName": "Tirukarambanur- Uttamarkovil",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page7",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Purushottaman",
+    "thayaar": "Poornavalli Nachiyar",
+    "vimanam": "Uthiyoga Vimanam",
+    "travelNote": "This kshethram is located 4 km from Sri Rangam."
+  },
+  "sthalaPuranam": "The name of the kshethram is Tirukarambanur. This is because the Lord showed Himself to Maharishi Kadambha. Additionally, the Lord had taken the form of a Kadambha tree, to which Lord Brahma used to perform aaradhanam by pouring holy water from his kamandalam. Another story associated with this kshethram is similar to that of Tirukandiyoor. It is said that Lord Brahma once had five heads. In a rage, Lord Shiva once slapped Lord Brahma’s fifth head, as he also had five heads, and it stuck to his hand as a curse. The only way the Bramhakapalam falls from one’s hand is to beg for alms, and for that to fill up the kapalam. In his search for alms, Lord Shiva reached Karambanur. Here, when he begged Poornavalli thayaar for alms, the kapalam burst, and Lord Shiva was free of the curse. Thus, it is said that people without a means of obtaining food can come here to pray to Poornavalli Thayar to gain her blessings.\n* This is said to be the only temple where one can see the Trinity with their wives all under the same temple. There are temples where one can see Lord Vishnu, Lord Brahma, and Lord Shiva together. However, this is the only temple where you will see Lord Vishnu with Poornavalli Thayaar (Lakshmi), Lord Brahma with Saraswati, and Lord Shiva with Parvati.",
+  "azhwarPasuram": "Tirumangai Azhwar: 1 pasuram",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/JtR6GC14gzWTNByn8"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirukarambanur-uttamarkovil-1",
+      "sourceAssetUuid": "4ccfe4fe-e87f-49fc-880e-2b14e8226790",
+      "sourceOriginalName": "108-3.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukarambanur-uttamarkovil-2",
+      "sourceAssetUuid": "ca589d08-ea66-46e0-9551-c0bebf6f4ccd",
+      "sourceOriginalName": "108-3T.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkarambanuurpaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkarambanuurpaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkarambanuurpaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirukkarambanuurpaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

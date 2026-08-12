@@ -1,0 +1,68 @@
+[
+  {
+    "pageId": "page.Page0",
+    "title": "Global canvas",
+    "category": "system_global_canvas",
+    "reason": "Global canvas page; its functional purpose beyond the isGlobalCanvas flag was not determined by this extraction."
+  },
+  {
+    "pageId": "page.Page2",
+    "title": "Menu",
+    "category": "app_chrome",
+    "reason": "Page contains 10 \"Lorem ipsum\" placeholder text block(s); content appears unfinished in the source application."
+  },
+  {
+    "pageId": "page.Page3",
+    "title": "108 Divyadesam",
+    "category": "navigation_hub",
+    "reason": "Page contains 216 \"Lorem ipsum\" placeholder text block(s); content appears unfinished in the source application."
+  },
+  {
+    "pageId": "page.Page93",
+    "title": "Tirukoodal",
+    "category": "unresolved_possible_divya_desam",
+    "reason": "Has a prapatti.com sloka/stotram PDF link, like the confirmed Divya Desam pages, but lacks BOTH a Google Maps link and hub-list membership, so it cannot be confidently distinguished from a non-temple stotram/sloka page using available structural evidence."
+  },
+  {
+    "pageId": "page.Page112",
+    "title": "Visishtadvaita Philosophy",
+    "category": "unknown",
+    "reason": "No confident classification rule matched and no non-placeholder text was found."
+  },
+  {
+    "pageId": "page.Page115",
+    "title": "Mahabharatam",
+    "category": "unknown",
+    "reason": "No confident classification rule matched and no non-placeholder text was found."
+  },
+  {
+    "pageId": "page.Page116",
+    "title": "Ramayanam",
+    "category": "unknown",
+    "reason": "No confident classification rule matched and no non-placeholder text was found."
+  },
+  {
+    "pageId": "page.Page127",
+    "title": "Guru Parampara",
+    "category": "non_temple_content_candidate",
+    "reason": "Page contains 68 \"Lorem ipsum\" placeholder text block(s); content appears unfinished in the source application."
+  },
+  {
+    "pageId": "page.Page150",
+    "title": "Hayagriva Stotram",
+    "category": "unresolved_possible_divya_desam",
+    "reason": "Has a prapatti.com sloka/stotram PDF link, like the confirmed Divya Desam pages, but lacks BOTH a Google Maps link and hub-list membership, so it cannot be confidently distinguished from a non-temple stotram/sloka page using available structural evidence."
+  },
+  {
+    "pageId": "page.Page163",
+    "title": "Charama Shlokams",
+    "category": "non_temple_content_candidate",
+    "reason": "Page contains 6 \"Lorem ipsum\" placeholder text block(s); content appears unfinished in the source application."
+  },
+  {
+    "pageId": "page.Page168",
+    "title": "Srimad Bhagavatham",
+    "category": "non_temple_content_candidate",
+    "reason": "Page contains 58 \"Lorem ipsum\" placeholder text block(s); content appears unfinished in the source application."
+  }
+]

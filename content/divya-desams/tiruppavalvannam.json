@@ -1,0 +1,71 @@
+{
+  "slug": "tiruppavalvannam",
+  "displayName": "Tiruppavalvannam",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page58",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Pavala Vanna Perumal, Pachai Vanna Perumal",
+    "thayaar": "Pavalavalli Thayaar",
+    "vimanam": "Pravaala Vimanam",
+    "theertham": "Chakra Theertham"
+  },
+  "sthalaPuranam": "This kshethram comprises two temples, namely Pachivannam and Pavalavannam. The presiding deity is said to be prathyaksham for Brighu Maharishi and Ashwini Devatas here.\n*** This kshethram is special for Lakshmi Devi, as she is seated atop the Sri Yantram.",
+  "azhwarPasuram": "Tirumangai Azhwar: 1 pasuram",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/e7hhjc97fWrEWJXS6"
+    },
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/DpKZVWae6LtvbCma9"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruppavalvannam-1",
+      "sourceAssetUuid": "5a5b5c44-0285-450b-bd67-8eda5e3add78",
+      "sourceOriginalName": "108-55-1.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruppavalvannam-2",
+      "sourceAssetUuid": "52e3cc07-674a-40c5-b1f8-77fe20e5b1fe",
+      "sourceOriginalName": "108-55-2.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruppavalavannampaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruppavalavannampaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruppavalavannampaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruppavalavannampaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

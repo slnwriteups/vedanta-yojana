@@ -1,0 +1,127 @@
+{
+  "pageId": "page.Page36",
+  "title": "Tirumanimada Kovil",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page36",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "ac6b4755-696b-489a-8552-c4eeb5828381",
+    "b61309ac-90f2-4cab-8ee4-6e37f4fc477e"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://maps.app.goo.gl/a37khg8T8QoPjT896",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirumanimaadakkoyilpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirumanimaadakkoyilpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirumanimaadakkoyilpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirumanimaadakkoyilpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirumanimada Kovil",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://ac6b4755-696b-489a-8552-c4eeb5828381"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Nandaivillaku Nara Narayanan\nThayaar: Pundereekavalli Thayaar\nVimanam: Pranava Vimanam\nPushkarani: Indra Pushkarani\n\nTravel: 8 km from Sirkazhi\n\nAzhwar Pasuram: \nTirumangai Azhwar: 12 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nIt is said that this Lord was the first among the Tirunangur deities to appear to help Lord Shiva get relief from Brahmahatyadosham. The Lord is said to have given Tirukkoshtiyur Nambigal ( Guru of Srimad Ramanujacharya) the ashta-akshara mantram. Thus, one can find an idol of Tirukkoshtiyur Nambigal here at this kshethram.\nAnother story recounts how Indra was cursed by Durvasa, a maharishi, which led to the Samudra Manthanam. Once there was a dancer who wanted to impress the goddess, Maha Lakshmi. The dancer performed a very intricate set of dances, and soon the goddess appeared before her, presenting the dancer with a garland. Soon after this, it is said that Sage Durvasa was passing by and saw the lovely garland on the neck of the dancer. The dancer offered the sage the garland and left the scene. It is said that the garland possessed a very fragrant smell that attracted bees. Soon, the sage started to get irritated by the buzzing of the bees and was looking to dispose of the garland when Indra arrived atop his mount, Airavata. Durvasa presented the garland to Indra. Airavata took the garland, but instead of throwing it on Indra, it crushed it beneath its legs. Durvasa was immensely angered by this insult and cursed Indra, saying he and the world would lose all their wealth. As the phrasing of the curse was vague, all wealth-bearing substances and creatures, such as the Kalpa Vriksha, Kamadhenu, and even the Goddess Lakshmi, disappeared. Indra never knew a world without getting whatever he desired.\nThus, to regain his lost wealth, Indra is said to have performed tapas here. The Lord is said to have appeared here and given him the idea to perform Samudra Mathanam.\n***Tirumangai Azhwar, in his pasuram, starts to address the Lord as nanda villake ananthakariyay, which translates to an Upanishad-Vaakyam which describes the Lord as सत्यम् ज्ञानम् अनंतम् ब्रह्म. The word-for-word translation of this gives us:\nसत्यम् – The One who does not change and is the One true Universal Truth.\nज्ञानम् – The most knowledgeable. One who knows everything. Past, present, and future.\nअनंतम् – The One who has no end by any cause.\nTirumangai Azhwar refers to the Lord as Nanda Villake, which means a figurative burning lamp, signifying the Upanishad-Vaakyam.\n***Another specialty of this temple is that it hosts the Annual Padhnor Garudothsavam. Find the picture attached below. ",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://b61309ac-90f2-4cab-8ee4-6e37f4fc477e"
+    }
+  ]
+}

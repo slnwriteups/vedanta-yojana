@@ -1,0 +1,355 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import {
+  BookSchema,
+  ChapterSchema,
+  DivyaDesamSchema,
+  KnowledgeSchema,
+} from "../../../content-lib/schemas/index.ts";
+
+/**
+ * Phase 5H reconciliation tests -- verify the ACTUAL migrated output under
+ * /content against the frozen content-extraction/ snapshot, not merely the
+ * pure transformation functions (already covered by earlier migration
+ * test files). These tests read real files on both sides.
+ */
+
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
+const CONTENT_DD_DIR = path.join(REPO_ROOT, "content/divya-desams");
+const CONTENT_LIBRARY_DIR = path.join(REPO_ROOT, "content/library");
+const CONTENT_KNOWLEDGE_DIR = path.join(REPO_ROOT, "content/knowledge");
+const CONTENT_UNRESOLVED_DIR = path.join(REPO_ROOT, "content/_unresolved");
+const SOURCE_DD_DIR = path.join(REPO_ROOT, "content-extraction/divya-desams");
+const SOURCE_ARTICLES_DIR = path.join(REPO_ROOT, "content-extraction/articles");
+const IMAGE_MAP_FILE = path.join(REPO_ROOT, "content-extraction/image-map.json");
+
+function readJson(p: string): any {
+  return JSON.parse(fs.readFileSync(p, "utf8"));
+}
+
+function listJsonFiles(dir: string): string[] {
+  return fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
+}
+
+const ddOutputFiles = listJsonFiles(CONTENT_DD_DIR);
+const ddOutputRecords = ddOutputFiles.map((f) => readJson(path.join(CONTENT_DD_DIR, f)));
+
+const bookDirs = fs.readdirSync(CONTENT_LIBRARY_DIR, { withFileTypes: true }).filter((e) => e.isDirectory());
+const bookDir = bookDirs[0];
+const bookRecord = bookDir ? readJson(path.join(CONTENT_LIBRARY_DIR, bookDir.name, "book.json")) : null;
+const chaptersDir = bookDir ? path.join(CONTENT_LIBRARY_DIR, bookDir.name, "chapters") : "";
+const chapterFiles = bookDir ? listJsonFiles(chaptersDir) : [];
+const chapterRecords = chapterFiles.map((f) => readJson(path.join(chaptersDir, f)));
+
+const knowledgeFiles = listJsonFiles(CONTENT_KNOWLEDGE_DIR);
+const knowledgeRecords = knowledgeFiles.map((f) => readJson(path.join(CONTENT_KNOWLEDGE_DIR, f)));
+
+const unresolvedFiles = listJsonFiles(CONTENT_UNRESOLVED_DIR);
+const unresolvedRecords = unresolvedFiles.map((f) => readJson(path.join(CONTENT_UNRESOLVED_DIR, f)));
+
+// ---------------------------------------------------------------------------
+// Complete expected record counts.
+// ---------------------------------------------------------------------------
+
+test("exactly 107 Divya Desam records exist in content/divya-desams/ (108 source records minus Page150, held back)", () => {
+  assert.equal(ddOutputFiles.length, 107);
+});
+
+test("exactly 1 Book exists, with exactly 55 chapters", () => {
+  assert.equal(bookDirs.length, 1);
+  assert.equal(chapterFiles.length, 55);
+});
+
+test("exactly 1 Knowledge record exists", () => {
+  assert.equal(knowledgeFiles.length, 1);
+});
+
+test("exactly 1 held-back unresolved record exists (Page150)", () => {
+  assert.equal(unresolvedFiles.length, 1);
+});
+
+test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README) = 166", () => {
+  const total = countFilesRecursive(path.join(REPO_ROOT, "content"));
+  assert.equal(total, 166);
+});
+
+function countFilesRecursive(dir: string): number {
+  let count = 0;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isDirectory()) count += countFilesRecursive(path.join(dir, entry.name));
+    else count++;
+  }
+  return count;
+}
+
+// ---------------------------------------------------------------------------
+// Page5 remains intact.
+// ---------------------------------------------------------------------------
+
+test("Page5 remains intact: content/divya-desams/sri-rangam.json is present and traceable to page.Page5", () => {
+  const sriRangam = ddOutputRecords.find((r) => r.slug === "sri-rangam");
+  assert.ok(sriRangam, "sri-rangam.json missing from the migrated set");
+  assert.equal(sriRangam.migration.sourcePageId, "page.Page5");
+  assert.equal(sriRangam.status, "draft");
+});
+
+// ---------------------------------------------------------------------------
+// Page93 treatment.
+// ---------------------------------------------------------------------------
+
+test("Page93 (Tirukoodal) migrated as a normal DivyaDesam: draft, needsReview, low confidence, no fabricated Maps link", () => {
+  const record = ddOutputRecords.find((r) => r.migration.sourcePageId === "page.Page93");
+  assert.ok(record, "Page93 missing from migrated Divya Desams");
+  assert.equal(record.status, "draft");
+  assert.equal(record.migration.needsReview, true);
+  assert.equal(record.migration.extractionConfidence, "low");
+  assert.deepEqual(record.shrines, []);
+  assert.ok(record.templeInformation.moolavar, "expected Page93's real temple-shaped content to be preserved");
+  assert.ok(record.sthalaPuranam, "expected Page93's Sthala Puranam to be preserved");
+});
+
+// ---------------------------------------------------------------------------
+// Page150 held-back treatment.
+// ---------------------------------------------------------------------------
+
+test("Page150 (Hayagriva Stotram) is held back, not classified as any normal content type, links preserved", () => {
+  assert.equal(unresolvedRecords.length, 1);
+  const held = unresolvedRecords[0];
+  assert.equal(held.sourcePageId, "page.Page150");
+  assert.equal(held.title, "Hayagriva Stotram");
+  assert.equal(held.extractionConfidence, "low");
+  assert.equal(held.needsReview, true);
+  assert.equal("slug" in held, false);
+  assert.equal("contentType" in held, false);
+  assert.equal("templeInformation" in held, false);
+  assert.equal("status" in held, false);
+  assert.equal(held.rawExternalLinks.length, 4, "expected all 4 Hayagriva Stotram PDF links to be preserved");
+
+  // Cannot masquerade as / validate against any normal destination schema.
+  assert.equal(DivyaDesamSchema.safeParse(held).success, false);
+  assert.equal(ChapterSchema.safeParse(held).success, false);
+  assert.equal(KnowledgeSchema.safeParse(held).success, false);
+
+  // Must NOT appear in any normal content collection.
+  assert.equal(ddOutputRecords.some((r) => r.migration.sourcePageId === "page.Page150"), false);
+  assert.equal(chapterRecords.some((r) => r.migration.sourcePageId === "page.Page150"), false);
+  assert.equal(knowledgeRecords.some((r) => r.migration.sourcePageId === "page.Page150"), false);
+});
+
+// ---------------------------------------------------------------------------
+// Multi-shrine ambiguous-label fallback (Page24/38/40) -- discovered
+// during this phase's real run.
+// ---------------------------------------------------------------------------
+
+test("the 3 multi-shrine records with ambiguous per-shrine labels (Page24, Page38, Page40) migrated with empty templeInformation, needsReview true, and full shrines/images/resources preserved", () => {
+  for (const pageId of ["page.Page24", "page.Page38", "page.Page40"]) {
+    const record = ddOutputRecords.find((r) => r.migration.sourcePageId === pageId);
+    assert.ok(record, `${pageId} missing from migrated Divya Desams`);
+    assert.deepEqual(record.templeInformation, {});
+    assert.equal(record.migration.needsReview, true);
+    assert.ok(record.shrines.length > 0, `${pageId} should still have its shrines preserved`);
+    assert.ok(record.images.length > 0, `${pageId} should still have its images preserved`);
+    assert.ok(record.resources.length > 0, `${pageId} should still have its resources preserved`);
+  }
+});
+
+// ---------------------------------------------------------------------------
+// B. Status: every normal migrated content record has status "draft".
+// ---------------------------------------------------------------------------
+
+test("B: every Divya Desam record has status draft", () => {
+  for (const r of ddOutputRecords) assert.equal(r.status, "draft", r.slug);
+});
+
+test("B: every chapter has status draft", () => {
+  for (const c of chapterRecords) assert.equal(c.status, "draft", c.slug);
+});
+
+test("B: the Knowledge record has status draft", () => {
+  for (const k of knowledgeRecords) assert.equal(k.status, "draft", k.slug);
+});
+
+test("B: the Book has status draft", () => {
+  assert.equal(bookRecord.status, "draft");
+});
+
+// ---------------------------------------------------------------------------
+// E. Traceability: every migrated record's sourcePageId maps back to a
+// real source record.
+// ---------------------------------------------------------------------------
+
+test("E: every Divya Desam record's sourcePageId maps to a real content-extraction/divya-desams file", () => {
+  for (const r of ddOutputRecords) {
+    const sourcePath = path.join(SOURCE_DD_DIR, `${r.migration.sourcePageId}.json`);
+    assert.ok(fs.existsSync(sourcePath), `no source file for ${r.migration.sourcePageId}`);
+  }
+});
+
+test("E: every chapter's sourcePageId maps to a real content-extraction/articles file", () => {
+  for (const c of chapterRecords) {
+    const sourcePath = path.join(SOURCE_ARTICLES_DIR, `${c.migration.sourcePageId}.json`);
+    assert.ok(fs.existsSync(sourcePath), `no source file for ${c.migration.sourcePageId}`);
+  }
+});
+
+test("E: every source Divya Desam record maps to exactly one destination (107 normal + Page150 held back = 108)", () => {
+  const sourceFiles = fs.readdirSync(SOURCE_DD_DIR).filter((f) => f.endsWith(".json") && f !== "index.json");
+  assert.equal(sourceFiles.length, 108);
+  const migratedSourceIds = new Set(ddOutputRecords.map((r) => r.migration.sourcePageId));
+  migratedSourceIds.add(unresolvedRecords[0].sourcePageId);
+  assert.equal(migratedSourceIds.size, 108);
+});
+
+test("E: every source article record maps to exactly one destination (55 chapters + 1 Knowledge = 56)", () => {
+  const sourceFiles = fs.readdirSync(SOURCE_ARTICLES_DIR).filter((f) => f.endsWith(".json") && f !== "index.json");
+  assert.equal(sourceFiles.length, 56);
+  const migratedSourceIds = new Set(chapterRecords.map((c) => c.migration.sourcePageId));
+  for (const k of knowledgeRecords) migratedSourceIds.add(k.migration.sourcePageId);
+  assert.equal(migratedSourceIds.size, 56);
+});
+
+// ---------------------------------------------------------------------------
+// F. Images: every destination image reference resolves to a real source asset.
+// ---------------------------------------------------------------------------
+
+test("F: every image reference across all migrated records resolves to a real image-map.json asset", () => {
+  const imageMap = readJson(IMAGE_MAP_FILE);
+  const knownUuids = new Set(imageMap.images.map((i: any) => i.assetUuid));
+  const allRecords = [...ddOutputRecords, ...chapterRecords, ...knowledgeRecords];
+  let checked = 0;
+  for (const record of allRecords) {
+    for (const image of record.images ?? []) {
+      assert.ok(knownUuids.has(image.sourceAssetUuid), `unresolvable image UUID ${image.sourceAssetUuid} in ${record.slug}`);
+      assert.equal(image.altStatus, "needs-review");
+      assert.equal(image.alt, null);
+      checked++;
+    }
+  }
+  assert.ok(checked > 0);
+});
+
+test("shared-image preservation: the 4 previously-identified multi-page images still resolve to the same sourceAssetUuid across their respective records", () => {
+  // From Phase 5A: 573d5ea0 (Page48<->Page121), 5e651812 & c0c018d2 (Page90<->Page128), 92013b6d (Page4<->Page113)
+  const sharedPairs = [
+    { uuid: "573d5ea0-69a2-40bb-b2d1-da6c83762939", pageIds: ["page.Page48", "page.Page121"] },
+    { uuid: "5e651812-9ae4-4dc9-b662-867b39bf040e", pageIds: ["page.Page90", "page.Page128"] },
+    { uuid: "c0c018d2-6c1c-481b-a883-b1b003b54daf", pageIds: ["page.Page90", "page.Page128"] },
+    { uuid: "92013b6d-dbc5-4481-a56a-31355a9d5b64", pageIds: ["page.Page4", "page.Page113"] },
+  ];
+  const allRecords = [...ddOutputRecords, ...chapterRecords, ...knowledgeRecords];
+  for (const { uuid, pageIds } of sharedPairs) {
+    for (const pageId of pageIds) {
+      const record = allRecords.find((r) => r.migration.sourcePageId === pageId);
+      assert.ok(record, `record for ${pageId} not found`);
+      const hasImage = (record.images ?? []).some((img: any) => img.sourceAssetUuid === uuid);
+      assert.ok(hasImage, `expected ${pageId} to reference shared image ${uuid}`);
+    }
+  }
+});
+
+// ---------------------------------------------------------------------------
+// G. External links: every migrated URL matches the source URL verbatim.
+// ---------------------------------------------------------------------------
+
+test("G: every shrine mapsLink and resource url in every Divya Desam matches its source record's externalLinks verbatim", () => {
+  let checked = 0;
+  for (const record of ddOutputRecords) {
+    const sourcePath = path.join(SOURCE_DD_DIR, `${record.migration.sourcePageId}.json`);
+    const source = readJson(sourcePath);
+    const sourceUrls = new Set(source.externalLinks.map((l: any) => l.url));
+    for (const shrine of record.shrines) {
+      assert.ok(sourceUrls.has(shrine.mapsLink), `${record.slug}: unexpected shrine URL ${shrine.mapsLink}`);
+      checked++;
+    }
+    for (const resource of record.resources) {
+      assert.ok(sourceUrls.has(resource.url), `${record.slug}: unexpected resource URL ${resource.url}`);
+      checked++;
+    }
+  }
+  assert.ok(checked > 400, `expected several hundred URLs checked, got ${checked}`);
+});
+
+// ---------------------------------------------------------------------------
+// H. Chapters: ordering correct, no duplicates within the book.
+// ---------------------------------------------------------------------------
+
+test("H: chapter order values are all unique within the one book", () => {
+  const orders = chapterRecords.map((c) => c.order);
+  assert.equal(new Set(orders).size, orders.length);
+});
+
+test("H: book.chapterOrder lists exactly the 55 chapter slugs, in ascending order value", () => {
+  assert.equal(bookRecord.chapterOrder.length, 55);
+  const sortedBySlugOrder = [...chapterRecords].sort((a, b) => a.order - b.order).map((c) => c.slug);
+  assert.deepEqual(bookRecord.chapterOrder, sortedBySlugOrder);
+});
+
+// ---------------------------------------------------------------------------
+// I. Slugs: no duplicate destination slugs (within each collection).
+// ---------------------------------------------------------------------------
+
+test("I: no duplicate slugs among the 107 Divya Desam records", () => {
+  const slugs = ddOutputRecords.map((r) => r.slug);
+  assert.equal(new Set(slugs).size, slugs.length);
+});
+
+test("I: no duplicate slugs among the 55 chapters", () => {
+  const slugs = chapterRecords.map((c) => c.slug);
+  assert.equal(new Set(slugs).size, slugs.length);
+});
+
+// ---------------------------------------------------------------------------
+// J. Schema: every generated normal content record passes its destination
+// Zod schema (re-validated independently here, not trusting the runner).
+// ---------------------------------------------------------------------------
+
+test("J: every migrated Divya Desam independently passes DivyaDesamSchema", () => {
+  for (const r of ddOutputRecords) {
+    const result = DivyaDesamSchema.safeParse(r);
+    assert.equal(result.success, true, `${r.slug}: ${result.success ? "" : JSON.stringify(result.error?.issues)}`);
+  }
+});
+
+test("J: every migrated chapter independently passes ChapterSchema", () => {
+  for (const c of chapterRecords) {
+    const result = ChapterSchema.safeParse(c);
+    assert.equal(result.success, true, `${c.slug}: ${result.success ? "" : JSON.stringify(result.error?.issues)}`);
+  }
+});
+
+test("J: the Knowledge record independently passes KnowledgeSchema", () => {
+  for (const k of knowledgeRecords) {
+    const result = KnowledgeSchema.safeParse(k);
+    assert.equal(result.success, true);
+  }
+});
+
+test("J: the Book independently passes BookSchema", () => {
+  const result = BookSchema.safeParse(bookRecord);
+  assert.equal(result.success, true);
+});
+
+// ---------------------------------------------------------------------------
+// Known empty gaps not migrated.
+// ---------------------------------------------------------------------------
+
+test("known source gaps (Page112, Page115, Page116) were NOT migrated to any content record", () => {
+  const allRecords = [...ddOutputRecords, ...chapterRecords, ...knowledgeRecords, ...unresolvedRecords];
+  for (const gapPageId of ["page.Page112", "page.Page115", "page.Page116"]) {
+    const found = allRecords.some(
+      (r) => r.migration?.sourcePageId === gapPageId || r.sourcePageId === gapPageId
+    );
+    assert.equal(found, false, `${gapPageId} should not have been migrated`);
+  }
+});
+
+test("Page117 (which does not exist in the source at all) was not fabricated", () => {
+  const allRecords = [...ddOutputRecords, ...chapterRecords, ...knowledgeRecords, ...unresolvedRecords];
+  const found = allRecords.some(
+    (r) => r.migration?.sourcePageId === "page.Page117" || r.sourcePageId === "page.Page117"
+  );
+  assert.equal(found, false);
+});

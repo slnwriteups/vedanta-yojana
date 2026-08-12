@@ -1,0 +1,44 @@
+{
+  "pageId": "page.Page171",
+  "title": "Jaya and Vijaya",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page171",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Jaya and Vijaya",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "In Vaikuṇṭha, the eternal realm of Vishnu, two gatekeepers—Jaya and Vijaya—stood guard at the entrance to the Lord’s inner chambers. They had served for ages, loyal and unwavering.\n\nOne day, the Four Kumāras—ancient sages in the form of children—came seeking an audience with the Lord. When they reached the gates, Jaya and Vijaya stopped them. They assumed the boys were ordinary visitors and turned them away, not recognizing who they were.\n\nThe Kumāras were not angry, but they saw pride in the gatekeepers' response—a subtle arrogance that came from standing so close to Vishnu for so long. They pronounced a curse: Jaya and Vijaya would lose their position and be born in the world of mortals, where they would face birth and death.\n\nThe moment was serious. Jaya and Vijaya realized their mistake and accepted the curse. Then, the gates opened, and Shriman Nārāyaṇa appeared. He confirmed that the curse could not be undone, but offered them a choice: seven births as His devotees, or three as His enemies. They chose the shorter path—even if it meant being born as opponents of the Lord.\n\nIn their first life, they were born as Hiraṇyākṣa and Hiraṇyakaśipu. One disrupted the cosmic balance by dragging the Earth into the ocean. The other denied the existence of Vishnu and tried to kill his own son, Prahlāda, who remained devoted to the Lord. In response, Vishnu incarnated as Varāha to kill Hiraṇyākṣa, and as Narasimha to end Hiraṇyakaśipu and protect Prahlāda.\n\nIn their second birth, they were Rāvaṇa and Kumbhakarṇa, rulers of Laṅkā. Rāvaṇa abducted Sītā, and Kumbhakarṇa fought by his side. Vishnu incarnated as Rāma, defeated them both, and restored order.\n\nIn their final life, they were Śiśupāla and Dantavakra. Śiśupāla publicly insulted Krishna and was killed during the Rājasūya Yajña with the Sudarśana Chakra. Dantavakra, seeking revenge, attacked Krishna on His way to Dvārakā. In a direct mace duel, Krishna killed him with Kaumodakī, His own mace.\n\nAfter these three births, their curse ended. Jaya and Vijaya returned to Vaikuṇṭha, resuming their post as gatekeepers. Their pride had been removed, and their role had been completed.\n\nThey had opposed the Lord, but only in form. In each life, they brought about one of His descents, allowing Him to act in the world. Their fall was not rejection—it was correction. And in the end, they returned to where they had started.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

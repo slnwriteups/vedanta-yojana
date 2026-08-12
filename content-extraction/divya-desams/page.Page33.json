@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page33",
+  "title": "Tiruarimeya Vinnagaram",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page33",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "ab861bdb-5029-42fe-bfeb-21b82f1bc525"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruyarimeyavinnagarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruyarimeyavinnagarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruyarimeyavinnagarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/AMes1UqcARWPFWHBA",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruyarimeyavinnagarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruarimeya Vinnagaram",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://ab861bdb-5029-42fe-bfeb-21b82f1bc525"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram: \nMoolavar: Kudamaadukoothan\nThayaar: Amritaghatavalli Thayaar\nVimanam: Uchasruga Vimanam\nPushkarani: Amrita Theertham\n\nTravel: This kshethram is located 8 km east of Sirkazhi.\n\nAzhwar Pasuram:\nTirumangai Azhwar – 10 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam: \n One day, Kadru and Vinata were arguing about the color of Ucchaishravas' tail. Vinata claimed that the divine horse was a pure white color throughout, but Kadru said the horse’s body was white, but the tail was black. Thus, the two had a bet to see who was right. The one who would lose the bet would become the other’s slave. Kadru knew very well that the tail of Ucchaishravas was pure white, and knowing she would lose the bet, she told her sons to wrap themselves around the tail of Ucchaishravas so that she could win the bet. One day, in the presence of Kadru and Vinata, Ucchaishravas passed by with a black tail. Thus, Kadru won the bet, enslaving Vinata. For five hundred years, Vinata was a slave to Kadru. After five hundred years, Vinata’s second egg hatched, and from that egg was born Garudan. As soon as he was born, he went straight to his aunt and demanded that his mother be freed from slavery.\nTo this, Kadru put a condition, saying that if Garudan could bring the Amruthakalasham (the divine pitcher that contained the sacred nectar of immortality) for her and her children, she would release Vinata from slavery. Thus, Garudan immediately left for Swargalokam and defeated all the Devas in battle, successfully retrieving the Amruthakalasham. After retrieving the Amruthakalasham, Garudan returned to Bhulokam. On Bhulokam, Lord Vishnu was very impressed with Garudan for his strength and dedication. The Lord then offered Garudan a boon. Garudan asked that he should always be soaring far above the Lord; thus, Garudan is present in the Dwajasthambham outside the temple. The Lord also then told Garudan that he wanted Garudan to be constantly under his command; therefore, he asked Garudan to become his vaahanam. The Lord also relieved Vinata from slavery and took the Amruthakalasham. The Lord is said to have taken the Amruthakalasham, placed it on His head, and danced. Hence, he got the name Kudamaadukoothan.\nAnother story tells us that, after the Mahabharata battle, as the Lord was on his way back to Dwarka from his tour of South India, the Lord reached Arimeya Vinnagaram, where Utanka Maharishi’s ashram was situated at the time. Utanka Maharishi, upon seeing the Lord, is said to have stopped the Lord’s chariot and asked him to visit his Ashramam. When the Lord reached the Ashramam, Utanka Maharishi began to pose indirect questions to the Lord about how He ensured the Pandavas won the battle. The Lord sensed that the Maharishi had other intentions and asked him what he had in mind. Utanka Maharishi then told the Lord that he desired to see the Vishwaroopa Darshanam as He had shown Arjuna. The Lord then showed the Maharishi His Vishwaroopam.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

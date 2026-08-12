@@ -1,0 +1,87 @@
+{
+  "pageId": "page.Page147",
+  "title": "Swami Ramanujar's return to Sri Rangam and attaining Paramapadam",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page147",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "904e159a-7661-4568-be99-c78a8f0102a7",
+    "75ffdccf-bdcd-4af2-9837-a00ad04f48a3",
+    "03a30133-6ad4-4718-8dd0-4275ed2f0aba"
+  ],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Swami Ramanujar's return to Sri Rangam and attaining Paramapadam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "After Kulotunga Chola died in 1118, Swami Ramanujar decided to return to Sri Rangam. The people of Yadugiri could not bear to part with Swami Ramanujar. Thus, Swami Ramanujar instilled his qualities into a panchaloham idol. Swami Ramanujar and his disciples first made a stop at Tirumaliruncholai, where he fulfilled his vow to Sri Andal and presented the Lord with 100 gangalams of butter and sweet rice. After fulfilling his promise, he visited Srivilliputur, where Sri Andal is said to have appeared before him and bestowed upon him the title of Godaagraja. Swami Ramanujar then safely returned to Sri Rangam. \n\n\nWhen Kurathazhwan received the news of Swami Ramanujar's return, he rushed to see his Acharya. When Swami Ramanuja saw the plight of Kurathazhwan, he told Kurathazhwan to visit Varadaraja Perumal to regain his lost eyes. Kurthazhwan followed Acharya's instruction and restored his sight through the grace of Varadaraja Perumal. Kurathazhwan then served Swami Ramanujar for a period of two more years before attaining Paramapadam. \n\n\nSeventeen years after Kurathazhwan's demise, a time came when Swami Ramanujar sensed that his time on bhu-lokam was coming close to the end. It was at this time that Swami Ramanujar appointed Kurathazhwan's son Parashara Bhattar as the successor to propagate the Visishta Advaita Philosophy and made his final journey towards Paramapadam. \n\n\nThe gist of his last teachings is as follows:\nWorship all holy men precisely as you would do in the case of your spiritual preceptor. Have sincere faith in the teachings of the previous acharyas and Azhwars. Never become enslaved by your senses. Be not satisfied with the acquisition of worldly knowledge; spend your time reading literature that deals with the greatness of God and the wonders of His creation. By the Guru's grace, the attraction of the senses will cease to torment you. Learn to maintain composure in feelings of joy and sorrow, charm, and aversion. Enjoy the names and chanting of the glories of God's devotees with as much relish as the chanting of God's names and glories. Never forget that service to the devotees of God is more significant than service to God Himself. He who renders service to God's devotees speedily attains God Himself. Do not take to the life of a devotee as a means for acquiring any selfish advantage.\n\n\nThree idols of Ramanuja are especially associated with him. In the Tamil language, Tirumeni means 'idol' or 'figurine'. Ugandha means be worthy, be right, fit, rise to the occasion, and be suitable.\n\nSri Perumbudur, near Kanchipuram, got Thaan Ugandha Tirumeni – an idol that became sanctified on its own while Ramanuja was in Srirangam.\n\nMelkote, near Mysore, is home to Tamar Ugandha Tirumeni – an idol fashioned and sanctified by Him for His disciples.\n\nSrirangam, near Trichy, got Thane Aana Tirumeni – an idol that is He, Himself.\nHe was a celebrated saint of His time who had codified the worship system itself. \n\nAfter his passing, a life-size idol of his form has been kept in a sitting posture in a shrine within the Prakaram, a circumambulatory path of the Srirangam temple complex. Such an honour has not been bestowed on any other saint.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://904e159a-7661-4568-be99-c78a8f0102a7"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "text",
+      "content": "Thaan Ugandha Tirumeni",
+      "textFontSizeHint": 18
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://75ffdccf-bdcd-4af2-9837-a00ad04f48a3"
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "text",
+      "content": "Tamar Ugandha Tirumeni",
+      "textFontSizeHint": 18
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://03a30133-6ad4-4718-8dd0-4275ed2f0aba"
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "text",
+      "content": "Thane Aana Tirumeni",
+      "textFontSizeHint": 18
+    }
+  ]
+}

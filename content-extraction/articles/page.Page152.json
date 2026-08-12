@@ -1,0 +1,44 @@
+{
+  "pageId": "page.Page152",
+  "title": "Swami Desikan's Yatra of Vadu Nadu Kshethrams",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page152",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Swami Desikan's Yatra of Vadu Nadu Kshethrams",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "In the year 1317 AD Swami Desikan and his wife Kanakavalli were blessed with a son named Varadacharya. Just like his father, Varadacharya was a learned soul. It was as though a lamp was lit from an already bright and shining lamp. Soon after the birth of Varadacharya, Swami Desikan undertook a yatra of all the Vadu Nadu Kshethrams. The first stop made by Swami Desikan was that at Tirumala. Here, Swami Desikan composed the Daya Shatakam, a hundred verse treatise on the characteristics of the Lord's quality of showering limitless daya or mercy on all of His devotees. When Swami Desikan presented this work in front of Lord Srinivasa, the Lord is said to have been so moved by the rendition that He conferred Swami Desikan with the title of Vedantaacharya.\n\nSwami Desikan then continued his journey north and visited many kshethrams such as Tirukadigai, Tiruayodhyi, Kashi, Mathura, Avantika, Badarikashramam, Puri, Brindavan, Dwaraka, Triveni, Gaya, Salagramam, Purushothamam, Srikoormam, etc. Before returning to Kanchi, he also visited Tiruvallikkeni and Tiruvallur.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

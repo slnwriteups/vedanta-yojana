@@ -1,0 +1,44 @@
+{
+  "pageId": "page.Page159",
+  "title": "Guru Parampara from Ramanjacharya to Swami Desikan (Vadakalai Sampradayam)",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page159",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Guru Parampara from Ramanjacharya to Swami Desikan (Vadakalai Sampradayam)",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "Swami Ramanujar-> Tirukkurugai Pillan-> Sri Vishnu Chittar-> Sri Satya Vada Guru-> Kidambi Appular-> Swami Desikan.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

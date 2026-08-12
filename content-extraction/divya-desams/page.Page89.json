@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page89",
+  "title": "Tirupperai",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page89",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "ce331fd5-2421-4792-8ba4-213a242659a2"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirupperaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/KSQx9Gd93VYsSrM27",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirupperaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirupperaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirupperaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirupperai",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://ce331fd5-2421-4792-8ba4-213a242659a2"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Makara Nedunkuzhaikkadan\nThayaar: Kuzhaikkaduvalli Nachiyar and Tirupperai Nachiyar\nVimanam: Bhadra Vimanam\nPushkarani: Sukra Pushkarini / Tamaraparani River\n\nTravel: This kshethram is one of the Nava Tirupati temples and is located 5 km from Azhwar Tirunagari on the way to Tiruchendur from Tirunelveli.\n\nAzhwar Pasuram:\nNam Azhwar: 11 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nAccording to legend, Durvasa Maharishi is said to have once visited Karya-Vaikuntham, but Bhoodevi ignored his arrival and did not perform the required athithi-sathkaaram. Thus, Durvasa Maharishi is said to have cursed Bhoodevi, stating that she would become like Sridevi. When the Lord takes His avatars, He stands, sits, lies down, and performs all His activities on Bhoodevi, whereas He has allocated a small position in His heart for Sridevi. Upon hearing this curse, Bhoodevi pleads with the Maharishi to forgive her. Durvasa Maharishi tells Bhoodevi that once a curse is delivered, it cannot be taken back, but she could attain atonement if she performed tapas at Tirupperai. Thus, Bhoodevi is said to come to this kshethram and perform tapas by chanting the ashtakshara mantram. One day, when Bhoodevi went to bathe in the Tamaraparani River before offering her daily penance, She is said to have found a pair of kundalam (earrings) in the shape of makaram (a type of fish). She is said to have presented this makara-kundalam to the Lord, thus relieving Herself from the curse and giving Him the name Makara Nedunkuzhaikkadan.\n\n*** The importance of this kshethram lies in the practice of Varuna Japam. It is said that if one performs Varuna Japam at this kshethram, it will bring rain as desired. It is noted that Varuna sought the help of Makara Nedunkuzhaikkadan Perumal in his time of need. ",
+      "textFontSizeHint": 16
+    }
+  ]
+}

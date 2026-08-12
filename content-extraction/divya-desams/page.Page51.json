@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page51",
+  "title": "Tirupadagam",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page51",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "b0d7b996-8f0f-4481-9528-6272e1dcd95a"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://maps.app.goo.gl/7mdnf95h4hH6CcKm8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruppaadagampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruppaadagampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppaadagampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruppaadagampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirupadagam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://b0d7b996-8f0f-4481-9528-6272e1dcd95a"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Pandavadoothar\nThayaar: Rukmini, Satyabhama\nVimanam: Bathra Vimanam\nPushkarani: Mathsya Theertham\n\nAzhwar Pasuram:\nTirumazhisai Azhwar: 2 pasuram\nTirumangai Azhwar: 2 pasuram\nBhoodat Azhwar: 1 pasuram\nPey Azhwar: 1 pasuram\nTotal: 6 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam: \nShree Krishna told the Pandavas that he would, for the last time, visit the court of Hastinapur and try his hand at imploring reason to Duryodhana, trying to make him realize that nothing good could come out of a war. Shree Krishna arrived in Hastinapur and, instead of staying in the palace, chose to spend some time with Vidura. He stayed the night at Vidura’s house and in the morning went to the court of Hastinapur to try and convince Duryodhana out of the idea of war. Krishna presented his argument, asking that if the Kauravas did not want to return the entire kingdom, then at least provide the Pandavas with five villages.\nDuryodhana, in a crimson fury, snapped at Krishna, saying that he was not qualified to come to the court with such an issue and told him to go back to herding cattle. He further told Krishna that he would not give even a single needle-head’s worth of land. He then instructed the guards to tie Krishna up and make him a prisoner. As the guards were tying Krishna, he started to grow to an immeasurable height and took his Vishwaroopam Form. \nVaisampayana Maharishi was narrating the Bhagavatham to Janamejaya and was referring to Lord Krishna’s visit to Hastinapuram as the Pandavas' Dhoota (Ambassador). Desiring to have the Vishwaroopa darsana, they performed Ashwamedhayagam at Kanchipuram. On completion of the yagam, the Lord gave darshan as Pandavadhootar. There are shrines for Ramanuja Acharya and Manavaala Maamunigal.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

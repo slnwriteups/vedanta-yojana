@@ -1,0 +1,127 @@
+{
+  "pageId": "page.Page101",
+  "title": "Tiruppirudi (Joshimath)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": false
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page101",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "1488e430-c53c-4b58-8e0e-7e39bedddd8a",
+    "7e730dfb-60e1-4c18-b560-e240114d35d6"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppirudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/LDja38MariR8aqP18",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppirudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppirudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruppirudipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruppirudi (Joshimath)",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://1488e430-c53c-4b58-8e0e-7e39bedddd8a"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://7e730dfb-60e1-4c18-b560-e240114d35d6"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram: \nMoolavar: Narasimha Perumal\nThayaar: Parimalavalli Nachiyar\nVimanam: Govardhana Vimanam\nPushkarani: Indra Theertham\n\nTravel: This kshethram is located in Joshimath en route to Badrinath in Uttarakhand.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 10 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam: \nThe shrine that we see today is said to have been established by Sri Adi Shankaracharya. We can see that Lord Narasimha is holding his chakram, which is said to be a prayoga-chakram that is spinning. During the winter season, Lord Badrinarayan’s Utsavar Moorthy is brought to this temple and worshipped here, as it becomes very cold, and Badrinath closes its doors after Deepavali.\nAccording to Tirumangai Azhwar’s pasuram, we can understand that the temple and Lord being described is not the Lord Narasimha who we see today. Tirumangai Azhwar describes the Lord to be reclining in the bujanga shayanam on Adisesha bearing a thousand heads. According to the pasuram, the kshethram could be situated at Manasarovar.\nHowever, since time immemorial, all our acharyas have been visiting this kshethram, situated in Joshimath.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

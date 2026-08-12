@@ -1,0 +1,69 @@
+{
+  "sourcePageId": "page.Page150",
+  "title": "Hayagriva Stotram",
+  "extractionConfidence": "low",
+  "needsReview": true,
+  "rawContentBlocks": [
+    {
+      "type": "layout"
+    },
+    {
+      "type": "text",
+      "content": "Hayagriva Stotram"
+    },
+    {
+      "type": "text",
+      "content": "By the age of twenty, Swami Desikan had become a master scholar of everything in Vaishnavism that had existed up to that point. At the age of twenty-one, he married a woman named Kanakavalli. To expand his existing repertoire of knowledge, his uncle, Kidambi Appullar, taught him the Garuda Mantram. To meditate upon the Garuda Mantram, Swami Desikan chose to go to Oushadagiri at Tiruvahindrapuram, as there was a river known as Garuda that flows there. This was also a hillock that fell from the Sanjeevini mountain that Hanuman had brought to heal Lakshmana during the Ramayana. \n\nUpon reaching Tiruvahindrapuram, Swami Desikan bathed in the Garuda nadhi and prayed to Lord Devanatha and Vaikunthanayaki Thaayar. After praying to the Lord, he found a large Ashwath Tree under which he started to perform japam of the Garuda Mantram. Soon, Lord Garuda appeared before Swami Desikan and expressed his admiration for the level of devotion and concentration shown by Swami Desikan, bestowing upon him the Hayagriva Mantram. Lord Garuda instructed Swami Desikan to meditate upon this mantra with utmost concentration and devotion. Swami Desikan meditated upon the given mantra with complete dedication. Impressed with his concentration and devotion, Lord Hayagriva appeared before Swami Desikan and blessed him with the nectar of knowledge.\n\nAfter blessing Swami Desikan, the Lord asked Swami Desikan to ask him for a boon. Swami Desikan asked the Lord to be forever seated at the tip of his tongue so that the words that would come out of his mouth would be rich with knowledge, be authoritative, and correct. Lord Hayagriva then presented Vedanta Desikan with an idol of Himself, which has been passed down and is currently worshipped at the Parakala Mutt, situated in Mysuru. In praise of the Lord, Swami Desikan composed the Hayagriva Stotram. One who chants this stotram will attain proper knowledge of education, good concentration in studies, fluency in speech, mastery in debates, vocabulary, and excellent memory power."
+    },
+    {
+      "type": "picture",
+      "imageAssetRef": "ag-asset://49fa6d18-1309-49e4-b23a-04063dd26d93"
+    },
+    {
+      "type": "text",
+      "content": "Sri Lakshmi Hayagriva Aaradhana Murthy Parakala Mutt,Mysuru"
+    },
+    {
+      "type": "button",
+      "label": "Hayagriva Stotram English"
+    },
+    {
+      "type": "button",
+      "label": "Hayagriva Stotram Sanskrit"
+    },
+    {
+      "type": "button",
+      "label": "Hayagriva Stotram Tamizh"
+    },
+    {
+      "type": "button",
+      "label": "Hayagriva Stotram Kannada"
+    }
+  ],
+  "rawExternalLinks": [
+    {
+      "url": "https://prapatti.com/slokas/sanskrit/desika-stotramaala/hayagriivastotram.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Hayagriva Stotram Sanskrit",
+      "pageId": "page.Page150"
+    },
+    {
+      "url": "https://prapatti.com/slokas/english/desika-stotramaala/hayagriivastotram.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Hayagriva Stotram English",
+      "pageId": "page.Page150"
+    },
+    {
+      "url": "https://prapatti.com/slokas/tamil/desika-stotramaala/hayagriivastotram.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Hayagriva Stotram Tamizh",
+      "pageId": "page.Page150"
+    },
+    {
+      "url": "https://prapatti.com/slokas/kannada/desika-stotramaala/hayagriivastotram.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Hayagriva Stotram Kannada",
+      "pageId": "page.Page150"
+    }
+  ]
+}

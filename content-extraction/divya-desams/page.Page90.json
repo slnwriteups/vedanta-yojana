@@ -1,0 +1,162 @@
+{
+  "pageId": "page.Page90",
+  "title": "Tirukkurugur (Azhwar Tirunagari)",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page90",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "af4567e7-e0f7-474a-81f1-6dba3fda83e4",
+    "c0c018d2-6c1c-481b-a883-b1b003b54daf",
+    "5e651812-9ae4-4dc9-b662-867b39bf040e"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkuruguurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkuruguurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkuruguurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/aQuqvEKQLGR6amwr7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkuruguurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirukkurugur (Azhwar Tirunagari)",
+      "textFontSizeHint": 18
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://af4567e7-e0f7-474a-81f1-6dba3fda83e4"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Adinathar\nThayaar: Kurukoorvalli Nachiyar\nVimanam: Govinda Vimanam\nPushkarani: Brahma Theertham\n\nTravel: This kshethram is one of the most important Divyadesams. It is located around 25 km from Srivaikuntam.\n\nAzhwar Pasurams:\nNam Azhwar: 11 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nLegend says that this Lord is extremely ancient and is said to have appeared before the appearance of Lord Brahma. When Lord Brahma is said to have appeared and become conscious of the Lord, acknowledging Him is said to have asked for a place to establish His idol and perform tapas. The Lord is said to have directed Lord Brahma to Kurugur by giving him the command of tapas kuru. As the Lord commanded Lord Brahma to perform tapas, this kshethram gained the name of Kurugur. Lord Brahma is said to have bathed in the Tamaraparani River and performed tapas. The Lord is said to have emerged as a Swayambhu Moorthy ( self-established and not carved by anyone ). Lord Brahma is said to have performed the prathishtapana of the Lord. Another legend tells the story that Indra was absolved of the curse given by his parents by praying to the Lord at this kshethram. It is believed that Lakshmi meditated on Lord Vishnu when He was on a vow of celibacy. In response to Her request, He accepted Her in marriage in the form of a garland of flowers (Magizha malar maalai).\n***",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://c0c018d2-6c1c-481b-a883-b1b003b54daf"
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "text",
+      "content": "Swami Nam Azhwar",
+      "textFontSizeHint": 14
+    },
+    {
+      "order": 12,
+      "depth": 1,
+      "type": "text",
+      "content": "This kshethram is said to be the avatara sthalam of Nam Azhwar. As we saw in Tirukurungudi, Nam Azhwar’s parents prayed to Kurungudi Nambi for a child who would be like the Lord Himself. It is said that Kurungudi Nambi Himself reincarnated as Nam Azhwar. We shall now see the story of Nam Azhwar, one of the most revered gurus in the Sri Vaishnava Parampara.\nForty-three days had passed since Lord Sri Krishna had ascended to Sri Vaikuntham. A childless couple, Kari and Udayanangai, visited Tirukurungudi to pray for the birth of a child. It is said that they prayed to the Lord for a child who would be like Him. As none in this universe is comparable to Him, it is noted that Nambi Himself reincarnated as Nam Azhwar. Thus, in the Vaikasi month, under Visakha, Nakshatram, Nam Azhwar was born. As soon as he was born, he exhibited very peculiar behavior in the form of not crying or suckling. The couple, out of concern, is said to have taken the baby to the Adinatha Perumal Temple to pray to the Lord for the baby’s well-being. Nam Azhwar is also said to be an amshavataram of Sri  Vishwakshenar, who is said to be third in line in the Acharya Parampara after the Lord Sriman Narayana and Mahalakshmi Thayaar. The couple is said to have tied a cradle near the Tamarind tree that was present in the temple courtyard.",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 13,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://5e651812-9ae4-4dc9-b662-867b39bf040e"
+    },
+    {
+      "order": 14,
+      "depth": 1,
+      "type": "text",
+      "content": "Divine Tamarind Tree",
+      "textFontSizeHint": 14
+    },
+    {
+      "order": 15,
+      "depth": 1,
+      "type": "text",
+      "content": "The baby is said to have crawled out of the cradle and into a small, crater-like space within the tree, where it started a deep meditation. The baby is said to have stayed in this meditative state for sixteen years. At this time, Madurakavi Azhwar is said to have been at Ayodhya and offering argyam as per his Nityakarmam when he saw a blinding light at the edge of the horizon. Recognizing the meditative nature of the divine light is said to have started to follow the light. In pursuit of the light, Madurakavi Azhwar is said to have traveled south, crossing Tiruvenkatam, then Tiruvallikeni, then Sri Rangam, then Madurai, and finally reaching Kurugur. When Madurakavi Azhwar reached the divine tree, he saw a child in a deep meditative state and was worried if the child was still alive or not. Madurakavi Azhwar is said to have thrown a rock near the boy to test his consciousness. When the boy opened his eyes, Madurakavi Azhwar is said to have asked a question: “Sethathin Vayatrill Siriyadhu Pirandhaal Yeththai Thindru Enge Kiddakum?“. Madurakavi Azhwar was referring to the Jeevaathma. Madurakavi Azhwar asked, \"When the jeevaathma enters a lifeless body, how would it survive, what would it feed on, and how would it sustain itself?\" This is when Nam Azhwar is said to have first spoken by saying, “Aththaith Thindru Ange Kidakkum.”. Nam Azhwar’s reply said that the lifeless body would experience the pleasures and pains of life before attaining paramapadam or moksham. Madurakavi Azhwar was so stunned by the boy’s response that he begged to be his disciple. Madurakavi Azhwar composed 11 Pasurams in praise of his Acharya, Swami Nam Azhwar, known as Kanninun Shiruthambu, which are included among the 4000 Nalayira Divya Prabandham.\nWhen Nam Azhwar was ready to attain paramapadam, Madurakavi Azhwar asked Nam Azhwar with full of tears, what to do next. Nam Azhwar advised Madurakavi Azhwar to boil the waters of Tamraparni, and he said that an idol would form during the boiling of the water. Madurakavi Azhwar followed Nam Azhwar’s advice. When he had boiled the waters of Tamraparni, He got an idol of Bhagavad Ramanuja. He was surprised to see that the idol was different from what he had expected. He went to Nam Azhwar with the idol, and the latter told him that this idol was that of a Bhavishyadhacharya (Future Acharya) and that he would be born 4000 years from then. He again advised boiling the waters of Tamraparni. Madurakavi Azhwar once again boiled the waters of Tamraparni and finally got the idol of Nam Azhwar.\nEvery year on the Tirunakashthram of Nam Azhwar, the NavaTirupati Brahmotsavam is concluded, and the teerthavaari uthsavam is performed where the idol of Nam Azhwar is brought to the Tamaraparani River, and along with Sri Sudharshana ChakrathAzhwar, Nam Azhwar’s Idol is also dipped in the holy waters of the river.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

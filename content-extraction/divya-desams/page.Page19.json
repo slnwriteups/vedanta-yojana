@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page19",
+  "title": "Tirucherai",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page19",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "cf07b7b6-f4ae-49cd-b855-fe7aaac6e589"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirucceraipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirucceraipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirucceraipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/RgMViLDvxVKg2Vpq7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirucceraipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirucherai",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://cf07b7b6-f4ae-49cd-b855-fe7aaac6e589"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram: \nMoolavar: Saranathan Perumal\nThayaar: Saranayaki Thayaar\nVimanam: Sara Vimanam\nPushkarani: Sara Pushkarani\nTravel: 15 km from Kumbakonam\n\nAzhwar Pasuram:\nThirumangai Azhwar – 13 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nAccording to legend, it is believed that Markandeya Maharishi and Kaveri Thayaar meditated upon Lord Vishnu. It is also believed that Brahma made a clay pot to rescue and preserve the Vedas during pralaya, but none of the pots made by Brahma would last. Thereupon, he was directed by Lord Vishnu to proceed to Tirucherai (Saarakshethram) and make a pot out of the clay on the banks of Kaveri, and thus the Vedas were protected in a pot made out of tough mud at this place. Another legend recounts a feud between the Ganga and Kaveri rivers. It is said that seven rivers were meditating at the foothills of the Vindhya hills. At this moment, a Gandharva is said to have appeared and paid his respects to the devis. The question then arose: seven women were present, but to whom did the Gandharva pay his respects? Ganga and Kaveri started to argue. Ganga claimed that she was a greater entity than Kaveri. To solve this feud, both of the devis went to Lord Brahma. Lord Brahma, in a bias, declared that Ganga was a greater entity than Kaveri. Kaveri wanted to be the greatest river and hence performed penance to the Lord here at Tirucherai. The Lord appeared and showed her Vishwaroopa Darshanam, but this did not satisfy her. The Lord then showed her His form as He appears in Sri Vaikuntham and told her that soon He would lie in Bujanga Shayanam at Sri Rangam, and she would flow by His Tiruvadi (His holy lotus feet) until the end of Kali Yuga, thereby making her a greater entity than Ganga.\n\n*** Here, the Lord can be seen with five of his spouses, namely, Sri Devi, Bhoodevi, Neela Devi, Mahalakshmi, and Saranayaki Thayaar.  \n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

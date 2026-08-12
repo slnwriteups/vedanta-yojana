@@ -1,0 +1,50 @@
+{
+  "sourceRepo": {
+    "commitAtExtractionStart": "aababc358bcf574d738bfd87e5aa435f5833ea49",
+    "commitAtExtractionEnd": "aababc358bcf574d738bfd87e5aa435f5833ea49",
+    "branch": "main",
+    "workingTreeCleanAtStart": false
+  },
+  "bundle": {
+    "absolutePath": "/Users/vishnusreenivas/Documents/GitHub/vedanta-yojana/_next/static/chunks/pages/_app-72a25e792e2e05f2.js",
+    "relativePathFromRepoRoot": "_next/static/chunks/pages/_app-72a25e792e2e05f2.js",
+    "byteSize": 14369330,
+    "sha256": "fae59cee76af97c2c0d069493e1e0df2d1a4755bcca2061292d1db82ca6d3ae1",
+    "mtime": "2026-08-12T03:35:38.479Z"
+  },
+  "extractionMethod": {
+    "description": "Located the unique anchor string JSON.parse('{\"parserVersion\" inside the bundle, character-scanned forward from the opening quote to find the matching unescaped closing quote (honoring backslash escaping), decoded the resulting JS string-literal token via new Function('return '+literal)(), then JSON.parse()d the decoded string.",
+    "anchorByteOffset": 1608056,
+    "literalByteLength": 5536125,
+    "decodedJsonCharLength": 5527797,
+    "scriptPath": "content-extraction/scripts/01-extract-app-definition.js",
+    "decoderLibPath": "content-extraction/scripts/lib/decode-bundle.js"
+  },
+  "appDefinitionTopLevelKeys": [
+    "parserVersion",
+    "screens",
+    "components",
+    "expressions",
+    "logic",
+    "descriptorVersion",
+    "theme",
+    "fonts",
+    "assets",
+    "environment",
+    "dataResources",
+    "connectorConfigurations",
+    "navigation",
+    "i18n",
+    "app",
+    "state",
+    "connectedSystems",
+    "cloudFunctions",
+    "spaProcesses",
+    "buildActions",
+    "pluginComponents",
+    "globalCanvas"
+  ],
+  "notes": [
+    "This file (provenance.json) intentionally contains no wall-clock timestamp fields describing \"when extracted\", to keep pipeline output byte-for-byte deterministic across reruns against the same bundle. See extraction-report.md for a human-readable summary with a generation date."
+  ]
+}

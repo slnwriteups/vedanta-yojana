@@ -1,0 +1,153 @@
+{
+  "pageId": "page.Page38",
+  "title": "Tiruvaali Tirunagari",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page38",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "ed019e47-6c39-4712-8895-ce6e152e94a4",
+    "bd877ec4-6dcc-418a-ab37-e3dfcc398862",
+    "144b83a2-8ed7-4db6-9e80-fb97593e6cad",
+    "9d31600d-1604-41d9-b443-edae6cd2cc6a"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvaalitirunagaripaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/SAYeBtDxPXdAQgNL7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps (Tiruvaali)"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvaalitirunagaripaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvaalitirunagaripaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/sKPDLCoyQFqmQ4Vi8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps (Tirunagari)"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvaalitirunagaripaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruvaali Tirunagari",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://ed019e47-6c39-4712-8895-ce6e152e94a4"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://bd877ec4-6dcc-418a-ab37-e3dfcc398862"
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nThis kshethram comprises two places, Tiruvaali and Tirunagari.  Tiruvaali is said to be the birthplace of Amritavalli Thayaar, and Tirunagari is said to be the birthplace of Lord Vayalali Manavalan.\n\nTirunagari\nMoolavar: Vayalali Manavalan\nThayaar: Amritavalli Thayaar\nVimanam: Ashtakshara Vimanam\nPushkarani: Illakshani Theertham\n\nTiruvaali\nMoolavar: Lakshmi Narasimhar\nThayaar: Amrita Ghatavalli\n\nTravel: Tiruvaali is located 10 km from Sirkazhi, and Tirunagari is located 5 km from Tiruvaali.\n\nAzhwar Pasuram: \nTirumangai Azhwar: 30 pasuram\nKulasekara Azhwar: 12 pasuram\nTotal: 42 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps (Tirunagari)",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps (Tiruvaali)",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 10,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 11,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam: \nAt Tiruvaali, we can see Lakshmi Narasimhar. It is said that after killing Hiranyakashipu, the Lord was still furious. To calm down all the devas, Lord Brahma and Lord Shiva asked Mahalakshmi to isolate the Lord in a different location. Thus, the Lord was taken to Tiruvaali. Usually, we see Lakshmi seated on the Lord’s left lap, but here, she is sitting on the Lord’s right, allowing her to hug and embrace the Lord. Thus, the place got its name Tiruvaali (Tiru meaning \"Lakshmi\" and Aali meaning \"Aalinganam\" or \"hug\" in Sanskrit).\n*** Vedupari Utsavam\nTiruvaali is said to be the birthplace of Amritavalli Thayaar, and Tirunagari is said to be the birthplace of Lord Vayalali Manavalan. It is said that on the night that the Lord got married to Thayaar, they were targeted and looted by Tirumangai Azhwar. Before becoming a saint, Tirumangai Azhwar was known as Kaliyan, a dacoit.\nTirumangai Azhwar wanted to marry a woman named Kumudhavalli. She placed two conditions, namely, 1) to get Pancha-Samskaram done, and 2) to perform tadhiyararadhanam (annadhanam) for a thousand people for one year. To satisfy the second condition, Tirumangai Azhwar would often steal gold from anyone he could find and sell it to raise money to serve people. As fate would have it, Tirumangai Azhwar ran into the Lord and Thayaar. He pulled out a knife and told them to remove all the jewelry that they were wearing. The Lord and Thayaar gave up all their jewelry. Tirumangai Azhwar tied up all of the jewelry in a cloth, and as he was about to lift it, the Lord performed an enchantment in such a way that he could no longer lift it. In anger, Tirumangai Azhwar threatened the Lord to give him the mantra that would enable him to lift the bag. The Lord smiled and told him that he was performing all of this to ensure that Tirumangai Azhwar would obtain this mantra and propagate it to the world. Thus, the Lord gave Tirumangai Azhwar the ashtakshara mantram. All of this is performed as a drama to date on Panguni Uttaram day.  Find the pictures of the utsavam attached below.  ",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 12,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://144b83a2-8ed7-4db6-9e80-fb97593e6cad"
+    },
+    {
+      "order": 13,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://9d31600d-1604-41d9-b443-edae6cd2cc6a"
+    }
+  ]
+}

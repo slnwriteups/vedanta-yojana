@@ -1,0 +1,44 @@
+{
+  "pageId": "page.Page120",
+  "title": "The aathma, as mentioned and described by the Bhagavad Gita",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page120",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": " The aathma, as mentioned and described by the Bhagavad Gita",
+      "textFontSizeHint": 18
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "The main takeaways that one can take from the Gita when talking about the aathma are as follows:\ni) The number of births that are taken by a jeevaathma is innumerable: \n The Lord tells Arjuna that both of them have taken numerous incarnations together in this world. But only the Lord remembers all of them, whereas Arjuna does not. The Lord elucidates that He can remember everything as He is eternal and pure.\n\n\nii) Nature of the aathma:\nThe Lord tells Arjuna that just as birth, childhood, youth, and old age are inevitable stages of a human's growth in life, similarly, it is unavoidable for the soul to find a new body after its current vessel expires. The Lord says the soul is unborn, indestructible, and never dies. It is eternal. Fire cannot burn it, water cannot moisten it, and wind cannot dry it. Just as a man casts off old, worn-out garments, the soul casts off old, worn-out bodies and enters a new one.  \n\niii) Effect of the three Gunas on the manifested aathma:\nGrossly speaking, the three Gunas quickly bind to the body, which in turn impacts the aathma. The three Gunas are:\niii.i) Sattva Gunam: This Gunam is associated with individuals who engage in activities that are pure and focused on seeking genuine knowledge of the Supreme.\niii. ii) Rajas Gunam: This Gunam links to those who engage in activities that are driven by passion, thirst, and action. \niii. iii) Taamasa Gunam: This Gunam links to those who engage in ignorance, negligence, and lethargy.\n The three Gunas bind to the body at the time of death, granting different realms to the aathma upon bondage. If Sattva Gunam predominantly occupies the body, then the aathma attains Brahmalokam, a realm of knowledge. If Rajas Gunam predominantly occupies the body, then the person is reborn as a radical or a person of action. Finally, if Taamasa Gunam mainly occupies the body, then the person is reborn as an irrational being. \n    \n\niv) Attaining Liberation\n  The one who declares that their devotion to the Lord transcends the three Gunas becomes qualified to attain moksham. The Lord tells Arjuna to relinquish all dharma and take refuge solely in Him. He will liberate you from your sins and grant you moksham.\n\nv) What sort of person can reach Paramapadam?\nLord Krishna declares that a person who is free from pride, delusion, evil, attachment, self-obsession, desire, pleasure, and pain can attain Paramapadam. ",
+      "textFontSizeHint": 16
+    }
+  ]
+}

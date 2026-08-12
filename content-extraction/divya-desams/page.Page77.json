@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page77",
+  "title": "Tiruvanvandoor",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page77",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "6df7df8a-3e8c-42c9-bef6-9e2a6daa1b00"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvanvanduurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvanvanduurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvanvanduurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/N2WhqQU1XwxnvWTe7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvanvanduurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruvanvandoor",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://6df7df8a-3e8c-42c9-bef6-9e2a6daa1b00"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Paambanaiyappan\nThayaar: Kamalavalli Nachiyar\nVimanam: Vedhaalaya Vimanam\nPushkarani: Pampa Theertham\n\nTravel: This kshethram is located 5 km from Chengannur near Kottayam in Kerala.\n\nAzhwar Pasuram: \nNam Azhwar: 10 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "***This is the last of the five Pancha-Pandava Kshethrams. Nakula established this temple.\n\nSthala Puranam:\nAt the time of creation, Lord Brahma is said to have summoned his four sons, the Sanathkumaras, for a deliberation session to discuss what had to go into creation. It is said that his four sons refused to attend this session on the advice of Devarishi Narada, who instructed them to meditate upon Lord Vishnu rather than waste their time in unwanted deliberation. Thus, Lord Brahma summoned Devarishi Narada and cursed him to wander the three worlds, aimlessly preaching about the Lord. When the Devarishi arrived at this kshethram, he is said to have meditated upon the Lord here and requested Him to write a Purana. Thus, this kshethram is the site where Naradeeya Puranam was written. Another story recounts the tale of Markandeya Maharishi, who sought to see the Lord in His true form. Thus, Markandeya Maharishi is said to have meditated upon the Lord here. The Lord is said to have appeared in front of Markandeya Maharishi and inhaled him. In the nose of the Lord, Markandeya Maharishi is said to have seen the entire process of creation and destruction of the whole universe, along with the Lord’s form as a baby(His miracles as a child in His Krishna Avataram) to His Vishwaroopam form.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

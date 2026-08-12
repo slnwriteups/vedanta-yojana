@@ -1,0 +1,61 @@
+{
+  "slug": "tiruvidandai",
+  "displayName": "Tiruvidandai",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page65",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Lakshmi Varaha Perumal / Nitya Kalyana Perumal",
+    "thayaar": "Komalavalli / Akilandakodi Brahmanda Nayagi Thayaar",
+    "vimanam": "Kalyana Vimanam",
+    "theertham": "Kalyana Theertham",
+    "travelNote": "This kshethram is located 40 km from Chennai on the road to Mahabalipuram."
+  },
+  "sthalaPuranam": "The legend tells the tale of Gavala Maharishi, who had 360 daughters. When he was faced with the trouble of getting each of them married, he was directed to perform tapas to the Lord here at Tiruvidandai. Upon completion of his tapas, the Lord came to the Maharishi daily and personally married each of his 360 daughters. On the 360th day, a question arose whether there had to be 360 different households for each daughter. Thus, the Lord took each of the 360 daughters and consolidated them into a single person. This is how Akilavalli Nachiyar came to be. Here, the Lord can be seen with his right tiruvadi placed on the earth (Bhoomi Devi), and his left tiruvadi can be seen resting on the head of Adiseshan, with his spouse blessing them eternally.\n*** It is said that those who have been unable to get married can visit this kshethram and pray to the Lord and Thayaar here to find a suitable partner for marriage. The couple will be given two garlands and will be advised to revisit the temple after a while for the marriage to take fruit. The philosophy that can be seen at this kshethram is the relationship between the jeevaathma and Paramaathama. The 360 daughters here represent the various jeevaathmas, and the Lord is the Paramaathama. Each of the individual jeevaathmas longs to reach the Paramaathma, who will grant us moksham (Varaha Perumal, who lifted Bhoomi Devi from the waters of the deluge during pralayam, is the One who will liberate us from the ocean known as Samsara or life).",
+  "azhwarPasuram": "Tirumangai Azhwar: 13 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/gFscDfpnYGZwANEQA"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruvidandai-1",
+      "sourceAssetUuid": "39904cc2-6f82-428c-8a4c-8cf160d38911",
+      "sourceOriginalName": "108-62.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvidavendaipaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvidavendaipaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvidavendaipaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvidavendaipaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

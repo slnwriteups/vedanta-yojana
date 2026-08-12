@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page84",
+  "title": "Tiruvaragunamangai Nattham",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page84",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "29eb1a97-d962-487b-853e-e1e238c23ad2"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvaragunamangaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvaragunamangaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvaragunamangaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvaragunamangaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/uLrkud4iwYz2VXov6",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruvaragunamangai Nattham",
+      "textFontSizeHint": 18
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://29eb1a97-d962-487b-853e-e1e238c23ad2"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Vijayaasana Perumal\nThayaar: Varagunamangai Thayaar\nVimanam: Vijayakoti Vimanam\nPushkarani: Agni Theertham\n\nTravel: This kshethram is part of Nava Tirupati and is approximately 3 km from Srivaikuntam.\n\nAzhwar Pasuram:\nNam Azhwar: 1 pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe legend tells the story of a brahmin named Vedavit. Vedavit is said to have been looking for the best place to perform dhyanam and tapas, and he is said to have come to this kshethram. When he performed tapas at this kshethram, the Lord is said to have appeared as Vijayaasana Perumal and performed the ashtaakshara mantra padhesham. Another story tells the tale of Romasa Maharishi and his student Satyavan, who came to this kshethram. It is said that they arrived along the banks of the Tamaraparani river and saw a fisherman dropping his net into the water on the opposite bank. As the fisherman dropped his net into the water, a snake is said to have bitten him, and he passed away on the spot. Satyavan is said to have seen a Swarna-vahanam ( a golden chariot) appear and take the aathma to Vaikuntham. Satyavan is said to have asked his guru why the man was taken to Vaikuntham. Romasa Maharishi is then supposed to have told Satyavan that it's the power of the kshethram that, regardless of what the person was doing when he passed away on this pure land, he achieved moksham.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

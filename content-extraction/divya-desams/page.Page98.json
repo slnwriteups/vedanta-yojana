@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page98",
+  "title": "Tirumayam",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page98",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "634b6c97-0983-4d8b-b9fa-8fb74a06d402"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirumeyyampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/5vmtSkcdLwzRraGt9",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirumeyyampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirumeyyampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirumeyyampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirumayam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://634b6c97-0983-4d8b-b9fa-8fb74a06d402"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Satyagirinathan\nThayaar: Uyyavanda Nachiyar\nVimanam: Satyagiri Vimanam\nPushkarani: Satya Pushkarani\n\nTravel: This kshethram is situated between Karaikkudi and Pudukkottai.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 9 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe deity Satyagirinathan is depicted in a reclining posture inside a rock-cut temple. Garuda, Markandeya, and Brahma flank him, all witnessing the events that unfold around Him. According to tradition, the demons Madhu and Kaitabha stole the Vedas and attempted to abduct Mahalakshmi. She is shown in the panel, frightened and hiding near the Lord’s tiruvadi. In response, Adisesha, who serves as the Lord’s bed, emits poisonous fumes in the form of jwala (fiery orbs) to frighten the demons. The Lord is said to have retrieved the Vedas and protected Mahalakshmi from harm.\nThe panel shows both Madhu, who is soft by nature, and Kaitabha, who is fierce and aggressive, advancing toward the Lord. On one side, Bhoomadevi approaches the Lord seeking refuge at the Lord’s tiruvadi. Sri Devi is seen near the head of Adisesha, also seeking refuge. The Lord raises His hand to offer assurance to Sri Devi and lifts His gaze toward Bhoomadevi to reassure her.\nAbove the Lord, Adisesha is seen releasing the jwala from his mouth, directed at the demons. At the top of the composition, Yama Dharmaraja and Chitragupta are depicted recording the moment in their ledger, signifying that the end of Madhu and Kaitabha is near.\nThe entire episode is captured within a single panel, carved in stone. It includes the fear of Mahalakshmi, the supplication of Bhoomadevi and Sri Devi, the aggression of the demons, the Lord’s protective gestures, the fury of Adisesha, and the presence of Yama and Chitragupta as cosmic witnesses. The depiction is dynamic and composed, presenting a complete narrative within a single visual frame.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

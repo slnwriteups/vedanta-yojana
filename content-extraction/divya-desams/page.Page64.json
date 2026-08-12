@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page64",
+  "title": "Tiruneermalai",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page64",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "c82a0e49-9ec9-4288-a895-03bae5c2f5c5"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruniirmalaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruniirmalaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruniirmalaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruniirmalaipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/CywciCvyiAtLDLmz8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruneermalai",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://c82a0e49-9ec9-4288-a895-03bae5c2f5c5"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Neervannan Perumal/Ranganathar/Ramar/Narasimha\nThayaar: Animamalarmangai Thayaar\nVimanam: Toyagiri Vimanam\nPushkarani: Manikarnika Theertham\n\nTravel: This kshethram is situated on the outskirts of Chennai near Pallavaram.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 19 Pasurams\nBoodath Azhwar: 1 pasuram\nTotal: 20 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThe legend tells the story of Tirumangai Azhwar visiting this kshethram. When he visited this kshethram, the hill was surrounded by water, hence giving the kshethram the name Tiruneermalai. This kshethram features shrines for Ranganatha Perumal, Ulagalantha Perumal, and Shantha Nrisimha Perumal atop a small hillock. At the base of the hillock, one can find the temple of Neervana Perumal and a shrine for Rama, Lakshmana, Bharatha, Shatrughna, along with Devi Sita.\nIt is said that Maharishi Valmiki visited this kshethram and paid his homage to the Lords atop the hill, but was not satisfied by his darshan of the Lords. Thus, he requested the Lords to show themselves as Lord Rama. Therefore, the Lords collectively took the form of Rama. Sridevi and Bhudevi became Devi Sita. Adisesha, Shankam, and Chakra appeared as Lakshmana, Bharatha, and Shatrugna, and Garuda as Hanuman.\n*** As one enters the premises of the Neervana Perumal temple, they can see that the Dwaja-Sthambam is displaced and not in line with the entrance, and the same is true with the position of the garbha griha of Neervana Perumal. This is because when Lord Rama appeared, he assumed the primary deity of the kshethram, displacing the position of Neervana Perumal. The Dwaja-Sthambam is in line with Sri Ramar.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "tiruparameshwara-vinnagaram",
+  "displayName": "Tiruparameshwara Vinnagaram",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page59",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Vaikuntha Nathan",
+    "thayaar": "Vaikunthavalli Thayaar",
+    "vimanam": "Mukunda Vimanam",
+    "theertham": "Iyaramada Theertham"
+  },
+  "sthalaPuranam": "Legend says the story of Bharadwaja Maharishi, who fell in love with a Gandharva Kanya. The union had children who became the heirs of the Pallava Dynasty, named Pallava and Villava. The Vimanam in this temple has three tiers. In the first tier, the Lord gives darshanam in the sitting posture. In the middle tier, He is depicted as Ranganatha in the reclining posture, accompanied by Sri Devi and Bhoodevi. In the top tier, He is shown in a standing posture.",
+  "azhwarPasuram": "Tirumangai Azhwar: 10 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/ZqRqAVDCb3Y7Xdhx9"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruparameshwara-vinnagaram-1",
+      "sourceAssetUuid": "39108525-fd8a-43f0-b9f7-00db6997d3a8",
+      "sourceOriginalName": "108-56.png",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirupparameccuravinnagarampaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirupparameccuravinnagarampaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirupparameccuravinnagarampaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirupparameccuravinnagarampaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "tiruvadariyaashramam-badrinath",
+  "displayName": "Tiruvadariyaashramam (Badrinath)",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page103",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Badrinarayana Perumal",
+    "thayaar": "Aravindavalli Thayaar",
+    "vimanam": "Taptakanchana Vimanam",
+    "theertham": "Tapta Kundam",
+    "travelNote": "This kshethram is located at an altitude of 10500 feet on the Himalayan Mountains at Badrinath.\nTo reach this kshethram, one must start their journey from Haridwar. From Haridwar, one must travel via Rishikesh, reach Devaprayag, stay overnight, preferably at Joshimath, and then reach Badrinath the following morning when the road gates open."
+  },
+  "sthalaPuranam": "According to Srimad Bhagavatham, Lord Vishnu, in His incarnations as Nara and Narayana, performed deep tapas for time immemorial for the well-being of all living entities. According to legend, when Nara and Narayana were performing tapas in a place where Badri trees were growing. At one point, the sunlight became very intense. Thus, to protect the Lord from the sunlight, Lakshmi Devi is said to have taken the form of a Badri tree and grown in such a way as to provide shade to the Lord.\nThis fact is reiterated in the Mahabharata when Lord Krishna tells Arjuna that in their previous lives, Arjuna was the manifestation of Nara, and He was the manifestation of Narayana. The Pandavas are said to have visited this kshethram before embarking on their final journeys to Mana, from where they left their bodies to reach Paramapadam. Mana is 4 km from this kshethram.\nThis is one of the Swayam-Vyaktha Kshethrams. It is said that there are five Badri kshethrams. Together, they are known as Pancha Badri Kshethram. Vishal Badri (Badrinath Temple installed by Sri Adi Shankaracharya), Yogadhyan Badri (where the Lord is in a meditative posture), Bhavishya Badri (Badri of the future), Vridha Badri (the original shrine where Vishwakarma carved the idol), Adi Badri. It is said that the Lord appeared in Sri Adi Shankaracharya’s dream and told him that he would find His idol inside the tapta-kundam ( hot springs ) present outside, where the present-day temple is situated. It is said that Sri Adi Shankaracharya dipped in the spring multiple times before finding the Lord’s idol. To date, the pooja is performed by nambudhri brahmins who follow the Kerala style of pooja.\n\nBadrinath Temple: Raval Ji opening and entering the temple in the early morning.\n\nThe only time one can see the true form of the Lord is during the Tirumanjanam/abhishekham, which takes place around 5 am.",
+  "azhwarPasuram": "Tirumangai Azhwar: 21 Pasurams\nPeriya Azhwar: 1 pasuram\nTotal: 22 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/oVczDYzepLc2g6ti7"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruvadariyaashramam-badrinath-1",
+      "sourceAssetUuid": "892641a3-da6a-41ab-a646-7ea7c9f3379e",
+      "sourceOriginalName": "108-100-1.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvadariyaashramam-badrinath-2",
+      "sourceAssetUuid": "7360e2d3-b2f2-436f-8f9a-2625da61f782",
+      "sourceOriginalName": "108-100.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvadariyaashramam-badrinath-3",
+      "sourceAssetUuid": "2cd693df-0043-45fa-82f8-0a726905b841",
+      "sourceOriginalName": "BadriTemple.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvadariyaashramampaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvadariyaashramampaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvadariyaashramampaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvadariyaashramampaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

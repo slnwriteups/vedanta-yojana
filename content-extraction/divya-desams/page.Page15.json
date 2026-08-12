@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page15",
+  "title": "Tiruaadanoor",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page15",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "4a736baa-eaac-4866-ab60-4196cbaf302d"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvaadanuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvaadanuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/cQQYtiu1nXBRrhXv7",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvaadanuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvaadanuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruaadanoor",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://4a736baa-eaac-4866-ab60-4196cbaf302d"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\n \nMoolavar: Sri Aandalukum Aiyyan Perumal\nThayaar: Bharghavi/Ranganayaki Thayaar\nVimanam: Pranava Vimanam\nPushkarani: Surya Theertham\nTravel: This temple is about 3 km from Kumbakonam.\n\nAzhwar Pasuram: \nTirumangai Azhwar - 1",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam: \nOnce there was a dancer who wanted to impress the goddess, Maha Lakshmi. The dancer performed a very intricate set of dances, and soon the goddess appeared before her, presenting the dancer with a garland. Soon after this, it is said that Sage Durvasa was passing by and saw the lovely garland on the neck of the dancer. The dancer offered the sage the garland and left the scene. It is said that the garland possessed a very fragrant smell that attracted bees. Soon, the sage started to get irritated by the buzzing of the bees and was looking to dispose of the garland when Indra arrived atop his mount, Airavata. Durvasa presented the garland to Indra. Airavata took the garland, but instead of throwing it on Indra, it crushed it beneath its legs. Durvasa was immensely angered by this insult and cursed Indra, saying he and the world would lose all their wealth. As the phrasing of the curse was vague, all wealth-bearing substances and creatures, such as the Kalpa Vriksha, Kamadhenu, and even the Goddess Lakshmi, disappeared. To retrieve all his lost wealth, Indra prayed to Ranganayaki Thayaar, who instructed him to perform the Samurda Manthanam and attend her marriage to Lord Sriman Narayana. By doing so, he would regain his lost wealth. Another story tells that Kamadhenu had performed tapas here, as well as Agni had performed worship to the Lord here. From the following story, we can see that this temple predates even Sri Rangam. ",
+      "textFontSizeHint": 16
+    }
+  ]
+}

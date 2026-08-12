@@ -1,0 +1,68 @@
+{
+  "slug": "tirukkandam-devaprayag",
+  "displayName": "Tirukkandam (Devaprayag)",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page102",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Neelamegha Perumal",
+    "thayaar": "Pundareegavalli Nachiyar",
+    "vimanam": "Mangala Vimanam",
+    "theertham": "Mangala Theertham",
+    "travelNote": "This kshethram is located in Devaprayag en route to Badrinath."
+  },
+  "sthalaPuranam": "According to legend, Lord Rama performed tapas here at this kshethram to nullify the brahmahatyadosham for killing Ravana. Lord Rama is also said to have bathed in the Ganga River and performed tarpanam for His forefathers here at this kshethram.",
+  "azhwarPasuram": "Periya Azhwar: 11 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/f7pPnHwamcSNtKix7"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirukkandam-devaprayag-1",
+      "sourceAssetUuid": "377419b9-72f2-4f03-a8f5-719820df0822",
+      "sourceOriginalName": "108-99.png",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkandam-devaprayag-2",
+      "sourceAssetUuid": "fb469cb9-f1f6-4190-92d0-9655a7f10eef",
+      "sourceOriginalName": "108-99T.jpeg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirukkandampaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkandampaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkandampaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkandampaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "tirukkandiyur",
+  "displayName": "Tirukkandiyur",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page11",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Hara Shapa Vimochana Perumal",
+    "thayaar": "Kamalavalli Thayaar",
+    "vimanam": "Kamalakrithi Vimanam",
+    "theertham": "Kapalamoksha Pushkarani",
+    "travelNote": "This kshethram is located around 2 km from Tiruvaiyaru."
+  },
+  "sthalaPuranam": "As in Tirukarambanur, the fifth head of Lord Brahma, which Lord Shiva plucked out, became stuck to his hand and was released only after Poornavalli Thayaar offered alms, filling the Brahmakapalam. It is said that the Lord gave the Brahmahatya-Dosha Pariharam here. Hence, the Lord got the name Hara Shapa Vimochana Perumal.",
+  "azhwarPasuram": "Thirumangai Azhwar -1",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/FqffyEY9FRVt9VgR9"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirukkandiyur-1",
+      "sourceAssetUuid": "ab6f0a42-b21f-4f2f-b2dd-4944e8625485",
+      "sourceOriginalName": "108-7.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkandiyuurpaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkandiyuurpaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkandiyuurpaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirukkandiyuurpaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

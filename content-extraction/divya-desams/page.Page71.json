@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page71",
+  "title": "Tirumoozhikkalam",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page71",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "7b53ef1c-bfe0-4123-ad1a-429cdeb78ba0"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://maps.app.goo.gl/aA9gSPawfcWauxCv9",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirumuuzikkalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirumuuzikkalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirumuuzikkalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirumuuzikkalampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirumoozhikkalam",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://7b53ef1c-bfe0-4123-ad1a-429cdeb78ba0"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram\nMoolavar: Srisukthinatha Perumal\nThayaar: Maduraveni Nachiyar\nVimanam: Soundarya Vimanam\nPushkarani: Perunkulam Theertham\n\nTravel: This kshethram is located about 25 km from Ernakulam.\n\nAzhwar Pasuram:\nNam Azhwar: 10 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nThis shrine is associated with legends from the Ramayana. Bharata, the brother of Sri Rama and Lakshmana, came to invite Sri Rama, then in exile, to take over the reins of the kingdom, an angry Lakshmana suspecting Bharata’s intentions intended to kill Him; however, Bharata’s innocence was very soon revealed, and then the two of them offered worship together at Tirumoozhikkalam. \n\n***As per another legend, Hareetha Maharishi was performing penance at this place. Lord Vishnu was pleased by his devotion and appeared to him. The sage requested the Lord to guide how all men can proceed with Varnashrama Dharma. Vishnu uttered the sacred words, after which the place came to be known as Thirumoozhikkalam. The name Tirumoozhikkalam is said to have originated from the phrase tiru-mozhi-kalam, the place where sweet words were uttered. ",
+      "textFontSizeHint": 16
+    }
+  ]
+}

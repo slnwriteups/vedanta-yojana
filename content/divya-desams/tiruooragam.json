@@ -1,0 +1,67 @@
+{
+  "slug": "tiruooragam",
+  "displayName": "Tiruooragam",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page53",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Ulagalantha Perumal",
+    "thayaar": "Amudavalli Thayaar",
+    "vimanam": "Sarasreekara Vimanam",
+    "theertham": "Naga Theertham"
+  },
+  "sthalaPuranam": "According to legend, when the Lord took Vamana Avataram, Bali could not see the Lord as he was under the Lord’s foot. Hence, after the Lord pushed Bali down to Pathalam, Bali requests the Lord to once again see Him as Ulangalanthan(The one who measured the three worlds). To fulfill his wish, the Lord revealed this form to Bali.\n\n*** \nThe Lord can also be seen here in a sarpam form(serpent form). It is said that if one prays here, one is relieved of all Sarpa-Dosham.",
+  "azhwarPasuram": "Tirumazhisai Azhwar: 2 Pasurams\nTirumangai Azhwar: 4 Pasurams\nTotal: 6 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/uMzyU3tGE9zx9wva9"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruooragam-1",
+      "sourceAssetUuid": "aedf89f0-8d4c-4548-88cb-19bbfdf3fef1",
+      "sourceOriginalName": "108-50.PNG",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruooragam-2",
+      "sourceAssetUuid": "741f5184-b64d-4de5-82c8-0afe77c00f03",
+      "sourceOriginalName": "108-50U.PNG",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruyuuragampaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruyuuragampaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruyuuragampaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruyuuragampaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

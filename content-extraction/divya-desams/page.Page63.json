@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page63",
+  "title": "Tiruvallikkeni",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page63",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "141559bf-a973-4bec-a914-4342a190d434"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvallikkenipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvallikkenipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvallikkenipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/i6mzt6ZcdLMffdHRA",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvallikkenipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruvallikkeni",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://141559bf-a973-4bec-a914-4342a190d434"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Venkatakrishna Perumal\nThayaar: Vedavalli Thayaar\nVimanam: Anantha Vimanam\nPushkarani: Kairavinisaras\n\nTravel: This temple is located in Chennai.\n\nAzhwar Pasuram:\nTirumangai Azhwar: 10 Pasurams\nPey Azhwar: 1 pasuram\nTirumazhisai Azhwar: 1 pasuram\nTotal: 12 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nAs per temple legend, there was once a king named Sumathi. He had once taken a trip to Tirumalai, where he asked to see the Lord in the form of Krishna bearing two hands. Tiruvengadamudayan told the king that it was not possible, as he was in the form of an archa-avataram and not in Sri Vainkuntham. He advised the king to go further south, where he could find Kairavini Pushkarani. He asked the king to perform tapas there and told him that his prayers would be heard. At around the same time, Atreya Maharishi, a disciple of Maharishi Vyasa, brought an idol of Parthasarathy Perumal here. When Sumathi Raja’s tapas was completed, the Lord appeared to him as Venkata Krishna Perumal, holding the Panchajanyam in one hand and displaying the Varada Mudra in the other. Along with the Lord appeared Rukmini Devi, Balarama(the Lord’s older brother), Pradyumna(the Lord’s son), Anirudha( the Lord’s grandson), and Satyaki(the Lord’s charioteer).\n*** The utsava murthy, i.e., Parthasarathy Perumal, can be seen with scars that are said to have been inflicted on Him by Bheeshma during the Mahabharata war.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

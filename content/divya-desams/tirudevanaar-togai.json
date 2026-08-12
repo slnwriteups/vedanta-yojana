@@ -1,0 +1,56 @@
+{
+  "slug": "tirudevanaar-togai",
+  "displayName": "Tirudevanaar Togai",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page39",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Devinayakan",
+    "thayaar": "Sridevi Bhoodevi",
+    "vimanam": "Sobhana Vimanam",
+    "theertham": "Shobana Pushkarani",
+    "travelNote": "6 km from Sirkazhi"
+  },
+  "sthalaPuranam": "Legend has it that all the devas, along with Vasishta Muni, assembled here at this kshethram after the Samudra-Manthanam and worshipped the Lord here.",
+  "azhwarPasuram": "Tirumangai Azhwar: 10 Pasurams",
+  "shrines": [],
+  "images": [
+    {
+      "assetId": "tirudevanaar-togai-1",
+      "sourceAssetUuid": "69a7d7f8-c6c7-4dac-8a13-3c9ac77d9af4",
+      "sourceOriginalName": "108-35.png",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruttevanaartogaipaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruttevanaartogaipaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruttevanaartogaipaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruttevanaartogaipaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

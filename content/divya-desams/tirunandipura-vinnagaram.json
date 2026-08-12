@@ -1,0 +1,61 @@
+{
+  "slug": "tirunandipura-vinnagaram",
+  "displayName": "Tirunandipura Vinnagaram",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page25",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Jagannathan Perumal",
+    "thayaar": "Shenbagavalli Thayaar",
+    "vimanam": "Mandaara Vimanam",
+    "theertham": "Nanditheertha Pushkarani",
+    "travelNote": "This temple is located near Korrukai, outside Kumbakonam"
+  },
+  "sthalaPuranam": "According to legend, Nandi had once visited Vaikuntham to see the Lord, but the Dwarapalakas Jaya and Vijaya refused entry to Vaikuntham. In a rage, Nandi insulted Jaya and Vijaya. Thus, Jaya and Vijaya cursed Nandi that he would experience excruciating heat and would perspire intensely. Jaya and Vijaya then felt sorry for cursing Nandi and suggested that Nandi go to Kumbakonam and meditate upon the Lord. Taking their suggestion, Nandi proceeded to Kumbakonam and began meditating on the Lord. Impressed with Nandi’s tapas, the Lord appeared in front of Nandi and released Nandi from his curse.",
+  "azhwarPasuram": "Thirumangai Azhwar-10 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/LQPWW8uQS2piLJoE7"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirunandipura-vinnagaram-1",
+      "sourceAssetUuid": "d4bc17b2-02cb-42a2-a395-96b1f6956732",
+      "sourceOriginalName": "108-21.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirunandipuravinnagarampaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirunandipuravinnagarampaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirunandipuravinnagarampaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirunandipuravinnagarampaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

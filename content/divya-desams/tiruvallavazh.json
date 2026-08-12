@@ -1,0 +1,61 @@
+{
+  "slug": "tiruvallavazh",
+  "displayName": "Tiruvallavazh",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page72",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Sri Vallabhan",
+    "thayaar": "Selvathirukozhundu Nachiyar",
+    "vimanam": "Chathurangakola Vimanam",
+    "theertham": "Ghantakarna Theertham",
+    "travelNote": "This kshethram is located in Tiruvalla town, near Kottayam, in Kerala."
+  },
+  "sthalaPuranam": "According to legend, Mangalathammai used to observe Ekadasi vratham and feed one Brahmachari on the Dwadasi day. Tolakarana, a demon, was creating hurdles to her vratham. Responding to her prayers, the Lord killed the demon and came for the feast in the form of a Brahmachari, and later gave darshan to her with Lakshmi adorning His chest and gained the name Tiruvazhmarban. The place Tiruvalla originates from the presiding deity Vallabha.\n*** According to legend, Ghantakarnan attained moksha at this kshetram.\nThe presiding deity is said to have been handmade by Vishwakarma, as instructed by Lord Krishna Himself. Vishwakarma wanted to establish the Lord at this kshetram at the end of the Dwapara Yuga, but it is said that Garuda hid the Lord until Kali Yuga had taken full effect. Later, Garudan established the Lord here.\nThis kshethram has a separate shrine dedicated to Sri Sudharshana Chakrath Azhwar.",
+  "azhwarPasuram": "Nam Azhwar: 10 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/heWWxX6UJAuec6Zv5"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruvallavazh-1",
+      "sourceAssetUuid": "ddbe1f86-4a77-4dd7-ac3b-d3c9c1571e0c",
+      "sourceOriginalName": "108-69.jpeg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvallavaazpaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvallavaazpaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvallavaazpaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvallavaazpaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

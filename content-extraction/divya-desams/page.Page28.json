@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page28",
+  "title": "Tiruchirupuliyur",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page28",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "b1f27e3e-a3f1-4ff3-a7f9-de6ee21e406a"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruccirupuliyuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruccirupuliyuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/J1o2Cph7nCjk2LF59",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruccirupuliyuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruccirupuliyuurpaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruchirupuliyur",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://b1f27e3e-a3f1-4ff3-a7f9-de6ee21e406a"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Sri Krupa Samudhra Perumal\nThayaar: Tirumamagal Nachiyar\nVimanam: Nandavarthanam Vimanam\nPushkarani: Manasapushkarani\nTravel: This kshethram is located very close to Mayiladuthurai on Tiruvarur Road.\n\nAzhwar Pasuram:\nTirumangai Azhwar – 10 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nIt is said that Garuda and Adiseshan were once mortal enemies, engaging in a fierce battle due to the injustice committed by Adiseshan’s mother against Garuda’s mother. The story is as follows. Kadru ( Adiseshan’s mother) and Vinata ( Garudan’s mother) were both wives of Kashyapa Maharishi. One day, Kashyapa Maharishi asked his wives to ask him for a boon each. Kadru asked that she be blessed with a thousand sons. Vinata asked for two sons who would be brighter and stronger than all of Kadru’s sons combined. Thus, both Kadru and Vinata were blessed. Slowly, all of Kadru’s children were born. Five hundred years passed, but neither of Vinata’s eggs hatched into a  thousand nagas (snakes). In desperation, Vinata opened one of the eggs manually.\nThe offspring in the egg was still half-formed and, in anger at Vinata’s impatience, cursed her, saying she would become Kadru’s slave. But he also told her that in another five hundred years’ time, his brother would hatch, and he would be extremely powerful, and he would relieve Vinata of this curse. This offspring is known to us by the name of Arunan, the charioteer of Suryan. Even though he was half-formed, he had extreme tolerance and power. Hence, he was taken by Suryan as a charioteer. As time passed, the curse came into effect. One day, Kadru and Vinata were arguing about the color of Ucchaishravas' tail. Vinata claimed that the divine horse was a pure white color throughout, but Kadru said the horse’s body was white, but the tail was black. Thus, the two had a bet to see who was right. The one who would lose the bet would become the other’s slave. Kadru knew very well that the tail of Ucchaishravas was pure white, and knowing she would lose the bet, she told her sons to wrap themselves around the tail of Ucchaishravas so that she could win the bet. One day, in the presence of Kadru and Vinata, Ucchaishravas passed by with a black tail. Thus, Kadru won the bet, enslaving Vinata. For five hundred years, Vinata was a slave to Kadru. After five hundred years, Vinata’s second egg hatched, and from that egg was born Garudan. As soon as he was born, he went straight to his aunt and demanded that his mother be freed from slavery.\nTo this, Kadru put a condition, saying that if Garudan could bring the Amruthakalasham (the divine pitcher that contained the sacred nectar of immortality) for her and her children, she would release Vinata from slavery. Thus, Garudan immediately left for Swargalokam and defeated all the Devas in battle, successfully retrieving the Amruthakalasham. After retrieving the Amruthakalasham, Garudan returned to Bhulokam. On Bhulokam, Lord Vishnu was very impressed with Garudan for his strength and dedication. The Lord then offered Garudan a boon. Garudan asked that he should always be soaring far above the Lord; thus, Garudan is present in the Dwajasthambham outside the temple. The Lord also then told Garudan that he wanted Garudan to be constantly under his command, and thus asked Garudan to become his vaahanam. The Lord also relieved Vinata from slavery and returned the Amruthakalasham to the Devas.\nIn one of the battles between Garudan and Adiseshan, Adiseshan is said to have hidden in the pushkarani and performed tapas to the Lord to save him. Thus, the Lord appeared on the bank of the pushkarani and made Adiseshan his recliner. Hence, the Lord made sure that as long as He is present, both of His bhaktas do not fight amongst themselves.\nIt is said that if one prays to the Lord here, they will be relieved of all and any sarpa-dhosham.\n***There is an interesting story that Vyagrapadar, who obtained a boon from Lord Shiva to possess the legs, hands, and eyes of a tiger, worshipped Lord Vishnu at this kshethram, and hence it gained the name Sirupuliyur.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

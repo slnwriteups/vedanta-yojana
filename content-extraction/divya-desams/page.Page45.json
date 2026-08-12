@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page45",
+  "title": "Tirukkovilur",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page45",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "ad2b26e6-47dd-4cf4-95a7-1974107edde4"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvahiindirapurampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/8o6dqHfoFUDRyAvh8",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvahiindirapurampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvahiindirapurampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvahiindirapurampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirukkovilur",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://ad2b26e6-47dd-4cf4-95a7-1974107edde4"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nMoolavar: Trivikramar\nThayaar: Poonkoval Nachiyar\nVimanam: Sreekara Vimanam\nPushkarani: Krishna Theertham\n\nTravel: This kshethram is located near Tiruvannamalai.\n\nAzhwar Pasuram:\nThirumangai Azhwar – 18 Pasurams.\nPoigai Azhwar – 2\nBoothath Azhwar – 1\nTotal: 21 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nIt is said that the Lord is said to have taken this form when asked by Mrugandu Maharishi asked to see the Lord as Trivikramar. The Lord present here is an exact mirror image of the Lord standing at Tirukazhicheerama Vinnagaram. One peculiarity of the Lord standing here is that the Lord is holding the Shankam in the right hand and the Chakram in the left hand.\n\n*** \nThe first three of the Azhvars — Poigai Azhwar, Bhoothath Azhwar, and Pey Azhwar — came to Thirukkovilur on a rainy night. First to arrive was Poigai Azhwar, from Kanchipuram, who sought refuge for the night at the ashram of Mrugandu Rishi. The rishi told him that there was a place for just one person to sleep and that he was welcome to stay for the night.\nBhoothath Azhwar, from Mamallapuram, followed shortly, and he too requested that he stay at the ashram for the night. PoigaiAzhwar welcomed him, saying there was a place for one to sleep and two to sit, and took him inside.\nPey Azhwar, from Mylapore, too, reached the ashram. He was told that there was a place for one to sleep, two to sit, and three to stand. It is explained as a slogan by\n“Oruvar Padukka – Iruvar Irukka – Moovar Nirkalam”.\n The three of them stood there through the night, sharing their experiences with each other.\nA little later, the three Azhwars sensed the presence of a fourth person, and with space only for three to stand, they felt uncomfortable. Through their exceptional vision, the three Azhwars realized that the fourth person was none other than Lord Vishnu himself. Delighted at this, they showered praises on the Lord.\nThis is the first temple where the first three Azhwars sang praises (Pasurams) of Lord Vishnu, the compilation of which later came to be known as the Naalayira Divya Prabhandham.\nIt is believed that this ashram, where the 3 Azhwars stayed that rainy night, is the one where one, today, finds the sanctum. The first of the three Azhwars also finds a place inside the Sanctum.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

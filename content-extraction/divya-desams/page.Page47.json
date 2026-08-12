@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page47",
+  "title": "Tiruashtabhujakaram",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page47",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "d4320f07-f33e-41b5-8e04-e6497d49d226"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvattabhuyakarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tiruvattabhuyakarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvattabhuyakarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvattabhuyakarampaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://maps.app.goo.gl/c7quKCqFC1CY9Kf59",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tiruashtabhujakaram",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://d4320f07-f33e-41b5-8e04-e6497d49d226"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\n*Before getting started, I would like to mention that the following Kshethram’s sthala puranams are intertwined with those of Hasthigiri.\n1) Tiruashtabhujakaram\n2) Tiruttanka\n3) Tiruvellukai\n4) Tiruvegka\n\nMoolavar: Aadikeshava Perumal / Gajendravaradha Perumal\nThayaar: Alarmangai Thayaar\nVimanam: Gangakriti Vimanam\nPushkarani: Gajendra Pushkarani\n\nAzhwar Pasuram:\nTirumangai Azhwar: 10 Pasurams\nPey Azhwar: 1 pasuram\nTotal: 11 Pasurams",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam:\nBefore Lord Athi Vardar was presented the havis to the yagnam, Saraswati Devi presented many interruptions to stop the yagnam from reaching completion. Saraswati Devi is said to have summoned many different types of demons, ghosts, and ghouls to attack the yagna-kundam. Lord Brahma is said to have appealed to Lord Vishnu to appear and protect the yagnam so that it would achieve its completion. The Lord is said to have appeared with eight hands (Ashtabhujar), holding weapons in seven hands and a lotus in one hand, symbolizing that he would attack his enemies while also protecting his devotees. The Lord is said to have vanquished all the interruptions placed by Devi Saraswati in her first attempt to foil the performance of the yagnam.\nThe Lord here is referred to as Gajendravaradhan, as He is said to have shown Pey Azhwar the sight of Gajendra Moksham here at this kshethram.\n\n*** A peculiarity of this kshethram is that this is the only temple in all the Divyadesams at Kanchipuram to house a Vaikuntha Dwaram. Usually, if the entrance of the temple is east-facing, the Vaikuntha Dwaram is placed in a west-facing direction. But here, the Vaikuntha Dwaram and the temple entrance are both facing in the easterly direction.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

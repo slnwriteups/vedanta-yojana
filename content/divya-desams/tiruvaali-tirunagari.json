@@ -1,0 +1,78 @@
+{
+  "slug": "tiruvaali-tirunagari",
+  "displayName": "Tiruvaali Tirunagari",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page38",
+    "extractionConfidence": "high",
+    "needsReview": true
+  },
+  "templeInformation": {},
+  "shrines": [
+    {
+      "label": "Tiruvaali",
+      "mapsLink": "https://maps.app.goo.gl/SAYeBtDxPXdAQgNL7"
+    },
+    {
+      "label": "Tirunagari",
+      "mapsLink": "https://maps.app.goo.gl/sKPDLCoyQFqmQ4Vi8"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruvaali-tirunagari-1",
+      "sourceAssetUuid": "ed019e47-6c39-4712-8895-ce6e152e94a4",
+      "sourceOriginalName": "108-34-1.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvaali-tirunagari-2",
+      "sourceAssetUuid": "bd877ec4-6dcc-418a-ab37-e3dfcc398862",
+      "sourceOriginalName": "108-34-2.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvaali-tirunagari-3",
+      "sourceAssetUuid": "144b83a2-8ed7-4db6-9e80-fb97593e6cad",
+      "sourceOriginalName": "108-34-Utsavam.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvaali-tirunagari-4",
+      "sourceAssetUuid": "9d31600d-1604-41d9-b443-edae6cd2cc6a",
+      "sourceOriginalName": "108-34-U2.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvaalitirunagaripaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvaalitirunagaripaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvaalitirunagaripaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvaalitirunagaripaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

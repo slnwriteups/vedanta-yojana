@@ -1,0 +1,21 @@
+{
+  "title": "Guru Parampara from Ramanujacharya to Manavala Mamunigal (Tenkalai Sampradayam)",
+  "slug": "guru-parampara-from-ramanujacharya-to-manavala-mamunigal-tenkalai-sampradayam",
+  "order": 160,
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page160",
+    "extractionConfidence": "medium",
+    "needsReview": false
+  },
+  "body": "Guru Parampara from Ramanujacharya to Manavala Mamunigal (Tenkalai Sampradayam)\n\nSwami Ramanujar-> Embaar-> Parasara Bhattar-> Nanjiyar-> Nampillai-> Vadakkutiruviti Pillai-> Sri Pillailokacharyar -> Tirovazhimozhi Pillai-> Manavala Manmunnigal.",
+  "images": [
+    {
+      "assetId": "guru-parampara-from-ramanujacharya-to-manavala-mamunigal-tenkalai-sampradayam-1",
+      "sourceAssetUuid": "5baa2dca-9027-43b3-98f6-c53f96071fc2",
+      "sourceOriginalName": "image18.png",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ]
+}

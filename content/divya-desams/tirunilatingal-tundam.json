@@ -1,0 +1,60 @@
+{
+  "slug": "tirunilatingal-tundam",
+  "displayName": "Tirunilatingal Tundam",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page52",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Chandra Chooda Perumal / Nilaattingal Tundattan",
+    "thayaar": "Nillathingal Tundattayar",
+    "vimanam": "Purushasooktha Vimanam",
+    "theertham": "Chandra Pushkarani\n\n***Located inside the Ekambareshwarar Temple"
+  },
+  "sthalaPuranam": "Shiva tested Parvathi’s commitment to performing tapas by setting fire to the mango tree under which she was seated. Parvathi prayed to her brother, Lord Vishnu, who caused waves of nectar to cool down the scorching rays. Lord Vishnu, as Vamana, continues to reside at this kshethram at the request of Parvati. It is also believed that at the request of Lord Vishnu, the moon-adorned Shiva alleviated the discomfort caused by the heat that emanated during the churning of the milky ocean. Hence the name, Nilaatingal Tundattan.",
+  "azhwarPasuram": "Tirumangai Azhwar: 1 pasuram",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/c1MJ6rNN5Udy5MCS7"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tirunilatingal-tundam-1",
+      "sourceAssetUuid": "ba799cab-0722-44a3-8485-955df6eb92eb",
+      "sourceOriginalName": "108-49.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tirunilaattingaltundampaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tirunilaattingaltundampaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirunilaattingaltundampaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tirunilaattingaltundampaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

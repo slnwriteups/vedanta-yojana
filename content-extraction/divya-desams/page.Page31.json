@@ -1,0 +1,120 @@
+{
+  "pageId": "page.Page31",
+  "title": "Tirunangur Tirukavalampadi",
+  "classification": {
+    "category": "divya_desam_candidate",
+    "evidence": {
+      "hasPrapattiPdfLink": true,
+      "hasGoogleMapsLink": true,
+      "isNavigationHubTarget": true
+    },
+    "confidence": "high",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page31",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [
+    "b55123f1-c404-456d-8e90-fe63a37b7096"
+  ],
+  "externalLinks": [
+    {
+      "url": "https://maps.app.goo.gl/j9xpHB93thCtvYV48",
+      "resourceType": "google_maps_location",
+      "sourceComponentLabel": "Maps"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/english/tirukkaavalampaadipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "English Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/tamil/tirukkaavalampaadipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Tamizh Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/sanskrit/tirukkaavalampaadipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Sanskrit Pasuram"
+    },
+    {
+      "url": "https://www.prapatti.com/slokas/kannada/tirukkaavalampaadipaasurangal.pdf",
+      "resourceType": "sloka_pdf_prapatti",
+      "sourceComponentLabel": "Kannada Pasuram"
+    }
+  ],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tirunangur Tirukavalampadi",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "picture",
+      "imageAssetRef": "ag-asset://b55123f1-c404-456d-8e90-fe63a37b7096"
+    },
+    {
+      "order": 3,
+      "depth": 1,
+      "type": "text",
+      "content": "Details of Kshethram:\nTirunangur consists of 11 temples + 1 temple at Sirkazhi.\nThese 11 temples are said to house deities who quenched the rage of the 11 Rudras, who were born from Lord Shiva’s matted locks when he performed Rudra-tandavam after the loss of Parvati Devi during the Daksha Yagnam. It is said that each of the eleven preceding deities gave darshan to each of the rudras and quenched their rage.\n\nMoolavar: Gopalakrishnan, along with Rukmini and Satyabhama\nThayaar: Senkamala Nachiyar\nVimanam: Swayambhu Vimanam\nPushkarani: Tadamalarpoikai\n\nTravel: 10 km from Sirkazhi\n\nAzhwar Pasuram:\nTirumangai Azhwar – 10 Pasurams\n",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 4,
+      "depth": 1,
+      "type": "button",
+      "label": "Maps",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 5,
+      "depth": 1,
+      "type": "button",
+      "label": "English Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 6,
+      "depth": 1,
+      "type": "button",
+      "label": "Tamizh Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 7,
+      "depth": 1,
+      "type": "button",
+      "label": "Kannada Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 8,
+      "depth": 1,
+      "type": "button",
+      "label": "Sanskrit Pasuram",
+      "textFontSizeHint": 16
+    },
+    {
+      "order": 9,
+      "depth": 1,
+      "type": "text",
+      "content": "Sthala Puranam: \nNarakasura was the son of Bhoomi Devi. Having allied himself with Banasura, Naraka became a force to be reckoned with. To show his power, Naraka had kidnapped 16001 maidens and was planning to offer them to Kamakya Devi.  Naraka then attacked Amaravati, the heavenly capital of Indra. Naraka stormed into Amaravati and stole all of Indra’s elephants, Varuna’s Umbrella, and mother Aditi’s earrings. As Naraka was to attack Indra, Indra mounted Airavata and fled to Dwarka to seek the help and protection of Lord Shree Krishna. Indra narrated what had happened at Amaravati and asked Krishna to bring back Mother Aditi’s earrings. Lord Krishna, along with Satyabhama, mounts the Lord’s vehicle, Garuda, and leaves for Pragjyothisham (modern-day Assam), the kingdom of Naraka.\nTo stop intruders from entering his kingdom, Naraka had set up elaborate traps to take care of any who was daring enough to try and challenge him. Lord Krishna destroyed all the traps that were laid one by one. The first trap was a divine boulder that would crush anyone who tried to enter the border. The Lord destroyed the boulder with his mace. The second trap was a swirling pit of fire that would rise and engulf anyone who passed the first trial. The Lord sent his Sudharshana Chakra into the pit. The Chakra engulfed the flames and absorbed them. The last trap that was laid was a demon named Mura. Mura was the commander-in-chief of Naraka’s army. Mura tried his best to keep the Lord at bay but was easily defeated. Following the death of Mura, his seven sons tried to avenge his death, but all of them were easily defeated. Finally, Naraka showed himself and had a long battle with the Lord. At the end of the battle, Lord Shree Krishna emerged victoriously. Naraka, in his dying breath, asked Krishna for a boon. He asked that one day in a year, to let Ganga reach everyone so that they can atone for the sins that might have been committed by them knowingly or unknowingly. Lord Krishna granted the boon and said that day would henceforth be referred to as Naraka Chaturdashi. After Naraka’s death, the Lord freed all the maidens and is said to have married all of them to protect them. He also placed Naraka’s son Bhagadatta on the throne of Pragjyothisham and recovered Indra’s elephants, Varuna’s umbrella, and mother Aditi’s earrings.\nWhen Lord Shree Krishna and Satyabhama reached Tirukavalampadi, Satyabhama is said to have asked the Lord to bring her the divine Parijatham flower. Thus, the Lord went back to Indra and asked that he spare a flower for the sake of Satyabhama. Indra promptly refused, saying the divine flower does not belong on Bhulokam. Lord Shree Krishna is then said to have defeated Indra and established a Parijatham garden here at this Kshethram.\n***The specialty of these eleven temples together is the Padhnor Garudothasavam(eleven Garudothsavam) that takes place together during Thai Maasam(January 15- February 15) on the day of Amavasya.",
+      "textFontSizeHint": 16
+    }
+  ]
+}

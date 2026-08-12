@@ -1,0 +1,44 @@
+{
+  "pageId": "page.Page114",
+  "title": "Tattvas",
+  "classification": {
+    "category": "non_temple_content_candidate",
+    "evidence": {
+      "hasNonPlaceholderText": true,
+      "hasPrapattiPdfLink": false,
+      "hasGoogleMapsLink": false
+    },
+    "confidence": "medium",
+    "method": "content-extraction/scripts/05-classify-and-emit-records.js -- see header comment for full rule set"
+  },
+  "containsPlaceholderText": false,
+  "placeholderTextBlockCount": 0,
+  "sourceLocation": {
+    "screensKey": "page.Page114",
+    "appDefinitionFile": "content-extraction/_generated/app-definition.json"
+  },
+  "imageAssetRefs": [],
+  "externalLinks": [],
+  "internalNavigationOutEdges": [],
+  "contentBlocks": [
+    {
+      "order": 0,
+      "depth": 0,
+      "type": "layout"
+    },
+    {
+      "order": 1,
+      "depth": 1,
+      "type": "text",
+      "content": "Tattvas",
+      "textFontSizeHint": 24
+    },
+    {
+      "order": 2,
+      "depth": 1,
+      "type": "text",
+      "content": "The Visishta Advaita Philosophy speaks of three tattvas or three ways one can interpret creation. Those three tattvas are:\nChith or the Jeevaathma\nAchith or the Prakriti\nIshwara or the Paramaathma\nChith or the Jeevaathma refers to the souls of any living being in creation.\nAchith, or the Prakriti, refers to nature or surroundings in which the soul would reside.\nIshwara or the Paramaathma refers to the Lord, who is the Almighty Supreme Ruler of the universe.\nIn nature, we observe hundreds of thousands of living creatures, each of which possesses a soul. Therefore, Achith acts as a residence for all that is Chith. From this, we can draw the inference that Chith and Achith are inseparable from one another.\nAs for Ishwara, He dwells in both Chith and Achith. Thus, Chith and Achith are inseparable from Ishwara.\nFrom this, we establish what is known as Sharira-Shariri Bhaava, i.e., the relationship between the dweller and that which dwells. We see that Ishwara lives within Chith and Achith, bringing them together. Hence, Ishwara Tattva is treated as the Ultimate, which controls everything in creation.\n",
+      "textFontSizeHint": 16
+    }
+  ]
+}

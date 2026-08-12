@@ -1,0 +1,61 @@
+{
+  "slug": "tiruvazhundur-therazhundur",
+  "displayName": "Tiruvazhundur(Therazhundur)",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page27",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Aamaruviyappan",
+    "thayaar": "Senkamalavalli Thayaar",
+    "vimanam": "Garuda Vimanam",
+    "theertham": "Darshana Pushkarani",
+    "travelNote": "This kshethram is located close to Mayiladuthurai, on the Kumbakonam road."
+  },
+  "sthalaPuranam": "Legend has it that Lord Brahma caused the herds of cattle being grazed by Lord Krishna to disappear, upon which Lord Krishna created another herd. Finding this, Brahma apologized to Krishna and requested Him to take abode at Tiruvazhandur. In the sanctum, Prahlada is to the right of the moolavar and Garudan to His left. After witnessing Narasimha Avataram of the Lord, Prahlada asks to see the lord in a Shantha-Swaroopam (calm form), to which the Lord gave him darshanam at this kshethram. It is said that the vimanam of this kshethram was given by Garudan, hence the name Garuda Vimanam.\n\n*** This kshethram is also the birthplace of the great Tamizh poet Kambar, who has given us the magnum opus of Kamba Ramayanam, which rivals and trumps Valmiki Ramayanam in terms of poetic beauty. One can find a shrine dedicated to Kambar and his wife here at this kshethram.",
+  "azhwarPasuram": "Tirumangai Azhwar – 45 Pasurams",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/qKbinzJXyRsU5A7U8"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruvazhundur-therazhundur-1",
+      "sourceAssetUuid": "4e73ddf8-6ad1-4a70-ab49-c8fc98c29a77",
+      "sourceOriginalName": "108-23.jpeg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/kannada/tiruvazunduurpaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/tamil/tiruvazunduurpaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvazunduurpaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    },
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/sanskrit/tiruvazunduurpaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    }
+  ],
+  "relatedContent": []
+}

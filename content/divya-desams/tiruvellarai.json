@@ -1,0 +1,61 @@
+{
+  "slug": "tiruvellarai",
+  "displayName": "Tiruvellarai",
+  "status": "draft",
+  "migration": {
+    "sourcePageId": "page.Page8",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "templeInformation": {
+    "moolavar": "Pundarikaksha Perumal",
+    "thayaar": "Shambagavalli Thayaar",
+    "vimanam": "Vimalaakrithi Vimanam",
+    "theertham": "Swastika Theertham",
+    "travelNote": "This kshethram is located 27 km from Trichy, en route to Turaiyur by road."
+  },
+  "sthalaPuranam": "It is said that Shibi Chakravarthy, the grandson of Yayati, a ruler of Ayodhya belonging to the Chandravamsham dynasty, once undertook a trip to South India. One night, he decided to stay at the place known as Shwetagiri, which in Sanskrit translates to a hill with white rocks. Shwetagiri in Tamizh may be split as Vella+Arai, which means white hill. One night during his stay, Shibi Chakravarthy’s army chieftain complained that a wild white boar was running around and causing trouble to the army. Hearing this, the king ordered its capture. A few days passed, and the army chieftain came back with a complaint, saying the boar would magically disappear as they got close to catching it. Hearing this, Shibi Chakravarthy himself decided to go after the boar. He took his bow and set out in search of the animal. As he was searching, he saw the boar and began pursuing it. As he chased after the boar in the forest, he saw Sage Markandeya in penance. Seeing the sage, Shibi Chakravarthy offered his respects and went to inquire of the great sage if he had seen a wild boar pass by. The sage immediately directed the king to an anthill near the tree where he was meditating. He tells the king that he was in penance, waiting for the day the king would arrive seeking out a boar. He hands the king a pitcher of milk and asks him to pour the milk down the anthill. The king follows the sage’s instructions and does as he says. As the king poured the milk down the anthill, it began to melt, revealing a beautiful idol of Lord Pundarikakshan. The king wasted no time in installing the idol of the Lord into a temple. Sage Markandeya then tells the king that he should bring three thousand seven hundred Vaishnavas from his kingdom and help them to settle down here. The king immediately returned to Ayodhya and, according to the sage’s instructions, found three thousand seven hundred Vaishnavas and brought them to the temple. As Shibi counted the number of Vaishnavas that he had brought, he discovered that one of them had mysteriously vanished. The Lord then appeared in the king’s dream, saying He was one among the three thousand seven hundred, and told the king that he wanted to experience firsthand what bhakti felt like. In the Garbhagriha, we can see the Lord holding a prayoga chakram, along with His consorts, Sridevi and Bhoodevi, as well as Sooryan, Chandhran, Garudan, and Aadiseshan.",
+  "azhwarPasuram": "Thirumangai Azhwar: 13 pasurams\nPeri Azhwar: 11 pasurams\nTotal:  24 pasurams\n\nPrathyaksham To: Shibi Chakravarthy, Markandeya Maharishi, Brahma, and Rudran",
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://maps.app.goo.gl/fiqthoVRKmPs6WXw5"
+    }
+  ],
+  "images": [
+    {
+      "assetId": "tiruvellarai-1",
+      "sourceAssetUuid": "fa88f1b8-3368-492d-b95d-fbc845b413dc",
+      "sourceOriginalName": "108-4.jpg",
+      "alt": null,
+      "altStatus": "needs-review"
+    }
+  ],
+  "resources": [
+    {
+      "language": "Sanskrit",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvellaraipaasurangal.pdf",
+      "sourceLabel": "Sanskrit Pasuram"
+    },
+    {
+      "language": "Kannada",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvellaraipaasurangal.pdf",
+      "sourceLabel": "Kannada Pasuram"
+    },
+    {
+      "language": "Tamil",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvellaraipaasurangal.pdf",
+      "sourceLabel": "Tamizh Pasuram"
+    },
+    {
+      "language": "English",
+      "type": "pasuram-pdf",
+      "url": "https://www.prapatti.com/slokas/english/tiruvellaraipaasurangal.pdf",
+      "sourceLabel": "English Pasuram"
+    }
+  ],
+  "relatedContent": []
+}
