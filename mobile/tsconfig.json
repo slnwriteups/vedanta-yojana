@@ -1,0 +1,30 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    // Matches the root repo's own tsconfig.json convention: content-lib
+    // imports use explicit ".ts" extensions throughout (needed for Node's
+    // native TypeScript execution elsewhere in this project), which
+    // requires this flag to resolve under "moduleResolution": "bundler"
+    // too.
+    "allowImportingTsExtensions": true,
+    // Deliberately overrides expo/tsconfig.base's default (true). With it
+    // on, tsc infers a precise literal type from EVERY imported JSON
+    // file's actual content before widening -- for content-lib/manifest
+    // .generated.ts's 160+ imports, several containing long prose
+    // strings (chapter bodies, sthala puranam text), this made
+    // `tsc --noEmit` hang for minutes. See content-lib/json-module.d.ts
+    // for the ambient `*.json` declaration that takes over once this is
+    // off. Does NOT affect Metro/Babel's actual JSON bundling at
+    // runtime -- that is a completely separate mechanism from tsc's
+    // static type-checking.
+    "resolveJsonModule": false
+  },
+  // mobile/scripts/ and mobile/tests/ are Node-context (build tooling and
+  // `node --test` foundation tests, respectively) -- run directly via
+  // `node`, never bundled into the app -- not part of the React Native
+  // app this config type-checks. Their correctness is verified by
+  // actually running them (see mobile/README.md), not by tsc under an
+  // app-flavored config that has no reason to know about Node globals.
+  "exclude": ["node_modules", "scripts", "tests"]
+}
