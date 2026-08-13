@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getSiteOrigin } from "./site.ts";
+import { getSiteOrigin, siteUrl } from "./site.ts";
 
 /**
  * Phase 5N -- allow all crawling by default. The application's universal
@@ -26,6 +26,8 @@ export function buildRobots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    ...(origin ? { sitemap: new URL("/sitemap.xml", origin).toString() } : {}),
+    // Still gated on a real origin (a relative Sitemap: entry would be
+    // non-standard), but built through siteUrl so the basePath survives.
+    ...(origin ? { sitemap: siteUrl("/sitemap.xml") } : {}),
   };
 }

@@ -7,6 +7,12 @@ import { buildSitemapEntries } from "@/lib/sitemap";
  * directly by `node --test` -- see tests/content/seo.test.ts) since this
  * file's "@/" path alias only resolves under Next.js's own bundler.
  */
+/**
+ * Required by `output: "export"` -- see app/robots.ts. Safe for the same
+ * reason: the entry list is derived from content/ at build time.
+ */
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return buildSitemapEntries();
 }

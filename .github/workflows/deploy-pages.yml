@@ -1,0 +1,80 @@
+name: Deploy to GitHub Pages
+
+# Deploys the static export produced by `npm run build` (Next.js
+# `output: "export"` -> out/). Separate from ci.yml, which validates every
+# push and pull request: this one only publishes, and only from main.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race. `cancel-in-progress: false` so an in-flight
+# publish finishes rather than leaving Pages half-updated.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build static export
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+
+      - name: Install dependencies (reproducible)
+        run: npm ci
+
+      - name: Build
+        # Runs prebuild (scripts/build-search-index.ts) first, then
+        # `next build`, which exports to out/.
+        #
+        # NEXT_PUBLIC_SITE_URL is what turns canonical URLs, the sitemap's
+        # <loc> values and robots.txt's Sitemap: line absolute. Only the
+        # origin is read from it (see lib/site.ts); the /vedanta-yojana
+        # sub-path comes from next.config.ts's basePath, so the two cannot
+        # disagree.
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://slnwriteups.github.io
+          # Set only here. Vercel and local builds leave it unset and are
+          # served from a domain root -- see next.config.ts.
+          NEXT_PUBLIC_BASE_PATH: /vedanta-yojana
+
+      - name: Disable Jekyll processing
+        # Next.js emits _next/, and Jekyll strips underscore-prefixed
+        # paths. The Pages Actions pipeline does not run Jekyll today, so
+        # this is insurance against a future switch to branch-based
+        # publishing rather than a live fix.
+        run: touch out/.nojekyll
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    name: Publish
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

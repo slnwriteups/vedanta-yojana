@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { loadKnowledge } from "@/content-lib/loader";
 import { KnowledgeCard } from "@/components/knowledge/KnowledgeCard";
+import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Knowledge",
   description:
     "Supporting philosophical and devotional material related to Sanātana Dharma.",
-  alternates: { canonical: "/knowledge" },
+  alternates: { canonical: siteUrl("/knowledge") },
 };
 
 /**

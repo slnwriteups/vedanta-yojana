@@ -78,9 +78,14 @@ test("32: the search page has a distinct initial-state branch for no/blank query
   assert.ok(resultsSource.includes("Enter a search term"));
 });
 
-test("33/34: the search page reads searchParams and preserves the raw query in the form input", () => {
-  const pageSource = read("app/search/page.tsx");
-  assert.ok(pageSource.includes("searchParams"));
+test("33/34: the search query is read from the URL and preserved in the form input", () => {
+  // The read moved from the server page (searchParams) to the browser
+  // (useSearchParams) when the static export removed the server. The
+  // contract -- /search?q=... drives both the results and the visible
+  // input -- is unchanged.
+  const clientSource = read("components/search/SearchClient.tsx");
+  assert.ok(clientSource.includes("useSearchParams"));
+  assert.ok(clientSource.includes('searchParams.get("q")'));
   const formSource = read("components/search/SearchForm.tsx");
   assert.ok(formSource.includes("defaultValue={query}"));
 });
@@ -119,23 +124,51 @@ test("39: no migration metadata appears anywhere in the search UI source", () =>
 // Server-rendered, no client component, no JS required for basic submission.
 // ---------------------------------------------------------------------------
 
-test("the search feature has no client components -- no \"use client\" anywhere", () => {
-  const files = [
+/**
+ * Replaces "the search feature has no client components". A static export
+ * has no server to compute results on, so search necessarily moved into
+ * the browser. What is still worth pinning down is that the client
+ * boundary stayed as small as possible: exactly one client component,
+ * with the page and the presentational components untouched.
+ */
+test("exactly one client component in the search feature, and it is SearchClient", () => {
+  const serverFiles = [
     "app/search/page.tsx",
     "components/search/SearchForm.tsx",
     "components/search/SearchResult.tsx",
     "components/search/SearchResults.tsx",
   ];
-  for (const relPath of files) {
+  for (const relPath of serverFiles) {
     const source = read(relPath);
-    assert.ok(!source.includes('"use client"'), `${relPath} is a client component`);
+    assert.ok(!source.includes('"use client"'), `${relPath} should not declare a client boundary`);
   }
+  assert.ok(read("components/search/SearchClient.tsx").includes('"use client"'));
 });
 
-test("SearchForm is a plain GET form (works without JavaScript)", () => {
+test("SearchClient does not pull the node:fs-backed corpus builder into the browser bundle", () => {
+  const source = read("components/search/SearchClient.tsx");
+  // Checks the import graph, not prose -- the doc comment names
+  // buildSearchCorpus precisely to explain why it must not be imported.
+  assert.ok(
+    !/^import[^;]*buildSearchCorpus/m.test(source),
+    "importing buildSearchCorpus would drag the content loader (node:fs) into the client bundle"
+  );
+  assert.ok(
+    !/^import[^;]*from\s+["']@\/content-lib\/search["']/m.test(source),
+    "the content-lib/search barrel re-exports buildSearchCorpus -- import run.ts directly"
+  );
+  assert.ok(source.includes('from "@/content-lib/search/run.ts"'));
+});
+
+test("SearchForm is still a GET form targeting the search route", () => {
   const source = read("components/search/SearchForm.tsx");
   assert.ok(source.includes('method="GET"'));
-  assert.ok(source.includes('action="/search"'));
+  // The action is now built from NEXT_PUBLIC_BASE_PATH rather than
+  // hardcoded, so it stays correct when the site is served from a
+  // sub-path. Submission still works without JavaScript; only the
+  // results themselves now require it.
+  assert.ok(source.includes("/search/"));
+  assert.ok(source.includes("NEXT_PUBLIC_BASE_PATH"));
 });
 
 test("no search-related file uses dangerouslySetInnerHTML or constructs a RegExp from user input", () => {

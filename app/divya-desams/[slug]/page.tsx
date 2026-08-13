@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { loadDivyaDesam } from "@/content-lib/loader";
+import { loadDivyaDesam, loadDivyaDesams } from "@/content-lib/loader";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { DraftBadge } from "@/components/shared/DraftBadge";
 import { TempleInformation } from "@/components/divya-desams/TempleInformation";
@@ -10,6 +10,7 @@ import { ShrineLinks } from "@/components/divya-desams/ShrineLinks";
 import { ResourceLinks } from "@/components/divya-desams/ResourceLinks";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { truncateForDescription } from "@/lib/metadata";
+import { siteUrl } from "@/lib/site";
 
 /**
  * Phase 5K -- real, loader-driven Divya Desam detail page.
@@ -21,6 +22,16 @@ import { truncateForDescription } from "@/lib/metadata";
  * link) render as intentional, complete-looking pages rather than
  * visibly broken ones -- without inventing anything to fill the gaps.
  */
+
+/**
+ * Enumerates every Divya Desam URL to pre-render. Required by
+ * `output: "export"`: with no server at runtime, the complete set of
+ * concrete paths must be known at build time. Sourced from the same
+ * loader the page body uses, so the two cannot drift apart.
+ */
+export function generateStaticParams() {
+  return loadDivyaDesams().map((record) => ({ slug: record.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -39,7 +50,7 @@ export async function generateMetadata({
   return {
     title: record.displayName,
     description: source ? truncateForDescription(source) : undefined,
-    alternates: { canonical: `/divya-desams/${record.slug}` },
+    alternates: { canonical: siteUrl(`/divya-desams/${record.slug}`) },
   };
 }
 

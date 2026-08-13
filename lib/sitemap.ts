@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { loadBooks, loadChapters, loadDivyaDesams, loadKnowledge } from "../content-lib/loader/index.ts";
-import { getSiteOrigin } from "./site.ts";
+import { siteUrl } from "./site.ts";
 
 /**
  * Phase 5N -- sitemap built from the real content loader, not a
@@ -46,8 +46,10 @@ function sourcePageNumber(sourcePageId: string): number {
 }
 
 export function buildSitemapEntries(): MetadataRoute.Sitemap {
-  const origin = getSiteOrigin();
-  const toUrl = (path: string): string => (origin ? new URL(path, origin).toString() : path);
+  // siteUrl() applies both the deployment origin (when configured) and
+  // the basePath the site is served under -- without the latter every
+  // <loc> would point at a 404 on a project-page deployment.
+  const toUrl = siteUrl;
 
   const entries: MetadataRoute.Sitemap = STATIC_ROUTES.map((path) => ({ url: toUrl(path) }));
 

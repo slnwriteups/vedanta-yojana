@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { loadKnowledgeRecord } from "@/content-lib/loader";
+import { loadKnowledge, loadKnowledgeRecord } from "@/content-lib/loader";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { DraftBadge } from "@/components/shared/DraftBadge";
 import { RecordImages } from "@/components/shared/RecordImages";
@@ -8,6 +8,7 @@ import { LongFormSection } from "@/components/shared/LongFormSection";
 import { RelatedContentLinks } from "@/components/knowledge/RelatedContentLinks";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { truncateForDescription } from "@/lib/metadata";
+import { siteUrl } from "@/lib/site";
 
 /**
  * Phase 5L -- real, loader-driven Knowledge detail page. Body rendered
@@ -16,6 +17,11 @@ import { truncateForDescription } from "@/lib/metadata";
  * the loader and only rendered when it actually resolves to a real
  * record (see components/knowledge/RelatedContentLinks.tsx).
  */
+
+/** Every Knowledge URL to pre-render -- see the Divya Desam page for why. */
+export function generateStaticParams() {
+  return loadKnowledge().map((record) => ({ slug: record.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -29,7 +35,7 @@ export async function generateMetadata({
   return {
     title: record.title,
     description: truncateForDescription(record.body),
-    alternates: { canonical: `/knowledge/${record.slug}` },
+    alternates: { canonical: siteUrl(`/knowledge/${record.slug}`) },
   };
 }
 

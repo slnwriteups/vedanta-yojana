@@ -183,15 +183,21 @@ test("loader regression: loadDivyaDesams() still returns exactly 107 records", (
 // Image route handler: path-safety and file-resolution logic.
 // ---------------------------------------------------------------------------
 
-test("the image route handler validates the uuid shape before touching the filesystem", () => {
-  // Phase 5O: the UUID-shape check itself was extracted from route.ts
-  // into lib/image-file.ts's resolveImageFile() purely so it could be
-  // unit-tested directly (see tests/app/images-route.test.ts) -- same
-  // behavior, different file. The route handler still delegates to it.
-  const routeSource = read("app/images/[uuid]/route.ts");
+test("image resolution validates the uuid shape before touching the filesystem", () => {
+  // The Phase 5K/5O route handler (app/images/[uuid]/route.ts) was
+  // removed by the GitHub Pages migration: a static host has no runtime
+  // to execute it, so images/ moved to public/images/ and is served
+  // directly. The UUID-shape check this test exists to guard did not go
+  // anywhere -- it still gates every lookup in lib/image-file.ts, which
+  // now runs at build time via resolveImageHref (see
+  // components/shared/RecordImages.tsx) instead of per request.
   const libSource = read("lib/image-file.ts");
-  assert.ok(routeSource.includes("resolveImageFile"), "expected the route handler to delegate to resolveImageFile");
   assert.ok(/UUID_PATTERN/.test(libSource), "expected a UUID shape check");
-  assert.ok(!/from\s+["'].*image-map\.json["']/.test(routeSource + libSource), "the image route must not import image-map.json");
-  assert.ok(!/readFileSync\(.*image-map/.test(routeSource + libSource), "the image route must not read image-map.json directly");
+  assert.match(
+    libSource,
+    /if \(!UUID_PATTERN\.test\(uuid\)\) return null;/,
+    "the UUID shape must be validated before any filesystem access"
+  );
+  assert.ok(!/from\s+["'].*image-map\.json["']/.test(libSource), "image resolution must not import image-map.json");
+  assert.ok(!/readFileSync\(.*image-map/.test(libSource), "image resolution must not read image-map.json directly");
 });

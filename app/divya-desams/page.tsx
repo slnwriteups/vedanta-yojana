@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import type { DivyaDesam } from "@/content-lib/schemas";
 import { loadDivyaDesams } from "@/content-lib/loader";
 import { DivyaDesamCard } from "@/components/divya-desams/DivyaDesamCard";
+import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Divya Desams",
   description:
     "The 108 Divya Desams are the sacred abodes of Vishnu venerated by the Alwars.",
-  alternates: { canonical: "/divya-desams" },
+  alternates: { canonical: siteUrl("/divya-desams") },
 };
 
 /**

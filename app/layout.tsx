@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { getSiteOrigin, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
+import { getSiteOrigin, siteUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 import "./globals.css";
 
 const siteOrigin = getSiteOrigin();
@@ -10,10 +10,16 @@ export const metadata: Metadata = {
   // Only set when a real deployment origin has been configured (see
   // lib/site.ts) -- omitted entirely otherwise, rather than fabricating
   // a production domain. With no metadataBase, Next.js resolves
-  // relative URLs (e.g. each page's `alternates.canonical`) as-is
-  // instead of into absolute URLs; that is an accepted, documented
-  // limitation of not yet having a deployment target, not an oversight.
-  ...(siteOrigin ? { metadataBase: new URL(siteOrigin) } : {}),
+  // relative URLs as-is instead of into absolute URLs; that is an
+  // accepted, documented limitation of not yet having a deployment
+  // target, not an oversight.
+  //
+  // Built via siteUrl so it carries the basePath. Each page's
+  // `alternates.canonical` is already fully resolved through siteUrl
+  // too, so metadataBase never has to re-resolve one -- which matters,
+  // because resolving an absolute path against a base discards the
+  // base's own path segment.
+  ...(siteOrigin ? { metadataBase: new URL(siteUrl("/")) } : {}),
   title: {
     default: SITE_NAME,
     template: `%s — ${SITE_NAME}`,

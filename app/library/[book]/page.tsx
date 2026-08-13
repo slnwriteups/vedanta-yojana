@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { loadBook, loadChapters } from "@/content-lib/loader";
+import { loadBook, loadBooks, loadChapters } from "@/content-lib/loader";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { DraftBadge } from "@/components/shared/DraftBadge";
 import { ChapterListItem } from "@/components/library/ChapterListItem";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { truncateForDescription } from "@/lib/metadata";
+import { siteUrl } from "@/lib/site";
 
 /**
  * Phase 5L -- real, loader-driven Book detail page.
@@ -17,6 +18,11 @@ import { truncateForDescription } from "@/lib/metadata";
  * validation phases) -- so no separate re-sort or renumbering happens
  * here. Chapter titles are rendered exactly as stored.
  */
+
+/** Every Book URL to pre-render -- see the Divya Desam page for why. */
+export function generateStaticParams() {
+  return loadBooks().map((book) => ({ book: book.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -30,7 +36,7 @@ export async function generateMetadata({
   return {
     title: book.title,
     description: book.description ? truncateForDescription(book.description) : undefined,
-    alternates: { canonical: `/library/${book.slug}` },
+    alternates: { canonical: siteUrl(`/library/${book.slug}`) },
   };
 }
 

@@ -84,12 +84,30 @@ test("dynamic route metadata handles the not-found case explicitly before derivi
 
 test("search page metadata canonicalizes every query variant to the bare /search route", () => {
   const source = read("app/search/page.tsx");
-  assert.ok(source.includes('alternates: { canonical: "/search" }'));
+  // Still the bare /search route, now resolved through siteUrl() so the
+  // deployment's basePath is included (see lib/site.ts).
+  assert.ok(source.includes('alternates: { canonical: siteUrl("/search") }'));
 });
 
-test("search page metadata sets robots noindex only when a query is present", () => {
+/**
+ * Replaces "sets robots noindex only when a query is present". That rule
+ * required varying the response per request, which `output: "export"`
+ * cannot do -- exactly one /search document is emitted at build time. The
+ * emitted page is the bare, queryless one, so it is indexable; query
+ * variants are the same URL with client-side state applied, and are not
+ * separately crawlable documents at all.
+ */
+test("search page metadata is static and marks the single emitted page indexable", () => {
   const source = read("app/search/page.tsx");
-  assert.match(source, /robots:\s*\{\s*index:\s*!hasQuery/);
+  assert.ok(
+    source.includes("export const metadata"),
+    "search metadata must be static -- generateMetadata cannot read searchParams under output: export"
+  );
+  assert.match(source, /robots:\s*\{\s*index:\s*true/);
+  assert.ok(
+    !source.includes("hasQuery"),
+    "per-query robots branching is not expressible in a static export"
+  );
 });
 
 // ---------------------------------------------------------------------------

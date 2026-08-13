@@ -1,13 +1,49 @@
 import type { NextConfig } from "next";
 
-// Phase 5B scaffold: intentionally minimal. No image domains, redirects,
-// or headers are configured yet — those belong to later phases (media
-// strategy, old-URL redirects) once real content exists to inform them.
+/**
+ * The sub-path the site is served under, supplied by the deployment
+ * rather than hardcoded -- the two live targets disagree about it:
+ *
+ *   - GitHub Pages project site -> "/vedanta-yojana", set by
+ *     .github/workflows/deploy-pages.yml, because the site lives at
+ *     https://slnwriteups.github.io/vedanta-yojana/
+ *   - Vercel (kept as a fallback) and local `next dev` -> "", because
+ *     both serve from a domain root
+ *
+ * Defaulting to "" is the safe direction: a stray basePath on a
+ * root-served deployment 404s the entire site, whereas a missing one is
+ * only wrong on Pages, which always sets it explicitly.
+ *
+ * `next/link` and `next/router` apply this prefix automatically; raw
+ * `<img src>` and `fetch()` URLs do NOT, which is why it is read again
+ * at runtime by components/shared/RecordImages.tsx (via
+ * lib/image-file.ts), components/search/SearchClient.tsx and
+ * lib/site.ts. NEXT_PUBLIC_ vars are inlined into the bundle at build
+ * time, so those reads see the same value this one does.
+ *
+ * Moving to a custom domain means dropping the workflow's env var and
+ * adding a CNAME file -- no code changes.
+ */
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const nextConfig: NextConfig = {
   // Next.js 16 auto-writes AGENTS.md/CLAUDE.md into the repo root on every
   // `next dev`/`next build`. Disabled: an unrequested, repeatedly
   // self-regenerating file outside this phase's (or any phase's) scope.
   agentRules: false,
+
+  // Fully static HTML/CSS/JS into out/ -- GitHub Pages serves files only,
+  // with no Node.js runtime available for SSR or route handlers.
+  output: "export",
+
+  // Omitted entirely when empty: Next.js rejects basePath: "".
+  ...(BASE_PATH ? { basePath: BASE_PATH } : {}),
+
+  // Emits out/about/index.html rather than out/about.html. GitHub Pages
+  // resolves directory URLs to index.html reliably; extensionless files
+  // are the case that produces surprise 404s.
+  trailingSlash: true,
+
 };
 
 export default nextConfig;

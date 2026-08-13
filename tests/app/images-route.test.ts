@@ -31,10 +31,10 @@ test("resolves the real image bytes for a real Divya Desam image's sourceAssetUu
   assert.ok(resolved);
 
   const onDisk = fs
-    .readdirSync(path.join(REPO_ROOT, "images"))
+    .readdirSync(path.join(REPO_ROOT, "public/images"))
     .find((f) => path.parse(f).name.toLowerCase() === image.sourceAssetUuid.toLowerCase());
-  assert.ok(onDisk, "expected a matching file under images/");
-  const expected = fs.readFileSync(path.join(REPO_ROOT, "images", onDisk!));
+  assert.ok(onDisk, "expected a matching file under public/images/");
+  const expected = fs.readFileSync(path.join(REPO_ROOT, "public/images", onDisk!));
 
   assert.ok(resolved!.data.equals(expected), "resolved bytes must be byte-identical to the source file");
 });

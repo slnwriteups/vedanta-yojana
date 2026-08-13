@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { loadBook, loadChapter } from "@/content-lib/loader";
+import { loadBook, loadBooks, loadChapter, loadChapters } from "@/content-lib/loader";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { DraftBadge } from "@/components/shared/DraftBadge";
 import { RecordImages } from "@/components/shared/RecordImages";
 import { LongFormSection } from "@/components/shared/LongFormSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { truncateForDescription } from "@/lib/metadata";
+import { siteUrl } from "@/lib/site";
 
 /**
  * Phase 5L -- real, loader-driven Chapter detail page.
@@ -21,6 +22,17 @@ import { truncateForDescription } from "@/lib/metadata";
  * this page adds or removes).
  */
 
+/**
+ * The full book x chapter cross-product to pre-render. Chapters are
+ * enumerated per book rather than globally, because a chapter slug is
+ * only unique within its own book.
+ */
+export function generateStaticParams() {
+  return loadBooks().flatMap((book) =>
+    loadChapters(book.slug).map((chapter) => ({ book: book.slug, chapter: chapter.slug }))
+  );
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -33,7 +45,7 @@ export async function generateMetadata({
   return {
     title: chapter.title,
     description: truncateForDescription(chapter.body),
-    alternates: { canonical: `/library/${bookSlug}/${chapter.slug}` },
+    alternates: { canonical: siteUrl(`/library/${bookSlug}/${chapter.slug}`) },
   };
 }
 

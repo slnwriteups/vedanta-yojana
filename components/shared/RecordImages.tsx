@@ -1,9 +1,13 @@
 import type { ImageEntry } from "@/content-lib/schemas";
+import { resolveImageHref } from "@/lib/image-file";
 
 /**
- * Renders images[] via the Phase 5K image route (app/images/[uuid]/route.ts),
- * which streams the existing asset bytes directly from images/ by
- * sourceAssetUuid -- nothing is copied, renamed, or re-encoded. Originally
+ * Renders images[] as static files under public/images/, resolved from
+ * sourceAssetUuid to a real filename at build time by resolveImageHref
+ * (see lib/image-file.ts) -- nothing is copied, renamed, or re-encoded.
+ * This replaced the Phase 5K runtime route (app/images/[uuid]/route.ts)
+ * during the GitHub Pages migration, which removed the Node.js runtime a
+ * route handler needs. Originally
  * Phase 5K's DivyaDesamImages; relocated to components/shared/ and renamed
  * in Phase 5L since it is not Divya-Desam-specific -- Chapters and
  * Knowledge records use the exact same ImageEntry shape. Behavior
@@ -20,7 +24,16 @@ import type { ImageEntry } from "@/content-lib/schemas";
  * judgment that the images are actually decorative.
  */
 export function RecordImages({ images }: { images: ImageEntry[] }) {
-  if (images.length === 0) return null;
+  // An image whose UUID has no matching file is dropped rather than
+  // rendered with a src that is certain to 404. Resolution happens here,
+  // during the static pre-render, so a missing asset is visible at build
+  // time instead of as a broken image in someone's browser.
+  const resolved = images.flatMap((image) => {
+    const href = resolveImageHref(image.sourceAssetUuid);
+    return href ? [{ image, href }] : [];
+  });
+
+  if (resolved.length === 0) return null;
 
   return (
     <section aria-labelledby="images-heading" className="space-y-3">
@@ -28,10 +41,10 @@ export function RecordImages({ images }: { images: ImageEntry[] }) {
         Images
       </h2>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {images.map((image) => (
+        {resolved.map(({ image, href }) => (
           <img
             key={image.assetId}
-            src={`/images/${image.sourceAssetUuid}`}
+            src={href}
             alt={image.alt ?? ""}
             data-alt-status={image.altStatus}
             loading="lazy"

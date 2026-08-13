@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { SITE_DESCRIPTION, SITE_NAME, getSiteOrigin } from "@/lib/site";
+import { SITE_DESCRIPTION, SITE_NAME, getSiteOrigin, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/" },
+  alternates: { canonical: siteUrl("/") },
 };
 
 /**
@@ -39,7 +39,9 @@ const SECTIONS = [
 ];
 
 export default function HomePage() {
-  const origin = getSiteOrigin();
+  // The site's own URL, including any basePath -- not the bare origin,
+  // which on a project-page deployment is someone else's landing page.
+  const origin = getSiteOrigin() ? siteUrl("/") : undefined;
 
   return (
     <div className="space-y-12">

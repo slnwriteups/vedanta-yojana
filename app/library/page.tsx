@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { loadBooks } from "@/content-lib/loader";
 import { BookCard } from "@/components/library/BookCard";
+import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Library",
   description:
     "Recovered books, presented chapter by chapter as they are prepared for publication.",
-  alternates: { canonical: "/library" },
+  alternates: { canonical: siteUrl("/library") },
 };
 
 /**

@@ -11,16 +11,19 @@ export const SITE_DESCRIPTION =
   "A developing reference for the 108 Divya Desams and related Vaishnava teachings.";
 
 /**
- * No production domain has been established for this project -- no env
- * var, no vercel.json, no deployment config exists anywhere in the repo
- * as of Phase 5N. Returns undefined rather than fabricating one; callers
- * MUST handle the undefined case explicitly (a relative URL, or an
- * omitted field) instead of silently defaulting to a made-up domain.
- *
- * Once a real origin is configured by setting NEXT_PUBLIC_SITE_URL at
- * deploy time, metadataBase / canonical resolution / the sitemap /
- * robots.txt's Sitemap: line all become fully absolute automatically --
- * no further code changes needed anywhere that calls this function.
+ * The sub-path the site is served under, mirroring next.config.ts's
+ * `basePath` (which exports it as NEXT_PUBLIC_BASE_PATH). Empty string
+ * under plain `node --test`, where Next.js has not injected it, and
+ * empty for a root-served deployment such as a custom domain.
+ */
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+/**
+ * The deployment origin, scheme and host only -- e.g. for a GitHub Pages
+ * project site, "https://slnwriteups.github.io" without the repository
+ * sub-path. Returns undefined rather than fabricating a domain when
+ * NEXT_PUBLIC_SITE_URL is unset; callers MUST handle that case
+ * explicitly (a relative URL, or an omitted field).
  */
 export function getSiteOrigin(): string | undefined {
   const raw = process.env.NEXT_PUBLIC_SITE_URL;
@@ -30,4 +33,25 @@ export function getSiteOrigin(): string | undefined {
   } catch {
     return undefined;
   }
+}
+
+/**
+ * Turns a root-relative application path into the URL it is actually
+ * reachable at, which is NOT the same string once the site is served
+ * from a sub-path.
+ *
+ * Returns an absolute URL when an origin is configured, and a
+ * basePath-prefixed relative one otherwise. Both include BASE_PATH --
+ * that is the entire point: /divya-desams/sri-rangam is a 404 on a
+ * project-page deployment, where the real URL is
+ * /vedanta-yojana/divya-desams/sri-rangam.
+ *
+ * Concatenated rather than built with `new URL(path, base)`, because an
+ * absolute-path argument ("/x") discards the base's own path segment --
+ * which is exactly the bug this function exists to prevent. Callers pass
+ * an already-absolute result straight through to Next.js metadata, so
+ * `metadataBase` never gets the chance to re-resolve (and re-break) it.
+ */
+export function siteUrl(path: string): string {
+  return `${getSiteOrigin() ?? ""}${BASE_PATH}${path}`;
 }

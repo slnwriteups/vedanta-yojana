@@ -1,7 +1,5 @@
 import { buildSearchCorpus } from "./corpus.ts";
-import { normalizeQuery, searchContent } from "./match.ts";
-import { rankSearchResults } from "./rank.ts";
-import { createExcerpt } from "./excerpt.ts";
+import { searchCorpus } from "./run.ts";
 import type { SearchResult } from "./types.ts";
 
 /**
@@ -18,21 +16,10 @@ import type { SearchResult } from "./types.ts";
  * results" for the UI's initial-state vs. no-results-state.
  */
 export function search(rawQuery: string): SearchResult[] {
-  const corpus = buildSearchCorpus();
-  const matches = searchContent(corpus, rawQuery);
-  const ranked = rankSearchResults(matches);
-  const query = normalizeQuery(rawQuery);
-
-  return ranked.map(({ document, tier, matchedField }) => ({
-    type: document.type,
-    title: document.title,
-    href: document.href,
-    parentTitle: document.parentTitle,
-    status: document.status,
-    needsReview: document.needsReview,
-    excerpt: tier <= 3 || !matchedField ? undefined : createExcerpt(matchedField.text, query),
-  }));
+  return searchCorpus(buildSearchCorpus(), rawQuery);
 }
+
+export { searchCorpus } from "./run.ts";
 
 export { buildSearchCorpus } from "./corpus.ts";
 export { normalizeQuery, searchContent } from "./match.ts";
