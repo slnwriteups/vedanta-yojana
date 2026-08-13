@@ -72,6 +72,16 @@ function findTitleAbove(flat: { page: number; text: string }[], idx: number): st
   return "";
 }
 
+/** Same search as findTitleAbove, but returns the line's INDEX rather than its text. */
+function findTitleAboveIndex(flat: { page: number; text: string }[], idx: number): number | null {
+  let j = idx - 1;
+  while (j >= 0) {
+    if (flat[j].text.trim()) return j;
+    j -= 1;
+  }
+  return null;
+}
+
 export function parseDivyaDesamBook(pdfPath: string): DivyaDesamBookEntry[] {
   const flat = flattenPages(extractPdfPages(pdfPath));
 
@@ -101,8 +111,25 @@ export function parseDivyaDesamBook(pdfPath: string): DivyaDesamBookEntry[] {
     const override = MANUAL_TITLE_OVERRIDES[rawCapturedTitle];
     const title = override ?? rawCapturedTitle;
 
+    // The NEXT entry's own title line (the nearest non-blank line above
+    // its marker) sits INSIDE [idx, endIdx) by construction -- endIdx is
+    // the next marker's own index, not the title above it. Left
+    // untrimmed, every entry's text ends with the following entry's
+    // title bleeding in (confirmed in real migrated output: e.g.
+    // Singavelkundram/Ahobilam's sthalaPuranam ending "...Ugra
+    // Sthambham.'\n\n\n\n\n\n106) Tiruvenkatam"). Trimmed here for a
+    // markered next boundary; a markerless next boundary IS already the
+    // title itself, so there's nothing extra to exclude.
+    let textEndIdx = endIdx;
+    if (endIdx < flat.length && !markerlessSet.has(endIdx)) {
+      const nextTitleIdx = findTitleAboveIndex(flat, endIdx);
+      if (nextTitleIdx !== null && nextTitleIdx >= idx) {
+        textEndIdx = nextTitleIdx;
+      }
+    }
+
     const text = flat
-      .slice(idx, endIdx)
+      .slice(idx, textEndIdx)
       .map((l: PdfLine) => l.text)
       .join("\n");
 

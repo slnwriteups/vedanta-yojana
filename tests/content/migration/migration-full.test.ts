@@ -71,7 +71,7 @@ test("exactly 1 held-back unresolved record exists (Page150)", () => {
   assert.equal(unresolvedFiles.length, 1);
 });
 
-test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+14(_provenance/divya-desams, post image-fixes)+1(_provenance/library, Phase 6E) = 181", () => {
+test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+15(_provenance/divya-desams, post image-fixes)+1(_provenance/library, Phase 6E) = 182", () => {
   // Phase 6E added content/_provenance/ -- one small JSON file per Divya
   // Desam record that received a category-B text supplement and/or a
   // book-sourced image/shrine from "108 Divyadesam 2nd Edition.pdf" (101
@@ -80,24 +80,27 @@ test("no unexpected content records: total /content file count matches exactly 1
   // existing Library book's 55 chapters (see that phase's report for
   // both). Phase 6E-C added exactly ONE more (101 -> 102: Tanjai
   // Mamanikoyil had none yet; Tiruvaali Tirunagari's existing file only
-  // gained appended entries). Two post-Phase-6E-C reviews then found: (a)
-  // 149 of the 174 Phase 6E book images were near-duplicates of an image
-  // the record already had (source-material/reports/
-  // phase-6E-image-fixes-report.md), and (b) 12 more were misattributed
-  // to the WRONG adjacent temple by a page-boundary bug in the original
+  // gained appended entries). Three post-Phase-6E-C reviews then found:
+  // (a) 149 of the 174 Phase 6E book images were near-duplicates of an
+  // image the record already had (source-material/reports/
+  // phase-6E-image-fixes-report.md); (b) 12 more were misattributed to
+  // the WRONG adjacent temple by a page-boundary bug in the original
   // Phase 6E image merge (source-material/reports/
-  // phase-6E-cross-record-duplicates-report.md) -- removing them also
+  // phase-6E-cross-record-duplicates-report.md); removing them also
   // removed their provenance entries, and enough of the 102 files became
   // completely empty to be deleted outright (a record whose ONLY Phase 6E
   // fact was a duplicate/misattributed image now correctly has no
-  // provenance file at all): 102 -> 19 -> 14. Not loaded by
+  // provenance file at all): 102 -> 19 -> 14; and (c) a full-corpus
+  // corruption audit found one more misattributed image (a river-ghat
+  // photo wrongly under Tirumayam, reassigned to Tiruayodhi (Ayodhya),
+  // which had no provenance file yet): 14 -> 15. Not loaded by
   // content-lib/loader/ (mirrors the content/_unresolved/
   // precedent: a sidecar directory under content/ the loader never looks
   // inside), so it is deliberately still counted here rather than
   // excluded -- this test's whole purpose is to catch ANY unexpected
   // file under content/, intentional additions included.
   const total = countFilesRecursive(path.join(REPO_ROOT, "content"));
-  assert.equal(total, 181);
+  assert.equal(total, 182);
 });
 
 function countFilesRecursive(dir: string): number {
