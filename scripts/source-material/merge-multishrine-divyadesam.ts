@@ -218,8 +218,6 @@ function mergeTanjaiMamanikoyil(entries: DivyaDesamBookEntry[], importedAt: stri
 // position.
 // ---------------------------------------------------------------------------
 
-const VEDUPARI_UTSAVAM_MARKER = "*** Vedupari Utsavam";
-
 function mergeTiruvaaliTirunagari(entries: DivyaDesamBookEntry[], importedAt: string) {
   const entry = findBookEntry(entries, "34) Tiruvaali Tirunagari");
   const { shrineSegments, trailingText } = splitByHeadingLines(
@@ -275,44 +273,27 @@ function mergeTiruvaaliTirunagari(entries: DivyaDesamBookEntry[], importedAt: st
     });
   }
 
-  // The Sthala Puranam trailing block covers TWO distinct legends: the
-  // Lakshmi Narasimhar naming story is specific to the "Tiruvaali" shrine
-  // alone; the "*** Vedupari Utsavam" story that follows is joint (it
-  // names both places), so it stays record-level. Split on the source's
-  // own "***" marker, already used the same way elsewhere in this book
-  // (e.g. Tirukalvanoor's theertham field) -- not an invented boundary.
+  // Correction (post-Phase-6E-C review): the source presents the Sthala
+  // Puranam trailing block as ONE continuous passage under a single
+  // "Sthala Puranam:" label -- the Lakshmi Narasimhar naming story,
+  // immediately followed by the "*** Vedupari Utsavam" legend, with no
+  // second label separating them. An earlier version of this script
+  // split the two at that "***" marker and moved the naming story into
+  // the "Tiruvaali" shrine's own field, which left the record-level
+  // sthalaPuranam incomplete relative to the source -- caught in review.
+  // The full passage now stays intact at the record level, matching the
+  // source's own single-label structure; it is not additionally
+  // duplicated into a shrine-level field.
   if (trailing.sthalaPuranam) {
-    const markerIdx = trailing.sthalaPuranam.indexOf(VEDUPARI_UTSAVAM_MARKER);
-    if (markerIdx === -1) {
-      throw new Error('tiruvaali-tirunagari: expected "*** Vedupari Utsavam" marker not found in sthalaPuranam text');
-    }
-    const tiruvaaliSpecific = trailing.sthalaPuranam.slice(0, markerIdx).trim();
-    const jointLegend = trailing.sthalaPuranam.slice(markerIdx).trim();
-
-    const tiruvaaliShrine = record.shrines.find((s: { label: string | null }) => s.label === "Tiruvaali");
-    if (!tiruvaaliShrine) throw new Error('tiruvaali-tirunagari: no shrine with label "Tiruvaali"');
-    if (tiruvaaliSpecific) {
-      tiruvaaliShrine.sthalaPuranam = tiruvaaliSpecific;
-      provenance.push({
-        field: "shrines[label=Tiruvaali].sthalaPuranam",
-        value: tiruvaaliSpecific,
-        sourceFile: SOURCE_FILE,
-        sourcePage: entry.startPage,
-        sourceSection: entry.title,
-        importedAt,
-        note: 'The naming-legend paragraph preceding the "*** Vedupari Utsavam" marker is specific to the Tiruvaali shrine (explains the name "Tiruvaali").',
-      });
-    }
-
-    record.sthalaPuranam = jointLegend;
+    record.sthalaPuranam = trailing.sthalaPuranam;
     provenance.push({
       field: "sthalaPuranam",
-      value: jointLegend,
+      value: trailing.sthalaPuranam,
       sourceFile: SOURCE_FILE,
       sourcePage: entry.startPage,
       sourceSection: entry.title,
       importedAt,
-      note: 'Record-level: the "Vedupari Utsavam" legend involves both Tiruvaali and Tirunagari jointly, not attributable to a single shrine.',
+      note: "Record-level: the source presents the Lakshmi Narasimhar naming legend and the \"*** Vedupari Utsavam\" legend as one continuous passage under a single \"Sthala Puranam:\" label -- kept together, not split.",
     });
   }
 

@@ -1,24 +1,26 @@
-import { useState } from "react";
 import { Stack, useLocalSearchParams } from "expo-router";
-import { Image, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { loadDivyaDesam } from "../../../content-lib/loader.ts";
-import { imagesByUuid } from "../../../content-lib/image-manifest.generated.ts";
 import type { TempleInformation as TempleInformationData } from "../../../../content-lib/schemas/index.ts";
 import { DraftBadge } from "../../../components/DraftBadge";
 import { Section } from "../../../components/Section";
 import { ContentImage } from "../../../components/ContentImage";
 import { ResourceLink } from "../../../components/ResourceLink";
-import { ImageViewerModal } from "../../../components/ImageViewerModal";
-import { layout, radius, spacing, typography, useTheme } from "../../../theme";
+import { layout, spacing, typography, useTheme } from "../../../theme";
 
 /**
- * Phase 6C -- the reading-layout order the brief specifies: name, draft
- * badge, hero image, temple information, long-form sections, additional
- * images, maps/resources. Every section stays independently optional
- * (Phase 6B's behavior, unchanged): Page93 (no shrines, no hero image)
- * and the multi-shrine records (empty templeInformation) still render as
- * intentional pages, and Page150 is still structurally unreachable --
- * loadDivyaDesam() only ever resolves one of the 107 real slugs.
+ * Phase 6C's original reading-layout order pulled the first resolvable
+ * image out as a large 4:3 "hero" above Temple Information, with every
+ * other image rendered much smaller in the "Images" section further
+ * down. Reported as looking broken -- the first picture rendered
+ * "blown up out of proportion" relative to the rest -- so this was
+ * corrected to render every image uniformly (same size, same section,
+ * original order) via ContentImage, with no image singled out.
+ * Every section stays independently optional (Phase 6B's behavior,
+ * unchanged): Page93 (no images) and the multi-shrine records still
+ * render as intentional pages, and Page150 is still structurally
+ * unreachable -- loadDivyaDesam() only ever resolves one of the 107
+ * real slugs.
  */
 
 const TEMPLE_FIELD_LABELS: Record<keyof TempleInformationData, string> = {
@@ -41,7 +43,6 @@ export default function DivyaDesamDetailScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const theme = useTheme();
   const record = loadDivyaDesam(slug);
-  const [heroViewerOpen, setHeroViewerOpen] = useState(false);
 
   if (!record) {
     return (
@@ -62,14 +63,6 @@ export default function DivyaDesamDetailScreen() {
     (s) => s.name || s.templeInformation || s.sthalaPuranam || s.azhwarPasuram
   );
 
-  // Hero = first resolvable image; the rest render in the "Additional images" section below.
-  const resolvedImages = record.images.flatMap((image) => {
-    const asset = imagesByUuid[image.sourceAssetUuid.toLowerCase()];
-    return asset !== undefined ? [{ image, asset }] : [];
-  });
-  const hero = resolvedImages[0] ?? null;
-  const remainingImages = hero ? record.images.filter((img) => img !== hero.image) : record.images;
-
   return (
     <ScrollView style={[styles.container, { backgroundColor: theme.colors.background }]} contentContainerStyle={styles.content}>
       <Stack.Screen options={{ title: record.displayName }} />
@@ -79,25 +72,7 @@ export default function DivyaDesamDetailScreen() {
         <Text style={[styles.title, { color: theme.colors.foreground }]}>{record.displayName}</Text>
       </View>
 
-      {hero ? (
-        <Pressable
-          onPress={() => setHeroViewerOpen(true)}
-          accessibilityRole="imagebutton"
-          accessibilityLabel={hero.image.alt ?? "View hero image full screen"}
-        >
-          <Image
-            source={hero.asset}
-            style={[styles.hero, { backgroundColor: theme.colors.border }]}
-            resizeMode="cover"
-          />
-        </Pressable>
-      ) : null}
-      <ImageViewerModal
-        visible={heroViewerOpen}
-        asset={hero?.asset ?? null}
-        label={hero?.image.alt}
-        onClose={() => setHeroViewerOpen(false)}
-      />
+      <ContentImage images={record.images} />
 
       {presentTempleFields.length > 0 ? (
         <Section heading="Temple Information">
@@ -177,8 +152,6 @@ export default function DivyaDesamDetailScreen() {
         </Section>
       ) : null}
 
-      <ContentImage images={remainingImages} />
-
       {record.shrines.length > 0 ? (
         <Section heading={`Shrine Location${record.shrines.length > 1 ? "s" : ""}`}>
           <View style={styles.linkList}>
@@ -227,11 +200,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: typography.title,
     fontWeight: "700",
-  },
-  hero: {
-    width: "100%",
-    aspectRatio: 4 / 3,
-    borderRadius: radius.lg,
   },
   templeInfo: {
     gap: spacing.md,

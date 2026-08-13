@@ -154,9 +154,19 @@ test("Phase 6E-C: Tiruvaali Tirunagari is one canonical record with 2 shrines ma
   assert.ok(tiruvaali, "expected a shrine labeled Tiruvaali");
   assert.ok(tirunagari, "expected a shrine labeled Tirunagari");
   assert.equal(tiruvaali?.templeInformation?.moolavar, "Lakshmi Narasimhar");
-  assert.ok(tiruvaali?.sthalaPuranam, "Tiruvaali shrine should have its own naming-legend sthalaPuranam");
   assert.equal(tirunagari?.templeInformation?.moolavar, "Vayalali Manavalan");
   assert.ok(tirunagari?.templeInformation?.vimanam, "Tirunagari shrine should have a vimanam");
+});
+
+test("Phase 6E-C correction: Tiruvaali Tirunagari's record-level sthalaPuranam is the COMPLETE source passage (the Lakshmi Narasimhar naming legend followed by the Vedupari Utsavam legend), not split across record and shrine level", () => {
+  const record = loadDivyaDesam("tiruvaali-tirunagari");
+  assert.ok(record, "tiruvaali-tirunagari not found via loadDivyaDesam()");
+  assert.ok(record?.sthalaPuranam?.includes("Lakshmi Narasimhar"), "expected the naming-legend paragraph to be present");
+  assert.ok(record?.sthalaPuranam?.includes("Vedupari Utsavam"), "expected the joint legend to still be present");
+  // Not duplicated into a shrine-level field.
+  for (const shrine of record!.shrines) {
+    assert.equal(shrine.sthalaPuranam, undefined, `${shrine.label} should not carry a duplicate shrine-level sthalaPuranam`);
+  }
 });
 
 // ---------------------------------------------------------------------------
