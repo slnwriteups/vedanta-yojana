@@ -1,50 +1,47 @@
 [
   {
-    "field": "templeInformation.moolavar",
-    "value": "Pallikonda Ranganathar",
+    "field": "shrines[0].name",
+    "value": "Tiruttetriambalam",
     "sourceFile": "108 Divyadesam 2nd Edition.pdf",
     "sourcePage": 112,
     "sourceSection": "Tiruttetriambalam Tirumanikoodam",
-    "importedAt": "2026-08-13"
+    "importedAt": "2026-08-13",
+    "note": "Explicit pairing: the original SAP source pairs this shrine's own \"Details of Kshethram:\" block (Moolavar: Pallikonda Ranganathar) immediately with its own Maps button and pasuram-PDF links named \"tiruttetriyambalampaasurangal.pdf\" (content-extraction/divya-desams/page.Page40.json, contentBlocks order 3-8) -- not an inference."
   },
   {
-    "field": "templeInformation.thayaar",
-    "value": "Senkamalavalli",
+    "field": "shrines[0].templeInformation",
+    "value": "{\"moolavar\": \"Pallikonda Ranganathar\", \"thayaar\": \"Senkamalavalli\", \"vimanam\": \"Veda Vimanam\", \"theertham\": \"Surya Pushkarani\"}",
     "sourceFile": "108 Divyadesam 2nd Edition.pdf",
     "sourcePage": 112,
     "sourceSection": "Tiruttetriambalam Tirumanikoodam",
-    "importedAt": "2026-08-13"
+    "importedAt": "2026-08-13",
+    "note": "Corrected post-review: this data was already migrated but sat at the RECORD level, even though the source clearly attributes it to one of two shrines. Moved to shrines[0].templeInformation."
   },
   {
-    "field": "templeInformation.vimanam",
-    "value": "Veda Vimanam",
+    "field": "shrines[1].name",
+    "value": "Tirumanikoodam",
     "sourceFile": "108 Divyadesam 2nd Edition.pdf",
-    "sourcePage": 112,
+    "sourcePage": 113,
     "sourceSection": "Tiruttetriambalam Tirumanikoodam",
-    "importedAt": "2026-08-13"
+    "importedAt": "2026-08-13",
+    "note": "Explicit pairing: the original SAP source pairs this shrine's own \"Details of Kshethram:\" block (Moolavar: Varadarajan) immediately with its own Maps button and pasuram-PDF links named \"tirumanikkuudampaasurangal.pdf\" (content-extraction/divya-desams/page.Page40.json, contentBlocks order 10-15) -- not an inference."
   },
   {
-    "field": "templeInformation.theertham",
-    "value": "Surya Pushkarani",
+    "field": "shrines[1].templeInformation",
+    "value": "{\"moolavar\": \"Varadarajan\", \"thayaar\": \"Sridevi Bhoodevi\", \"vimanam\": \"Kanaga Vimanam\", \"theertham\": \"Chandra Pushkarani\"}",
     "sourceFile": "108 Divyadesam 2nd Edition.pdf",
-    "sourcePage": 112,
+    "sourcePage": 113,
     "sourceSection": "Tiruttetriambalam Tirumanikoodam",
-    "importedAt": "2026-08-13"
+    "importedAt": "2026-08-13",
+    "note": "Corrected post-review: this shrine's data was NEVER merged -- a second \"Details of Kshethram:\" marker for this shrine caused the source-material import tool's entry-boundary detection to mistake the book's own trailing \"TirumangaiAzhwar: 10 Pashurams\" text for a new (bogus) entry title, silently orphaning everything from this shrine onward (including the shared Sthala Puranam). Recovered directly from the book's raw text."
   },
   {
-    "field": "templeInformation.travelNote",
-    "value": "8 kilometers from Sirkazhi",
+    "field": "sthalaPuranam",
+    "value": "After completing the churning process of the Samudra, Mathanam appeared Danavantri with a golden chalice containing Amrutham (The elixir of longevity). Both the Devas as well as the Danavas desired the elixir, and hence the Lord took the form of Mohini and gave the elixir only to the gods. It was during this that Rahu, a demon, disguised himself as a deva and tried to consume the elixir when he was caught in the act by Suryan and Chandran. The Lord releases his Chakram and cuts him in such a way that the upper part of the body and the lower part of the body became separate entities. Rahu swore that he would have his revenge against Suryan and Chandran. To exact his revenge, it is said that he eclipses the Sun and the Moon. It is said that Suryan and Chandran went into hiding at the Surya Pushkarani, and Chandra Pushkarani was present at Tiruttetriambalam and Tirumanikoodam. The Lords are said to have come to the rescue of Suryan and Chandran and assured them of their safety.",
     "sourceFile": "108 Divyadesam 2nd Edition.pdf",
-    "sourcePage": 112,
+    "sourcePage": 114,
     "sourceSection": "Tiruttetriambalam Tirumanikoodam",
-    "importedAt": "2026-08-13"
-  },
-  {
-    "field": "azhwarPasuram",
-    "value": "TirumangaiAzhwar: 10 Pashurams",
-    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
-    "sourcePage": 112,
-    "sourceSection": "Tiruttetriambalam Tirumanikoodam",
-    "importedAt": "2026-08-13"
+    "importedAt": "2026-08-13",
+    "note": "Was MISSING entirely (see field-level bug above): this legend is explicitly shared between both shrines (names both Tiruttetriambalam and Tirumanikoodam), so it stays at record level."
   }
 ]

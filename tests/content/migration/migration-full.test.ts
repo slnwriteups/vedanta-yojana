@@ -176,45 +176,50 @@ test("Page150 (Hayagriva Stotram) is held back, not classified as any normal con
 // Multi-shrine ambiguous-label fallback (Page24/38/40) -- discovered
 // during Phase 6E's real run.
 //
-// Phase 6E supplemented Page40 (tiruttetriambalam-tirumanikoodam)'s
-// templeInformation from "108 Divyadesam 2nd Edition.pdf" (see
-// content/_provenance/divya-desams/tiruttetriambalam-tirumanikoodam.json):
-// unlike the original SAP source, that book presents shrines 36/37
-// together with one consistent set of fields rather than ambiguous
-// per-shrine labels, so this was a safe category-B fill, not a change to
-// the SAP-migration behavior itself.
-//
-// Page24 and Page38 (Tanjai Mamanikoyil, Tiruvaali Tirunagari) remained
-// genuinely ambiguous at the RECORD level through Phase 6E (their own
-// book entries also failed to parse unambiguously as one flat
-// templeInformation object -- see source-material/reports/). Phase 6E-C
-// then extended ShrineSchema with a per-shrine templeInformation slot and
-// supplemented these two records' shrines[] individually (each shrine's
-// own Moolavar/Thayaar/etc. is unambiguous once split per shrine) plus
-// their record-level travelNote/sthalaPuranam/azhwarPasuram (which the
-// source presents once, for the whole record, not per shrine) -- see
+// Page24, Page38, and Page40 (Tanjai Mamanikoyil, Tiruvaali Tirunagari,
+// Tiruttetriambalam Tirumanikoodam) all remained genuinely ambiguous at
+// the RECORD level through Phase 6E (their own book entries also failed
+// to parse unambiguously as one flat templeInformation object -- see
+// source-material/reports/). Phase 6E-C then extended ShrineSchema with
+// a per-shrine templeInformation slot and supplemented all three
+// records' shrines[] individually (each shrine's own Moolavar/Thayaar/
+// etc. is unambiguous once split per shrine) plus their record-level
+// travelNote/sthalaPuranam/azhwarPasuram (which the source presents
+// once, for the whole record, not per shrine) -- see
 // content/_provenance/divya-desams/{tanjai-mamanikoyil,
-// tiruvaali-tirunagari}.json. Record-level moolavar/thayaar/vimanam/
-// theertham remain genuinely absent for both, since the source never
-// gives a single value for those at the record level.
+// tiruvaali-tirunagari,tiruttetriambalam-tirumanikoodam}.json.
+// Record-level moolavar/thayaar/vimanam/theertham remain genuinely
+// absent for all three, since the source never gives a single value for
+// those at the record level.
+//
+// Page40 specifically: an initial Phase 6E pass supplemented a flat
+// record-level templeInformation from the book, on the mistaken
+// assumption the book gave one consistent set of fields for the whole
+// record. A later review found the book's own entry for this record
+// actually has TWO separate "Details of Kshethram:" blocks (one per
+// shrine, 36/37) -- the source-material import tool's entry-boundary
+// detection (anchored on every such marker) split them into two book
+// "entries," one with a real title and one with a bogus title captured
+// from stray trailing text, which never matched any of the 107 records
+// and was silently dropped as an unmatched entry (flagged for human
+// review in the original report, never silently discarded). That left
+// shrine 2's own fields AND the record's entire sthalaPuranam (shared
+// between both shrines, so it lived after the second marker) completely
+// missing. Corrected: shrine 1's data moved out of the record level into
+// shrines[0], shrine 2's data recovered into shrines[1], and the missing
+// sthalaPuranam recovered -- Page40 now follows the exact same
+// structure as Page24/Page38.
 // ---------------------------------------------------------------------------
 
-test("the 3 multi-shrine records with ambiguous per-shrine labels (Page24, Page38, Page40) migrated with needsReview true and full shrines/images/resources preserved; Page40 was supplemented with a record-level moolavar by Phase 6E, Page24/Page38 never were (their per-shrine facts live in shrines[] instead, see the Phase 6E-C test below)", () => {
+test("the 3 multi-shrine records with ambiguous per-shrine labels (Page24, Page38, Page40) migrated with needsReview true and full shrines/images/resources preserved; none has a record-level moolavar/thayaar/vimanam/theertham -- their per-shrine facts live in shrines[] instead", () => {
   for (const pageId of ["page.Page24", "page.Page38", "page.Page40"]) {
     const record = ddOutputRecords.find((r) => r.migration.sourcePageId === pageId);
     assert.ok(record, `${pageId} missing from migrated Divya Desams`);
-    if (pageId === "page.Page40") {
+    for (const shortField of ["moolavar", "thayaar", "vimanam", "theertham"]) {
       assert.ok(
-        record.templeInformation.moolavar,
-        "Page40 (tiruttetriambalam-tirumanikoodam) was supplemented by Phase 6E and should have a moolavar value"
+        !record.templeInformation[shortField],
+        `${pageId} should not have a record-level ${shortField} -- the source never gives one value for the whole record; it's per-shrine in shrines[] instead`
       );
-    } else {
-      for (const shortField of ["moolavar", "thayaar", "vimanam", "theertham"]) {
-        assert.ok(
-          !record.templeInformation[shortField],
-          `${pageId} should not have a record-level ${shortField} -- the source never gives one value for the whole record; it's per-shrine in shrines[] instead`
-        );
-      }
     }
     assert.equal(record.migration.needsReview, true);
     assert.ok(record.shrines.length > 0, `${pageId} should still have its shrines preserved`);
@@ -223,8 +228,8 @@ test("the 3 multi-shrine records with ambiguous per-shrine labels (Page24, Page3
   }
 });
 
-test("Phase 6E-C: Page24 (Tanjai Mamanikoyil) and Page38 (Tiruvaali Tirunagari) each have a record-level travelNote and per-shrine templeInformation on every shrine, without a moolavar/thayaar/vimanam/theertham at the record level (Page40 is unaffected by Phase 6E-C -- it never needed a shrines[]-level fix)", () => {
-  for (const pageId of ["page.Page24", "page.Page38"]) {
+test("Phase 6E-C: Page24 (Tanjai Mamanikoyil), Page38 (Tiruvaali Tirunagari), and Page40 (Tiruttetriambalam Tirumanikoodam) each have a record-level travelNote and per-shrine templeInformation on every shrine, without a moolavar/thayaar/vimanam/theertham at the record level", () => {
+  for (const pageId of ["page.Page24", "page.Page38", "page.Page40"]) {
     const record = ddOutputRecords.find((r) => r.migration.sourcePageId === pageId);
     assert.ok(record, `${pageId} missing from migrated Divya Desams`);
     assert.ok(record.templeInformation.travelNote, `${pageId} should have a record-level travelNote`);
