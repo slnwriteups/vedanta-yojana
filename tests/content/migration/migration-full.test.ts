@@ -71,20 +71,24 @@ test("exactly 1 held-back unresolved record exists (Page150)", () => {
   assert.equal(unresolvedFiles.length, 1);
 });
 
-test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+101(_provenance/divya-desams, Phase 6E)+1(_provenance/library, Phase 6E) = 268", () => {
+test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+102(_provenance/divya-desams, Phase 6E + 6E-C)+1(_provenance/library, Phase 6E) = 269", () => {
   // Phase 6E added content/_provenance/ -- one small JSON file per Divya
   // Desam record that received a category-B text supplement and/or a
   // book-sourced image/shrine from "108 Divyadesam 2nd Edition.pdf" (101
   // of 107 records), plus one file recording that "A Brief Insight to
   // Visishtadvaita Philosophy.pdf" is the confirmed source for 17 of the
   // existing Library book's 55 chapters (see that phase's report for
-  // both). Not loaded by content-lib/loader/ (mirrors the
+  // both). Phase 6E-C then added exactly ONE more: Tanjai Mamanikoyil had
+  // no provenance file yet (its Phase 6E image-merge pass found nothing
+  // to add), so it's new; Tiruvaali Tirunagari already had one (from its
+  // own Phase 6E image merge) and only gained appended entries, not a new
+  // file -- 101 -> 102. Not loaded by content-lib/loader/ (mirrors the
   // content/_unresolved/ precedent: a sidecar directory under content/
   // the loader never looks inside), so it is deliberately still counted
   // here rather than excluded -- this test's whole purpose is to catch
   // ANY unexpected file under content/, intentional additions included.
   const total = countFilesRecursive(path.join(REPO_ROOT, "content"));
-  assert.equal(total, 268);
+  assert.equal(total, 269);
 });
 
 function countFilesRecursive(dir: string): number {
@@ -158,7 +162,7 @@ test("Page150 (Hayagriva Stotram) is held back, not classified as any normal con
 
 // ---------------------------------------------------------------------------
 // Multi-shrine ambiguous-label fallback (Page24/38/40) -- discovered
-// during this phase's real run.
+// during Phase 6E's real run.
 //
 // Phase 6E supplemented Page40 (tiruttetriambalam-tirumanikoodam)'s
 // templeInformation from "108 Divyadesam 2nd Edition.pdf" (see
@@ -166,12 +170,24 @@ test("Page150 (Hayagriva Stotram) is held back, not classified as any normal con
 // unlike the original SAP source, that book presents shrines 36/37
 // together with one consistent set of fields rather than ambiguous
 // per-shrine labels, so this was a safe category-B fill, not a change to
-// the SAP-migration behavior itself. Page24 and Page38 remain genuinely
-// ambiguous (their own book entries also failed to parse unambiguously --
-// see source-material/reports/) and are still asserted empty below.
+// the SAP-migration behavior itself.
+//
+// Page24 and Page38 (Tanjai Mamanikoyil, Tiruvaali Tirunagari) remained
+// genuinely ambiguous at the RECORD level through Phase 6E (their own
+// book entries also failed to parse unambiguously as one flat
+// templeInformation object -- see source-material/reports/). Phase 6E-C
+// then extended ShrineSchema with a per-shrine templeInformation slot and
+// supplemented these two records' shrines[] individually (each shrine's
+// own Moolavar/Thayaar/etc. is unambiguous once split per shrine) plus
+// their record-level travelNote/sthalaPuranam/azhwarPasuram (which the
+// source presents once, for the whole record, not per shrine) -- see
+// content/_provenance/divya-desams/{tanjai-mamanikoyil,
+// tiruvaali-tirunagari}.json. Record-level moolavar/thayaar/vimanam/
+// theertham remain genuinely absent for both, since the source never
+// gives a single value for those at the record level.
 // ---------------------------------------------------------------------------
 
-test("the 3 multi-shrine records with ambiguous per-shrine labels (Page24, Page38, Page40) migrated with needsReview true and full shrines/images/resources preserved; Page24/Page38 still have empty templeInformation, Page40 was later supplemented by Phase 6E", () => {
+test("the 3 multi-shrine records with ambiguous per-shrine labels (Page24, Page38, Page40) migrated with needsReview true and full shrines/images/resources preserved; Page40 was supplemented with a record-level moolavar by Phase 6E, Page24/Page38 never were (their per-shrine facts live in shrines[] instead, see the Phase 6E-C test below)", () => {
   for (const pageId of ["page.Page24", "page.Page38", "page.Page40"]) {
     const record = ddOutputRecords.find((r) => r.migration.sourcePageId === pageId);
     assert.ok(record, `${pageId} missing from migrated Divya Desams`);
@@ -181,12 +197,34 @@ test("the 3 multi-shrine records with ambiguous per-shrine labels (Page24, Page3
         "Page40 (tiruttetriambalam-tirumanikoodam) was supplemented by Phase 6E and should have a moolavar value"
       );
     } else {
-      assert.deepEqual(record.templeInformation, {});
+      for (const shortField of ["moolavar", "thayaar", "vimanam", "theertham"]) {
+        assert.ok(
+          !record.templeInformation[shortField],
+          `${pageId} should not have a record-level ${shortField} -- the source never gives one value for the whole record; it's per-shrine in shrines[] instead`
+        );
+      }
     }
     assert.equal(record.migration.needsReview, true);
     assert.ok(record.shrines.length > 0, `${pageId} should still have its shrines preserved`);
     assert.ok(record.images.length > 0, `${pageId} should still have its images preserved`);
     assert.ok(record.resources.length > 0, `${pageId} should still have its resources preserved`);
+  }
+});
+
+test("Phase 6E-C: Page24 (Tanjai Mamanikoyil) and Page38 (Tiruvaali Tirunagari) each have a record-level travelNote and per-shrine templeInformation on every shrine, without a moolavar/thayaar/vimanam/theertham at the record level (Page40 is unaffected by Phase 6E-C -- it never needed a shrines[]-level fix)", () => {
+  for (const pageId of ["page.Page24", "page.Page38"]) {
+    const record = ddOutputRecords.find((r) => r.migration.sourcePageId === pageId);
+    assert.ok(record, `${pageId} missing from migrated Divya Desams`);
+    assert.ok(record.templeInformation.travelNote, `${pageId} should have a record-level travelNote`);
+    assert.ok(record.sthalaPuranam, `${pageId} should have a record-level sthalaPuranam`);
+    assert.ok(record.azhwarPasuram, `${pageId} should have a record-level azhwarPasuram`);
+    for (const shrine of record.shrines) {
+      assert.ok(shrine.templeInformation, `${pageId}: every shrine should have its own templeInformation`);
+      assert.ok(
+        shrine.templeInformation.moolavar,
+        `${pageId}: every shrine's own templeInformation should include a moolavar`
+      );
+    }
   }
 });
 

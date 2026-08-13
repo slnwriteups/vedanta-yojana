@@ -116,13 +116,47 @@ test("E: Tirukoodal is draft + needsReview; its one shrine is a real, disclosed 
 // F. A multi-shrine record renders without fabricated templeInformation.
 // ---------------------------------------------------------------------------
 
-test("F: a multi-shrine record (Page24) has empty templeInformation but real shrines/images/resources", () => {
+test("F: a multi-shrine record (Page24) has real shrines/images/resources, and Phase 6E-C supplemented its record-level travelNote/sthalaPuranam/azhwarPasuram (never moolavar/thayaar/vimanam/theertham, which stay per-shrine)", () => {
   const record = loadDivyaDesam("tanjai-mamanikoyil");
   assert.ok(record, "tanjai-mamanikoyil not found via loadDivyaDesam()");
   assert.equal(record?.migration.sourcePageId, "page.Page24");
-  assert.deepEqual(record?.templeInformation, {});
+  assert.deepEqual(Object.keys(record!.templeInformation), ["travelNote"]);
+  assert.ok(record?.sthalaPuranam);
+  assert.ok(record?.azhwarPasuram);
   assert.equal(record?.migration.needsReview, true);
   assert.ok(record && record.shrines.length > 0);
+});
+
+// ---------------------------------------------------------------------------
+// Phase 6E-C: multi-shrine records now carry per-shrine templeInformation
+// via shrines[], while remaining exactly ONE canonical Divya Desam record
+// each -- no split, no merge, no renumbering of the 108.
+// ---------------------------------------------------------------------------
+
+test("Phase 6E-C: Tanjai Mamanikoyil is one canonical record with 3 named shrines, each carrying its own templeInformation", () => {
+  const record = loadDivyaDesam("tanjai-mamanikoyil");
+  assert.ok(record, "tanjai-mamanikoyil not found via loadDivyaDesam()");
+  assert.equal(record?.shrines.length, 3);
+  const names = record?.shrines.map((s) => s.name);
+  assert.deepEqual(names, ["Tanjai Mamanikoyil", "Manikkunram", "Thanjaiyazhinagar"]);
+  for (const shrine of record!.shrines) {
+    assert.ok(shrine.templeInformation?.moolavar, `${shrine.name} should have a moolavar`);
+    assert.ok(shrine.mapsLink.startsWith("https://"), `${shrine.name} should keep its existing Maps link`);
+  }
+});
+
+test("Phase 6E-C: Tiruvaali Tirunagari is one canonical record with 2 shrines matched by their existing labels, each carrying its own templeInformation", () => {
+  const record = loadDivyaDesam("tiruvaali-tirunagari");
+  assert.ok(record, "tiruvaali-tirunagari not found via loadDivyaDesam()");
+  assert.equal(record?.shrines.length, 2);
+  const tiruvaali = record?.shrines.find((s) => s.label === "Tiruvaali");
+  const tirunagari = record?.shrines.find((s) => s.label === "Tirunagari");
+  assert.ok(tiruvaali, "expected a shrine labeled Tiruvaali");
+  assert.ok(tirunagari, "expected a shrine labeled Tirunagari");
+  assert.equal(tiruvaali?.templeInformation?.moolavar, "Lakshmi Narasimhar");
+  assert.ok(tiruvaali?.sthalaPuranam, "Tiruvaali shrine should have its own naming-legend sthalaPuranam");
+  assert.equal(tirunagari?.templeInformation?.moolavar, "Vayalali Manavalan");
+  assert.ok(tirunagari?.templeInformation?.vimanam, "Tirunagari shrine should have a vimanam");
 });
 
 // ---------------------------------------------------------------------------

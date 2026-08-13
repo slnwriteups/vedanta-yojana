@@ -7,19 +7,42 @@
     "extractionConfidence": "high",
     "needsReview": true
   },
-  "templeInformation": {},
+  "templeInformation": {
+    "travelNote": "The three temples are 200 meters apart and are all located on the outskirts of\n\nTanjavur."
+  },
   "shrines": [
     {
       "label": "Map 1",
-      "mapsLink": "https://maps.app.goo.gl/518MyDnMu9pZFjXr8"
+      "mapsLink": "https://maps.app.goo.gl/518MyDnMu9pZFjXr8",
+      "name": "Tanjai Mamanikoyil",
+      "templeInformation": {
+        "moolavar": "Neelamegha Perumal",
+        "thayaar": "Senkamalavalli Thayaar",
+        "vimanam": "Soundarya Vimanam",
+        "theertham": "Kannika Pushkarani"
+      }
     },
     {
       "label": "Map 2",
-      "mapsLink": "https://maps.app.goo.gl/wiBgBMRr6VgqctMo7"
+      "mapsLink": "https://maps.app.goo.gl/wiBgBMRr6VgqctMo7",
+      "name": "Manikkunram",
+      "templeInformation": {
+        "moolavar": "Manikkundra Perumal",
+        "thayaar": "Ambujavalli Thayaar",
+        "vimanam": "Manikoota Vimanam",
+        "theertham": "Sri Rama Theertham"
+      }
     },
     {
       "label": "Map 3",
-      "mapsLink": "https://maps.app.goo.gl/XRCBG212yMzhoyjr7"
+      "mapsLink": "https://maps.app.goo.gl/XRCBG212yMzhoyjr7",
+      "name": "Thanjaiyazhinagar",
+      "templeInformation": {
+        "moolavar": "Narasimhar",
+        "thayaar": "Tanjainaayaki Thayaar",
+        "vimanam": "Vedasundara Vimanam",
+        "theertham": "Surya Pushkarani"
+      }
     }
   ],
   "images": [
@@ -71,5 +94,7 @@
       "sourceLabel": "English Pasuram"
     }
   ],
-  "relatedContent": []
+  "relatedContent": [],
+  "azhwarPasuram": "ThirumangaiAzhwar – 3 Pashurams\n\nNammAzhwar – 1 Pashuram\n\nBhoodathAzhwar – 1 Pashuram.\n\n\nTotal – 5 Pashurams.",
+  "sthalaPuranam": "The legend is said to have taken place in Krita Yugam. Parashara Maharishi was said to\n\nhave been performing tapas when three demons by the name Thanjakan, Dhandakan, and\n\nGajamukhan started to interrupt him. It is then that Parashara Maharishi asked Lord\n\nVishnu to intervene and help him. The Lord mounted Garudan and first released his\n\nSudarshana Chakram to deal with Thanjakan. On his deathbed, Thanjakan asked the Lord\n\nto name the land where he died to be named after him. Thus the land where he died\n\nbecame Tanjavur. Next, the Lord went after Dhandakan. The Lord took the form of Varaha\n\nand bore his teeth into Dhandakan and dug through the land, emerging out of Srimushnam.\n\nDhandakan asked for the land where he was buried to be named after him. Thus emerged\n\n\n\nthe Dhandaka Vanam. The last demon Gajamukhan was killed by the Lord in his Narasimha\n\nform. Thus the three temples were put together to form one kshethram known collectively\n\nby the name of Tanjai Mamanikoyil.\n\n\n\n\n\n21) Tirunandipura Vinnagaram"
 }

@@ -43,11 +43,33 @@ export type TempleInformation = z.infer<typeof TempleInformationSchema>;
 // Divya Desam record may list zero, one, or many shrines. A missing Maps
 // link for the whole temple is represented as an EMPTY shrines[] array,
 // never as a shrine entry with a null/missing mapsLink.
+//
+// Phase 6E-C: four fields added, all optional, to let a shrine carry its
+// OWN temple information/prose independently of the record-level
+// `templeInformation`/`sthalaPuranam`/`azhwarPasuram` above. This exists
+// because two records (Tanjai Mamanikoyil, Tiruvaali Tirunagari) each
+// combine multiple physically distinct shrines with their own,
+// unambiguous Moolavar/Thayaar/etc. in the source — data the original
+// flat per-record `templeInformation` object cannot hold without
+// triggering `AmbiguousLabelError` (more than one value would collide
+// into the same field). Every field here is optional and every existing
+// shrine entry across the corpus (which only ever set `label`/`mapsLink`)
+// remains valid unchanged.
+//
+// `name` is deliberately separate from `label`: `label` is the original
+// source's map-button caption (preserved verbatim, e.g. "Map 1"), `name`
+// is the shrine's own identity when it is more specific than that
+// caption. The two coincide for some records (e.g. "Tiruvaali") and are
+// then left undefined on `name` rather than duplicated.
 // ---------------------------------------------------------------------------
 
 export const ShrineSchema = z.object({
   label: z.string().min(1).nullable(),
   mapsLink: z.string().url(),
+  name: z.string().min(1).optional(),
+  templeInformation: TempleInformationSchema.optional(),
+  sthalaPuranam: z.string().min(1).optional(),
+  azhwarPasuram: z.string().min(1).optional(),
 });
 export type Shrine = z.infer<typeof ShrineSchema>;
 

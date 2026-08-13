@@ -54,6 +54,14 @@ export default function DivyaDesamDetailScreen() {
 
   const presentTempleFields = TEMPLE_FIELD_ORDER.filter((key) => record.templeInformation[key]);
 
+  // Phase 6E-C: shrines that carry their OWN name/templeInformation/prose
+  // (currently only Tanjai Mamanikoyil and Tiruvaali Tirunagari) render an
+  // extra per-shrine block here; every other record's shrines[] has none
+  // of these fields, so this list is empty and nothing extra renders.
+  const detailedShrines = record.shrines.filter(
+    (s) => s.name || s.templeInformation || s.sthalaPuranam || s.azhwarPasuram
+  );
+
   // Hero = first resolvable image; the rest render in the "Additional images" section below.
   const resolvedImages = record.images.flatMap((image) => {
     const asset = imagesByUuid[image.sourceAssetUuid.toLowerCase()];
@@ -108,6 +116,66 @@ export default function DivyaDesamDetailScreen() {
 
       <Section heading="Sthala Puranam" text={record.sthalaPuranam} />
       <Section heading="Azhwar Pasuram" text={record.azhwarPasuram} />
+
+      {detailedShrines.length > 0 ? (
+        <Section heading="Shrines">
+          <View style={styles.shrineList}>
+            {detailedShrines.map((shrine, index) => {
+              const shrineHeading = shrine.name ?? shrine.label ?? `Shrine ${index + 1}`;
+              const shrineFields = shrine.templeInformation
+                ? TEMPLE_FIELD_ORDER.filter(
+                    (key) => key !== "travelNote" && shrine.templeInformation?.[key]
+                  )
+                : [];
+              return (
+                <View key={`${shrineHeading}-${index}`} style={styles.shrineBlock}>
+                  <Text style={[styles.shrineHeading, { color: theme.colors.foreground }]}>
+                    {shrineHeading}
+                  </Text>
+                  {shrineFields.length > 0 ? (
+                    <View style={styles.templeInfo}>
+                      {shrineFields.map((key) => (
+                        <View key={key}>
+                          <Text style={[styles.templeLabel, { color: theme.colors.muted }]}>
+                            {TEMPLE_FIELD_LABELS[key]}
+                          </Text>
+                          <Text style={[styles.templeValue, { color: theme.colors.foreground }]}>
+                            {shrine.templeInformation?.[key]}
+                          </Text>
+                        </View>
+                      ))}
+                    </View>
+                  ) : null}
+                  {shrine.sthalaPuranam
+                    ? shrine.sthalaPuranam
+                        .split(/\n{2,}/)
+                        .map((paragraph, pIndex) => (
+                          <Text
+                            key={`sp-${pIndex}`}
+                            style={[styles.templeValue, { color: theme.colors.foreground }]}
+                          >
+                            {paragraph}
+                          </Text>
+                        ))
+                    : null}
+                  {shrine.azhwarPasuram
+                    ? shrine.azhwarPasuram
+                        .split(/\n{2,}/)
+                        .map((paragraph, pIndex) => (
+                          <Text
+                            key={`ap-${pIndex}`}
+                            style={[styles.templeValue, { color: theme.colors.foreground }]}
+                          >
+                            {paragraph}
+                          </Text>
+                        ))
+                    : null}
+                </View>
+              );
+            })}
+          </View>
+        </Section>
+      ) : null}
 
       <ContentImage images={remainingImages} />
 
@@ -167,6 +235,16 @@ const styles = StyleSheet.create({
   },
   templeInfo: {
     gap: spacing.md,
+  },
+  shrineList: {
+    gap: spacing.lg,
+  },
+  shrineBlock: {
+    gap: spacing.sm,
+  },
+  shrineHeading: {
+    fontSize: typography.body,
+    fontWeight: "700",
   },
   templeLabel: {
     fontSize: typography.eyebrow,

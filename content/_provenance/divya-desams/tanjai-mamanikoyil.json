@@ -1,0 +1,80 @@
+[
+  {
+    "field": "shrines[0].name",
+    "value": "Tanjai Mamanikoyil",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 68,
+    "sourceSection": "20) Tanjai Mamanikoyil",
+    "importedAt": "2026-08-13",
+    "note": "Positional inference: shrine 0 (\"Map 1\") is paired with sub-temple 1 (\"Tanjai Mamanikoyil\") by matching document order within the same original content block (content-extraction/divya-desams/page.Page24.json, contentBlocks order 5 then 6/7/8) -- not an explicit label pairing. Flagged for optional human confirmation."
+  },
+  {
+    "field": "shrines[0].templeInformation",
+    "value": "{\"moolavar\":\"Neelamegha Perumal\",\"thayaar\":\"Senkamalavalli Thayaar\",\"vimanam\":\"Soundarya Vimanam\",\"theertham\":\"Kannika Pushkarani\"}",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 68,
+    "sourceSection": "20) Tanjai Mamanikoyil",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "shrines[1].name",
+    "value": "Manikkunram",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 68,
+    "sourceSection": "20) Tanjai Mamanikoyil",
+    "importedAt": "2026-08-13",
+    "note": "Positional inference: shrine 1 (\"Map 2\") is paired with sub-temple 2 (\"Manikkunram\") by matching document order within the same original content block (content-extraction/divya-desams/page.Page24.json, contentBlocks order 5 then 6/7/8) -- not an explicit label pairing. Flagged for optional human confirmation."
+  },
+  {
+    "field": "shrines[1].templeInformation",
+    "value": "{\"moolavar\":\"Manikkundra Perumal\",\"thayaar\":\"Ambujavalli Thayaar\",\"vimanam\":\"Manikoota Vimanam\",\"theertham\":\"Sri Rama Theertham\"}",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 68,
+    "sourceSection": "20) Tanjai Mamanikoyil",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "shrines[2].name",
+    "value": "Thanjaiyazhinagar",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 68,
+    "sourceSection": "20) Tanjai Mamanikoyil",
+    "importedAt": "2026-08-13",
+    "note": "Positional inference: shrine 2 (\"Map 3\") is paired with sub-temple 3 (\"Thanjaiyazhinagar\") by matching document order within the same original content block (content-extraction/divya-desams/page.Page24.json, contentBlocks order 5 then 6/7/8) -- not an explicit label pairing. Flagged for optional human confirmation."
+  },
+  {
+    "field": "shrines[2].templeInformation",
+    "value": "{\"moolavar\":\"Narasimhar\",\"thayaar\":\"Tanjainaayaki Thayaar\",\"vimanam\":\"Vedasundara Vimanam\",\"theertham\":\"Surya Pushkarani\"}",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 68,
+    "sourceSection": "20) Tanjai Mamanikoyil",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "templeInformation.travelNote",
+    "value": "The three temples are 200 meters apart and are all located on the outskirts of\n\nTanjavur.",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 68,
+    "sourceSection": "20) Tanjai Mamanikoyil",
+    "importedAt": "2026-08-13",
+    "note": "Record-level: describes the whole 3-temple complex, not one shrine."
+  },
+  {
+    "field": "azhwarPasuram",
+    "value": "ThirumangaiAzhwar – 3 Pashurams\n\nNammAzhwar – 1 Pashuram\n\nBhoodathAzhwar – 1 Pashuram.\n\n\nTotal – 5 Pashurams.",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 68,
+    "sourceSection": "20) Tanjai Mamanikoyil",
+    "importedAt": "2026-08-13",
+    "note": "Record-level: combined Azhwar Pasuram total across all 3 shrines, as the source presents it."
+  },
+  {
+    "field": "sthalaPuranam",
+    "value": "The legend is said to have taken place in Krita Yugam. Parashara Maharishi was said to\n\nhave been performing tapas when three demons by the name Thanjakan, Dhandakan, and\n\nGajamukhan started to interrupt him. It is then that Parashara Maharishi asked Lord\n\nVishnu to intervene and help him. The Lord mounted Garudan and first released his\n\nSudarshana Chakram to deal with Thanjakan. On his deathbed, Thanjakan asked the Lord\n\nto name the land where he died to be named after him. Thus the land where he died\n\nbecame Tanjavur. Next, the Lord went after Dhandakan. The Lord took the form of Varaha\n\nand bore his teeth into Dhandakan and dug through the land, emerging out of Srimushnam.\n\nDhandakan asked for the land where he was buried to be named after him. Thus emerged\n\n\n\nthe Dhandaka Vanam. The last demon Gajamukhan was killed by the Lord in his Narasimha\n\nform. Thus the three temples were put together to form one kshethram known collectively\n\nby the name of Tanjai Mamanikoyil.\n\n\n\n\n\n21) Tirunandipura Vinnagaram",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 68,
+    "sourceSection": "20) Tanjai Mamanikoyil",
+    "importedAt": "2026-08-13",
+    "note": "Record-level: the source's legend explains why the 3 temples together form one kshethram; not attributable to a single shrine."
+  }
+]

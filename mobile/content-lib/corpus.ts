@@ -50,7 +50,16 @@ export function buildMobileSearchCorpus(): SearchDocument[] {
       ...field("vimanam", "strong", dd.templeInformation.vimanam),
       ...field("theertham", "strong", dd.templeInformation.theertham),
       ...field("travelNote", "strong", dd.templeInformation.travelNote),
-      ...dd.shrines.flatMap((shrine) => field("shrineLabel", "strong", shrine.label)),
+      ...dd.shrines.flatMap((shrine) => [
+        ...field("shrineLabel", "strong", shrine.label),
+        ...field("shrineName", "strong", shrine.name),
+        ...field("shrineMoolavar", "strong", shrine.templeInformation?.moolavar),
+        ...field("shrineThayaar", "strong", shrine.templeInformation?.thayaar),
+        ...field("shrineVimanam", "strong", shrine.templeInformation?.vimanam),
+        ...field("shrineTheertham", "strong", shrine.templeInformation?.theertham),
+        ...field("shrineSthalaPuranam", "body", shrine.sthalaPuranam),
+        ...field("shrineAzhwarPasuram", "body", shrine.azhwarPasuram),
+      ]),
       ...field("sthalaPuranam", "body", dd.sthalaPuranam),
       ...field("azhwarPasuram", "body", dd.azhwarPasuram),
     ];

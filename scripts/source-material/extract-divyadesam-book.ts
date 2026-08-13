@@ -34,7 +34,7 @@ import { normalizeForCompare, shortFieldsEquivalent, longestCommonSubstringRatio
  * (fidelity rule 9): this is compensating for a limitation in the reused
  * parser's fixed label list, not altering what the book says.
  */
-function normalizeLabelSpelling(text: string): string {
+export function normalizeLabelSpelling(text: string): string {
   return text.replace(/Azhwar Pashuram(\s*:)/gi, "Azhwar Pasuram$1");
 }
 

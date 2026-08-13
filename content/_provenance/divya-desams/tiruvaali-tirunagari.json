@@ -34,5 +34,59 @@
     "sourceSection": "34) Tiruvaali Tirunagari",
     "importedAt": "2026-08-13",
     "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  },
+  {
+    "field": "shrines[label=Tirunagari].templeInformation",
+    "value": "{\"moolavar\":\"Vayalali Manavalan\",\"thayaar\":\"Amritavalli Thayaar\",\"vimanam\":\"Ashtakshara Vimanam\",\"theertham\":\"Illakshani Theertham\"}",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 106,
+    "sourceSection": "34) Tiruvaali Tirunagari",
+    "importedAt": "2026-08-13",
+    "note": "Explicit pairing: the original SAP source labels this shrine's own Maps button \"Maps (Tirunagari)\" (content-extraction/divya-desams/page.Page38.json), matching the existing shrines[].label value exactly -- not an inference."
+  },
+  {
+    "field": "shrines[label=Tiruvaali].templeInformation",
+    "value": "{\"moolavar\":\"Lakshmi Narasimhar\",\"thayaar\":\"Amrita Ghatavalli\"}",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 106,
+    "sourceSection": "34) Tiruvaali Tirunagari",
+    "importedAt": "2026-08-13",
+    "note": "Explicit pairing: the original SAP source labels this shrine's own Maps button \"Maps (Tiruvaali)\" (content-extraction/divya-desams/page.Page38.json), matching the existing shrines[].label value exactly -- not an inference."
+  },
+  {
+    "field": "templeInformation.travelNote",
+    "value": "Tiruvaali is located 10 kilometers from Sirkazhi, and Tirunagari is located 5\n\nkilometers from Tiruvaali.",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 106,
+    "sourceSection": "34) Tiruvaali Tirunagari",
+    "importedAt": "2026-08-13",
+    "note": "Record-level: describes the relation between the two places, not one shrine."
+  },
+  {
+    "field": "azhwarPasuram",
+    "value": "TirumangaiAzhwar: 30 Pashuram\n\nKulasekaraAzhwar : 12 Pashuram\n\nTotal: 42 Pashurams",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 106,
+    "sourceSection": "34) Tiruvaali Tirunagari",
+    "importedAt": "2026-08-13",
+    "note": "Record-level: combined Azhwar Pasuram total across both shrines, as the source presents it."
+  },
+  {
+    "field": "shrines[label=Tiruvaali].sthalaPuranam",
+    "value": "At Tiruvaali, we can see Lakshmi Narasimhar. It is said that after killing Hiranyakashipu,\n\nthe Lord was still furious. To get the Lord to calm down all the devas, Lord Brahma and\n\nLord Shiva asked Mahalakshmi to isolate the Lord to a different location. Thus, the Lord\n\nwas taken to Tiruvaali. Usually, we see that Lakshmi is seated on the Lord’s left lap, but\n\nhere, we can see Lakshmi seated on the Lord’s right, allowing her to hug and embrace the\n\nLord. Thus, the place got its name Tiruvaali(Tiru meaning Lakshmi and Aali meaning\n\nAalinganam or hug in Sanskrit).",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 106,
+    "sourceSection": "34) Tiruvaali Tirunagari",
+    "importedAt": "2026-08-13",
+    "note": "The naming-legend paragraph preceding the \"*** Vedupari Utsavam\" marker is specific to the Tiruvaali shrine (explains the name \"Tiruvaali\")."
+  },
+  {
+    "field": "sthalaPuranam",
+    "value": "*** Vedupari Utsavam\n\nTiruvaali is said to be the birthplace of Amritavalli Thayaar, and Tirunagari is said to be the\n\nbirthplace of Lord Vayalali Manavalan. It is said that on the night that the Lord got married\n\nto Thayaar, they were targeted and looted by TirumangaiAzhwar. Before becoming a saint,\n\nTirumangaiAzhwar was a dacoit named Kaliyan.\n\nTirumangaiAzhwar wanted to marry a woman named Kumudhavalli. She placed two\n\nconditions, namely, 1) To get Pancha-Samskaram done, and 2) to perform\n\ntadhiyararadhanam (annadhanam) for a thousand people for one year. To satisfy the\n\nsecond condition, TirumangaiAzhwar used to steal gold from anyone he could find, sell the\n\ngold to get money to serve people. As fate would have it, TirumangaiAzhwar ran into the\n\nLord and Thayaar. He pulled out a knife and told them to remove all the jewelry that they\n\nwere wearing. The Lord and Thayaar gave up all their jewelry. TirumangaiAzhwar tied up\n\nall of the jewelry in a cloth, and as he was about to lift it, the Lord performed an\n\nenchantment in such a way that he could no longer lift it. In anger, TirumangaiAzhwar\n\n\n\nthreatened the Lord to give him the mantra that would allow him to lift the bag. The Lord\n\nsmiled and told him that he was performing all of this to make sure that TirumangaiAzhwar\n\nwould obtain this mantra and propagate it to the world. Thus the Lord gave\n\nTirumangaiAzhwar the ashtakshara mantram. All of this is performed as a drama to date on\n\nPanguni Uttaram day. Find the pictures of the utsavam attached below.\n\n\n\n\n\n35) Tirudevanaar Togai",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 106,
+    "sourceSection": "34) Tiruvaali Tirunagari",
+    "importedAt": "2026-08-13",
+    "note": "Record-level: the \"Vedupari Utsavam\" legend involves both Tiruvaali and Tirunagari jointly, not attributable to a single shrine."
   }
 ]

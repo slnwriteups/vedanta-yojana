@@ -16,6 +16,32 @@ test("W: a google_maps_location link becomes a valid shrine with label + mapsLin
 });
 
 // ---------------------------------------------------------------------------
+// Phase 6E-C: ShrineSchema's new optional per-shrine fields
+// (name/templeInformation/sthalaPuranam/azhwarPasuram) are backwards
+// compatible -- every one of the ~108 existing plain label/mapsLink
+// shrine entries across the corpus must still validate unchanged.
+// ---------------------------------------------------------------------------
+
+test("Phase 6E-C: a plain label+mapsLink shrine (the pre-existing shape used by every single-shrine record) still validates with no new fields present", () => {
+  const shrine = { label: "Maps", mapsLink: "https://example.test/maps/a" };
+  const result = ShrineSchema.safeParse(shrine);
+  assert.equal(result.success, true);
+});
+
+test("Phase 6E-C: a shrine carrying name/templeInformation/sthalaPuranam/azhwarPasuram validates", () => {
+  const shrine = {
+    label: "Map 1",
+    mapsLink: "https://example.test/maps/a",
+    name: "Example Shrine",
+    templeInformation: { moolavar: "Example Perumal" },
+    sthalaPuranam: "Example legend text.",
+    azhwarPasuram: "Example pasuram text.",
+  };
+  const result = ShrineSchema.safeParse(shrine);
+  assert.equal(result.success, true);
+});
+
+// ---------------------------------------------------------------------------
 // X. Generic "Maps" label -> label: null.
 // ---------------------------------------------------------------------------
 

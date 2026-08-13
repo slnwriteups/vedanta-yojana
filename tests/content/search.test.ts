@@ -133,6 +133,22 @@ test("14: a temple-information field match is found (thayaar, not in the title)"
   assert.equal(sriRangam?.matchedField?.name, "thayaar");
 });
 
+test("Phase 6E-C: a shrine-level field (a sub-shrine's own moolavar) is discoverable through its parent Divya Desam record, as exactly one canonical result -- not a duplicate document", () => {
+  // "Manikkundra Perumal" is the Moolavar of Manikkunram, one of Tanjai
+  // Mamanikoyil's 3 shrines -- present only in shrines[1].templeInformation,
+  // never in the record-level templeInformation or displayName.
+  const matches = searchContent(corpus, "Manikkundra Perumal");
+  const tanjai = matches.filter((m) => m.document.href === "/divya-desams/tanjai-mamanikoyil");
+  assert.equal(tanjai.length, 1, "expected exactly one match entry for the parent record, not one per shrine");
+  assert.equal(tanjai[0].matchedField?.name, "shrineMoolavar");
+
+  // The corpus itself has exactly one document per Divya Desam record,
+  // structurally guaranteeing shrines[] can never produce duplicate
+  // canonical results.
+  const tanjaiDocs = corpus.filter((d) => d.href === "/divya-desams/tanjai-mamanikoyil");
+  assert.equal(tanjaiDocs.length, 1);
+});
+
 test("15: a chapter-body match is found", () => {
   // "Vibhishana" appears in the Rama Charama Shlokam chapter body.
   const matches = searchContent(corpus, "Vibhishana");

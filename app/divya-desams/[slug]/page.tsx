@@ -6,6 +6,7 @@ import { DraftBadge } from "@/components/shared/DraftBadge";
 import { TempleInformation } from "@/components/divya-desams/TempleInformation";
 import { RecordImages } from "@/components/shared/RecordImages";
 import { LongFormSection } from "@/components/shared/LongFormSection";
+import { ShrineDetails } from "@/components/divya-desams/ShrineDetails";
 import { ShrineLinks } from "@/components/divya-desams/ShrineLinks";
 import { ResourceLinks } from "@/components/divya-desams/ResourceLinks";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -99,6 +100,7 @@ export default async function DivyaDesamDetailPage({
       {record.azhwarPasuram ? (
         <LongFormSection heading="Azhwar Pasuram" text={record.azhwarPasuram} />
       ) : null}
+      <ShrineDetails shrines={record.shrines} />
       <ShrineLinks shrines={record.shrines} />
       <ResourceLinks resources={record.resources} />
     </div>

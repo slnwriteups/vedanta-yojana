@@ -39,6 +39,16 @@ test("Divya Desams: an unknown slug is handled as not-found, not a crash", () =>
   assert.equal(loadDivyaDesam("does-not-exist"), null);
 });
 
+test("Divya Desams: Phase 6E-C multi-shrine data (Tanjai Mamanikoyil) resolves through the same mobile loader the detail screen uses, with per-shrine templeInformation intact", () => {
+  const record = loadDivyaDesam("tanjai-mamanikoyil");
+  assert.ok(record, "tanjai-mamanikoyil did not resolve");
+  assert.equal(record?.shrines.length, 3);
+  for (const shrine of record!.shrines) {
+    assert.ok(shrine.name, "expected every shrine to have a name");
+    assert.ok(shrine.templeInformation?.moolavar, "expected every shrine to have its own moolavar");
+  }
+});
+
 test("Divya Desams: every real record's sourcePageId sorts to a valid numeric order (Page93 included)", () => {
   const records = loadDivyaDesams();
   const numbers = records.map((r) => sourcePageNumber(r.migration.sourcePageId));
