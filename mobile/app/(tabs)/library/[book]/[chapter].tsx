@@ -1,10 +1,11 @@
-import { Stack, useLocalSearchParams } from "expo-router";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { loadChapter } from "../../../../content-lib/loader.ts";
+import { Stack, useLocalSearchParams, useRouter } from "expo-router";
+import { AccessibilityInfo, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { loadChapter, loadChapters } from "../../../../content-lib/loader.ts";
+import { findAdjacentChapters } from "../../../../content-lib/chapter-navigation.ts";
 import { DraftBadge } from "../../../../components/DraftBadge";
 import { ContentImage } from "../../../../components/ContentImage";
 import { Section } from "../../../../components/Section";
-import { layout, spacing, typography, useTheme } from "../../../../theme";
+import { layout, radius, spacing, typography, useTheme } from "../../../../theme";
 
 /**
  * Phase 6C -- the reading-comfort pass the brief asks for: a capped
@@ -14,12 +15,24 @@ import { layout, spacing, typography, useTheme } from "../../../../theme";
  * from the body by real space rather than a thin rule. The chapter text
  * itself is completely untouched -- Section still only splits on
  * existing blank lines, never rewrites/summarizes/alters anything.
+ *
+ * Phase 6D -- previous/next chapter navigation (content-lib/
+ * chapter-navigation.ts's pure findAdjacentChapters, over the same
+ * ascending `order` loadChapters() already returns -- never re-sorted).
+ * router.replace (not push) so the back button still returns to the
+ * book's chapter list after paging through several chapters, rather than
+ * growing a long stack of visited chapters. AccessibilityInfo
+ * .announceForAccessibility fires the new chapter's title so a
+ * VoiceOver/TalkBack user gets a spoken navigation announcement, since a
+ * replace-based route change doesn't move focus the way a fresh screen
+ * push does.
  */
 export default function LibraryChapterScreen() {
   const { book: bookSlug, chapter: chapterSlug } = useLocalSearchParams<{
     book: string;
     chapter: string;
   }>();
+  const router = useRouter();
   const theme = useTheme();
   const chapter = loadChapter(bookSlug, chapterSlug);
 
@@ -30,6 +43,13 @@ export default function LibraryChapterScreen() {
         <Text style={[styles.empty, { color: theme.colors.muted }]}>This chapter could not be found.</Text>
       </View>
     );
+  }
+
+  const { previous, next } = findAdjacentChapters(loadChapters(bookSlug), chapterSlug);
+
+  function goTo(targetSlug: string, title: string) {
+    router.replace(`/library/${bookSlug}/${targetSlug}` as never);
+    AccessibilityInfo.announceForAccessibility(`Now reading: ${title}`);
   }
 
   return (
@@ -53,6 +73,41 @@ export default function LibraryChapterScreen() {
           No content is available for this chapter yet.
         </Text>
       )}
+
+      {previous || next ? (
+        <View style={styles.pager}>
+          {previous ? (
+            <Pressable
+              onPress={() => goTo(previous.slug, previous.title)}
+              accessibilityRole="button"
+              accessibilityLabel={`Previous chapter: ${previous.title}`}
+              style={[styles.pagerButton, { borderColor: theme.colors.border }]}
+            >
+              <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>Previous</Text>
+              <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={1}>
+                {previous.title}
+              </Text>
+            </Pressable>
+          ) : (
+            <View style={styles.pagerButton} />
+          )}
+          {next ? (
+            <Pressable
+              onPress={() => goTo(next.slug, next.title)}
+              accessibilityRole="button"
+              accessibilityLabel={`Next chapter: ${next.title}`}
+              style={[styles.pagerButton, styles.pagerButtonEnd, { borderColor: theme.colors.border }]}
+            >
+              <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>Next</Text>
+              <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={1}>
+                {next.title}
+              </Text>
+            </Pressable>
+          ) : (
+            <View style={styles.pagerButton} />
+          )}
+        </View>
+      ) : null}
     </ScrollView>
   );
 }
@@ -79,5 +134,30 @@ const styles = StyleSheet.create({
   },
   empty: {
     fontSize: typography.body,
+  },
+  pager: {
+    flexDirection: "row",
+    gap: spacing.md,
+    marginTop: spacing.md,
+  },
+  pagerButton: {
+    flex: 1,
+    padding: spacing.md,
+    borderRadius: radius.md,
+    borderWidth: StyleSheet.hairlineWidth,
+    minHeight: layout.minTouchTarget,
+    gap: spacing.xs,
+  },
+  pagerButtonEnd: {
+    alignItems: "flex-end",
+  },
+  pagerDirection: {
+    fontSize: typography.eyebrow,
+    textTransform: "uppercase",
+    letterSpacing: 0.5,
+  },
+  pagerTitle: {
+    fontSize: typography.small,
+    fontWeight: "600",
   },
 });

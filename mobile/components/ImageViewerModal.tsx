@@ -8,6 +8,10 @@ import { useTheme } from "../theme";
  * pinch-to-zoom -- that needs react-native-gesture-handler, which isn't
  * installed, and adding it for one feature would violate the "no
  * unnecessary dependencies" constraint that has held since Phase 6A.
+ *
+ * Phase 6D accessibility pass: `accessibilityViewIsModal` keeps
+ * VoiceOver/TalkBack from letting a swipe gesture escape to whatever is
+ * behind the modal while it's open.
  */
 export function ImageViewerModal({
   visible,
@@ -30,6 +34,7 @@ export function ImageViewerModal({
         onPress={onClose}
         accessibilityRole="button"
         accessibilityLabel="Close image"
+        accessibilityViewIsModal
       >
         {asset !== null ? (
           <Image

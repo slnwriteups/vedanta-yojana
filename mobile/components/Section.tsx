@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { spacing, typography, useTheme } from "../theme";
+import { useReadingPreferences } from "../preferences-context.ts";
 
 /**
  * Generic content section: an optional heading over either long-form
@@ -13,6 +14,11 @@ import { spacing, typography, useTheme } from "../theme";
  * applied by the screen, not here) plus a taller line-height
  * (typography.readingLineHeight) specifically for long-form paragraphs --
  * short "strong"-tier text elsewhere in the app doesn't use this.
+ *
+ * Phase 6D: paragraph font size now scales by the user's persisted
+ * reading preference (content-lib/preferences.ts's FONT_SCALE_STEPS,
+ * set from Home). The heading and the underlying text itself are
+ * unaffected -- only the paragraph font size, never the content.
  */
 export function Section({
   heading,
@@ -24,6 +30,7 @@ export function Section({
   children?: ReactNode;
 }) {
   const theme = useTheme();
+  const { preferences } = useReadingPreferences();
   if (!text && !children) return null;
 
   return (
@@ -38,7 +45,17 @@ export function Section({
       ) : null}
       {text
         ? text.split(/\n{2,}/).map((paragraph, index) => (
-            <Text key={index} style={[styles.paragraph, { color: theme.colors.foreground }]}>
+            <Text
+              key={index}
+              style={[
+                styles.paragraph,
+                {
+                  color: theme.colors.foreground,
+                  fontSize: typography.body * preferences.fontScale,
+                  lineHeight: typography.body * preferences.fontScale * typography.readingLineHeight,
+                },
+              ]}
+            >
               {paragraph}
             </Text>
           ))

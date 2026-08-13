@@ -1,9 +1,10 @@
 import { useRouter } from "expo-router";
 import { useMemo, useState } from "react";
-import { FlatList, StyleSheet, Text, TextInput, View } from "react-native";
+import { FlatList, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import { buildMobileSearchCorpus } from "../../content-lib/corpus.ts";
 import { searchCorpus } from "../../../content-lib/search/run.ts";
-import type { SearchResult } from "../../../content-lib/search/types.ts";
+import type { SearchResult, SearchResultType } from "../../../content-lib/search/types.ts";
+import { CONTENT_TYPE_FILTERS, filterResultsByType } from "../../content-lib/search-filter.ts";
 import { layout, radius, spacing, typography, useTheme } from "../../theme";
 
 /**
@@ -13,18 +14,35 @@ import { layout, radius, spacing, typography, useTheme } from "../../theme";
  * single-file tab (no nested Stack), so its header title now comes from
  * app/(tabs)/_layout.tsx's Tabs.Screen options rather than an inline
  * <Stack.Screen> (which would have no Stack ancestor to attach to here).
+ *
+ * Phase 6D -- adds content-type filter chips (Divya Desam/Book/Chapter/
+ * Knowledge, multi-select). Filtering happens strictly after
+ * searchCorpus() has already ranked results (content-lib/
+ * search-filter.ts's filterResultsByType is a plain Array.filter), so
+ * relative ranking among surviving results never changes.
  */
 export default function SearchScreen() {
   const router = useRouter();
   const theme = useTheme();
   const corpus = useMemo(() => buildMobileSearchCorpus(), []);
   const [query, setQuery] = useState("");
+  const [activeTypes, setActiveTypes] = useState<Set<SearchResultType>>(() => new Set());
 
   const trimmedQuery = query.trim();
-  const results = useMemo(
+  const rankedResults = useMemo(
     () => (trimmedQuery ? searchCorpus(corpus, trimmedQuery) : []),
     [corpus, trimmedQuery]
   );
+  const results = useMemo(() => filterResultsByType(rankedResults, activeTypes), [rankedResults, activeTypes]);
+
+  function toggleType(type: SearchResultType) {
+    setActiveTypes((current) => {
+      const next = new Set(current);
+      if (next.has(type)) next.delete(type);
+      else next.add(type);
+      return next;
+    });
+  }
 
   function renderItem({ item }: { item: SearchResult }) {
     return (
@@ -65,6 +83,32 @@ export default function SearchScreen() {
         autoCapitalize="none"
       />
 
+      <View style={styles.filterRow} accessibilityRole="none">
+        {CONTENT_TYPE_FILTERS.map((filter) => {
+          const selected = activeTypes.has(filter.value);
+          return (
+            <Pressable
+              key={filter.value}
+              onPress={() => toggleType(filter.value)}
+              accessibilityRole="checkbox"
+              accessibilityState={{ checked: selected }}
+              accessibilityLabel={`Filter: ${filter.label}`}
+              style={[
+                styles.filterChip,
+                {
+                  borderColor: selected ? theme.colors.accent : theme.colors.border,
+                  backgroundColor: selected ? theme.colors.surfaceAlt : "transparent",
+                },
+              ]}
+            >
+              <Text style={[styles.filterLabel, { color: selected ? theme.colors.accent : theme.colors.muted }]}>
+                {filter.label}
+              </Text>
+            </Pressable>
+          );
+        })}
+      </View>
+
       {trimmedQuery && results.length === 0 ? (
         <Text style={[styles.empty, { color: theme.colors.muted }]}>No results for "{trimmedQuery}".</Text>
       ) : (
@@ -84,13 +128,33 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   input: {
-    margin: layout.screenPadding,
+    marginHorizontal: layout.screenPadding,
+    marginTop: layout.screenPadding,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
     borderRadius: radius.md,
     borderWidth: StyleSheet.hairlineWidth,
     fontSize: typography.body,
     minHeight: layout.minTouchTarget,
+  },
+  filterRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: spacing.sm,
+    paddingHorizontal: layout.screenPadding,
+    paddingVertical: spacing.md,
+  },
+  filterChip: {
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.xs,
+    borderRadius: radius.sm,
+    borderWidth: StyleSheet.hairlineWidth,
+    minHeight: layout.minTouchTarget,
+    justifyContent: "center",
+  },
+  filterLabel: {
+    fontSize: typography.small,
+    fontWeight: "600",
   },
   list: {
     paddingHorizontal: layout.screenPadding,

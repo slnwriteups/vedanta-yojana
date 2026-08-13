@@ -12,11 +12,17 @@ import type { SearchDocument, SearchField } from "../../content-lib/search/types
  * createExcerpt, searchCorpus) is untouched and reused directly from
  * ../../content-lib/search/ -- only the one I/O boundary is re-pointed.
  *
- * No caching here, matching the web corpus builder's own behavior: it is
- * cheap to rebuild from the mobile loader's own (already-cached) parsed
- * records, and search results should never be stale relative to a corpus
- * some earlier screen already triggered.
+ * Phase 6D, Step 2 (offline content architecture): unlike the web corpus
+ * builder, this one now CACHES its result at module scope, the same
+ * disclosed deviation content-lib/loader.ts already makes for the same
+ * reason -- the manifest is build-time-bundled and immutable at runtime,
+ * so re-walking ~163 already-parsed records into ~170 SearchDocuments on
+ * every Search-tab visit would only cost CPU/battery for an identical
+ * result. Safe specifically because nothing in this app can mutate
+ * content at runtime (no editing UI exists).
  */
+
+let corpusCache: SearchDocument[] | null = null;
 
 function field(name: string, tier: SearchField["tier"], text: string | undefined | null): SearchField[] {
   return text ? [{ name, tier, text }] : [];
@@ -32,6 +38,8 @@ function safeSourcePageNumber(sourcePageId: string): number {
 }
 
 export function buildMobileSearchCorpus(): SearchDocument[] {
+  if (corpusCache) return corpusCache;
+
   const documents: SearchDocument[] = [];
 
   for (const dd of loadDivyaDesams()) {
@@ -109,5 +117,6 @@ export function buildMobileSearchCorpus(): SearchDocument[] {
     });
   }
 
+  corpusCache = documents;
   return documents;
 }
