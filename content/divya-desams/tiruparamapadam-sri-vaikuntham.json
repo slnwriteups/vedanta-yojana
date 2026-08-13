@@ -30,7 +30,8 @@
       "sourceOriginalName": "pallandu.png",
       "alt": null,
       "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
+      "placement": "after-sthala-puranam",
+      "placementAnchor": "Mangalam:"
     },
     {
       "assetId": "tiruparamapadam-sri-vaikuntham-3",
@@ -38,7 +39,8 @@
       "sourceOriginalName": "image8.png",
       "alt": null,
       "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
+      "placement": "after-sthala-puranam",
+      "placementAnchor": "Mangalam:"
     }
   ],
   "resources": [

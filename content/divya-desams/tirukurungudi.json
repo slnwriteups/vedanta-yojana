@@ -55,7 +55,8 @@
       "sourceOriginalName": "108-78-KE.jpg",
       "alt": null,
       "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
+      "placement": "after-sthala-puranam",
+      "placementAnchor": "Vaishnava Nambi Temple"
     },
     {
       "assetId": "tirukurungudi-5",
@@ -63,7 +64,8 @@
       "sourceOriginalName": "108-78-MG.jpg",
       "alt": null,
       "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
+      "placement": "after-sthala-puranam",
+      "placementAnchor": "Vaishnava Nambi Temple"
     }
   ],
   "resources": [

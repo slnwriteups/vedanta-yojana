@@ -70,6 +70,150 @@ export function computeAfterSthalaPuranamUuids(
   return new Set(afterUuids);
 }
 
+function collapseWhitespace(s: string): string {
+  return s.replace(/\s+/g, " ").trim();
+}
+
+function normalizeForAnchorMatch(s: string): string {
+  return collapseWhitespace(s).toLowerCase();
+}
+
+/**
+ * Finds short "heading-like" LINES within one content-extraction text
+ * block, to use as anchor points for an image that immediately follows
+ * it -- e.g. a record with several named sub-shrines/legends
+ * (Singavelkundram/Ahobilam's nine Narasimha forms, Tirudwarkai's Beyt/
+ * Dakor/Shrinathji sub-temples) where each photo illustrates ONE named
+ * sub-section, not the record's Sthala Puranam as a whole.
+ *
+ * Works at LINE granularity (single `\n`), not paragraph granularity
+ * (`\n{2,}`): verified against real data that these sub-headings are
+ * NOT always isolated by a blank line from their own following
+ * paragraph (Tirudwarkai's "Beyt Dwarka:" sits on its own single-newline
+ * line, immediately followed by that sub-temple's prose on the very
+ * next line, both inside what LongFormSection's `\n{2,}` split treats as
+ * ONE paragraph) -- so line-level matching is required to find them at
+ * all, and the renderer (below) knows how to split a rendered paragraph
+ * at a matched line rather than only between paragraphs.
+ *
+ * Two heading shapes, both verified against real data:
+ * 1. ALL-CAPS, optionally numbered: "1. BHARGAVA NARASIMHA SWAMY",
+ *    "UGRA STHAMBHAM".
+ * 2. Title Case ending in a colon: "Beyt Dwarka:", "Rukmini Dwarka:".
+ * Takes the LAST matching line in the block (closest to the image that
+ * follows it).
+ */
+function extractHeadingAnchor(blockContent: string): string | null {
+  const lines = blockContent
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean);
+  const allCaps = /^(\d{1,2}\.\s*)?[A-Z][A-Z\s()'-]{3,60}$/;
+  // Title Case, every word capitalized (a name, not a sentence fragment
+  // that merely happens to end in a colon, e.g. "...is as follows:").
+  const colonHeading = /^(?:[A-Z][a-z'’]*\s*){1,6}:$/;
+
+  let last: string | null = null;
+  for (const line of lines) {
+    if (line.length <= 60 && (allCaps.test(line) || colonHeading.test(line))) {
+      last = line;
+    }
+  }
+  if (last) return last;
+
+  // Fall back to the whole block, when it's short enough to BE the
+  // heading itself (e.g. "Sri Andal Nachiyar", "Mahendragiri", "Varaha
+  // Swamy" each sit alone in their own block with no colon/caps).
+  // Capped at 5 words, not just 100 characters: a genuine heading is a
+  // short name/noun phrase, distinct from an equally-short but
+  // sentence-shaped photo CAPTION (verified against a real false
+  // positive: "Periya Azhwar being taken on the royal procession and
+  // seeing the Lord and Mahalakshmi" is 87 characters but a 15-word
+  // sentence describing a specific photo, not a section heading a
+  // DIFFERENT photo should anchor to).
+  const collapsed = collapseWhitespace(blockContent);
+  const wordCount = collapsed.split(" ").filter(Boolean).length;
+  return collapsed.length > 0 && collapsed.length <= 100 && wordCount <= 5 ? collapsed : null;
+}
+
+/**
+ * Returns a Map<sourceAssetUuid, lineText> for original SAP images that
+ * should render immediately after a SPECIFIC line within `sthalaPuranam`
+ * (rather than generically "after the whole thing"). `lineText` is
+ * copied VERBATIM from a real line in `sthalaPuranam` (found via
+ * normalized exact match against the candidate heading) -- guaranteed to
+ * locate correctly at render time since it's the same string, not a
+ * reconstruction. Images whose preceding block yields no confident
+ * heading, or whose heading can't be located verbatim in
+ * `sthalaPuranam` (e.g. a genuine spelling difference between the
+ * frozen source and the migrated field, confirmed for one Singavelkundram/
+ * Ahobilam sub-heading), are simply absent from the result -- they keep
+ * the existing coarse "after Sthala Puranam" bucket behavior, never a
+ * regression, only an upgrade where confident.
+ */
+export function computeImageAnchors(
+  contentExtractionDir: string,
+  sourcePageId: string,
+  sthalaPuranam: string | undefined
+): Map<string, string> {
+  const result = new Map<string, string>();
+  if (!sthalaPuranam) return result;
+
+  const srcPath = path.join(contentExtractionDir, `${sourcePageId}.json`);
+  if (!fs.existsSync(srcPath)) return result;
+
+  const src = JSON.parse(fs.readFileSync(srcPath, "utf8")) as { contentBlocks: ContentBlock[] };
+  const blocks = [...(src.contentBlocks ?? [])].sort((a, b) => a.order - b.order);
+
+  const sthalaLines = sthalaPuranam.split("\n");
+  const normalizedLines = sthalaLines.map(normalizeForAnchorMatch);
+
+  // Never scan back further than the block that starts Sthala Puranam
+  // itself -- a natural, principled lower bound (matches the "after
+  // Sthala Puranam" scope this whole module already establishes), so a
+  // heading search can never wander into the unrelated Temple
+  // Information/Maps-buttons blocks earlier on the page.
+  const sthalaStartPrefix = normalizeForAnchorMatch(sthalaPuranam.slice(0, 30));
+  const sthalaBlock = blocks.find(
+    (b) => b.type === "text" && b.content && normalizeForAnchorMatch(b.content).includes(sthalaStartPrefix)
+  );
+  const lowerBoundOrder = sthalaBlock?.order ?? -Infinity;
+
+  for (const block of blocks) {
+    if (block.type !== "picture" || !block.imageAssetRef) continue;
+
+    // Scan backward through EVERY preceding block (text or picture) down
+    // to lowerBoundOrder, not just the immediately-adjacent one -- a
+    // heading can sit one or more blocks further back than a caption,
+    // intervening paragraph, or a PRIOR picture in the same 2-photo
+    // group (verified: Srivilliputtur's "Sri Andal Nachiyar" heading
+    // precedes a full paragraph about her, then the photo that
+    // illustrates the whole section; Singavelkundram/Ahobilam's "7.
+    // MALOLA NARASIMHA SWAMY" has two consecutive photos, and the
+    // second one's own immediately-preceding block is the FIRST photo,
+    // not the heading). Deliberately does NOT stop at a picture block --
+    // the exact-line-match against sthalaPuranam below is already a
+    // strong enough filter against picking up an unrelated heading.
+    let heading: string | null = null;
+    for (let i = blocks.length - 1; i >= 0; i--) {
+      const candidate = blocks[i];
+      if (candidate.order >= block.order || candidate.order < lowerBoundOrder) continue;
+      if (candidate.type !== "text" || !candidate.content) continue;
+      heading = extractHeadingAnchor(candidate.content);
+      if (heading) break;
+    }
+    if (!heading) continue;
+
+    const normalizedHeading = normalizeForAnchorMatch(heading);
+    const idx = normalizedLines.findIndex((l) => l === normalizedHeading);
+    if (idx === -1) continue;
+
+    result.set(block.imageAssetRef.replace("ag-asset://", ""), sthalaLines[idx]);
+  }
+
+  return result;
+}
+
 /**
  * Book-sourced images ("-book-" assetIds) have no content-extraction/
  * entry to consult -- their ground truth is the PDF's own page layout,

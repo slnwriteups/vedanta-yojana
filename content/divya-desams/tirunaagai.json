@@ -29,30 +29,6 @@
       "sourceOriginalName": "108-19.jpg",
       "alt": null,
       "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirunaagai-book-3",
-      "sourceAssetUuid": "8229b1e5-cdb8-4f27-abc6-8b69acc18bd9",
-      "sourceOriginalName": "108-divyadesam-book-page67-img42.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
-    },
-    {
-      "assetId": "tirunaagai-book-4",
-      "sourceAssetUuid": "9b343cf7-9495-4123-ab31-20bad87e2a84",
-      "sourceOriginalName": "108-divyadesam-book-page67-img43.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
-    },
-    {
-      "assetId": "tirunaagai-book-5",
-      "sourceAssetUuid": "042af778-da73-42b7-a56b-0c2d31a15caf",
-      "sourceOriginalName": "108-divyadesam-book-page67-img44.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

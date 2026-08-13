@@ -16,7 +16,7 @@ import { ImageViewerModal } from "./ImageViewerModal";
  * full-screen view. Every migrated image still has alt: null (no
  * accessibilityLabel is fabricated when absent).
  */
-function FadeInImage({
+export function FadeInImage({
   asset,
   label,
   size,
@@ -86,7 +86,7 @@ export function ContentImage({ images }: { images: ImageEntry[] }) {
   );
 }
 
-const IMAGE_SIZE = 140;
+export const IMAGE_SIZE = 140;
 
 const styles = StyleSheet.create({
   section: {

@@ -6,6 +6,7 @@ import { DraftBadge } from "@/components/shared/DraftBadge";
 import { TempleInformation } from "@/components/divya-desams/TempleInformation";
 import { RecordImages } from "@/components/shared/RecordImages";
 import { LongFormSection } from "@/components/shared/LongFormSection";
+import { SthalaPuranamWithImages } from "@/components/divya-desams/SthalaPuranamWithImages";
 import { ShrineDetails } from "@/components/divya-desams/ShrineDetails";
 import { ShrineLinks } from "@/components/divya-desams/ShrineLinks";
 import { ResourceLinks } from "@/components/divya-desams/ResourceLinks";
@@ -104,9 +105,12 @@ export default async function DivyaDesamDetailPage({
       <TempleInformation info={record.templeInformation} />
       <RecordImages images={topImages} />
       {record.sthalaPuranam ? (
-        <LongFormSection heading="Sthala Puranam" text={record.sthalaPuranam} />
+        afterSthalaPuranamImages.length > 0 ? (
+          <SthalaPuranamWithImages text={record.sthalaPuranam} images={afterSthalaPuranamImages} />
+        ) : (
+          <LongFormSection heading="Sthala Puranam" text={record.sthalaPuranam} />
+        )
       ) : null}
-      <RecordImages images={afterSthalaPuranamImages} idSuffix="-after-sthala-puranam" />
       {record.azhwarPasuram ? (
         <LongFormSection heading="Azhwar Pasuram" text={record.azhwarPasuram} />
       ) : null}

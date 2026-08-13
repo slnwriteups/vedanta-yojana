@@ -29,22 +29,6 @@
       "sourceOriginalName": "108-42.png",
       "alt": null,
       "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirukkovilur-book-3",
-      "sourceAssetUuid": "bb58852e-5b7c-4bca-86b5-333717d351a9",
-      "sourceOriginalName": "108-divyadesam-book-page131-img97.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
-    },
-    {
-      "assetId": "tirukkovilur-book-4",
-      "sourceAssetUuid": "a0f76606-c182-490f-a664-44bc85ef1022",
-      "sourceOriginalName": "108-divyadesam-book-page131-img98.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

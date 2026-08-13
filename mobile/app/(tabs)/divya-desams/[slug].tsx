@@ -5,6 +5,7 @@ import type { TempleInformation as TempleInformationData } from "../../../../con
 import { DraftBadge } from "../../../components/DraftBadge";
 import { Section } from "../../../components/Section";
 import { ContentImage } from "../../../components/ContentImage";
+import { SthalaPuranamWithImages } from "../../../components/SthalaPuranamWithImages";
 import { ResourceLink } from "../../../components/ResourceLink";
 import { layout, spacing, typography, useTheme } from "../../../theme";
 
@@ -16,13 +17,20 @@ import { layout, spacing, typography, useTheme } from "../../../theme";
  * up out of proportion" relative to the rest -- so all images now render
  * uniformly (same size) via ContentImage, with no image singled out.
  *
- * Post-Phase-6E-C follow-up: images were also all clustered into one
+ * Post-Phase-6E-C follow-up (1): images were also all clustered into one
  * block regardless of where the source actually placed them. Each
  * image's `placement` field (content-lib/schemas/shared.ts) now splits
  * them into a top group (the source's default position, most images)
  * and an after-Sthala-Puranam group -- e.g. Singavelkundram/Ahobilam's
  * nine Narasimha-shrine photos, which the source places alongside that
  * narrative, not before it.
+ *
+ * Post-Phase-6E-C follow-up (2): the after-Sthala-Puranam group was
+ * still one undifferentiated cluster for records with SEVERAL named
+ * sub-sections. SthalaPuranamWithImages renders those images next to
+ * the specific line (`placementAnchor`) they belong after, when the
+ * source identifies one; images with no anchor still render as a
+ * trailing group, unchanged.
  *
  * Every section stays independently optional (Phase 6B's behavior,
  * unchanged): Page93 (no images) and the multi-shrine records still
@@ -103,8 +111,13 @@ export default function DivyaDesamDetailScreen() {
         </Section>
       ) : null}
 
-      <Section heading="Sthala Puranam" text={record.sthalaPuranam} />
-      <ContentImage images={afterSthalaPuranamImages} />
+      {record.sthalaPuranam ? (
+        afterSthalaPuranamImages.length > 0 ? (
+          <SthalaPuranamWithImages text={record.sthalaPuranam} images={afterSthalaPuranamImages} />
+        ) : (
+          <Section heading="Sthala Puranam" text={record.sthalaPuranam} />
+        )
+      ) : null}
       <Section heading="Azhwar Pasuram" text={record.azhwarPasuram} />
 
       {detailedShrines.length > 0 ? (

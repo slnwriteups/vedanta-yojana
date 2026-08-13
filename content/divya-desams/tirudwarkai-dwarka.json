@@ -66,7 +66,8 @@
       "sourceOriginalName": "Rukmini Dwaraka.jpg",
       "alt": null,
       "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
+      "placement": "after-sthala-puranam",
+      "placementAnchor": "Rukmini Dwarka:"
     },
     {
       "assetId": "tirudwarkai-dwarka-5",
@@ -74,7 +75,8 @@
       "sourceOriginalName": "Beyt Dwaraka.jpg",
       "alt": null,
       "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
+      "placement": "after-sthala-puranam",
+      "placementAnchor": "Beyt Dwarka:"
     },
     {
       "assetId": "tirudwarkai-dwarka-6",
@@ -82,7 +84,8 @@
       "sourceOriginalName": "Dakor Dwaraka.jpg",
       "alt": null,
       "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
+      "placement": "after-sthala-puranam",
+      "placementAnchor": "Dakor Dwarka:"
     },
     {
       "assetId": "tirudwarkai-dwarka-7",
@@ -90,7 +93,8 @@
       "sourceOriginalName": "Srinath Dwaraka.jpg",
       "alt": null,
       "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
+      "placement": "after-sthala-puranam",
+      "placementAnchor": "Shrinathji Dwarka:"
     }
   ],
   "resources": [

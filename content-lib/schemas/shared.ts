@@ -149,6 +149,18 @@ export const ImageEntrySchema = z.object({
    * placement.
    */
   placement: ImagePlacementSchema.optional(),
+  /**
+   * Only meaningful when placement is "after-sthala-puranam": a specific
+   * LINE, copied verbatim from the record's own `sthalaPuranam` string,
+   * that this image should render immediately after -- e.g. a named
+   * sub-shrine heading ("1. BHARGAVA NARASIMHA SWAMY", "Beyt Dwarka:")
+   * within a record that covers several. Absent means the source gave no
+   * confidently-identifiable sub-heading for this image; it renders in
+   * the undifferentiated group after the whole Sthala Puranam text
+   * instead (never a regression -- only an upgrade where confident).
+   * Always a real substring of `sthalaPuranam` itself, never invented.
+   */
+  placementAnchor: z.string().min(1).optional(),
 });
 export type ImageEntry = z.infer<typeof ImageEntrySchema>;
 
