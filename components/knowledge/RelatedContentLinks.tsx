@@ -53,7 +53,7 @@ function resolveRelatedContent(item: RelatedContentRef): { href: string; label: 
     }
     case "knowledge": {
       const record = loadKnowledgeRecord(item.slug);
-      return record ? { href: `/knowledge/${record.slug}`, label: record.title } : null;
+      return record ? { href: `/divya-desams/${record.slug}`, label: record.title } : null;
     }
     case "chapter":
       return null;

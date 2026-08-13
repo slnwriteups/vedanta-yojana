@@ -43,13 +43,11 @@ test("Navigation: the (tabs) group contains a real file for every route Phase 6B
     "app/(tabs)/divya-desams/_layout.tsx",
     "app/(tabs)/divya-desams/index.tsx",
     "app/(tabs)/divya-desams/[slug].tsx",
+    "app/(tabs)/divya-desams/introduction.tsx",
     "app/(tabs)/library/_layout.tsx",
     "app/(tabs)/library/index.tsx",
     "app/(tabs)/library/[book].tsx",
     "app/(tabs)/library/[book]/[chapter].tsx",
-    "app/(tabs)/knowledge/_layout.tsx",
-    "app/(tabs)/knowledge/index.tsx",
-    "app/(tabs)/knowledge/[slug].tsx",
     "app/(tabs)/search.tsx",
   ];
   for (const relative of expected) {
@@ -63,8 +61,8 @@ test("Navigation: no pre-Tabs route files were left behind outside the (tabs) gr
   assert.deepEqual(entries.sort(), ["(tabs)", "_layout.tsx"]);
 });
 
-test("Navigation: Home's four nav sections still route inside the (tabs) group", () => {
-  assert.equal(HOME_SECTIONS.length, 4);
+test("Navigation: Home's three nav sections still route inside the (tabs) group", () => {
+  assert.equal(HOME_SECTIONS.length, 3);
   for (const section of HOME_SECTIONS) {
     assert.ok(section.route.startsWith("/"));
     assert.ok(section.description.length > 0);

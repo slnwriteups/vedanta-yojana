@@ -49,7 +49,7 @@ const DYNAMIC_ROUTES_WITH_METADATA = [
   { file: "app/divya-desams/[slug]/page.tsx", loader: "loadDivyaDesam" },
   { file: "app/library/[book]/page.tsx", loader: "loadBook" },
   { file: "app/library/[book]/[chapter]/page.tsx", loader: "loadChapter" },
-  { file: "app/knowledge/[slug]/page.tsx", loader: "loadKnowledgeRecord" },
+  { file: "app/divya-desams/introduction/page.tsx", loader: "loadKnowledgeRecord" },
 ];
 
 test("every dynamic route's generateMetadata resolves through the real loader and sets a canonical", () => {
@@ -131,7 +131,7 @@ const STRUCTURED_DATA_ROUTES = [
   "app/divya-desams/[slug]/page.tsx",
   "app/library/[book]/page.tsx",
   "app/library/[book]/[chapter]/page.tsx",
-  "app/knowledge/[slug]/page.tsx",
+  "app/divya-desams/introduction/page.tsx",
 ];
 
 test("every justified route renders JsonLd via the shared, safely-escaping component", () => {

@@ -28,13 +28,8 @@ export const HOME_SECTIONS: HomeSection[] = [
     description: "Recovered books, presented chapter by chapter.",
   },
   {
-    label: "Knowledge",
-    route: "/knowledge",
-    description: "Supporting philosophical and devotional material.",
-  },
-  {
     label: "Search",
     route: "/search",
-    description: "Search across Divya Desams, the Library, and Knowledge.",
+    description: "Search across Divya Desams and the Library.",
   },
 ];

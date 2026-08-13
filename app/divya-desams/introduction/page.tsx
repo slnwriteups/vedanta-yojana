@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { loadKnowledge, loadKnowledgeRecord } from "@/content-lib/loader";
+import { loadKnowledgeRecord } from "@/content-lib/loader";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { DraftBadge } from "@/components/shared/DraftBadge";
 import { RecordImages } from "@/components/shared/RecordImages";
@@ -11,41 +11,34 @@ import { truncateForDescription } from "@/lib/metadata";
 import { siteUrl } from "@/lib/site";
 
 /**
- * Phase 5L -- real, loader-driven Knowledge detail page. Body rendered
- * exactly as stored, no separate invented heading above it (matching the
- * Chapter detail page's treatment). relatedContent is resolved through
- * the loader and only rendered when it actually resolves to a real
- * record (see components/knowledge/RelatedContentLinks.tsx).
+ * The sole Knowledge record (an introduction to the 108 Divyadesams)
+ * moved here from the (now-removed) generic /knowledge
+ * section, at the user's request -- its own content explicitly serves
+ * as an introduction to the Divya Desams, so it belongs there rather
+ * than in an unrelated general-purpose section. This is a routing
+ * change only: the record itself is untouched (still schema-validated
+ * as Knowledge, still loaded via the same loadKnowledgeRecord()), only
+ * where it's reachable from has changed. A static route co-located with
+ * the dynamic [slug] route -- Next.js resolves the exact "introduction"
+ * path here rather than treating it as a Divya Desam slug, so this
+ * never collides with a real (or future) temple named "introduction".
  */
 
-/** Every Knowledge URL to pre-render -- see the Divya Desam page for why. */
-export function generateStaticParams() {
-  return loadKnowledge().map((record) => ({ slug: record.slug }));
-}
+const INTRODUCTION_SLUG = "introduction";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  const record = loadKnowledgeRecord(slug);
-  if (!record) return { title: "Knowledge" };
+export async function generateMetadata(): Promise<Metadata> {
+  const record = loadKnowledgeRecord(INTRODUCTION_SLUG);
+  if (!record) return { title: "Divya Desams" };
 
   return {
     title: record.title,
     description: truncateForDescription(record.body),
-    alternates: { canonical: siteUrl(`/knowledge/${record.slug}`) },
+    alternates: { canonical: siteUrl("/divya-desams/introduction") },
   };
 }
 
-export default async function KnowledgeDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const record = loadKnowledgeRecord(slug);
+export default function DivyaDesamsIntroductionPage() {
+  const record = loadKnowledgeRecord(INTRODUCTION_SLUG);
   if (!record) notFound();
 
   return (
@@ -57,7 +50,10 @@ export default async function KnowledgeDetailPage({
           name: record.title,
         }}
       />
-      <Breadcrumbs trail={[{ href: "/knowledge", label: "Knowledge" }]} current={record.title} />
+      <Breadcrumbs
+        trail={[{ href: "/divya-desams", label: "Divya Desams" }]}
+        current={record.title}
+      />
 
       <div className="space-y-2">
         <DraftBadge status={record.status} needsReview={record.migration.needsReview} />

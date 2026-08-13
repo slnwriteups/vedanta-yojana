@@ -118,7 +118,7 @@ export function buildMobileSearchCorpus(): SearchDocument[] {
     documents.push({
       type: "knowledge",
       title: record.title,
-      href: `/knowledge/${record.slug}`,
+      href: `/divya-desams/${record.slug}`,
       status: record.status,
       needsReview: record.migration.needsReview,
       sourceOrder: 0,

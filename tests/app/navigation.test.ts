@@ -28,13 +28,12 @@ const REQUIRED_ROUTE_FILES = [
   "app/library/page.tsx",
   "app/library/[book]/page.tsx",
   "app/library/[book]/[chapter]/page.tsx",
-  "app/knowledge/page.tsx",
-  "app/knowledge/[slug]/page.tsx",
+  "app/divya-desams/introduction/page.tsx",
   "app/search/page.tsx",
   "app/about/page.tsx",
 ];
 
-test("every required Phase 5J route file exists", () => {
+test("every required route file exists", () => {
   for (const relPath of REQUIRED_ROUTE_FILES) {
     assert.ok(fs.existsSync(path.join(REPO_ROOT, relPath)), `missing ${relPath}`);
   }
@@ -42,25 +41,25 @@ test("every required Phase 5J route file exists", () => {
 
 test("SiteHeader links to every required top-level route", () => {
   const source = read("components/SiteHeader.tsx");
-  for (const href of ["/", "/divya-desams", "/library", "/knowledge", "/search", "/about"]) {
+  for (const href of ["/", "/divya-desams", "/library", "/search", "/about"]) {
     assert.ok(source.includes(`href: "${href}"`), `SiteHeader missing link to ${href}`);
   }
 });
 
 test("SiteFooter links to a subset of the required top-level routes", () => {
   const source = read("components/SiteFooter.tsx");
-  for (const href of ["/divya-desams", "/library", "/knowledge", "/about"]) {
+  for (const href of ["/divya-desams", "/library", "/about"]) {
     assert.ok(source.includes(`href: "${href}"`), `SiteFooter missing link to ${href}`);
   }
 });
 
-test("dynamic Divya Desam/Knowledge/Book/Chapter routes use the content loader and call notFound() rather than reading /content JSON directly", () => {
+test("dynamic Divya Desam/Book/Chapter routes plus the introduction route use the content loader and call notFound() rather than reading /content JSON directly", () => {
   const dd = read("app/divya-desams/[slug]/page.tsx");
   const book = read("app/library/[book]/page.tsx");
   const chapter = read("app/library/[book]/[chapter]/page.tsx");
-  const knowledge = read("app/knowledge/[slug]/page.tsx");
+  const introduction = read("app/divya-desams/introduction/page.tsx");
 
-  for (const source of [dd, book, chapter, knowledge]) {
+  for (const source of [dd, book, chapter, introduction]) {
     assert.ok(source.includes("@/content-lib/loader"), "expected an import from @/content-lib/loader");
     assert.ok(source.includes("notFound()"), "expected a notFound() call for the missing-record case");
     assert.ok(!/readFileSync|content-extraction/.test(source), "dynamic route must not read files directly or reference content-extraction");

@@ -9,7 +9,6 @@ import Link from "next/link";
 const FOOTER_LINKS = [
   { href: "/divya-desams", label: "Divya Desams" },
   { href: "/library", label: "Library" },
-  { href: "/knowledge", label: "Knowledge" },
   { href: "/about", label: "About" },
 ];
 

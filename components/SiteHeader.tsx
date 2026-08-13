@@ -19,7 +19,6 @@ const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/divya-desams", label: "Divya Desams" },
   { href: "/library", label: "Library" },
-  { href: "/knowledge", label: "Knowledge" },
   { href: "/search", label: "Search" },
   { href: "/about", label: "About" },
 ];

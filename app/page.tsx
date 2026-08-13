@@ -12,9 +12,14 @@ export const metadata: Metadata = {
  *
  * Replaces the Phase 5B route-placeholder list. Copy is intentionally
  * generic and non-editorial: it restates the site's already-established
- * scope (the 108 Divya Desams + a recovered library + supporting
- * Knowledge material), not any specific temple/chapter content pulled
- * from the source extraction.
+ * scope (the 108 Divya Desams + a recovered library), not any specific
+ * temple/chapter content pulled from the source extraction.
+ *
+ * The generic "Knowledge" section (previously a third tile here) was
+ * retired: its one real record, "An Introduction to the 108
+ * Divyadesams," was moved to live under /divya-desams/introduction
+ * instead, since its own content explicitly serves that section rather
+ * than a general-purpose category.
  */
 
 const SECTIONS = [
@@ -29,12 +34,6 @@ const SECTIONS = [
     title: "Library",
     description:
       "A recovered book, presented chapter by chapter as it is prepared for publication.",
-  },
-  {
-    href: "/knowledge",
-    title: "Knowledge",
-    description:
-      "Supporting philosophical and devotional material related to Sanātana Dharma.",
   },
 ];
 
@@ -62,7 +61,7 @@ export default function HomePage() {
         </p>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2">
         {SECTIONS.map((section) => (
           <Link
             key={section.href}

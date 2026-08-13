@@ -1,6 +1,6 @@
 import { Stack, useRouter } from "expo-router";
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import { loadDivyaDesams, type DivyaDesam } from "../../../content-lib/loader.ts";
+import { loadDivyaDesams, loadKnowledgeRecord, type DivyaDesam } from "../../../content-lib/loader.ts";
 import { sourcePageNumber } from "../../../content-lib/ordering.ts";
 import { imagesByUuid } from "../../../content-lib/image-manifest.generated.ts";
 import { ContentCard } from "../../../components/ContentCard";
@@ -29,6 +29,7 @@ export default function DivyaDesamsIndexScreen() {
   const records = [...loadDivyaDesams()].sort(
     (a, b) => sourcePageNumber(a.migration.sourcePageId) - sourcePageNumber(b.migration.sourcePageId)
   );
+  const introduction = loadKnowledgeRecord("introduction");
 
   function renderItem({ item }: { item: DivyaDesam }) {
     return (
@@ -47,7 +48,20 @@ export default function DivyaDesamsIndexScreen() {
     <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <Stack.Screen options={{ title: "Divya Desams" }} />
       <Text style={[styles.count, { color: theme.colors.muted }]}>{records.length} records</Text>
-      <FlatList data={records} keyExtractor={(item) => item.slug} renderItem={renderItem} />
+      <FlatList
+        data={records}
+        keyExtractor={(item) => item.slug}
+        renderItem={renderItem}
+        ListHeaderComponent={
+          introduction ? (
+            <ContentCard
+              title={introduction.title}
+              subtitle="Start here before exploring the temples below."
+              onPress={() => router.push("/divya-desams/introduction" as never)}
+            />
+          ) : null
+        }
+      />
     </View>
   );
 }

@@ -1,4 +1,4 @@
-import { Stack, useLocalSearchParams } from "expo-router";
+import { Stack } from "expo-router";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { loadKnowledgeRecord } from "../../../content-lib/loader.ts";
 import { DraftBadge } from "../../../components/DraftBadge";
@@ -6,18 +6,18 @@ import { ContentImage } from "../../../components/ContentImage";
 import { Section } from "../../../components/Section";
 import { layout, spacing, typography, useTheme } from "../../../theme";
 
+const INTRODUCTION_SLUG = "introduction";
+
 /**
- * Phase 6C -- article-style layout: content type shown as a small
- * eyebrow-style label above the title (a common article-page convention)
- * rather than a plain caption line, same capped reading measure as the
- * chapter screen. Fields unchanged from Phase 6B: title, content type,
- * body, images -- no relatedContent section, matching Phase 6B's
- * deliberate scoping to exactly what the brief specified.
+ * A static route co-located with [slug].tsx, resolving the exact same
+ * "introduction" Knowledge record previously served from the (now
+ * removed) Knowledge tab -- moved here because its own content serves
+ * this section specifically, mirroring app/divya-desams/introduction/
+ * page.tsx on the web.
  */
-export default function KnowledgeDetailScreen() {
-  const { slug } = useLocalSearchParams<{ slug: string }>();
+export default function DivyaDesamsIntroductionScreen() {
   const theme = useTheme();
-  const record = loadKnowledgeRecord(slug);
+  const record = loadKnowledgeRecord(INTRODUCTION_SLUG);
 
   if (!record) {
     return (

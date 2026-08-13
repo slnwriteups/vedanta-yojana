@@ -19,9 +19,9 @@ import { loadDivyaDesam } from "../../content-lib/loader/index.ts";
 // Sitemap
 // ---------------------------------------------------------------------------
 
-test("sitemap includes exactly the expected public-route counts: 6 static + 107 Divya Desams + 1 book + 55 chapters + 1 Knowledge", () => {
+test("sitemap includes exactly the expected public-route counts: 5 static + 107 Divya Desams + 1 book + 55 chapters + 1 Knowledge", () => {
   const entries = buildSitemapEntries();
-  assert.equal(entries.length, 6 + 107 + 1 + 55 + 1);
+  assert.equal(entries.length, 5 + 107 + 1 + 55 + 1);
 });
 
 test("sitemap excludes Page150, known gaps, and arbitrary search-query URLs", () => {

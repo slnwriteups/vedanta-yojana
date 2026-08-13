@@ -19,10 +19,10 @@ import { HOME_SECTIONS } from "../content-lib/navigation.ts";
 
 const BOOK_SLUG = "untitled-recovered-book-pending-editorial-title";
 
-test("Home: the four navigation sections are well-formed and route to real screens", () => {
-  assert.equal(HOME_SECTIONS.length, 4);
+test("Home: the three navigation sections are well-formed and route to real screens", () => {
+  assert.equal(HOME_SECTIONS.length, 3);
   const routes = HOME_SECTIONS.map((s) => s.route).sort();
-  assert.deepEqual(routes, ["/divya-desams", "/knowledge", "/library", "/search"]);
+  assert.deepEqual(routes, ["/divya-desams", "/library", "/search"]);
 });
 
 test("Divya Desams: 107 records available for the index screen", () => {
@@ -83,7 +83,7 @@ test("Library: a chapter body loads for the chapter screen", () => {
   assert.ok(chapter!.body.length > 0);
 });
 
-test("Knowledge: the Introduction record resolves for the detail screen", () => {
+test("Knowledge: the Introduction record resolves for the Divya Desams introduction screen", () => {
   const record = loadKnowledgeRecord("introduction");
   assert.ok(record, "introduction did not resolve");
   assert.ok(record!.body.length > 0);
@@ -108,6 +108,6 @@ test("Search: every result href matches this app's own route shape", () => {
   const results = searchCorpus(corpus, "Recovered");
   assert.ok(results.length > 0, "expected at least one result for the book's own title text");
   for (const result of results) {
-    assert.match(result.href, /^\/(divya-desams|library|knowledge)\//);
+    assert.match(result.href, /^\/(divya-desams|library)\//);
   }
 });

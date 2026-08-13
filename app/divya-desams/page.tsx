@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import type { DivyaDesam } from "@/content-lib/schemas";
-import { loadDivyaDesams } from "@/content-lib/loader";
+import { loadDivyaDesams, loadKnowledgeRecord } from "@/content-lib/loader";
 import { DivyaDesamCard } from "@/components/divya-desams/DivyaDesamCard";
 import { siteUrl } from "@/lib/site";
 
@@ -38,6 +39,11 @@ export default function DivyaDesamsIndexPage() {
     (a, b) => sourcePageNumber(a) - sourcePageNumber(b)
   );
 
+  // Links to the "Introduction" record only when it actually resolves
+  // through the loader -- never a fabricated link to content that
+  // doesn't exist.
+  const introduction = loadKnowledgeRecord("introduction");
+
   return (
     <div className="space-y-6">
       <div className="space-y-3">
@@ -47,6 +53,16 @@ export default function DivyaDesamsIndexPage() {
           the Alwars. {records.length} records are presented below.
         </p>
       </div>
+
+      {introduction ? (
+        <Link
+          href="/divya-desams/introduction"
+          className="block rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 transition-colors hover:border-[var(--accent)]"
+        >
+          <h2 className="section-heading">{introduction.title}</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">Start here before exploring the temples below.</p>
+        </Link>
+      ) : null}
 
       <ul role="list" className="divide-y divide-[var(--border)]">
         {records.map((record) => (

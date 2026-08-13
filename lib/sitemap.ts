@@ -7,10 +7,13 @@ import { siteUrl } from "./site.ts";
  * separately maintained list. Includes only genuinely publicly routable
  * pages:
  *   - the fixed set of static application routes
- *   - all 107 normal Divya Desam records
+ *   - all 107 normal Divya Desam records, plus the "introduction" page
+ *     (still the same Knowledge-schema record, loaded the same way --
+ *     only its URL moved from /knowledge/introduction to
+ *     /divya-desams/introduction, see app/divya-desams/introduction/
+ *     page.tsx)
  *   - the 1 Book + all of its 55 Chapters (via loadChapters, so the
  *     count always matches whatever the loader actually returns)
- *   - the 1 Knowledge record
  *
  * Deliberately excluded, structurally rather than by a denylist:
  *   - Page150 (the held-back record) -- it has no slug and is never
@@ -37,7 +40,7 @@ import { siteUrl } from "./site.ts";
  * Next.js convention file) is a thin wrapper around this.
  */
 
-const STATIC_ROUTES = ["/", "/about", "/divya-desams", "/library", "/knowledge", "/search"];
+const STATIC_ROUTES = ["/", "/about", "/divya-desams", "/library", "/search"];
 
 /** Mirrors the same source-page-derived ordering already used by the Divya Desam index page (app/divya-desams/page.tsx), applied here only for deterministic sitemap ordering. */
 function sourcePageNumber(sourcePageId: string): number {
@@ -68,7 +71,7 @@ export function buildSitemapEntries(): MetadataRoute.Sitemap {
   }
 
   for (const record of loadKnowledge()) {
-    entries.push({ url: toUrl(`/knowledge/${record.slug}`) });
+    entries.push({ url: toUrl(`/divya-desams/${record.slug}`) });
   }
 
   return entries;

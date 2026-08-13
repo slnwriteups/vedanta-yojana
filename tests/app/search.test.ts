@@ -46,11 +46,11 @@ test("29: a Chapter result links to /library/[book]/[chapter]", () => {
   );
 });
 
-test("30: a Knowledge result links to /knowledge/[slug]", () => {
+test("30: a Knowledge result links to /divya-desams/[slug]", () => {
   const results = search("Introduction");
   const result = results.find((r) => r.type === "knowledge");
   assert.ok(result);
-  assert.equal(result?.href, "/knowledge/introduction");
+  assert.equal(result?.href, "/divya-desams/introduction");
 });
 
 test("31: no result href references a filesystem path or content-extraction", () => {

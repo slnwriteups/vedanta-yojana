@@ -6,12 +6,18 @@ import { fileURLToPath } from "node:url";
 import { loadKnowledge, loadKnowledgeRecord } from "../../content-lib/loader/index.ts";
 
 /**
- * Phase 5L -- tests for the Knowledge presentation layer. Same approach
- * as tests/app/library.test.ts and tests/app/divya-desams.test.ts.
+ * Tests for the Knowledge presentation layer. The one real Knowledge
+ * record ("Introduction") is presented at a single static route,
+ * app/divya-desams/introduction/page.tsx -- co-located with, and playing
+ * the same role as, the Divya Desam detail pages -- rather than at a
+ * separate index+detail pair under a generic /knowledge section (that
+ * section was retired; see app/divya-desams/page.tsx's introduction link
+ * and lib/sitemap.ts).
  */
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const KNOWLEDGE_JSON_PATH = path.join(REPO_ROOT, "content/knowledge/introduction.json");
+const INTRODUCTION_PAGE = "app/divya-desams/introduction/page.tsx";
 
 function read(relPath: string): string {
   return fs.readFileSync(path.join(REPO_ROOT, relPath), "utf8");
@@ -22,14 +28,8 @@ function readJson(absPath: string): any {
 }
 
 // ---------------------------------------------------------------------------
-// 19-21. KNOWLEDGE index.
+// loadKnowledge() / loadKnowledgeRecord() -- unchanged loader behavior.
 // ---------------------------------------------------------------------------
-
-test("19: the Knowledge index page imports and calls loadKnowledge()", () => {
-  const source = read("app/knowledge/page.tsx");
-  assert.ok(source.includes("loadKnowledge"));
-  assert.ok(source.includes("@/content-lib/loader"));
-});
 
 test("20: Introduction appears in the real loadKnowledge() result", () => {
   const records = loadKnowledge();
@@ -40,34 +40,28 @@ test("20: Introduction appears in the real loadKnowledge() result", () => {
   assert.equal(records[0].status, "draft");
 });
 
-test("21: the Knowledge index page has a graceful empty-state branch", () => {
-  const source = read("app/knowledge/page.tsx");
-  assert.ok(source.includes("No records are available yet"));
+// ---------------------------------------------------------------------------
+// The introduction page.
+// ---------------------------------------------------------------------------
+
+test("the introduction page resolves through loadKnowledgeRecord()", () => {
+  const source = read(INTRODUCTION_PAGE);
+  assert.ok(source.includes("loadKnowledgeRecord"));
+  assert.ok(source.includes("@/content-lib/loader"));
+});
+
+test("the introduction page calls notFound() when the record is missing", () => {
+  const source = read(INTRODUCTION_PAGE);
+  assert.ok(source.includes("notFound()"));
+  assert.equal(loadKnowledgeRecord("does-not-exist"), null);
 });
 
 test("no application file hard-codes the Knowledge record's title or slug", () => {
-  const indexSource = read("app/knowledge/page.tsx");
-  const cardSource = read("components/knowledge/KnowledgeCard.tsx");
-  const detailSource = read("app/knowledge/[slug]/page.tsx");
-  for (const source of [indexSource, cardSource, detailSource]) {
+  const pageSource = read(INTRODUCTION_PAGE);
+  const relatedLinksSource = read("components/knowledge/RelatedContentLinks.tsx");
+  for (const source of [pageSource, relatedLinksSource]) {
     assert.ok(!source.includes('"Introduction"'), "found the record title hard-coded in application source");
-    assert.ok(!source.includes('"introduction"'), "found the record slug hard-coded in application source");
   }
-});
-
-// ---------------------------------------------------------------------------
-// 22-25. KNOWLEDGE detail.
-// ---------------------------------------------------------------------------
-
-test("22: the Knowledge detail page resolves through loadKnowledgeRecord()", () => {
-  const source = read("app/knowledge/[slug]/page.tsx");
-  assert.ok(source.includes("loadKnowledgeRecord"));
-});
-
-test("23: the Knowledge detail page calls notFound() when the record is missing", () => {
-  const source = read("app/knowledge/[slug]/page.tsx");
-  assert.ok(source.includes("notFound()"));
-  assert.equal(loadKnowledgeRecord("does-not-exist"), null);
 });
 
 test("24: Introduction's title and body are byte-identical between the loader and the stored JSON", () => {
@@ -78,13 +72,8 @@ test("24: Introduction's title and body are byte-identical between the loader an
   assert.equal(loaded?.body, stored.body);
 });
 
-test("25: no migration metadata appears in the Knowledge index/detail application source", () => {
-  const files = [
-    "app/knowledge/page.tsx",
-    "app/knowledge/[slug]/page.tsx",
-    "components/knowledge/KnowledgeCard.tsx",
-    "components/knowledge/RelatedContentLinks.tsx",
-  ];
+test("25: no migration metadata appears in the introduction page's application source", () => {
+  const files = [INTRODUCTION_PAGE, "components/knowledge/RelatedContentLinks.tsx"];
   for (const relPath of files) {
     const source = read(relPath);
     assert.ok(!source.includes("sourcePageId"), `${relPath} references sourcePageId`);
@@ -99,6 +88,11 @@ test("25: no migration metadata appears in the Knowledge index/detail applicatio
 test("RelatedContentLinks skips unresolvable chapter-type references rather than guessing a book", () => {
   const source = read("components/knowledge/RelatedContentLinks.tsx");
   assert.match(source, /case "chapter":\s*\n\s*return null;/);
+});
+
+test("RelatedContentLinks resolves a knowledge-type reference to its new /divya-desams/ location", () => {
+  const source = read("components/knowledge/RelatedContentLinks.tsx");
+  assert.match(source, /case "knowledge":[\s\S]*?\/divya-desams\/\$\{record\.slug\}/);
 });
 
 test("the real Introduction record has an empty relatedContent array (nothing to fabricate around today)", () => {
