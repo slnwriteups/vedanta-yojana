@@ -28,6 +28,13 @@
       "sourceOriginalName": "108-52.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukaaragam-book-2",
+      "sourceAssetUuid": "fb463039-b9f0-4bdd-bfd5-cc8a6874588b",
+      "sourceOriginalName": "108-divyadesam-book-page159-img118.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

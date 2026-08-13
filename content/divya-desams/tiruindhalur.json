@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-26.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruindhalur-book-2",
+      "sourceAssetUuid": "f169ca85-eda1-48b5-8265-bbb64ccc252d",
+      "sourceOriginalName": "108-divyadesam-book-page84-img56.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-60.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvallikkeni-book-2",
+      "sourceAssetUuid": "3c632b6f-9f6d-4541-b8a7-5ce3cc46091b",
+      "sourceOriginalName": "108-divyadesam-book-page177-img135.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

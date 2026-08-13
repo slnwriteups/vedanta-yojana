@@ -7,7 +7,13 @@
     "extractionConfidence": "high",
     "needsReview": false
   },
-  "templeInformation": {},
+  "templeInformation": {
+    "moolavar": "Parthasarathy Perumal",
+    "thayaar": "Padmasini Thayaar",
+    "vimanam": "Vamana Vimanam",
+    "theertham": "Pampa Theertham",
+    "travelNote": "This kshetram is located on the banks of the River Pampa, 9 km from Chengannur\n\nnear Kottayam in Kerala."
+  },
   "sthalaPuranam": "This kshethram is believed to have been built by Arjuna, one of the Pandavas. It is also believed that Lord Vishnu revealed Himself to Lord Brahma and Maharishi Vedavyasa at this kshethram.",
   "shrines": [
     {
@@ -20,6 +26,13 @@
       "assetId": "tiruvaaranvilai-aranmula-1",
       "sourceAssetUuid": "12e0a499-2a9d-4f17-9238-64cb0f92abd9",
       "sourceOriginalName": "108-73.png",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvaaranvilai-aranmula-book-2",
+      "sourceAssetUuid": "99d76166-8dc8-4721-ad46-c00619e5d455",
+      "sourceOriginalName": "108-divyadesam-book-page211-img163.png (synthetic name -- the source PDF has no embedded per-image filename)",
       "alt": null,
       "altStatus": "needs-review"
     }
@@ -50,5 +63,6 @@
       "sourceLabel": "Sanskrit Pasuram"
     }
   ],
-  "relatedContent": []
+  "relatedContent": [],
+  "azhwarPasuram": "NamAzhwar: 1 Pashuram\n\n*** This is one of the Pancha-Pandava Kshethrams. This temple is said to have been\n\nestablished by Arjuna."
 }

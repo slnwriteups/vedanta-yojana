@@ -36,6 +36,20 @@
       "sourceOriginalName": "108-94DSR.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirupullani-book-3",
+      "sourceAssetUuid": "93c9e381-7636-45e8-a73a-8ceb112417f4",
+      "sourceOriginalName": "108-divyadesam-book-page288-img221.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirupullani-book-4",
+      "sourceAssetUuid": "878ea196-0e82-4d4d-ad3f-ed0ac6996e71",
+      "sourceOriginalName": "108-divyadesam-book-page288-img222.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

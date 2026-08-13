@@ -36,6 +36,27 @@
       "sourceOriginalName": "108-92C.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirumogur-book-3",
+      "sourceAssetUuid": "76839269-d460-4011-86c6-c2015786e370",
+      "sourceOriginalName": "108-divyadesam-book-page282-img214.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirumogur-book-4",
+      "sourceAssetUuid": "723cd0a6-389e-40c8-91aa-76ee146bf713",
+      "sourceOriginalName": "108-divyadesam-book-page284-img216.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirumogur-book-5",
+      "sourceAssetUuid": "7279205a-6a03-43d8-8321-1a139700f704",
+      "sourceOriginalName": "108-divyadesam-book-page284-img217.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

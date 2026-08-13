@@ -42,6 +42,27 @@
       "sourceOriginalName": "108-87Tree.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkurugur-azhwar-tirunagari-book-4",
+      "sourceAssetUuid": "ce4847e8-0a33-4ded-8e6c-437f5831e21a",
+      "sourceOriginalName": "108-divyadesam-book-page255-img197.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkurugur-azhwar-tirunagari-book-5",
+      "sourceAssetUuid": "89b1aa17-c42d-4736-a301-cadf19b443d2",
+      "sourceOriginalName": "108-divyadesam-book-page257-img199.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkurugur-azhwar-tirunagari-book-6",
+      "sourceAssetUuid": "b3b656e5-91e5-470f-a62a-e7138cde8410",
+      "sourceOriginalName": "108-divyadesam-book-page258-img200.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

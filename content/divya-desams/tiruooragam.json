@@ -35,6 +35,20 @@
       "sourceOriginalName": "108-50U.PNG",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruooragam-book-3",
+      "sourceAssetUuid": "1182b38f-ff5f-40ff-8e65-e6ba3f4c69ee",
+      "sourceOriginalName": "108-divyadesam-book-page154-img113.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruooragam-book-4",
+      "sourceAssetUuid": "8dd7b69d-4cbd-4450-a99a-4b0f1fbb06de",
+      "sourceOriginalName": "108-divyadesam-book-page154-img114.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

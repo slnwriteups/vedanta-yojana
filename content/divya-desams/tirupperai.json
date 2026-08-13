@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-86.png",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirupperai-book-2",
+      "sourceAssetUuid": "c790a400-ec83-489f-b66a-0396aa82ed2b",
+      "sourceOriginalName": "108-divyadesam-book-page252-img195.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

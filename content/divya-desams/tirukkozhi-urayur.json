@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-2.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkozhi-urayur-book-2",
+      "sourceAssetUuid": "33d4f6c8-006e-4a10-982e-de4e2f8616b3",
+      "sourceOriginalName": "108-divyadesam-book-page17-img4.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

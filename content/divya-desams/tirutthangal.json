@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-89.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirutthangal-book-2",
+      "sourceAssetUuid": "8d1714bf-d055-4228-a3e4-e293ac3645e6",
+      "sourceOriginalName": "108-divyadesam-book-page269-img206.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

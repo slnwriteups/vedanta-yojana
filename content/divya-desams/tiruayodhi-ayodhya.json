@@ -63,6 +63,20 @@
       "sourceOriginalName": "108-96H.jpeg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruayodhi-ayodhya-book-7",
+      "sourceAssetUuid": "dc823304-44de-44d3-8529-1c30eba0d249",
+      "sourceOriginalName": "108-divyadesam-book-page295-img233.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruayodhi-ayodhya-book-8",
+      "sourceAssetUuid": "f79f5fd6-ce0a-412b-8520-126d6cda91e2",
+      "sourceOriginalName": "108-divyadesam-book-page295-img234.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

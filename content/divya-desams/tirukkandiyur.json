@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-7.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkandiyur-book-2",
+      "sourceAssetUuid": "2dcfce90-74b5-4e4b-b350-2a4c7c6af6ae",
+      "sourceOriginalName": "108-divyadesam-book-page31-img15.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

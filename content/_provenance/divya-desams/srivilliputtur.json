@@ -1,0 +1,38 @@
+[
+  {
+    "field": "images",
+    "value": "srivilliputtur-book-5",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 261,
+    "sourceSection": "88) Srivilliputtur",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  },
+  {
+    "field": "images",
+    "value": "srivilliputtur-book-6",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 266,
+    "sourceSection": "88) Srivilliputtur",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  },
+  {
+    "field": "images",
+    "value": "srivilliputtur-book-7",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 267,
+    "sourceSection": "88) Srivilliputtur",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  },
+  {
+    "field": "images",
+    "value": "srivilliputtur-book-8",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 268,
+    "sourceSection": "88) Srivilliputtur",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  }
+]

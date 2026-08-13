@@ -37,6 +37,27 @@
       "sourceOriginalName": "image8.png",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruparamapadam-sri-vaikuntham-book-4",
+      "sourceAssetUuid": "8a7f5087-c784-475c-abcc-9791b8e171c3",
+      "sourceOriginalName": "108-divyadesam-book-page357-img293.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruparamapadam-sri-vaikuntham-book-5",
+      "sourceAssetUuid": "e898c869-ce6d-4db0-8a67-4cb2b28e5f60",
+      "sourceOriginalName": "108-divyadesam-book-page360-img294.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruparamapadam-sri-vaikuntham-book-6",
+      "sourceAssetUuid": "bf0cb036-e80b-40d2-a732-611aa0b5d833",
+      "sourceOriginalName": "108-divyadesam-book-page360-img295.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

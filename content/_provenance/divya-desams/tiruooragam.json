@@ -1,0 +1,20 @@
+[
+  {
+    "field": "images",
+    "value": "tiruooragam-book-3",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 154,
+    "sourceSection": "50) Tiruooragam",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  },
+  {
+    "field": "images",
+    "value": "tiruooragam-book-4",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 154,
+    "sourceSection": "50) Tiruooragam",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  }
+]

@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-75.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvananthapuram-book-2",
+      "sourceAssetUuid": "9d9cb517-4678-4f45-89e3-6b539aeb1543",
+      "sourceOriginalName": "108-divyadesam-book-page216-img167.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

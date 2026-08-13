@@ -28,6 +28,13 @@
       "sourceOriginalName": "108-5.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvanbil-book-2",
+      "sourceAssetUuid": "af1e8ec9-e661-4a36-84fc-bcb9f95ddf33",
+      "sourceOriginalName": "108-divyadesam-book-page26-img11.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

@@ -36,6 +36,20 @@
       "sourceOriginalName": "108-97C.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiru-naimisharanayam-book-3",
+      "sourceAssetUuid": "f5c08227-5d83-4eea-9fea-ced4e456c8f7",
+      "sourceOriginalName": "108-divyadesam-book-page296-img235.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiru-naimisharanayam-book-4",
+      "sourceAssetUuid": "ffd6945b-1298-4307-910f-8b83996686d8",
+      "sourceOriginalName": "108-divyadesam-book-page299-img237.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

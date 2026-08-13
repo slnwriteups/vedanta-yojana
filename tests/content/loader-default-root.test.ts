@@ -71,7 +71,10 @@ test("B: loadBooks()/loadBook()/loadChapters() resolve the real recovered book",
 
   const book = loadBook("untitled-recovered-book-pending-editorial-title");
   assert.ok(book);
-  assert.equal(book?.title, "Untitled Recovered Book (pending editorial title)");
+  // Phase 6E confirmed "A Brief Insight to Visishtadvaita Philosophy.pdf"
+  // as the source for 17 of this book's 55 chapters and supplemented the
+  // book's title/author accordingly (see content/_provenance/library/).
+  assert.equal(book?.title, "A Brief Insight to Visishtadvaita Philosophy");
 
   const chapters = loadChapters("untitled-recovered-book-pending-editorial-title");
   assert.equal(chapters.length, 55);

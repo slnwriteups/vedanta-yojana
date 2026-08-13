@@ -52,7 +52,10 @@ test("Divya Desams: every real record's sourcePageId sorts to a valid numeric or
 test("Library: the recovered Book resolves for the book screen", () => {
   const book = loadBook(BOOK_SLUG);
   assert.ok(book, "the book did not resolve");
-  assert.equal(book?.title, "Untitled Recovered Book (pending editorial title)");
+  // Phase 6E confirmed "A Brief Insight to Visishtadvaita Philosophy.pdf"
+  // as the source for 17 of this book's 55 chapters and supplemented the
+  // book's title/author accordingly.
+  assert.equal(book?.title, "A Brief Insight to Visishtadvaita Philosophy");
 });
 
 test("Library: 55 chapters are available for the book screen, in ascending order", () => {

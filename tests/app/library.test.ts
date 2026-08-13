@@ -52,7 +52,10 @@ test("1: the Library index page imports and calls loadBooks()", () => {
 test("2: the current recovered book's title appears exactly, verbatim, in the real migrated data loadBooks() returns", () => {
   const books = loadBooks();
   assert.equal(books.length, 1);
-  assert.equal(books[0].title, "Untitled Recovered Book (pending editorial title)");
+  // Phase 6E confirmed "A Brief Insight to Visishtadvaita Philosophy.pdf"
+  // as the source for 17 of this book's 55 chapters and supplemented the
+  // book's title/author accordingly (see content/_provenance/library/).
+  assert.equal(books[0].title, "A Brief Insight to Visishtadvaita Philosophy");
 });
 
 test("3: no application file hard-codes the book's title or slug", () => {
@@ -60,7 +63,7 @@ test("3: no application file hard-codes the book's title or slug", () => {
   const cardSource = read("components/library/BookCard.tsx");
   const bookPageSource = read("app/library/[book]/page.tsx");
   for (const source of [indexSource, cardSource, bookPageSource]) {
-    assert.ok(!source.includes("Untitled Recovered Book"), "found the book title hard-coded in application source");
+    assert.ok(!source.includes("A Brief Insight to Visishtadvaita Philosophy"), "found the book title hard-coded in application source");
     assert.ok(!source.includes(BOOK_SLUG), "found the book slug hard-coded in application source");
   }
 });

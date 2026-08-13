@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-76.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvattaaru-book-2",
+      "sourceAssetUuid": "c51deabf-f21e-4d7b-8306-e0fb9657d001",
+      "sourceOriginalName": "108-divyadesam-book-page220-img169.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-13.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvinnagaram-book-2",
+      "sourceAssetUuid": "ccdd4a6a-66de-4534-820a-fb6a751c6547",
+      "sourceOriginalName": "108-divyadesam-book-page48-img27.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

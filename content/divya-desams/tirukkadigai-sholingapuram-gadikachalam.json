@@ -40,6 +40,20 @@
       "sourceOriginalName": "108-64H.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkadigai-sholingapuram-gadikachalam-book-3",
+      "sourceAssetUuid": "a531c547-6be2-4c8c-9b81-e5340e6f21b2",
+      "sourceOriginalName": "108-divyadesam-book-page186-img143.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkadigai-sholingapuram-gadikachalam-book-4",
+      "sourceAssetUuid": "414e2915-2e95-45ea-ac46-d108be6cccaa",
+      "sourceOriginalName": "108-divyadesam-book-page187-img144.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

@@ -36,6 +36,20 @@
       "sourceOriginalName": "108-32G.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirumanimada-kovil-book-3",
+      "sourceAssetUuid": "48af9290-044f-42a2-a1f0-a6600737e15a",
+      "sourceOriginalName": "108-divyadesam-book-page100-img68.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirumanimada-kovil-book-4",
+      "sourceAssetUuid": "08f407ce-eb0f-466c-8245-c17e1459adcd",
+      "sourceOriginalName": "108-divyadesam-book-page103-img70.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

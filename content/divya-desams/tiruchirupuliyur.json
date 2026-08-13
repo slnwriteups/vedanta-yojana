@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-24.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruchirupuliyur-book-2",
+      "sourceAssetUuid": "1c68a756-42f9-4399-83a2-771e56ade724",
+      "sourceOriginalName": "108-divyadesam-book-page78-img52.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

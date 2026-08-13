@@ -1,6 +1,6 @@
 {
   "slug": "untitled-recovered-book-pending-editorial-title",
-  "title": "Untitled Recovered Book (pending editorial title)",
+  "title": "A Brief Insight to Visishtadvaita Philosophy",
   "status": "draft",
   "migration": {
     "sourcePageId": "aggregate:page113-page171",
@@ -64,5 +64,6 @@
     "pariksit",
     "mapping-of-space-and-time",
     "jaya-and-vijaya"
-  ]
+  ],
+  "author": "Vishnu Sreenivas"
 }

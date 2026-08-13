@@ -1,0 +1,38 @@
+[
+  {
+    "field": "images",
+    "value": "tirumaaliruncholai-book-4",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 278,
+    "sourceSection": "91) Tirumaaliruncholai",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  },
+  {
+    "field": "shrines",
+    "value": "https://www.google.com/maps/place/Arulmigu+Kallalagar+Temple,+Allagar+Temple/@10.074847,78.213097,16z/data=!4m5!3m4!1s0x0:0x8dd0f3238544b80e!8m2!3d10.0748469!4d78.2130969?hl=en",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 279,
+    "sourceSection": "91) Tirumaaliruncholai",
+    "importedAt": "2026-08-13",
+    "note": "Decoded from this book's per-page QR code (zbarimg); record had no existing shrines/mapsLink."
+  },
+  {
+    "field": "images",
+    "value": "tirumaaliruncholai-book-5",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 280,
+    "sourceSection": "91) Tirumaaliruncholai",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  },
+  {
+    "field": "images",
+    "value": "tirumaaliruncholai-book-6",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 281,
+    "sourceSection": "91) Tirumaaliruncholai",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  }
+]

@@ -36,6 +36,20 @@
       "sourceOriginalName": "108-40T.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruchitrakootam-chidambaram-book-3",
+      "sourceAssetUuid": "c134653c-06f9-49d5-9513-885a2676d779",
+      "sourceOriginalName": "108-divyadesam-book-page120-img88.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruchitrakootam-chidambaram-book-4",
+      "sourceAssetUuid": "52f48f40-a7e8-4824-919f-a39827fe2f3c",
+      "sourceOriginalName": "108-divyadesam-book-page120-img89.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

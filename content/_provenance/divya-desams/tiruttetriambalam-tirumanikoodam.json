@@ -1,0 +1,68 @@
+[
+  {
+    "field": "templeInformation.moolavar",
+    "value": "Pallikonda Ranganathar",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 112,
+    "sourceSection": "Tiruttetriambalam Tirumanikoodam",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "templeInformation.thayaar",
+    "value": "Senkamalavalli",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 112,
+    "sourceSection": "Tiruttetriambalam Tirumanikoodam",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "templeInformation.vimanam",
+    "value": "Veda Vimanam",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 112,
+    "sourceSection": "Tiruttetriambalam Tirumanikoodam",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "templeInformation.theertham",
+    "value": "Surya Pushkarani",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 112,
+    "sourceSection": "Tiruttetriambalam Tirumanikoodam",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "templeInformation.travelNote",
+    "value": "8 kilometers from Sirkazhi",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 112,
+    "sourceSection": "Tiruttetriambalam Tirumanikoodam",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "azhwarPasuram",
+    "value": "TirumangaiAzhwar: 10 Pashurams",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 112,
+    "sourceSection": "Tiruttetriambalam Tirumanikoodam",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "images",
+    "value": "tiruttetriambalam-tirumanikoodam-book-3",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 112,
+    "sourceSection": "Tiruttetriambalam Tirumanikoodam",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  },
+  {
+    "field": "images",
+    "value": "tiruttetriambalam-tirumanikoodam-book-4",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 112,
+    "sourceSection": "Tiruttetriambalam Tirumanikoodam",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  }
+]

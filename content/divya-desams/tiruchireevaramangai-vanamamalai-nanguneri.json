@@ -36,6 +36,20 @@
       "sourceOriginalName": "108-79Well.jpeg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruchireevaramangai-vanamamalai-nanguneri-book-3",
+      "sourceAssetUuid": "1b76d141-a621-4fe9-9bff-5c5e788a06fd",
+      "sourceOriginalName": "108-divyadesam-book-page232-img179.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruchireevaramangai-vanamamalai-nanguneri-book-4",
+      "sourceAssetUuid": "8026219e-073f-4cee-965c-9a568e71cdcf",
+      "sourceOriginalName": "108-divyadesam-book-page234-img181.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

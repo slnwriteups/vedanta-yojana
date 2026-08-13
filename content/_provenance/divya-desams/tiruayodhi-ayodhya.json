@@ -1,0 +1,20 @@
+[
+  {
+    "field": "images",
+    "value": "tiruayodhi-ayodhya-book-7",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 295,
+    "sourceSection": "Tiruayodhi (Ayodhya)",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  },
+  {
+    "field": "images",
+    "value": "tiruayodhi-ayodhya-book-8",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 295,
+    "sourceSection": "Tiruayodhi (Ayodhya)",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  }
+]

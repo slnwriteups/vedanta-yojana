@@ -28,6 +28,13 @@
       "sourceOriginalName": "108-67.webp",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukakkarai-tirukatkarai-book-2",
+      "sourceAssetUuid": "2e0c73f3-b8c3-4b2f-a16f-ce8c61658924",
+      "sourceOriginalName": "108-divyadesam-book-page196-img151.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [
@@ -56,5 +63,6 @@
       "sourceLabel": "English Pasuram"
     }
   ],
-  "relatedContent": []
+  "relatedContent": [],
+  "azhwarPasuram": "NamAzhwar: 10 Pashurams"
 }

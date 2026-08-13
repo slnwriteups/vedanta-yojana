@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-15.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirucherai-book-2",
+      "sourceAssetUuid": "05fc4669-8510-40fd-873a-0adeff7bfa15",
+      "sourceOriginalName": "108-divyadesam-book-page53-img32.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

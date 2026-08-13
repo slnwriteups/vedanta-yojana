@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-17.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukannapuram-book-2",
+      "sourceAssetUuid": "95827d24-86b9-44c3-8805-513ba8049412",
+      "sourceOriginalName": "108-divyadesam-book-page59-img36.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

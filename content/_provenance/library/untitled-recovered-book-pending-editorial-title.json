@@ -1,0 +1,111 @@
+{
+  "field": "title, author",
+  "value": "title: \"A Brief Insight to Visishtadvaita Philosophy\", author: \"Vishnu Sreenivas\"",
+  "sourceFile": "A Brief Insight to Visishtadvaita Philosophy.pdf",
+  "importedAt": "2026-08-13",
+  "note": "This book is a composite of multiple original sources. \"A Brief Insight to Visishtadvaita Philosophy.pdf\" was confirmed (by direct text comparison, not title alone) as the source for 17 of this book's chapters -- listed below -- but NOT for the other 38 chapters (a separate Ramanujar/Swami Desikan biographical narrative and other material), which remain under the same book/title pending identification of their own source.",
+  "chapterCorrespondence": [
+    {
+      "chapterSlug": "tattvas",
+      "sourcePage": 8,
+      "sourceSection": "Tattvas",
+      "textOverlapRatio": 0.986
+    },
+    {
+      "chapterSlug": "aathma",
+      "sourcePage": 9,
+      "sourceSection": "Aathma",
+      "textOverlapRatio": 1
+    },
+    {
+      "chapterSlug": "eternal-bliss-in-sri-vaikuntham",
+      "sourcePage": 10,
+      "sourceSection": "Eternal bliss in Sri Vaikuntham",
+      "textOverlapRatio": 1
+    },
+    {
+      "chapterSlug": "the-aathma-as-mentioned-and-described-by-the-bhagavad-gita",
+      "sourcePage": 11,
+      "sourceSection": "The aathma, as mentioned and described by the Bhagavad Gita",
+      "textOverlapRatio": 0.988
+    },
+    {
+      "chapterSlug": "artha-panchakam",
+      "sourcePage": 14,
+      "sourceSection": "Artha Panchakam",
+      "textOverlapRatio": 0.989
+    },
+    {
+      "chapterSlug": "the-vital-crucial-role-of-an-acharya",
+      "sourcePage": 26,
+      "sourceSection": "The vital, crucial role of an Acharya",
+      "textOverlapRatio": 1
+    },
+    {
+      "chapterSlug": "sriman-narayana-is-the-first-acharya",
+      "sourcePage": 27,
+      "sourceSection": "Sriman Narayana is the first Acharya",
+      "textOverlapRatio": 1
+    },
+    {
+      "chapterSlug": "the-need-for-an-acharya-in-one-s-spiritual-life",
+      "sourcePage": 29,
+      "sourceSection": "The need for an Acharya in one’s spiritual life",
+      "textOverlapRatio": 0.988
+    },
+    {
+      "chapterSlug": "the-duties-of-an-acharya",
+      "sourcePage": 30,
+      "sourceSection": "The duties of an Acharya",
+      "textOverlapRatio": 0.972
+    },
+    {
+      "chapterSlug": "performance-of-panchasamskaram",
+      "sourcePage": 31,
+      "sourceSection": "Performance of Panchasamskaram",
+      "textOverlapRatio": 1
+    },
+    {
+      "chapterSlug": "guru-parampara",
+      "sourcePage": 33,
+      "sourceSection": "Guru Parampara",
+      "textOverlapRatio": 0.8
+    },
+    {
+      "chapterSlug": "varaha-charama-shlokam",
+      "sourcePage": 86,
+      "sourceSection": "Charama Shlokas",
+      "textOverlapRatio": 0.979
+    },
+    {
+      "chapterSlug": "charama-shlokams",
+      "sourcePage": 86,
+      "sourceSection": "Charama Shlokas",
+      "textOverlapRatio": 0.92
+    },
+    {
+      "chapterSlug": "rama-charama-shlokam",
+      "sourcePage": 86,
+      "sourceSection": "Charama Shlokas",
+      "textOverlapRatio": 1
+    },
+    {
+      "chapterSlug": "krishna-charama-shlokam",
+      "sourcePage": 86,
+      "sourceSection": "Charama Shlokas",
+      "textOverlapRatio": 0.988
+    },
+    {
+      "chapterSlug": "stages-of-bhakti-yoga",
+      "sourcePage": 91,
+      "sourceSection": "Stages of Bhakti Yoga",
+      "textOverlapRatio": 1
+    },
+    {
+      "chapterSlug": "conclusion",
+      "sourcePage": 92,
+      "sourceSection": "Conclusion",
+      "textOverlapRatio": 0.988
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "field": "templeInformation.moolavar",
+    "value": "Parthasarathy Perumal",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 211,
+    "sourceSection": "73) Tiruvaaranvilai (Aranmula)",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "templeInformation.thayaar",
+    "value": "Padmasini Thayaar",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 211,
+    "sourceSection": "73) Tiruvaaranvilai (Aranmula)",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "templeInformation.vimanam",
+    "value": "Vamana Vimanam",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 211,
+    "sourceSection": "73) Tiruvaaranvilai (Aranmula)",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "templeInformation.theertham",
+    "value": "Pampa Theertham",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 211,
+    "sourceSection": "73) Tiruvaaranvilai (Aranmula)",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "templeInformation.travelNote",
+    "value": "This kshetram is located on the banks of the River Pampa, 9 km from Chengannur\n\nnear Kottayam in Kerala.",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 211,
+    "sourceSection": "73) Tiruvaaranvilai (Aranmula)",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "azhwarPasuram",
+    "value": "NamAzhwar: 1 Pashuram\n\n*** This is one of the Pancha-Pandava Kshethrams. This temple is said to have been\n\nestablished by Arjuna.",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 211,
+    "sourceSection": "73) Tiruvaaranvilai (Aranmula)",
+    "importedAt": "2026-08-13"
+  },
+  {
+    "field": "images",
+    "value": "tiruvaaranvilai-aranmula-book-2",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 211,
+    "sourceSection": "73) Tiruvaaranvilai (Aranmula)",
+    "importedAt": "2026-08-13",
+    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
+  }
+]

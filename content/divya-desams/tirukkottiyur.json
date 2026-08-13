@@ -50,6 +50,20 @@
       "sourceOriginalName": "108-93V.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkottiyur-book-5",
+      "sourceAssetUuid": "eb8f8eb7-08c2-4c00-8ee3-0b20dd016078",
+      "sourceOriginalName": "108-divyadesam-book-page285-img218.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukkottiyur-book-6",
+      "sourceAssetUuid": "69a762ff-8eef-42c6-8ca7-b1fb33cdf275",
+      "sourceOriginalName": "108-divyadesam-book-page287-img220.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

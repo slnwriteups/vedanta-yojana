@@ -16,12 +16,24 @@
   },
   "sthalaPuranam": "Legend has it that all the devas, along with Vasishta Muni, assembled here at this kshethram after the Samudra-Manthanam and worshipped the Lord here.",
   "azhwarPasuram": "Tirumangai Azhwar: 10 Pasurams",
-  "shrines": [],
+  "shrines": [
+    {
+      "label": null,
+      "mapsLink": "https://www.google.com/maps/place/Divya+Desam+35+Deiva+Nayaka+Perumal+Temple/@11.196831,79.775537,16z/data=!4m5!3m4!1s0x0:0xc6825c3dea416f9c!8m2!3d11.1968161!4d79.7755367?hl=en"
+    }
+  ],
   "images": [
     {
       "assetId": "tirudevanaar-togai-1",
       "sourceAssetUuid": "69a7d7f8-c6c7-4dac-8a13-3c9ac77d9af4",
       "sourceOriginalName": "108-35.png",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirudevanaar-togai-book-2",
+      "sourceAssetUuid": "9024308c-6322-44f1-afee-a21411c8be78",
+      "sourceOriginalName": "108-divyadesam-book-page110-img78.png (synthetic name -- the source PDF has no embedded per-image filename)",
       "alt": null,
       "altStatus": "needs-review"
     }

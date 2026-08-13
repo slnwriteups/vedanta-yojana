@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-9.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "kapisthalam-book-2",
+      "sourceAssetUuid": "ec8494fd-a656-4fb0-8824-f4382166bcb3",
+      "sourceOriginalName": "108-divyadesam-book-page36-img19.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

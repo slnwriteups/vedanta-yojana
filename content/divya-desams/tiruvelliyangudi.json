@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-22.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvelliyangudi-book-2",
+      "sourceAssetUuid": "654a53ae-ed68-41da-8332-dc183ac76863",
+      "sourceOriginalName": "108-divyadesam-book-page73-img48.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

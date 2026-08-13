@@ -71,9 +71,20 @@ test("exactly 1 held-back unresolved record exists (Page150)", () => {
   assert.equal(unresolvedFiles.length, 1);
 });
 
-test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README) = 166", () => {
+test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+101(_provenance/divya-desams, Phase 6E)+1(_provenance/library, Phase 6E) = 268", () => {
+  // Phase 6E added content/_provenance/ -- one small JSON file per Divya
+  // Desam record that received a category-B text supplement and/or a
+  // book-sourced image/shrine from "108 Divyadesam 2nd Edition.pdf" (101
+  // of 107 records), plus one file recording that "A Brief Insight to
+  // Visishtadvaita Philosophy.pdf" is the confirmed source for 17 of the
+  // existing Library book's 55 chapters (see that phase's report for
+  // both). Not loaded by content-lib/loader/ (mirrors the
+  // content/_unresolved/ precedent: a sidecar directory under content/
+  // the loader never looks inside), so it is deliberately still counted
+  // here rather than excluded -- this test's whole purpose is to catch
+  // ANY unexpected file under content/, intentional additions included.
   const total = countFilesRecursive(path.join(REPO_ROOT, "content"));
-  assert.equal(total, 166);
+  assert.equal(total, 268);
 });
 
 function countFilesRecursive(dir: string): number {
@@ -100,13 +111,19 @@ test("Page5 remains intact: content/divya-desams/sri-rangam.json is present and 
 // Page93 treatment.
 // ---------------------------------------------------------------------------
 
-test("Page93 (Tirukoodal) migrated as a normal DivyaDesam: draft, needsReview, low confidence, no fabricated Maps link", () => {
+test("Page93 (Tirukoodal) migrated as a normal DivyaDesam: draft, needsReview, low confidence, no fabricated Maps link at SAP-migration time", () => {
   const record = ddOutputRecords.find((r) => r.migration.sourcePageId === "page.Page93");
   assert.ok(record, "Page93 missing from migrated Divya Desams");
   assert.equal(record.status, "draft");
   assert.equal(record.migration.needsReview, true);
   assert.equal(record.migration.extractionConfidence, "low");
-  assert.deepEqual(record.shrines, []);
+  // The SAP migration itself produced no shrines (no Maps link existed in
+  // that source) -- Phase 6E later added exactly 1 real, disclosed shrine
+  // decoded from "108 Divyadesam 2nd Edition.pdf"'s own QR code (see
+  // content/_provenance/divya-desams/tirukoodal.json), still not
+  // fabricated, just sourced from a different, later book.
+  assert.equal(record.shrines.length, 1);
+  assert.equal(record.shrines[0].mapsLink, PHASE_6E_SHRINE_LINKS.tirukoodal);
   assert.ok(record.templeInformation.moolavar, "expected Page93's real temple-shaped content to be preserved");
   assert.ok(record.sthalaPuranam, "expected Page93's Sthala Puranam to be preserved");
 });
@@ -142,13 +159,30 @@ test("Page150 (Hayagriva Stotram) is held back, not classified as any normal con
 // ---------------------------------------------------------------------------
 // Multi-shrine ambiguous-label fallback (Page24/38/40) -- discovered
 // during this phase's real run.
+//
+// Phase 6E supplemented Page40 (tiruttetriambalam-tirumanikoodam)'s
+// templeInformation from "108 Divyadesam 2nd Edition.pdf" (see
+// content/_provenance/divya-desams/tiruttetriambalam-tirumanikoodam.json):
+// unlike the original SAP source, that book presents shrines 36/37
+// together with one consistent set of fields rather than ambiguous
+// per-shrine labels, so this was a safe category-B fill, not a change to
+// the SAP-migration behavior itself. Page24 and Page38 remain genuinely
+// ambiguous (their own book entries also failed to parse unambiguously --
+// see source-material/reports/) and are still asserted empty below.
 // ---------------------------------------------------------------------------
 
-test("the 3 multi-shrine records with ambiguous per-shrine labels (Page24, Page38, Page40) migrated with empty templeInformation, needsReview true, and full shrines/images/resources preserved", () => {
+test("the 3 multi-shrine records with ambiguous per-shrine labels (Page24, Page38, Page40) migrated with needsReview true and full shrines/images/resources preserved; Page24/Page38 still have empty templeInformation, Page40 was later supplemented by Phase 6E", () => {
   for (const pageId of ["page.Page24", "page.Page38", "page.Page40"]) {
     const record = ddOutputRecords.find((r) => r.migration.sourcePageId === pageId);
     assert.ok(record, `${pageId} missing from migrated Divya Desams`);
-    assert.deepEqual(record.templeInformation, {});
+    if (pageId === "page.Page40") {
+      assert.ok(
+        record.templeInformation.moolavar,
+        "Page40 (tiruttetriambalam-tirumanikoodam) was supplemented by Phase 6E and should have a moolavar value"
+      );
+    } else {
+      assert.deepEqual(record.templeInformation, {});
+    }
     assert.equal(record.migration.needsReview, true);
     assert.ok(record.shrines.length > 0, `${pageId} should still have its shrines preserved`);
     assert.ok(record.images.length > 0, `${pageId} should still have its images preserved`);
@@ -215,13 +249,19 @@ test("E: every source article record maps to exactly one destination (55 chapter
 // F. Images: every destination image reference resolves to a real source asset.
 // ---------------------------------------------------------------------------
 
-test("F: every image reference across all migrated records resolves to a real image-map.json asset", () => {
+test("F: every SAP-migrated image reference resolves to a real image-map.json asset", () => {
+  // Phase 6E appended images sourced from "108 Divyadesam 2nd Edition.pdf"
+  // (assetId containing "-book-") to 101 records -- new source assets
+  // that were never part of the original SAP export and therefore
+  // correctly have no image-map.json entry. Excluded from this check,
+  // which is specifically about the SAP migration's own image resolution.
   const imageMap = readJson(IMAGE_MAP_FILE);
   const knownUuids = new Set(imageMap.images.map((i: any) => i.assetUuid));
   const allRecords = [...ddOutputRecords, ...chapterRecords, ...knowledgeRecords];
   let checked = 0;
   for (const record of allRecords) {
     for (const image of record.images ?? []) {
+      if (image.assetId.includes("-book-")) continue;
       assert.ok(knownUuids.has(image.sourceAssetUuid), `unresolvable image UUID ${image.sourceAssetUuid} in ${record.slug}`);
       assert.equal(image.altStatus, "needs-review");
       assert.equal(image.alt, null);
@@ -254,13 +294,29 @@ test("shared-image preservation: the 4 previously-identified multi-page images s
 // G. External links: every migrated URL matches the source URL verbatim.
 // ---------------------------------------------------------------------------
 
-test("G: every shrine mapsLink and resource url in every Divya Desam matches its source record's externalLinks verbatim", () => {
+// Phase 6E decoded this book's own per-page Google Maps QR code and added
+// exactly one shrine each to the 3 records that had none from the SAP
+// migration (see content/_provenance/divya-desams/<slug>.json for each).
+// These mapsLink values are real, but sourced from "108 Divyadesam 2nd
+// Edition.pdf", not from the original content-extraction/ snapshot this
+// test otherwise verifies every URL against verbatim.
+const PHASE_6E_SHRINE_LINKS: Record<string, string> = {
+  tirukoodal:
+    "https://www.google.com/maps/place/Shri+Koodal+Azhagar+Temple/@9.914401,78.114107,16z/data=!4m5!3m4!1s0x0:0xeaf7f217a7990866!8m2!3d9.914401!4d78.1141066?hl=en",
+  "tirudevanaar-togai":
+    "https://www.google.com/maps/place/Divya+Desam+35+Deiva+Nayaka+Perumal+Temple/@11.196831,79.775537,16z/data=!4m5!3m4!1s0x0:0xc6825c3dea416f9c!8m2!3d11.1968161!4d79.7755367?hl=en",
+  tirumaaliruncholai:
+    "https://www.google.com/maps/place/Arulmigu+Kallalagar+Temple,+Allagar+Temple/@10.074847,78.213097,16z/data=!4m5!3m4!1s0x0:0x8dd0f3238544b80e!8m2!3d10.0748469!4d78.2130969?hl=en",
+};
+
+test("G: every SAP-migrated shrine mapsLink and resource url in every Divya Desam matches its source record's externalLinks verbatim", () => {
   let checked = 0;
   for (const record of ddOutputRecords) {
     const sourcePath = path.join(SOURCE_DD_DIR, `${record.migration.sourcePageId}.json`);
     const source = readJson(sourcePath);
     const sourceUrls = new Set(source.externalLinks.map((l: any) => l.url));
     for (const shrine of record.shrines) {
+      if (PHASE_6E_SHRINE_LINKS[record.slug] === shrine.mapsLink) continue;
       assert.ok(sourceUrls.has(shrine.mapsLink), `${record.slug}: unexpected shrine URL ${shrine.mapsLink}`);
       checked++;
     }

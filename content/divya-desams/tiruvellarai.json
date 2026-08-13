@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-4.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvellarai-book-2",
+      "sourceAssetUuid": "6ec913dc-e035-4ef7-822d-4d3e28d15352",
+      "sourceOriginalName": "108-divyadesam-book-page23-img9.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

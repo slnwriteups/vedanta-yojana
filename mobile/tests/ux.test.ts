@@ -109,6 +109,8 @@ test("Images: Sri Rangam's sourceAssetUuid still matches a real file under publi
   assert.ok(withImage, "expected sri-rangam to have at least one image with a matching file on disk");
 });
 
-test("Images: public/images/ still has 217 real files for the manifest generator to enumerate", () => {
-  assert.equal(fs.readdirSync(IMAGES_ROOT).length, 217);
+test("Images: public/images/ still has 391 real files for the manifest generator to enumerate", () => {
+  // 217 from the original migration + 174 added by Phase 6E from "108
+  // Divyadesam 2nd Edition.pdf" (see content/_provenance/divya-desams/).
+  assert.equal(fs.readdirSync(IMAGES_ROOT).length, 391);
 });

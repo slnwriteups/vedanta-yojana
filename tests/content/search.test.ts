@@ -41,7 +41,10 @@ test("1: all 107 Divya Desams are searchable", () => {
 test("2: the Book is searchable", () => {
   const books = corpus.filter((d) => d.type === "book");
   assert.equal(books.length, 1);
-  assert.equal(books[0].title, "Untitled Recovered Book (pending editorial title)");
+  // Phase 6E confirmed "A Brief Insight to Visishtadvaita Philosophy.pdf"
+  // as the source for 17 of this book's 55 chapters and supplemented the
+  // book's title/author accordingly (see content/_provenance/library/).
+  assert.equal(books[0].title, "A Brief Insight to Visishtadvaita Philosophy");
 });
 
 test("3: all 55 chapters are searchable", () => {

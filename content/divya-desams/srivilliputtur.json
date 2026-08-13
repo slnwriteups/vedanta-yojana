@@ -50,6 +50,34 @@
       "sourceOriginalName": "Tiruvaadipooram.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "srivilliputtur-book-5",
+      "sourceAssetUuid": "2a12ff52-8829-4f3b-82e4-dea24426a5ea",
+      "sourceOriginalName": "108-divyadesam-book-page261-img201.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "srivilliputtur-book-6",
+      "sourceAssetUuid": "54c574ea-11e8-498a-862d-1dc79207febd",
+      "sourceOriginalName": "108-divyadesam-book-page266-img203.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "srivilliputtur-book-7",
+      "sourceAssetUuid": "a988ea46-d0d2-452d-b721-70c13c05b5eb",
+      "sourceOriginalName": "108-divyadesam-book-page267-img204.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "srivilliputtur-book-8",
+      "sourceAssetUuid": "5b5d51a3-1861-4fc0-aaac-3bc49aa0609b",
+      "sourceOriginalName": "108-divyadesam-book-page268-img205.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

@@ -35,6 +35,20 @@
       "sourceOriginalName": "108-3T.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukarambanur-uttamarkovil-book-3",
+      "sourceAssetUuid": "3fa976f9-c4b9-4565-9d4b-0d5f5dea4785",
+      "sourceOriginalName": "108-divyadesam-book-page20-img6.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tirukarambanur-uttamarkovil-book-4",
+      "sourceAssetUuid": "8a531ab6-4d35-433e-b309-9ef4cc574f37",
+      "sourceOriginalName": "108-divyadesam-book-page20-img7.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

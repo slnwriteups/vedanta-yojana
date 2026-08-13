@@ -30,7 +30,7 @@ test("27: a Divya Desam result links to /divya-desams/[slug]", () => {
 });
 
 test("28: a Book result links to /library/[book]", () => {
-  const results = search("Untitled Recovered Book");
+  const results = search("Visishtadvaita Philosophy");
   const result = results.find((r) => r.type === "book");
   assert.ok(result);
   assert.equal(result?.href, "/library/untitled-recovered-book-pending-editorial-title");

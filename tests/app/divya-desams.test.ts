@@ -98,13 +98,18 @@ test("D: Sri Rangam has every field the detail page renders (temple info, Sthala
 // E. Tirukoodal (Page93) -- draft/review, no fabricated Maps link.
 // ---------------------------------------------------------------------------
 
-test("E: Tirukoodal is draft + needsReview and has no shrines (so no fabricated Maps link can render)", () => {
+test("E: Tirukoodal is draft + needsReview; its one shrine is a real, disclosed Phase 6E addition, not a fabricated Maps link", () => {
   const record = loadDivyaDesam("tirukoodal");
   assert.ok(record, "tirukoodal not found via loadDivyaDesam()");
   assert.equal(record?.migration.sourcePageId, "page.Page93");
   assert.equal(record?.status, "draft");
   assert.equal(record?.migration.needsReview, true);
-  assert.deepEqual(record?.shrines, []);
+  // The SAP migration itself produced no shrines; Phase 6E later decoded
+  // this book's own per-page QR code into exactly 1 real Maps link (see
+  // content/_provenance/divya-desams/tirukoodal.json) -- still never
+  // fabricated, just sourced from a different, later book.
+  assert.equal(record?.shrines.length, 1);
+  assert.ok(record?.shrines[0].mapsLink.startsWith("https://www.google.com/maps/"));
 });
 
 // ---------------------------------------------------------------------------

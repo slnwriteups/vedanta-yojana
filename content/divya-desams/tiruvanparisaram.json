@@ -29,6 +29,13 @@
       "sourceOriginalName": "108-77.jpg",
       "alt": null,
       "altStatus": "needs-review"
+    },
+    {
+      "assetId": "tiruvanparisaram-book-2",
+      "sourceAssetUuid": "06aec98d-1f53-4788-9823-0554d2b41aa0",
+      "sourceOriginalName": "108-divyadesam-book-page223-img171.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [
