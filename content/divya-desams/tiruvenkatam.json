@@ -39,42 +39,24 @@
       "sourceAssetUuid": "1a0065ef-a534-433b-ade4-776d4b4f6062",
       "sourceOriginalName": "Swamy Pushkarani.jpg",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tiruvenkatam-3",
       "sourceAssetUuid": "d34eb2e5-a51c-445d-91ab-e703a52f43da",
       "sourceOriginalName": "Varaha Swamy.png",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tiruvenkatam-4",
       "sourceAssetUuid": "75d59148-aa26-4506-8f0a-0373f53d8de6",
       "sourceOriginalName": "Ananda Nilaya Vimanam.jpg",
       "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvenkatam-book-5",
-      "sourceAssetUuid": "05420f8e-4ed6-4a9b-a453-90565b4339ef",
-      "sourceOriginalName": "108-divyadesam-book-page341-img289.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvenkatam-book-6",
-      "sourceAssetUuid": "83a5f283-e425-421d-973c-a1ac5513a8f9",
-      "sourceOriginalName": "108-divyadesam-book-page342-img290.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvenkatam-book-7",
-      "sourceAssetUuid": "d269b229-8b08-4b1b-b8a8-4c7544845202",
-      "sourceOriginalName": "108-divyadesam-book-page350-img291.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

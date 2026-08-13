@@ -35,21 +35,8 @@
       "sourceAssetUuid": "86593853-0a97-434c-8992-4105a2b1fa6f",
       "sourceOriginalName": "108-72M.jpeg",
       "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirupuliyur-book-3",
-      "sourceAssetUuid": "375904ba-5661-42c7-9e4b-75f1f6029c6d",
-      "sourceOriginalName": "108-divyadesam-book-page209-img161.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirupuliyur-book-4",
-      "sourceAssetUuid": "c339fa7f-888b-4854-98aa-63ea4bc1afab",
-      "sourceOriginalName": "108-divyadesam-book-page210-img162.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

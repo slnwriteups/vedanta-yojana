@@ -36,20 +36,6 @@
       "sourceOriginalName": "108-99T.jpeg",
       "alt": null,
       "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirukkandam-devaprayag-book-3",
-      "sourceAssetUuid": "daff76cd-4d9a-463c-9e2d-6a2c423f411e",
-      "sourceOriginalName": "108-divyadesam-book-page303-img241.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirukkandam-devaprayag-book-4",
-      "sourceAssetUuid": "5311329c-fced-4a39-a534-8feab4e3727a",
-      "sourceOriginalName": "108-divyadesam-book-page304-img242.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
     }
   ],
   "resources": [

@@ -23,7 +23,13 @@ import { resolveImageHref } from "@/lib/image-file";
  * find these images. This is a presentation compromise, not an editorial
  * judgment that the images are actually decorative.
  */
-export function RecordImages({ images }: { images: ImageEntry[] }) {
+/**
+ * `idSuffix` disambiguates the section id when a page renders this
+ * component more than once (Phase 6E-C follow-up: a record's images may
+ * now split into a top group and an after-Sthala-Puranam group) -- two
+ * elements sharing one id is invalid HTML and breaks aria-labelledby.
+ */
+export function RecordImages({ images, idSuffix = "" }: { images: ImageEntry[]; idSuffix?: string }) {
   // An image whose UUID has no matching file is dropped rather than
   // rendered with a src that is certain to 404. Resolution happens here,
   // during the static pre-render, so a missing asset is visible at build
@@ -35,9 +41,11 @@ export function RecordImages({ images }: { images: ImageEntry[] }) {
 
   if (resolved.length === 0) return null;
 
+  const headingId = `images-heading${idSuffix}`;
+
   return (
-    <section aria-labelledby="images-heading" className="space-y-3">
-      <h2 id="images-heading" className="section-heading">
+    <section aria-labelledby={headingId} className="space-y-3">
+      <h2 id={headingId} className="section-heading">
         Images
       </h2>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">

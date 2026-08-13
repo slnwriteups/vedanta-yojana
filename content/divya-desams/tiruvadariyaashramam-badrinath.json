@@ -42,28 +42,8 @@
       "sourceAssetUuid": "2cd693df-0043-45fa-82f8-0a726905b841",
       "sourceOriginalName": "BadriTemple.jpg",
       "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvadariyaashramam-badrinath-book-4",
-      "sourceAssetUuid": "544571c9-6dac-4e0f-8dbc-f1e3784f14d2",
-      "sourceOriginalName": "108-divyadesam-book-page305-img243.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvadariyaashramam-badrinath-book-5",
-      "sourceAssetUuid": "c28c9f4c-3b4c-4789-9307-e004a741cc69",
-      "sourceOriginalName": "108-divyadesam-book-page308-img245.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvadariyaashramam-badrinath-book-6",
-      "sourceAssetUuid": "34203283-a97f-4d30-be24-3aaba3f2d6bb",
-      "sourceOriginalName": "108-divyadesam-book-page308-img246.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

@@ -31,18 +31,12 @@
       "altStatus": "needs-review"
     },
     {
-      "assetId": "tiruputkuzhi-book-2",
-      "sourceAssetUuid": "d3a7c666-56be-48e5-b114-b41205fc8074",
-      "sourceOriginalName": "108-divyadesam-book-page169-img129.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
       "assetId": "tiruputkuzhi-book-3",
       "sourceAssetUuid": "d615629b-f5dc-4acf-8b19-3c3f534dfe82",
       "sourceOriginalName": "108-divyadesam-book-page172-img131.png (synthetic name -- the source PDF has no embedded per-image filename)",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

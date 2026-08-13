@@ -31,18 +31,12 @@
       "altStatus": "needs-review"
     },
     {
-      "assetId": "tiruppulingudi-book-2",
-      "sourceAssetUuid": "c61e94b3-50bd-433d-a827-50320b4c9a59",
-      "sourceOriginalName": "108-divyadesam-book-page242-img186.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
       "assetId": "tiruppulingudi-book-3",
       "sourceAssetUuid": "f7a27ea6-fc83-4bf3-a2b5-8e08164ef248",
       "sourceOriginalName": "108-divyadesam-book-page245-img188.png (synthetic name -- the source PDF has no embedded per-image filename)",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

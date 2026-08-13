@@ -176,10 +176,14 @@ test("J: azhwarPasuram equals the source text after its label, independently ext
 
 // Phase 6E appended 2 additional images sourced from "108 Divyadesam 2nd
 // Edition.pdf" (assetId "sri-rangam-book-N") on top of the original 2
-// SAP-migrated images (assetId "sri-rangam-N"). These are a disclosed,
-// intentional addition -- the K/L/image-map.json tests below are
-// specifically about the ORIGINAL SAP migration's own behavior, so they
-// scope to the original images only.
+// SAP-migrated images (assetId "sri-rangam-N"); a later review found both
+// were near-duplicates of the originals and removed them (see
+// source-material/reports/phase-6E-image-fixes-report.md), so Sri
+// Rangam's images[] is currently just the 2 originals again. The filter
+// below is kept (rather than using output.images directly) so the K/L/
+// image-map.json tests below stay explicitly scoped to "the original SAP
+// migration's own behavior" and would still pass unmodified if a future
+// book-sourced addition survives review.
 const originalSapImages = output.images.filter((i: any) => !i.assetId.includes("-book-"));
 
 test("K & L: image references are complete and every sourceAssetUuid matches Page5's actual imageAssetRefs", () => {
@@ -279,7 +283,7 @@ test("R: the generated file independently passes DivyaDesamSchema", () => {
 // already on disk).
 // ---------------------------------------------------------------------------
 
-test("S: re-running the adapter + transformer against the same source produces an identical result (except Phase 6E's later, disclosed supplementary images)", () => {
+test("S: re-running the adapter + transformer against the same source produces an identical result", () => {
   const imageMap = readJson(IMAGE_MAP_FILE);
   const externalLinksData = readJson(EXTERNAL_LINKS_FILE);
   const page5Links = externalLinksData.links.filter((l: any) => l.pageId === "page.Page5");
@@ -289,22 +293,14 @@ test("S: re-running the adapter + transformer against the same source produces a
   const recomputed = transformDivyaDesam(source, { imageRegistry });
 
   // Phase 6E appended 2 additional images sourced from "108 Divyadesam
-  // 2nd Edition.pdf" (see content/_provenance/divya-desams/sri-rangam.json)
-  // on top of the original 2 SAP-migrated images -- a disclosed,
-  // intentional addition, not migration drift. This test's job is
-  // confirming the SAP migration transform itself is still pure/
-  // deterministic, so it compares against only the original leading
-  // images (by count) and everything else field-for-field, then
-  // separately confirms the extra images are exactly the expected
-  // Phase 6E additions rather than silently ignoring them.
-  const { images: outputImages, ...outputRest } = output;
-  const { images: recomputedImages, ...recomputedRest } = recomputed;
-  assert.deepEqual(recomputedRest, outputRest);
-  assert.deepEqual(outputImages.slice(0, recomputedImages.length), recomputedImages);
-
-  const extraImages = outputImages.slice(recomputedImages.length);
-  assert.equal(extraImages.length, 2, "expected exactly the 2 Phase 6E book-sourced images beyond the original SAP migration output");
-  for (const img of extraImages) {
-    assert.match(img.assetId, /^sri-rangam-book-\d+$/);
-  }
+  // 2nd Edition.pdf" on top of the original 2 SAP-migrated images -- a
+  // disclosed, intentional addition, not migration drift. A later review
+  // (see source-material/reports/phase-6E-image-fixes-report.md) found
+  // both of those 2 additions were near-duplicates of the original 2
+  // images (same photograph, re-scanned) and removed them, so Sri
+  // Rangam's images[] is currently back to exactly the 2 original
+  // SAP-migrated images -- this test's job is confirming the SAP
+  // migration transform itself is still pure/deterministic, which now
+  // holds as a plain field-for-field comparison including images.
+  assert.deepEqual(recomputed, output);
 });

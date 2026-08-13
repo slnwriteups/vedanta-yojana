@@ -35,21 +35,8 @@
       "sourceAssetUuid": "3f84c8db-1702-4814-88a9-8e9cceedcd59",
       "sourceOriginalName": "108-14G.jpg",
       "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "nachiyarkoil-book-3",
-      "sourceAssetUuid": "63f44caa-c49f-421f-98f0-31da18e11e70",
-      "sourceOriginalName": "108-divyadesam-book-page50-img29.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "nachiyarkoil-book-4",
-      "sourceAssetUuid": "abec3a12-6c01-46ef-a548-ad9fa683769c",
-      "sourceOriginalName": "108-divyadesam-book-page50-img30.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

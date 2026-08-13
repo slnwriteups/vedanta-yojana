@@ -35,49 +35,32 @@
       "sourceAssetUuid": "f4d98aaa-ad7b-4987-b9f6-5c450ca94928",
       "sourceOriginalName": "108-101T.jpg",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tiruchalagramam-mukthinath-3",
       "sourceAssetUuid": "8497549f-2431-4a27-b201-836ffb2de8b7",
       "sourceOriginalName": "108-101D.jpg",
       "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruchalagramam-mukthinath-book-4",
-      "sourceAssetUuid": "c4c7a3ab-94f8-4a63-8281-0c18e8700d9d",
-      "sourceOriginalName": "108-divyadesam-book-page309-img247.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruchalagramam-mukthinath-book-5",
-      "sourceAssetUuid": "af7e0810-7a5e-4037-a84f-4695bed0baf6",
-      "sourceOriginalName": "108-divyadesam-book-page311-img249.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruchalagramam-mukthinath-book-6",
-      "sourceAssetUuid": "ba1a68be-312b-4600-9493-4737db3bfb49",
-      "sourceOriginalName": "108-divyadesam-book-page311-img250.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tiruchalagramam-mukthinath-book-7",
       "sourceAssetUuid": "d357ccc5-42c0-4fe5-815f-7b949d8095dd",
       "sourceOriginalName": "108-divyadesam-book-page313-img251.png (synthetic name -- the source PDF has no embedded per-image filename)",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tiruchalagramam-mukthinath-book-8",
       "sourceAssetUuid": "5e3ec298-135e-4da9-ac73-89d177ff949d",
       "sourceOriginalName": "108-divyadesam-book-page313-img252.png (synthetic name -- the source PDF has no embedded per-image filename)",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

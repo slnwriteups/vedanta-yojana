@@ -55,28 +55,16 @@
       "sourceAssetUuid": "e0b2a675-0e9c-4127-b845-a6bd5d81ab3e",
       "sourceOriginalName": "108-96H1.jpeg",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tiruayodhi-ayodhya-6",
       "sourceAssetUuid": "4c6ecbb4-78fa-4d1d-9ca7-9bc69917f700",
       "sourceOriginalName": "108-96H.jpeg",
       "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruayodhi-ayodhya-book-7",
-      "sourceAssetUuid": "dc823304-44de-44d3-8529-1c30eba0d249",
-      "sourceOriginalName": "108-divyadesam-book-page295-img233.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruayodhi-ayodhya-book-8",
-      "sourceAssetUuid": "f79f5fd6-ce0a-412b-8520-126d6cda91e2",
-      "sourceOriginalName": "108-divyadesam-book-page295-img234.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

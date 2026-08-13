@@ -31,25 +31,20 @@
       "altStatus": "needs-review"
     },
     {
-      "assetId": "tirukkovilur-book-2",
-      "sourceAssetUuid": "dfeb2e02-695b-4a02-a8ad-02de516c117d",
-      "sourceOriginalName": "108-divyadesam-book-page128-img95.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
       "assetId": "tirukkovilur-book-3",
       "sourceAssetUuid": "bb58852e-5b7c-4bca-86b5-333717d351a9",
       "sourceOriginalName": "108-divyadesam-book-page131-img97.png (synthetic name -- the source PDF has no embedded per-image filename)",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tirukkovilur-book-4",
       "sourceAssetUuid": "a0f76606-c182-490f-a664-44bc85ef1022",
       "sourceOriginalName": "108-divyadesam-book-page131-img98.png (synthetic name -- the source PDF has no embedded per-image filename)",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

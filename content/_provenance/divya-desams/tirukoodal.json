@@ -1,14 +1,5 @@
 [
   {
-    "field": "images",
-    "value": "tirukoodal-book-3",
-    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
-    "sourcePage": 274,
-    "sourceSection": "90) Tirukoodal",
-    "importedAt": "2026-08-13",
-    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
-  },
-  {
     "field": "shrines",
     "value": "https://www.google.com/maps/place/Shri+Koodal+Azhagar+Temple/@9.914401,78.114107,16z/data=!4m5!3m4!1s0x0:0xeaf7f217a7990866!8m2!3d9.914401!4d78.1141066?hl=en",
     "sourceFile": "108 Divyadesam 2nd Edition.pdf",

@@ -36,20 +36,6 @@
       "sourceOriginalName": "108-1T.jpeg",
       "alt": null,
       "altStatus": "needs-review"
-    },
-    {
-      "assetId": "sri-rangam-book-3",
-      "sourceAssetUuid": "ab1d952b-c19b-4ac1-9270-8feb92f4a8ad",
-      "sourceOriginalName": "108-divyadesam-book-page12-img1.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "sri-rangam-book-4",
-      "sourceAssetUuid": "529a27ff-9c04-44b8-9890-ecf6a3e1d153",
-      "sourceOriginalName": "108-divyadesam-book-page12-img2.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
     }
   ],
   "resources": [

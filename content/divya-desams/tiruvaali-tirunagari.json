@@ -50,42 +50,16 @@
       "sourceAssetUuid": "144b83a2-8ed7-4db6-9e80-fb97593e6cad",
       "sourceOriginalName": "108-34-Utsavam.jpg",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tiruvaali-tirunagari-4",
       "sourceAssetUuid": "9d31600d-1604-41d9-b443-edae6cd2cc6a",
       "sourceOriginalName": "108-34-U2.jpg",
       "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvaali-tirunagari-book-5",
-      "sourceAssetUuid": "565e887f-ab7f-4a11-b279-bb81ad1fd09d",
-      "sourceOriginalName": "108-divyadesam-book-page106-img73.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvaali-tirunagari-book-6",
-      "sourceAssetUuid": "7da29e09-e0a9-4525-bf1b-b4f48d708169",
-      "sourceOriginalName": "108-divyadesam-book-page106-img74.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvaali-tirunagari-book-7",
-      "sourceAssetUuid": "8557f7c1-5c99-47a6-be7a-e1c1160c9470",
-      "sourceOriginalName": "108-divyadesam-book-page109-img76.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvaali-tirunagari-book-8",
-      "sourceAssetUuid": "70036a6c-aea0-44b8-9feb-e17e996bdd55",
-      "sourceOriginalName": "108-divyadesam-book-page109-img77.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

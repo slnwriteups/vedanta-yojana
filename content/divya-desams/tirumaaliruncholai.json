@@ -35,35 +35,16 @@
       "sourceAssetUuid": "76973117-514b-4369-bcde-3032d0a396e5",
       "sourceOriginalName": "108-91N.jpg",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tirumaaliruncholai-3",
       "sourceAssetUuid": "6caaeb4f-2418-477b-9b00-f00025e63a63",
       "sourceOriginalName": "gangalam.jpeg",
       "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirumaaliruncholai-book-4",
-      "sourceAssetUuid": "da06e8bf-18cb-479b-b7af-28bf77b3c517",
-      "sourceOriginalName": "108-divyadesam-book-page278-img210.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirumaaliruncholai-book-5",
-      "sourceAssetUuid": "631ff912-fa84-4713-9b83-668e8bb40a91",
-      "sourceOriginalName": "108-divyadesam-book-page280-img212.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirumaaliruncholai-book-6",
-      "sourceAssetUuid": "7b1ec3a7-898b-461d-a2ca-6ab2473eeb29",
-      "sourceOriginalName": "108-divyadesam-book-page281-img213.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

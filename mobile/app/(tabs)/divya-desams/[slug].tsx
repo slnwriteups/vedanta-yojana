@@ -12,10 +12,18 @@ import { layout, spacing, typography, useTheme } from "../../../theme";
  * Phase 6C's original reading-layout order pulled the first resolvable
  * image out as a large 4:3 "hero" above Temple Information, with every
  * other image rendered much smaller in the "Images" section further
- * down. Reported as looking broken -- the first picture rendered
- * "blown up out of proportion" relative to the rest -- so this was
- * corrected to render every image uniformly (same size, same section,
- * original order) via ContentImage, with no image singled out.
+ * down. Reported as looking broken -- the first picture rendered "blown
+ * up out of proportion" relative to the rest -- so all images now render
+ * uniformly (same size) via ContentImage, with no image singled out.
+ *
+ * Post-Phase-6E-C follow-up: images were also all clustered into one
+ * block regardless of where the source actually placed them. Each
+ * image's `placement` field (content-lib/schemas/shared.ts) now splits
+ * them into a top group (the source's default position, most images)
+ * and an after-Sthala-Puranam group -- e.g. Singavelkundram/Ahobilam's
+ * nine Narasimha-shrine photos, which the source places alongside that
+ * narrative, not before it.
+ *
  * Every section stays independently optional (Phase 6B's behavior,
  * unchanged): Page93 (no images) and the multi-shrine records still
  * render as intentional pages, and Page150 is still structurally
@@ -63,6 +71,12 @@ export default function DivyaDesamDetailScreen() {
     (s) => s.name || s.templeInformation || s.sthalaPuranam || s.azhwarPasuram
   );
 
+  // Most images keep the source's own top-of-page position ("default").
+  // A minority (per record) were placed AFTER Sthala Puranam in the
+  // original source and render there instead of in one cluster.
+  const topImages = record.images.filter((img) => img.placement !== "after-sthala-puranam");
+  const afterSthalaPuranamImages = record.images.filter((img) => img.placement === "after-sthala-puranam");
+
   return (
     <ScrollView style={[styles.container, { backgroundColor: theme.colors.background }]} contentContainerStyle={styles.content}>
       <Stack.Screen options={{ title: record.displayName }} />
@@ -72,7 +86,7 @@ export default function DivyaDesamDetailScreen() {
         <Text style={[styles.title, { color: theme.colors.foreground }]}>{record.displayName}</Text>
       </View>
 
-      <ContentImage images={record.images} />
+      <ContentImage images={topImages} />
 
       {presentTempleFields.length > 0 ? (
         <Section heading="Temple Information">
@@ -90,6 +104,7 @@ export default function DivyaDesamDetailScreen() {
       ) : null}
 
       <Section heading="Sthala Puranam" text={record.sthalaPuranam} />
+      <ContentImage images={afterSthalaPuranamImages} />
       <Section heading="Azhwar Pasuram" text={record.azhwarPasuram} />
 
       {detailedShrines.length > 0 ? (

@@ -35,21 +35,8 @@
       "sourceAssetUuid": "4c75a216-695b-4fcd-b3c4-524c95567ea2",
       "sourceOriginalName": "108-103R.png",
       "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvaipadi-gokulam-book-3",
-      "sourceAssetUuid": "761ed5fe-cc77-4f25-8f0c-30a18ca544a1",
-      "sourceOriginalName": "108-divyadesam-book-page317-img255.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvaipadi-gokulam-book-4",
-      "sourceAssetUuid": "724577c2-3a5a-4989-9090-1ff95b899df0",
-      "sourceOriginalName": "108-divyadesam-book-page319-img257.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

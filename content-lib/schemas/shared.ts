@@ -105,6 +105,24 @@ export const ImageAltStatusSchema = z.enum([
 export type ImageAltStatus = z.infer<typeof ImageAltStatusSchema>;
 
 /**
+ * Where an image renders relative to a record's long-form text, when
+ * that matters. "default" renders in the record's normal top-of-page
+ * image gallery -- the original app's own layout for the large majority
+ * of images (verified per-record from content-extraction/'s frozen
+ * contentBlocks order: pictures almost always precede the Sthala Puranam
+ * text block there). "after-sthala-puranam" is set only when the source
+ * itself placed an image AFTER that text (e.g. photos illustrating a
+ * multi-shrine narrative like Singavelkundram/Ahobilam's nine Narasimha
+ * forms, or a temple's Utsavam story) -- derived mechanically from that
+ * same frozen ordering, never guessed. Named for Divya Desam's Sthala
+ * Puranam specifically (the only long-form field this currently applies
+ * to); would need a more general value if Chapters/Knowledge ever need
+ * the same treatment.
+ */
+export const ImagePlacementSchema = z.enum(["default", "after-sthala-puranam"]);
+export type ImagePlacement = z.infer<typeof ImagePlacementSchema>;
+
+/**
  * A single image reference, attachable to any content type. The same
  * asset (same assetId/sourceAssetUuid) may legitimately appear on more
  * than one content record — Phase 5A confirmed 4 such shared-asset cases
@@ -121,6 +139,16 @@ export const ImageEntrySchema = z.object({
   /** Alt text. Never fabricated — null until a human supplies real text. */
   alt: z.string().nullable(),
   altStatus: ImageAltStatusSchema.default("needs-review"),
+  /**
+   * Optional, not defaulted: unlike altStatus (every image genuinely has
+   * SOME alt-review state), most images have no need for this field at
+   * all -- only the minority the source placed after Sthala Puranam set
+   * it. `.default()` would make this REQUIRED in the inferred TS output
+   * type, breaking every existing call site (scripts/migration/images.ts
+   * among them) that constructs an ImageEntry without ever knowing about
+   * placement.
+   */
+  placement: ImagePlacementSchema.optional(),
 });
 export type ImageEntry = z.infer<typeof ImageEntrySchema>;
 

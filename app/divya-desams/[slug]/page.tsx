@@ -72,6 +72,15 @@ export default async function DivyaDesamDetailPage({
   // ambiguous shrine data) simply omit `hasMap`.
   const firstMapsLink = record.shrines[0]?.mapsLink;
 
+  // Most images keep the source's own top-of-page position ("default").
+  // A minority (per record) were placed AFTER Sthala Puranam in the
+  // original source -- e.g. photos illustrating a multi-shrine legend --
+  // and render there instead of in one undifferentiated cluster. See
+  // each ImageEntry's `placement` field (content-lib/schemas/shared.ts)
+  // for how that was determined.
+  const topImages = record.images.filter((img) => img.placement !== "after-sthala-puranam");
+  const afterSthalaPuranamImages = record.images.filter((img) => img.placement === "after-sthala-puranam");
+
   return (
     <div className="space-y-10">
       <JsonLd
@@ -93,10 +102,11 @@ export default async function DivyaDesamDetailPage({
       </div>
 
       <TempleInformation info={record.templeInformation} />
-      <RecordImages images={record.images} />
+      <RecordImages images={topImages} />
       {record.sthalaPuranam ? (
         <LongFormSection heading="Sthala Puranam" text={record.sthalaPuranam} />
       ) : null}
+      <RecordImages images={afterSthalaPuranamImages} idSuffix="-after-sthala-puranam" />
       {record.azhwarPasuram ? (
         <LongFormSection heading="Azhwar Pasuram" text={record.azhwarPasuram} />
       ) : null}

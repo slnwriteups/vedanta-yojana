@@ -35,14 +35,8 @@
       "sourceAssetUuid": "efe195a6-643a-4dc1-9150-1c5f65919980",
       "sourceOriginalName": "108-90V.jpg",
       "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirukoodal-book-3",
-      "sourceAssetUuid": "475ae427-85b1-463d-859f-0df4ae9ab925",
-      "sourceOriginalName": "108-divyadesam-book-page274-img208.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

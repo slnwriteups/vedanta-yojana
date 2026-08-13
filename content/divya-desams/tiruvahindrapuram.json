@@ -35,42 +35,24 @@
       "sourceAssetUuid": "108ad6da-9b90-467c-93bb-188bffa5473d",
       "sourceOriginalName": "108-41H.jpg",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tiruvahindrapuram-3",
       "sourceAssetUuid": "18da061a-b289-4b66-b04e-57c87545ceee",
       "sourceOriginalName": "Hayagreeva Stotram.png",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tiruvahindrapuram-4",
       "sourceAssetUuid": "6f8be94c-d417-4ae8-bb76-859bfaf8b294",
       "sourceOriginalName": "Hayagriva_Desikan.png",
       "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvahindrapuram-book-5",
-      "sourceAssetUuid": "a75ba74a-6cb2-4b5b-bff3-d7b9f9f16125",
-      "sourceOriginalName": "108-divyadesam-book-page124-img91.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvahindrapuram-book-6",
-      "sourceAssetUuid": "c9b247a0-073f-4e60-998d-b7cf8c3f27e5",
-      "sourceOriginalName": "108-divyadesam-book-page126-img93.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruvahindrapuram-book-7",
-      "sourceAssetUuid": "b2900601-5618-4fd8-ae38-9c4ec348e176",
-      "sourceOriginalName": "108-divyadesam-book-page126-img94.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

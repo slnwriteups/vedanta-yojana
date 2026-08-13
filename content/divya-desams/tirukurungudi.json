@@ -46,49 +46,24 @@
       "sourceAssetUuid": "ff6ec552-5307-4c17-93f3-cabf86aa15b4",
       "sourceOriginalName": "108-78Temp.jpg",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tirukurungudi-4",
       "sourceAssetUuid": "a8efa729-6dac-4dba-8fa4-4a12525a30c5",
       "sourceOriginalName": "108-78-KE.jpg",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tirukurungudi-5",
       "sourceAssetUuid": "109818cd-f049-4c46-9f09-f139ad682515",
       "sourceOriginalName": "108-78-MG.jpg",
       "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirukurungudi-book-6",
-      "sourceAssetUuid": "41dfe5c0-56a9-4a1e-9646-d8371223110e",
-      "sourceOriginalName": "108-divyadesam-book-page225-img173.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirukurungudi-book-7",
-      "sourceAssetUuid": "65dadcb8-1a15-4b36-850a-386a249d7720",
-      "sourceOriginalName": "108-divyadesam-book-page229-img176.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirukurungudi-book-8",
-      "sourceAssetUuid": "e757ba63-acb2-4e84-a595-cd5cd2da1144",
-      "sourceOriginalName": "108-divyadesam-book-page229-img177.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tirukurungudi-book-9",
-      "sourceAssetUuid": "659c6298-fa7b-40f6-a7ce-8c02b51c2d93",
-      "sourceOriginalName": "108-divyadesam-book-page231-img178.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

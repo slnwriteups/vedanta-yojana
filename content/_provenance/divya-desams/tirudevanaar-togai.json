@@ -1,14 +1,5 @@
 [
   {
-    "field": "images",
-    "value": "tirudevanaar-togai-book-2",
-    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
-    "sourcePage": 110,
-    "sourceSection": "35) Tirudevanaar Togai",
-    "importedAt": "2026-08-13",
-    "note": "Selected because it is not square (excludes this book's per-page QR code) and not the page-1 cover."
-  },
-  {
     "field": "shrines",
     "value": "https://www.google.com/maps/place/Divya+Desam+35+Deiva+Nayaka+Perumal+Temple/@11.196831,79.775537,16z/data=!4m5!3m4!1s0x0:0xc6825c3dea416f9c!8m2!3d11.1968161!4d79.7755367?hl=en",
     "sourceFile": "108 Divyadesam 2nd Edition.pdf",

@@ -65,28 +65,32 @@
       "sourceAssetUuid": "40eeb0a8-07fa-4f7b-8cde-8be24770b2be",
       "sourceOriginalName": "Rukmini Dwaraka.jpg",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tirudwarkai-dwarka-5",
       "sourceAssetUuid": "af4ff1e1-5333-443f-81c1-35b47fa2c1b2",
       "sourceOriginalName": "Beyt Dwaraka.jpg",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tirudwarkai-dwarka-6",
       "sourceAssetUuid": "70fbc8af-ca51-4497-a88f-a4da9bf26618",
       "sourceOriginalName": "Dakor Dwaraka.jpg",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tirudwarkai-dwarka-7",
       "sourceAssetUuid": "72d34d82-e07f-40c2-92a3-89be428c9d94",
       "sourceOriginalName": "Srinath Dwaraka.jpg",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

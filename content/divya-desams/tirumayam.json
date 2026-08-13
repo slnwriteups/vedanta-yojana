@@ -31,46 +31,44 @@
       "altStatus": "needs-review"
     },
     {
-      "assetId": "tirumayam-book-2",
-      "sourceAssetUuid": "d73db35e-ec99-47c7-b6a5-8a1c3c11b1a3",
-      "sourceOriginalName": "108-divyadesam-book-page291-img225.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
       "assetId": "tirumayam-book-3",
       "sourceAssetUuid": "76d2a48c-1bea-42de-9469-f7e0d465200c",
       "sourceOriginalName": "108-divyadesam-book-page293-img227.png (synthetic name -- the source PDF has no embedded per-image filename)",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tirumayam-book-4",
       "sourceAssetUuid": "337f1274-ed20-47dd-b838-8e16957f2507",
       "sourceOriginalName": "108-divyadesam-book-page293-img228.png (synthetic name -- the source PDF has no embedded per-image filename)",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tirumayam-book-5",
       "sourceAssetUuid": "660af8d7-7529-40d3-be9b-223396b93608",
       "sourceOriginalName": "108-divyadesam-book-page293-img229.png (synthetic name -- the source PDF has no embedded per-image filename)",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tirumayam-book-6",
       "sourceAssetUuid": "4beffa70-d127-43c4-a1ce-cd71589ce901",
       "sourceOriginalName": "108-divyadesam-book-page293-img230.png (synthetic name -- the source PDF has no embedded per-image filename)",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     },
     {
       "assetId": "tirumayam-book-7",
       "sourceAssetUuid": "69bd0729-ffd0-4bf9-8ebc-dc20684c730e",
       "sourceOriginalName": "108-divyadesam-book-page293-img231.png (synthetic name -- the source PDF has no embedded per-image filename)",
       "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

@@ -71,24 +71,29 @@ test("exactly 1 held-back unresolved record exists (Page150)", () => {
   assert.equal(unresolvedFiles.length, 1);
 });
 
-test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+102(_provenance/divya-desams, Phase 6E + 6E-C)+1(_provenance/library, Phase 6E) = 269", () => {
+test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+19(_provenance/divya-desams, post image-fix)+1(_provenance/library, Phase 6E) = 186", () => {
   // Phase 6E added content/_provenance/ -- one small JSON file per Divya
   // Desam record that received a category-B text supplement and/or a
   // book-sourced image/shrine from "108 Divyadesam 2nd Edition.pdf" (101
   // of 107 records), plus one file recording that "A Brief Insight to
   // Visishtadvaita Philosophy.pdf" is the confirmed source for 17 of the
   // existing Library book's 55 chapters (see that phase's report for
-  // both). Phase 6E-C then added exactly ONE more: Tanjai Mamanikoyil had
-  // no provenance file yet (its Phase 6E image-merge pass found nothing
-  // to add), so it's new; Tiruvaali Tirunagari already had one (from its
-  // own Phase 6E image merge) and only gained appended entries, not a new
-  // file -- 101 -> 102. Not loaded by content-lib/loader/ (mirrors the
-  // content/_unresolved/ precedent: a sidecar directory under content/
-  // the loader never looks inside), so it is deliberately still counted
-  // here rather than excluded -- this test's whole purpose is to catch
-  // ANY unexpected file under content/, intentional additions included.
+  // both). Phase 6E-C added exactly ONE more (101 -> 102: Tanjai
+  // Mamanikoyil had none yet; Tiruvaali Tirunagari's existing file only
+  // gained appended entries). A post-Phase-6E-C review then found 149 of
+  // the 174 Phase 6E book images were near-duplicates of an image the
+  // record already had (see source-material/reports/
+  // phase-6E-image-fixes-report.md) -- removing them also removed their
+  // provenance entries, and 83 of the 102 files became empty and were
+  // deleted outright (a record whose ONLY Phase 6E fact was a duplicate
+  // image now correctly has no provenance file at all): 102 -> 19. Not
+  // loaded by content-lib/loader/ (mirrors the content/_unresolved/
+  // precedent: a sidecar directory under content/ the loader never looks
+  // inside), so it is deliberately still counted here rather than
+  // excluded -- this test's whole purpose is to catch ANY unexpected
+  // file under content/, intentional additions included.
   const total = countFilesRecursive(path.join(REPO_ROOT, "content"));
-  assert.equal(total, 269);
+  assert.equal(total, 186);
 });
 
 function countFilesRecursive(dir: string): number {

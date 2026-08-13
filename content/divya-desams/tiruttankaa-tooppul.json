@@ -34,21 +34,8 @@
       "sourceAssetUuid": "573d5ea0-69a2-40bb-b2d1-da6c83762939",
       "sourceOriginalName": "Vedanta Desikan.jpg",
       "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruttankaa-tooppul-book-3",
-      "sourceAssetUuid": "cd98f7ea-724b-404d-8fd5-e90682bb0578",
-      "sourceOriginalName": "108-divyadesam-book-page140-img102.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
-    },
-    {
-      "assetId": "tiruttankaa-tooppul-book-4",
-      "sourceAssetUuid": "5783d11e-e74c-45ef-9532-7d40866b38e0",
-      "sourceOriginalName": "108-divyadesam-book-page141-img104.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review"
+      "altStatus": "needs-review",
+      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [
