@@ -1,32 +1,36 @@
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { colors } from "../theme";
+import { useTheme } from "../theme";
+import { ThemeProvider } from "../ThemeProvider";
 
 /**
- * Phase 6A -- root navigation foundation. Expo Router's file-based
- * routing was chosen specifically because it mirrors the mental model
- * already established by the Next.js reference app's App Router (an
- * app/ directory, file-based routes, a root layout) -- see
- * mobile/README.md for the full justification against React Navigation.
- *
- * Phase 6B: every screen sets its own title via an inline
- * `<Stack.Screen options={{ title }} />` (the standard Expo Router
- * pattern), so this layout only needs to name the Home route here.
+ * Phase 6C -- the root layout now only hosts the ThemeProvider and a
+ * single Stack screen for the "(tabs)" group; the actual navigation
+ * chrome (bottom tabs, per-tab nested stacks) lives in
+ * app/(tabs)/_layout.tsx and each tab's own _layout.tsx. `(tabs)` is an
+ * Expo Router GROUP directory -- its name in parentheses never appears
+ * in the URL, so every route from Phase 6B (`/`, `/divya-desams`,
+ * `/divya-desams/[slug]`, `/library`, `/library/[book]`,
+ * `/library/[book]/[chapter]`, `/knowledge`, `/knowledge/[slug]`,
+ * `/search`) is unchanged and every existing deep link still resolves.
  */
+function RootStack() {
+  const theme = useTheme();
+  return (
+    <Stack screenOptions={{ contentStyle: { backgroundColor: theme.colors.background } }}>
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    </Stack>
+  );
+}
+
 export default function RootLayout() {
   return (
-    <SafeAreaProvider>
-      <Stack
-        screenOptions={{
-          headerStyle: { backgroundColor: colors.background },
-          headerTintColor: colors.foreground,
-          contentStyle: { backgroundColor: colors.background },
-        }}
-      >
-        <Stack.Screen name="index" options={{ title: "Vedanta Yojana" }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </SafeAreaProvider>
+    <ThemeProvider>
+      <SafeAreaProvider>
+        <RootStack />
+        <StatusBar style="auto" />
+      </SafeAreaProvider>
+    </ThemeProvider>
   );
 }

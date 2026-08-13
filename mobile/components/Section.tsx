@@ -1,16 +1,18 @@
 import type { ReactNode } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { colors, spacing, typography } from "../theme";
+import { spacing, typography, useTheme } from "../theme";
 
 /**
- * Phase 6B -- generic content section: an optional heading over either
- * long-form `text` (paragraph-preserving, mirroring the web app's
+ * Generic content section: an optional heading over either long-form
+ * `text` (paragraph-preserving, mirroring the web app's
  * components/shared/LongFormSection.tsx: split only on existing blank
- * lines, no rewriting/trimming/markdown conversion of the source prose)
- * or arbitrary `children` (used for Images/Maps/Resources sections that
- * aren't a single text field). Renders nothing when there is no text and
- * no children, so callers can pass an absent optional field straight
- * through without an extra guard at every call site.
+ * lines -- no rewriting/trimming/markdown conversion of the source
+ * prose) or arbitrary `children`. Renders nothing when there is neither.
+ *
+ * Phase 6C reading-comfort pass: capped measure (layout.maxContentWidth,
+ * applied by the screen, not here) plus a taller line-height
+ * (typography.readingLineHeight) specifically for long-form paragraphs --
+ * short "strong"-tier text elsewhere in the app doesn't use this.
  */
 export function Section({
   heading,
@@ -21,14 +23,22 @@ export function Section({
   text?: string;
   children?: ReactNode;
 }) {
+  const theme = useTheme();
   if (!text && !children) return null;
 
   return (
-    <View style={styles.section}>
-      {heading ? <Text style={styles.heading}>{heading}</Text> : null}
+    <View style={styles.section} accessible={false}>
+      {heading ? (
+        <Text
+          style={[styles.heading, { color: theme.colors.foreground }]}
+          accessibilityRole="header"
+        >
+          {heading}
+        </Text>
+      ) : null}
       {text
         ? text.split(/\n{2,}/).map((paragraph, index) => (
-            <Text key={index} style={styles.paragraph}>
+            <Text key={index} style={[styles.paragraph, { color: theme.colors.foreground }]}>
               {paragraph}
             </Text>
           ))
@@ -44,11 +54,9 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: typography.heading,
     fontWeight: "600",
-    color: colors.foreground,
   },
   paragraph: {
     fontSize: typography.body,
-    lineHeight: typography.body * 1.5,
-    color: colors.foreground,
+    lineHeight: typography.body * typography.readingLineHeight,
   },
 });

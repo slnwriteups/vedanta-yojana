@@ -1,25 +1,63 @@
+import { createContext, useContext } from "react";
+
 /**
- * Theme foundation -- Phase 6B expands Phase 6A's placeholder with the
- * reusable tokens the real screens need (typography sizes, spacing,
- * radius), still deliberately NOT final branding: no dark-mode switching,
- * no per-component styles baked in here. Colors are unchanged from
- * Phase 6A, still mirroring app/globals.css's :root light-mode values.
+ * Phase 6C -- the mobile design system. Phase 6A/6B's flat `colors`
+ * export is replaced by a light/dark PAIR behind a React context, since
+ * a plain module-level constant can never react to a theme change at
+ * runtime. Typography/spacing/radius/shadows/layout are scheme-
+ * independent and stay as plain exports -- only color needs to be
+ * reactive.
+ *
+ * Palette intent (explicit, since "scholarly/spiritual, not SaaS" is a
+ * design requirement, not just a color choice): warm, muted, low-
+ * saturation tones in both modes -- no pure black/white, no saturated
+ * brand blues/purples, no gradients. Dark mode is a genuine second
+ * palette (warm near-black, not an inverted/auto-generated one), tuned
+ * for the same restrained character as light mode.
+ *
+ * Deliberately kept JSX-free (the actual <ThemeContext.Provider> lives in
+ * ThemeProvider.tsx): Node's native TypeScript execution (`node --test`,
+ * used by every test file in this project) strips types but does not
+ * transform JSX, so a JSX-bearing .ts/.tsx file can only ever be
+ * exercised via `expo export`, not `node --test`. Keeping this module
+ * pure lets mobile/tests/ux.test.ts import resolveTheme() and the design
+ * tokens directly.
  */
-export const colors = {
+
+const lightColors = {
   background: "#fbfaf7",
   surface: "#ffffff",
+  surfaceAlt: "#f3efe7",
   foreground: "#211c16",
   muted: "#6b6259",
   border: "#e3dcd0",
   accent: "#7a3b2e",
+  overlay: "rgba(33, 28, 22, 0.85)",
 } as const;
+
+const darkColors = {
+  background: "#1a1712",
+  surface: "#231e18",
+  surfaceAlt: "#2b241d",
+  foreground: "#f1ece2",
+  muted: "#a89e90",
+  border: "#3a332a",
+  accent: "#d99879",
+  overlay: "rgba(0, 0, 0, 0.9)",
+} as const;
+
+/** Widened to plain strings (not the literal union `typeof lightColors` would give) so darkColors -- a genuinely different palette -- can satisfy the same shape. */
+export type ThemeColors = { [K in keyof typeof lightColors]: string };
+export type ColorScheme = "light" | "dark";
 
 export const typography = {
   title: 22,
   heading: 17,
-  body: 15,
+  body: 16,
   small: 13,
   eyebrow: 12,
+  /** Reading line-height multiplier for long-form prose (Sthala Puranam, chapter bodies). */
+  readingLineHeight: 1.65,
 } as const;
 
 export const spacing = {
@@ -36,3 +74,52 @@ export const radius = {
   md: 10,
   lg: 14,
 } as const;
+
+export const layout = {
+  /** Reading measure: caps line length for long-form prose on tablets/large phones. */
+  maxContentWidth: 640,
+  screenPadding: spacing.lg,
+  /** Apple/Android accessibility guidance: minimum comfortable touch target. */
+  minTouchTarget: 44,
+} as const;
+
+export interface Theme {
+  scheme: ColorScheme;
+  colors: ThemeColors;
+}
+
+/**
+ * Exported (not just used internally) so mobile/tests/ux.test.ts can
+ * verify the theme system without needing a react-native renderer under
+ * `node --test` -- this pure function is the entire non-React surface of
+ * "does the theme load and resolve both schemes correctly".
+ */
+export function resolveTheme(scheme: ColorScheme): Theme {
+  return { scheme, colors: scheme === "dark" ? darkColors : lightColors };
+}
+
+export interface ThemeContextValue {
+  theme: Theme;
+  /** null = follow the system appearance; otherwise a manual override for this session only (no persistence, per Phase 6C scope). */
+  override: ColorScheme | null;
+  setOverride: (scheme: ColorScheme | null) => void;
+}
+
+/** Exported so ThemeProvider.tsx (the one JSX-bearing file, .Provider lives there) can supply a value. */
+export const ThemeContext = createContext<ThemeContextValue | null>(null);
+
+function useThemeContext(): ThemeContextValue {
+  const ctx = useContext(ThemeContext);
+  if (!ctx) throw new Error("useTheme/useThemeControls must be used within a ThemeProvider");
+  return ctx;
+}
+
+export function useTheme(): Theme {
+  return useThemeContext().theme;
+}
+
+/** Exposes the manual light/dark override for a settings-style toggle, separate from useTheme() so components that only read colors don't re-render on override plumbing changes. */
+export function useThemeControls() {
+  const { theme, override, setOverride } = useThemeContext();
+  return { scheme: theme.scheme, override, setOverride };
+}

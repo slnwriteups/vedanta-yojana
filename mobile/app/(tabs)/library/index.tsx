@@ -1,16 +1,13 @@
 import { Stack, useRouter } from "expo-router";
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import { loadBooks, loadChapters, type Book } from "../../content-lib/loader.ts";
-import { ContentCard } from "../../components/ContentCard";
-import { colors, spacing, typography } from "../../theme";
+import { loadBooks, loadChapters, type Book } from "../../../content-lib/loader.ts";
+import { ContentCard } from "../../../components/ContentCard";
+import { layout, typography, useTheme } from "../../../theme";
 
-/**
- * Phase 6B -- the real Library index. Every book comes from loadBooks();
- * none is hard-coded. Today there is exactly one recovered book, listed
- * because the loader returned it, not because its title is written here.
- */
+/** Phase 6C -- unchanged data behavior from Phase 6B, theme-aware styling only. */
 export default function LibraryIndexScreen() {
   const router = useRouter();
+  const theme = useTheme();
   const books = loadBooks();
 
   function renderItem({ item }: { item: Book }) {
@@ -27,25 +24,21 @@ export default function LibraryIndexScreen() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <Stack.Screen options={{ title: "Library" }} />
       {books.length > 0 ? (
         <FlatList data={books} keyExtractor={(item) => item.slug} renderItem={renderItem} />
       ) : (
-        <Text style={styles.empty}>No books are available yet.</Text>
+        <Text style={[styles.empty, { color: theme.colors.muted }]}>No books are available yet.</Text>
       )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.background,
-  },
+  container: { flex: 1 },
   empty: {
-    padding: spacing.lg,
+    padding: layout.screenPadding,
     fontSize: typography.body,
-    color: colors.muted,
   },
 });

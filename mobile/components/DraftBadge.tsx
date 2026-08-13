@@ -1,18 +1,22 @@
 import { StyleSheet, Text } from "react-native";
-import { colors, typography } from "../theme";
+import { typography, useTheme } from "../theme";
 
 /**
- * Phase 6B -- mirrors the exact condition and copy of the web app's
+ * Mirrors the exact condition and copy of the web app's
  * components/shared/DraftBadge.tsx: renders only when status is "draft",
  * with an additional "flagged for additional review" clause when
- * needsReview is true. Internal migration metadata (sourcePageId,
- * extractionConfidence) is never surfaced here, matching the web version.
+ * needsReview is true. Internal migration metadata is never surfaced.
  */
 export function DraftBadge({ status, needsReview }: { status: string; needsReview: boolean }) {
+  const theme = useTheme();
   if (status !== "draft") return null;
 
   return (
-    <Text style={styles.text}>
+    <Text
+      style={[styles.text, { color: theme.colors.muted }]}
+      accessibilityRole="text"
+      accessibilityLabel={`Draft, under review${needsReview ? ", flagged for additional review" : ""}`}
+    >
       Draft — under review{needsReview ? " · flagged for additional review" : ""}
     </Text>
   );
@@ -21,7 +25,6 @@ export function DraftBadge({ status, needsReview }: { status: string; needsRevie
 const styles = StyleSheet.create({
   text: {
     fontSize: typography.eyebrow,
-    color: colors.muted,
     textTransform: "uppercase",
     letterSpacing: 0.5,
   },

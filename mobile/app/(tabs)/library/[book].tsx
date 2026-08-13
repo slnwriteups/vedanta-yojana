@@ -1,27 +1,26 @@
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import { loadBook, loadChapters, type Chapter } from "../../content-lib/loader.ts";
-import { ContentCard } from "../../components/ContentCard";
-import { DraftBadge } from "../../components/DraftBadge";
-import { colors, spacing, typography } from "../../theme";
+import { loadBook, loadChapters, type Chapter } from "../../../content-lib/loader.ts";
+import { ContentCard } from "../../../components/ContentCard";
+import { DraftBadge } from "../../../components/DraftBadge";
+import { layout, spacing, typography, useTheme } from "../../../theme";
 
 /**
- * Phase 6B -- the real Book detail screen. loadChapters() already returns
- * chapters sorted ascending by their own `order` field -- the same
- * sequence as the book's chapterOrder -- so no separate re-sort or
- * alphabetical ordering happens here, matching the web app's
- * app/library/[book]/page.tsx exactly.
+ * Phase 6C -- unchanged ordering/data behavior from Phase 6B (chapters
+ * stay in their own ascending `order`, never re-sorted), theme-aware
+ * styling only.
  */
 export default function LibraryBookScreen() {
   const { book: bookSlug } = useLocalSearchParams<{ book: string }>();
   const router = useRouter();
+  const theme = useTheme();
   const book = loadBook(bookSlug);
 
   if (!book) {
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
         <Stack.Screen options={{ title: "Not found" }} />
-        <Text style={styles.empty}>This book could not be found.</Text>
+        <Text style={[styles.empty, { color: theme.colors.muted }]}>This book could not be found.</Text>
       </View>
     );
   }
@@ -40,43 +39,39 @@ export default function LibraryBookScreen() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <Stack.Screen options={{ title: book.title }} />
       <View style={styles.header}>
         <DraftBadge status={book.status} needsReview={book.migration.needsReview} />
-        <Text style={styles.title}>{book.title}</Text>
-        {book.description ? <Text style={styles.description}>{book.description}</Text> : null}
+        <Text style={[styles.title, { color: theme.colors.foreground }]}>{book.title}</Text>
+        {book.description ? (
+          <Text style={[styles.description, { color: theme.colors.muted }]}>{book.description}</Text>
+        ) : null}
       </View>
       {chapters.length > 0 ? (
         <FlatList data={chapters} keyExtractor={(item) => item.slug} renderItem={renderItem} />
       ) : (
-        <Text style={styles.empty}>No chapters are available yet.</Text>
+        <Text style={[styles.empty, { color: theme.colors.muted }]}>No chapters are available yet.</Text>
       )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.background,
-  },
+  container: { flex: 1 },
   header: {
-    padding: spacing.lg,
+    padding: layout.screenPadding,
     gap: spacing.xs,
   },
   title: {
     fontSize: typography.title,
     fontWeight: "700",
-    color: colors.foreground,
   },
   description: {
     fontSize: typography.body,
-    color: colors.muted,
   },
   empty: {
-    padding: spacing.lg,
+    padding: layout.screenPadding,
     fontSize: typography.body,
-    color: colors.muted,
   },
 });

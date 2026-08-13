@@ -1,23 +1,59 @@
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { useRef, useState } from "react";
+import { Animated, Pressable, StyleSheet, Text, View } from "react-native";
 import type { ImageEntry } from "../../content-lib/schemas/index.ts";
 import { imagesByUuid } from "../content-lib/image-manifest.generated.ts";
-import { colors, radius, spacing, typography } from "../theme";
+import { useTheme } from "../theme";
+import { ImageViewerModal } from "./ImageViewerModal";
 
 /**
- * Phase 6B -- renders images[] the same way the web app's
- * components/shared/RecordImages.tsx does: resolve `sourceAssetUuid` to
- * an actual local asset, and silently drop any image whose UUID has no
- * matching file rather than render something guaranteed broken. The
- * asset lookup itself is Metro's static import table
- * (mobile/content-lib/image-manifest.generated.ts), not a UUID currently
- * unresolved at runtime.
- *
- * Every migrated image currently has alt: null / altStatus: "needs-review"
- * -- no accessibilityLabel is fabricated; when alt is null the image is
- * still rendered (never hidden) but left without a label, exactly
- * mirroring the web app's documented compromise for RecordImages.tsx.
+ * Phase 6B/6C -- resolves images[] the same way the web app's
+ * components/shared/RecordImages.tsx does: `sourceAssetUuid` to a real
+ * local asset, silently dropping any image with no matching file. Phase
+ * 6C additions: a fixed square aspect ratio with a themed placeholder
+ * background (so the layout doesn't jump while a large image decodes), a
+ * fade-in on load (Animated, built into react-native -- no new
+ * dependency), and a tap target that opens ImageViewerModal for a
+ * full-screen view. Every migrated image still has alt: null (no
+ * accessibilityLabel is fabricated when absent).
  */
+function FadeInImage({
+  asset,
+  label,
+  size,
+  onPress,
+}: {
+  asset: number;
+  label: string | null;
+  size: number;
+  onPress: () => void;
+}) {
+  const theme = useTheme();
+  const opacity = useRef(new Animated.Value(0)).current;
+
+  return (
+    <Pressable
+      onPress={onPress}
+      accessibilityRole="imagebutton"
+      accessibilityLabel={label ?? "View image full screen"}
+      style={[styles.thumbWrap, { width: size, height: size, backgroundColor: theme.colors.border }]}
+    >
+      <Animated.Image
+        source={asset}
+        accessibilityLabel={label ?? undefined}
+        style={[styles.thumb, { opacity, borderRadius: theme.scheme === "dark" ? 10 : 10 }]}
+        resizeMode="cover"
+        onLoad={() => {
+          Animated.timing(opacity, { toValue: 1, duration: 200, useNativeDriver: true }).start();
+        }}
+      />
+    </Pressable>
+  );
+}
+
 export function ContentImage({ images }: { images: ImageEntry[] }) {
+  const theme = useTheme();
+  const [viewerAsset, setViewerAsset] = useState<{ asset: number; label: string | null } | null>(null);
+
   const resolved = images.flatMap((image) => {
     const asset = imagesByUuid[image.sourceAssetUuid.toLowerCase()];
     return asset !== undefined ? [{ image, asset }] : [];
@@ -27,18 +63,25 @@ export function ContentImage({ images }: { images: ImageEntry[] }) {
 
   return (
     <View style={styles.section}>
-      <Text style={styles.heading}>Images</Text>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.row}>
+      <Text style={[styles.heading, { color: theme.colors.foreground }]}>Images</Text>
+      <View style={styles.row}>
         {resolved.map(({ image, asset }) => (
-          <Image
+          <FadeInImage
             key={image.assetId}
-            source={asset}
-            accessibilityLabel={image.alt ?? undefined}
-            style={styles.image}
-            resizeMode="cover"
+            asset={asset}
+            label={image.alt}
+            size={IMAGE_SIZE}
+            onPress={() => setViewerAsset({ asset, label: image.alt })}
           />
         ))}
-      </ScrollView>
+      </View>
+
+      <ImageViewerModal
+        visible={viewerAsset !== null}
+        asset={viewerAsset?.asset ?? null}
+        label={viewerAsset?.label}
+        onClose={() => setViewerAsset(null)}
+      />
     </View>
   );
 }
@@ -47,20 +90,23 @@ const IMAGE_SIZE = 140;
 
 const styles = StyleSheet.create({
   section: {
-    gap: spacing.sm,
+    gap: 8,
   },
   heading: {
-    fontSize: typography.heading,
+    fontSize: 17,
     fontWeight: "600",
-    color: colors.foreground,
   },
   row: {
-    gap: spacing.sm,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 8,
   },
-  image: {
-    width: IMAGE_SIZE,
-    height: IMAGE_SIZE,
-    borderRadius: radius.md,
-    backgroundColor: colors.border,
+  thumbWrap: {
+    borderRadius: 10,
+    overflow: "hidden",
+  },
+  thumb: {
+    width: "100%",
+    height: "100%",
   },
 });
