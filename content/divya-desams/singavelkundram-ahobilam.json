@@ -173,30 +173,6 @@
       "alt": null,
       "altStatus": "needs-review",
       "placement": "after-sthala-puranam"
-    },
-    {
-      "assetId": "singavelkundram-ahobilam-book-29",
-      "sourceAssetUuid": "32b420bc-fa62-4c42-ab95-55ca61efc4c3",
-      "sourceOriginalName": "108-divyadesam-book-page338-img285.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
-    },
-    {
-      "assetId": "singavelkundram-ahobilam-book-30",
-      "sourceAssetUuid": "299d81b4-658b-48fb-8b3a-0e1e274c2b19",
-      "sourceOriginalName": "108-divyadesam-book-page338-img286.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
-    },
-    {
-      "assetId": "singavelkundram-ahobilam-book-31",
-      "sourceAssetUuid": "111d9e43-633b-425f-a51f-50c2379e9091",
-      "sourceOriginalName": "108-divyadesam-book-page338-img287.png (synthetic name -- the source PDF has no embedded per-image filename)",
-      "alt": null,
-      "altStatus": "needs-review",
-      "placement": "after-sthala-puranam"
     }
   ],
   "resources": [

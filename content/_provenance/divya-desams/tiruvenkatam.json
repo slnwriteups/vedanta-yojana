@@ -1,0 +1,29 @@
+[
+  {
+    "field": "images",
+    "value": "tiruvenkatam-book-5",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 338,
+    "sourceSection": "106) Tiruvenkatam",
+    "importedAt": "2026-08-14",
+    "note": "Corrected post-review: originally misattributed to singavelkundram-ahobilam (assetId singavelkundram-ahobilam-book-29) by a page-boundary bug in the original image-merge script -- the script anchored each entry's start page on its \"Details of Kshethram:\" marker line rather than its own title line, so when the title/opening photo sat one page earlier than the marker (as it does here), that photo's page was still counted as part of the PRECEDING entry's range. Root cause fixed in scripts/source-material/divyadesam-entries.ts (title-page anchoring); this record's already-migrated content corrected to match."
+  },
+  {
+    "field": "images",
+    "value": "tiruvenkatam-book-6",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 338,
+    "sourceSection": "106) Tiruvenkatam",
+    "importedAt": "2026-08-14",
+    "note": "Corrected post-review: originally misattributed to singavelkundram-ahobilam (assetId singavelkundram-ahobilam-book-30) by a page-boundary bug in the original image-merge script -- the script anchored each entry's start page on its \"Details of Kshethram:\" marker line rather than its own title line, so when the title/opening photo sat one page earlier than the marker (as it does here), that photo's page was still counted as part of the PRECEDING entry's range. Root cause fixed in scripts/source-material/divyadesam-entries.ts (title-page anchoring); this record's already-migrated content corrected to match."
+  },
+  {
+    "field": "images",
+    "value": "tiruvenkatam-book-7",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 338,
+    "sourceSection": "106) Tiruvenkatam",
+    "importedAt": "2026-08-14",
+    "note": "Corrected post-review: originally misattributed to singavelkundram-ahobilam (assetId singavelkundram-ahobilam-book-31) by a page-boundary bug in the original image-merge script -- the script anchored each entry's start page on its \"Details of Kshethram:\" marker line rather than its own title line, so when the title/opening photo sat one page earlier than the marker (as it does here), that photo's page was still counted as part of the PRECEDING entry's range. Root cause fixed in scripts/source-material/divyadesam-entries.ts (title-page anchoring); this record's already-migrated content corrected to match."
+  }
+]

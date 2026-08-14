@@ -73,6 +73,13 @@
       "alt": null,
       "altStatus": "needs-review",
       "placement": "after-sthala-puranam"
+    },
+    {
+      "assetId": "tiruayodhi-ayodhya-book-8",
+      "sourceAssetUuid": "4beffa70-d127-43c4-a1ce-cd71589ce901",
+      "sourceOriginalName": "108-divyadesam-book-page293-img230.png (synthetic name -- the source PDF has no embedded per-image filename)",
+      "alt": null,
+      "altStatus": "needs-review"
     }
   ],
   "resources": [

@@ -7,5 +7,14 @@
     "sourceSection": "96) Tiruayodhi (Ayodhya)",
     "importedAt": "2026-08-13",
     "note": "Corrected post-review: originally misattributed to Tirumayam (assetId tirumayam-book-7) by a page-boundary bug in the original image-merge script -- this photo (a river ghat scene) does not match Tirumayam (an inland kshethram between Karaikkudi and Pudukkottai with no travelNote river reference) but is consistent with Ayodhya, situated on the river Saryu. Reassigned here."
+  },
+  {
+    "field": "images",
+    "value": "tiruayodhi-ayodhya-book-8",
+    "sourceFile": "108 Divyadesam 2nd Edition.pdf",
+    "sourcePage": 293,
+    "sourceSection": "96) Tiruayodhi (Ayodhya)",
+    "importedAt": "2026-08-14",
+    "note": "Corrected post-review: originally misattributed to tirumayam (assetId tirumayam-book-6) by a page-boundary bug in the original image-merge script -- the script anchored each entry's start page on its \"Details of Kshethram:\" marker line rather than its own title line, so when the title/opening photo sat one page earlier than the marker (as it does here), that photo's page was still counted as part of the PRECEDING entry's range. Root cause fixed in scripts/source-material/divyadesam-entries.ts (title-page anchoring); this record's already-migrated content corrected to match."
   }
 ]

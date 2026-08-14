@@ -133,6 +133,22 @@ export function parseDivyaDesamBook(pdfPath: string): DivyaDesamBookEntry[] {
       .map((l: PdfLine) => l.text)
       .join("\n");
 
-    return { rawCapturedTitle, title, titleOverridden: Boolean(override), startPage: flat[idx].page, text };
+    // startPage anchors on the TITLE line's own page, not the marker's.
+    // The book gives every entry a clean page break at its title (user-
+    // verified against the source PDF directly); when explanatory prose,
+    // a page-number footer line, or the "Moolavar:"/"Details of
+    // Kshethram:" block itself is pushed to the following page, the
+    // marker's page is one page LATER than the entry's true first page.
+    // Anchoring the page range on the marker instead of the title then
+    // makes the PRECEDING entry's [start, nextStart) range swallow this
+    // entry's own title-page photo -- confirmed against real extracted
+    // images for at least Tirumayam/Tiruayodhi (Ayodhya) and
+    // Singavelkundram (Ahobilam)/Tiruvenkatam, both reported as visible
+    // image bleed. A markerless boundary IS already the title line, so
+    // there's no separate title index to look up.
+    const titleIdx = isMarkerless ? idx : findTitleAboveIndex(flat, idx);
+    const startPage = titleIdx !== null ? flat[titleIdx].page : flat[idx].page;
+
+    return { rawCapturedTitle, title, titleOverridden: Boolean(override), startPage, text };
   });
 }
