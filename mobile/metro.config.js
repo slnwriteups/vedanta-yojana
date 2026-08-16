@@ -21,6 +21,9 @@ config.watchFolders = [
   // Not part of Phase 6A's scope, added only once a screen actually
   // needed to render an image.
   path.join(REPO_ROOT, "public", "images"),
+  // The restored welcome screen's audio file -- same reasoning as
+  // public/images above, added only once a screen needed it.
+  path.join(REPO_ROOT, "public", "audio"),
 ];
 
 /**

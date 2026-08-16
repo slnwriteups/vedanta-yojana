@@ -14,9 +14,15 @@ import type { ColorScheme } from "../theme.ts";
 
 export const THEME_STORAGE_KEY = "vy.preferences.themeOverride";
 export const READING_STORAGE_KEY = "vy.preferences.reading";
+/** Whether the restored launch welcome screen has ever been shown -- see WelcomeScreen.tsx. */
+export const WELCOME_SEEN_STORAGE_KEY = "vy.preferences.welcomeSeen";
 
 export function isValidThemeOverride(value: unknown): value is ColorScheme | null {
   return value === null || value === "light" || value === "dark";
+}
+
+export function isValidSeenFlag(value: unknown): value is true {
+  return value === true;
 }
 
 export interface ReadingPreferences {

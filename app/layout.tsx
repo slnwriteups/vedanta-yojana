@@ -1,8 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { WelcomeGate } from "@/components/WelcomeGate";
 import { getSiteOrigin, siteUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
+import { resolveImageHref } from "@/lib/image-file";
 import "./globals.css";
+
+const WELCOME_IMAGE_UUID = "a0635841-903d-4856-90a8-eca5becb3c5e";
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const siteOrigin = getSiteOrigin();
 
@@ -56,14 +61,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex min-h-screen flex-col bg-[var(--background)] text-[var(--foreground)] antialiased">
-        <a href="#main-content" className="skip-link">
-          Skip to content
-        </a>
-        <SiteHeader />
-        <main id="main-content" className="site-container flex-1 py-10 sm:py-12">
-          {children}
-        </main>
-        <SiteFooter />
+        <WelcomeGate imageHref={resolveImageHref(WELCOME_IMAGE_UUID)} audioHref={`${BASE_PATH}/audio/vy-welcome.mp3`}>
+          <a href="#main-content" className="skip-link">
+            Skip to content
+          </a>
+          <SiteHeader />
+          <main id="main-content" className="site-container flex-1 py-10 sm:py-12">
+            {children}
+          </main>
+          <SiteFooter />
+        </WelcomeGate>
       </body>
     </html>
   );

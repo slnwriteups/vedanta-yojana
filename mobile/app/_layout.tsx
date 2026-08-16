@@ -1,9 +1,14 @@
+import { useEffect, useState } from "react";
+import { View } from "react-native";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useTheme } from "../theme";
 import { ThemeProvider } from "../ThemeProvider";
 import { ReadingPreferencesProvider } from "../ReadingPreferencesProvider";
+import { WelcomeScreen } from "../components/WelcomeScreen";
+import { WELCOME_SEEN_STORAGE_KEY, isValidSeenFlag } from "../content-lib/preferences.ts";
+import { readJSON, writeJSON } from "../storage.ts";
 
 /**
  * Phase 6C -- the root layout hosts the ThemeProvider and a single Stack
@@ -21,9 +26,44 @@ import { ReadingPreferencesProvider } from "../ReadingPreferencesProvider";
  * Phase 6D adds ReadingPreferencesProvider alongside ThemeProvider --
  * the two persisted-preference providers, both loading from AsyncStorage
  * once on mount (see ThemeProvider.tsx / ReadingPreferencesProvider.tsx).
+ *
+ * A third persisted flag (WELCOME_SEEN_STORAGE_KEY) gates the restored
+ * legacy launch screen (WelcomeScreen.tsx, mirroring web's
+ * components/WelcomeGate.tsx): until that AsyncStorage read resolves,
+ * nothing but a plain themed background renders -- unlike the theme/
+ * reading-preference reads, this one MUST block first paint, since
+ * showing (tabs) even briefly before a first-ever launch's welcome
+ * screen would defeat the point of restoring it.
  */
 function RootStack() {
   const theme = useTheme();
+  const [seenWelcome, setSeenWelcome] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    readJSON(WELCOME_SEEN_STORAGE_KEY, isValidSeenFlag).then((stored) => {
+      if (!cancelled) setSeenWelcome(stored === true);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (seenWelcome === null) {
+    return <View style={{ flex: 1, backgroundColor: theme.colors.background }} />;
+  }
+
+  if (!seenWelcome) {
+    return (
+      <WelcomeScreen
+        onDone={() => {
+          setSeenWelcome(true);
+          void writeJSON(WELCOME_SEEN_STORAGE_KEY, true);
+        }}
+      />
+    );
+  }
+
   return (
     <Stack screenOptions={{ contentStyle: { backgroundColor: theme.colors.background } }}>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />

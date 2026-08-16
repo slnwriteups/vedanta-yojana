@@ -1,0 +1,90 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+/**
+ * Restores the legacy SAP Build app's real launch screen (page.Page1,
+ * "Welcome to Vedanta Yojana") -- title, Sanskrit tagline, the Vedanta
+ * Desikan invocation image, and the ambient audio the original page
+ * autoplayed on load. Recovered from the frozen source-extraction
+ * snapshot's page-content data (text/image) and a Cloudinary URL the
+ * user supplied directly from the original app's own embedded HTML
+ * (audio) -- not fabricated.
+ *
+ * Shown once per browser (a "have they ever seen this" gate, not a
+ * "once per session" one -- matches the user's explicit choice). Renders
+ * `children` untouched everywhere except the one-time overlay on top of
+ * them, so there is no dependency on which page happens to be first.
+ */
+
+const SEEN_KEY = "vy-welcome-seen";
+
+export function WelcomeGate({
+  children,
+  imageHref,
+  audioHref,
+}: {
+  children: React.ReactNode;
+  imageHref: string | null;
+  audioHref: string;
+}) {
+  const [showWelcome, setShowWelcome] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    if (!window.localStorage.getItem(SEEN_KEY)) {
+      setShowWelcome(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!showWelcome) return;
+    // Autoplay-with-sound is blocked by most browsers absent a prior
+    // user gesture -- expected on first paint, not an error to surface.
+    // If blocked, the button below is still a real user gesture that
+    // can start it.
+    audioRef.current?.play().catch(() => {});
+  }, [showWelcome]);
+
+  function begin() {
+    window.localStorage.setItem(SEEN_KEY, "1");
+    audioRef.current?.pause();
+    setShowWelcome(false);
+  }
+
+  if (!showWelcome) return <>{children}</>;
+
+  return (
+    <>
+      {children}
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="welcome-heading"
+        className="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-6 overflow-y-auto bg-[var(--background)] px-6 py-10 text-center"
+      >
+        <audio ref={audioRef} src={audioHref} preload="auto" />
+        {imageHref ? (
+          <img
+            src={imageHref}
+            alt="Swami Vedanta Desikan, with the invocation verse in Sanskrit"
+            className="h-auto max-h-[45vh] w-auto max-w-full"
+          />
+        ) : null}
+        <div className="space-y-2">
+          <h1 id="welcome-heading" className="text-2xl font-semibold text-[var(--foreground)]">
+            Welcome to Vedanta Yojana
+          </h1>
+          <p className="text-sm text-[var(--muted)]">Yatra Jñānam Pravahati</p>
+        </div>
+        <button
+          type="button"
+          onClick={begin}
+          className="rounded-md bg-[var(--accent)] px-6 py-3 text-sm font-medium text-[var(--surface)] transition-opacity hover:opacity-90"
+        >
+          Jñānayātrām Pravartaya
+        </button>
+      </div>
+    </>
+  );
+}
