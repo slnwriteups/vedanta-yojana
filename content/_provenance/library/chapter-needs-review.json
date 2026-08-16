@@ -1,0 +1,26 @@
+[
+  {
+    "field": "migration.needsReview",
+    "value": "true",
+    "sourceFile": "content-extraction/articles/page.Page163.json",
+    "sourceSection": "charama-shlokams",
+    "importedAt": "2026-08-16",
+    "note": "The source page (page.Page163) is flagged containsPlaceholderText=true (6 placeholder blocks). The migrated body faithfully preserves this: a real introductory paragraph followed by 6 literal \"Lorem ipsum dolor sit amet\" placeholder paragraphs the original app never replaced with real content. Migration is correct/faithful; the source itself is incomplete for the remainder of this chapter."
+  },
+  {
+    "field": "migration.needsReview",
+    "value": "true",
+    "sourceFile": "content-extraction/articles/page.Page127.json",
+    "sourceSection": "guru-parampara",
+    "importedAt": "2026-08-16",
+    "note": "The source page (page.Page127) is flagged containsPlaceholderText=true (68 placeholder blocks). The migrated body faithfully preserves this: a short section-outline paragraph followed by 68 literal \"Lorem ipsum dolor sit amet\" placeholder paragraphs -- effectively the entire chapter body is unwritten filler in the original source. Migration is correct/faithful; the source itself never received real content for this chapter."
+  },
+  {
+    "field": "migration.needsReview",
+    "value": "true",
+    "sourceFile": "content-extraction/articles/page.Page168.json",
+    "sourceSection": "srimad-bhagavatham",
+    "importedAt": "2026-08-16",
+    "note": "The source page (page.Page168) is flagged containsPlaceholderText=true (58 placeholder blocks). The migrated body faithfully preserves this: real Sanskrit/transliterated shloka text followed by 58 literal \"Lorem ipsum dolor sit amet\" placeholder paragraphs. Migration is correct/faithful; the source itself is incomplete for the remainder of this chapter."
+  }
+]
