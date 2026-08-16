@@ -1,7 +1,7 @@
 {
   "slug": "tirupuliyur",
   "displayName": "Tirupuliyur",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page75",
     "extractionConfidence": "high",

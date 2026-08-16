@@ -71,7 +71,7 @@ test("exactly 1 held-back unresolved record exists (Page150)", () => {
   assert.equal(unresolvedFiles.length, 1);
 });
 
-test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+15(_provenance/divya-desams, post image-fixes)+1(_provenance/library, Phase 6E) = 182", () => {
+test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+15(_provenance/divya-desams, post image-fixes)+1(_provenance/library, Phase 6E)+1(_provenance/library, chapter needsReview corrections) = 183", () => {
   // Phase 6E added content/_provenance/ -- one small JSON file per Divya
   // Desam record that received a category-B text supplement and/or a
   // book-sourced image/shrine from "108 Divyadesam 2nd Edition.pdf" (101
@@ -93,14 +93,24 @@ test("no unexpected content records: total /content file count matches exactly 1
   // provenance file at all): 102 -> 19 -> 14; and (c) a full-corpus
   // corruption audit found one more misattributed image (a river-ghat
   // photo wrongly under Tirumayam, reassigned to Tiruayodhi (Ayodhya),
-  // which had no provenance file yet): 14 -> 15. Not loaded by
+  // which had no provenance file yet): 14 -> 15. A later page-boundary
+  // root-cause fix (scripts/source-material/divyadesam-entries.ts) moved
+  // 4 more misattributed images -- net zero change in file count here
+  // (tirumayam's provenance file emptied out and was deleted, tiruvenkatam
+  // gained its first provenance file). Then a full Library audit found 3
+  // chapters whose source page is genuinely incomplete (containsPlaceholderText),
+  // never flagged for review by the migration transform (which only derives
+  // needsReview from Divya Desam classification, never from placeholder
+  // detection) -- corrected directly, with one new provenance file
+  // recording all 3 corrections: 15 -> 15 (divya-desams) + 1 new
+  // (_provenance/library/chapter-needs-review.json). Not loaded by
   // content-lib/loader/ (mirrors the content/_unresolved/
   // precedent: a sidecar directory under content/ the loader never looks
   // inside), so it is deliberately still counted here rather than
   // excluded -- this test's whole purpose is to catch ANY unexpected
   // file under content/, intentional additions included.
   const total = countFilesRecursive(path.join(REPO_ROOT, "content"));
-  assert.equal(total, 182);
+  assert.equal(total, 183);
 });
 
 function countFilesRecursive(dir: string): number {
@@ -120,17 +130,17 @@ test("Page5 remains intact: content/divya-desams/sri-rangam.json is present and 
   const sriRangam = ddOutputRecords.find((r) => r.slug === "sri-rangam");
   assert.ok(sriRangam, "sri-rangam.json missing from the migrated set");
   assert.equal(sriRangam.migration.sourcePageId, "page.Page5");
-  assert.equal(sriRangam.status, "draft");
+  assert.equal(sriRangam.status, "published");
 });
 
 // ---------------------------------------------------------------------------
 // Page93 treatment.
 // ---------------------------------------------------------------------------
 
-test("Page93 (Tirukoodal) migrated as a normal DivyaDesam: draft, needsReview, low confidence, no fabricated Maps link at SAP-migration time", () => {
+test("Page93 (Tirukoodal) migrated as a normal DivyaDesam: published, needsReview, low confidence, no fabricated Maps link at SAP-migration time", () => {
   const record = ddOutputRecords.find((r) => r.migration.sourcePageId === "page.Page93");
   assert.ok(record, "Page93 missing from migrated Divya Desams");
-  assert.equal(record.status, "draft");
+  assert.equal(record.status, "published");
   assert.equal(record.migration.needsReview, true);
   assert.equal(record.migration.extractionConfidence, "low");
   // The SAP migration itself produced no shrines (no Maps link existed in
@@ -249,8 +259,8 @@ test("Phase 6E-C: Page24 (Tanjai Mamanikoyil), Page38 (Tiruvaali Tirunagari), an
 // B. Status: every normal migrated content record has status "draft".
 // ---------------------------------------------------------------------------
 
-test("B: every Divya Desam record has status draft", () => {
-  for (const r of ddOutputRecords) assert.equal(r.status, "draft", r.slug);
+test("B: every Divya Desam record has status published", () => {
+  for (const r of ddOutputRecords) assert.equal(r.status, "published", r.slug);
 });
 
 test("B: every chapter has status draft", () => {

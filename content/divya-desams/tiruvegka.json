@@ -1,7 +1,7 @@
 {
   "slug": "tiruvegka",
   "displayName": "Tiruvegka",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page54",
     "extractionConfidence": "high",

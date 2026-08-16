@@ -94,8 +94,8 @@ test("D: displayName is exactly the source title", () => {
   assert.equal(output.displayName, "Sri Rangam");
 });
 
-test("E: status is draft", () => {
-  assert.equal(output.status, "draft");
+test("E: status is published", () => {
+  assert.equal(output.status, "published");
 });
 
 test("F: extractionConfidence is preserved from the source classification", () => {
@@ -302,5 +302,11 @@ test("S: re-running the adapter + transformer against the same source produces a
   // SAP-migrated images -- this test's job is confirming the SAP
   // migration transform itself is still pure/deterministic, which now
   // holds as a plain field-for-field comparison including images.
-  assert.deepEqual(recomputed, output);
+  //
+  // `status` is excluded from that comparison: the transform always
+  // produces "draft" (Phase 5A's structural safety default), but the real
+  // file was later, deliberately moved to "published" once every Divya
+  // Desam record had been reviewed -- a disclosed editorial change layered
+  // on top of the migration output, not migration drift.
+  assert.deepEqual(recomputed, { ...output, status: "draft" });
 });

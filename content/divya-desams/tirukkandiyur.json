@@ -1,7 +1,7 @@
 {
   "slug": "tirukkandiyur",
   "displayName": "Tirukkandiyur",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page11",
     "extractionConfidence": "high",

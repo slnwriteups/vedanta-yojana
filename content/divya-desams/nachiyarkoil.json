@@ -1,7 +1,7 @@
 {
   "slug": "nachiyarkoil",
   "displayName": "Nachiyarkoil",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page18",
     "extractionConfidence": "high",

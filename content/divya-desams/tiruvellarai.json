@@ -1,7 +1,7 @@
 {
   "slug": "tiruvellarai",
   "displayName": "Tiruvellarai",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page8",
     "extractionConfidence": "high",

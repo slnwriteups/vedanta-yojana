@@ -1,7 +1,7 @@
 {
   "slug": "tirukurungudi",
   "displayName": "Tirukurungudi",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page81",
     "extractionConfidence": "high",

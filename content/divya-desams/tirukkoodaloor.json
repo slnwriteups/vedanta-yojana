@@ -1,7 +1,7 @@
 {
   "slug": "tirukkoodaloor",
   "displayName": "Tirukkoodaloor",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page12",
     "extractionConfidence": "high",

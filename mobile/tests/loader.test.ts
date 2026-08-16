@@ -31,11 +31,11 @@ test("Sri Rangam resolves with real content intact", () => {
   assert.ok(record?.sthalaPuranam);
 });
 
-test("Tirukoodal resolves as draft/needsReview, matching the web loader's behavior", () => {
+test("Tirukoodal resolves as published/needsReview, matching the web loader's behavior", () => {
   const record = loadDivyaDesam("tirukoodal");
   assert.ok(record, "tirukoodal did not resolve");
   assert.equal(record?.migration.sourcePageId, "page.Page93");
-  assert.equal(record?.status, "draft");
+  assert.equal(record?.status, "published");
   assert.equal(record?.migration.needsReview, true);
 });
 

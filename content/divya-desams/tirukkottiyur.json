@@ -1,7 +1,7 @@
 {
   "slug": "tirukkottiyur",
   "displayName": "Tirukkottiyur",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page96",
     "extractionConfidence": "high",

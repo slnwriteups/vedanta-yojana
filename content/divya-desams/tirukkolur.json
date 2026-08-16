@@ -1,7 +1,7 @@
 {
   "slug": "tirukkolur",
   "displayName": "Tirukkolur",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page88",
     "extractionConfidence": "high",

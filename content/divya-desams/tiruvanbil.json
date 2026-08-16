@@ -1,7 +1,7 @@
 {
   "slug": "tiruvanbil",
   "displayName": "Tiruvanbil",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page9",
     "extractionConfidence": "high",

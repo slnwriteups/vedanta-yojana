@@ -1,7 +1,7 @@
 {
   "slug": "sri-rangam",
   "displayName": "Sri Rangam",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page5",
     "extractionConfidence": "high",

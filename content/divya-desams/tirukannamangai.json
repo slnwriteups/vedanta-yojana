@@ -1,7 +1,7 @@
 {
   "slug": "tirukannamangai",
   "displayName": "Tirukannamangai",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page20",
     "extractionConfidence": "high",

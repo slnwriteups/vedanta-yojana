@@ -1,7 +1,7 @@
 {
   "slug": "tirucherai",
   "displayName": "Tirucherai",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page19",
     "extractionConfidence": "high",

@@ -1,7 +1,7 @@
 {
   "slug": "tiruvattaaru",
   "displayName": "Tiruvattaaru",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page79",
     "extractionConfidence": "high",

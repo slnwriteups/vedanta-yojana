@@ -1,7 +1,7 @@
 {
   "slug": "kapisthalam",
   "displayName": "Kapisthalam",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page13",
     "extractionConfidence": "high",

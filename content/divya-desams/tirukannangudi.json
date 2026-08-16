@@ -1,7 +1,7 @@
 {
   "slug": "tirukannangudi",
   "displayName": "Tirukannangudi",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page22",
     "extractionConfidence": "high",

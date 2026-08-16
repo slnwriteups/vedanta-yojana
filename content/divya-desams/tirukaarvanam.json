@@ -1,7 +1,7 @@
 {
   "slug": "tirukaarvanam",
   "displayName": "Tirukaarvanam",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page56",
     "extractionConfidence": "high",
