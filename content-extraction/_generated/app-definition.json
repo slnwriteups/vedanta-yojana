@@ -9207,7 +9207,7 @@
       "initStateProps": {},
       "pageFlowId": "page:110",
       "pageId": "page.Page110",
-      "title": "107) Tiruparkadal (Ksheerabdi)",
+      "title": "Tiruparkadal (Ksheerabdi)",
       "disableSafeArea": false,
       "scrollDisabled": false,
       "parameters": {},
@@ -53695,7 +53695,7 @@
           "arrowVisible",
           "backgroundImage"
         ],
-        "primaryLabel": "107) Tiruparkadal (Ksheerabdi)",
+        "primaryLabel": "Tiruparkadal (Ksheerabdi)",
         "secondaryLabel": "",
         "arrowVisible": true,
         "backgroundImage": "",

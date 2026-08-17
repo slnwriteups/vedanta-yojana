@@ -107,14 +107,14 @@ else are all consistent with the evidence). Logged in `unresolved.json`.
 
 - **Six confirmed/likely temple pages have no Google Maps link**: `page.Page39`
   "Tirudevanaar Togai", `page.Page93` "Tirukoodal", `page.Page94`
-  "Tirumaaliruncholai", `page.Page110` "107) Tiruparkadal (Ksheerabdi)",
+  "Tirumaaliruncholai", `page.Page110` "Tiruparkadal (Ksheerabdi)",
   `page.Page111` "Tiruparamapadam (Sri Vaikuntham)", and `page.Page150`
   "Hayagriva Stotram". For Page110/Page111 this makes sense on its face —
   Ksheerabdi ("Ocean of Milk") and Sri Vaikuntham are not earthly, mappable
   locations in the tradition — but that reading is *our* inference, not
   something the source data states; it is not asserted as fact anywhere in
   this extraction's output.
-- **`page.Page110`'s title is literally `"107) Tiruparkadal (Ksheerabdi)"`** —
+- **`page.Page110`'s title is literally `"Tiruparkadal (Ksheerabdi)"`** —
   the only one of the 108 candidate temple titles carrying an embedded
   ordinal-number prefix. This is preserved verbatim; it is not treated as
   evidence of a reliable in-source numbering scheme (every other title has no
