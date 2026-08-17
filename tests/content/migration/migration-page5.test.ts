@@ -308,5 +308,12 @@ test("S: re-running the adapter + transformer against the same source produces a
   // file was later, deliberately moved to "published" once every Divya
   // Desam record had been reviewed -- a disclosed editorial change layered
   // on top of the migration output, not migration drift.
-  assert.deepEqual(recomputed, { ...output, status: "draft" });
+  //
+  // `translations` is excluded for the same reason: it is hand-authored
+  // (AI-generated, per an explicit editorial decision) reader-facing
+  // Tamil/Kannada/Hindi content layered on top of the migrated English
+  // record, not something the SAP-source migration pipeline knows how to
+  // derive or is expected to reproduce.
+  const { translations: _translations, ...outputWithoutTranslations } = output;
+  assert.deepEqual(recomputed, { ...outputWithoutTranslations, status: "draft" });
 });
