@@ -193,3 +193,45 @@ export const RelatedContentRefSchema = z.object({
   slug: SlugSchema,
 });
 export type RelatedContentRef = z.infer<typeof RelatedContentRefSchema>;
+
+// ---------------------------------------------------------------------------
+// Languages / translations
+// ---------------------------------------------------------------------------
+
+/**
+ * The reader-facing language toggle: English is always the base language
+ * every record already has (untouched, unmoved -- the plain top-level
+ * fields this schema always validated); these three are the only
+ * additional languages this app offers. Not a general i18n locale list.
+ */
+export const LanguageCodeSchema = z.enum(["ta", "kn", "hi"]);
+export type LanguageCode = z.infer<typeof LanguageCodeSchema>;
+
+export interface LanguageOption {
+  code: LanguageCode;
+  /** English name, used in the language picker alongside the native name. */
+  label: string;
+  /** The language's own name, in its own script. */
+  nativeLabel: string;
+}
+
+export const SUPPORTED_LANGUAGES: LanguageOption[] = [
+  { code: "ta", label: "Tamil", nativeLabel: "தமிழ்" },
+  { code: "kn", label: "Kannada", nativeLabel: "ಕನ್ನಡ" },
+  { code: "hi", label: "Hindi", nativeLabel: "हिन्दी" },
+];
+
+/**
+ * A per-language translations object shape shared by every content type:
+ * `{ ta?: T, kn?: T, hi?: T }`, each entry independently optional so a
+ * record can carry a translation for one language without needing all
+ * three. Explicit object (not `z.record`) so an absent language is
+ * simply an absent key, never a key that must be present-but-undefined.
+ */
+export function translationsSchemaFor<T extends z.ZodType>(languageShape: T) {
+  return z.object({
+    ta: languageShape.optional(),
+    kn: languageShape.optional(),
+    hi: languageShape.optional(),
+  });
+}

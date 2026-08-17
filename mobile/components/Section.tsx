@@ -2,13 +2,17 @@ import type { ReactNode } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { spacing, typography, useTheme } from "../theme";
 import { useReadingPreferences } from "../preferences-context.ts";
+import { paragraphsForReading } from "../../content-lib/text-format.ts";
 
 /**
  * Generic content section: an optional heading over either long-form
  * `text` (paragraph-preserving, mirroring the web app's
- * components/shared/LongFormSection.tsx: split only on existing blank
- * lines -- no rewriting/trimming/markdown conversion of the source
- * prose) or arbitrary `children`. Renders nothing when there is neither.
+ * components/shared/LongFormSection.tsx: real blank-line breaks always
+ * honored first, further split at existing sentence boundaries only when
+ * a block is too long to read comfortably as one paragraph -- see
+ * content-lib/text-format.ts; never rewrites, trims, or otherwise
+ * touches the source prose) or arbitrary `children`. Renders nothing
+ * when there is neither.
  *
  * Phase 6C reading-comfort pass: capped measure (layout.maxContentWidth,
  * applied by the screen, not here) plus a taller line-height
@@ -44,7 +48,7 @@ export function Section({
         </Text>
       ) : null}
       {text
-        ? text.split(/\n{2,}/).map((paragraph, index) => (
+        ? paragraphsForReading(text).map((paragraph, index) => (
             <Text
               key={index}
               style={[
@@ -66,7 +70,11 @@ export function Section({
 
 const styles = StyleSheet.create({
   section: {
-    gap: spacing.sm,
+    // Bumped from spacing.sm: at the previous 8px, a paragraph break
+    // read as barely more than the line-height inside a paragraph --
+    // too subtle to register as "chunked into paragraphs" the way a
+    // real reading app looks.
+    gap: spacing.md,
   },
   heading: {
     fontSize: typography.heading,

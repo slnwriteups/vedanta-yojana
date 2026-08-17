@@ -1,3 +1,5 @@
+import { paragraphsForReading } from "@/content-lib/text-format";
+
 /**
  * Renders a long-form migrated text field as readable paragraphs, WITHOUT
  * altering the underlying text. Originally Phase 5K (Sthala Puranam /
@@ -7,13 +9,15 @@
  * invented for it. Existing callers that always pass a heading (the
  * Divya Desam detail page) are unaffected.
  *
- * The stored value is source prose, not authored markdown -- this only
- * splits on the paragraph breaks already present in the string; it never
- * rewrites, trims interior whitespace, or otherwise touches the text
- * content itself.
+ * The stored value is source prose, not authored markdown. Real
+ * blank-line paragraph breaks are always honored first; on top of that,
+ * paragraphsForReading (content-lib/text-format.ts) only adds a visual
+ * break at an EXISTING sentence boundary when a block is too long to
+ * read comfortably as one paragraph -- it never rewrites, trims interior
+ * whitespace, truncates, or otherwise touches the text content itself.
  */
 export function LongFormSection({ heading, text }: { heading?: string; text: string }) {
-  const paragraphs = text.split(/\n{2,}/);
+  const paragraphs = paragraphsForReading(text);
   const headingId = heading
     ? `${heading.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-heading`
     : undefined;
@@ -25,7 +29,7 @@ export function LongFormSection({ heading, text }: { heading?: string; text: str
           {heading}
         </h2>
       ) : null}
-      <div className="prose-body space-y-4 whitespace-pre-line">
+      <div className="prose-body space-y-5 whitespace-pre-line">
         {paragraphs.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}

@@ -5,7 +5,17 @@ import {
   RelatedContentRefSchema,
   SlugSchema,
   StatusSchema,
+  translationsSchemaFor,
 } from "./shared.ts";
+
+/** See content-lib/schemas/divya-desam.ts's own translations block for the full "why". */
+export const KnowledgeTranslationSchema = z.object({
+  title: z.string().min(1).optional(),
+  body: z.string().min(1).optional(),
+});
+export type KnowledgeTranslation = z.infer<typeof KnowledgeTranslationSchema>;
+
+export const KnowledgeTranslationsSchema = translationsSchemaFor(KnowledgeTranslationSchema);
 
 /**
  * Knowledge schema — Phase 5C.
@@ -36,5 +46,6 @@ export const KnowledgeSchema = z.object({
   body: z.string().min(1),
   images: z.array(ImageEntrySchema).default([]),
   relatedContent: z.array(RelatedContentRefSchema).default([]),
+  translations: KnowledgeTranslationsSchema.optional(),
 });
 export type Knowledge = z.infer<typeof KnowledgeSchema>;

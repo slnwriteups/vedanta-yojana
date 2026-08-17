@@ -1,5 +1,24 @@
 import { z } from "zod";
-import { ImageEntrySchema, MigrationMetadataSchema, SlugSchema, StatusSchema } from "./shared.ts";
+import {
+  ImageEntrySchema,
+  MigrationMetadataSchema,
+  SlugSchema,
+  StatusSchema,
+  translationsSchemaFor,
+} from "./shared.ts";
+
+/**
+ * See content-lib/schemas/divya-desam.ts's own translations block for
+ * the full "why". `author` is deliberately excluded -- a person's name,
+ * not prose to translate.
+ */
+export const BookTranslationSchema = z.object({
+  title: z.string().min(1).optional(),
+  description: z.string().min(1).optional(),
+});
+export type BookTranslation = z.infer<typeof BookTranslationSchema>;
+
+export const BookTranslationsSchema = translationsSchemaFor(BookTranslationSchema);
 
 /**
  * Book + Chapter schemas — Phase 5C.
@@ -36,5 +55,6 @@ export const BookSchema = z.object({
   parts: z.array(BookPartSchema).default([]),
   /** Ordered list of chapter slugs. Chapter records themselves live separately. */
   chapterOrder: z.array(SlugSchema).default([]),
+  translations: BookTranslationsSchema.optional(),
 });
 export type Book = z.infer<typeof BookSchema>;

@@ -1,0 +1,79 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { paragraphsForReading, splitIntoReadableParagraphs } from "../../content-lib/text-format.ts";
+
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+
+// ---------------------------------------------------------------------------
+// splitIntoReadableParagraphs
+// ---------------------------------------------------------------------------
+
+test("A: a short paragraph is returned untouched, as a single element", () => {
+  const short = "Sri Ranganathar reclines on Adisesha. Sri Ranganayaki resides beside him.";
+  assert.deepEqual(splitIntoReadableParagraphs(short), [short]);
+});
+
+test("B: a paragraph longer than the target is split at sentence boundaries", () => {
+  const sentence = "The Lord blesses every devotee who approaches with sincere devotion and surrender.";
+  const long = Array(10).fill(sentence).join(" ");
+  const chunks = splitIntoReadableParagraphs(long, 300);
+  assert.ok(chunks.length > 1, "expected more than one chunk");
+  for (const chunk of chunks) assert.ok(chunk.length <= 300 || !chunk.includes(" "), `chunk too long: ${chunk.length}`);
+});
+
+test("C: concatenating the chunks with single spaces reconstructs the original text exactly", () => {
+  const sentence = "This kshethram is one of the 108 Divya Desams venerated by the Alwars.";
+  const long = Array(8).fill(sentence).join(" ");
+  const chunks = splitIntoReadableParagraphs(long, 200);
+  assert.equal(chunks.join(" "), long);
+});
+
+test("D: a single sentence longer than the target is still returned whole, never truncated", () => {
+  const oneHugeSentence = "This is a single unbroken sentence that just keeps going and going and going without any terminal punctuation until finally it ends";
+  const chunks = splitIntoReadableParagraphs(oneHugeSentence + ".", 40);
+  assert.equal(chunks.length, 1);
+  assert.equal(chunks[0], oneHugeSentence + ".");
+});
+
+test("E: Devanagari sentence-terminal punctuation (danda/double-danda) is recognized as a boundary", () => {
+  const sentence = "सर्वं श्रीकृष्णार्पणम् अस्तु।";
+  const long = Array(10).fill(sentence).join(" ");
+  const chunks = splitIntoReadableParagraphs(long, 60);
+  assert.ok(chunks.length > 1);
+  assert.equal(chunks.join(" "), long);
+});
+
+test("F: empty/whitespace-only input returns a single (empty) element, never crashes", () => {
+  assert.deepEqual(splitIntoReadableParagraphs(""), [""]);
+  assert.deepEqual(splitIntoReadableParagraphs("   "), [""]);
+});
+
+// ---------------------------------------------------------------------------
+// paragraphsForReading
+// ---------------------------------------------------------------------------
+
+test("G: existing blank-line paragraph breaks are preserved as real breaks, not merged", () => {
+  const text = "First short paragraph.\n\nSecond short paragraph.";
+  assert.deepEqual(paragraphsForReading(text), ["First short paragraph.", "Second short paragraph."]);
+});
+
+test("H: a real paragraph break plus one overlong block produces both a hard break and sentence-level splits", () => {
+  const sentence = "Every devotee who visits this kshethram is said to receive the Lord's blessing.";
+  const overlong = Array(8).fill(sentence).join(" ");
+  const text = `Short intro.\n\n${overlong}`;
+  const result = paragraphsForReading(text, 300);
+  assert.equal(result[0], "Short intro.");
+  assert.ok(result.length > 2, "expected the overlong block to split into more than one paragraph");
+});
+
+test("I: matches the real corpus -- Sri Rangam's Vibishana narrative (one long unbroken source paragraph) splits into multiple readable chunks", () => {
+  const record = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, "content/divya-desams/sri-rangam.json"), "utf8"));
+  const paragraphs = paragraphsForReading(record.sthalaPuranam);
+  const longest = Math.max(...paragraphs.length ? paragraphs.map((p: string) => p.length) : [0]);
+  assert.ok(paragraphs.length > 1, "expected Sri Rangam's sthalaPuranam to produce more than one paragraph");
+  assert.ok(longest < record.sthalaPuranam.length, "expected at least one split to have occurred");
+  assert.equal(paragraphs.join(" ").replace(/ {2,}/g, " "), record.sthalaPuranam.replace(/\n{2,}/g, " ").trim().replace(/ {2,}/g, " "));
+});

@@ -6,8 +6,10 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useTheme } from "../theme";
 import { ThemeProvider } from "../ThemeProvider";
 import { ReadingPreferencesProvider } from "../ReadingPreferencesProvider";
+import { LanguageProvider } from "../LanguageProvider";
 import { WelcomeScreen } from "../components/WelcomeScreen";
-import { WELCOME_SEEN_STORAGE_KEY, isValidSeenFlag } from "../content-lib/preferences.ts";
+import { OnboardingScreen } from "../components/OnboardingScreen";
+import { ONBOARDED_STORAGE_KEY, isValidCompletedFlag } from "../content-lib/preferences.ts";
 import { readJSON, writeJSON } from "../storage.ts";
 
 /**
@@ -18,47 +20,65 @@ import { readJSON, writeJSON } from "../storage.ts";
  * its name in parentheses never appears in the URL, so every route from
  * Phase 6B (`/`, `/divya-desams`, `/divya-desams/[slug]`, `/library`,
  * `/library/[book]`, `/library/[book]/[chapter]`, `/search`) is unchanged
- * and every existing deep link still resolves. The former `/knowledge`
+ * and every existing deep link still resolves (plus `/settings`, added
+ * alongside the restored welcome/onboarding flow below). The former `/knowledge`
  * and `/knowledge/[slug]` routes were retired; the one real Knowledge
  * record now lives at the static `/divya-desams/introduction` route,
  * co-located with `/divya-desams/[slug]`.
  *
- * Phase 6D adds ReadingPreferencesProvider alongside ThemeProvider --
- * the two persisted-preference providers, both loading from AsyncStorage
- * once on mount (see ThemeProvider.tsx / ReadingPreferencesProvider.tsx).
+ * Phase 6D adds ReadingPreferencesProvider alongside ThemeProvider, and a
+ * later phase adds LanguageProvider (the content-language toggle) as a
+ * third -- all three persisted-preference providers load from
+ * AsyncStorage once on mount (see ThemeProvider.tsx /
+ * ReadingPreferencesProvider.tsx / LanguageProvider.tsx).
  *
- * A third persisted flag (WELCOME_SEEN_STORAGE_KEY) gates the restored
- * legacy launch screen (WelcomeScreen.tsx, mirroring web's
- * components/WelcomeGate.tsx): until that AsyncStorage read resolves,
- * nothing but a plain themed background renders -- unlike the theme/
- * reading-preference reads, this one MUST block first paint, since
- * showing (tabs) even briefly before a first-ever launch's welcome
- * screen would defeat the point of restoring it.
+ * The restored legacy launch screen (WelcomeScreen.tsx, mirroring web's
+ * components/WelcomeGate.tsx) is gated on plain in-memory state, not a
+ * persisted flag -- by design, it shows again every time the app is
+ * fully closed and relaunched, not just once ever. A cold launch always
+ * creates a fresh JS engine instance, so `useState(false)` already
+ * starts "not seen" on every such launch with no read/write needed;
+ * backgrounding and returning to the app (as opposed to closing it)
+ * keeps this same component instance alive, so it correctly does NOT
+ * reappear for that case.
+ *
+ * Right after Welcome, a SEPARATE one-time step (OnboardingScreen.tsx)
+ * offers the Appearance/Text-size choice -- genuinely once ever, per
+ * install, unlike Welcome, so it IS gated on a persisted AsyncStorage
+ * flag (ONBOARDED_STORAGE_KEY). The read starts immediately on mount
+ * (in parallel with Welcome being shown/dismissed), so it has almost
+ * always already resolved by the time it's needed; the brief blank
+ * fallback only matters on an unusually slow first read.
  */
 function RootStack() {
   const theme = useTheme();
-  const [seenWelcome, setSeenWelcome] = useState<boolean | null>(null);
+  const [seenWelcome, setSeenWelcome] = useState(false);
+  const [onboarded, setOnboarded] = useState<boolean | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    readJSON(WELCOME_SEEN_STORAGE_KEY, isValidSeenFlag).then((stored) => {
-      if (!cancelled) setSeenWelcome(stored === true);
+    readJSON(ONBOARDED_STORAGE_KEY, isValidCompletedFlag).then((stored) => {
+      if (!cancelled) setOnboarded(stored === true);
     });
     return () => {
       cancelled = true;
     };
   }, []);
 
-  if (seenWelcome === null) {
+  if (!seenWelcome) {
+    return <WelcomeScreen onDone={() => setSeenWelcome(true)} />;
+  }
+
+  if (onboarded === null) {
     return <View style={{ flex: 1, backgroundColor: theme.colors.background }} />;
   }
 
-  if (!seenWelcome) {
+  if (!onboarded) {
     return (
-      <WelcomeScreen
+      <OnboardingScreen
         onDone={() => {
-          setSeenWelcome(true);
-          void writeJSON(WELCOME_SEEN_STORAGE_KEY, true);
+          setOnboarded(true);
+          void writeJSON(ONBOARDED_STORAGE_KEY, true);
         }}
       />
     );
@@ -75,10 +95,12 @@ export default function RootLayout() {
   return (
     <ThemeProvider>
       <ReadingPreferencesProvider>
-        <SafeAreaProvider>
-          <RootStack />
-          <StatusBar style="auto" />
-        </SafeAreaProvider>
+        <LanguageProvider>
+          <SafeAreaProvider>
+            <RootStack />
+            <StatusBar style="auto" />
+          </SafeAreaProvider>
+        </LanguageProvider>
       </ReadingPreferencesProvider>
     </ThemeProvider>
   );

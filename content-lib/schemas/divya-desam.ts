@@ -5,6 +5,7 @@ import {
   RelatedContentRefSchema,
   SlugSchema,
   StatusSchema,
+  translationsSchemaFor,
 } from "./shared.ts";
 
 /**
@@ -104,6 +105,39 @@ export const ResourceEntrySchema = z.object({
 export type ResourceEntry = z.infer<typeof ResourceEntrySchema>;
 
 // ---------------------------------------------------------------------------
+// Translations — reader-facing language toggle (English is the base
+// language: the plain fields above, always present, never moved). Every
+// field here mirrors an English one and is independently optional: a
+// translation may cover the short temple-information fields without yet
+// covering the long Sthala Puranam narrative, or vice versa -- never
+// required to be all-or-nothing. Shrine translations are keyed by the
+// shrine's own position in `shrines[]` (as a string index) rather than
+// requiring a parallel same-length array, since only a minority of
+// records (the multi-shrine ones) have shrine-level prose to translate
+// at all.
+// ---------------------------------------------------------------------------
+
+export const ShrineTranslationSchema = z.object({
+  name: z.string().min(1).optional(),
+  templeInformation: TempleInformationSchema.optional(),
+  sthalaPuranam: z.string().min(1).optional(),
+  azhwarPasuram: z.string().min(1).optional(),
+});
+export type ShrineTranslation = z.infer<typeof ShrineTranslationSchema>;
+
+export const DivyaDesamTranslationSchema = z.object({
+  displayName: z.string().min(1).optional(),
+  templeInformation: TempleInformationSchema.optional(),
+  sthalaPuranam: z.string().min(1).optional(),
+  azhwarPasuram: z.string().min(1).optional(),
+  /** Keyed by the shrine's index in `shrines[]`, e.g. {"0": {...}, "1": {...}}. */
+  shrines: z.record(z.string(), ShrineTranslationSchema).optional(),
+});
+export type DivyaDesamTranslation = z.infer<typeof DivyaDesamTranslationSchema>;
+
+export const DivyaDesamTranslationsSchema = translationsSchemaFor(DivyaDesamTranslationSchema);
+
+// ---------------------------------------------------------------------------
 // Divya Desam
 // ---------------------------------------------------------------------------
 
@@ -119,5 +153,6 @@ export const DivyaDesamSchema = z.object({
   images: z.array(ImageEntrySchema).default([]),
   resources: z.array(ResourceEntrySchema).default([]),
   relatedContent: z.array(RelatedContentRefSchema).default([]),
+  translations: DivyaDesamTranslationsSchema.optional(),
 });
 export type DivyaDesam = z.infer<typeof DivyaDesamSchema>;

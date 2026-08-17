@@ -1,10 +1,8 @@
 import { useRouter } from "expo-router";
-import { AccessibilityInfo, FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 import { HOME_SECTIONS, type HomeSection } from "../../content-lib/navigation.ts";
-import { layout, radius, spacing, typography, useTheme, useThemeControls, type ColorScheme } from "../../theme";
+import { layout, radius, spacing, typography, useTheme } from "../../theme";
 import { shadows } from "../../shadows";
-import { useReadingPreferences } from "../../preferences-context.ts";
-import { FONT_SCALE_STEPS } from "../../content-lib/preferences.ts";
 
 /**
  * Phase 6C -- Home refined: a calmer hero (title + one short generic
@@ -13,16 +11,16 @@ import { FONT_SCALE_STEPS } from "../../content-lib/preferences.ts";
  * the web app's own section index pages use -- see
  * content-lib/navigation.ts). Still React Native primitives only.
  *
- * Phase 6D -- adds a font-size control (Small/Medium/Large/Extra Large)
- * alongside the Phase 6C theme toggle; both are now persisted settings
- * (see ThemeProvider.tsx / ReadingPreferencesProvider.tsx) rather than
- * session-only state.
+ * The Appearance/Text-size controls that used to live inline here
+ * (Phase 6D) moved out: a one-time choice now happens in
+ * OnboardingScreen.tsx right after the restored welcome screen, and the
+ * same controls stay reachable afterward from the Settings tab (see
+ * app/(tabs)/_layout.tsx and app/(tabs)/settings.tsx) -- Home itself
+ * goes back to being just the section list, uncluttered on every visit.
  */
 export default function HomeScreen() {
   const router = useRouter();
   const theme = useTheme();
-  const { override, setOverride } = useThemeControls();
-  const { preferences, setFontScale } = useReadingPreferences();
 
   function renderSection({ item }: { item: HomeSection }) {
     return (
@@ -52,19 +50,6 @@ export default function HomeScreen() {
         <Text style={[styles.description, { color: theme.colors.muted }]}>
           A reference for Divya Desams, the Library, and supporting Knowledge material.
         </Text>
-
-        <PillGroup
-          label="Appearance"
-          options={THEME_OPTIONS}
-          selectedValue={override}
-          onChange={setOverride}
-        />
-        <PillGroup
-          label="Text size"
-          options={FONT_SCALE_STEPS}
-          selectedValue={preferences.fontScale}
-          onChange={setFontScale}
-        />
       </View>
 
       <FlatList
@@ -73,65 +58,6 @@ export default function HomeScreen() {
         renderItem={renderSection}
         contentContainerStyle={styles.list}
       />
-    </View>
-  );
-}
-
-const THEME_OPTIONS: { label: string; value: ColorScheme | null }[] = [
-  { label: "System", value: null },
-  { label: "Light", value: "light" },
-  { label: "Dark", value: "dark" },
-];
-
-/**
- * A labeled row of mutually-exclusive pill buttons -- shared by the
- * theme toggle and the font-size control so the two Phase 6D settings
- * look and behave identically rather than duplicating the same markup
- * twice.
- */
-function PillGroup<T>({
-  label,
-  options,
-  selectedValue,
-  onChange,
-}: {
-  label: string;
-  options: { label: string; value: T }[];
-  selectedValue: T;
-  onChange: (value: T) => void;
-}) {
-  const theme = useTheme();
-  return (
-    <View style={styles.pillGroup}>
-      <Text style={[styles.pillGroupLabel, { color: theme.colors.muted }]}>{label}</Text>
-      <View style={styles.toggleRow} accessibilityRole="radiogroup" accessibilityLabel={label}>
-        {options.map((option) => {
-          const selected = selectedValue === option.value;
-          return (
-            <Pressable
-              key={option.label}
-              onPress={() => {
-                onChange(option.value);
-                AccessibilityInfo.announceForAccessibility(`${label} set to ${option.label}`);
-              }}
-              accessibilityRole="radio"
-              accessibilityState={{ selected }}
-              accessibilityLabel={option.label}
-              style={[
-                styles.toggleButton,
-                {
-                  borderColor: selected ? theme.colors.accent : theme.colors.border,
-                  backgroundColor: selected ? theme.colors.surfaceAlt : "transparent",
-                },
-              ]}
-            >
-              <Text style={[styles.toggleLabel, { color: selected ? theme.colors.accent : theme.colors.muted }]}>
-                {option.label}
-              </Text>
-            </Pressable>
-          );
-        })}
-      </View>
     </View>
   );
 }
@@ -155,36 +81,10 @@ const styles = StyleSheet.create({
     fontSize: typography.body,
     lineHeight: typography.body * typography.readingLineHeight,
   },
-  pillGroup: {
-    marginTop: spacing.sm,
-    gap: spacing.xs,
-  },
-  pillGroupLabel: {
-    fontSize: typography.eyebrow,
-    textTransform: "uppercase",
-    letterSpacing: 0.5,
-  },
-  toggleRow: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: spacing.sm,
-  },
-  toggleButton: {
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.xs,
-    borderRadius: radius.sm,
-    borderWidth: StyleSheet.hairlineWidth,
-    minHeight: layout.minTouchTarget,
-    justifyContent: "center",
-  },
-  toggleLabel: {
-    fontSize: typography.small,
-    fontWeight: "600",
-  },
   list: {
     paddingHorizontal: layout.screenPadding,
     gap: spacing.md,
-    paddingBottom: spacing.xl,
+    paddingBottom: layout.tabBarClearance,
   },
   card: {
     padding: spacing.lg,

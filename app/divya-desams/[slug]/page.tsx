@@ -103,6 +103,11 @@ export default async function DivyaDesamDetailPage({
       </div>
 
       <TempleInformation info={record.templeInformation} />
+      {/* Kept right beside Temple Information's own "How to reach" field
+          (not down with the narrative sections below) so a traveler gets
+          the travel note and the actual clickable map together, in one
+          place, before anything else. */}
+      <ShrineLinks shrines={record.shrines} />
       <RecordImages images={topImages} />
       {record.sthalaPuranam ? (
         afterSthalaPuranamImages.length > 0 ? (
@@ -115,7 +120,6 @@ export default async function DivyaDesamDetailPage({
         <LongFormSection heading="Azhwar Pasuram" text={record.azhwarPasuram} />
       ) : null}
       <ShrineDetails shrines={record.shrines} />
-      <ShrineLinks shrines={record.shrines} />
       <ResourceLinks resources={record.resources} />
     </div>
   );

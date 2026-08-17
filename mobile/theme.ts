@@ -81,6 +81,15 @@ export const layout = {
   screenPadding: spacing.lg,
   /** Apple/Android accessibility guidance: minimum comfortable touch target. */
   minTouchTarget: 44,
+  /**
+   * Extra bottom clearance for every scrollable/list screen nested under
+   * the (tabs) bottom tab bar -- reported as long content (Sthala
+   * Puranam especially) scrolling up right to the tab bar's edge with no
+   * breathing room. Sized generously above a typical iOS tab bar height
+   * (~49pt) plus the home-indicator safe area (~34pt) so the last line
+   * of text always clears it with real margin, on both platforms.
+   */
+  tabBarClearance: 96,
 } as const;
 
 export interface Theme {

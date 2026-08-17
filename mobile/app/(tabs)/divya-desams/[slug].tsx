@@ -8,6 +8,9 @@ import { ContentImage } from "../../../components/ContentImage";
 import { SthalaPuranamWithImages } from "../../../components/SthalaPuranamWithImages";
 import { ResourceLink } from "../../../components/ResourceLink";
 import { layout, spacing, typography, useTheme } from "../../../theme";
+import { paragraphsForReading } from "../../../../content-lib/text-format.ts";
+import { localizeDivyaDesam } from "../../../../content-lib/i18n.ts";
+import { useLanguage } from "../../../language-context.ts";
 
 /**
  * Phase 6C's original reading-layout order pulled the first resolvable
@@ -58,7 +61,9 @@ const TEMPLE_FIELD_ORDER: (keyof TempleInformationData)[] = [
 export default function DivyaDesamDetailScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const theme = useTheme();
-  const record = loadDivyaDesam(slug);
+  const { language } = useLanguage();
+  const loaded = loadDivyaDesam(slug);
+  const record = loaded ? localizeDivyaDesam(loaded, language) : null;
 
   if (!record) {
     return (
@@ -111,6 +116,24 @@ export default function DivyaDesamDetailScreen() {
         </Section>
       ) : null}
 
+      {/* Kept right beside Temple Information's own "How to reach" field
+          (not down with the narrative sections below) so a traveler gets
+          the travel note and the actual clickable map together, in one
+          place, before anything else. */}
+      {record.shrines.length > 0 ? (
+        <Section heading={`Shrine Location${record.shrines.length > 1 ? "s" : ""}`}>
+          <View style={styles.linkList}>
+            {record.shrines.map((shrine, index) => (
+              <ResourceLink
+                key={`${shrine.mapsLink}-${index}`}
+                label={shrine.label ?? "View on Google Maps"}
+                url={shrine.mapsLink}
+              />
+            ))}
+          </View>
+        </Section>
+      ) : null}
+
       {record.sthalaPuranam ? (
         afterSthalaPuranamImages.length > 0 ? (
           <SthalaPuranamWithImages text={record.sthalaPuranam} images={afterSthalaPuranamImages} />
@@ -150,8 +173,7 @@ export default function DivyaDesamDetailScreen() {
                     </View>
                   ) : null}
                   {shrine.sthalaPuranam
-                    ? shrine.sthalaPuranam
-                        .split(/\n{2,}/)
+                    ? paragraphsForReading(shrine.sthalaPuranam)
                         .map((paragraph, pIndex) => (
                           <Text
                             key={`sp-${pIndex}`}
@@ -162,8 +184,7 @@ export default function DivyaDesamDetailScreen() {
                         ))
                     : null}
                   {shrine.azhwarPasuram
-                    ? shrine.azhwarPasuram
-                        .split(/\n{2,}/)
+                    ? paragraphsForReading(shrine.azhwarPasuram)
                         .map((paragraph, pIndex) => (
                           <Text
                             key={`ap-${pIndex}`}
@@ -176,20 +197,6 @@ export default function DivyaDesamDetailScreen() {
                 </View>
               );
             })}
-          </View>
-        </Section>
-      ) : null}
-
-      {record.shrines.length > 0 ? (
-        <Section heading={`Shrine Location${record.shrines.length > 1 ? "s" : ""}`}>
-          <View style={styles.linkList}>
-            {record.shrines.map((shrine, index) => (
-              <ResourceLink
-                key={`${shrine.mapsLink}-${index}`}
-                label={shrine.label ?? "View on Google Maps"}
-                url={shrine.mapsLink}
-              />
-            ))}
           </View>
         </Section>
       ) : null}
@@ -217,6 +224,7 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: layout.screenPadding,
+    paddingBottom: layout.tabBarClearance,
     gap: spacing.xl,
     maxWidth: layout.maxContentWidth,
     alignSelf: "center",
@@ -236,7 +244,7 @@ const styles = StyleSheet.create({
     gap: spacing.lg,
   },
   shrineBlock: {
-    gap: spacing.sm,
+    gap: spacing.md,
   },
   shrineHeading: {
     fontSize: typography.body,

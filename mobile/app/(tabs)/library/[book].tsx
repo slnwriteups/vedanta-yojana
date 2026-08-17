@@ -4,6 +4,8 @@ import { loadBook, loadChapters, type Chapter } from "../../../content-lib/loade
 import { ContentCard } from "../../../components/ContentCard";
 import { DraftBadge } from "../../../components/DraftBadge";
 import { layout, spacing, typography, useTheme } from "../../../theme";
+import { localizeBook, localizeChapter } from "../../../../content-lib/i18n.ts";
+import { useLanguage } from "../../../language-context.ts";
 
 /**
  * Phase 6C -- unchanged ordering/data behavior from Phase 6B (chapters
@@ -14,7 +16,9 @@ export default function LibraryBookScreen() {
   const { book: bookSlug } = useLocalSearchParams<{ book: string }>();
   const router = useRouter();
   const theme = useTheme();
-  const book = loadBook(bookSlug);
+  const { language } = useLanguage();
+  const loadedBook = loadBook(bookSlug);
+  const book = loadedBook ? localizeBook(loadedBook, language) : null;
 
   if (!book) {
     return (
@@ -25,7 +29,7 @@ export default function LibraryBookScreen() {
     );
   }
 
-  const chapters = loadChapters(book.slug);
+  const chapters = loadChapters(book.slug).map((c) => localizeChapter(c, language));
 
   function renderItem({ item }: { item: Chapter }) {
     return (
@@ -49,7 +53,12 @@ export default function LibraryBookScreen() {
         ) : null}
       </View>
       {chapters.length > 0 ? (
-        <FlatList data={chapters} keyExtractor={(item) => item.slug} renderItem={renderItem} />
+        <FlatList
+          data={chapters}
+          keyExtractor={(item) => item.slug}
+          renderItem={renderItem}
+          contentContainerStyle={styles.list}
+        />
       ) : (
         <Text style={[styles.empty, { color: theme.colors.muted }]}>No chapters are available yet.</Text>
       )}
@@ -62,6 +71,9 @@ const styles = StyleSheet.create({
   header: {
     padding: layout.screenPadding,
     gap: spacing.xs,
+  },
+  list: {
+    paddingBottom: layout.tabBarClearance,
   },
   title: {
     fontSize: typography.title,

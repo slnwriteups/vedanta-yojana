@@ -1,5 +1,6 @@
 import type { ImageEntry } from "@/content-lib/schemas";
 import { resolveImageHref } from "@/lib/image-file";
+import { splitIntoReadableParagraphs } from "@/content-lib/text-format";
 
 /**
  * Renders Sthala Puranam interleaved with the images the source itself
@@ -15,7 +16,10 @@ import { resolveImageHref } from "@/lib/image-file";
  * inserts the image immediately after it, splitting that one paragraph
  * into two <p> elements around the insertion point (every other
  * paragraph renders exactly as LongFormSection already does: one
- * whitespace-pre-line <p> per `\n{2,}`-separated chunk). Images with no
+ * whitespace-pre-line <p> per `\n{2,}`-separated chunk, further split at
+ * sentence boundaries by splitIntoReadableParagraphs when a chunk is
+ * still too long to read comfortably -- see content-lib/text-format.ts).
+ * Images with no
  * anchor (or whose anchor isn't present on this record) render as a
  * trailing group after the whole text -- identical to the pre-existing
  * "after Sthala Puranam" behavior, so this is purely additive.
@@ -95,12 +99,14 @@ export function SthalaPuranamWithImages({ text, images }: { text: string; images
       <h2 id="sthala-puranam-heading" className="section-heading">
         Sthala Puranam
       </h2>
-      <div className="space-y-4">
+      <div className="space-y-5">
         {segments.map((segment) =>
           segment.text !== undefined ? (
-            <p key={segment.key} className="prose-body whitespace-pre-line">
-              {segment.text}
-            </p>
+            splitIntoReadableParagraphs(segment.text).map((paragraph, i) => (
+              <p key={`${segment.key}-${i}`} className="prose-body whitespace-pre-line">
+                {paragraph}
+              </p>
+            ))
           ) : (
             <div key={segment.key} className="max-w-none">
               <ImageRow images={segment.images ?? []} />

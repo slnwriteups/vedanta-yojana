@@ -1,4 +1,8 @@
 import type { ColorScheme } from "../theme.ts";
+import type { LanguageCode } from "../../content-lib/schemas/index.ts";
+
+export { SUPPORTED_LANGUAGES } from "../../content-lib/schemas/index.ts";
+export type { LanguageCode } from "../../content-lib/schemas/index.ts";
 
 /**
  * Phase 6D -- the pure, storage-agnostic half of the settings foundation:
@@ -14,14 +18,26 @@ import type { ColorScheme } from "../theme.ts";
 
 export const THEME_STORAGE_KEY = "vy.preferences.themeOverride";
 export const READING_STORAGE_KEY = "vy.preferences.reading";
-/** Whether the restored launch welcome screen has ever been shown -- see WelcomeScreen.tsx. */
-export const WELCOME_SEEN_STORAGE_KEY = "vy.preferences.welcomeSeen";
+/**
+ * Whether the one-time appearance/text-size onboarding step (see
+ * OnboardingScreen.tsx) has ever been completed. Unlike the welcome
+ * screen (WelcomeScreen.tsx, shown on every fresh launch, unpersisted),
+ * this genuinely is "once ever, per install" -- afterward the same
+ * controls stay reachable any time from app/settings.tsx.
+ */
+export const ONBOARDED_STORAGE_KEY = "vy.preferences.onboarded";
+/** Reader-facing content language. null = English (the base language, always present). */
+export const LANGUAGE_STORAGE_KEY = "vy.preferences.language";
 
 export function isValidThemeOverride(value: unknown): value is ColorScheme | null {
   return value === null || value === "light" || value === "dark";
 }
 
-export function isValidSeenFlag(value: unknown): value is true {
+export function isValidLanguageCode(value: unknown): value is LanguageCode | null {
+  return value === null || value === "ta" || value === "kn" || value === "hi";
+}
+
+export function isValidCompletedFlag(value: unknown): value is true {
   return value === true;
 }
 

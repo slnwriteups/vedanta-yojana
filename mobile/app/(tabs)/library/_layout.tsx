@@ -10,6 +10,10 @@ export default function LibraryLayout() {
         headerStyle: { backgroundColor: theme.colors.background },
         headerTintColor: theme.colors.foreground,
         contentStyle: { backgroundColor: theme.colors.background },
+        // See app/(tabs)/_layout.tsx's same setting for why: an explicit,
+        // solid header rather than trusting the native-stack default.
+        headerTransparent: false,
+        headerBlurEffect: "none",
       }}
     />
   );

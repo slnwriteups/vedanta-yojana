@@ -5,6 +5,8 @@ import { sourcePageNumber } from "../../../content-lib/ordering.ts";
 import { imagesByUuid } from "../../../content-lib/image-manifest.generated.ts";
 import { ContentCard } from "../../../components/ContentCard";
 import { layout, spacing, typography, useTheme } from "../../../theme";
+import { localizeDivyaDesam, localizeKnowledge } from "../../../../content-lib/i18n.ts";
+import { useLanguage } from "../../../language-context.ts";
 
 /**
  * Phase 6C -- Divya Desam index refined: each card now shows an image
@@ -26,10 +28,12 @@ function firstImageAsset(record: DivyaDesam): number | null {
 export default function DivyaDesamsIndexScreen() {
   const router = useRouter();
   const theme = useTheme();
-  const records = [...loadDivyaDesams()].sort(
-    (a, b) => sourcePageNumber(a.migration.sourcePageId) - sourcePageNumber(b.migration.sourcePageId)
-  );
-  const introduction = loadKnowledgeRecord("introduction");
+  const { language } = useLanguage();
+  const records = [...loadDivyaDesams()]
+    .sort((a, b) => sourcePageNumber(a.migration.sourcePageId) - sourcePageNumber(b.migration.sourcePageId))
+    .map((r) => localizeDivyaDesam(r, language));
+  const loadedIntroduction = loadKnowledgeRecord("introduction");
+  const introduction = loadedIntroduction ? localizeKnowledge(loadedIntroduction, language) : null;
 
   function renderItem({ item }: { item: DivyaDesam }) {
     return (
@@ -52,6 +56,7 @@ export default function DivyaDesamsIndexScreen() {
         data={records}
         keyExtractor={(item) => item.slug}
         renderItem={renderItem}
+        contentContainerStyle={styles.list}
         ListHeaderComponent={
           introduction ? (
             <ContentCard
@@ -74,5 +79,8 @@ const styles = StyleSheet.create({
     fontSize: typography.small,
     paddingHorizontal: layout.screenPadding,
     paddingVertical: spacing.sm,
+  },
+  list: {
+    paddingBottom: layout.tabBarClearance,
   },
 });

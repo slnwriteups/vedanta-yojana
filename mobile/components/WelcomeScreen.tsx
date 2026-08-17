@@ -16,15 +16,24 @@ import welcomeAudio from "../../public/audio/vy-welcome.mp3";
  */
 export function WelcomeScreen({ onDone }: { onDone: () => void }) {
   const theme = useTheme();
+  // useAudioPlayer() already releases its native player automatically on
+  // unmount -- an explicit player.pause() in an effect cleanup here raced
+  // with that disposal under Strict Mode's double-invoke (mount ->
+  // cleanup -> mount) and crashed with a native "object already
+  // released" error. play() only needs to run once per mount.
   const player = useAudioPlayer(welcomeAudio);
 
   useEffect(() => {
     player.play();
-    return () => player.pause();
   }, [player]);
 
   function begin() {
-    player.pause();
+    try {
+      player.pause();
+    } catch {
+      // Best-effort: the player may already be released (e.g. a fast
+      // double-tap) -- never block dismissing the screen over this.
+    }
     onDone();
   }
 
@@ -36,13 +45,16 @@ export function WelcomeScreen({ onDone }: { onDone: () => void }) {
           <Text style={[styles.title, { color: theme.colors.foreground }]}>Welcome to Vedanta Yojana</Text>
           <Text style={[styles.tagline, { color: theme.colors.muted }]}>Yatra Jñānam Pravahati</Text>
         </View>
-        <TouchableOpacity
-          onPress={begin}
-          style={[styles.button, { backgroundColor: theme.colors.accent }]}
-          accessibilityRole="button"
-        >
-          <Text style={[styles.buttonLabel, { color: theme.colors.surface }]}>Jñānayātrām Pravartaya</Text>
-        </TouchableOpacity>
+        <View style={styles.buttonBlock}>
+          <TouchableOpacity
+            onPress={begin}
+            style={[styles.button, { backgroundColor: theme.colors.accent }]}
+            accessibilityRole="button"
+          >
+            <Text style={[styles.buttonLabel, { color: theme.colors.surface }]}>Jñānayātrām Pravartaya</Text>
+          </TouchableOpacity>
+          <Text style={[styles.buttonHint, { color: theme.colors.muted }]}>Tap to enter the app</Text>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -76,6 +88,10 @@ const styles = StyleSheet.create({
     fontSize: typography.small,
     textAlign: "center",
   },
+  buttonBlock: {
+    alignItems: "center",
+    gap: spacing.sm,
+  },
   button: {
     borderRadius: 10,
     paddingVertical: spacing.md,
@@ -84,5 +100,8 @@ const styles = StyleSheet.create({
   buttonLabel: {
     fontSize: typography.body,
     fontWeight: "600",
+  },
+  buttonHint: {
+    fontSize: typography.small,
   },
 });

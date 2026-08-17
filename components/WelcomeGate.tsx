@@ -11,10 +11,12 @@ import { useEffect, useRef, useState } from "react";
  * user supplied directly from the original app's own embedded HTML
  * (audio) -- not fabricated.
  *
- * Shown once per browser (a "have they ever seen this" gate, not a
- * "once per session" one -- matches the user's explicit choice). Renders
- * `children` untouched everywhere except the one-time overlay on top of
- * them, so there is no dependency on which page happens to be first.
+ * Shown once per browser SESSION, not once ever -- sessionStorage (not
+ * localStorage) clears itself when the tab/browser closes, mirroring
+ * the mobile app's "shows again on every fresh launch, not just once
+ * per install" behavior, per explicit direction. Renders `children`
+ * untouched everywhere except the one-time overlay on top of them, so
+ * there is no dependency on which page happens to be first.
  */
 
 const SEEN_KEY = "vy-welcome-seen";
@@ -32,7 +34,7 @@ export function WelcomeGate({
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
-    if (!window.localStorage.getItem(SEEN_KEY)) {
+    if (!window.sessionStorage.getItem(SEEN_KEY)) {
       setShowWelcome(true);
     }
   }, []);
@@ -47,7 +49,7 @@ export function WelcomeGate({
   }, [showWelcome]);
 
   function begin() {
-    window.localStorage.setItem(SEEN_KEY, "1");
+    window.sessionStorage.setItem(SEEN_KEY, "1");
     audioRef.current?.pause();
     setShowWelcome(false);
   }
@@ -77,13 +79,16 @@ export function WelcomeGate({
           </h1>
           <p className="text-sm text-[var(--muted)]">Yatra Jñānam Pravahati</p>
         </div>
-        <button
-          type="button"
-          onClick={begin}
-          className="rounded-md bg-[var(--accent)] px-6 py-3 text-sm font-medium text-[var(--surface)] transition-opacity hover:opacity-90"
-        >
-          Jñānayātrām Pravartaya
-        </button>
+        <div className="flex flex-col items-center gap-2">
+          <button
+            type="button"
+            onClick={begin}
+            className="rounded-md bg-[var(--accent)] px-6 py-3 text-sm font-medium text-[var(--surface)] transition-opacity hover:opacity-90"
+          >
+            Jñānayātrām Pravartaya
+          </button>
+          <p className="text-xs text-[var(--muted)]">Tap to enter the app</p>
+        </div>
       </div>
     </>
   );

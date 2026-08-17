@@ -5,6 +5,8 @@ import { DraftBadge } from "../../../components/DraftBadge";
 import { ContentImage } from "../../../components/ContentImage";
 import { Section } from "../../../components/Section";
 import { layout, spacing, typography, useTheme } from "../../../theme";
+import { localizeKnowledge } from "../../../../content-lib/i18n.ts";
+import { useLanguage } from "../../../language-context.ts";
 
 const INTRODUCTION_SLUG = "introduction";
 
@@ -17,7 +19,9 @@ const INTRODUCTION_SLUG = "introduction";
  */
 export default function DivyaDesamsIntroductionScreen() {
   const theme = useTheme();
-  const record = loadKnowledgeRecord(INTRODUCTION_SLUG);
+  const { language } = useLanguage();
+  const loaded = loadKnowledgeRecord(INTRODUCTION_SLUG);
+  const record = loaded ? localizeKnowledge(loaded, language) : null;
 
   if (!record) {
     return (
@@ -58,7 +62,7 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: layout.screenPadding,
-    paddingBottom: spacing.xxl,
+    paddingBottom: layout.tabBarClearance,
     gap: spacing.xl,
     maxWidth: layout.maxContentWidth,
     alignSelf: "center",

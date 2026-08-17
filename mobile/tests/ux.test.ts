@@ -49,6 +49,7 @@ test("Navigation: the (tabs) group contains a real file for every route Phase 6B
     "app/(tabs)/library/[book].tsx",
     "app/(tabs)/library/[book]/[chapter].tsx",
     "app/(tabs)/search.tsx",
+    "app/(tabs)/settings.tsx",
   ];
   for (const relative of expected) {
     assert.ok(fs.existsSync(path.join(MOBILE_ROOT, relative)), `missing ${relative}`);

@@ -6,6 +6,7 @@ import { spacing, typography, useTheme } from "../theme";
 import { useReadingPreferences } from "../preferences-context.ts";
 import { FadeInImage, IMAGE_SIZE } from "./ContentImage";
 import { ImageViewerModal } from "./ImageViewerModal";
+import { splitIntoReadableParagraphs } from "../../content-lib/text-format.ts";
 
 /**
  * Mobile counterpart of components/divya-desams/SthalaPuranamWithImages.tsx
@@ -81,34 +82,36 @@ export function SthalaPuranamWithImages({ text, images }: { text: string; images
       <Text style={[styles.heading, { color: theme.colors.foreground }]} accessibilityRole="header">
         Sthala Puranam
       </Text>
-      {segments.map((segment) =>
-        segment.text !== undefined ? (
-          <Text
-            key={segment.key}
-            style={[
-              styles.paragraph,
-              {
-                color: theme.colors.foreground,
-                fontSize: typography.body * preferences.fontScale,
-                lineHeight: typography.body * preferences.fontScale * typography.readingLineHeight,
-              },
-            ]}
-          >
-            {segment.text}
-          </Text>
-        ) : (
-          <View key={segment.key} style={styles.row}>
-            {(segment.images ?? []).map(({ image, asset }) => (
-              <FadeInImage
-                key={image.assetId}
-                asset={asset}
-                label={image.alt}
-                size={IMAGE_SIZE}
-                onPress={() => setViewerAsset({ asset, label: image.alt })}
-              />
-            ))}
-          </View>
-        )
+      {segments.flatMap((segment) =>
+        segment.text !== undefined
+          ? splitIntoReadableParagraphs(segment.text).map((paragraph, i) => (
+              <Text
+                key={`${segment.key}-${i}`}
+                style={[
+                  styles.paragraph,
+                  {
+                    color: theme.colors.foreground,
+                    fontSize: typography.body * preferences.fontScale,
+                    lineHeight: typography.body * preferences.fontScale * typography.readingLineHeight,
+                  },
+                ]}
+              >
+                {paragraph}
+              </Text>
+            ))
+          : [
+              <View key={segment.key} style={styles.row}>
+                {(segment.images ?? []).map(({ image, asset }) => (
+                  <FadeInImage
+                    key={image.assetId}
+                    asset={asset}
+                    label={image.alt}
+                    size={IMAGE_SIZE}
+                    onPress={() => setViewerAsset({ asset, label: image.alt })}
+                  />
+                ))}
+              </View>,
+            ]
       )}
 
       <ImageViewerModal
@@ -123,7 +126,8 @@ export function SthalaPuranamWithImages({ text, images }: { text: string; images
 
 const styles = StyleSheet.create({
   section: {
-    gap: spacing.sm,
+    // Matches Section.tsx's same bump -- see that file for why.
+    gap: spacing.md,
   },
   heading: {
     fontSize: typography.heading,

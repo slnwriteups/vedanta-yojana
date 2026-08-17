@@ -6,6 +6,8 @@ import { DraftBadge } from "../../../../components/DraftBadge";
 import { ContentImage } from "../../../../components/ContentImage";
 import { Section } from "../../../../components/Section";
 import { layout, radius, spacing, typography, useTheme } from "../../../../theme";
+import { localizeChapter } from "../../../../../content-lib/i18n.ts";
+import { useLanguage } from "../../../../language-context.ts";
 
 /**
  * Phase 6C -- the reading-comfort pass the brief asks for: a capped
@@ -34,7 +36,9 @@ export default function LibraryChapterScreen() {
   }>();
   const router = useRouter();
   const theme = useTheme();
-  const chapter = loadChapter(bookSlug, chapterSlug);
+  const { language } = useLanguage();
+  const loadedChapter = loadChapter(bookSlug, chapterSlug);
+  const chapter = loadedChapter ? localizeChapter(loadedChapter, language) : null;
 
   if (!chapter) {
     return (
@@ -45,7 +49,10 @@ export default function LibraryChapterScreen() {
     );
   }
 
-  const { previous, next } = findAdjacentChapters(loadChapters(bookSlug), chapterSlug);
+  const { previous, next } = findAdjacentChapters(
+    loadChapters(bookSlug).map((c) => localizeChapter(c, language)),
+    chapterSlug
+  );
 
   function goTo(targetSlug: string, title: string) {
     router.replace(`/library/${bookSlug}/${targetSlug}` as never);
@@ -118,7 +125,7 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: layout.screenPadding,
-    paddingBottom: spacing.xxl,
+    paddingBottom: layout.tabBarClearance,
     gap: spacing.xl,
     maxWidth: layout.maxContentWidth,
     alignSelf: "center",

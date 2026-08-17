@@ -158,6 +158,7 @@ const styles = StyleSheet.create({
   },
   list: {
     paddingHorizontal: layout.screenPadding,
+    paddingBottom: layout.tabBarClearance,
     gap: spacing.md,
   },
   result: {

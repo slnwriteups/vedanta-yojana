@@ -1,4 +1,5 @@
 import type { Shrine } from "@/content-lib/schemas";
+import { paragraphsForReading } from "@/content-lib/text-format";
 
 /**
  * Renders each shrine's OWN temple information/prose, distinct from the
@@ -32,7 +33,7 @@ const FIELD_ORDER: ("moolavar" | "thayaar" | "vimanam" | "theertham")[] = [
 function ProseBlock({ text }: { text: string }) {
   return (
     <div className="prose-body space-y-3 whitespace-pre-line">
-      {text.split(/\n{2,}/).map((paragraph, index) => (
+      {paragraphsForReading(text).map((paragraph, index) => (
         <p key={index}>{paragraph}</p>
       ))}
     </div>
