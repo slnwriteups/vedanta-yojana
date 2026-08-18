@@ -63,14 +63,14 @@ test("Library: the recovered Book resolves for the book screen", () => {
   const book = loadBook(BOOK_SLUG);
   assert.ok(book, "the book did not resolve");
   // Phase 6E confirmed "A Brief Insight to Visishtadvaita Philosophy.pdf"
-  // as the source for 17 of this book's 55 chapters and supplemented the
+  // as the source for 17 of this book's chapters and supplemented the
   // book's title/author accordingly.
   assert.equal(book?.title, "A Brief Insight to Visishtadvaita Philosophy");
 });
 
-test("Library: 55 chapters are available for the book screen, in ascending order", () => {
+test("Library: 51 chapters are available for the book screen, in ascending order", () => {
   const chapters = loadChapters(BOOK_SLUG);
-  assert.equal(chapters.length, 55);
+  assert.equal(chapters.length, 51);
   for (let i = 1; i < chapters.length; i++) {
     assert.ok(chapters[i].order > chapters[i - 1].order);
   }

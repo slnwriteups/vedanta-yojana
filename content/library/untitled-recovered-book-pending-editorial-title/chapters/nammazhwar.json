@@ -2,7 +2,7 @@
   "title": "Nammazhwar",
   "slug": "nammazhwar",
   "order": 128,
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page128",
     "extractionConfidence": "medium",

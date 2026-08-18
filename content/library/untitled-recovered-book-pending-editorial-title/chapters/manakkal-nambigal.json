@@ -2,7 +2,7 @@
   "title": "Manakkal Nambigal",
   "slug": "manakkal-nambigal",
   "order": 130,
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page130",
     "extractionConfidence": "medium",

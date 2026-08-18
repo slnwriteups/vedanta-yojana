@@ -2,7 +2,7 @@
   "title": "Artha Panchakam",
   "slug": "artha-panchakam",
   "order": 121,
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page121",
     "extractionConfidence": "medium",

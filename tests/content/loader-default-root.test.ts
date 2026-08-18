@@ -77,7 +77,7 @@ test("B: loadBooks()/loadBook()/loadChapters() resolve the real recovered book",
   assert.equal(book?.title, "A Brief Insight to Visishtadvaita Philosophy");
 
   const chapters = loadChapters("untitled-recovered-book-pending-editorial-title");
-  assert.equal(chapters.length, 55);
+  assert.equal(chapters.length, 51);
 
   const ramaBook = loadBook("sri-rama-charithram");
   assert.ok(ramaBook);

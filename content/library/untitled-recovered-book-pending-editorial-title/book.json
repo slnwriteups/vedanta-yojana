@@ -1,11 +1,11 @@
 {
   "slug": "untitled-recovered-book-pending-editorial-title",
   "title": "A Brief Insight to Visishtadvaita Philosophy",
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "aggregate:page113-page171",
     "extractionConfidence": "medium",
-    "needsReview": true
+    "needsReview": false
   },
   "parts": [],
   "chapterOrder": [
@@ -59,11 +59,7 @@
     "rama-charama-shlokam",
     "krishna-charama-shlokam",
     "stages-of-bhakti-yoga",
-    "conclusion",
-    "srimad-bhagavatham",
-    "pariksit",
-    "mapping-of-space-and-time",
-    "jaya-and-vijaya"
+    "conclusion"
   ],
   "author": "Vishnu Sreenivas"
 }

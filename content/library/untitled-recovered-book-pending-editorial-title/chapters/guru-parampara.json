@@ -2,7 +2,7 @@
   "title": "Guru Parampara",
   "slug": "guru-parampara",
   "order": 127,
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page127",
     "extractionConfidence": "medium",

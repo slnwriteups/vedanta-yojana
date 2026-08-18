@@ -51,11 +51,12 @@ test("1: the Library index page imports and calls loadBooks()", () => {
 
 test("2: the current recovered book's title appears exactly, verbatim, in the real migrated data loadBooks() returns", () => {
   const books = loadBooks();
-  assert.equal(books.length, 1);
+  assert.equal(books.length, 4);
   // Phase 6E confirmed "A Brief Insight to Visishtadvaita Philosophy.pdf"
-  // as the source for 17 of this book's 55 chapters and supplemented the
+  // as the source for 17 of this book's chapters and supplemented the
   // book's title/author accordingly (see content/_provenance/library/).
-  assert.equal(books[0].title, "A Brief Insight to Visishtadvaita Philosophy");
+  // loadBooks() sorts alphabetically by slug, so found by title, not index.
+  assert.ok(books.some((b) => b.title === "A Brief Insight to Visishtadvaita Philosophy"));
 });
 
 test("3: no application file hard-codes the book's title or slug", () => {
@@ -68,10 +69,10 @@ test("3: no application file hard-codes the book's title or slug", () => {
   }
 });
 
-test("4: the real book's status is draft (what DraftBadge, already reused from components/shared, will display)", () => {
+test("4: the real book's status is published (finalized once its 4 misplaced chapters were removed) -- BookCard still reuses DraftBadge, which now renders nothing for it", () => {
   const book = loadBook(BOOK_SLUG);
   assert.ok(book);
-  assert.equal(book?.status, "draft");
+  assert.equal(book?.status, "published");
   const cardSource = read("components/library/BookCard.tsx");
   assert.ok(cardSource.includes("DraftBadge"));
 });
@@ -99,8 +100,8 @@ test("7: the Book detail page calls notFound() when loadBook() returns null", ()
   assert.equal(loadBook("does-not-exist"), null);
 });
 
-test("8: all 55 real chapters are returned by loadChapters() for the real book", () => {
-  assert.equal(loadChapters(BOOK_SLUG).length, 55);
+test("8: all 51 real chapters are returned by loadChapters() for the real book", () => {
+  assert.equal(loadChapters(BOOK_SLUG).length, 51);
 });
 
 test("9: chapter ordering from loadChapters() is strictly ascending by `order` (source/provenance ordering, not alphabetical)", () => {
@@ -162,11 +163,11 @@ test("15/16: chapter body and its paragraph structure are preserved -- the page 
   assert.ok(!/chapter\.body\.replace|chapter\.body\.trim|chapter\.body\.toLowerCase|chapter\.body\.toUpperCase/.test(source), "found a transformation applied to chapter.body");
 });
 
-test("17: chapter draft status reaches the page (DraftBadge reused)", () => {
+test("17: chapter status reaches the page (DraftBadge reused, now renders nothing since this book's chapters are published)", () => {
   const source = read("app/library/[book]/[chapter]/page.tsx");
   assert.ok(source.includes("DraftBadge"));
   const chapter = loadChapter(BOOK_SLUG, "rama-charama-shlokam");
-  assert.equal(chapter?.status, "draft");
+  assert.equal(chapter?.status, "published");
 });
 
 test("18: no migration metadata appears in the Chapter detail page source", () => {

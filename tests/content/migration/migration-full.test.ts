@@ -66,9 +66,9 @@ test("exactly 107 Divya Desam records exist in content/divya-desams/ (108 source
   assert.equal(ddOutputFiles.length, 107);
 });
 
-test("the original recovered book still exists, with exactly 55 chapters", () => {
+test("the original recovered book still exists, with exactly 51 chapters", () => {
   assert.ok(bookDir, `${ORIGINAL_BOOK_SLUG} directory missing from content/library/`);
-  assert.equal(chapterFiles.length, 55);
+  assert.equal(chapterFiles.length, 51);
 });
 
 test("exactly 1 Knowledge record exists", () => {
@@ -79,7 +79,7 @@ test("exactly 1 held-back unresolved record exists (Page150)", () => {
   assert.equal(unresolvedFiles.length, 1);
 });
 
-test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+15(_provenance/divya-desams, post image-fixes)+1(_provenance/library, Phase 6E)+1(_provenance/library, chapter needsReview corrections)+8(sri-rama-charithram: 1 book.json + 7 chapters)+32(srimad-bhagavata-kathasagaram: 1 book.json + 31 chapters)+70(jaya: 1 book.json + 69 chapters) = 293", () => {
+test("no unexpected content records: total /content file count matches exactly 107+51+1(book.json)+1+1+1(README)+15(_provenance/divya-desams, post image-fixes)+1(_provenance/library, Phase 6E)+1(_provenance/library, chapter needsReview corrections)+8(sri-rama-charithram: 1 book.json + 7 chapters)+32(srimad-bhagavata-kathasagaram: 1 book.json + 31 chapters)+70(jaya: 1 book.json + 69 chapters) = 289", () => {
   // Phase 6E added content/_provenance/ -- one small JSON file per Divya
   // Desam record that received a category-B text supplement and/or a
   // book-sourced image/shrine from "108 Divyadesam 2nd Edition.pdf" (101
@@ -116,9 +116,22 @@ test("no unexpected content records: total /content file count matches exactly 1
   // precedent: a sidecar directory under content/ the loader never looks
   // inside), so it is deliberately still counted here rather than
   // excluded -- this test's whole purpose is to catch ANY unexpected
-  // file under content/, intentional additions included.
+  // file under content/, intentional additions included. Sri Rama
+  // Charithram (+8), Srimad Bhagavata Kathasagaram (+32), and JAYA (+70)
+  // brought the total to 293. Then 4 misplaced Srimad Bhagavatham
+  // fragment chapters were removed from the original recovered book
+  // ("Srimad Bhagavatham", "Parīkṣit", "Mapping of Space and Time",
+  // "Jaya and Vijaya" -- content belonging to a different narrative,
+  // not this book's Visishtadvaita philosophy scope; one of the four,
+  // page.Page168/"srimad-bhagavatham", was also 58/59ths literal "Lorem
+  // ipsum" placeholder filler, never real content -- its
+  // chapter-needs-review.json entry was removed too, leaving that file's
+  // own size unchanged in this count): 293 -> 289. The book's status and
+  // every remaining chapter's status also moved draft -> published at
+  // the same time (see the "B:" status tests below), removing the
+  // now-inaccurate "Draft -- under review" badge.
   const total = countFilesRecursive(path.join(REPO_ROOT, "content"));
-  assert.equal(total, 293);
+  assert.equal(total, 289);
 });
 
 function countFilesRecursive(dir: string): number {
@@ -264,23 +277,26 @@ test("Phase 6E-C: Page24 (Tanjai Mamanikoyil), Page38 (Tiruvaali Tirunagari), an
 });
 
 // ---------------------------------------------------------------------------
-// B. Status: every normal migrated content record has status "draft".
+// B. Status: every normal migrated content record has status "draft",
+// except the original recovered Book/its chapters, which were
+// deliberately finalized to "published" once its 4 misplaced chapters
+// were removed (see the file-count test above).
 // ---------------------------------------------------------------------------
 
 test("B: every Divya Desam record has status published", () => {
   for (const r of ddOutputRecords) assert.equal(r.status, "published", r.slug);
 });
 
-test("B: every chapter has status draft", () => {
-  for (const c of chapterRecords) assert.equal(c.status, "draft", c.slug);
+test("B: every chapter has status published", () => {
+  for (const c of chapterRecords) assert.equal(c.status, "published", c.slug);
 });
 
 test("B: the Knowledge record has status draft", () => {
   for (const k of knowledgeRecords) assert.equal(k.status, "draft", k.slug);
 });
 
-test("B: the Book has status draft", () => {
-  assert.equal(bookRecord.status, "draft");
+test("B: the Book has status published", () => {
+  assert.equal(bookRecord.status, "published");
 });
 
 // ---------------------------------------------------------------------------
@@ -310,12 +326,24 @@ test("E: every source Divya Desam record maps to exactly one destination (107 no
   assert.equal(migratedSourceIds.size, 108);
 });
 
-test("E: every source article record maps to exactly one destination (55 chapters + 1 Knowledge = 56)", () => {
+test("E: every source article record maps to exactly one destination, except 4 deliberately-dropped pages (51 chapters + 1 Knowledge + 4 dropped = 56)", () => {
+  // page.Page168-171 ("Srimad Bhagavatham", "Parīkṣit", "Mapping of Space
+  // and Time", "Jaya and Vijaya") were migrated as chapters 168-171 of
+  // this book, but were later found not to belong to its Visishtadvaita
+  // philosophy scope at all -- they were fragments of a different
+  // narrative (Srimad Bhagavatam), and page.Page168 was additionally
+  // 58/59ths literal "Lorem ipsum" placeholder filler, never real
+  // content. All 4 chapter files were deleted directly (not re-routed
+  // to content/_unresolved/, since they were fully formed migrated
+  // records, not ambiguous source data the way Page150 was).
+  const DROPPED_SOURCE_IDS = new Set(["page.Page168", "page.Page169", "page.Page170", "page.Page171"]);
   const sourceFiles = fs.readdirSync(SOURCE_ARTICLES_DIR).filter((f) => f.endsWith(".json") && f !== "index.json");
   assert.equal(sourceFiles.length, 56);
   const migratedSourceIds = new Set(chapterRecords.map((c) => c.migration.sourcePageId));
   for (const k of knowledgeRecords) migratedSourceIds.add(k.migration.sourcePageId);
-  assert.equal(migratedSourceIds.size, 56);
+  assert.equal(migratedSourceIds.size, 52);
+  for (const id of DROPPED_SOURCE_IDS) assert.ok(!migratedSourceIds.has(id), `${id} should have been dropped`);
+  assert.equal(migratedSourceIds.size + DROPPED_SOURCE_IDS.size, 56);
 });
 
 // ---------------------------------------------------------------------------
@@ -410,8 +438,8 @@ test("H: chapter order values are all unique within the one book", () => {
   assert.equal(new Set(orders).size, orders.length);
 });
 
-test("H: book.chapterOrder lists exactly the 55 chapter slugs, in ascending order value", () => {
-  assert.equal(bookRecord.chapterOrder.length, 55);
+test("H: book.chapterOrder lists exactly the 51 chapter slugs, in ascending order value", () => {
+  assert.equal(bookRecord.chapterOrder.length, 51);
   const sortedBySlugOrder = [...chapterRecords].sort((a, b) => a.order - b.order).map((c) => c.slug);
   assert.deepEqual(bookRecord.chapterOrder, sortedBySlugOrder);
 });
@@ -425,7 +453,7 @@ test("I: no duplicate slugs among the 107 Divya Desam records", () => {
   assert.equal(new Set(slugs).size, slugs.length);
 });
 
-test("I: no duplicate slugs among the 55 chapters", () => {
+test("I: no duplicate slugs among the 51 chapters", () => {
   const slugs = chapterRecords.map((c) => c.slug);
   assert.equal(new Set(slugs).size, slugs.length);
 });

@@ -2,7 +2,7 @@
   "title": "Foreword",
   "slug": "foreword",
   "order": 113,
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page113",
     "extractionConfidence": "medium",

@@ -2,7 +2,7 @@
   "title": "Aathma",
   "slug": "aathma",
   "order": 118,
-  "status": "draft",
+  "status": "published",
   "migration": {
     "sourcePageId": "page.Page118",
     "extractionConfidence": "medium",

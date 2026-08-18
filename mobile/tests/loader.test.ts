@@ -50,12 +50,13 @@ test("the recovered Book resolves with its real title and full chapter set", () 
   const book = loadBook("untitled-recovered-book-pending-editorial-title");
   assert.ok(book, "the book did not resolve");
   // Phase 6E confirmed "A Brief Insight to Visishtadvaita Philosophy.pdf"
-  // as the source for 17 of this book's 55 chapters and supplemented the
-  // book's title/author accordingly.
+  // as the source for 17 of this book's chapters and supplemented the
+  // book's title/author accordingly. 4 misplaced Srimad Bhagavatham
+  // fragment chapters were later removed, leaving 51.
   assert.equal(book?.title, "A Brief Insight to Visishtadvaita Philosophy");
 
   const chapters = loadChapters("untitled-recovered-book-pending-editorial-title");
-  assert.equal(chapters.length, 55);
+  assert.equal(chapters.length, 51);
 
   const ramaBook = loadBook("sri-rama-charithram");
   assert.ok(ramaBook, "sri-rama-charithram did not resolve");
