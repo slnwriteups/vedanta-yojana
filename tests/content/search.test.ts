@@ -40,15 +40,18 @@ test("1: all 107 Divya Desams are searchable", () => {
 
 test("2: the Book is searchable", () => {
   const books = corpus.filter((d) => d.type === "book");
-  assert.equal(books.length, 1);
+  assert.equal(books.length, 2);
   // Phase 6E confirmed "A Brief Insight to Visishtadvaita Philosophy.pdf"
   // as the source for 17 of this book's 55 chapters and supplemented the
   // book's title/author accordingly (see content/_provenance/library/).
-  assert.equal(books[0].title, "A Brief Insight to Visishtadvaita Philosophy");
+  // loadBooks() sorts alphabetically by slug, so this book is found by
+  // title rather than assumed to be at a fixed index.
+  assert.ok(books.some((b) => b.title === "A Brief Insight to Visishtadvaita Philosophy"));
+  assert.ok(books.some((b) => b.title === "Sri Rama Charithram"));
 });
 
-test("3: all 55 chapters are searchable", () => {
-  assert.equal(corpus.filter((d) => d.type === "chapter").length, 55);
+test("3: all chapters across every book are searchable", () => {
+  assert.equal(corpus.filter((d) => d.type === "chapter").length, 55 + 7);
 });
 
 test("4: the Knowledge record is searchable", () => {
@@ -58,7 +61,7 @@ test("4: the Knowledge record is searchable", () => {
 });
 
 test("5: Page150 is not included -- exact corpus size, no href/title referencing it", () => {
-  assert.equal(corpus.length, 107 + 1 + 55 + 1);
+  assert.equal(corpus.length, 107 + 2 + (55 + 7) + 1);
   for (const doc of corpus) {
     assert.ok(!doc.href.includes("Page150"));
     assert.ok(!doc.title.includes("Hayagriva"));

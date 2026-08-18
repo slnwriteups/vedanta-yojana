@@ -37,8 +37,16 @@ function listJsonFiles(dir: string): string[] {
 const ddOutputFiles = listJsonFiles(CONTENT_DD_DIR);
 const ddOutputRecords = ddOutputFiles.map((f) => readJson(path.join(CONTENT_DD_DIR, f)));
 
+// This file is a frozen regression snapshot of the ONE Phase 5H/5I/6E
+// migration event (content-extraction/ -> the original recovered book).
+// content/library/ has since gained additional, independently-authored
+// books (not sourced from content-extraction/ at all) -- so the original
+// book directory is located by its known slug, never by array index,
+// and this file's checks apply only to that one book, not to
+// content/library/ as a whole.
+const ORIGINAL_BOOK_SLUG = "untitled-recovered-book-pending-editorial-title";
 const bookDirs = fs.readdirSync(CONTENT_LIBRARY_DIR, { withFileTypes: true }).filter((e) => e.isDirectory());
-const bookDir = bookDirs[0];
+const bookDir = bookDirs.find((d) => d.name === ORIGINAL_BOOK_SLUG);
 const bookRecord = bookDir ? readJson(path.join(CONTENT_LIBRARY_DIR, bookDir.name, "book.json")) : null;
 const chaptersDir = bookDir ? path.join(CONTENT_LIBRARY_DIR, bookDir.name, "chapters") : "";
 const chapterFiles = bookDir ? listJsonFiles(chaptersDir) : [];
@@ -58,8 +66,8 @@ test("exactly 107 Divya Desam records exist in content/divya-desams/ (108 source
   assert.equal(ddOutputFiles.length, 107);
 });
 
-test("exactly 1 Book exists, with exactly 55 chapters", () => {
-  assert.equal(bookDirs.length, 1);
+test("the original recovered book still exists, with exactly 55 chapters", () => {
+  assert.ok(bookDir, `${ORIGINAL_BOOK_SLUG} directory missing from content/library/`);
   assert.equal(chapterFiles.length, 55);
 });
 
@@ -71,7 +79,7 @@ test("exactly 1 held-back unresolved record exists (Page150)", () => {
   assert.equal(unresolvedFiles.length, 1);
 });
 
-test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+15(_provenance/divya-desams, post image-fixes)+1(_provenance/library, Phase 6E)+1(_provenance/library, chapter needsReview corrections) = 183", () => {
+test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+15(_provenance/divya-desams, post image-fixes)+1(_provenance/library, Phase 6E)+1(_provenance/library, chapter needsReview corrections)+8(sri-rama-charithram: 1 book.json + 7 chapters) = 191", () => {
   // Phase 6E added content/_provenance/ -- one small JSON file per Divya
   // Desam record that received a category-B text supplement and/or a
   // book-sourced image/shrine from "108 Divyadesam 2nd Edition.pdf" (101
@@ -110,7 +118,7 @@ test("no unexpected content records: total /content file count matches exactly 1
   // excluded -- this test's whole purpose is to catch ANY unexpected
   // file under content/, intentional additions included.
   const total = countFilesRecursive(path.join(REPO_ROOT, "content"));
-  assert.equal(total, 183);
+  assert.equal(total, 191);
 });
 
 function countFilesRecursive(dir: string): number {

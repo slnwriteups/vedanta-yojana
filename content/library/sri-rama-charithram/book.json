@@ -1,0 +1,21 @@
+{
+  "slug": "sri-rama-charithram",
+  "title": "Sri Rama Charithram",
+  "status": "published",
+  "migration": {
+    "sourcePageId": "upload:sri-rama-charithram",
+    "extractionConfidence": "high",
+    "needsReview": false
+  },
+  "parts": [],
+  "chapterOrder": [
+    "bala-kanda",
+    "ayodhya-kanda",
+    "aranya-kanda",
+    "kishkindha-kanda",
+    "sundara-kanda",
+    "yudha-kanda",
+    "uttara-kanda"
+  ],
+  "author": "Vishnu Sreenivas"
+}
