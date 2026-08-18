@@ -1,15 +1,42 @@
-# Vedanta Yojana — Mobile (Phase 6A Foundation)
+# Vedanta Yojana — Mobile
 
-This is the **foundation** for a React Native + Expo mobile application.
-It is not a working app yet — no real screens exist. Its only job is to
-prove that Expo boots, and that the validated `/content` baseline can be
-consumed from a React Native runtime without duplicating a single byte
-of editorial content.
+This is the **real, active target** for the project — a React Native +
+Expo app for iOS, Android, and tablet. The Next.js website at the
+repository root is legacy/maintenance-only; new feature work targets this
+app first. (Historical note: this README once described a Phase 6A
+foundation with "no real screens." That is no longer true — see below.)
 
-The existing Next.js application at the repository root is the
-**validated reference implementation**. It is not being deleted, and it
-is not the thing this app will eventually become — this app is a
-separate runtime, built from the same content.
+## What exists today
+
+Real, working screens under `mobile/app/(tabs)/`:
+
+- **Home** (`index.tsx`) — entry point, three navigation sections
+- **Divya Desams** — index (`divya-desams/index.tsx`, all 107 records),
+  detail (`divya-desams/[slug].tsx`), and an introduction screen
+  (`divya-desams/introduction.tsx`, backed by the Knowledge record)
+- **Library** — index (`library/index.tsx`, all books), a book screen
+  (`library/[book].tsx`), and a chapter reader
+  (`library/[book]/[chapter].tsx`)
+- **Search** (`search.tsx`) — offline search corpus built from
+  `content-lib/search/`
+- **Settings** (`settings.tsx`) — theme, reading preferences, language
+
+Supporting providers: `LanguageProvider.tsx`, `ThemeProvider.tsx`,
+`ReadingPreferencesProvider.tsx`. Reusable components under
+`mobile/components/`: `ContentCard`, `ContentImage`, `DraftBadge`,
+`ImageViewerModal`, `OnboardingScreen`, `ResourceLink`, `Section`,
+`SettingsControls`, `SthalaPuranamWithImages`, `WelcomeScreen`.
+
+**Translations are live here, not on the website.** `content-lib/i18n.ts`'s
+`localize*()` functions are called from the Divya Desam and Library
+screens, driven by `LanguageProvider`/`language-context.ts` — the
+website's `app/` never calls these functions at all.
+
+`mobile/tests/*.test.ts` (44 tests as of this writing, run via
+`node --test tests/*.test.ts`, no Jest): `loader.test.ts` (content
+resolution against the real manifest), `screens.test.ts` (screen-level
+data wiring), `ux.test.ts` (navigation/theme/regression checks), and
+`offline.test.ts` (offline search corpus, preferences validation).
 
 ## Why Expo Router (not plain React Navigation)
 
@@ -21,8 +48,8 @@ Expo Router is used for the navigation foundation
    directory, file-based routes, a root layout. Expo Router uses the
    identical convention for React Native. Someone who already
    understands `vedanta-yojana/app/divya-desams/[slug]/page.tsx` already
-   understands what `vedanta-yojana/mobile/app/divya-desams/[slug].tsx`
-   would look like, with no new routing model to learn.
+   understands what `vedanta-yojana/mobile/app/(tabs)/divya-desams/[slug].tsx`
+   looks like, with no new routing model to learn.
 2. **It is not actually a competitor to React Navigation** — Expo
    Router is a file-based routing convention built on top of React
    Navigation internally (this project's `mobile/package.json` has
@@ -35,7 +62,7 @@ Expo Router is used for the navigation foundation
 No other navigation library was evaluated as a real alternative given
 those two points.
 
-## Content access strategy (Step 3 / Step 4)
+## Content access strategy
 
 **The single source of truth remains `/content` at the repository
 root.** Nothing under `/content` is copied, mirrored, or duplicated into
@@ -50,29 +77,38 @@ way a Node server does.
 
 The bridge, in three pieces:
 
-1. **`mobile/metro.config.js`** — adds `content/` and `content-lib/` (at
-   the repo root) to Metro's `watchFolders`, so Metro is even allowed to
-   see files outside `mobile/`. It also extends
-   `resolver.nodeModulesPaths` to include the repo root's
-   `node_modules`, because `content-lib/schemas` imports `zod`, and
-   `content-lib/` is a sibling of `mobile/`, not an ancestor — normal
-   upward node_modules resolution from a file inside `content-lib/`
-   never reaches `mobile/node_modules` on its own. (`zod` is also
-   installed directly in `mobile/package.json`, so this isn't a hidden
-   runtime-only dependency on the web app's tree — it's belt-and-braces,
-   verified necessary by running an actual bundle export and reading the
-   exact resolution error Metro produced.)
-2. **`mobile/scripts/generate-content-manifest.ts`** (Option C from the
-   Phase 6A brief — a build-time content export step) — a small Node
+1. **`mobile/metro.config.js`** — adds `content/`, `content-lib/`,
+   `public/images/`, and `public/audio/` (all at the repo root) to
+   Metro's `watchFolders`, so Metro is even allowed to see files outside
+   `mobile/`. It also extends `resolver.nodeModulesPaths` to include the
+   repo root's `node_modules`, because `content-lib/schemas` imports
+   `zod`, and `content-lib/` is a sibling of `mobile/`, not an ancestor —
+   normal upward node_modules resolution from a file inside
+   `content-lib/` never reaches `mobile/node_modules` on its own. (`zod`
+   is also installed directly in `mobile/package.json`, so this isn't a
+   hidden runtime-only dependency on the web app's tree — it's
+   belt-and-braces, verified necessary by running an actual bundle
+   export and reading the exact resolution error Metro produced.)
+
+2. **`mobile/scripts/generate-content-manifest.ts`** — a small Node
    script that enumerates the real `/content` tree once and emits
    `mobile/content-lib/manifest.generated.ts`: nothing but `import`
    statements pointing directly at the real files, plus arrays that
    reference those imported bindings. **No content is copied into the
-   generated file** — it is glue code, like a lockfile. Regenerate it
-   after any content change:
+   generated file** — it is glue code, like a lockfile. It also emits
+   `mobile/content-lib/image-manifest.generated.ts` for the 230 real
+   image files under `public/images/`.
+
+   **This generated file is a build-time snapshot, not a live read.**
+   Adding, editing, or removing anything under `/content` has NO effect
+   on the mobile app until this script is re-run:
    ```
    node mobile/scripts/generate-content-manifest.ts
    ```
+   This is the single easiest step to forget after a content change —
+   the symptom is new content appearing correctly on the website but not
+   in the mobile app, with no error anywhere to point at why.
+
 3. **`mobile/content-lib/loader.ts`** — the mobile-compatible content
    access layer, with the exact same public API as the web loader:
    `loadDivyaDesams`, `loadDivyaDesam`, `loadBooks`, `loadBook`,
@@ -126,46 +162,35 @@ a second. This does **not** affect Metro/Babel's actual JSON bundling at
 runtime — that is a completely separate mechanism from `tsc`'s static
 type-checking.
 
-## Asset (image) strategy — Step 5, design only, not implemented
+## Asset (image) strategy
 
-**No images were migrated in this phase.** The Phase 6A foundation tests
-don't need any (they only verify record resolution), and copying/
-re-encoding is explicitly out of scope for a foundation phase.
+`mobile/content-lib/image-manifest.generated.ts` maps each record's
+`sourceAssetUuid` to a `require(...)` of the real file under
+`public/images/` (added to `metro.config.js`'s `watchFolders`), so
+Metro's own asset pipeline handles hashing, cache-busting, and bundling —
+no custom image route handler is needed the way the web app's (now
+removed, Vercel-specific) `app/images/[uuid]/route.ts` needed one,
+because a bundled RN app has no server to route a request to in the
+first place. Regenerated by the same `generate-content-manifest.ts`
+script as the content manifest.
 
-The documented plan, for whenever Phase 6B+ actually needs images:
-
-- The migrated `sourceAssetUuid`/`sourceOriginalName` identity on every
-  `ImageEntry` (`content-lib/schemas/shared.ts`) is preserved and reused
-  exactly as-is — no renaming, no re-encoding, ever.
-- The real image files currently live at `/public/images/` at the repo
-  root (moved there from `/images/` by unrelated, already-in-progress
-  work on the web app's own deployment target — not something this phase
-  touched or should touch).
-- The natural extension of the pattern already built for content is the
-  same shape for images: add `images/` to `metro.config.js`'s
-  `watchFolders`, and extend `generate-content-manifest.ts` to also emit
-  a `sourceAssetUuid -> require(...)` map, so Metro's own asset pipeline
-  (which already knows how to hash, cache-bust, and bundle
-  `require()`'d image files) handles the actual bytes — no custom image
-  route handler is needed the way the (now-removed, Vercel-specific)
-  `app/images/[uuid]/route.ts` needed one, because a bundled RN app has
-  no server to route a request to in the first place.
-- For genuine offline-first behavior at scale (217 images, ~17MB) rather
-  than bundling everything into the app binary, `expo-file-system` +
-  on-first-use caching is the natural next step, but that is a real
-  product decision (bundle-everything vs. download-on-demand) deferred
-  to whoever actually builds the image-bearing screens.
+For genuine offline-first behavior at scale (230 images) rather than
+bundling everything into the app binary, `expo-file-system` +
+on-first-use caching remains the natural next step if download size
+becomes a problem — not yet needed.
 
 ## Development commands
 
 ```
 cd mobile
-npm start              # Expo dev server (Metro)
-npm run android         # (requires Android tooling)
-npm run ios              # (requires Xcode/iOS tooling)
-node --test tests/*.test.ts    # foundation tests (Node-native, no Jest)
-./node_modules/.bin/tsc --noEmit    # TypeScript check
-node scripts/generate-content-manifest.ts   # regenerate the content manifest after any /content change
+npm install
+npx expo start                          # Expo dev server (Metro) — scan the QR code with Expo Go
+npx expo start --android                # (requires Android tooling)
+npx expo start --ios                    # (requires Xcode/iOS tooling)
+npx expo start --tunnel                 # share a live QR code with a remote reviewer, no repo access needed
+node --test tests/*.test.ts             # test suite (Node-native, no Jest) — 44 tests
+./node_modules/.bin/tsc --noEmit        # TypeScript check
+node scripts/generate-content-manifest.ts   # regenerate the content + image manifest after any /content or public/images change
 ```
 
 ## Relationship to the web reference app
@@ -173,19 +198,22 @@ node scripts/generate-content-manifest.ts   # regenerate the content manifest af
 | | Web (repo root) | Mobile (`mobile/`) |
 |---|---|---|
 | Framework | Next.js (App Router) | Expo + Expo Router |
-| Content access | `content-lib/loader` (Node `fs`, request-time) | `mobile/content-lib/loader.ts` (Metro-bundled, build-time) |
+| Content access | `content-lib/loader` (Node `fs`, request-time) | `mobile/content-lib/loader.ts` (Metro-bundled, build-time, cached) |
 | Schemas | `content-lib/schemas` | **the same files**, imported directly |
-| Search | `content-lib/search` (browser-side prebuilt index) | not yet bridged |
+| Search | `content-lib/search` (browser-side prebuilt index) | **the same files**, imported directly, offline corpus |
+| Translations (i18n) | not wired up (data exists, no UI calls it) | live — `content-lib/i18n.ts` used by Divya Desam/Library screens |
 | SEO/sitemap/robots | yes | not applicable |
-| Status | validated reference implementation | foundation only |
+| Status | still maintained, but legacy/frozen for new features | the real target for new feature work |
 
 Nothing in `content-lib/schemas/`, `content-lib/loader/`,
-`scripts/migration/`, `content-extraction/`, or `/content` was modified
-to build this foundation.
+`scripts/migration/`, `content-extraction/`, or `/content` is modified to
+support this app — everything reusable is imported directly, per the
+content/code separation rule (see `content-lib/README.md`).
 
-## What this phase deliberately does NOT include
+## Shipping
 
-Per the Phase 6A brief: no Home screen, no Divya Desam screens, no
-Library screens, no Search UI, no real theme system, no App Store
-preparation. `mobile/app/index.tsx` is a placeholder that proves the
-foundation works — it is not a home screen.
+Not yet submitted to either app store. Needs an Apple developer account
+($99/yr) and a Google Play developer account ($25 once) before an EAS
+build can be submitted. Until then, distribution is via Expo Go
+(`npx expo start`) or an EAS internal-distribution build shared directly
+with testers/collaborators.

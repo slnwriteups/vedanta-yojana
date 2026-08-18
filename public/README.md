@@ -2,8 +2,11 @@
 
 Standard Next.js static-assets directory.
 
-**Status: empty.** The existing 217 images at `images/` (repository root,
-part of the historical SAP export / `content-extraction` provenance) have
-**not** been copied here. Per the Phase 5A media plan, `/public` is the
-tentative V1 media strategy, but the actual migration of images is a later,
-separate phase — not part of this application scaffold.
+**Status: populated.** `images/` holds the 230 real Divya Desam/Library
+images referenced by `content/` records via `sourceAssetUuid` (up from the
+original 217 as Phase 6E's book imports added a few more). Served directly
+by Next.js at request time on the website; the mobile app reaches the same
+files through `mobile/metro.config.js`'s `watchFolders` plus
+`mobile/content-lib/image-manifest.generated.ts` (see `mobile/README.md`) —
+neither copies or duplicates the files, both read this directory as the
+single source of truth.

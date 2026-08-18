@@ -22,10 +22,22 @@ content-lib/
 │   ├── chapter.ts        Chapter
 │   ├── knowledge.ts      Knowledge
 │   └── index.ts          barrel export — the schema contract
-└── loader/      Phase 5D — reads /content, validates every file, returns typed objects
-    ├── errors.ts    structured error types (malformed JSON, schema failure, duplicates)
-    ├── fs-utils.ts  internal-only filesystem helpers (not part of the public API)
-    └── index.ts     public API: createContentLoader() + the default loadX() functions
+├── loader/      Phase 5D — reads /content, validates every file, returns typed objects
+│   ├── errors.ts    structured error types (malformed JSON, schema failure, duplicates)
+│   ├── fs-utils.ts  internal-only filesystem helpers (not part of the public API)
+│   └── index.ts     public API: createContentLoader() + the default loadX() functions
+├── search/       Phase 5M — pure, framework-agnostic search (no node:fs anywhere
+│   │             in this directory, so it also runs unmodified on mobile)
+│   ├── types.ts, corpus.ts, match.ts, rank.ts, excerpt.ts, index.ts, run.ts
+│   └── (see content-lib/search/README.md if present, or the module doc
+│         comments — corpus.ts is the only file that touches the loader)
+├── i18n.ts       localize{DivyaDesam,Book,Chapter,Knowledge}() — applies a
+│   │             record's own translations[language] over its English base,
+│   │             field-by-field, non-mutating. Currently consumed only by
+│   │             the mobile app (see mobile-app-is-the-goal in project
+│   │             memory) — the website never calls these.
+└── text-format.ts   splitIntoReadableParagraphs() and related pure prose
+                      chunking helpers shared by both runtimes
 ```
 
 ## Schemas (Phase 5C)
@@ -133,14 +145,29 @@ into a Client Component. No extra package was installed to enforce this —
 Next.js's own bundler already refuses to bundle `node:fs` for the client,
 so an accidental client-side import fails the build on its own.
 
+## Current /content state
+
+Migration is no longer a future phase — it has run. `/content` holds:
+
+- **107** Divya Desam records (`content/divya-desams/`)
+- **4** Books (`content/library/`): the original recovered book (55
+  chapters), *Sri Rama Charithram* (7), *Srimad Bhagavata Kathasagaram*
+  (31), and *JAYA: A Journey of the Mahabharata* (69) — **162 chapters
+  total**
+- **1** Knowledge record (`content/knowledge/`)
+
+`tests/content/migration/migration-full.test.ts` pins the exact file count
+under `/content` (293 as of this writing) as a regression guard — update
+that test's assertion (and its explanatory comment) whenever content is
+added or removed.
+
 ## What's still not here
 
-- **Migration** (turning `content-extraction/` into real `/content`
-  files) is a separate, later phase. `/content` currently contains no
-  real records — 0 Divya Desams, 0 Books, 0 Chapters, 0 Knowledge items —
-  and this loader phase does not change that.
-- No MDX/Markdown/YAML/frontmatter support — `/content` is JSON-only for
-  now (Phase 5D scope). A richer format for long-form bodies, if ever
-  adopted, is a distinct, explicitly-approved future decision.
-- No caching layer beyond what's naturally implied by reading small JSON
-  files synchronously — content volume doesn't currently justify one.
+- No MDX/Markdown/YAML/frontmatter support — `/content` is JSON-only.
+  A richer format for long-form bodies, if ever adopted, is a distinct,
+  explicitly-approved future decision.
+- No caching layer in the web loader beyond what's naturally implied by
+  reading small JSON files synchronously — content volume doesn't
+  currently justify one. (The mobile loader *does* cache — see
+  `mobile/content-lib/loader.ts` and `mobile/README.md`, a deliberate,
+  disclosed difference driven by its build-time-bundled runtime model.)
