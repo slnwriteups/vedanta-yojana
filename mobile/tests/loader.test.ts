@@ -45,7 +45,7 @@ test("an unknown Divya Desam slug resolves to null, not an error", () => {
 
 test("the recovered Book resolves with its real title and full chapter set", () => {
   const books = loadBooks();
-  assert.equal(books.length, 1);
+  assert.equal(books.length, 4);
 
   const book = loadBook("untitled-recovered-book-pending-editorial-title");
   assert.ok(book, "the book did not resolve");
@@ -56,6 +56,21 @@ test("the recovered Book resolves with its real title and full chapter set", () 
 
   const chapters = loadChapters("untitled-recovered-book-pending-editorial-title");
   assert.equal(chapters.length, 55);
+
+  const ramaBook = loadBook("sri-rama-charithram");
+  assert.ok(ramaBook, "sri-rama-charithram did not resolve");
+  assert.equal(ramaBook?.title, "Sri Rama Charithram");
+  assert.equal(loadChapters("sri-rama-charithram").length, 7);
+
+  const bhagavatamBook = loadBook("srimad-bhagavata-kathasagaram");
+  assert.ok(bhagavatamBook, "srimad-bhagavata-kathasagaram did not resolve");
+  assert.equal(bhagavatamBook?.title, "Srimad Bhagavata Kathasagaram");
+  assert.equal(loadChapters("srimad-bhagavata-kathasagaram").length, 31);
+
+  const jayaBook = loadBook("jaya");
+  assert.ok(jayaBook, "jaya did not resolve");
+  assert.equal(jayaBook?.title, "JAYA: A Journey of the Mahabharata");
+  assert.equal(loadChapters("jaya").length, 69);
 });
 
 test("chapters are ordered ascending by their own `order` field, not manifest/filesystem order", () => {
