@@ -36,7 +36,7 @@ test("A: the default content loader resolves the real repository /content direct
   // as it was before this fix), every one of these would be empty/null
   // instead of matching the real, already-migrated Phase 5H/5I baseline.
   assert.equal(loadDivyaDesams().length, 107);
-  assert.equal(loadBooks().length, 2);
+  assert.equal(loadBooks().length, 3);
   assert.equal(loadKnowledge().length, 1);
 });
 
@@ -67,7 +67,7 @@ test("B: loadDivyaDesams() returns 107 and loadDivyaDesam() resolves real known 
 
 test("B: loadBooks()/loadBook()/loadChapters() resolve the real recovered book", () => {
   const books = loadBooks();
-  assert.equal(books.length, 2);
+  assert.equal(books.length, 3);
 
   const book = loadBook("untitled-recovered-book-pending-editorial-title");
   assert.ok(book);
@@ -84,6 +84,12 @@ test("B: loadBooks()/loadBook()/loadChapters() resolve the real recovered book",
   assert.equal(ramaBook?.title, "Sri Rama Charithram");
   const ramaChapters = loadChapters("sri-rama-charithram");
   assert.equal(ramaChapters.length, 7);
+
+  const bhagavatamBook = loadBook("srimad-bhagavata-kathasagaram");
+  assert.ok(bhagavatamBook);
+  assert.equal(bhagavatamBook?.title, "Srimad Bhagavata Kathasagaram");
+  const bhagavatamChapters = loadChapters("srimad-bhagavata-kathasagaram");
+  assert.equal(bhagavatamChapters.length, 31);
 });
 
 test("B: loadKnowledge()/loadKnowledgeRecord() resolve the real Knowledge record", () => {

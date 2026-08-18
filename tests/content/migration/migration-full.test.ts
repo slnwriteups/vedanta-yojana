@@ -79,7 +79,7 @@ test("exactly 1 held-back unresolved record exists (Page150)", () => {
   assert.equal(unresolvedFiles.length, 1);
 });
 
-test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+15(_provenance/divya-desams, post image-fixes)+1(_provenance/library, Phase 6E)+1(_provenance/library, chapter needsReview corrections)+8(sri-rama-charithram: 1 book.json + 7 chapters) = 191", () => {
+test("no unexpected content records: total /content file count matches exactly 107+55+1(book.json)+1+1+1(README)+15(_provenance/divya-desams, post image-fixes)+1(_provenance/library, Phase 6E)+1(_provenance/library, chapter needsReview corrections)+8(sri-rama-charithram: 1 book.json + 7 chapters)+32(srimad-bhagavata-kathasagaram: 1 book.json + 31 chapters) = 223", () => {
   // Phase 6E added content/_provenance/ -- one small JSON file per Divya
   // Desam record that received a category-B text supplement and/or a
   // book-sourced image/shrine from "108 Divyadesam 2nd Edition.pdf" (101
@@ -118,7 +118,7 @@ test("no unexpected content records: total /content file count matches exactly 1
   // excluded -- this test's whole purpose is to catch ANY unexpected
   // file under content/, intentional additions included.
   const total = countFilesRecursive(path.join(REPO_ROOT, "content"));
-  assert.equal(total, 191);
+  assert.equal(total, 223);
 });
 
 function countFilesRecursive(dir: string): number {
