@@ -75,5 +75,15 @@ test("I: matches the real corpus -- Sri Rangam's Vibishana narrative (one long u
   const longest = Math.max(...paragraphs.length ? paragraphs.map((p: string) => p.length) : [0]);
   assert.ok(paragraphs.length > 1, "expected Sri Rangam's sthalaPuranam to produce more than one paragraph");
   assert.ok(longest < record.sthalaPuranam.length, "expected at least one split to have occurred");
-  assert.equal(paragraphs.join(" ").replace(/ {2,}/g, " "), record.sthalaPuranam.replace(/\n{2,}/g, " ").trim().replace(/ {2,}/g, " "));
+  assert.equal(paragraphs.join(" ").replace(/ {2,}/g, " "), record.sthalaPuranam.replace(/\n+/g, " ").trim().replace(/ {2,}/g, " "));
+});
+
+test("J: a single newline is honored as a real paragraph break, not erased when the surrounding block is resplit at sentence boundaries", () => {
+  const sentence = "Every devotee who visits this kshethram is said to receive the Lord's blessing.";
+  const overlong = Array(8).fill(sentence).join(" ");
+  const text = `${overlong}\n(i) Sva-Nishta\n(ii) Ukti-Nishta\n(iii) Acharya-Nishta`;
+  const result = paragraphsForReading(text, 300);
+  assert.ok(result.includes("(i) Sva-Nishta"), "expected the first list item to survive as its own paragraph");
+  assert.ok(result.includes("(ii) Ukti-Nishta"), "expected the second list item to survive as its own paragraph");
+  assert.ok(result.includes("(iii) Acharya-Nishta"), "expected the third list item to survive as its own paragraph");
 });

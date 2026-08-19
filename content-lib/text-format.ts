@@ -15,6 +15,17 @@
  * used to summarize, reword, or truncate anything, and a paragraph that
  * already reads comfortably (at or under the target length) is returned
  * completely untouched, as a single-element array.
+ *
+ * A single `\n` is just as much an author-authored break as a blank
+ * line: much of the corpus stores one paragraph (or list item) per
+ * line rather than separating paragraphs with a blank line, so
+ * `paragraphsForReading` treats every run of one or more newlines as a
+ * real paragraph break. Earlier this only honored `\n{2,}`, so a block
+ * whose internal breaks were single `\n` was handled as one giant
+ * paragraph and, once over the length target, resplit at sentence
+ * boundaries and rejoined with a plain space -- silently erasing the
+ * original line breaks (visible e.g. in an "(i)/(ii)/(iii)" list that
+ * collapsed onto one run-on line).
  */
 
 /**
@@ -62,13 +73,16 @@ export function splitIntoReadableParagraphs(
 }
 
 /**
- * Splits `text` on its own existing blank-line paragraph breaks first
- * (the real, source-authored structure -- unchanged from before), then
- * applies splitIntoReadableParagraphs to any resulting block that's
- * still too long to read comfortably as one paragraph.
+ * Splits `text` on its own existing newline paragraph breaks first --
+ * a single `\n` and a blank line are both real, source-authored
+ * structure and are honored equally -- then applies
+ * splitIntoReadableParagraphs to any resulting block that's still too
+ * long to read comfortably as one paragraph.
  */
 export function paragraphsForReading(text: string, targetLength: number = DEFAULT_TARGET_LENGTH): string[] {
   return text
-    .split(/\n{2,}/)
+    .split(/\n+/)
+    .map((block) => block.trim())
+    .filter((block) => block.length > 0)
     .flatMap((block) => splitIntoReadableParagraphs(block, targetLength));
 }
