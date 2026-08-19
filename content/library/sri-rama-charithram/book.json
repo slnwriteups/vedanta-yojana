@@ -17,5 +17,10 @@
     "yudha-kanda",
     "uttara-kanda"
   ],
-  "author": "Vishnu Sreenivas"
+  "author": "Vishnu Sreenivas",
+  "translations": {
+    "ta": { "title": "ஸ்ரீ ராம சரித்திரம்" },
+    "kn": { "title": "ಶ್ರೀ ರಾಮ ಚರಿತ್ರಂ" },
+    "hi": { "title": "श्री राम चरित्रम्" }
+  }
 }
