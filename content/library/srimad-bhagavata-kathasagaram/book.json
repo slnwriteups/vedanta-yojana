@@ -41,5 +41,16 @@
     "the-narayaneeyam-and-melpathur-narayana-bhattathiri",
     "the-benefits-of-reading-or-listening-to-srimad-bhagavatam"
   ],
-  "author": "Vishnu Sreenivas"
+  "author": "Vishnu Sreenivas",
+  "translations": {
+    "ta": {
+      "title": "ஸ்ரீமத் பாகவத கதாசாகரம்"
+    },
+    "kn": {
+      "title": "ಶ್ರೀಮದ್ ಭಾಗವತ ಕಥಾಸಾಗರಂ"
+    },
+    "hi": {
+      "title": "श्रीमद्भागवत कथासागरम्"
+    }
+  }
 }
