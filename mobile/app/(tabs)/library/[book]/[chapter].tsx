@@ -1,13 +1,29 @@
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
-import { AccessibilityInfo, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import * as Haptics from "expo-haptics";
+import { useEffect, useRef, useState } from "react";
+import {
+  AccessibilityInfo,
+  PanResponder,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  type NativeSyntheticEvent,
+  type NativeScrollEvent,
+} from "react-native";
+import type { Chapter } from "../../../../content-lib/loader.ts";
 import { loadChapter, loadChapters } from "../../../../content-lib/loader.ts";
 import { findAdjacentChapters } from "../../../../content-lib/chapter-navigation.ts";
 import { DraftBadge } from "../../../../components/DraftBadge";
 import { ContentImage } from "../../../../components/ContentImage";
 import { Section } from "../../../../components/Section";
 import { layout, radius, spacing, typography, useTheme } from "../../../../theme";
+import { sectionTint } from "../../../../section-tints.ts";
 import { localizeChapter } from "../../../../../content-lib/i18n.ts";
+import { estimateReadingMinutes, stripLeadingDuplicateTitle } from "../../../../../content-lib/text-format.ts";
 import { useLanguage } from "../../../../language-context.ts";
+import { useReadingPosition } from "../../../../reading-position-context.ts";
 
 /**
  * Phase 6C -- the reading-comfort pass the brief asks for: a capped
@@ -28,7 +44,34 @@ import { useLanguage } from "../../../../language-context.ts";
  * VoiceOver/TalkBack user gets a spoken navigation announcement, since a
  * replace-based route change doesn't move focus the way a fresh screen
  * push does.
+ *
+ * UI/UX pass, Kindle/Apple Books cues: a thin scroll-position progress
+ * bar (tinted per book, section-tints.ts) fixed above the ScrollView,
+ * and a "X min read" estimate (estimateReadingMinutes) alongside the
+ * existing "Chapter X of Y" label -- both purely derived, nothing
+ * fabricated. `key={chapterSlug}` on the ScrollView forces a clean
+ * remount on every chapter change (via the pager's router.replace, which
+ * otherwise reuses the same component instance) so both the native
+ * scroll position and the progress bar correctly reset to the top of
+ * the new chapter, rather than carrying over the previous chapter's
+ * scroll depth.
+ *
+ * Gesture pass: swipe left/right anywhere on the page turns to the
+ * next/previous chapter (Kindle/Apple Books convention -- swipe left
+ * advances, matching left-to-right reading order), on top of the
+ * existing tap-based Previous/Next pager. Built with PanResponder
+ * (React Native core, no new dependency) rather than
+ * react-native-gesture-handler, which isn't installed elsewhere in
+ * this app. `onMoveShouldSetPanResponder` only claims the gesture once
+ * horizontal movement is both clearly larger than vertical AND past a
+ * real threshold, so it never steals an ordinary vertical scroll --
+ * verified by keeping normal scrolling intact after adding this.
+ * `adjacentRef` holds the latest previous/next (kept in sync every
+ * render below) so the single PanResponder instance, created once via
+ * useRef, never closes over stale chapter-adjacency data as the reader
+ * pages through the book.
  */
+const SWIPE_DISTANCE_THRESHOLD = 60;
 export default function LibraryChapterScreen() {
   const { book: bookSlug, chapter: chapterSlug } = useLocalSearchParams<{
     book: string;
@@ -37,8 +80,49 @@ export default function LibraryChapterScreen() {
   const router = useRouter();
   const theme = useTheme();
   const { language } = useLanguage();
+  const { recordChapterView } = useReadingPosition();
+  const [progress, setProgress] = useState(0);
   const loadedChapter = loadChapter(bookSlug, chapterSlug);
   const chapter = loadedChapter ? localizeChapter(loadedChapter, language) : null;
+  const tint = sectionTint(bookSlug, theme.scheme);
+  const adjacentRef = useRef<{ previous: Chapter | null; next: Chapter | null }>({ previous: null, next: null });
+
+  function handleScroll(event: NativeSyntheticEvent<NativeScrollEvent>) {
+    const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
+    const scrollable = contentSize.height - layoutMeasurement.height;
+    setProgress(scrollable > 0 ? Math.min(1, Math.max(0, contentOffset.y / scrollable)) : 1);
+  }
+
+  function goTo(targetSlug: string, title: string) {
+    void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    router.replace(`/library/${bookSlug}/${targetSlug}` as never);
+    AccessibilityInfo.announceForAccessibility(`Now reading: ${title}`);
+  }
+
+  const panResponder = useRef(
+    PanResponder.create({
+      onMoveShouldSetPanResponder: (_evt, gesture) => {
+        return Math.abs(gesture.dx) > SWIPE_DISTANCE_THRESHOLD && Math.abs(gesture.dx) > Math.abs(gesture.dy) * 2;
+      },
+      onPanResponderRelease: (_evt, gesture) => {
+        const { previous, next } = adjacentRef.current;
+        if (gesture.dx < 0 && next) {
+          goTo(next.slug, next.title);
+        } else if (gesture.dx > 0 && previous) {
+          goTo(previous.slug, previous.title);
+        }
+      },
+    })
+  ).current;
+
+  useEffect(() => {
+    if (chapter) recordChapterView(bookSlug, chapterSlug);
+    // recordChapterView is stable in shape across renders (see
+    // ReadingPositionProvider's useMemo) but intentionally omitted from
+    // deps -- including it would re-run this effect on every "Continue
+    // Reading" save, which is itself triggered by this same effect.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bookSlug, chapterSlug, chapter]);
 
   if (!chapter) {
     return (
@@ -49,77 +133,100 @@ export default function LibraryChapterScreen() {
     );
   }
 
-  const { previous, next } = findAdjacentChapters(
-    loadChapters(bookSlug).map((c) => localizeChapter(c, language)),
-    chapterSlug
-  );
-
-  function goTo(targetSlug: string, title: string) {
-    router.replace(`/library/${bookSlug}/${targetSlug}` as never);
-    AccessibilityInfo.announceForAccessibility(`Now reading: ${title}`);
-  }
+  const localizedChapters = loadChapters(bookSlug).map((c) => localizeChapter(c, language));
+  const { previous, next } = findAdjacentChapters(localizedChapters, chapterSlug);
+  adjacentRef.current = { previous, next };
+  const position = localizedChapters.findIndex((c) => c.slug === chapterSlug);
+  const displayBody = chapter.body ? stripLeadingDuplicateTitle(chapter.body, chapter.title) : chapter.body;
+  const readingMinutes = displayBody ? estimateReadingMinutes(displayBody) : 0;
 
   return (
-    <ScrollView
-      style={[styles.container, { backgroundColor: theme.colors.background }]}
-      contentContainerStyle={styles.content}
-      showsVerticalScrollIndicator={false}
-    >
+    <View style={[styles.screen, { backgroundColor: theme.colors.background }]} {...panResponder.panHandlers}>
       <Stack.Screen options={{ title: chapter.title }} />
-      <View style={styles.header}>
-        <DraftBadge status={chapter.status} needsReview={chapter.migration.needsReview} />
-        <Text style={[styles.title, { color: theme.colors.foreground }]}>{chapter.title}</Text>
+      <View style={[styles.progressTrack, { backgroundColor: theme.colors.border }]}>
+        <View style={[styles.progressFill, { backgroundColor: tint, width: `${progress * 100}%` }]} />
       </View>
-
-      <ContentImage images={chapter.images} />
-
-      {chapter.body ? (
-        <Section text={chapter.body} />
-      ) : (
-        <Text style={[styles.empty, { color: theme.colors.muted }]}>
-          No content is available for this chapter yet.
-        </Text>
-      )}
-
-      {previous || next ? (
-        <View style={styles.pager}>
-          {previous ? (
-            <Pressable
-              onPress={() => goTo(previous.slug, previous.title)}
-              accessibilityRole="button"
-              accessibilityLabel={`Previous chapter: ${previous.title}`}
-              style={[styles.pagerButton, { borderColor: theme.colors.border }]}
-            >
-              <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>Previous</Text>
-              <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={1}>
-                {previous.title}
+      <ScrollView
+        key={chapterSlug}
+        style={styles.container}
+        contentContainerStyle={styles.content}
+        showsVerticalScrollIndicator={false}
+        onScroll={handleScroll}
+        scrollEventThrottle={32}
+      >
+        <View style={styles.header}>
+          <View style={styles.headerTop}>
+            <DraftBadge status={chapter.status} needsReview={chapter.migration.needsReview} />
+            {position !== -1 ? (
+              <Text style={[styles.position, { color: theme.colors.muted }]}>
+                CHAPTER {position + 1} OF {localizedChapters.length}
+                {readingMinutes > 0 ? ` · ${readingMinutes} MIN READ` : ""}
               </Text>
-            </Pressable>
-          ) : (
-            <View style={styles.pagerButton} />
-          )}
-          {next ? (
-            <Pressable
-              onPress={() => goTo(next.slug, next.title)}
-              accessibilityRole="button"
-              accessibilityLabel={`Next chapter: ${next.title}`}
-              style={[styles.pagerButton, styles.pagerButtonEnd, { borderColor: theme.colors.border }]}
-            >
-              <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>Next</Text>
-              <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={1}>
-                {next.title}
-              </Text>
-            </Pressable>
-          ) : (
-            <View style={styles.pagerButton} />
-          )}
+            ) : null}
+          </View>
+          <Text style={[styles.title, { color: theme.colors.foreground }]}>{chapter.title}</Text>
         </View>
-      ) : null}
-    </ScrollView>
+
+        <ContentImage images={chapter.images} />
+
+        {displayBody ? (
+          <Section text={displayBody} />
+        ) : (
+          <Text style={[styles.empty, { color: theme.colors.muted }]}>
+            No content is available for this chapter yet.
+          </Text>
+        )}
+
+        {previous || next ? (
+          <View style={styles.pager}>
+            {previous ? (
+              <Pressable
+                onPress={() => goTo(previous.slug, previous.title)}
+                accessibilityRole="button"
+                accessibilityLabel={`Previous chapter: ${previous.title}`}
+                style={[styles.pagerButton, { borderColor: theme.colors.border }]}
+              >
+                <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>Previous</Text>
+                <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={1}>
+                  {previous.title}
+                </Text>
+              </Pressable>
+            ) : (
+              <View style={styles.pagerButton} />
+            )}
+            {next ? (
+              <Pressable
+                onPress={() => goTo(next.slug, next.title)}
+                accessibilityRole="button"
+                accessibilityLabel={`Next chapter: ${next.title}`}
+                style={[styles.pagerButton, styles.pagerButtonEnd, { borderColor: theme.colors.border }]}
+              >
+                <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>Next</Text>
+                <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={1}>
+                  {next.title}
+                </Text>
+              </Pressable>
+            ) : (
+              <View style={styles.pagerButton} />
+            )}
+          </View>
+        ) : null}
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+  },
+  progressTrack: {
+    height: 3,
+    width: "100%",
+  },
+  progressFill: {
+    height: 3,
+  },
   container: {
     flex: 1,
   },
@@ -134,6 +241,16 @@ const styles = StyleSheet.create({
   header: {
     gap: spacing.sm,
     marginBottom: spacing.sm,
+  },
+  headerTop: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  position: {
+    fontSize: typography.eyebrow,
+    fontWeight: "600",
+    letterSpacing: 0.5,
   },
   title: {
     fontSize: typography.title,

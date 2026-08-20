@@ -28,6 +28,8 @@ export const READING_STORAGE_KEY = "vy.preferences.reading";
 export const ONBOARDED_STORAGE_KEY = "vy.preferences.onboarded";
 /** Reader-facing content language. null = English (the base language, always present). */
 export const LANGUAGE_STORAGE_KEY = "vy.preferences.language";
+/** The last Library chapter the reader had open -- powers Home's "Continue Reading" card. */
+export const LAST_READ_STORAGE_KEY = "vy.preferences.lastRead";
 
 export function isValidThemeOverride(value: unknown): value is ColorScheme | null {
   return value === null || value === "light" || value === "dark";
@@ -62,4 +64,24 @@ export function isValidReadingPreferences(value: unknown): value is ReadingPrefe
   if (typeof value !== "object" || value === null) return false;
   const candidate = value as Record<string, unknown>;
   return typeof candidate.fontScale === "number" && VALID_FONT_SCALES.has(candidate.fontScale);
+}
+
+/** Only the coordinates needed to look the chapter back up -- title/book-title are resolved fresh at render time, never cached, so a later content edit is always reflected. */
+export interface LastReadPosition {
+  bookSlug: string;
+  chapterSlug: string;
+  /** Date.now() at save time -- not shown to the reader, but lets a future screen sort/prune multiple saved positions if that's ever added. */
+  savedAt: number;
+}
+
+export function isValidLastReadPosition(value: unknown): value is LastReadPosition {
+  if (typeof value !== "object" || value === null) return false;
+  const candidate = value as Record<string, unknown>;
+  return (
+    typeof candidate.bookSlug === "string" &&
+    candidate.bookSlug.length > 0 &&
+    typeof candidate.chapterSlug === "string" &&
+    candidate.chapterSlug.length > 0 &&
+    typeof candidate.savedAt === "number"
+  );
 }

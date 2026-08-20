@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View } from "react-native";
 import { spacing, typography, useTheme } from "../theme";
 import { useReadingPreferences } from "../preferences-context.ts";
 import { paragraphsForReading } from "../../content-lib/text-format.ts";
@@ -23,6 +23,12 @@ import { paragraphsForReading } from "../../content-lib/text-format.ts";
  * reading preference (content-lib/preferences.ts's FONT_SCALE_STEPS,
  * set from Home). The heading and the underlying text itself are
  * unaffected -- only the paragraph font size, never the content.
+ *
+ * UI/UX pass: paragraph text renders in the serif reading face
+ * (theme.ts's readingFontFamily -- a system font, Georgia on iOS, no
+ * new asset). Headings stay in the app's regular sans, matching the
+ * common reading-app convention of a sans UI chrome around serif body
+ * prose (Apple Books, Kindle) rather than one typeface everywhere.
  */
 export function Section({
   heading,
@@ -55,6 +61,7 @@ export function Section({
                 styles.paragraph,
                 {
                   color: theme.colors.foreground,
+                  fontFamily: Platform.select(typography.readingFontFamily),
                   fontSize: typography.body * preferences.fontScale,
                   lineHeight: typography.body * preferences.fontScale * typography.readingLineHeight,
                 },

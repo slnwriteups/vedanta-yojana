@@ -1,63 +1,78 @@
 import { useRouter } from "expo-router";
-import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
-import { HOME_SECTIONS, type HomeSection } from "../../content-lib/navigation.ts";
-import { layout, radius, spacing, typography, useTheme } from "../../theme";
-import { shadows } from "../../shadows";
+import { StyleSheet, Text, View } from "react-native";
+import { resolveLastRead } from "../../content-lib/reading-position.ts";
+import { ContentCard } from "../../components/ContentCard";
+import { layout, spacing, typography, useTheme } from "../../theme";
+import { sectionTint } from "../../section-tints.ts";
+import { bookCoverAsset } from "../../book-covers.ts";
+import { useLanguage } from "../../language-context.ts";
+import { useReadingPosition } from "../../reading-position-context.ts";
 
 /**
- * Phase 6C -- Home refined: a calmer hero (title + one short generic
- * description, no imagery, no "featured" anything) and four navigation
- * cards each with a one-line generic description (the same static copy
- * the web app's own section index pages use -- see
- * content-lib/navigation.ts). Still React Native primitives only.
+ * UI/UX pass: Home used to just re-list Divya Desams/Library/Search --
+ * the exact same three destinations already one tap away in the
+ * bottom tab bar, adding a screen without adding value. It's now
+ * "Continue Reading": the last chapter the reader had open (tracked by
+ * ReadingPositionProvider, recorded from library/[book]/[chapter].tsx
+ * on every view), resolved fresh via resolveLastRead so a since-edited
+ * or removed chapter never shows a stale title.
  *
- * The Appearance/Text-size controls that used to live inline here
- * (Phase 6D) moved out: a one-time choice now happens in
- * OnboardingScreen.tsx right after the restored welcome screen, and the
- * same controls stay reachable afterward from the Settings tab (see
- * app/(tabs)/_layout.tsx and app/(tabs)/settings.tsx) -- Home itself
- * goes back to being just the section list, uncluttered on every visit.
+ * With no reading history yet -- a fresh install, or a saved position
+ * that no longer resolves -- there's nothing to continue, so Home
+ * shows two real entry points (Divya Desams, Library) instead: unlike
+ * the old three-card menu, this is conditional first-run guidance, not
+ * a permanent duplicate of the tab bar -- it disappears for good the
+ * moment a reader opens their first chapter.
  */
 export default function HomeScreen() {
   const router = useRouter();
   const theme = useTheme();
-
-  function renderSection({ item }: { item: HomeSection }) {
-    return (
-      <Pressable
-        onPress={() => router.push(item.route as never)}
-        accessibilityRole="button"
-        accessibilityLabel={`${item.label}. ${item.description}`}
-        style={({ pressed }) => [
-          styles.card,
-          shadows.card,
-          {
-            borderColor: theme.colors.border,
-            backgroundColor: pressed ? theme.colors.background : theme.colors.surface,
-          },
-        ]}
-      >
-        <Text style={[styles.cardLabel, { color: theme.colors.accent }]}>{item.label}</Text>
-        <Text style={[styles.cardDescription, { color: theme.colors.muted }]}>{item.description}</Text>
-      </Pressable>
-    );
-  }
+  const { language } = useLanguage();
+  const { lastRead } = useReadingPosition();
+  const resolved = resolveLastRead(lastRead, language);
 
   return (
     <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <View style={styles.hero}>
         <Text style={[styles.title, { color: theme.colors.foreground }]}>Vedanta Yojana</Text>
         <Text style={[styles.description, { color: theme.colors.muted }]}>
-          A reference for Divya Desams, the Library, and supporting Knowledge material.
+          {resolved
+            ? "Pick up right where you left off."
+            : "A reference for Divya Desams, the Library, and supporting Knowledge material."}
         </Text>
       </View>
 
-      <FlatList
-        data={HOME_SECTIONS}
-        keyExtractor={(item) => item.route}
-        renderItem={renderSection}
-        contentContainerStyle={styles.list}
-      />
+      {resolved ? (
+        <View style={styles.section}>
+          <Text style={[styles.sectionLabel, { color: theme.colors.muted }]}>Continue Reading</Text>
+          <ContentCard
+            title={resolved.chapterTitle}
+            subtitle={resolved.bookTitle}
+            tintColor={sectionTint(resolved.bookSlug, theme.scheme)}
+            imageAsset={bookCoverAsset(resolved.bookSlug)}
+            monogram={resolved.bookTitle.trim().charAt(0).toUpperCase()}
+            onPress={() => router.push(`/library/${resolved.bookSlug}/${resolved.chapterSlug}` as never)}
+          />
+        </View>
+      ) : (
+        <View style={styles.section}>
+          <Text style={[styles.sectionLabel, { color: theme.colors.muted }]}>Get Started</Text>
+          <ContentCard
+            title="Divya Desams"
+            subtitle="The 108 sacred abodes of Vishnu venerated by the Alwars."
+            tintColor={sectionTint("divya-desams", theme.scheme)}
+            monogram="D"
+            onPress={() => router.push("/divya-desams" as never)}
+          />
+          <ContentCard
+            title="Library"
+            subtitle="Sacred texts and teachings, presented chapter by chapter."
+            tintColor={theme.colors.accent}
+            monogram="L"
+            onPress={() => router.push("/library" as never)}
+          />
+        </View>
+      )}
     </View>
   );
 }
@@ -81,22 +96,13 @@ const styles = StyleSheet.create({
     fontSize: typography.body,
     lineHeight: typography.body * typography.readingLineHeight,
   },
-  list: {
-    paddingHorizontal: layout.screenPadding,
-    gap: spacing.md,
-    paddingBottom: layout.tabBarClearance,
-  },
-  card: {
-    padding: spacing.lg,
-    borderRadius: radius.lg,
-    borderWidth: StyleSheet.hairlineWidth,
+  section: {
     gap: spacing.xs,
   },
-  cardLabel: {
-    fontSize: typography.heading,
-    fontWeight: "700",
-  },
-  cardDescription: {
-    fontSize: typography.small,
+  sectionLabel: {
+    fontSize: typography.eyebrow,
+    textTransform: "uppercase",
+    letterSpacing: 0.5,
+    paddingHorizontal: layout.screenPadding,
   },
 });

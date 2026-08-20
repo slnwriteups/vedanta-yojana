@@ -6,7 +6,6 @@ import { fileURLToPath } from "node:url";
 import { loadBook, loadChapters, loadDivyaDesam, loadDivyaDesams } from "../content-lib/loader.ts";
 import { buildMobileSearchCorpus } from "../content-lib/corpus.ts";
 import { searchCorpus } from "../../content-lib/search/run.ts";
-import { HOME_SECTIONS } from "../content-lib/navigation.ts";
 import { resolveTheme } from "../theme.ts";
 
 /**
@@ -60,14 +59,6 @@ test("Navigation: no pre-Tabs route files were left behind outside the (tabs) gr
   const appDir = path.join(MOBILE_ROOT, "app");
   const entries = fs.readdirSync(appDir);
   assert.deepEqual(entries.sort(), ["(tabs)", "_layout.tsx"]);
-});
-
-test("Navigation: Home's three nav sections still route inside the (tabs) group", () => {
-  assert.equal(HOME_SECTIONS.length, 3);
-  for (const section of HOME_SECTIONS) {
-    assert.ok(section.route.startsWith("/"));
-    assert.ok(section.description.length > 0);
-  }
 });
 
 test("Theme: both light and dark schemes resolve with the same set of color keys", () => {

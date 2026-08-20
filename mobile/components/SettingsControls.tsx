@@ -1,3 +1,4 @@
+import * as Haptics from "expo-haptics";
 import { AccessibilityInfo, Pressable, StyleSheet, Text, View } from "react-native";
 import { layout, radius, spacing, typography, useTheme, useThemeControls, type ColorScheme } from "../theme";
 import { useReadingPreferences } from "../preferences-context.ts";
@@ -69,6 +70,7 @@ function PillGroup<T>({
             <Pressable
               key={option.label}
               onPress={() => {
+                void Haptics.selectionAsync();
                 onChange(option.value);
                 AccessibilityInfo.announceForAccessibility(`${label} set to ${option.label}`);
               }}

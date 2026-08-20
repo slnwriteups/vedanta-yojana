@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { paragraphsForReading, splitIntoReadableParagraphs } from "../../content-lib/text-format.ts";
+import { estimateReadingMinutes, paragraphsForReading, splitIntoReadableParagraphs, stripLeadingDuplicateTitle } from "../../content-lib/text-format.ts";
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -86,4 +86,55 @@ test("J: a single newline is honored as a real paragraph break, not erased when 
   assert.ok(result.includes("(i) Sva-Nishta"), "expected the first list item to survive as its own paragraph");
   assert.ok(result.includes("(ii) Ukti-Nishta"), "expected the second list item to survive as its own paragraph");
   assert.ok(result.includes("(iii) Acharya-Nishta"), "expected the third list item to survive as its own paragraph");
+});
+
+// ---------------------------------------------------------------------------
+// stripLeadingDuplicateTitle
+// ---------------------------------------------------------------------------
+
+test("K: a body whose first line exactly repeats the title has that line (and the blank line after it) removed", () => {
+  const text = "Bala Kanda: The Divine Beginnings\n\nIf you visit the banks of the Sarayu River...";
+  const result = stripLeadingDuplicateTitle(text, "Bala Kanda: The Divine Beginnings");
+  assert.equal(result, "If you visit the banks of the Sarayu River...");
+});
+
+test("K: the match is case-insensitive and whitespace-collapsed, still an exact match otherwise", () => {
+  const text = "  bala   kanda: the DIVINE beginnings  \nRest of the body.";
+  const result = stripLeadingDuplicateTitle(text, "Bala Kanda: The Divine Beginnings");
+  assert.equal(result, "Rest of the body.");
+});
+
+test("K: a body whose first line only resembles (but does not exactly match) the title is left completely untouched", () => {
+  const text = "Bala Kanda: The Divine Beginnings, Part One\n\nSome body text.";
+  const result = stripLeadingDuplicateTitle(text, "Bala Kanda: The Divine Beginnings");
+  assert.equal(result, text);
+});
+
+test("K: a body with no title repetition at all is returned byte-for-byte unchanged", () => {
+  const text = "Some unrelated first line.\n\nMore body text.";
+  assert.equal(stripLeadingDuplicateTitle(text, "Bala Kanda: The Divine Beginnings"), text);
+});
+
+// ---------------------------------------------------------------------------
+// estimateReadingMinutes
+// ---------------------------------------------------------------------------
+
+test("L: empty/whitespace-only text estimates 0 minutes", () => {
+  assert.equal(estimateReadingMinutes(""), 0);
+  assert.equal(estimateReadingMinutes("   \n  "), 0);
+});
+
+test("L: a very short passage still rounds up to at least 1 minute, never 0", () => {
+  assert.equal(estimateReadingMinutes("A few short words here."), 1);
+});
+
+test("L: word count scales roughly with the 200-words-per-minute pace", () => {
+  const words = Array(600).fill("word").join(" "); // 600 words -> 3 minutes at 200 wpm
+  assert.equal(estimateReadingMinutes(words), 3);
+});
+
+test("L: matches the real corpus -- a full Sri Rangam chapter body estimates a plausible, non-zero minute count", () => {
+  const record = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, "content/divya-desams/sri-rangam.json"), "utf8"));
+  const minutes = estimateReadingMinutes(record.sthalaPuranam);
+  assert.ok(minutes >= 1 && minutes < 60, `expected a plausible reading-time estimate, got ${minutes}`);
 });

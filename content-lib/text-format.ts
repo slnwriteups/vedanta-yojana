@@ -86,3 +86,41 @@ export function paragraphsForReading(text: string, targetLength: number = DEFAUL
     .filter((block) => block.length > 0)
     .flatMap((block) => splitIntoReadableParagraphs(block, targetLength));
 }
+
+/**
+ * Presentation-only: many chapter bodies across the corpus repeat the
+ * chapter's own title as their first line (e.g. a body starting
+ * "Bala Kanda: The Divine Beginnings\n\n..." under a screen that
+ * already shows that same title in its nav header and its own H1) --
+ * a leftover of the source material's own formatting, not something
+ * worth editing 100+ content files to remove. This strips only an
+ * EXACT match (trimmed, whitespace-collapsed, case-insensitive) of the
+ * title as the text's first line, plus the blank line after it, and
+ * returns the text completely untouched otherwise -- never a fuzzy or
+ * partial match, so a body that happens to start with a *similar* but
+ * not identical line is left exactly as-is.
+ */
+export function stripLeadingDuplicateTitle(text: string, title: string): string {
+  const normalize = (s: string) => s.trim().replace(/\s+/g, " ").toLowerCase();
+  const newlineIndex = text.indexOf("\n");
+  const firstLine = newlineIndex === -1 ? text : text.slice(0, newlineIndex);
+  if (normalize(firstLine) !== normalize(title)) return text;
+  const rest = newlineIndex === -1 ? "" : text.slice(newlineIndex + 1);
+  return rest.replace(/^\n+/, "");
+}
+
+/** A commonly-cited average adult silent-reading pace; approximate by design (a badge like Kindle's "X min left", not a precise metric). */
+const WORDS_PER_MINUTE = 200;
+
+/**
+ * A Kindle/Apple-Books-style "X min read" estimate, from a plain
+ * whitespace-separated word count of the raw body text -- rough by
+ * nature (works reasonably across every script in the corpus, since
+ * Devanagari/Tamil/Kannada/Hindi prose here is all space-separated
+ * too), never less than 1 minute for any non-empty text.
+ */
+export function estimateReadingMinutes(text: string): number {
+  const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+  if (wordCount === 0) return 0;
+  return Math.max(1, Math.round(wordCount / WORDS_PER_MINUTE));
+}

@@ -58,6 +58,18 @@ export const typography = {
   eyebrow: 12,
   /** Reading line-height multiplier for long-form prose (Sthala Puranam, chapter bodies). */
   readingLineHeight: 1.65,
+  /**
+   * Long-form reading body text (chapter/Sthala Puranam paragraphs
+   * only, never headings or UI chrome) gets a serif face -- Georgia
+   * and its Android/default counterpart are both system fonts already
+   * present on every device, so this needs no font asset bundling or
+   * expo-font loading. Plain platform-keyed strings rather than a
+   * resolved value: Platform.select() itself is applied at the actual
+   * usage site (Section.tsx), not here, since this module is
+   * deliberately react-native-import-free so `node --test` can import
+   * resolveTheme() directly (see the file-level comment above).
+   */
+  readingFontFamily: { ios: "Georgia", android: "serif", default: "serif" },
 } as const;
 
 export const spacing = {

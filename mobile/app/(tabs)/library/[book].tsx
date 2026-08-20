@@ -4,6 +4,7 @@ import { loadBook, loadChapters, type Chapter } from "../../../content-lib/loade
 import { ContentCard } from "../../../components/ContentCard";
 import { DraftBadge } from "../../../components/DraftBadge";
 import { layout, spacing, typography, useTheme } from "../../../theme";
+import { sectionTint } from "../../../section-tints.ts";
 import { localizeBook, localizeChapter } from "../../../../content-lib/i18n.ts";
 import { useLanguage } from "../../../language-context.ts";
 
@@ -11,6 +12,12 @@ import { useLanguage } from "../../../language-context.ts";
  * Phase 6C -- unchanged ordering/data behavior from Phase 6B (chapters
  * stay in their own ascending `order`, never re-sorted), theme-aware
  * styling only.
+ *
+ * UI/UX pass: this book's section-tints.ts color carries through from
+ * the Library index (same tint, same monogram letter absent since a
+ * chapter list doesn't need one) as the title color and every chapter
+ * row's edge stripe -- one consistent thread of color per book, not
+ * just on its index card.
  */
 export default function LibraryBookScreen() {
   const { book: bookSlug } = useLocalSearchParams<{ book: string }>();
@@ -30,13 +37,16 @@ export default function LibraryBookScreen() {
   }
 
   const chapters = loadChapters(book.slug).map((c) => localizeChapter(c, language));
+  const tint = sectionTint(book.slug, theme.scheme);
 
-  function renderItem({ item }: { item: Chapter }) {
+  function renderItem({ item, index }: { item: Chapter; index: number }) {
     return (
       <ContentCard
         title={item.title}
+        subtitle={`Chapter ${index + 1}`}
         status={item.status}
         needsReview={item.migration.needsReview}
+        tintColor={tint}
         onPress={() => router.push(`/library/${book!.slug}/${item.slug}` as never)}
       />
     );
@@ -47,7 +57,7 @@ export default function LibraryBookScreen() {
       <Stack.Screen options={{ title: book.title }} />
       <View style={styles.header}>
         <DraftBadge status={book.status} needsReview={book.migration.needsReview} />
-        <Text style={[styles.title, { color: theme.colors.foreground }]}>{book.title}</Text>
+        <Text style={[styles.title, { color: tint }]}>{book.title}</Text>
         {book.description ? (
           <Text style={[styles.description, { color: theme.colors.muted }]}>{book.description}</Text>
         ) : null}
@@ -73,6 +83,7 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
   },
   list: {
+    paddingTop: spacing.md,
     paddingBottom: layout.tabBarClearance,
   },
   title: {

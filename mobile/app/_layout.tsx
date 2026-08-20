@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { View } from "react-native";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import * as ScreenOrientation from "expo-screen-orientation";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useTheme } from "../theme";
 import { ThemeProvider } from "../ThemeProvider";
 import { ReadingPreferencesProvider } from "../ReadingPreferencesProvider";
 import { LanguageProvider } from "../LanguageProvider";
+import { ReadingPositionProvider } from "../ReadingPositionProvider";
 import { WelcomeScreen } from "../components/WelcomeScreen";
 import { OnboardingScreen } from "../components/OnboardingScreen";
 import { ONBOARDED_STORAGE_KEY, isValidCompletedFlag } from "../content-lib/preferences.ts";
@@ -91,15 +93,41 @@ function RootStack() {
   );
 }
 
+/**
+ * UI/UX pass: the app was locked to portrait (app.json's own
+ * "orientation" field, now "default") -- but that static config only
+ * fully takes effect in a real custom build; inside Expo Go itself
+ * (a pre-built shell app, not rebuilt per-project) it's not honored on
+ * its own, verified empirically by rotating the Simulator and finding
+ * the app's own layout stayed portrait-shaped even though the device
+ * chrome rotated. expo-screen-orientation's imperative unlockAsync()
+ * is the reliable fix Expo's own docs point to for this exact gap --
+ * called once here, at the true app root, so every screen (not just
+ * the reading view) responds to rotation; the capped reading measure
+ * (layout.maxContentWidth) already centers chapter text with wider
+ * margins in landscape rather than stretching lines uncomfortably
+ * wide, so no further per-screen change was needed for "the reading
+ * experience is improved" by rotating.
+ */
+function useUnlockedOrientation() {
+  useEffect(() => {
+    void ScreenOrientation.unlockAsync();
+  }, []);
+}
+
 export default function RootLayout() {
+  useUnlockedOrientation();
+
   return (
     <ThemeProvider>
       <ReadingPreferencesProvider>
         <LanguageProvider>
-          <SafeAreaProvider>
-            <RootStack />
-            <StatusBar style="auto" />
-          </SafeAreaProvider>
+          <ReadingPositionProvider>
+            <SafeAreaProvider>
+              <RootStack />
+              <StatusBar style="auto" />
+            </SafeAreaProvider>
+          </ReadingPositionProvider>
         </LanguageProvider>
       </ReadingPreferencesProvider>
     </ThemeProvider>

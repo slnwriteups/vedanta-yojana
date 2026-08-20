@@ -5,6 +5,7 @@ import { sourcePageNumber } from "../../../content-lib/ordering.ts";
 import { imagesByUuid } from "../../../content-lib/image-manifest.generated.ts";
 import { ContentCard } from "../../../components/ContentCard";
 import { layout, spacing, typography, useTheme } from "../../../theme";
+import { sectionTint } from "../../../section-tints.ts";
 import { localizeDivyaDesam, localizeKnowledge } from "../../../../content-lib/i18n.ts";
 import { useLanguage } from "../../../language-context.ts";
 
@@ -14,6 +15,13 @@ import { useLanguage } from "../../../language-context.ts";
  * plus tighter list spacing. Ordering is unchanged from Phase 6B --
  * migration.sourcePageId numeric order, the traditional pilgrimage
  * sequence, never alphabetical.
+ *
+ * UI/UX pass: every row carries the same "divya-desams" section tint
+ * (section-tints.ts) as its card-edge stripe -- unlike Library's
+ * per-book tints, this one color is shared across all 107 records
+ * plus the introduction card, reinforcing "you're in this section" as
+ * a section-wide identity rather than distinguishing them from each
+ * other (their own photos already do that).
  */
 
 /** First resolvable image asset for a record, or null -- never a fabricated placeholder. */
@@ -34,6 +42,7 @@ export default function DivyaDesamsIndexScreen() {
     .map((r) => localizeDivyaDesam(r, language));
   const loadedIntroduction = loadKnowledgeRecord("introduction");
   const introduction = loadedIntroduction ? localizeKnowledge(loadedIntroduction, language) : null;
+  const tint = sectionTint("divya-desams", theme.scheme);
 
   function renderItem({ item }: { item: DivyaDesam }) {
     return (
@@ -43,6 +52,7 @@ export default function DivyaDesamsIndexScreen() {
         status={item.status}
         needsReview={item.migration.needsReview}
         imageAsset={firstImageAsset(item)}
+        tintColor={tint}
         onPress={() => router.push(`/divya-desams/${item.slug}` as never)}
       />
     );
@@ -62,6 +72,7 @@ export default function DivyaDesamsIndexScreen() {
             <ContentCard
               title={introduction.title}
               subtitle="Start here before exploring the temples below."
+              tintColor={tint}
               onPress={() => router.push("/divya-desams/introduction" as never)}
             />
           ) : null

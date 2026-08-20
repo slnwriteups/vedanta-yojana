@@ -1,5 +1,7 @@
+import * as Haptics from "expo-haptics";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { layout, radius, spacing, typography, useTheme } from "../theme";
+import { shadows } from "../shadows";
 import { DraftBadge } from "./DraftBadge";
 
 /**
@@ -10,6 +12,25 @@ import { DraftBadge } from "./DraftBadge";
  * accessibility minimum touch target (layout.minTouchTarget) and exposes
  * a single combined accessibilityLabel so a screen reader announces the
  * whole card as one row, not fragments.
+ *
+ * UI/UX pass: each row is now its own separated, rounded card
+ * (shadows.card) with breathing room between them, rather than a flat
+ * hairline-divided strip -- the difference between a settings list and
+ * a content-browsing list. Still just one shared component, so this
+ * benefits every screen that renders one (Library's book/chapter
+ * lists, Divya Desams) at once.
+ *
+ * `tintColor` (optional): a thin colored left-edge stripe identifying
+ * which section/book a row belongs to (section-tints.ts) -- a
+ * restrained wayfinding cue, not a full background-color treatment,
+ * so it never fights with a real thumbnail photo or affects text
+ * contrast. When a book has no cover image, the same tint also fills
+ * a monogram swatch (`monogram`) in place of the empty thumbnail slot.
+ *
+ * A light haptic (expo-haptics) fires on every tap, alongside the
+ * existing onPress -- since this one component backs nearly every
+ * tappable row in the app (Home, Library, Divya Desams), this single
+ * change gives the whole app a consistent tactile feel.
  */
 export function ContentCard({
   title,
@@ -17,6 +38,8 @@ export function ContentCard({
   status,
   needsReview,
   imageAsset,
+  tintColor,
+  monogram,
   onPress,
 }: {
   title: string;
@@ -24,6 +47,8 @@ export function ContentCard({
   status?: string;
   needsReview?: boolean;
   imageAsset?: number | null;
+  tintColor?: string;
+  monogram?: string;
   onPress: () => void;
 }) {
   const theme = useTheme();
@@ -32,19 +57,28 @@ export function ContentCard({
 
   return (
     <Pressable
-      onPress={onPress}
+      onPress={() => {
+        void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+        onPress();
+      }}
       accessibilityRole="button"
       accessibilityLabel={a11yLabel}
       style={({ pressed }) => [
         styles.card,
+        shadows.card,
         {
-          borderBottomColor: theme.colors.border,
-          backgroundColor: pressed ? theme.colors.background : theme.colors.surface,
+          backgroundColor: pressed ? theme.colors.surfaceAlt : theme.colors.surface,
+          borderLeftWidth: tintColor ? 4 : 0,
+          borderLeftColor: tintColor ?? "transparent",
         },
       ]}
     >
       {imageAsset ? (
         <Image source={imageAsset} style={[styles.thumb, { backgroundColor: theme.colors.border }]} resizeMode="cover" />
+      ) : monogram && tintColor ? (
+        <View style={[styles.thumb, styles.monogram, { backgroundColor: tintColor }]}>
+          <Text style={styles.monogramText}>{monogram}</Text>
+        </View>
       ) : null}
       <View style={styles.textBlock}>
         {status ? <DraftBadge status={status} needsReview={needsReview ?? false} /> : null}
@@ -60,15 +94,25 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.md,
-    paddingVertical: spacing.md,
-    paddingHorizontal: spacing.lg,
+    padding: spacing.md,
+    marginHorizontal: layout.screenPadding,
+    marginBottom: spacing.md,
+    borderRadius: radius.md,
     minHeight: layout.minTouchTarget,
-    borderBottomWidth: StyleSheet.hairlineWidth,
   },
   thumb: {
-    width: 48,
-    height: 48,
-    borderRadius: radius.sm,
+    width: 56,
+    height: 56,
+    borderRadius: radius.md,
+  },
+  monogram: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  monogramText: {
+    color: "#fffaf5",
+    fontSize: typography.heading,
+    fontWeight: "700",
   },
   textBlock: {
     flex: 1,

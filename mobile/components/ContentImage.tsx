@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Animated, Pressable, StyleSheet, Text, View } from "react-native";
+import { Animated, Pressable, StyleSheet, View } from "react-native";
 import type { ImageEntry } from "../../content-lib/schemas/index.ts";
 import { imagesByUuid } from "../content-lib/image-manifest.generated.ts";
 import { useTheme } from "../theme";
@@ -15,6 +15,12 @@ import { ImageViewerModal } from "./ImageViewerModal";
  * dependency), and a tap target that opens ImageViewerModal for a
  * full-screen view. Every migrated image still has alt: null (no
  * accessibilityLabel is fabricated when absent).
+ *
+ * UI/UX pass: dropped the literal "Images" heading -- it rendered at
+ * the exact same weight as real section headings ("Temple Information",
+ * "Sthala Puranam"), implying equal informational content where there
+ * was none; a gallery of real photos doesn't need a label saying
+ * "Images" any more than body text needs one saying "Text".
  */
 export function FadeInImage({
   asset,
@@ -51,7 +57,6 @@ export function FadeInImage({
 }
 
 export function ContentImage({ images }: { images: ImageEntry[] }) {
-  const theme = useTheme();
   const [viewerAsset, setViewerAsset] = useState<{ asset: number; label: string | null } | null>(null);
 
   const resolved = images.flatMap((image) => {
@@ -63,7 +68,6 @@ export function ContentImage({ images }: { images: ImageEntry[] }) {
 
   return (
     <View style={styles.section}>
-      <Text style={[styles.heading, { color: theme.colors.foreground }]}>Images</Text>
       <View style={styles.row}>
         {resolved.map(({ image, asset }) => (
           <FadeInImage
@@ -91,10 +95,6 @@ export const IMAGE_SIZE = 140;
 const styles = StyleSheet.create({
   section: {
     gap: 8,
-  },
-  heading: {
-    fontSize: 17,
-    fontWeight: "600",
   },
   row: {
     flexDirection: "row",

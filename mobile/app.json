@@ -4,8 +4,11 @@
     "slug": "vedanta-yojana",
     "scheme": "vedantayojana",
     "version": "1.0.0",
-    "platforms": ["ios", "android"],
-    "orientation": "portrait",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
@@ -27,7 +30,8 @@
     "plugins": [
       "expo-router",
       "expo-audio",
-      "expo-asset"
+      "expo-asset",
+      "expo-font"
     ]
   }
 }

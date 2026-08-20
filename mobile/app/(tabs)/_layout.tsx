@@ -1,13 +1,22 @@
-import { Tabs } from "expo-router";
+import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import { Tabs, router } from "expo-router";
 import { useTheme } from "../../theme";
 
 /**
  * The bottom tab bar: Home, Divya Desams, Library, Search, Settings.
- * Text-only labels (no icon library) to keep the dependency set
- * unchanged and to match the restrained, non-decorative character
- * requested for this app -- an icon-less, label-led tab bar reads as
- * calmer and more scholarly than a typical iconography-heavy app tab
- * bar.
+ * Each tab gets one deliberately-chosen glyph (Divya Desams uses
+ * MaterialIcons' "temple-hindu" -- a real gopuram silhouette, and the
+ * one glyph across every family @expo/vector-icons 14.1.0 vendors that
+ * reflects what this app is actually about, rather than a generic
+ * "building" stand-in; MaterialCommunityIcons has no temple glyph in
+ * this vendored version, only MaterialIcons does -- checked directly
+ * against the package's own glyph maps rather than assumed. The rest
+ * use Ionicons' outline/filled pairs so the active tab reads as
+ * filled, matching iOS system-app convention). Restrained on purpose
+ * -- a single line-weight glyph per tab, tinted by the same
+ * accent/muted pair as everything else, not a multi-color icon set --
+ * to keep the "scholarly/spiritual, not SaaS" character from theme.ts
+ * intact.
  *
  * The former Knowledge tab was retired: its one real record, the
  * "introduction" article, was moved to live under the Divya Desams tab
@@ -26,6 +35,26 @@ import { useTheme } from "../../theme";
  * Settings (Appearance/Text-size, same controls OnboardingScreen.tsx
  * shows once on first launch) is its own always-available tab, placed
  * last -- not a header button, not a modal.
+ *
+ * Bug fix: tapping the Library or Divya Desams tab icon while already
+ * several screens deep in that tab's own nested Stack (e.g. reading a
+ * chapter) did nothing -- React Navigation's bottom-tabs does NOT pop a
+ * nested stack to its root on re-tapping the active tab by default,
+ * despite that being the platform-conventional behavior (Apple's own
+ * apps, e.g. Music/App Store, all pop-to-root on a second tap). Fixed
+ * with an explicit `tabPress` listener on each Stack-backed tab below.
+ * Two wrong attempts on the way here, both verified empirically rather
+ * than assumed: `navigation.popToTop()` (the React Navigation idiom)
+ * surfaced an on-screen "action not handled" error, since `navigation`
+ * in a Tabs.Screen listener is the TAB navigator's own object and
+ * POP_TO_TOP is a stack-only action it doesn't own; `router.navigate`
+ * brought the index screen into focus but left older, unrelated stack
+ * history reachable via a stray back button, since `navigate` jumps to
+ * an existing entry without discarding what's after it.
+ * `router.dismissTo`, expo-router's dedicated primitive for exactly
+ * this ("go back to this existing screen, discarding everything
+ * pushed after it"), is the one that actually gives a clean root
+ * screen with no leftover Back button.
  */
 export default function TabsLayout() {
   const theme = useTheme();
@@ -50,11 +79,64 @@ export default function TabsLayout() {
         headerTransparent: false,
       }}
     >
-      <Tabs.Screen name="index" options={{ title: "Home", headerShown: true }} />
-      <Tabs.Screen name="divya-desams" options={{ title: "Divya Desams", headerShown: false }} />
-      <Tabs.Screen name="library" options={{ title: "Library", headerShown: false }} />
-      <Tabs.Screen name="search" options={{ title: "Search", headerShown: true }} />
-      <Tabs.Screen name="settings" options={{ title: "Settings", headerShown: true }} />
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "Home",
+          headerShown: true,
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? "home" : "home-outline"} size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="divya-desams"
+        options={{
+          title: "Divya Desams",
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => <MaterialIcons name="temple-hindu" size={size} color={color} />,
+        }}
+        listeners={({ navigation }) => ({
+          tabPress: () => {
+            if (navigation.isFocused()) router.dismissTo("/divya-desams");
+          },
+        })}
+      />
+      <Tabs.Screen
+        name="library"
+        options={{
+          title: "Library",
+          headerShown: false,
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? "book" : "book-outline"} size={size} color={color} />
+          ),
+        }}
+        listeners={({ navigation }) => ({
+          tabPress: () => {
+            if (navigation.isFocused()) router.dismissTo("/library");
+          },
+        })}
+      />
+      <Tabs.Screen
+        name="search"
+        options={{
+          title: "Search",
+          headerShown: true,
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? "search" : "search-outline"} size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: "Settings",
+          headerShown: true,
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? "settings" : "settings-outline"} size={size} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }

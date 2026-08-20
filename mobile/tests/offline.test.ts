@@ -11,6 +11,7 @@ import { findAdjacentChapters } from "../content-lib/chapter-navigation.ts";
 import {
   DEFAULT_READING_PREFERENCES,
   FONT_SCALE_STEPS,
+  isValidLastReadPosition,
   isValidReadingPreferences,
   isValidThemeOverride,
 } from "../content-lib/preferences.ts";
@@ -95,6 +96,18 @@ test("Theme preference: valid values are light/dark/null (system); anything else
   assert.equal(isValidThemeOverride(null), true);
   assert.equal(isValidThemeOverride("solarized"), false);
   assert.equal(isValidThemeOverride(42), false);
+});
+
+test("Last-read position: a well-formed saved position validates", () => {
+  assert.ok(isValidLastReadPosition({ bookSlug: "jaya", chapterSlug: "some-chapter", savedAt: Date.now() }));
+});
+
+test("Last-read position: malformed/corrupted stored values are rejected, not trusted", () => {
+  assert.equal(isValidLastReadPosition(null), false);
+  assert.equal(isValidLastReadPosition({}), false);
+  assert.equal(isValidLastReadPosition({ bookSlug: "", chapterSlug: "x", savedAt: 1 }), false, "an empty slug is not a real position");
+  assert.equal(isValidLastReadPosition({ bookSlug: "jaya", chapterSlug: "x", savedAt: "yesterday" }), false);
+  assert.equal(isValidLastReadPosition({ bookSlug: "jaya" }), false, "missing chapterSlug/savedAt");
 });
 
 test("Chapter navigation: the first chapter has no previous, the last has no next, and interior chapters have both", () => {

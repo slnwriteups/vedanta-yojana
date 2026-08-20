@@ -4,7 +4,7 @@ import { loadBook, loadChapter, loadChapters, loadDivyaDesam, loadDivyaDesams, l
 import { sourcePageNumber } from "../content-lib/ordering.ts";
 import { buildMobileSearchCorpus } from "../content-lib/corpus.ts";
 import { searchCorpus } from "../../content-lib/search/run.ts";
-import { HOME_SECTIONS } from "../content-lib/navigation.ts";
+import { resolveLastRead } from "../content-lib/reading-position.ts";
 
 /**
  * Phase 6B, Step 10 -- foundation tests for the screen-level data logic
@@ -19,10 +19,24 @@ import { HOME_SECTIONS } from "../content-lib/navigation.ts";
 
 const BOOK_SLUG = "untitled-recovered-book-pending-editorial-title";
 
-test("Home: the three navigation sections are well-formed and route to real screens", () => {
-  assert.equal(HOME_SECTIONS.length, 3);
-  const routes = HOME_SECTIONS.map((s) => s.route).sort();
-  assert.deepEqual(routes, ["/divya-desams", "/library", "/search"]);
+test("Home: resolveLastRead resolves a real saved position to its current, real titles", () => {
+  const chapters = loadChapters(BOOK_SLUG);
+  const position = { bookSlug: BOOK_SLUG, chapterSlug: chapters[0].slug, savedAt: Date.now() };
+  const resolved = resolveLastRead(position, null);
+  assert.ok(resolved, "expected a real saved position to resolve");
+  assert.equal(resolved!.bookSlug, BOOK_SLUG);
+  assert.equal(resolved!.chapterSlug, chapters[0].slug);
+  assert.equal(resolved!.bookTitle, "A Brief Insight to Visishtadvaita Philosophy");
+  assert.equal(resolved!.chapterTitle, chapters[0].title);
+});
+
+test("Home: resolveLastRead returns null (not a crash or a stale title) for a book/chapter that no longer exists", () => {
+  assert.equal(resolveLastRead({ bookSlug: "does-not-exist", chapterSlug: "also-not-real", savedAt: Date.now() }, null), null);
+  assert.equal(resolveLastRead({ bookSlug: BOOK_SLUG, chapterSlug: "not-a-real-chapter", savedAt: Date.now() }, null), null);
+});
+
+test("Home: resolveLastRead returns null when there is no saved position at all", () => {
+  assert.equal(resolveLastRead(null, null), null);
 });
 
 test("Divya Desams: 107 records available for the index screen", () => {
