@@ -11,6 +11,14 @@ import { layout, spacing, typography, useTheme } from "../../../theme";
 import { paragraphsForReading } from "../../../../content-lib/text-format.ts";
 import { localizeDivyaDesam } from "../../../../content-lib/i18n.ts";
 import { useLanguage } from "../../../language-context.ts";
+import {
+  pasuramResourceLabel,
+  shrineLocationsHeading,
+  shrineOrdinalLabel,
+  translateUi,
+  useT,
+  type UiStringKey,
+} from "../../../ui-strings.ts";
 
 /**
  * Phase 6C's original reading-layout order pulled the first resolvable
@@ -42,12 +50,12 @@ import { useLanguage } from "../../../language-context.ts";
  * real slugs.
  */
 
-const TEMPLE_FIELD_LABELS: Record<keyof TempleInformationData, string> = {
-  moolavar: "Moolavar",
-  thayaar: "Thayaar",
-  vimanam: "Vimanam",
-  theertham: "Theertham",
-  travelNote: "How to reach",
+const TEMPLE_FIELD_LABEL_KEYS: Record<keyof TempleInformationData, UiStringKey> = {
+  moolavar: "fieldMoolavar",
+  thayaar: "fieldThayaar",
+  vimanam: "fieldVimanam",
+  theertham: "fieldTheertham",
+  travelNote: "fieldTravelNote",
 };
 
 const TEMPLE_FIELD_ORDER: (keyof TempleInformationData)[] = [
@@ -62,14 +70,15 @@ export default function DivyaDesamDetailScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const theme = useTheme();
   const { language } = useLanguage();
+  const t = useT();
   const loaded = loadDivyaDesam(slug);
   const record = loaded ? localizeDivyaDesam(loaded, language) : null;
 
   if (!record) {
     return (
       <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
-        <Stack.Screen options={{ title: "Not found" }} />
-        <Text style={[styles.notFound, { color: theme.colors.muted }]}>This Divya Desam could not be found.</Text>
+        <Stack.Screen options={{ title: t("notFoundTitle") }} />
+        <Text style={[styles.notFound, { color: theme.colors.muted }]}>{t("divyaDesamNotFound")}</Text>
       </View>
     );
   }
@@ -102,11 +111,13 @@ export default function DivyaDesamDetailScreen() {
       <ContentImage images={topImages} />
 
       {presentTempleFields.length > 0 ? (
-        <Section heading="Temple Information">
+        <Section heading={t("templeInformationHeading")}>
           <View style={styles.templeInfo}>
             {presentTempleFields.map((key) => (
               <View key={key}>
-                <Text style={[styles.templeLabel, { color: theme.colors.muted }]}>{TEMPLE_FIELD_LABELS[key]}</Text>
+                <Text style={[styles.templeLabel, { color: theme.colors.muted }]}>
+                  {translateUi(TEMPLE_FIELD_LABEL_KEYS[key], language)}
+                </Text>
                 <Text style={[styles.templeValue, { color: theme.colors.foreground }]}>
                   {record.templeInformation[key]}
                 </Text>
@@ -121,12 +132,12 @@ export default function DivyaDesamDetailScreen() {
           the travel note and the actual clickable map together, in one
           place, before anything else. */}
       {record.shrines.length > 0 ? (
-        <Section heading={`Shrine Location${record.shrines.length > 1 ? "s" : ""}`}>
+        <Section heading={shrineLocationsHeading(language, record.shrines.length)}>
           <View style={styles.linkList}>
             {record.shrines.map((shrine, index) => (
               <ResourceLink
                 key={`${shrine.mapsLink}-${index}`}
-                label={shrine.label ?? "View on Google Maps"}
+                label={shrine.label ?? t("viewOnGoogleMaps")}
                 url={shrine.mapsLink}
               />
             ))}
@@ -138,16 +149,16 @@ export default function DivyaDesamDetailScreen() {
         afterSthalaPuranamImages.length > 0 ? (
           <SthalaPuranamWithImages text={record.sthalaPuranam} images={afterSthalaPuranamImages} />
         ) : (
-          <Section heading="Sthala Puranam" text={record.sthalaPuranam} />
+          <Section heading={t("sthalaPuranamHeading")} text={record.sthalaPuranam} />
         )
       ) : null}
-      <Section heading="Azhwar Pasuram" text={record.azhwarPasuram} />
+      <Section heading={t("azhwarPasuramHeading")} text={record.azhwarPasuram} />
 
       {detailedShrines.length > 0 ? (
-        <Section heading="Shrines">
+        <Section heading={t("shrinesHeading")}>
           <View style={styles.shrineList}>
             {detailedShrines.map((shrine, index) => {
-              const shrineHeading = shrine.name ?? shrine.label ?? `Shrine ${index + 1}`;
+              const shrineHeading = shrine.name ?? shrine.label ?? shrineOrdinalLabel(language, index + 1);
               const shrineFields = shrine.templeInformation
                 ? TEMPLE_FIELD_ORDER.filter(
                     (key) => key !== "travelNote" && shrine.templeInformation?.[key]
@@ -163,7 +174,7 @@ export default function DivyaDesamDetailScreen() {
                       {shrineFields.map((key) => (
                         <View key={key}>
                           <Text style={[styles.templeLabel, { color: theme.colors.muted }]}>
-                            {TEMPLE_FIELD_LABELS[key]}
+                            {translateUi(TEMPLE_FIELD_LABEL_KEYS[key], language)}
                           </Text>
                           <Text style={[styles.templeValue, { color: theme.colors.foreground }]}>
                             {shrine.templeInformation?.[key]}
@@ -202,12 +213,12 @@ export default function DivyaDesamDetailScreen() {
       ) : null}
 
       {record.resources.length > 0 ? (
-        <Section heading="Pasuram Resources">
+        <Section heading={t("pasuramResourcesHeading")}>
           <View style={styles.linkList}>
             {record.resources.map((resource, index) => (
               <ResourceLink
                 key={`${resource.url}-${index}`}
-                label={`${resource.language} Pasuram (PDF)`}
+                label={pasuramResourceLabel(language, resource.language)}
                 url={resource.url}
               />
             ))}

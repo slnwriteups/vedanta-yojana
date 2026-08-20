@@ -6,6 +6,7 @@ import { layout, spacing, typography, useTheme } from "../../theme";
 import { sectionTint } from "../../section-tints.ts";
 import { bookCoverAsset } from "../../book-covers.ts";
 import { useLanguage } from "../../language-context.ts";
+import { useT } from "../../ui-strings.ts";
 import { useReadingPosition } from "../../reading-position-context.ts";
 
 /**
@@ -28,6 +29,7 @@ export default function HomeScreen() {
   const router = useRouter();
   const theme = useTheme();
   const { language } = useLanguage();
+  const t = useT();
   const { lastRead } = useReadingPosition();
   const resolved = resolveLastRead(lastRead, language);
 
@@ -36,15 +38,13 @@ export default function HomeScreen() {
       <View style={styles.hero}>
         <Text style={[styles.title, { color: theme.colors.foreground }]}>Vedanta Yojana</Text>
         <Text style={[styles.description, { color: theme.colors.muted }]}>
-          {resolved
-            ? "Pick up right where you left off."
-            : "A reference for Divya Desams, the Library, and supporting Knowledge material."}
+          {resolved ? t("homeContinueSubtitle") : t("homeStartSubtitle")}
         </Text>
       </View>
 
       {resolved ? (
         <View style={styles.section}>
-          <Text style={[styles.sectionLabel, { color: theme.colors.muted }]}>Continue Reading</Text>
+          <Text style={[styles.sectionLabel, { color: theme.colors.muted }]}>{t("homeContinueReadingLabel")}</Text>
           <ContentCard
             title={resolved.chapterTitle}
             subtitle={resolved.bookTitle}
@@ -56,17 +56,17 @@ export default function HomeScreen() {
         </View>
       ) : (
         <View style={styles.section}>
-          <Text style={[styles.sectionLabel, { color: theme.colors.muted }]}>Get Started</Text>
+          <Text style={[styles.sectionLabel, { color: theme.colors.muted }]}>{t("homeGetStartedLabel")}</Text>
           <ContentCard
-            title="Divya Desams"
-            subtitle="The 108 sacred abodes of Vishnu venerated by the Alwars."
+            title={t("tabDivyaDesams")}
+            subtitle={t("divyaDesamsCardSubtitle")}
             tintColor={sectionTint("divya-desams", theme.scheme)}
             monogram="D"
             onPress={() => router.push("/divya-desams" as never)}
           />
           <ContentCard
-            title="Library"
-            subtitle="Sacred texts and teachings, presented chapter by chapter."
+            title={t("tabLibrary")}
+            subtitle={t("libraryCardSubtitle")}
             tintColor={theme.colors.accent}
             monogram="L"
             onPress={() => router.push("/library" as never)}

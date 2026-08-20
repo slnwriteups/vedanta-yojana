@@ -1,6 +1,8 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Linking, Pressable, StyleSheet, Text } from "react-native";
 import { layout, radius, spacing, typography, useTheme } from "../theme";
+import { useLanguage } from "../language-context.ts";
+import { translateUi } from "../ui-strings.ts";
 
 /**
  * A single external social-profile button -- visually matches
@@ -11,11 +13,12 @@ import { layout, radius, spacing, typography, useTheme } from "../theme";
  */
 export function SocialButton({ icon, label, url }: { icon: keyof typeof Ionicons.glyphMap; label: string; url: string }) {
   const theme = useTheme();
+  const { language } = useLanguage();
   return (
     <Pressable
       onPress={() => Linking.openURL(url)}
       accessibilityRole="link"
-      accessibilityLabel={`${label}, opens in browser`}
+      accessibilityLabel={`${label}${translateUi("opensInBrowserSuffix", language)}`}
       style={[styles.button, { borderColor: theme.colors.border, backgroundColor: theme.colors.surfaceAlt }]}
     >
       <Ionicons name={icon} size={18} color={theme.colors.accent} />

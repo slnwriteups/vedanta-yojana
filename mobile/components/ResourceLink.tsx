@@ -1,5 +1,7 @@
 import { Linking, Pressable, StyleSheet, Text } from "react-native";
 import { layout, spacing, typography, useTheme } from "../theme";
+import { useLanguage } from "../language-context.ts";
+import { translateUi } from "../ui-strings.ts";
 
 /**
  * One small external-link row, reused for both a Divya Desam's Maps
@@ -10,11 +12,12 @@ import { layout, spacing, typography, useTheme } from "../theme";
  */
 export function ResourceLink({ label, url }: { label: string; url: string }) {
   const theme = useTheme();
+  const { language } = useLanguage();
   return (
     <Pressable
       onPress={() => Linking.openURL(url)}
       accessibilityRole="link"
-      accessibilityLabel={`${label}, opens in browser`}
+      accessibilityLabel={`${label}${translateUi("opensInBrowserSuffix", language)}`}
       style={styles.link}
     >
       <Text style={[styles.label, { color: theme.colors.accent }]}>{label} ↗</Text>

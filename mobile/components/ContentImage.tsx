@@ -3,6 +3,8 @@ import { Animated, Pressable, StyleSheet, View } from "react-native";
 import type { ImageEntry } from "../../content-lib/schemas/index.ts";
 import { imagesByUuid } from "../content-lib/image-manifest.generated.ts";
 import { useTheme } from "../theme";
+import { useLanguage } from "../language-context.ts";
+import { translateUi } from "../ui-strings.ts";
 import { ImageViewerModal } from "./ImageViewerModal";
 
 /**
@@ -34,20 +36,21 @@ export function FadeInImage({
   onPress: () => void;
 }) {
   const theme = useTheme();
+  const { language } = useLanguage();
   const opacity = useRef(new Animated.Value(0)).current;
 
   return (
     <Pressable
       onPress={onPress}
       accessibilityRole="imagebutton"
-      accessibilityLabel={label ?? "View image full screen"}
+      accessibilityLabel={label ?? translateUi("viewImageFullScreen", language)}
       style={[styles.thumbWrap, { width: size, height: size, backgroundColor: theme.colors.border }]}
     >
       <Animated.Image
         source={asset}
         accessibilityLabel={label ?? undefined}
         style={[styles.thumb, { opacity, borderRadius: theme.scheme === "dark" ? 10 : 10 }]}
-        resizeMode="cover"
+        resizeMode="contain"
         onLoad={() => {
           Animated.timing(opacity, { toValue: 1, duration: 200, useNativeDriver: true }).start();
         }}

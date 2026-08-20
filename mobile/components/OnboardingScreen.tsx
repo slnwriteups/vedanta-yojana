@@ -2,6 +2,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { SettingsControls } from "./SettingsControls";
 import { spacing, typography, useTheme } from "../theme";
+import { useT } from "../ui-strings.ts";
 
 /**
  * A one-time step shown exactly once ever (gated in app/_layout.tsx on
@@ -13,21 +14,20 @@ import { spacing, typography, useTheme } from "../theme";
  */
 export function OnboardingScreen({ onDone }: { onDone: () => void }) {
   const theme = useTheme();
+  const t = useT();
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <View style={styles.content}>
         <View style={styles.textBlock}>
-          <Text style={[styles.title, { color: theme.colors.foreground }]}>Make it yours</Text>
-          <Text style={[styles.subtitle, { color: theme.colors.muted }]}>
-            Choose how Vedanta Yojana looks and reads. You can always change these later from Settings.
-          </Text>
+          <Text style={[styles.title, { color: theme.colors.foreground }]}>{t("onboardingTitle")}</Text>
+          <Text style={[styles.subtitle, { color: theme.colors.muted }]}>{t("onboardingSubtitle")}</Text>
         </View>
 
         <SettingsControls />
 
         <TouchableOpacity onPress={onDone} style={[styles.button, { backgroundColor: theme.colors.accent }]} accessibilityRole="button">
-          <Text style={[styles.buttonLabel, { color: theme.colors.surface }]}>Continue</Text>
+          <Text style={[styles.buttonLabel, { color: theme.colors.surface }]}>{t("onboardingContinue")}</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

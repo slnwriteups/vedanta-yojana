@@ -24,6 +24,7 @@ import { localizeChapter } from "../../../../../content-lib/i18n.ts";
 import { estimateReadingMinutes, stripLeadingDuplicateTitle } from "../../../../../content-lib/text-format.ts";
 import { useLanguage } from "../../../../language-context.ts";
 import { useReadingPosition } from "../../../../reading-position-context.ts";
+import { chapterPositionLabel, minReadLabel, nowReadingAnnouncement, useT } from "../../../../ui-strings.ts";
 
 /**
  * Phase 6C -- the reading-comfort pass the brief asks for: a capped
@@ -80,6 +81,7 @@ export default function LibraryChapterScreen() {
   const router = useRouter();
   const theme = useTheme();
   const { language } = useLanguage();
+  const t = useT();
   const { recordChapterView } = useReadingPosition();
   const [progress, setProgress] = useState(0);
   const loadedChapter = loadChapter(bookSlug, chapterSlug);
@@ -96,7 +98,7 @@ export default function LibraryChapterScreen() {
   function goTo(targetSlug: string, title: string) {
     void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     router.replace(`/library/${bookSlug}/${targetSlug}` as never);
-    AccessibilityInfo.announceForAccessibility(`Now reading: ${title}`);
+    AccessibilityInfo.announceForAccessibility(nowReadingAnnouncement(language, title));
   }
 
   const panResponder = useRef(
@@ -116,19 +118,26 @@ export default function LibraryChapterScreen() {
   ).current;
 
   useEffect(() => {
-    if (chapter) recordChapterView(bookSlug, chapterSlug);
+    if (loadedChapter) recordChapterView(bookSlug, chapterSlug);
+    // Depends on loadedChapter (loader.ts's cached, reference-stable
+    // lookup), not the localized `chapter` below -- localizeChapter
+    // builds a brand-new object on every render, so using it here would
+    // re-fire this effect (and therefore recordChapterView's setState)
+    // on every render, an infinite loop caught by React's "Maximum
+    // update depth exceeded" the moment something (a scroll, a language
+    // switch) re-rendered this screen a couple of times in a row.
     // recordChapterView is stable in shape across renders (see
     // ReadingPositionProvider's useMemo) but intentionally omitted from
     // deps -- including it would re-run this effect on every "Continue
     // Reading" save, which is itself triggered by this same effect.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bookSlug, chapterSlug, chapter]);
+  }, [bookSlug, chapterSlug, loadedChapter]);
 
   if (!chapter) {
     return (
       <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
-        <Stack.Screen options={{ title: "Not found" }} />
-        <Text style={[styles.empty, { color: theme.colors.muted }]}>This chapter could not be found.</Text>
+        <Stack.Screen options={{ title: t("notFoundTitle") }} />
+        <Text style={[styles.empty, { color: theme.colors.muted }]}>{t("chapterNotFound")}</Text>
       </View>
     );
   }
@@ -159,8 +168,8 @@ export default function LibraryChapterScreen() {
             <DraftBadge status={chapter.status} needsReview={chapter.migration.needsReview} />
             {position !== -1 ? (
               <Text style={[styles.position, { color: theme.colors.muted }]}>
-                CHAPTER {position + 1} OF {localizedChapters.length}
-                {readingMinutes > 0 ? ` · ${readingMinutes} MIN READ` : ""}
+                {chapterPositionLabel(language, position + 1, localizedChapters.length)}
+                {readingMinutes > 0 ? ` · ${minReadLabel(language, readingMinutes)}` : ""}
               </Text>
             ) : null}
           </View>
@@ -173,7 +182,7 @@ export default function LibraryChapterScreen() {
           <Section text={displayBody} />
         ) : (
           <Text style={[styles.empty, { color: theme.colors.muted }]}>
-            No content is available for this chapter yet.
+            {t("noChapterContentYet")}
           </Text>
         )}
 
@@ -186,7 +195,7 @@ export default function LibraryChapterScreen() {
                 accessibilityLabel={`Previous chapter: ${previous.title}`}
                 style={[styles.pagerButton, { borderColor: theme.colors.border }]}
               >
-                <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>Previous</Text>
+                <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>{t("pagerPrevious")}</Text>
                 <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={1}>
                   {previous.title}
                 </Text>
@@ -201,7 +210,7 @@ export default function LibraryChapterScreen() {
                 accessibilityLabel={`Next chapter: ${next.title}`}
                 style={[styles.pagerButton, styles.pagerButtonEnd, { borderColor: theme.colors.border }]}
               >
-                <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>Next</Text>
+                <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>{t("pagerNext")}</Text>
                 <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={1}>
                   {next.title}
                 </Text>

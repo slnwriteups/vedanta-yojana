@@ -1,5 +1,7 @@
 import { StyleSheet, Text } from "react-native";
 import { typography, useTheme } from "../theme";
+import { useLanguage } from "../language-context.ts";
+import { translateUi } from "../ui-strings.ts";
 
 /**
  * Mirrors the exact condition and copy of the web app's
@@ -9,15 +11,20 @@ import { typography, useTheme } from "../theme";
  */
 export function DraftBadge({ status, needsReview }: { status: string; needsReview: boolean }) {
   const theme = useTheme();
+  const { language } = useLanguage();
   if (status !== "draft") return null;
 
   return (
     <Text
       style={[styles.text, { color: theme.colors.muted }]}
       accessibilityRole="text"
-      accessibilityLabel={`Draft, under review${needsReview ? ", flagged for additional review" : ""}`}
+      accessibilityLabel={
+        translateUi("draftBadgeA11y", language) +
+        (needsReview ? translateUi("draftBadgeFlaggedA11ySuffix", language) : "")
+      }
     >
-      Draft — under review{needsReview ? " · flagged for additional review" : ""}
+      {translateUi("draftBadge", language)}
+      {needsReview ? translateUi("draftBadgeFlaggedSuffix", language) : ""}
     </Text>
   );
 }

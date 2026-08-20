@@ -4,6 +4,8 @@ import type { ImageEntry } from "../../content-lib/schemas/index.ts";
 import { imagesByUuid } from "../content-lib/image-manifest.generated.ts";
 import { spacing, typography, useTheme } from "../theme";
 import { useReadingPreferences } from "../preferences-context.ts";
+import { useLanguage } from "../language-context.ts";
+import { translateUi } from "../ui-strings.ts";
 import { FadeInImage, IMAGE_SIZE } from "./ContentImage";
 import { ImageViewerModal } from "./ImageViewerModal";
 import { splitIntoReadableParagraphs } from "../../content-lib/text-format.ts";
@@ -68,6 +70,7 @@ function buildSegments(text: string, images: ResolvedImage[]): Segment[] {
 export function SthalaPuranamWithImages({ text, images }: { text: string; images: ImageEntry[] }) {
   const theme = useTheme();
   const { preferences } = useReadingPreferences();
+  const { language } = useLanguage();
   const [viewerAsset, setViewerAsset] = useState<{ asset: number; label: string | null } | null>(null);
 
   const resolved = images.flatMap((image) => {
@@ -80,7 +83,7 @@ export function SthalaPuranamWithImages({ text, images }: { text: string; images
   return (
     <View style={styles.section} accessible={false}>
       <Text style={[styles.heading, { color: theme.colors.foreground }]} accessibilityRole="header">
-        Sthala Puranam
+        {translateUi("sthalaPuranamHeading", language)}
       </Text>
       {segments.flatMap((segment) =>
         segment.text !== undefined

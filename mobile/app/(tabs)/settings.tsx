@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SettingsControls } from "../../components/SettingsControls";
 import { SocialButton } from "../../components/SocialButton";
 import { layout, spacing, typography, useTheme } from "../../theme";
+import { useT } from "../../ui-strings.ts";
 
 const INSTAGRAM_URL = "https://www.instagram.com/vedantayojana/";
 
@@ -20,6 +21,7 @@ const INSTAGRAM_URL = "https://www.instagram.com/vedantayojana/";
  */
 export default function SettingsScreen() {
   const theme = useTheme();
+  const t = useT();
 
   return (
     <ScrollView
@@ -28,7 +30,7 @@ export default function SettingsScreen() {
     >
       <SettingsControls />
       <View style={styles.section}>
-        <Text style={[styles.sectionLabel, { color: theme.colors.muted }]}>Connect</Text>
+        <Text style={[styles.sectionLabel, { color: theme.colors.muted }]}>{t("settingsConnectLabel")}</Text>
         <SocialButton icon="logo-instagram" label="Instagram" url={INSTAGRAM_URL} />
       </View>
     </ScrollView>

@@ -6,6 +6,15 @@ import { searchCorpus } from "../../../content-lib/search/run.ts";
 import type { SearchResult, SearchResultType } from "../../../content-lib/search/types.ts";
 import { CONTENT_TYPE_FILTERS, filterResultsByType } from "../../content-lib/search-filter.ts";
 import { layout, radius, spacing, typography, useTheme } from "../../theme";
+import { useLanguage } from "../../language-context.ts";
+import { filterAccessibilityLabel, noResultsLabel, translateUi, useT, type UiStringKey } from "../../ui-strings.ts";
+
+const RESULT_TYPE_LABEL_KEYS: Record<SearchResultType, UiStringKey> = {
+  "divya-desam": "filterDivyaDesam",
+  book: "filterBook",
+  chapter: "filterChapter",
+  knowledge: "filterKnowledge",
+};
 
 /**
  * Phase 6C -- theme-aware styling and accessibility labels only; the
@@ -24,6 +33,8 @@ import { layout, radius, spacing, typography, useTheme } from "../../theme";
 export default function SearchScreen() {
   const router = useRouter();
   const theme = useTheme();
+  const { language } = useLanguage();
+  const t = useT();
   const corpus = useMemo(() => buildMobileSearchCorpus(), []);
   const [query, setQuery] = useState("");
   const [activeTypes, setActiveTypes] = useState<Set<SearchResultType>>(() => new Set());
@@ -45,18 +56,19 @@ export default function SearchScreen() {
   }
 
   function renderItem({ item }: { item: SearchResult }) {
+    const typeLabel = translateUi(RESULT_TYPE_LABEL_KEYS[item.type], language);
     return (
       <View style={[styles.result, { borderBottomColor: theme.colors.border }]}>
         <Text
           style={[styles.resultTitle, { color: theme.colors.accent }]}
           onPress={() => router.push(item.href as never)}
           accessibilityRole="link"
-          accessibilityLabel={`${item.title}, ${item.type}${item.parentTitle ? `, in ${item.parentTitle}` : ""}`}
+          accessibilityLabel={`${item.title}, ${typeLabel}${item.parentTitle ? `, in ${item.parentTitle}` : ""}`}
         >
           {item.title}
         </Text>
         <Text style={[styles.resultMeta, { color: theme.colors.muted }]}>
-          {item.type}
+          {typeLabel}
           {item.parentTitle ? ` · ${item.parentTitle}` : ""}
         </Text>
         {item.excerpt ? (
@@ -71,10 +83,10 @@ export default function SearchScreen() {
       <TextInput
         value={query}
         onChangeText={setQuery}
-        placeholder="Search Divya Desams, Library, Knowledge"
+        placeholder={t("searchPlaceholder")}
         placeholderTextColor={theme.colors.muted}
-        accessibilityLabel="Search"
-        accessibilityHint="Searches Divya Desams, the Library, and Knowledge records"
+        accessibilityLabel={t("tabSearch")}
+        accessibilityHint={t("searchHint")}
         style={[
           styles.input,
           { borderColor: theme.colors.border, backgroundColor: theme.colors.surface, color: theme.colors.foreground },
@@ -86,13 +98,14 @@ export default function SearchScreen() {
       <View style={styles.filterRow} accessibilityRole="none">
         {CONTENT_TYPE_FILTERS.map((filter) => {
           const selected = activeTypes.has(filter.value);
+          const filterLabel = translateUi(RESULT_TYPE_LABEL_KEYS[filter.value], language);
           return (
             <Pressable
               key={filter.value}
               onPress={() => toggleType(filter.value)}
               accessibilityRole="checkbox"
               accessibilityState={{ checked: selected }}
-              accessibilityLabel={`Filter: ${filter.label}`}
+              accessibilityLabel={filterAccessibilityLabel(language, filterLabel)}
               style={[
                 styles.filterChip,
                 {
@@ -102,7 +115,7 @@ export default function SearchScreen() {
               ]}
             >
               <Text style={[styles.filterLabel, { color: selected ? theme.colors.accent : theme.colors.muted }]}>
-                {filter.label}
+                {filterLabel}
               </Text>
             </Pressable>
           );
@@ -110,7 +123,7 @@ export default function SearchScreen() {
       </View>
 
       {trimmedQuery && results.length === 0 ? (
-        <Text style={[styles.empty, { color: theme.colors.muted }]}>No results for "{trimmedQuery}".</Text>
+        <Text style={[styles.empty, { color: theme.colors.muted }]}>{noResultsLabel(language, trimmedQuery)}</Text>
       ) : (
         <FlatList
           data={results}

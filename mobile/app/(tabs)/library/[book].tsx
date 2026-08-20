@@ -7,6 +7,7 @@ import { layout, spacing, typography, useTheme } from "../../../theme";
 import { sectionTint } from "../../../section-tints.ts";
 import { localizeBook, localizeChapter } from "../../../../content-lib/i18n.ts";
 import { useLanguage } from "../../../language-context.ts";
+import { chapterOrdinalLabel, useT } from "../../../ui-strings.ts";
 
 /**
  * Phase 6C -- unchanged ordering/data behavior from Phase 6B (chapters
@@ -24,14 +25,15 @@ export default function LibraryBookScreen() {
   const router = useRouter();
   const theme = useTheme();
   const { language } = useLanguage();
+  const t = useT();
   const loadedBook = loadBook(bookSlug);
   const book = loadedBook ? localizeBook(loadedBook, language) : null;
 
   if (!book) {
     return (
       <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
-        <Stack.Screen options={{ title: "Not found" }} />
-        <Text style={[styles.empty, { color: theme.colors.muted }]}>This book could not be found.</Text>
+        <Stack.Screen options={{ title: t("notFoundTitle") }} />
+        <Text style={[styles.empty, { color: theme.colors.muted }]}>{t("bookNotFound")}</Text>
       </View>
     );
   }
@@ -43,7 +45,7 @@ export default function LibraryBookScreen() {
     return (
       <ContentCard
         title={item.title}
-        subtitle={`Chapter ${index + 1}`}
+        subtitle={chapterOrdinalLabel(language, index + 1)}
         status={item.status}
         needsReview={item.migration.needsReview}
         tintColor={tint}
@@ -70,7 +72,7 @@ export default function LibraryBookScreen() {
           contentContainerStyle={styles.list}
         />
       ) : (
-        <Text style={[styles.empty, { color: theme.colors.muted }]}>No chapters are available yet.</Text>
+        <Text style={[styles.empty, { color: theme.colors.muted }]}>{t("noChaptersYet")}</Text>
       )}
     </View>
   );

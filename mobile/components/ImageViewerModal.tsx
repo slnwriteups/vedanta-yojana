@@ -1,5 +1,6 @@
 import { Image, Modal, Pressable, StyleSheet, Text, useWindowDimensions } from "react-native";
 import { useTheme } from "../theme";
+import { useT } from "../ui-strings.ts";
 
 /**
  * Phase 6C -- a minimal full-screen image viewer. Deliberately simple:
@@ -25,6 +26,7 @@ export function ImageViewerModal({
   onClose: () => void;
 }) {
   const theme = useTheme();
+  const t = useT();
   const { width, height } = useWindowDimensions();
 
   return (
@@ -33,7 +35,7 @@ export function ImageViewerModal({
         style={[styles.backdrop, { backgroundColor: theme.colors.overlay }]}
         onPress={onClose}
         accessibilityRole="button"
-        accessibilityLabel="Close image"
+        accessibilityLabel={t("closeImage")}
         accessibilityViewIsModal
       >
         {asset !== null ? (
@@ -44,7 +46,7 @@ export function ImageViewerModal({
             resizeMode="contain"
           />
         ) : null}
-        <Text style={[styles.hint, { color: theme.colors.background }]}>Tap anywhere to close</Text>
+        <Text style={[styles.hint, { color: theme.colors.background }]}>{t("tapAnywhereToClose")}</Text>
       </Pressable>
     </Modal>
   );

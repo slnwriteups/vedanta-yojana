@@ -7,6 +7,7 @@ import { Section } from "../../../components/Section";
 import { layout, spacing, typography, useTheme } from "../../../theme";
 import { localizeKnowledge } from "../../../../content-lib/i18n.ts";
 import { useLanguage } from "../../../language-context.ts";
+import { useT } from "../../../ui-strings.ts";
 
 const INTRODUCTION_SLUG = "introduction";
 
@@ -20,14 +21,15 @@ const INTRODUCTION_SLUG = "introduction";
 export default function DivyaDesamsIntroductionScreen() {
   const theme = useTheme();
   const { language } = useLanguage();
+  const t = useT();
   const loaded = loadKnowledgeRecord(INTRODUCTION_SLUG);
   const record = loaded ? localizeKnowledge(loaded, language) : null;
 
   if (!record) {
     return (
       <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
-        <Stack.Screen options={{ title: "Not found" }} />
-        <Text style={[styles.empty, { color: theme.colors.muted }]}>This record could not be found.</Text>
+        <Stack.Screen options={{ title: t("notFoundTitle") }} />
+        <Text style={[styles.empty, { color: theme.colors.muted }]}>{t("recordNotFound")}</Text>
       </View>
     );
   }
@@ -50,7 +52,7 @@ export default function DivyaDesamsIntroductionScreen() {
       {record.body ? (
         <Section text={record.body} />
       ) : (
-        <Text style={[styles.empty, { color: theme.colors.muted }]}>No content is available yet.</Text>
+        <Text style={[styles.empty, { color: theme.colors.muted }]}>{t("noRecordContentYet")}</Text>
       )}
     </ScrollView>
   );

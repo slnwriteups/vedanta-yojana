@@ -1,6 +1,7 @@
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { Tabs, router } from "expo-router";
 import { useTheme } from "../../theme";
+import { useT } from "../../ui-strings.ts";
 
 /**
  * The bottom tab bar: Home, Divya Desams, Library, Search, Settings.
@@ -58,6 +59,7 @@ import { useTheme } from "../../theme";
  */
 export default function TabsLayout() {
   const theme = useTheme();
+  const t = useT();
 
   return (
     <Tabs
@@ -82,7 +84,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          title: t("tabHome"),
           headerShown: true,
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons name={focused ? "home" : "home-outline"} size={size} color={color} />
@@ -92,7 +94,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="divya-desams"
         options={{
-          title: "Divya Desams",
+          title: t("tabDivyaDesams"),
           headerShown: false,
           tabBarIcon: ({ color, size }) => <MaterialIcons name="temple-hindu" size={size} color={color} />,
         }}
@@ -105,7 +107,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="library"
         options={{
-          title: "Library",
+          title: t("tabLibrary"),
           headerShown: false,
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons name={focused ? "book" : "book-outline"} size={size} color={color} />
@@ -120,7 +122,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="search"
         options={{
-          title: "Search",
+          title: t("tabSearch"),
           headerShown: true,
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons name={focused ? "search" : "search-outline"} size={size} color={color} />
@@ -130,7 +132,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="settings"
         options={{
-          title: "Settings",
+          title: t("tabSettings"),
           headerShown: true,
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons name={focused ? "settings" : "settings-outline"} size={size} color={color} />

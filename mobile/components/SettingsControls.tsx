@@ -4,6 +4,7 @@ import { layout, radius, spacing, typography, useTheme, useThemeControls, type C
 import { useReadingPreferences } from "../preferences-context.ts";
 import { useLanguage } from "../language-context.ts";
 import { FONT_SCALE_STEPS, SUPPORTED_LANGUAGES, type LanguageCode } from "../content-lib/preferences.ts";
+import { settingChangedAnnouncement, translateUi, useT, type UiStringKey } from "../ui-strings.ts";
 
 /**
  * The Appearance (theme override), Text size, and Language controls --
@@ -21,23 +22,43 @@ export function SettingsControls() {
   const { override, setOverride } = useThemeControls();
   const { preferences, setFontScale } = useReadingPreferences();
   const { language, setLanguage } = useLanguage();
+  const t = useT();
+
+  const themeOptions = THEME_OPTION_KEYS.map((o) => ({ label: t(o.key), value: o.value }));
+  const fontScaleOptions = FONT_SCALE_STEPS.map((step) => ({
+    label: translateUi(FONT_SCALE_LABEL_KEYS[step.label], language),
+    value: step.value,
+  }));
 
   return (
     <View style={styles.container}>
-      <PillGroup label="Language" options={LANGUAGE_OPTIONS} selectedValue={language} onChange={setLanguage} />
-      <PillGroup label="Appearance" options={THEME_OPTIONS} selectedValue={override} onChange={setOverride} />
-      <PillGroup label="Text size" options={FONT_SCALE_STEPS} selectedValue={preferences.fontScale} onChange={setFontScale} />
+      <PillGroup label={t("settingsLanguageLabel")} options={LANGUAGE_OPTIONS} selectedValue={language} onChange={setLanguage} />
+      <PillGroup label={t("settingsAppearanceLabel")} options={themeOptions} selectedValue={override} onChange={setOverride} />
+      <PillGroup label={t("settingsTextSizeLabel")} options={fontScaleOptions} selectedValue={preferences.fontScale} onChange={setFontScale} />
     </View>
   );
 }
 
-const THEME_OPTIONS: { label: string; value: ColorScheme | null }[] = [
-  { label: "System", value: null },
-  { label: "Light", value: "light" },
-  { label: "Dark", value: "dark" },
+const THEME_OPTION_KEYS: { key: UiStringKey; value: ColorScheme | null }[] = [
+  { key: "themeSystem", value: null },
+  { key: "themeLight", value: "light" },
+  { key: "themeDark", value: "dark" },
 ];
 
-/** English (value: null, the base language every record always has) plus the translated languages. */
+const FONT_SCALE_LABEL_KEYS: Record<string, UiStringKey> = {
+  Small: "fontScaleSmall",
+  Medium: "fontScaleMedium",
+  Large: "fontScaleLarge",
+  "Extra Large": "fontScaleExtraLarge",
+};
+
+/**
+ * Each language option always shows its own name in its own script
+ * (English/தமிழ்/ಕನ್ನಡ/हिन्दी), regardless of the currently active UI
+ * language -- the standard convention for a language picker, so a
+ * reader can always find their language even if the app is currently
+ * showing one they don't read.
+ */
 const LANGUAGE_OPTIONS: { label: string; value: LanguageCode | null }[] = [
   { label: "English", value: null },
   ...SUPPORTED_LANGUAGES.map((l) => ({ label: l.nativeLabel, value: l.code })),
@@ -60,6 +81,7 @@ function PillGroup<T>({
   onChange: (value: T) => void;
 }) {
   const theme = useTheme();
+  const { language } = useLanguage();
   return (
     <View style={styles.pillGroup}>
       <Text style={[styles.pillGroupLabel, { color: theme.colors.muted }]}>{label}</Text>
@@ -72,7 +94,7 @@ function PillGroup<T>({
               onPress={() => {
                 void Haptics.selectionAsync();
                 onChange(option.value);
-                AccessibilityInfo.announceForAccessibility(`${label} set to ${option.label}`);
+                AccessibilityInfo.announceForAccessibility(settingChangedAnnouncement(language, label, option.label));
               }}
               accessibilityRole="radio"
               accessibilityState={{ selected }}

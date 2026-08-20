@@ -8,6 +8,7 @@ import { layout, spacing, typography, useTheme } from "../../../theme";
 import { sectionTint } from "../../../section-tints.ts";
 import { localizeDivyaDesam, localizeKnowledge } from "../../../../content-lib/i18n.ts";
 import { useLanguage } from "../../../language-context.ts";
+import { recordCountLabel, useT } from "../../../ui-strings.ts";
 
 /**
  * Phase 6C -- Divya Desam index refined: each card now shows an image
@@ -37,6 +38,7 @@ export default function DivyaDesamsIndexScreen() {
   const router = useRouter();
   const theme = useTheme();
   const { language } = useLanguage();
+  const t = useT();
   const records = [...loadDivyaDesams()]
     .sort((a, b) => sourcePageNumber(a.migration.sourcePageId) - sourcePageNumber(b.migration.sourcePageId))
     .map((r) => localizeDivyaDesam(r, language));
@@ -60,8 +62,8 @@ export default function DivyaDesamsIndexScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
-      <Stack.Screen options={{ title: "Divya Desams" }} />
-      <Text style={[styles.count, { color: theme.colors.muted }]}>{records.length} records</Text>
+      <Stack.Screen options={{ title: t("tabDivyaDesams") }} />
+      <Text style={[styles.count, { color: theme.colors.muted }]}>{recordCountLabel(language, records.length)}</Text>
       <FlatList
         data={records}
         keyExtractor={(item) => item.slug}
@@ -71,7 +73,7 @@ export default function DivyaDesamsIndexScreen() {
           introduction ? (
             <ContentCard
               title={introduction.title}
-              subtitle="Start here before exploring the temples below."
+              subtitle={t("introCardSubtitle")}
               tintColor={tint}
               onPress={() => router.push("/divya-desams/introduction" as never)}
             />

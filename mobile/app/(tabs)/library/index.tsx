@@ -7,6 +7,7 @@ import { sectionTint } from "../../../section-tints.ts";
 import { bookCoverAsset } from "../../../book-covers.ts";
 import { localizeBook } from "../../../../content-lib/i18n.ts";
 import { useLanguage } from "../../../language-context.ts";
+import { chapterCountLabel, useT } from "../../../ui-strings.ts";
 
 /**
  * Phase 6C -- unchanged data behavior from Phase 6B, theme-aware
@@ -24,6 +25,7 @@ export default function LibraryIndexScreen() {
   const router = useRouter();
   const theme = useTheme();
   const { language } = useLanguage();
+  const t = useT();
   const books = loadBooks().map((b) => localizeBook(b, language));
 
   function renderItem({ item }: { item: Book }) {
@@ -32,7 +34,7 @@ export default function LibraryIndexScreen() {
     return (
       <ContentCard
         title={item.title}
-        subtitle={`${chapterCount} chapter${chapterCount === 1 ? "" : "s"}`}
+        subtitle={chapterCountLabel(language, chapterCount)}
         status={item.status}
         needsReview={item.migration.needsReview}
         tintColor={tint}
@@ -45,7 +47,7 @@ export default function LibraryIndexScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
-      <Stack.Screen options={{ title: "Library" }} />
+      <Stack.Screen options={{ title: t("tabLibrary") }} />
       {books.length > 0 ? (
         <FlatList
           data={books}
@@ -54,7 +56,7 @@ export default function LibraryIndexScreen() {
           contentContainerStyle={styles.list}
         />
       ) : (
-        <Text style={[styles.empty, { color: theme.colors.muted }]}>No books are available yet.</Text>
+        <Text style={[styles.empty, { color: theme.colors.muted }]}>{t("noBooksYet")}</Text>
       )}
     </View>
   );
