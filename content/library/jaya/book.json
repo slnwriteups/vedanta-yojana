@@ -79,5 +79,16 @@
     "krishna-passes-away",
     "yudhishthiras-final-trial"
   ],
-  "author": "Vishnu Sreenivas"
+  "author": "Vishnu Sreenivas",
+  "translations": {
+    "ta": {
+      "title": "ஜெயா: மகாபாரதப் பயணம்"
+    },
+    "kn": {
+      "title": "ಜಯ: ಮಹಾಭಾರತದ ಒಂದು ಪಯಣ"
+    },
+    "hi": {
+      "title": "जया: महाभारत की एक यात्रा"
+    }
+  }
 }

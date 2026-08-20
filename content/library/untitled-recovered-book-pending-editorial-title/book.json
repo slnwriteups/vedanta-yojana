@@ -61,5 +61,16 @@
     "stages-of-bhakti-yoga",
     "conclusion"
   ],
-  "author": "Vishnu Sreenivas"
+  "author": "Vishnu Sreenivas",
+  "translations": {
+    "ta": {
+      "title": "விசிஷ்டாத்வைத தத்துவத்திற்கான ஒரு சுருக்கமான நோக்கு"
+    },
+    "kn": {
+      "title": "ವಿಶಿಷ್ಟಾದ್ವೈತ ತತ್ತ್ವಶಾಸ್ತ್ರಕ್ಕೆ ಒಂದು ಸಂಕ್ಷಿಪ್ತ ಒಳನೋಟ"
+    },
+    "hi": {
+      "title": "विशिष्टाद्वैत दर्शन में एक संक्षिप्त अंतर्दृष्टि"
+    }
+  }
 }
