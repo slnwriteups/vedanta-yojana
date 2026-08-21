@@ -8,6 +8,20 @@
     "extractionConfidence": "medium",
     "needsReview": true
   },
-  "body": "Guru Parampara\n\nIn this section, we shall see the stories of the Purva-Acharyas (11.1) and the life story of Swami Ramanujar (11.2), and then the life story of Swami Desikan (11.3), and then try to map the lineage of gurus according to both the Tenkalai and Vadagalai Sampradayams (11.4). \n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet",
-  "images": []
+  "body": "Guru Parampara\n\nIn this section, we shall see the stories of the Purva-Acharyas (11.1) and the life story of Swami Ramanujar (11.2), and then try to map the lineage of gurus according to both the Tenkalai and Vadagalai Sampradayams (11.3).",
+  "images": [],
+  "translations": {
+    "ta": {
+      "title": "குரு பரம்பரை",
+      "body": "குரு பரம்பரை\n\nஇப்பகுதியில், நாம் பூர்வாசாரியர்களின் (11.1) கதைகளையும், ஸ்வாமி ராமானுஜரின் (11.2) வாழ்க்கை வரலாற்றையும் காண்போம், பின்னர் தென்கலை, வடகலை சம்பிரதாயங்கள் இரண்டின்படியும் குருபரம்பரையை வரைபடமாக்க முயற்சிப்போம் (11.3)."
+    },
+    "kn": {
+      "title": "ಗುರು ಪರಂಪರೆ",
+      "body": "ಗುರು ಪರಂಪರೆ\n\nಈ ವಿಭಾಗದಲ್ಲಿ, ನಾವು ಪೂರ್ವಾಚಾರ್ಯರುಗಳ (11.1) ಕಥೆಗಳನ್ನೂ, ಸ್ವಾಮಿ ರಾಮಾನುಜರ (11.2) ಜೀವನ ಕಥೆಯನ್ನೂ ನೋಡುತ್ತೇವೆ, ನಂತರ ತೆಂಕಲೈ ಮತ್ತು ವಡಗಲೈ ಸಂಪ್ರದಾಯಗಳೆರಡರ ಪ್ರಕಾರವೂ ಗುರುಪರಂಪರೆಯನ್ನು ಗುರುತಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತೇವೆ (11.3)."
+    },
+    "hi": {
+      "title": "गुरु परंपरा",
+      "body": "गुरु परंपरा\n\nइस खंड में, हम पूर्वाचार्यों (11.1) की कथाएँ और स्वामी रामानुजर (11.2) की जीवन-गाथा देखेंगे, तत्पश्चात तेंकलै और वडकलै — दोनों संप्रदायों के अनुसार गुरु-परंपरा का मानचित्रण करने का प्रयास करेंगे (11.3)।"
+    }
+  }
 }
