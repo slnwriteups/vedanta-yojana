@@ -1153,3 +1153,425 @@ long-running and were already exercised to produce the existing APK
 artifacts referenced in §7.5), and it did not update the stale counts in
 `content-lib/README.md`/`content/README.md` noted in §12, since that is
 a change to different files outside this rewrite's stated scope.
+
+---
+
+## 14. Cross-generational UI/UX design pass (2026-08-23)
+
+### 14.1 Design philosophy
+
+Vedanta Yojana's interface targets one coherent experience across a
+genuinely wide age range — Gen Z through readers in their 60s and
+older — rather than a modern default with an accessibility mode bolted
+on, or a plain/legacy default with a "modern" mode layered over it.
+This is universal design, not two products: **one interface, adaptive
+controls** (text size, theme, language), **not** a separate "senior
+mode." Concretely, this means the default experience must already be
+clear, high-contrast, and predictable — personalization exists to let a
+reader tune it further, not to compensate for a default that only works
+for one audience.
+
+The standard the interface is held to, restated precisely because it
+governs every decision in §14.4: modern enough that a younger reader
+chooses to keep using it; clear enough that an older reader never feels
+lost; comfortable enough to read for an hour; refined enough to feel
+like a deliberately designed digital library, not a generic app
+scaffold, a generic "spiritual app," or a decorative temple website.
+
+### 14.2 Inspection methodology
+
+Per this pass's own instruction not to implement a design review
+blindly, every recommendation was checked against the actual repository
+before any code changed: `theme.ts` (the design-token system),
+`ThemeProvider.tsx`, `ReadingPreferencesProvider.tsx`,
+`content-lib/preferences.ts` (font-scale steps and their validation),
+the chapter reader (`app/(tabs)/library/[book]/[chapter].tsx`), the
+Library book/index screens, the Search screen, the Divya Desam detail
+screen, the bottom-tab navigator (`app/(tabs)/_layout.tsx`), and the
+shared components most reused across the app (`ContentCard`,
+`Section`, `SettingsControls`, `DraftBadge`, `ResourceLink`,
+`WelcomeScreen`) — plus the content schemas (`content-lib/schemas/`)
+and real content data, to determine which review recommendations were
+actually supported by the content model rather than assumed.
+
+Two numeric checks were run directly rather than eyeballed:
+
+- **Color contrast** — computed WCAG contrast ratios from the exact hex
+  values in `theme.ts` for every foreground/background pairing in both
+  color schemes. All seven pairs checked clear AA (4.5:1) for normal
+  text; several clear AAA (7:1). Full numbers in the table below. No
+  contrast change was made — none was needed.
+
+| Pair | Ratio | AA (4.5:1) |
+|---|---|---|
+| Light foreground/background | 16.19:1 | PASS |
+| Light muted/background | 5.72:1 | PASS |
+| Light accent/background | 8.07:1 | PASS |
+| Light accent/surface | 8.43:1 | PASS |
+| Dark foreground/background | 15.18:1 | PASS |
+| Dark muted/background | 6.77:1 | PASS |
+| Dark accent/background | 7.42:1 | PASS |
+
+- **Content-model support for structured verse presentation** — checked
+  `content-lib/schemas/chapter.ts` directly: chapter `body` is a single
+  free-form string, with no separate fields for verse/transliteration/
+  meaning/commentary. This is the deciding fact behind the DEFERRED
+  verdict on §14.4's shloka-presentation item below.
+
+### 14.3 Device testing status — BLOCKED, not skipped
+
+The Samsung Galaxy S10 referenced in this review's instructions was
+**not reachable from this machine at any point during this pass**:
+`adb devices` returned an empty device list throughout (checked
+repeatedly, including after `adb kill-server && adb start-server`), and
+macOS's own USB device enumeration (`system_profiler SPUSBDataType`)
+showed no Samsung/Android device connected either. This was reported to
+the project owner immediately on discovery rather than silently worked
+around.
+
+Per this pass's own explicit instruction ("do not declare success from
+code inspection alone... mark iOS results CODE-VERIFIED / NOT
+DEVICE-VERIFIED, do not pretend a test occurred"), the same standard is
+applied to Android here: **every item below is CODE-VERIFIED (read
+directly, type-checked, and covered by the automated test suite) but
+NOT DEVICE-VERIFIED.** Nothing in this section claims an on-device
+visual or interactive result that did not actually happen. iOS was not
+tested for the same reason it never can be from this environment — no
+iOS hardware or simulator is available here — and carries the identical
+label.
+
+What *was* run and passed, without a device: `tsc --noEmit` (clean, no
+type errors introduced) and `node --test tests/*.test.ts` (47/47 pass,
+unchanged pass count from before this pass's edits — see
+`mobile/tests/`). These confirm the changes are structurally sound and
+don't regress the existing automated coverage; they do not confirm how
+any of it actually looks or feels on a phone.
+
+### 14.4 Decision matrix
+
+Each recommendation from the review is classified below. Per the
+review's own request, this deliberately does **not** implement every
+suggestion — restraint was treated as part of the standard, not a
+shortfall against it.
+
+**Book title missing from the reader header**
+Status: **IMPLEMENTED**
+Reason: Direct code inspection confirmed a real gap: the reader showed
+the chapter title and "Chapter X of Y" but never the book title
+anywhere on screen — a reader returning to a backgrounded app or
+following a deep link had no way to tell which book they were reading.
+This is exactly §11's "what book / what chapter / where in book"
+requirement, and it was previously only two-thirds met.
+Evidence: `mobile/app/(tabs)/library/[book]/[chapter].tsx`, commit
+`254e696`. Uses the same `loadBook`/`localizeBook` pair already used
+identically by the book-detail screen; the mobile loader caches parsed
+records (§5.3), so this adds no meaningful cost. CODE-VERIFIED
+(`tsc`, 47/47 tests) / NOT DEVICE-VERIFIED.
+
+**Chapter-pager title truncation risk at large font scale**
+Status: **IMPLEMENTED**
+Reason: The Previous/Next chapter pager capped the *target chapter's own
+title* at `numberOfLines={1}`. At a long title combined with a large
+font-scale setting, this risks an ellipsis hiding which chapter is
+about to open — the exact "typography must reflow, not clip" failure
+this pass calls out by name. Widened to 2 lines; the short "Previous"/
+"Next" direction label is unaffected and unchanged.
+Evidence: same file, same commit. CODE-VERIFIED / NOT DEVICE-VERIFIED —
+this specifically needs an on-device check at maximum combined
+(in-app × OS accessibility) font scale to confirm the two-line
+allowance is enough for the longest real chapter title in the corpus;
+flagged for the next device-testing session.
+
+**Search result rows below the app's own 44pt touch-target standard**
+Status: **IMPLEMENTED**
+Reason: This was found during inspection, not proposed by the review —
+and it is a real regression against a standard *this app already
+enforces everywhere else*. `ContentCard`, the chapter pager buttons,
+settings pill groups, and search filter chips all enforce
+`layout.minTouchTarget` (44pt) via `minHeight`. Search's result rows
+did not: they were tappable only through a bare `<Text onPress>` on the
+title line, with no `Pressable` wrapper and no `minHeight` — an actual
+hit area of roughly one line of 16sp text, well under 44pt.
+Evidence: `mobile/app/(tabs)/search.tsx`, commit `6af486b`. The whole
+row (title, type/book metadata, excerpt) is now wrapped in one
+`Pressable` with `minHeight: layout.minTouchTarget`. CODE-VERIFIED
+(`tsc`, 47/47 tests) / NOT DEVICE-VERIFIED.
+
+**Welcome screen's primary button label not immediately legible**
+Status: **IMPLEMENTED**
+Reason: Found in the *previous* audit turn, acted on in this pass. The
+one interactive control on the app's very first screen had
+"Jñānayātrām Pravartaya" (Sanskrit transliteration) as its own visible
+label, with the actual plain-English affordance relegated to a smaller
+caption underneath — a critical, unfamiliar action whose own label
+didn't carry its meaning, for a reader of any age or generation.
+Evidence: `mobile/components/WelcomeScreen.tsx`, commit `234f205`. The
+button's own label is now "Begin"; "Jñānayātrām Pravartaya" moved to
+the caption position, so the Sanskrit invocation is preserved on the
+screen exactly as before — nothing about the screen's content, imagery,
+tagline, or audio changed. Also unified the button's interaction
+pattern (`Pressable` + a light haptic) with the rest of the app; this
+was the one remaining `TouchableOpacity` in the codebase.
+CODE-VERIFIED / NOT DEVICE-VERIFIED.
+
+**Autoplaying welcome-screen audio, no separate skip control**
+Status: **REJECTED (reviewed, not changed)**
+Reason: This was flagged as a real residual risk in the previous audit
+turn, but implementing a change here in this pass was deliberately
+rejected. It reverses a previously reasoned, documented decision
+(commit `98937c5`'s message states explicitly: *"No 'Skip Audio' button
+-- with real audio now wired up there's nothing for it to skip past"*)
+without new evidence that it is actually causing a problem for readers,
+and the exposure is small — the audio stops the instant the one visible
+button on the screen is tapped, not an indefinite or looping
+interruption. Overturning a documented past decision on the strength of
+a hypothetical, without a device to confirm how disruptive (or not) it
+actually feels, does not meet this pass's own bar of "meaningful
+benefit" over "checklist completeness."
+Evidence: `mobile/components/WelcomeScreen.tsx` (unchanged in this
+regard), commit `98937c5`'s message.
+
+**Quick in-reader "Aa" appearance control**
+Status: **DEFERRED**
+Reason: Checked the actual navigation mechanics before deciding: tapping
+the Settings tab while mid-chapter, adjusting text size/theme, then
+tapping back to the Library tab does **not** reset the reading
+position — the per-tab `tabPress` listener in `app/(tabs)/_layout.tsx`
+only pops a tab's stack to root when that tab was *already* focused at
+the moment of the tap, so returning from Settings preserves the exact
+chapter and scroll state. The existing "one tab away" path is therefore
+lower-friction than it first appears, and is state-preserving. Adding a
+dedicated in-reader control would introduce a new UI pattern (a
+popover or bottom sheet) and a real cross-platform testing surface —
+this pass's own instructions specifically caution that a bottom sheet
+needs verifying "naturally on Android AND iOS" — which cannot be
+responsibly verified with no device reachable on either platform right
+now. Revisit once device testing (Android at minimum) is available.
+Evidence: `mobile/app/(tabs)/_layout.tsx` lines 101–105, 116–120.
+
+**Additional reading themes (Sepia/Paper/Slate)**
+Status: **NOT NECESSARY**
+Reason: `theme.ts`'s own design-intent comment already states the light
+palette is deliberately warm and paper-like (`background: "#fbfaf7"`,
+explicitly "not SaaS," no pure white), and dark mode is a genuine
+second palette, not an inverted light one (§5, §8 of this document).
+The specific benefit a "Sepia" reading theme would add over the
+existing warm light theme was not established, and adding a third,
+reading-specific palette is real design and contrast-verification work
+this pass's own instructions warn against taking on speculatively
+("three meaningful options are better than seven cosmetic ones" —
+the existing System/Light/Dark set is exactly three). No reader
+complaint or usability gap motivated this change.
+Evidence: `theme.ts` lines 11–47.
+
+**Book-spine-inspired card redesign**
+Status: **ALREADY SUBSTANTIALLY ACHIEVED**
+Reason: `ContentCard.tsx` already carries a restrained, non-literal
+"spine" cue — a 4pt colored left-edge stripe per book/section
+(`tintColor`), a rounded card, and an already-minimal shadow
+(`shadows.ts`: iOS `shadowOpacity: 0.08`, Android `elevation: 2`) —
+without resembling a literal physical book, which this pass's own
+instructions explicitly warn against ("avoid... excessive
+skeuomorphism," "avoid... heavy shadows"). A more literal redesign
+risks violating the instruction it would be implementing.
+Evidence: `mobile/components/ContentCard.tsx`, `mobile/shadows.ts`.
+
+**Book-card metadata (author, chapter count, etc.)**
+Status: **PARTIALLY ALREADY EXISTS / candidate for a future, deliberate
+addition**
+Reason: Chapter count is already shown on every Library index card
+(`chapterCountLabel`). `author` genuinely exists in the content schema
+and *is* populated identically across all four books
+(`"Vishnu Sreenivas"`, confirmed by reading every `book.json` directly)
+but is not currently surfaced in the UI. Unlike the fixes above, this
+is a content-presentation decision (whether and how to credit
+authorship on every book card) rather than a usability defect, and was
+left to the project owner to decide rather than added unilaterally.
+Evidence: `content/library/*/book.json` (`author` field, all four
+files), `content-lib/schemas/book.ts` line 49,
+`mobile/app/(tabs)/library/index.tsx`.
+
+**Structured shloka/verse presentation (original / transliteration /
+meaning / commentary as distinct visual blocks)**
+Status: **DEFERRED — blocked by the content model, not by design
+effort**
+Reason: `content-lib/schemas/chapter.ts` confirms `body` is a single
+free-form string with no structural separation between a quoted verse,
+its transliteration, and its prose meaning. Visually distinguishing
+these would require either a content-model change (a real, separate
+migration effort touching every translated chapter, out of scope for a
+UI pass) or fragile runtime pattern-matching on prose to guess which
+lines are verse versus explanation — which risks misclassifying
+ordinary prose as verse or vice versa, directly conflicting with this
+project's standing rule that the source material is never rewritten or
+reinterpreted. Correctly deferred, not silently dropped: documented
+here as a real future enhancement contingent on a content-model
+decision, which is outside a reversible-UI-fix's scope.
+Evidence: `content-lib/schemas/chapter.ts` lines 32–43.
+
+**Contextual glossary (tap-to-define terms)**
+Status: **REJECTED — no glossary content exists**
+Reason: Searched the entire content model directly
+(`content/knowledge/introduction.json`'s own field list, a repository-
+wide search for anything glossary-shaped) — no controlled glossary of
+terms exists anywhere in this project's content. Per this pass's own
+explicit instruction, a glossary is not to be invented to satisfy the
+review, and no definition may be fabricated. Documented here as a
+legitimate future enhancement, contingent on a glossary actually being
+authored as content first.
+Evidence: repository-wide search, `content/knowledge/introduction.json`.
+
+**Chapter navigation sheet (tap chapter context to open a full
+navigator)**
+Status: **DEFERRED**
+Reason: The existing Previous/Next pager (full chapter titles, not
+arrows) plus edge-swipe already provides complete chapter-to-chapter
+navigation with clear, familiar labels — no navigation gap was found
+that a sheet would close. Adding one is a new UI surface with its own
+cross-platform (Android/iOS) presentation behavior to verify, which
+cannot be responsibly done with no device reachable. Revisit if the
+book-title-in-header addition (implemented above) turns out to be
+insufficient context once it can actually be tested on a phone.
+
+**Reading time estimate**
+Status: **ALREADY EXISTS, already computed from real text volume, not
+fashion**
+Reason: `estimateReadingMinutes` (`content-lib/text-format.ts`) is
+already shown in the reader alongside "Chapter X of Y," derived
+directly from the chapter's actual word count — not a fabricated or
+decorative figure. No change needed; verified the existing
+implementation actually measures real content rather than assuming it
+does.
+
+**Progress indicator**
+Status: **ALREADY EXISTS, already non-gamified**
+Reason: A thin, book-tinted scroll-position bar plus the "Chapter X of
+Y" position label were already present before this pass — pure
+orientation, no points/streaks/badges anywhere in the codebase
+(confirmed by inspection; no such mechanic exists to remove).
+
+**Haptics**
+Status: **ALREADY EXISTS, already restrained**
+Reason: `expo-haptics` is already a dependency and already used
+purposefully — one light impact per meaningful action (card taps,
+pager navigation, settings changes), not on every touch. This pass's
+one haptics-related change was consistency, not addition: the welcome
+screen's button was the sole remaining interactive element still using
+`TouchableOpacity` with no haptic at all; it now matches the rest of
+the app (§14.4, welcome-screen fix above).
+
+**Icons + labels, refined ("critical/unfamiliar actions need labels;
+familiar navigation may be icon-only if accessibly labeled")**
+Status: **ALREADY EXISTS**
+Reason: Re-checked against this pass's more nuanced version of the
+principle specifically. Every tab-bar icon ships with its own visible
+text label (React Navigation's default, not suppressed anywhere in
+`app/(tabs)/_layout.tsx`). Every critical action found during this and
+the previous audit turn (chapter navigation, theme/font-size/language
+selection, draft-status indication) already uses a full text label, not
+an icon alone. No familiar-navigation icon was found missing an
+accessibility label.
+
+**Contrast standard (AA, not an arbitrary universal 7:1)**
+Status: **ALREADY EXISTS / no change needed**
+Reason: The previous audit turn had already computed these exact
+ratios and confirmed every pair clears AA; several already clear AAA
+without having been specifically targeted at that level. Recomputed
+directly in §14.2 above to confirm nothing has drifted. No palette
+change was made.
+
+**Font-scale ceiling (0.9×–1.3×)**
+Status: **UNVERIFIED — deliberately not changed**
+Reason: Per this pass's own explicit instruction ("test the existing
+maximum... increase it only after verifying layout behavior... never
+solve large-text problems by clipping"), the ceiling was left exactly
+as-is. The one concrete clipping risk found by code inspection at the
+existing ceiling (the chapter pager's `numberOfLines={1}`) was fixed
+(above). Whether 1.3× combined with OS-level accessibility scaling is
+actually sufficient for a reader who needs more cannot be honestly
+answered without the device this pass could not reach.
+
+**`allowFontScaling` / OS text-scaling respect**
+Status: **ALREADY EXISTS — confirmed, not assumed**
+Reason: Searched the entire mobile codebase for
+`allowFontScaling`/`maxFontSizeMultiplier` overrides — none exist. Every
+`<Text>` in the app uses React Native's default (`allowFontScaling:
+true`), so the OS-level accessibility text-size setting already
+compounds with the in-app font-scale control. Confirmed by search, not
+assumed from the absence of a comment saying otherwise.
+
+**Android hardware/gesture Back behavior in the reader**
+Status: **ALREADY EXISTS, verified by code — NOT DEVICE-VERIFIED**
+Reason: Book Detail → Chapter uses `router.push` (a real stack push,
+confirmed in `app/(tabs)/library/[book].tsx`), and chapter-to-chapter
+paging (via the pager buttons or the swipe gesture) uses
+`router.replace`, not push — by design, per the code's own comment, so
+Back from any chapter — including after paging through several —
+returns to that book's chapter list in one step, never exiting the app
+or landing on an unrelated screen, and never accumulating a long stack
+of visited chapters. This matches §19's requirement exactly, and predates
+this design pass. The underlying mechanism (expo-router's native Stack)
+is a well-established one; the actual on-device feel of the hardware
+Back button and any Android gesture-nav edge cases have not been
+physically confirmed.
+Evidence: `mobile/app/(tabs)/library/[book].tsx` line 52 (push),
+`mobile/app/(tabs)/library/[book]/[chapter].tsx` line 102 (replace).
+
+**iOS-specific behavior (safe areas, sheet presentation, gesture
+interactions)**
+Status: **UNVERIFIED — no iOS hardware or simulator available in this
+environment**
+Reason: Nothing in this pass claims an iOS result. Existing
+platform-conditional code (`shadows.ts`'s `Platform.select`, the tab
+navigator's `headerTransparent`/`headerBlurEffect` handling noted in
+§5) was reviewed and left as-is; no iOS-only change was made or is
+claimed to have been tested.
+
+**Performance/memory**
+Status: **NO REGRESSION INTRODUCED**
+Reason: Every change in this pass is additive UI (a label, a
+`Pressable` wrapper, a `numberOfLines` value) using data already loaded
+by the existing, cached mobile loader (§5.3) — no new dependency, no
+new in-memory index, no duplicated content. `node --test`'s pass count
+(47/47) is unchanged from before this pass.
+
+**Content/translation integrity**
+Status: **UNTOUCHED, by design**
+Reason: No change in this pass modified any `translations` field, any
+chapter/book body, or any Sanskrit/Tamil/Kannada/Hindi content. Every
+edit was confined to `mobile/app/`, `mobile/components/` — UI chrome
+only. Verified directly: `git diff --stat` for this pass touches
+exactly three files, none under `content/`.
+
+### 14.5 Outstanding: device verification
+
+The following are explicitly incomplete pending a reachable physical
+device (or, for iOS-specific items, hardware/simulator access this
+environment does not have), and should not be read as resolved:
+
+- Visual confirmation of the reader header, pager, and Search-row
+  changes on a real screen at normal and large font scale.
+- Maximum combined (in-app × OS accessibility) font-scale behavior
+  across the reader, navigation, and long titles — the specific check
+  this pass's own instructions asked for and which prompted the pager
+  `numberOfLines` fix, but the fix itself is still only code-verified.
+- Android hardware/gesture Back, keyboard behavior, and status-bar
+  behavior in interactive use.
+- Any iOS-specific behavior at all.
+- General "does this actually feel fast/polished/comfortable" judgment,
+  which by nature cannot come from reading source code.
+
+### 14.6 Development-history note for this pass
+
+Consistent with §1 of this document: every change in this section was
+proposed, implemented, self-checked (`tsc`, `node --test`), and
+committed by the AI assistant, directed and reviewed by the project
+owner, who supplied the design standard being evaluated against and
+made the explicit call (§14.4, autoplay-audio item) on at least one
+judgment where the AI's recommendation was to leave existing, deliberate
+behavior unchanged rather than treat an external review as
+self-executing. The device-testing gap in §14.3 was surfaced
+immediately on discovery, not worked around or hidden behind a
+plausible-sounding but untrue "tested on device" claim — the same
+evidentiary discipline established in §§1–13 of this document applies
+here without exception.
