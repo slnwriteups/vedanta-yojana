@@ -113,6 +113,7 @@ const UI_STRINGS = {
 
   pagerPrevious: { en: "Previous", ta: "முந்தையது", kn: "ಹಿಂದಿನದು", hi: "पिछला" },
   pagerNext: { en: "Next", ta: "அடுத்தது", kn: "ಮುಂದಿನದು", hi: "अगला" },
+  tableOfContentsLabel: { en: "Contents", ta: "பொருளடக்கம்", kn: "ಪರಿವಿಡಿ", hi: "विषय-सूची" },
 
   introCardSubtitle: {
     en: "Start here before exploring the temples below.",

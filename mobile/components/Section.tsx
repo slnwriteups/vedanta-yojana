@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode, RefObject } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import { spacing, typography, useTheme } from "../theme";
 import { useReadingPreferences } from "../preferences-context.ts";
@@ -40,15 +40,27 @@ import { looksLikeSubheading, paragraphsForReading } from "../../content-lib/tex
  * spacing -- still the same serif reading face and font-scale, still
  * exactly the same text, just visually set apart from the surrounding
  * prose the way a real subsection break should read.
+ *
+ * Table-of-contents pass: `paragraphRefs`, if supplied, is populated
+ * with a native ref for every rendered paragraph, keyed by that
+ * paragraph's own index in paragraphsForReading(text) -- the same index
+ * getTableOfContents() (content-lib/text-format.ts) reports for each
+ * entry. The chapter screen owns the actual scroll (it owns the
+ * ScrollView; Section deliberately doesn't), and uses
+ * paragraphRefs.current[entry.paragraphIndex].measureLayout(...) to find
+ * where to scroll to. Optional and additive -- a caller that never
+ * passes it (e.g. any other Section usage) is completely unaffected.
  */
 export function Section({
   heading,
   text,
   children,
+  paragraphRefs,
 }: {
   heading?: string;
   text?: string;
   children?: ReactNode;
+  paragraphRefs?: RefObject<Record<number, Text | null>>;
 }) {
   const theme = useTheme();
   const { preferences } = useReadingPreferences();
@@ -70,6 +82,7 @@ export function Section({
             return (
               <Text
                 key={index}
+                ref={paragraphRefs ? (node) => { paragraphRefs.current[index] = node; } : undefined}
                 style={[
                   styles.paragraph,
                   subheading && styles.subheading,
