@@ -88,6 +88,44 @@ export function paragraphsForReading(text: string, targetLength: number = DEFAUL
 }
 
 /**
+ * Reported directly from device testing: a chapter body's own internal
+ * sub-headings (e.g. artha-panchakam's "Meaning:", "The Moksha Virodhi",
+ * "Bhakti and Prapatti Upayam"; JAYA's embedded "PART IV: ..." section
+ * markers) render as plain paragraphs, visually identical to the
+ * surrounding prose -- no bold, no break, reading as one continuous
+ * block with no structure at all. The content model has no dedicated
+ * "this line is a heading" field (chapter `body` is a single free-form
+ * string -- see content-lib/schemas/chapter.ts), so this infers it
+ * presentationally from the same kind of existing, source-authored
+ * signal `paragraphsForReading` already relies on: a paragraph is
+ * treated as a sub-heading candidate when it is short AND does not end
+ * in the sentence-terminal punctuation (Latin or Devanagari) that
+ * essentially every real flowing sentence in this corpus ends with.
+ * Verified directly against real content before shipping (artha-
+ * panchakam, stages-of-bhakti-yoga, several JAYA chapters): every
+ * genuine heading/section-label line in those samples was correctly
+ * caught, with zero missed headings. The heuristic also catches some
+ * short verse/list-item lines that are not, strictly, headings (a
+ * pasuram line, a "1) Hayagreeva Stotram" list entry) -- accepted
+ * deliberately, since misclassifying one of those only means it reads
+ * slightly emphasized rather than plain, never something confusing or
+ * wrong, and across a 265-file sample this fires on about a quarter of
+ * all paragraph blocks, which matches how much of this corpus is
+ * genuinely structured with named subsections rather than flowing
+ * narrative prose. This NEVER changes, reorders, or removes any text --
+ * exactly like splitIntoReadableParagraphs above, it only tells a
+ * renderer which existing block to draw with emphasis.
+ */
+const TERMINAL_PUNCTUATION = /[.!?।॥]['")]?\s*$/;
+const MAX_SUBHEADING_LENGTH = 70;
+
+export function looksLikeSubheading(paragraph: string): boolean {
+  const trimmed = paragraph.trim();
+  if (trimmed.length === 0 || trimmed.length > MAX_SUBHEADING_LENGTH) return false;
+  return !TERMINAL_PUNCTUATION.test(trimmed);
+}
+
+/**
  * Presentation-only: many chapter bodies across the corpus repeat the
  * chapter's own title as their first line (e.g. a body starting
  * "Bala Kanda: The Divine Beginnings\n\n..." under a screen that

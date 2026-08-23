@@ -1,4 +1,4 @@
-import { paragraphsForReading } from "@/content-lib/text-format";
+import { looksLikeSubheading, paragraphsForReading } from "@/content-lib/text-format";
 
 /**
  * Renders a long-form migrated text field as readable paragraphs, WITHOUT
@@ -15,6 +15,13 @@ import { paragraphsForReading } from "@/content-lib/text-format";
  * break at an EXISTING sentence boundary when a block is too long to
  * read comfortably as one paragraph -- it never rewrites, trims interior
  * whitespace, truncates, or otherwise touches the text content itself.
+ *
+ * A paragraph block that looksLikeSubheading() (a chapter's own internal
+ * section label, e.g. artha-panchakam's "Meaning:" or JAYA's embedded
+ * "PART IV: ..." markers) renders bold with extra top spacing instead of
+ * the plain paragraph style, mirroring mobile/components/Section.tsx --
+ * still exactly the same text, just visually set apart from the
+ * surrounding prose instead of reading as one undifferentiated block.
  */
 export function LongFormSection({ heading, text }: { heading?: string; text: string }) {
   const paragraphs = paragraphsForReading(text);
@@ -31,7 +38,9 @@ export function LongFormSection({ heading, text }: { heading?: string; text: str
       ) : null}
       <div className="prose-body space-y-5 whitespace-pre-line">
         {paragraphs.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
+          <p key={index} className={looksLikeSubheading(paragraph) ? "mt-2 font-bold" : undefined}>
+            {paragraph}
+          </p>
         ))}
       </div>
     </section>

@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import { spacing, typography, useTheme } from "../theme";
 import { useReadingPreferences } from "../preferences-context.ts";
-import { paragraphsForReading } from "../../content-lib/text-format.ts";
+import { looksLikeSubheading, paragraphsForReading } from "../../content-lib/text-format.ts";
 
 /**
  * Generic content section: an optional heading over either long-form
@@ -29,6 +29,17 @@ import { paragraphsForReading } from "../../content-lib/text-format.ts";
  * new asset). Headings stay in the app's regular sans, matching the
  * common reading-app convention of a sans UI chrome around serif body
  * prose (Apple Books, Kindle) rather than one typeface everywhere.
+ *
+ * Device-testing pass: a chapter body's own internal sub-headings
+ * (found reading real content on a physical device -- artha-panchakam's
+ * "Meaning:"/"The Moksha Virodhi", JAYA's embedded "PART IV: ..."
+ * section markers) previously rendered identically to a normal
+ * paragraph, reading as one undifferentiated block of text. Each
+ * paragraph is now checked against looksLikeSubheading() (content-lib/
+ * text-format.ts) and, if it qualifies, rendered bold with extra top
+ * spacing -- still the same serif reading face and font-scale, still
+ * exactly the same text, just visually set apart from the surrounding
+ * prose the way a real subsection break should read.
  */
 export function Section({
   heading,
@@ -54,22 +65,26 @@ export function Section({
         </Text>
       ) : null}
       {text
-        ? paragraphsForReading(text).map((paragraph, index) => (
-            <Text
-              key={index}
-              style={[
-                styles.paragraph,
-                {
-                  color: theme.colors.foreground,
-                  fontFamily: Platform.select(typography.readingFontFamily),
-                  fontSize: typography.body * preferences.fontScale,
-                  lineHeight: typography.body * preferences.fontScale * typography.readingLineHeight,
-                },
-              ]}
-            >
-              {paragraph}
-            </Text>
-          ))
+        ? paragraphsForReading(text).map((paragraph, index) => {
+            const subheading = looksLikeSubheading(paragraph);
+            return (
+              <Text
+                key={index}
+                style={[
+                  styles.paragraph,
+                  subheading && styles.subheading,
+                  {
+                    color: theme.colors.foreground,
+                    fontFamily: Platform.select(typography.readingFontFamily),
+                    fontSize: typography.body * preferences.fontScale,
+                    lineHeight: typography.body * preferences.fontScale * typography.readingLineHeight,
+                  },
+                ]}
+              >
+                {paragraph}
+              </Text>
+            );
+          })
         : children}
     </View>
   );
@@ -90,5 +105,10 @@ const styles = StyleSheet.create({
   paragraph: {
     fontSize: typography.body,
     lineHeight: typography.body * typography.readingLineHeight,
+  },
+  /** See looksLikeSubheading() in content-lib/text-format.ts for what qualifies and why. */
+  subheading: {
+    fontWeight: "700",
+    marginTop: spacing.sm,
   },
 });
