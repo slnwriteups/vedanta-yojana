@@ -58,15 +58,16 @@ export default function SearchScreen() {
   function renderItem({ item }: { item: SearchResult }) {
     const typeLabel = translateUi(RESULT_TYPE_LABEL_KEYS[item.type], language);
     return (
-      <View style={[styles.result, { borderBottomColor: theme.colors.border }]}>
-        <Text
-          style={[styles.resultTitle, { color: theme.colors.accent }]}
-          onPress={() => router.push(item.href as never)}
-          accessibilityRole="link"
-          accessibilityLabel={`${item.title}, ${typeLabel}${item.parentTitle ? `, in ${item.parentTitle}` : ""}`}
-        >
-          {item.title}
-        </Text>
+      <Pressable
+        onPress={() => router.push(item.href as never)}
+        accessibilityRole="link"
+        accessibilityLabel={`${item.title}, ${typeLabel}${item.parentTitle ? `, in ${item.parentTitle}` : ""}`}
+        style={({ pressed }) => [
+          styles.result,
+          { borderBottomColor: theme.colors.border, opacity: pressed ? 0.7 : 1 },
+        ]}
+      >
+        <Text style={[styles.resultTitle, { color: theme.colors.accent }]}>{item.title}</Text>
         <Text style={[styles.resultMeta, { color: theme.colors.muted }]}>
           {typeLabel}
           {item.parentTitle ? ` · ${item.parentTitle}` : ""}
@@ -74,7 +75,7 @@ export default function SearchScreen() {
         {item.excerpt ? (
           <Text style={[styles.excerpt, { color: theme.colors.foreground }]}>{item.excerpt}</Text>
         ) : null}
-      </View>
+      </Pressable>
     );
   }
 
@@ -178,6 +179,8 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
     paddingBottom: spacing.md,
     borderBottomWidth: StyleSheet.hairlineWidth,
+    minHeight: layout.minTouchTarget,
+    justifyContent: "center",
   },
   resultTitle: {
     fontSize: typography.body,
