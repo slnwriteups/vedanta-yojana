@@ -207,7 +207,7 @@ export default function LibraryChapterScreen() {
                 style={[styles.pagerButton, { borderColor: theme.colors.border }]}
               >
                 <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>{t("pagerPrevious")}</Text>
-                <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={2}>
+                <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={3}>
                   {previous.title}
                 </Text>
               </Pressable>
@@ -222,7 +222,7 @@ export default function LibraryChapterScreen() {
                 style={[styles.pagerButton, styles.pagerButtonEnd, { borderColor: theme.colors.border }]}
               >
                 <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>{t("pagerNext")}</Text>
-                <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={2}>
+                <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={3}>
                   {next.title}
                 </Text>
               </Pressable>
