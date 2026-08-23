@@ -1218,34 +1218,55 @@ Two numeric checks were run directly rather than eyeballed:
   meaning/commentary. This is the deciding fact behind the DEFERRED
   verdict on §14.4's shloka-presentation item below.
 
-### 14.3 Device testing status — BLOCKED, not skipped
+### 14.3 Device testing status
 
-The Samsung Galaxy S10 referenced in this review's instructions was
-**not reachable from this machine at any point during this pass**:
-`adb devices` returned an empty device list throughout (checked
-repeatedly, including after `adb kill-server && adb start-server`), and
-macOS's own USB device enumeration (`system_profiler SPUSBDataType`)
+**First attempt: blocked, not skipped.** The Samsung Galaxy S10
+referenced in this review's instructions was not reachable from this
+machine when this pass began: `adb devices` returned an empty device
+list repeatedly (including after `adb kill-server && adb start-server`),
+and macOS's own USB device enumeration (`system_profiler SPUSBDataType`)
 showed no Samsung/Android device connected either. This was reported to
 the project owner immediately on discovery rather than silently worked
-around.
+around, and every finding from that phase was labeled CODE-VERIFIED /
+NOT DEVICE-VERIFIED accordingly.
 
-Per this pass's own explicit instruction ("do not declare success from
-code inspection alone... mark iOS results CODE-VERIFIED / NOT
-DEVICE-VERIFIED, do not pretend a test occurred"), the same standard is
-applied to Android here: **every item below is CODE-VERIFIED (read
-directly, type-checked, and covered by the automated test suite) but
-NOT DEVICE-VERIFIED.** Nothing in this section claims an on-device
-visual or interactive result that did not actually happen. iOS was not
-tested for the same reason it never can be from this environment — no
-iOS hardware or simulator is available here — and carries the identical
+**Second attempt, same day: connected and verified.** The device was
+reconnected later in the same working session. `adb devices -l`
+confirmed a real device (`RF8N725NPHW`, `model:SM_G973U` — the Galaxy
+S10's model number, Android 12 / SDK 31, 1080×2280 effective
+resolution). What followed was real, interactive, on-device testing —
+not a resumed code review:
+
+1. The currently-installed app was the **release** build from
+   2026-08-21 (confirmed via `adb shell dumpsys package` — no
+   `debuggable` flag, timestamp matched `app-release.apk`), which
+   predates every change in this pass. Installed the **debug** build
+   instead (`adb install -r android/app/build/outputs/apk/debug/app-debug.apk`)
+   and started Metro (`npx expo start --localhost`) with
+   `adb reverse tcp:8081 tcp:8081`, so the device loads live JS
+   reflecting the actual current source — not a rebuilt native binary,
+   which was unnecessary since nothing in this pass touches native code.
+2. The device was locked (a security bouncer) when first reached; this
+   was reported to the project owner rather than attempted to be
+   bypassed, and testing resumed once they unlocked it.
+3. Every screenshot in this section is a real `adb exec-out screencap`
+   capture of the actual framebuffer — not a simulator, not a mockup.
+   Several interactions (`adb shell input tap`/`swipe`) were also used
+   to functionally exercise controls, not just view static screens — see
+   the Search touch-target finding below, verified by tapping a
+   previously-dead zone and confirming real navigation occurred.
+
+iOS was still not tested, for the same reason it never can be from this
+environment — no iOS hardware or simulator is available here — and
+every iOS-related item keeps its CODE-VERIFIED / NOT DEVICE-VERIFIED
 label.
 
-What *was* run and passed, without a device: `tsc --noEmit` (clean, no
-type errors introduced) and `node --test tests/*.test.ts` (47/47 pass,
-unchanged pass count from before this pass's edits — see
-`mobile/tests/`). These confirm the changes are structurally sound and
-don't regress the existing automated coverage; they do not confirm how
-any of it actually looks or feels on a phone.
+Automated checks were re-run after every code change made during this
+device session, not only once at the start: `tsc --noEmit` (clean
+throughout) and `node --test tests/*.test.ts` (47/47 pass, unchanged
+count) on mobile; `npm run test:content` (320/320 pass) on the website
+for the one shared-file change (`content-lib/text-format.ts`,
+`components/shared/LongFormSection.tsx`).
 
 ### 14.4 Decision matrix
 
@@ -1265,22 +1286,31 @@ requirement, and it was previously only two-thirds met.
 Evidence: `mobile/app/(tabs)/library/[book]/[chapter].tsx`, commit
 `254e696`. Uses the same `loadBook`/`localizeBook` pair already used
 identically by the book-detail screen; the mobile loader caches parsed
-records (§5.3), so this adds no meaningful cost. CODE-VERIFIED
-(`tsc`, 47/47 tests) / NOT DEVICE-VERIFIED.
+records (§5.3), so this adds no meaningful cost. **DEVICE-VERIFIED**
+(Galaxy S10): confirmed live on both "Artha Panchakam" (Visishtadvaita
+book) and "Gajendra Moksham" (Srimad Bhagavata Kathasagaram) — the
+book title now shows as a small muted label above the chapter title in
+both cases.
 
 **Chapter-pager title truncation risk at large font scale**
-Status: **IMPLEMENTED**
+Status: **IMPLEMENTED**, then **corrected on-device**
 Reason: The Previous/Next chapter pager capped the *target chapter's own
 title* at `numberOfLines={1}`. At a long title combined with a large
 font-scale setting, this risks an ellipsis hiding which chapter is
 about to open — the exact "typography must reflow, not clip" failure
-this pass calls out by name. Widened to 2 lines; the short "Previous"/
-"Next" direction label is unaffected and unchanged.
-Evidence: same file, same commit. CODE-VERIFIED / NOT DEVICE-VERIFIED —
-this specifically needs an on-device check at maximum combined
-(in-app × OS accessibility) font scale to confirm the two-line
-allowance is enough for the longest real chapter title in the corpus;
-flagged for the next device-testing session.
+this pass calls out by name. First widened to 2 lines.
+Evidence: `mobile/app/(tabs)/library/[book]/[chapter].tsx`, commit
+`254e696` (1→2 lines), corrected in commit `684b898` (2→3 lines).
+**DEVICE-VERIFIED**: at the app's own "Extra Large" font-scale setting
+(already active on the test device from a prior session — a real
+reader's real setting, not a contrived worst case), the 2-line version
+still truncated a real chapter title ("The aathma, as mentioned and
+described by the Bhagavad Gita") with an ellipsis. This is exactly the
+category of gap this pass was designed to catch — a fix that looked
+sufficient from source alone but wasn't, caught only by looking at the
+actual screen. Bumped to 3 lines, force-reloaded the app, re-scrolled
+to the same pager, and confirmed the full title now renders with no
+truncation.
 
 **Search result rows below the app's own 44pt touch-target standard**
 Status: **IMPLEMENTED**
@@ -1294,8 +1324,12 @@ title line, with no `Pressable` wrapper and no `minHeight` — an actual
 hit area of roughly one line of 16sp text, well under 44pt.
 Evidence: `mobile/app/(tabs)/search.tsx`, commit `6af486b`. The whole
 row (title, type/book metadata, excerpt) is now wrapped in one
-`Pressable` with `minHeight: layout.minTouchTarget`. CODE-VERIFIED
-(`tsc`, 47/47 tests) / NOT DEVICE-VERIFIED.
+`Pressable` with `minHeight: layout.minTouchTarget`. **DEVICE-VERIFIED,
+functionally, not just visually**: searched "moksham," then deliberately
+tapped the result row's *metadata line* ("CHAPTER · SRIMAD BHAGAVATA
+KATHASAGARAM") rather than the title text — the exact area that was a
+dead zone before this fix — and confirmed it navigated into the
+"Gajendra Moksham" chapter correctly.
 
 **Welcome screen's primary button label not immediately legible**
 Status: **IMPLEMENTED**
@@ -1312,7 +1346,11 @@ screen exactly as before — nothing about the screen's content, imagery,
 tagline, or audio changed. Also unified the button's interaction
 pattern (`Pressable` + a light haptic) with the rest of the app; this
 was the one remaining `TouchableOpacity` in the codebase.
-CODE-VERIFIED / NOT DEVICE-VERIFIED.
+**DEVICE-VERIFIED**: cleared the app's local storage
+(`adb shell pm clear`) specifically to see this once-per-install screen
+again, and confirmed on-screen exactly as designed — "Begin" as the
+button's own clear label, "Jñānayātrām Pravartaya" preserved as a
+caption beneath it.
 
 **Autoplaying welcome-screen audio, no separate skip control**
 Status: **REJECTED (reviewed, not changed)**
@@ -1537,29 +1575,112 @@ new in-memory index, no duplicated content. `node --test`'s pass count
 
 **Content/translation integrity**
 Status: **UNTOUCHED, by design**
-Reason: No change in this pass modified any `translations` field, any
-chapter/book body, or any Sanskrit/Tamil/Kannada/Hindi content. Every
-edit was confined to `mobile/app/`, `mobile/components/` — UI chrome
-only. Verified directly: `git diff --stat` for this pass touches
-exactly three files, none under `content/`.
+Reason: No change across this entire pass (original review plus the
+device session) modified any `translations` field, any chapter/book
+body, or any Sanskrit/Tamil/Kannada/Hindi content. Every edit was
+confined to `mobile/app/`, `mobile/components/`, and — for the
+subheading fix below, which is genuinely shared presentation logic, not
+content — `content-lib/text-format.ts` and
+`components/shared/LongFormSection.tsx`. Verified directly: none of the
+7 files touched across this pass's 6 commits are under `content/`.
+
+**Chapter body sub-headings not visually distinguished from prose**
+Status: **IMPLEMENTED — found by the project owner reading the app
+live, not part of the original review**
+Reason: Reported directly mid-session: "Chapter headings were not
+bolded and if there were sub chapters in between, they were appearing
+as continuous text, there was no differentiation at all." Traced to
+`content-lib/text-format.ts`'s `paragraphsForReading`: every block gets
+identical styling regardless of content, so a chapter's own internal
+section labels (artha-panchakam's "Meaning:", "The Moksha Virodhi";
+JAYA's embedded "PART IV: ..." markers) read as indistinguishable from
+ordinary prose. Since the content model has no dedicated heading field
+(chapter `body` is one free-form string), a new pure function,
+`looksLikeSubheading()`, infers it presentationally — short (≤70 chars)
+and not ending in sentence-terminal punctuation — validated against
+real content (a 265-file frequency check, ~25% of paragraph blocks
+fire, matching how much of the corpus is genuinely subsectioned) before
+being wired into rendering.
+Evidence: `content-lib/text-format.ts`, `mobile/components/Section.tsx`,
+`components/shared/LongFormSection.tsx`, commit `a74a2b6`.
+**DEVICE-VERIFIED extensively**: opened "Artha Panchakam" (chosen
+specifically because it was known from the corpus-wide check to contain
+many real sub-headings) and scrolled through the full chapter — "Some
+of his greatest works include:", each numbered work title, "Meaning:",
+"Swarupam of Parabramham," "The Swaroopa Niroopaka Gunas are five in
+number:", "Gaining of Sarva Kainkaryam during Moksham," and "Phala
+Stuti" all rendered bold with a clear break from the surrounding text,
+exactly as intended. Also confirmed the heuristic's known trade-off
+directly on-screen: short Tamil pasuram verse lines also render bold
+(they can't be distinguished from a heading by this signal alone) —
+confirmed this reads fine in practice, not confusing, since verse lines
+already sit on their own line. Also confirmed real sentences with an
+embedded colon ("Satyatvam: He is invariant at all times.") correctly
+stay unbolded, since they end in a period.
+
+**Nested-Stack screen headers overlapping the status bar**
+Status: **INVESTIGATED — root cause identified, not an app defect, no
+fix implemented**
+Reason: Found live on-device, not anticipated by the original review:
+the header title overlapped the status bar's clock/icons on the
+Library index, a book-detail screen, and the chapter reader — every
+screen using a *nested* `Stack` navigator (`library/_layout.tsx`,
+`divya-desams/_layout.tsx`). Tabs-level headers (Home, Search,
+Settings) showed no overlap on the same device at the same time.
+Investigated rather than patched: `adb shell dumpsys notification`
+showed a dense stack of active notifications across a dozen apps
+(Instagram, WhatsApp, Messenger, YouTube, Swiggy, and others) — matching
+exactly the crowded icon row visible in the screenshots. Samsung's One
+UI expands the status bar to fit them, taller than the height React
+Navigation's native-stack header (`@react-navigation/native-stack`
+~7.3.10, via `react-native-screens` ~4.11.1) reserves for a normal
+status bar; `@react-navigation/native-stack` has no
+`headerStatusBarHeight` prop in the installed version to compensate
+(that prop belongs to the older JS-rendered `@react-navigation/stack`,
+not the native-header stack this app uses). Deliberately **not**
+patched with a hardcoded extra top padding: that would only trade one
+bug for another, opening a visible gap under the header the rest of the
+time, when the status bar is its normal height. This is a real,
+reproducible visual defect under a specific, common, but
+transient device condition — recorded here rather than either silently
+ignored or papered over with a workaround likely to look worse than the
+problem it solves. Revisit if it turns out to be more than transient
+(e.g. by testing again with a clear notification tray), or if
+`react-native-screens`/`@react-navigation/native-stack` ship a fix for
+this class of issue in a future version.
 
 ### 14.5 Outstanding: device verification
 
-The following are explicitly incomplete pending a reachable physical
-device (or, for iOS-specific items, hardware/simulator access this
-environment does not have), and should not be read as resolved:
+Updated after the device session in §14.3–§14.4: the reader header,
+pager, Search touch-target, welcome-screen, and sub-heading changes are
+now device-verified on Android (Galaxy S10), including the one real
+correction the device session itself produced (pager 2→3 lines) and one
+new defect it surfaced and correctly triaged as out-of-scope (the
+notification-driven status-bar overlap). What remains genuinely
+outstanding:
 
-- Visual confirmation of the reader header, pager, and Search-row
-  changes on a real screen at normal and large font scale.
-- Maximum combined (in-app × OS accessibility) font-scale behavior
-  across the reader, navigation, and long titles — the specific check
-  this pass's own instructions asked for and which prompted the pager
-  `numberOfLines` fix, but the fix itself is still only code-verified.
-- Android hardware/gesture Back, keyboard behavior, and status-bar
-  behavior in interactive use.
-- Any iOS-specific behavior at all.
-- General "does this actually feel fast/polished/comfortable" judgment,
-  which by nature cannot come from reading source code.
+- **Maximum *combined* (in-app Extra Large × OS-level accessibility
+  large-text) font scale** was not separately tested — the device
+  session tested the app's own "Extra Large" (1.3×) setting alone
+  (already active from a prior session), not stacked with the Android
+  system accessibility text-size setting on top of it. This is a
+  meaningfully larger scale than what was verified and could still
+  reveal a clipping case the current fixes don't cover.
+- **Android hardware/gesture Back** in the reader was reasoned about
+  from the `push`/`replace` navigation calls (§14.4) but not physically
+  pressed and observed during this session — the code-level mechanism
+  is confirmed real, the on-device feel is not.
+- **Keyboard behavior** beyond typing a search query (e.g. keyboard
+  dismissal edge cases, layout shift) was not specifically exercised.
+- **The status-bar overlap's actual transience** — whether it fully
+  disappears with a cleared notification tray — was diagnosed from
+  `dumpsys notification` output, not confirmed by clearing notifications
+  and re-screenshotting the same screen.
+- **Any iOS-specific behavior at all** — no iOS hardware or simulator is
+  available in this environment, full stop.
+- **General "does this actually feel fast/polished/comfortable" judgment**
+  over a real, extended reading session — the device testing done here
+  was targeted at specific fixes, not a holistic use of the app.
 
 ### 14.6 Development-history note for this pass
 
@@ -1570,8 +1691,27 @@ owner, who supplied the design standard being evaluated against and
 made the explicit call (§14.4, autoplay-audio item) on at least one
 judgment where the AI's recommendation was to leave existing, deliberate
 behavior unchanged rather than treat an external review as
-self-executing. The device-testing gap in §14.3 was surfaced
-immediately on discovery, not worked around or hidden behind a
-plausible-sounding but untrue "tested on device" claim — the same
-evidentiary discipline established in §§1–13 of this document applies
-here without exception.
+self-executing. The device-testing gap identified early in §14.3 was
+surfaced immediately on discovery, not worked around or hidden behind a
+plausible-sounding but untrue "tested on device" claim.
+
+The device session itself (§14.3, second attempt) is a concrete example
+of why that discipline matters rather than a formality: code review
+alone had produced a pager fix (1→2 lines) that *looked* sufficient and
+passed every automated check, but was proven insufficient the moment it
+was actually looked at on a screen with a real reader's real font-scale
+setting already active. The fix that shipped (3 lines) exists because
+the device was actually used, not because the code was re-read more
+carefully. Separately, the sub-heading fix in this section exists
+because the project owner read the app directly and reported a specific
+defect mid-session ("chapter headings were not bolded... no
+differentiation at all") that neither the original design review nor
+the earlier code-only audit had surfaced — human use of the actual
+product, not any review document, found it. And the status-bar finding
+was investigated to an actual root cause (device notification volume,
+confirmed via `dumpsys`) rather than either ignored or "fixed" with an
+untested guess, specifically because a physical device was available to
+investigate it on. Locating problems this way — by using the thing,
+not just reading its source — is treated in this project as a
+first-class part of the engineering process, not a formality performed
+after the "real" work of writing code is already done.
