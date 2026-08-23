@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
 import { useTheme } from "../../../theme";
+import { ScreenHeader } from "../../../components/ScreenHeader";
 
 /**
  * Phase 6C -- nested stack so index -> detail keeps the tab bar visible
@@ -10,19 +11,19 @@ import { useTheme } from "../../../theme";
  * to the Divya Desams list, iOS's standard interactive-pop gesture) is
  * documented in code rather than left as an implicit default that a
  * future change could silently break.
+ *
+ * `header: ScreenHeader` -- see library/_layout.tsx's identical change
+ * and components/ScreenHeader.tsx for why: the native header overlapped
+ * the status bar under a dense notification icon row, reported directly
+ * on-device.
  */
 export default function DivyaDesamsLayout() {
   const theme = useTheme();
   return (
     <Stack
       screenOptions={{
-        headerStyle: { backgroundColor: theme.colors.background },
-        headerTintColor: theme.colors.foreground,
+        header: (props) => <ScreenHeader {...props} />,
         contentStyle: { backgroundColor: theme.colors.background },
-        // See app/(tabs)/_layout.tsx's same setting for why: an explicit,
-        // solid header rather than trusting the native-stack default.
-        headerTransparent: false,
-        headerBlurEffect: "none",
         gestureEnabled: true,
       }}
     />

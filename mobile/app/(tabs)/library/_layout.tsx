@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
 import { useTheme } from "../../../theme";
+import { ScreenHeader } from "../../../components/ScreenHeader";
 
 /**
  * Phase 6C -- nested stack so index -> book -> chapter keeps the tab
@@ -11,19 +12,19 @@ import { useTheme } from "../../../theme";
  * directly on book -- and from the chapter list back to the Library
  * index, same gesture) is documented in code rather than left as an
  * implicit default a future change could silently break.
+ *
+ * `header: ScreenHeader` -- reported directly on-device: the native
+ * header was overlapping the status bar under a dense notification
+ * icon row. See ScreenHeader.tsx for the full reasoning; this replaces
+ * only the header's rendering, not gestureEnabled/contentStyle above.
  */
 export default function LibraryLayout() {
   const theme = useTheme();
   return (
     <Stack
       screenOptions={{
-        headerStyle: { backgroundColor: theme.colors.background },
-        headerTintColor: theme.colors.foreground,
+        header: (props) => <ScreenHeader {...props} />,
         contentStyle: { backgroundColor: theme.colors.background },
-        // See app/(tabs)/_layout.tsx's same setting for why: an explicit,
-        // solid header rather than trusting the native-stack default.
-        headerTransparent: false,
-        headerBlurEffect: "none",
         gestureEnabled: true,
       }}
     />
