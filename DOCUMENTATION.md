@@ -1619,35 +1619,33 @@ embedded colon ("Satyatvam: He is invariant at all times.") correctly
 stay unbolded, since they end in a period.
 
 **Nested-Stack screen headers overlapping the status bar**
-Status: **INVESTIGATED — root cause identified, not an app defect, no
-fix implemented**
+Status: **INVESTIGATED, then IMPLEMENTED on direct report — see §14.7**
 Reason: Found live on-device, not anticipated by the original review:
 the header title overlapped the status bar's clock/icons on the
 Library index, a book-detail screen, and the chapter reader — every
 screen using a *nested* `Stack` navigator (`library/_layout.tsx`,
 `divya-desams/_layout.tsx`). Tabs-level headers (Home, Search,
 Settings) showed no overlap on the same device at the same time.
-Investigated rather than patched: `adb shell dumpsys notification`
-showed a dense stack of active notifications across a dozen apps
-(Instagram, WhatsApp, Messenger, YouTube, Swiggy, and others) — matching
-exactly the crowded icon row visible in the screenshots. Samsung's One
-UI expands the status bar to fit them, taller than the height React
-Navigation's native-stack header (`@react-navigation/native-stack`
-~7.3.10, via `react-native-screens` ~4.11.1) reserves for a normal
-status bar; `@react-navigation/native-stack` has no
-`headerStatusBarHeight` prop in the installed version to compensate
-(that prop belongs to the older JS-rendered `@react-navigation/stack`,
-not the native-header stack this app uses). Deliberately **not**
-patched with a hardcoded extra top padding: that would only trade one
-bug for another, opening a visible gap under the header the rest of the
-time, when the status bar is its normal height. This is a real,
-reproducible visual defect under a specific, common, but
-transient device condition — recorded here rather than either silently
-ignored or papered over with a workaround likely to look worse than the
-problem it solves. Revisit if it turns out to be more than transient
-(e.g. by testing again with a clear notification tray), or if
-`react-native-screens`/`@react-navigation/native-stack` ship a fix for
-this class of issue in a future version.
+Root cause, confirmed via `adb shell dumpsys notification`: a dense
+stack of active notifications across a dozen apps (Instagram, WhatsApp,
+Messenger, YouTube, Swiggy, and others), matching exactly the crowded
+icon row visible in the screenshots, expanding Samsung's status bar
+taller than the height React Navigation's native-stack header
+(`@react-navigation/native-stack` ~7.3.10, via `react-native-screens`
+~4.11.1) reserves for it — that version has no `headerStatusBarHeight`
+prop to compensate (that prop belongs to the older JS-rendered
+`@react-navigation/stack`).
+**This was initially left unpatched**, reasoned to be transient device
+state rather than an app defect worth a workaround that might look
+worse than the problem on a normal status bar. **Revisited and actually
+fixed later in the same session** on direct report from the project
+owner ("the back button and the chapter title are merging with the
+notification shade drop down and that isnt looking good") — see §14.7
+for the fix and its own device verification. The lesson kept here
+deliberately: correctly diagnosing a root cause is not the same
+question as whether to fix it, and an initial "leave it" call is
+revisited, not defended, once it turns out to matter to the person
+actually using the app.
 
 ### 14.5 Outstanding: device verification
 
@@ -1711,7 +1709,130 @@ product, not any review document, found it. And the status-bar finding
 was investigated to an actual root cause (device notification volume,
 confirmed via `dumpsys`) rather than either ignored or "fixed" with an
 untested guess, specifically because a physical device was available to
-investigate it on. Locating problems this way — by using the thing,
-not just reading its source — is treated in this project as a
-first-class part of the engineering process, not a formality performed
-after the "real" work of writing code is already done.
+investigate it on — see §14.7 for what happened when the project owner
+came back to say the unpatched version still wasn't good enough.
+Locating problems this way — by using the thing, not just reading its
+source — is treated in this project as a first-class part of the
+engineering process, not a formality performed after the "real" work
+of writing code is already done.
+
+### 14.7 Continuation: table of contents and the status-bar fix
+
+The same device session continued past §14.6 with two more pieces of
+work, both prompted directly by the project owner rather than proposed
+speculatively — consistent with this whole section's standard of
+building only what solves an actual, observed problem.
+
+**In-chapter table of contents.** Prompted directly: *"if there are sub
+chapters, break them into standalone listings, seeing subchapters not
+have a listing isnt looking good, find the best way to execute this."*
+Before implementing anything, the two possible readings of "standalone
+listings" were surfaced to the project owner as an explicit choice,
+because they carry very different risk: splitting a chapter into real
+separate Library entries would require editing `chapterOrder` and,
+critically, finding equivalent split points across three
+already-translated Tamil/Kannada/Hindi bodies that are not reliably
+paragraph-aligned to the English source — real risk of corrupting a
+translation's structure across potentially dozens of chapters. The
+project owner chose the lower-risk alternative: an in-chapter jump-list,
+touching no content or translation at all.
+
+The implementation (`content-lib/text-format.ts`'s `getTableOfContents`,
+`mobile/components/Section.tsx`, the chapter reader, commit `5ba98f7`)
+is a stricter sibling of the `looksLikeSubheading` heuristic already
+shipped in §14.4 — validated the same way, against real content, before
+being wired into the UI: run against the full 158-chapter Library
+corpus, refined twice (excluding list-marker lines, then excluding
+comma-terminated transitional phrases) until it stopped misfiring on
+the false positives that heuristic testing surfaced, then device-tested
+against five real chapters spanning all four Library books, including
+one (JAYA's "Ganapati, the Scribe") that had **not** been hand-checked
+in advance — specifically to test whether the heuristic generalizes or
+only matches cases it was tuned against. It generalized correctly.
+
+One real bug was found and fixed only because a device was available:
+the tap-to-jump scroll used `measureLayout(findNodeHandle(scrollView),
+...)`, which is silently wrong under this app's New Architecture setup
+(`newArchEnabled=true`) — it failed with a runtime error ("ref.measureLayout
+must be called with a ref to a native component") that `tsc` and the
+test suite both had no way to catch, since it's a React Native runtime
+API contract, not a type-level or logic-level one. Passing the
+ScrollView ref directly, instead of a node-handle number, fixed it;
+re-verified with the same on-device tap-to-jump test immediately after.
+
+**Status-bar header fix, revisited.** Prompted directly: *"the back
+button and the chapter title are merging with the notification shade
+drop down and that isnt looking good."* This is the same defect
+documented in §14.4's "Nested-Stack screen headers overlapping the
+status bar" entry, which had been investigated to a confirmed root
+cause and then deliberately left unpatched. Getting a direct report
+that it was still a real problem for the person using the app changed
+the calculus, not the diagnosis — the root cause finding held up
+unchanged; what changed was the judgment about whether it was worth
+fixing.
+
+The fix (`mobile/components/ScreenHeader.tsx`, commit `4591385`)
+replaces the native-rendered header on the two affected nested Stacks
+with a JS-rendered one, positioned using `useSafeAreaInsets().top` — a
+live, reactive value, unlike whatever internal assumption
+`react-native-screens`'s native header was making about status bar
+height. This is architecture-level more robust than a one-off patch:
+it holds regardless of *why* the status bar is taller than usual (a
+notification count, an OEM display cutout, a future Android version),
+because it asks the OS what the current inset actually is rather than
+assuming a constant. Device-verified on the same phone, in the same
+crowded-notification state that produced the original report (confirmed
+unchanged via `dumpsys notification` immediately before retesting): the
+Library index, a book-detail screen, the chapter reader, the Divya
+Desams index, and a Divya Desam detail screen all show clean header
+clearance, and the back button was confirmed functional on both
+affected Stacks by actually tapping it.
+
+### 14.8 A content-integrity finding, outside the UI/UX scope of this section
+
+Reading Narasimha Avataram (Srimad Bhagavata Kathasagaram) on the
+device during this same session surfaced something unrelated to
+interface design: a real section of the chapter's own content — "How
+Sudarshana is Manifest in Every Avataram," and a fuller account of the
+Ahobila Matham's founding — was missing from the English source itself,
+reported directly by the project owner with the original text supplied
+to restore it. Checked via `git show` against the commit that first
+added this book to the repository: the missing content was never
+present in this repository's history at all — not a regression
+introduced by any later edit, but a gap dating to the chapter's original
+migration. Restored from the text supplied directly by the project
+owner (this book's own author), consistent with this project's standing
+rule that the source material is authoritative; also added the complete
+Sudarshana Ashtakam (all 9 verses, Devanagari + IAST + meaning) sourced
+from a real, citable text — Swami Desikan's Sudarshana Ashtakam with
+annotated commentary by Oppiliappan Koil V. Sadagopan — rather than
+reconstructed from memory, and translated the entire addition into
+Tamil, Kannada, and Hindi to keep the four languages in parity
+(commit `55a28f2`).
+
+One detail worth recording here specifically because it demonstrates
+the value of the parity-checking discipline used throughout this
+project's translation work (§9): the English restoration initially
+quoted one Sanskrit verse twice — once newly in Devanagari, once in the
+chapter's pre-existing IAST-only form — a redundancy that went unnoticed
+in English itself. All three translations correctly collapsed it to a
+single rendering (there being no reason to show the same verse twice in
+any target script), which is precisely what caused the paragraph-count
+parity check to fail and surface the English duplication. The fix was
+to correct the English to match what the translations had already
+gotten right, not the reverse — a small, concrete instance of the
+cross-language validation catching an error the single-language review
+had missed entirely.
+
+This was also initially planned, then corrected, as a separate detail
+worth recording: the first instinct was to add the Sudarshana Ashtakam
+as its own standalone Library chapter, which would have meant
+renumbering `chapterOrder` and every subsequent chapter's `order` field.
+That work was actually done — and then reverted — the moment the
+project owner clarified: *"this isnt meant to be a separate chapter,
+its a sub chapter for narasimha avataram."* The renumbering was undone
+file-by-file, `book.json` restored, and the content correctly folded
+into the same chapter's body instead, using the same bold-subheading
+and table-of-contents mechanism built earlier in this section (§14.4,
+§14.7) — which is, concretely, what "sub chapter" means throughout this
+document.
