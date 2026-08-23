@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useAudioPlayer } from "expo-audio";
+import * as Haptics from "expo-haptics";
 import { spacing, typography, useTheme } from "../theme";
 import welcomeImage from "../../public/images/a0635841-903d-4856-90a8-eca5becb3c5e.png";
 import welcomeAudio from "../../public/audio/vy-welcome.mp3";
@@ -46,14 +47,27 @@ export function WelcomeScreen({ onDone }: { onDone: () => void }) {
           <Text style={[styles.tagline, { color: theme.colors.muted }]}>Yatra Jñānam Pravahati</Text>
         </View>
         <View style={styles.buttonBlock}>
-          <TouchableOpacity
-            onPress={begin}
+          <Pressable
+            onPress={() => {
+              void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+              begin();
+            }}
             style={[styles.button, { backgroundColor: theme.colors.accent }]}
             accessibilityRole="button"
+            accessibilityLabel="Begin"
           >
-            <Text style={[styles.buttonLabel, { color: theme.colors.surface }]}>Jñānayātrām Pravartaya</Text>
-          </TouchableOpacity>
-          <Text style={[styles.buttonHint, { color: theme.colors.muted }]}>Tap to enter the app</Text>
+            <Text style={[styles.buttonLabel, { color: theme.colors.surface }]}>Begin</Text>
+          </Pressable>
+          {/*
+           * UI/UX pass: the button's own label must be immediately legible
+           * on first launch, before a reader has any context for Sanskrit
+           * transliteration -- "Jñānayātrām Pravartaya" (the original
+           * primary label) is preserved here as a caption underneath the
+           * button instead of being removed, so the screen keeps its
+           * Sanskrit invocation without making the one interactive control
+           * on the screen ambiguous.
+           */}
+          <Text style={[styles.buttonHint, { color: theme.colors.muted }]}>Jñānayātrām Pravartaya</Text>
         </View>
       </View>
     </SafeAreaView>
