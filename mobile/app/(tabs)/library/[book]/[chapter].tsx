@@ -13,14 +13,14 @@ import {
   type NativeScrollEvent,
 } from "react-native";
 import type { Chapter } from "../../../../content-lib/loader.ts";
-import { loadChapter, loadChapters } from "../../../../content-lib/loader.ts";
+import { loadBook, loadChapter, loadChapters } from "../../../../content-lib/loader.ts";
 import { findAdjacentChapters } from "../../../../content-lib/chapter-navigation.ts";
 import { DraftBadge } from "../../../../components/DraftBadge";
 import { ContentImage } from "../../../../components/ContentImage";
 import { Section } from "../../../../components/Section";
 import { layout, radius, spacing, typography, useTheme } from "../../../../theme";
 import { sectionTint } from "../../../../section-tints.ts";
-import { localizeChapter } from "../../../../../content-lib/i18n.ts";
+import { localizeBook, localizeChapter } from "../../../../../content-lib/i18n.ts";
 import { estimateReadingMinutes, stripLeadingDuplicateTitle } from "../../../../../content-lib/text-format.ts";
 import { useLanguage } from "../../../../language-context.ts";
 import { useReadingPosition } from "../../../../reading-position-context.ts";
@@ -86,6 +86,8 @@ export default function LibraryChapterScreen() {
   const [progress, setProgress] = useState(0);
   const loadedChapter = loadChapter(bookSlug, chapterSlug);
   const chapter = loadedChapter ? localizeChapter(loadedChapter, language) : null;
+  const loadedBook = loadBook(bookSlug);
+  const book = loadedBook ? localizeBook(loadedBook, language) : null;
   const tint = sectionTint(bookSlug, theme.scheme);
   const adjacentRef = useRef<{ previous: Chapter | null; next: Chapter | null }>({ previous: null, next: null });
 
@@ -173,6 +175,15 @@ export default function LibraryChapterScreen() {
               </Text>
             ) : null}
           </View>
+          {book ? (
+            <Text
+              style={[styles.bookLabel, { color: theme.colors.muted }]}
+              numberOfLines={1}
+              accessibilityRole="text"
+            >
+              {book.title}
+            </Text>
+          ) : null}
           <Text style={[styles.title, { color: theme.colors.foreground }]}>{chapter.title}</Text>
         </View>
 
@@ -196,7 +207,7 @@ export default function LibraryChapterScreen() {
                 style={[styles.pagerButton, { borderColor: theme.colors.border }]}
               >
                 <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>{t("pagerPrevious")}</Text>
-                <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={1}>
+                <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={2}>
                   {previous.title}
                 </Text>
               </Pressable>
@@ -211,7 +222,7 @@ export default function LibraryChapterScreen() {
                 style={[styles.pagerButton, styles.pagerButtonEnd, { borderColor: theme.colors.border }]}
               >
                 <Text style={[styles.pagerDirection, { color: theme.colors.muted }]}>{t("pagerNext")}</Text>
-                <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={1}>
+                <Text style={[styles.pagerTitle, { color: theme.colors.accent }]} numberOfLines={2}>
                   {next.title}
                 </Text>
               </Pressable>
@@ -259,6 +270,12 @@ const styles = StyleSheet.create({
   position: {
     fontSize: typography.eyebrow,
     fontWeight: "600",
+    letterSpacing: 0.5,
+  },
+  bookLabel: {
+    fontSize: typography.small,
+    fontWeight: "600",
+    textTransform: "uppercase",
     letterSpacing: 0.5,
   },
   title: {
