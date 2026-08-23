@@ -100,7 +100,9 @@ export function paragraphsForReading(text: string, targetLength: number = DEFAUL
  * signal `paragraphsForReading` already relies on: a paragraph is
  * treated as a sub-heading candidate when it is short AND does not end
  * in the sentence-terminal punctuation (Latin or Devanagari) that
- * essentially every real flowing sentence in this corpus ends with.
+ * essentially every real flowing sentence in this corpus ends with --
+ * including ";", this corpus's IAST rendering of the Devanagari single
+ * danda (।) that closes the first half of a two-line verse.
  * Verified directly against real content before shipping (artha-
  * panchakam, stages-of-bhakti-yoga, several JAYA chapters): every
  * genuine heading/section-label line in those samples was correctly
@@ -116,7 +118,7 @@ export function paragraphsForReading(text: string, targetLength: number = DEFAUL
  * exactly like splitIntoReadableParagraphs above, it only tells a
  * renderer which existing block to draw with emphasis.
  */
-const TERMINAL_PUNCTUATION = /[.!?।॥,]['")]?\s*$/;
+const TERMINAL_PUNCTUATION = /[.!?।॥,;]['")]?\s*$/;
 const MAX_SUBHEADING_LENGTH = 70;
 
 export function looksLikeSubheading(paragraph: string): boolean {
