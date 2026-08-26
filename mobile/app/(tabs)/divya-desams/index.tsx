@@ -11,7 +11,9 @@ import { sectionTint } from "../../../section-tints.ts";
 import { localizeDivyaDesam, localizeKnowledge } from "../../../../content-lib/i18n.ts";
 import { DIVYA_DESAM_REGION_ORDER, type DivyaDesamRegion } from "../../../../content-lib/schemas/index.ts";
 import { useLanguage } from "../../../language-context.ts";
-import { useT } from "../../../ui-strings.ts";
+import { translateUi, useT } from "../../../ui-strings.ts";
+import { regionLabel } from "../../../divya-desam-region-labels.ts";
+import type { LanguageCode } from "../../../content-lib/preferences.ts";
 
 /** The one region that is a celestial abode, not a terrestrial one -- gets "Celestial Divya Desams" instead of "Divya Desams" in the count line. */
 const CELESTIAL_REGION: DivyaDesamRegion = "Viṇṇulaga Tiruppatigaḷ";
@@ -28,17 +30,18 @@ type DivyaDesamTab = typeof ALL_TAB | DivyaDesamRegion;
 const TABS: readonly DivyaDesamTab[] = [ALL_TAB, ...DIVYA_DESAM_REGION_ORDER];
 
 /**
- * English-only for now (unlike the rest of this screen, which routes
- * every string through ui-strings.ts's ta/kn/hi `pick()`): the region
- * names themselves are proper Sri Vaishnava geographical terms, already
- * language-invariant like temple/Azhwar names elsewhere in this corpus,
- * but "N Divya Desams"/"N Celestial Divya Desams" is new UI chrome that
- * would need real Tamil/Kannada/Hindi translations, not guessed ones --
- * left as a disclosed gap rather than an invented, possibly-wrong one.
+ * Now routed through ui-strings.ts's ta/kn/hi translateUi() the same way
+ * as the rest of this screen: the noun ("Divya Desam"/"Celestial Divya
+ * Desam") is a real per-language translation, not a guess -- English
+ * keeps its existing "s" pluralization; Tamil/Kannada/Hindi numerals
+ * don't take an English-style plural suffix, so the noun is used as-is
+ * regardless of count.
  */
-function tabCountLabel(tab: DivyaDesamTab, count: number): string {
-  const noun = tab === CELESTIAL_REGION ? "Celestial Divya Desam" : "Divya Desam";
-  return `${count} ${noun}${count === 1 ? "" : "s"}`;
+function tabCountLabel(tab: DivyaDesamTab, count: number, language: LanguageCode | null): string {
+  const nounKey = tab === CELESTIAL_REGION ? "celestialDivyaDesamCountNoun" : "divyaDesamCountNoun";
+  const noun = translateUi(nounKey, language);
+  const suffix = language === null && count !== 1 ? "s" : "";
+  return `${count} ${noun}${suffix}`;
 }
 
 /**
@@ -149,7 +152,7 @@ export default function DivyaDesamsIndexScreen() {
               />
             ) : null}
             <Text style={[styles.classificationEyebrow, { color: theme.colors.muted }]}>
-              GEOGRAPHICAL CLASSIFICATION
+              {t("geoClassificationEyebrow")}
             </Text>
             <View style={styles.tabRowWrap}>
               <ScrollView
@@ -159,13 +162,14 @@ export default function DivyaDesamsIndexScreen() {
               >
                 {TABS.map((tab) => {
                   const active = tab === selectedTab;
+                  const label = tab === ALL_TAB ? t("allDivyaDesamsTab") : regionLabel(tab, language);
                   return (
                     <Pressable
                       key={tab}
                       onPress={() => setSelectedTab(tab)}
                       accessibilityRole="button"
                       accessibilityState={{ selected: active }}
-                      accessibilityLabel={tab}
+                      accessibilityLabel={label}
                       style={[
                         styles.tab,
                         {
@@ -177,7 +181,7 @@ export default function DivyaDesamsIndexScreen() {
                       <Text
                         style={[styles.tabText, { color: active ? "#fffaf5" : theme.colors.foreground }]}
                       >
-                        {tab}
+                        {label}
                       </Text>
                     </Pressable>
                   );
@@ -195,7 +199,7 @@ export default function DivyaDesamsIndexScreen() {
               />
             </View>
             <Text style={[styles.count, { color: theme.colors.muted }]}>
-              {tabCountLabel(selectedTab, traditionalCount(regionRecords, numberLabels))}
+              {tabCountLabel(selectedTab, traditionalCount(regionRecords, numberLabels), language)}
             </Text>
           </View>
         }

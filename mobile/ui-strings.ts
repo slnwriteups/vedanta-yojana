@@ -121,6 +121,20 @@ const UI_STRINGS = {
     kn: "ಕೆಳಗಿನ ದೇವಾಲಯಗಳನ್ನು ಅನ್ವೇಷಿಸುವ ಮೊದಲು ಇಲ್ಲಿಂದ ಪ್ರಾರಂಭಿಸಿ.",
     hi: "नीचे दिए गए मंदिरों को देखने से पहले यहाँ से शुरू करें।",
   },
+  geoClassificationEyebrow: {
+    en: "GEOGRAPHICAL CLASSIFICATION",
+    ta: "புவியியல் வகைப்பாடு",
+    kn: "ಭೌಗೋಳಿಕ ವರ್ಗೀಕರಣ",
+    hi: "भौगोलिक वर्गीकरण",
+  },
+  allDivyaDesamsTab: { en: "All 108", ta: "அனைத்து 108", kn: "ಎಲ್ಲಾ 108", hi: "सभी 108" },
+  divyaDesamCountNoun: { en: "Divya Desam", ta: "திவ்ய தேசம்", kn: "ದಿವ್ಯ ದೇಶ", hi: "दिव्य देशम" },
+  celestialDivyaDesamCountNoun: {
+    en: "Celestial Divya Desam",
+    ta: "விண்ணுலக திவ்ய தேசம்",
+    kn: "ವಿಣ್ಣುಲಗ ದಿವ್ಯ ದೇಶ",
+    hi: "विण्णुलग दिव्य देशम",
+  },
   templeInformationHeading: {
     en: "Temple Information",
     ta: "கோயில் தகவல்",
