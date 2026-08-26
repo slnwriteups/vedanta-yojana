@@ -158,10 +158,11 @@ test("Phase 6E-C: a shrine-level field (a sub-shrine's own moolavar) is discover
 });
 
 test("15: a chapter-body match is found", () => {
-  // "Vibhishana" appears in the Rama Charama Shlokam chapter body.
-  const matches = searchContent(corpus, "Vibhishana");
+  // "Vibhīshaṇa" appears in the Rama Charama Shlokam chapter body (IAST
+  // standardization pass, round 6: Vibhishana -> Vibhīshaṇa).
+  const matches = searchContent(corpus, "Vibhīshaṇa");
   const chapter = matches.find((m) => m.document.href.endsWith("/rama-charama-shlokam"));
-  assert.ok(chapter, "expected Vibhishana to match the Rama Charama Shlokam chapter");
+  assert.ok(chapter, "expected Vibhīshaṇa to match the Rama Charama Shlokam chapter");
 });
 
 test("16: a Knowledge-body match is found", () => {
