@@ -10,12 +10,12 @@
   "templeInformation": {
     "moolavar": "Purushottaman",
     "thayaar": "Purushottama Nayaki",
-    "vimanam": "Sanjeevinigrah Vimanam",
-    "theertham": "Tiruparkadal Theertham",
-    "travelNote": "This kshethram is located 8 km from Sirkazhi."
+    "vimanam": "Sanjeevinigrah Vimānam",
+    "theertham": "Tiruparkadal Tīrtham",
+    "travelNote": "This kshethram is located 8 km from Sīrkāzhi."
   },
-  "sthalaPuranam": "It is said that Vyagrapadar used to perform kainkaryam to the Lord here by making garlands. One day, when Vyagrapadar had gone out in search of flowers, his infant son, Upamanyu, started to cry from hunger. Thus, the Lord sent Purushottama Nayaki Thayaar to feed the infant milk and give him water to prevent dehydration.",
-  "azhwarPasuram": "Tirumangai Azhwar – 10 Pasurams",
+  "sthalaPuranam": "It is said that Vyagrapadar used to perform kainkaryam to the Lord here by making garlands. One day, when Vyagrapadar had gone out in search of flowers, his infant son, Upamanyu, started to cry from hunger. Thus, the Lord sent Purushottama Nayaki Thāyār to feed the infant milk and give him water to prevent dehydration.",
+  "azhwarPasuram": "Tirumangai Āzhwār – 10 Pāsurams",
   "shrines": [
     {
       "label": null,
@@ -36,25 +36,25 @@
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tiruvanpurudottamampaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     },
     {
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tiruvanpurudottamampaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tirucemponceykoyilpaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tiruvanpurudottamampaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     }
   ],
   "relatedContent": [],

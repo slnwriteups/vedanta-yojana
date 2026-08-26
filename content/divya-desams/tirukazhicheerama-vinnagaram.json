@@ -9,13 +9,13 @@
   },
   "templeInformation": {
     "moolavar": "Trivikramar",
-    "thayaar": "Lokanayaki Thayaar",
-    "vimanam": "Pushkalavartha Vimanam",
-    "theertham": "Shanka-Chakra Theertham",
-    "travelNote": "This temple is located in the town of Sirkazhi"
+    "thayaar": "Lokanayaki Thāyār",
+    "vimanam": "Pushkalavartha Vimānam",
+    "theertham": "Shankha-Chakra Tīrtham",
+    "travelNote": "This temple is located in the town of Sīrkāzhi"
   },
-  "sthalaPuranam": "The legend is that Lord Vishnu blessed Romesa Maharishi with a vision of Trivikrama with his left foot raised in the gesture of dominating the three worlds. Romesa Maharishi had once performed tapas here to seek the Lord. When the Lord appeared before Romesa Maharishi, he asked the Lord to bring down the pride and arrogance possessed by Lord Brahma, as he was the creator of the three worlds. The Lord told Romesa Maharishi that as and when a hair would fall from his head, the lifetime of Lord Brahma would be reduced by one year. It is said that Lord Brahma soon lost all of his pride and served his purpose diligently. After seeing the Lord, Romesa Maharishi requested to see the Lord in His Trivikraman form. Thus, the Lord showed Romesa Maharshi the form in which He was ready to measure the world by raising His left foot.",
-  "azhwarPasuram": "Tirumangai Azhwar – 10 Pasurams",
+  "sthalaPuranam": "The legend is that Lord Vishṇu blessed Romesa Maharshi with a vision of Trivikrama with his left foot raised in the gesture of dominating the three worlds. Romesa Maharshi had once performed tapas here to seek the Lord. When the Lord appeared before Romesa Maharshi, he asked the Lord to bring down the pride and arrogance possessed by Lord Brahmā, as he was the creator of the three worlds. The Lord told Romesa Maharshi that as and when a hair would fall from his head, the lifetime of Lord Brahmā would be reduced by one year. It is said that Lord Brahmā soon lost all of his pride and served his purpose diligently. After seeing the Lord, Romesa Maharshi requested to see the Lord in His Trivikraman form. Thus, the Lord showed Romesa Maharshi the form in which He was ready to measure the world by raising His left foot.",
+  "azhwarPasuram": "Tirumangai Āzhwār – 10 Pāsurams",
   "shrines": [
     {
       "label": null,
@@ -36,25 +36,25 @@
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tirukkaazicciiraamavinnagarampaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     },
     {
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tiruyarimeyavinnagarampaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tirukkaazicciiraamavinnagarampaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tiruyarimeyavinnagarampaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     }
   ],
   "relatedContent": [],

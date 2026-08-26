@@ -8,7 +8,7 @@
     "needsReview": true
   },
   "templeInformation": {
-    "travelNote": "8 kilometers from Sirkazhi"
+    "travelNote": "8 kilometers from Sīrkāzhi"
   },
   "shrines": [
     {
@@ -16,10 +16,10 @@
       "mapsLink": "https://maps.app.goo.gl/WBYPyGGkE7z1gSQB6",
       "name": "Tiruttetriambalam",
       "templeInformation": {
-        "moolavar": "Pallikonda Ranganathar",
+        "moolavar": "Pallikonda Raṅganāthar",
         "thayaar": "Senkamalavalli",
-        "vimanam": "Veda Vimanam",
-        "theertham": "Surya Pushkarani"
+        "vimanam": "Veda Vimānam",
+        "theertham": "Sūrya Pushkariṇī"
       }
     },
     {
@@ -28,9 +28,9 @@
       "name": "Tirumanikoodam",
       "templeInformation": {
         "moolavar": "Varadarajan",
-        "thayaar": "Sridevi Bhoodevi",
-        "vimanam": "Kanaga Vimanam",
-        "theertham": "Chandra Pushkarani"
+        "thayaar": "Shrīdevī Bhūdevi",
+        "vimanam": "Kanaga Vimānam",
+        "theertham": "Chandra Pushkariṇī"
       }
     }
   ],
@@ -55,54 +55,54 @@
       "language": "Devanagari",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tirumanikkuudampaasurangal.pdf",
-      "sourceLabel": "Devanagarii Pasuram"
+      "sourceLabel": "Devanāgarī Pāsuram"
     },
     {
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tiruttetriyambalampaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tirumanikkuudampaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tirumanikkuudampaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tiruttetriyambalampaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     },
     {
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tiruttetriyambalampaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     },
     {
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tirumanikkuudampaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tiruttetriyambalampaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     }
   ],
   "relatedContent": [],
-  "azhwarPasuram": "TirumangaiAzhwar: 10 Pashurams",
-  "sthalaPuranam": "After completing the churning process of the Samudra, Mathanam appeared Danavantri with a golden chalice containing Amrutham (The elixir of longevity). Both the Devas as well as the Danavas desired the elixir, and hence the Lord took the form of Mohini and gave the elixir only to the gods. It was during this that Rahu, a demon, disguised himself as a deva and tried to consume the elixir when he was caught in the act by Suryan and Chandran. The Lord releases his Chakram and cuts him in such a way that the upper part of the body and the lower part of the body became separate entities. Rahu swore that he would have his revenge against Suryan and Chandran. To exact his revenge, it is said that he eclipses the Sun and the Moon. It is said that Suryan and Chandran went into hiding at the Surya Pushkarani, and Chandra Pushkarani was present at Tiruttetriambalam and Tirumanikoodam. The Lords are said to have come to the rescue of Suryan and Chandran and assured them of their safety.",
+  "azhwarPasuram": "Tirumangai Āzhwār: 10 Pāsurams",
+  "sthalaPuranam": "After completing the churning process of the Samudra, Mathanam appeared Danavantri with a golden chalice containing Amrutham (The elixir of longevity). Both the Devas as well as the Danavas desired the elixir, and hence the Lord took the form of Mohinī and gave the elixir only to the gods. It was during this that Rāhu, a demon, disguised himself as a deva and tried to consume the elixir when he was caught in the act by Sūryan and Chandran. The Lord releases his Chakram and cuts him in such a way that the upper part of the body and the lower part of the body became separate entities. Rāhu swore that he would have his revenge against Sūryan and Chandran. To exact his revenge, it is said that he eclipses the Sun and the Moon. It is said that Sūryan and Chandran went into hiding at the Sūrya Pushkariṇī, and Chandra Pushkariṇī was present at Tiruttetriambalam and Tirumanikoodam. The Lords are said to have come to the rescue of Sūryan and Chandran and assured them of their safety.",
   "translations": {
     "ta": {
       "displayName": "திருத்தெற்றியம்பலம் திருமணிக்கூடம்",

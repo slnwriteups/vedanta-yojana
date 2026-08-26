@@ -9,12 +9,12 @@
   },
   "templeInformation": {
     "moolavar": "Kalvar",
-    "thayaar": "Kamalavalli Thayaar",
-    "vimanam": "Pushkala Vimanam",
-    "theertham": "Gowrithadakam Theertham"
+    "thayaar": "Kamalavalli Thāyār",
+    "vimanam": "Pushkala Vimānam",
+    "theertham": "Gowrithadakam Tīrtham"
   },
-  "sthalaPuranam": "This kshethram again does not have a particular sthala puranam of its own. This kshethram is closely related to Tiruneeragam and Tirukaaragam. Kaarvaanam means a sky filled with clouds. The world cannot survive without water, and clouds play a crucial role in bringing water to the world. Thus, the Lord standing here is an embodiment of rain clouds bringing rain to the world, helping it survive.",
-  "azhwarPasuram": "Tirumangai Azhwar: 1 pasuram",
+  "sthalaPuranam": "This kshethram again does not have a particular sthala purāṇam of its own. This kshethram is closely related to Tiruneeragam and Tirukaaragam. Kaarvaanam means a sky filled with clouds. The world cannot survive without water, and clouds play a crucial role in bringing water to the world. Thus, the Lord standing here is an embodiment of rain clouds bringing rain to the world, helping it survive.",
+  "azhwarPasuram": "Tirumangai Āzhwār: 1 pāsuram",
   "shrines": [
     {
       "label": null,
@@ -35,25 +35,25 @@
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tirukkaarvaanampaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tirukkaarvaanampaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     },
     {
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tirukkaarvaanampaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     },
     {
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tirukkaarvaanampaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     }
   ],
   "relatedContent": [],

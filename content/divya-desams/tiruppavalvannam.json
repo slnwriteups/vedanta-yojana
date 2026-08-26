@@ -8,13 +8,13 @@
     "needsReview": false
   },
   "templeInformation": {
-    "moolavar": "Pavala Vanna Perumal, Pachai Vanna Perumal",
-    "thayaar": "Pavalavalli Thayaar",
-    "vimanam": "Pravaala Vimanam",
-    "theertham": "Chakra Theertham"
+    "moolavar": "Pavala Vanna Perumāl, Pachai Vanna Perumāl",
+    "thayaar": "Pavalavalli Thāyār",
+    "vimanam": "Pravaala Vimānam",
+    "theertham": "Chakra Tīrtham"
   },
-  "sthalaPuranam": "This kshethram comprises two temples, namely Pachivannam and Pavalavannam. The presiding deity is said to be prathyaksham for Brighu Maharishi and Ashwini Devatas here.\n*** This kshethram is special for Lakshmi Devi, as she is seated atop the Sri Yantram.",
-  "azhwarPasuram": "Tirumangai Azhwar: 1 pasuram",
+  "sthalaPuranam": "This kshethram comprises two temples, namely Pachivannam and Pavalavannam. The presiding deity is said to be prathyaksham for Bhṛgu Maharshi and Ashwini Devatas here.\n*** This kshethram is special for Lakshmī Devī, as she is seated atop the Shri Yantram.",
+  "azhwarPasuram": "Tirumangai Āzhwār: 1 pāsuram",
   "shrines": [
     {
       "label": null,
@@ -54,25 +54,25 @@
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tiruppavalavannampaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     },
     {
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tiruppavalavannampaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tiruppavalavannampaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tiruppavalavannampaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     }
   ],
   "relatedContent": [],

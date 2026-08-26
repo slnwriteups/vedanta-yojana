@@ -1,6 +1,6 @@
 {
   "slug": "tiruvaikuntam-srivaikuntam",
-  "displayName": "Tiruvaikuntam / Srivaikuntam",
+  "displayName": "Tiruvaikuntam / Shrīvaikuṇṭham",
   "status": "published",
   "migration": {
     "sourcePageId": "page.Page83",
@@ -9,13 +9,13 @@
   },
   "templeInformation": {
     "moolavar": "Vaikunthanathar",
-    "thayaar": "Vaikuntavalli Nachiyar",
-    "vimanam": "Chandra Vimanam",
-    "theertham": "Brighu Theertham",
-    "travelNote": "This kshethram is situated on the banks of the Tamaraparani, approximately 35 km from Tirunelveli."
+    "thayaar": "Vaikuntavalli Nāchiyār",
+    "vimanam": "Chandra Vimānam",
+    "theertham": "Bhṛgu Tīrtham",
+    "travelNote": "This kshethram is situated on the banks of the Tāmraparaṇi, approximately 35 km from Tirunelvēli."
   },
-  "sthalaPuranam": "The legend has it that a local thief, known as Kaladushaka, would donate half of the loot he stole to the deity in the temple. While the King caught him, Vaikunthanathar appeared before the king and expressed that He was also a culprit and thus gained the name Kallapiran. Another sthala puranam mentions a demon named Somakan who stole the texts of knowledge from Lord Brahma. Upon praying to the Lord, Vaikunthanathar killed Somakan, recovered the texts, and presented them to Lord Brahma.",
-  "azhwarPasuram": "Nam Azhwar: 2 Pasurams",
+  "sthalaPuranam": "The legend has it that a local thief, known as Kaladushaka, would donate half of the loot he stole to the deity in the temple. While the King caught him, Vaikunthanathar appeared before the king and expressed that He was also a culprit and thus gained the name Kallapiran. Another sthala purāṇam mentions a demon named Somakan who stole the texts of knowledge from Lord Brahmā. Upon praying to the Lord, Vaikunthanathar killed Somakan, recovered the texts, and presented them to Lord Brahmā.",
+  "azhwarPasuram": "Nam Āzhwār: 2 Pāsurams",
   "shrines": [
     {
       "label": null,
@@ -36,25 +36,25 @@
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tiruvaikundampaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tiruvaikundampaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tiruvaikundampaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     },
     {
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tiruvaikundampaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     }
   ],
   "relatedContent": [],

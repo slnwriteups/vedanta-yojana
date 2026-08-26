@@ -8,14 +8,14 @@
     "needsReview": false
   },
   "templeInformation": {
-    "moolavar": "Govardhanesha Perumal",
-    "thayaar": "Satyabhama Nachiyar",
-    "vimanam": "Govardhana Vimanam",
-    "theertham": "Yamuna Nadi",
-    "travelNote": "Sri Krishna Janmabhoomi is located in Mathura, whereas the Divyadesam temple is situated in Vrindavan."
+    "moolavar": "Govardhanesha Perumāl",
+    "thayaar": "Satyabhāma Nāchiyār",
+    "vimanam": "Govardhana Vimānam",
+    "theertham": "Yamunā Nadi",
+    "travelNote": "Shri Krishna Janmabhoomi is located in Mathura, whereas the Divyadesam temple is situated in Vrindavan."
   },
-  "sthalaPuranam": "The town of Mathura has been mentioned in all the previous yugams. It is said in Krita Yugam that Lord Vamana's Sidhaashramam was present here. In the Treta Yugam, it is said that Shatrugna beat Lavanasuran and made Mathura his capital for twelve years. In Dwapara Yugam, Lord Sri Krishna was born here in this kshethram. Although the Lord was born here, the Divyadesam is located in Vrindavan, which is 10 km from Mathura. Mathura is said to be the center of Vraja Bhoomi. Vraja Bhoomi refers to an area of 184 km, which Lord Sri Krishna is said to have roamed with His bare feet.The temple from Azhwar pasurams does not stand today but there is a South-Indian style Rangji Mandir in Vrindavan that is very popular.",
-  "azhwarPasuram": "Periya Azhwar: 16 Pasurams\nSri Andal: 19 Pasurams\nThondaradipodi Azhwar: 1 pasuram\nTirumangai Azhwar: 4 Pasurams\nNam Azhwar: 10 Pasurams\nTotal: 50 Pasurams",
+  "sthalaPuranam": "The town of Mathura has been mentioned in all the previous yugams. It is said in Kṛta Yugam that Lord Vāmana's Sidhaashramam was present here. In the Treta Yugam, it is said that Shatrugna beat Lavanasuran and made Mathura his capital for twelve years. In Dvāpara Yugam, Lord Shri Krishna was born here in this kshethram. Although the Lord was born here, the Divyadesam is located in Vrindavan, which is 10 km from Mathura. Mathura is said to be the center of Vraja Bhūmi. Vraja Bhūmi refers to an area of 184 km, which Lord Shri Krishna is said to have roamed with His bare feet.The temple from Āzhwār pāsurams does not stand today but there is a South-Indian style Rangji Mandir in Vrindavan that is very popular.",
+  "azhwarPasuram": "Periya Āzhwār: 16 Pāsurams\nShri Āṇḍāl: 19 Pāsurams\nToṇḍaraḍippoḍi Āzhwār: 1 pāsuram\nTirumangai Āzhwār: 4 Pāsurams\nNam Āzhwār: 10 Pāsurams\nTotal: 50 Pāsurams",
   "shrines": [
     {
       "label": null,
@@ -47,25 +47,25 @@
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tiruvadamaduraipaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tiruvadamaduraipaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     },
     {
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tiruvadamaduraipaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     },
     {
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tiruvadamaduraipaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     }
   ],
   "relatedContent": [],

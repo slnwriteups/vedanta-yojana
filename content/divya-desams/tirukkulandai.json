@@ -9,13 +9,13 @@
   },
   "templeInformation": {
     "moolavar": "Mayakoothan",
-    "thayaar": "Kulaindaivalli Nachiyar",
-    "vimanam": "Anandanilaya Vimanam",
-    "theertham": "Perungulam Theertham",
-    "travelNote": "This kshethram is one of the Nava Tirupati temples, located 11 km from Srivaikuntam."
+    "thayaar": "Kulaindaivalli Nāchiyār",
+    "vimanam": "Anandanilaya Vimānam",
+    "theertham": "Perungulam Tīrtham",
+    "travelNote": "This kshethram is one of the Nava Tirupati temples, located 11 km from Shrīvaikuṇṭham."
   },
   "sthalaPuranam": "The legend has it that Kamalavathi, the daughter of a brahmin named Vedasaran, meditated on the Lord, intending to marry Him. Pleased with her prayers, the Lord embraced and married her. Hence, this place is called Balika Vanam. It is also said that the Lord slew a demon, Asmacharan, in a Mayayuddham and performed a dance similar to Rudra-tandavam after His victory. Hence, the deity is called Mayakoothan.",
-  "azhwarPasuram": "Nam Azhwar: 11 Pasurams",
+  "azhwarPasuram": "Nam Āzhwār: 11 Pāsurams",
   "shrines": [
     {
       "label": null,
@@ -36,25 +36,25 @@
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tirukkulandaipaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     },
     {
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tirukkulandaipaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tirukkulandaipaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tirukkulandaipaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     }
   ],
   "relatedContent": [],

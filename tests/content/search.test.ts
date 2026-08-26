@@ -95,8 +95,8 @@ test("no content-lib/search file imports node:fs directly (only corpus.ts touche
 // ---------------------------------------------------------------------------
 
 test("8: matching is case-insensitive", () => {
-  const lower = searchContent(corpus, "sri rangam");
-  const upper = searchContent(corpus, "SRI RANGAM");
+  const lower = searchContent(corpus, "shri raṅgam");
+  const upper = searchContent(corpus, "SHRI RAṄGAM");
   assert.equal(lower.length, upper.length);
   assert.ok(lower.length > 0);
 });
@@ -111,15 +111,15 @@ test("10: empty/whitespace-only query returns no matches", () => {
 });
 
 test("11: multi-word query requires every term to be present somewhere in the record", () => {
-  const matches = searchContent(corpus, "sri ranganathar");
+  const matches = searchContent(corpus, "shri raṅganāthar");
   assert.ok(matches.some((m) => m.document.href === "/divya-desams/sri-rangam"));
 
-  const noMatch = searchContent(corpus, "sri zzz-nonexistent-term-zzz");
+  const noMatch = searchContent(corpus, "shri zzz-nonexistent-term-zzz");
   assert.deepEqual(noMatch, []);
 });
 
 test("12: an exact title match is found", () => {
-  const matches = searchContent(corpus, "Sri Rangam");
+  const matches = searchContent(corpus, "Shri Raṅgam");
   const sriRangam = matches.find((m) => m.document.href === "/divya-desams/sri-rangam");
   assert.ok(sriRangam);
   assert.equal(sriRangam?.tier, 1);
@@ -127,14 +127,14 @@ test("12: an exact title match is found", () => {
 
 test("13: a body-only match (sthalaPuranam) is found", () => {
   // "Vaikuntham" appears in Sri Rangam's sthalaPuranam, not in its title.
-  const matches = searchContent(corpus, "Vaikuntham");
+  const matches = searchContent(corpus, "Vaikuṇṭham");
   const sriRangam = matches.find((m) => m.document.href === "/divya-desams/sri-rangam");
   assert.ok(sriRangam, "expected a body match for Sri Rangam via sthalaPuranam");
 });
 
 test("14: a temple-information field match is found (thayaar, not in the title)", () => {
   // "Ranagnayaki" is Sri Rangam's thayaar, not part of its title "Sri Rangam".
-  const matches = searchContent(corpus, "Ranagnayaki");
+  const matches = searchContent(corpus, "Raṅganāyaki");
   const sriRangam = matches.find((m) => m.document.href === "/divya-desams/sri-rangam");
   assert.ok(sriRangam);
   assert.equal(sriRangam?.tier, 4);
@@ -145,7 +145,7 @@ test("Phase 6E-C: a shrine-level field (a sub-shrine's own moolavar) is discover
   // "Manikkundra Perumal" is the Moolavar of Manikkunram, one of Tanjai
   // Mamanikoyil's 3 shrines -- present only in shrines[1].templeInformation,
   // never in the record-level templeInformation or displayName.
-  const matches = searchContent(corpus, "Manikkundra Perumal");
+  const matches = searchContent(corpus, "Manikkundra Perumāl");
   const tanjai = matches.filter((m) => m.document.href === "/divya-desams/tanjai-mamanikoyil");
   assert.equal(tanjai.length, 1, "expected exactly one match entry for the parent record, not one per shrine");
   assert.equal(tanjai[0].matchedField?.name, "shrineMoolavar");
@@ -194,7 +194,7 @@ test("18: punctuation and unusual input do not crash the matcher", () => {
 // ---------------------------------------------------------------------------
 
 test("19: an exact title match ranks above weaker matches for the same query", () => {
-  const ranked = rankSearchResults(searchContent(corpus, "Sri Rangam"));
+  const ranked = rankSearchResults(searchContent(corpus, "Shri Raṅgam"));
   assert.ok(ranked.length > 0);
   assert.equal(ranked[0].document.href, "/divya-desams/sri-rangam");
   assert.equal(ranked[0].tier, 1);
@@ -260,17 +260,17 @@ test("25: long content produces a bounded excerpt", () => {
 });
 
 test("26: a title-only match (tier 1-3) does not produce an excerpt via search()", () => {
-  const results = search("Sri Rangam");
+  const results = search("Shri Raṅgam");
   const sriRangam = results.find((r) => r.href === "/divya-desams/sri-rangam");
   assert.ok(sriRangam);
   assert.equal(sriRangam?.excerpt, undefined);
 });
 
 test("a strong-field match (tier 4) via search() does produce an excerpt", () => {
-  const results = search("Ranagnayaki");
+  const results = search("Raṅganāyaki");
   const sriRangam = results.find((r) => r.href === "/divya-desams/sri-rangam");
   assert.ok(sriRangam);
-  assert.ok(sriRangam?.excerpt && sriRangam.excerpt.includes("Ranagnayaki"));
+  assert.ok(sriRangam?.excerpt && sriRangam.excerpt.includes("Raṅganāyaki"));
 });
 
 // ---------------------------------------------------------------------------

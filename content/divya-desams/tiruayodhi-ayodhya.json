@@ -1,6 +1,6 @@
 {
   "slug": "tiruayodhi-ayodhya",
-  "displayName": "Tiruayodhi (Ayodhya)",
+  "displayName": "Tiruayodhi (Ayodhyā)",
   "status": "published",
   "migration": {
     "sourcePageId": "page.Page99",
@@ -8,13 +8,13 @@
     "needsReview": false
   },
   "templeInformation": {
-    "moolavar": "Sri Ramar",
-    "thayaar": "Sita Devi",
+    "moolavar": "Shri Rāmar",
+    "thayaar": "Sītā Devī",
     "vimanam": "Pushkala Vimnama",
-    "theertham": "Saryu Theertham"
+    "theertham": "Saryu Tīrtham"
   },
-  "sthalaPuranam": "The legend has it that Lord Vishnu extracted Ayodhya, a part of Vaikuntam, and presented it to Lord Brahma, who then gave it to his son, Swaayambhuva Manu, who brought it to Bhooloka and placed it on the banks of the Sarayu River. The original temples, on which the Azhwars composed the Divya Prabhandam, were destroyed by invaders. Now, there are shrines for Ranganathar and Rama in the Ammaji Temple, located on the banks of the River Sarayu as well as the newly constructed Ayodhya Ram Janmabhoomi Mandir.\n\nThis temple for Lord Hanuman is known as Hanuman Gadhi. The Lord here is said to be the protector of Ayodhya.\nPerforming go-dhaanam on the banks of the Saryu River is said to give the person performing dhaanam moksham.",
-  "azhwarPasuram": "Tirumangai Azhwar: 1 pasuram\nNam Azhwar: 1 pasuram\nKulasekara Azhwar: 4 Pasurams\nPeriya Azhwar: 6 Pasurams\nThondaradipodi Azhwar: 1 pasuram\nTotal: 13 Pasurams",
+  "sthalaPuranam": "The legend has it that Lord Vishṇu extracted Ayodhyā, a part of Vaikuṇṭham, and presented it to Lord Brahmā, who then gave it to his son, Swaayambhuva Manu, who brought it to Bhooloka and placed it on the banks of the Sarayū River. The original temples, on which the Āzhwārs composed the Divya Prabhandam, were destroyed by invaders. Now, there are shrines for Raṅganāthar and Rāma in the Ammaji Temple, located on the banks of the River Sarayū as well as the newly constructed Ayodhyā Ram Janmabhoomi Mandir.\n\nThis temple for Lord Hanumān is known as Hanumān Gadhi. The Lord here is said to be the protector of Ayodhyā.\nPerforming go-dhaanam on the banks of the Saryu River is said to give the person performing dhaanam moksham.",
+  "azhwarPasuram": "Tirumangai Āzhwār: 1 pāsuram\nNam Āzhwār: 1 pāsuram\nKulashekara Āzhwār: 4 Pāsurams\nPeriya Āzhwār: 6 Pāsurams\nToṇḍaraḍippoḍi Āzhwār: 1 pāsuram\nTotal: 13 Pāsurams",
   "shrines": [
     {
       "label": null,
@@ -87,25 +87,25 @@
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tiruvayoddhipaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     },
     {
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tiruvayoddhipaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tiruvayoddhipaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tiruvayoddhipaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     }
   ],
   "relatedContent": [],

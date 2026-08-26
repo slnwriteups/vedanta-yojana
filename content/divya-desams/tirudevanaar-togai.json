@@ -9,13 +9,13 @@
   },
   "templeInformation": {
     "moolavar": "Devinayakan",
-    "thayaar": "Sridevi Bhoodevi",
-    "vimanam": "Sobhana Vimanam",
-    "theertham": "Shobana Pushkarani",
-    "travelNote": "6 km from Sirkazhi"
+    "thayaar": "Shrīdevī Bhūdevi",
+    "vimanam": "Sobhana Vimānam",
+    "theertham": "Shobana Pushkariṇī",
+    "travelNote": "6 km from Sīrkāzhi"
   },
   "sthalaPuranam": "Legend has it that all the devas, along with Vasishta Muni, assembled here at this kshethram after the Samudra-Manthanam and worshipped the Lord here.",
-  "azhwarPasuram": "Tirumangai Azhwar: 10 Pasurams",
+  "azhwarPasuram": "Tirumangai Āzhwār: 10 Pāsurams",
   "shrines": [
     {
       "label": null,
@@ -36,25 +36,25 @@
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tiruttevanaartogaipaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tiruttevanaartogaipaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     },
     {
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tiruttevanaartogaipaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tiruttevanaartogaipaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     }
   ],
   "relatedContent": [],

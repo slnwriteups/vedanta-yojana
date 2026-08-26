@@ -9,13 +9,13 @@
   },
   "templeInformation": {
     "moolavar": "Aamaruviyappan",
-    "thayaar": "Senkamalavalli Thayaar",
-    "vimanam": "Garuda Vimanam",
-    "theertham": "Darshana Pushkarani",
-    "travelNote": "This kshethram is located close to Mayiladuthurai, on the Kumbakonam road."
+    "thayaar": "Senkamalavalli Thāyār",
+    "vimanam": "Garuḍa Vimānam",
+    "theertham": "Darshana Pushkariṇī",
+    "travelNote": "This kshethram is located close to Māyilāduthurai, on the Kumbakoṇam road."
   },
-  "sthalaPuranam": "Legend has it that Lord Brahma caused the herds of cattle being grazed by Lord Krishna to disappear, upon which Lord Krishna created another herd. Finding this, Brahma apologized to Krishna and requested Him to take abode at Tiruvazhandur. In the sanctum, Prahlada is to the right of the moolavar and Garudan to His left. After witnessing Narasimha Avataram of the Lord, Prahlada asks to see the lord in a Shantha-Swaroopam (calm form), to which the Lord gave him darshanam at this kshethram. It is said that the vimanam of this kshethram was given by Garudan, hence the name Garuda Vimanam.\n\n*** This kshethram is also the birthplace of the great Tamizh poet Kambar, who has given us the magnum opus of Kamba Ramayanam, which rivals and trumps Valmiki Ramayanam in terms of poetic beauty. One can find a shrine dedicated to Kambar and his wife here at this kshethram.",
-  "azhwarPasuram": "Tirumangai Azhwar – 45 Pasurams",
+  "sthalaPuranam": "Legend has it that Lord Brahmā caused the herds of cattle being grazed by Lord Krishna to disappear, upon which Lord Krishna created another herd. Finding this, Brahmā apologized to Krishna and requested Him to take abode at Tiruvazhandur. In the sanctum, Prahlada is to the right of the mūlavar and Garuḍan to His left. After witnessing Narasimha Avataram of the Lord, Prahlada asks to see the lord in a Shantha-Swaroopam (calm form), to which the Lord gave him darshanam at this kshethram. It is said that the vimānam of this kshethram was given by Garuḍan, hence the name Garuḍa Vimānam.\n\n*** This kshethram is also the birthplace of the great Tamizh poet Kambar, who has given us the magnum opus of Kamba Ramayanam, which rivals and trumps Vālmīki Ramayanam in terms of poetic beauty. One can find a shrine dedicated to Kambar and his wife here at this kshethram.",
+  "azhwarPasuram": "Tirumangai Āzhwār – 45 Pāsurams",
   "shrines": [
     {
       "label": null,
@@ -36,25 +36,25 @@
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tiruvazunduurpaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tiruvazunduurpaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     },
     {
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tiruvazunduurpaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     },
     {
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tiruvazunduurpaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     }
   ],
   "relatedContent": [],

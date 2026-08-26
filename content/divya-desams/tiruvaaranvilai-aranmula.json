@@ -8,13 +8,13 @@
     "needsReview": false
   },
   "templeInformation": {
-    "moolavar": "Parthasarathy Perumal",
-    "thayaar": "Padmasini Thayaar",
-    "vimanam": "Vamana Vimanam",
-    "theertham": "Pampa Theertham",
-    "travelNote": "This kshetram is located on the banks of the River Pampa, 9 km from Chengannur\n\nnear Kottayam in Kerala."
+    "moolavar": "Pārthasārathy Perumāl",
+    "thayaar": "Padmāsini Thāyār",
+    "vimanam": "Vāmana Vimānam",
+    "theertham": "Pampa Tīrtham",
+    "travelNote": "This kshetram is located on the banks of the River Pampa, 9 km from Cheṅgannūr\n\nnear Kōṭṭayam in Kerala."
   },
-  "sthalaPuranam": "This kshethram is believed to have been built by Arjuna, one of the Pandavas. It is also believed that Lord Vishnu revealed Himself to Lord Brahma and Maharishi Vedavyasa at this kshethram.",
+  "sthalaPuranam": "This kshethram is believed to have been built by Arjuna, one of the Pāṇḍavas. It is also believed that Lord Vishṇu revealed Himself to Lord Brahmā and Maharshi Vedavyāsa at this kshethram.",
   "shrines": [
     {
       "label": null,
@@ -35,29 +35,29 @@
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tiruvaaranvilaipaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     },
     {
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tiruvaaranvilaipaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tiruvaaranvilaipaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     },
     {
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tiruvaaranvilaipaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     }
   ],
   "relatedContent": [],
-  "azhwarPasuram": "NamAzhwar: 1 Pashuram\n\n*** This is one of the Pancha-Pandava Kshethrams. This temple is said to have been\n\nestablished by Arjuna.",
+  "azhwarPasuram": "Nammāzhwār: 1 Pāsuram\n\n*** This is one of the Pancha-Pāṇḍava Kshethrams. This temple is said to have been\n\nestablished by Arjuna.",
   "translations": {
     "ta": {
       "displayName": "திருவாரண்விளை (அரண்முள)",

@@ -8,14 +8,14 @@
     "needsReview": false
   },
   "templeInformation": {
-    "moolavar": "Srisukthinatha Perumal",
-    "thayaar": "Maduraveni Nachiyar",
-    "vimanam": "Soundarya Vimanam",
-    "theertham": "Perunkulam Theertham",
-    "travelNote": "This kshethram is located about 25 km from Ernakulam."
+    "moolavar": "Srisukthinatha Perumāl",
+    "thayaar": "Maduraveni Nāchiyār",
+    "vimanam": "Soundarya Vimānam",
+    "theertham": "Perunkulam Tīrtham",
+    "travelNote": "This kshethram is located about 25 km from Ernākuḷam."
   },
-  "sthalaPuranam": "This shrine is associated with legends from the Ramayana. Bharata, the brother of Sri Rama and Lakshmana, came to invite Sri Rama, then in exile, to take over the reins of the kingdom, an angry Lakshmana suspecting Bharata's intentions intended to kill Him; however, Bharata's innocence was very soon revealed, and then the two of them offered worship together at Tirumoozhikkalam.\n\n***As per another legend, Hareetha Maharishi was performing penance at this place. Lord Vishnu was pleased by his devotion and appeared to him. The sage requested the Lord to guide how all men can proceed with Varnashrama Dharma. Vishnu uttered the sacred words, after which the place came to be known as Thirumoozhikkalam. The name Tirumoozhikkalam is said to have originated from the phrase tiru-mozhi-kalam, the place where sweet words were uttered.",
-  "azhwarPasuram": "Nam Azhwar: 10 Pasurams",
+  "sthalaPuranam": "This shrine is associated with legends from the Rāmāyaṇa. Bharata, the brother of Shri Rāma and Lakshmaṇa, came to invite Shri Rāma, then in exile, to take over the reins of the kingdom, an angry Lakshmaṇa suspecting Bharata's intentions intended to kill Him; however, Bharata's innocence was very soon revealed, and then the two of them offered worship together at Tirumoozhikkalam.\n\n***As per another legend, Hareetha Maharshi was performing penance at this place. Lord Vishṇu was pleased by his devotion and appeared to him. The sage requested the Lord to guide how all men can proceed with Varnashrama Dharma. Vishṇu uttered the sacred words, after which the place came to be known as Thirumoozhikkalam. The name Tirumoozhikkalam is said to have originated from the phrase tiru-mozhi-kalam, the place where sweet words were uttered.",
+  "azhwarPasuram": "Nam Āzhwār: 10 Pāsurams",
   "shrines": [
     {
       "label": null,
@@ -36,25 +36,25 @@
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tirumuuzikkalampaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     },
     {
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tirumuuzikkalampaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tirumuuzikkalampaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tirumuuzikkalampaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     }
   ],
   "relatedContent": [],

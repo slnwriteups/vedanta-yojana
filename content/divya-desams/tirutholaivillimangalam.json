@@ -9,13 +9,13 @@
   },
   "templeInformation": {
     "moolavar": "Devapiran / Aravindalochanan",
-    "thayaar": "Karuthadankanni Nachiyar",
-    "vimanam": "Kumuda Vimanam",
-    "theertham": "Varuna Theertham / Thamaraparani River",
-    "travelNote": "This kshethram is one of the Nava Tirupati temples and is located around 3 km from Srivaikuntam."
+    "thayaar": "Karuthadankanni Nāchiyār",
+    "vimanam": "Kumuda Vimānam",
+    "theertham": "Varuṇa Tīrtham / Thamaraparani River",
+    "travelNote": "This kshethram is one of the Nava Tirupati temples and is located around 3 km from Shrīvaikuṇṭham."
   },
-  "sthalaPuranam": "The legend has it that Kubera cursed a couple to assume the forms of a weight-measure (tulai) and a bow (Villu). When Athreya Suprapa Muni was performing a yagnam at this kshethram, he found the scale and the bow in the yagashala. When he touched them, they transformed into a man and a woman and were relieved of the curse. Thus, the kshethram obtained the name Tulaivillimangalam. It is also believed that the Ashwini Devatas worshipped Lord Vishnu at this kshetram with red lotus flowers (Senthamarai Kannan – Aravindalochanan). Lord Devapiran is said to have given darshanam to all the devas after the yagnam attained its completion.",
-  "azhwarPasuram": "Nam Azhwar: 11 Pasurams",
+  "sthalaPuranam": "The legend has it that Kubera cursed a couple to assume the forms of a weight-measure (tulai) and a bow (Villu). When Athreya Suprapa Muni was performing a yajña at this kshethram, he found the scale and the bow in the yagashala. When he touched them, they transformed into a man and a woman and were relieved of the curse. Thus, the kshethram obtained the name Tulaivillimangalam. It is also believed that the Ashwini Devatas worshipped Lord Vishṇu at this kshetram with red lotus flowers (Senthamarai Kaṇṇan – Aravindalochanan). Lord Devapiran is said to have given darshanam to all the devas after the yajña attained its completion.",
+  "azhwarPasuram": "Nam Āzhwār: 11 Pāsurams",
   "shrines": [
     {
       "label": "Aravindalochanan",
@@ -47,25 +47,25 @@
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tiruttolaivillimangalampaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tiruttolaivillimangalampaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     },
     {
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tiruttolaivillimangalampaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     },
     {
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tiruttolaivillimangalampaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     }
   ],
   "relatedContent": [],

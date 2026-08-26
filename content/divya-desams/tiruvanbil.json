@@ -9,13 +9,13 @@
   },
   "templeInformation": {
     "moolavar": "Vadivazhagiya Nambi",
-    "thayaar": "Azhyagiyavalli Thayaar",
-    "theertham": "Mandooka-Pushkarani",
+    "thayaar": "Azhyagiyavalli Thāyār",
+    "theertham": "Mandooka-Pushkariṇī",
     "travelNote": "This kshethram is located very close to Lalgudi.",
     "vimanam": "Taraka Viamanam"
   },
-  "sthalaPuranam": "Legend has it that the Lord Brahma and Valmiki worshipped the Lord at this kshethram. Another story tells the episode of Mandooka Maharishi. Mandooka Maharishi earned his name as he would perform penance in cold water, holding his breath for extended periods. Once, when he was in deep penance, Maharishi Durvasa visited the water body. When Mandooka Maharishi did not notice his presence, Maharishi Durvasa cursed Mandooka Maharishi that he would take the form of a toad. Upon worshipping the Lord at this kshethram, the curse was said to be broken, and he regained his human form. Hence, the pushkarani at this kshethram is named Mandooka-Pushkarani.",
-  "azhwarPasuram": "Tirumazhisai Azhwar – 1\n\nPratyaksham: Brahma, Shivan, Urvashi, Valmiki, Mandooka Maharishi",
+  "sthalaPuranam": "Legend has it that the Lord Brahmā and Vālmīki worshipped the Lord at this kshethram. Another story tells the episode of Mandooka Maharshi. Mandooka Maharshi earned his name as he would perform penance in cold water, holding his breath for extended periods. Once, when he was in deep penance, Maharshi Durvāsa visited the water body. When Mandooka Maharshi did not notice his presence, Maharshi Durvāsa cursed Mandooka Maharshi that he would take the form of a toad. Upon worshipping the Lord at this kshethram, the curse was said to be broken, and he regained his human form. Hence, the pushkariṇī at this kshethram is named Mandooka-Pushkariṇī.",
+  "azhwarPasuram": "Tirumazhisai Āzhwār – 1\n\nPratyaksham: Brahmā, Shivan, Urvashi, Vālmīki, Mandooka Maharshi",
   "shrines": [
     {
       "label": null,
@@ -36,25 +36,25 @@
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tiruvanbilpaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasuram"
+      "sourceLabel": "Sanskrit Pāsuram"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tiruvanbilpaasurangal.pdf",
-      "sourceLabel": "Kannada Pasuram"
+      "sourceLabel": "Kannada Pāsuram"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tiruvanbilpaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasuram"
+      "sourceLabel": "Tamizh Pāsuram"
     },
     {
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tiruvanbilpaasurangal.pdf",
-      "sourceLabel": "English Pasuram"
+      "sourceLabel": "English Pāsuram"
     }
   ],
   "relatedContent": [],

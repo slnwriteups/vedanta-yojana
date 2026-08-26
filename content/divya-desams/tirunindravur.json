@@ -8,14 +8,14 @@
     "needsReview": false
   },
   "templeInformation": {
-    "moolavar": "Bhakthavatsala Perumal",
-    "thayaar": "Sudhavalli / Ennaipetra Thayaar",
-    "vimanam": "Utpala Vimanam",
-    "theertham": "Varuna Pushkarani",
+    "moolavar": "Bhakthavatsala Perumāl",
+    "thayaar": "Sudhavalli / Ennaipetra Thāyār",
+    "vimanam": "Utpala Vimānam",
+    "theertham": "Varuṇa Pushkariṇī",
     "travelNote": "This kshethram is situated 25 km from Chennai, on the Chennai-Tiruvaloor Road."
   },
-  "sthalaPuranam": "The legend has it that Varuna and Samudraraja worshipped Lord Vishnu at this kshethram. It is also believed that the Lord visiting this kshethram, followed by Lakshmi, made it His home, and hence the name Triu Ninravoor. It is said that Tirumangai Azhwar, after worshipping at this shrine, left without singing a pasuram. The Lord followed him to Mamallapuram, where he sang the pasuram, referring to this kshethram.",
-  "azhwarPasuram": "Tirumangai Azhwar: 2 Pasurams",
+  "sthalaPuranam": "The legend has it that Varuṇa and Samudraraja worshipped Lord Vishṇu at this kshethram. It is also believed that the Lord visiting this kshethram, followed by Lakshmī, made it His home, and hence the name Triu Ninravoor. It is said that Tirumangai Āzhwār, after worshipping at this shrine, left without singing a pāsuram. The Lord followed him to Māmallapuram, where he sang the pāsuram, referring to this kshethram.",
+  "azhwarPasuram": "Tirumangai Āzhwār: 2 Pāsurams",
   "shrines": [
     {
       "label": null,
@@ -36,25 +36,25 @@
       "language": "English",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/english/tiruninravuurpaasurangal.pdf",
-      "sourceLabel": "English Pasurams"
+      "sourceLabel": "English Pāsurams"
     },
     {
       "language": "Tamil",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/tamil/tiruninravuurpaasurangal.pdf",
-      "sourceLabel": "Tamizh Pasurams"
+      "sourceLabel": "Tamizh Pāsurams"
     },
     {
       "language": "Kannada",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/kannada/tiruninravuurpaasurangal.pdf",
-      "sourceLabel": "Kannada Pasurams"
+      "sourceLabel": "Kannada Pāsurams"
     },
     {
       "language": "Sanskrit",
       "type": "pasuram-pdf",
       "url": "https://www.prapatti.com/slokas/sanskrit/tiruninravuurpaasurangal.pdf",
-      "sourceLabel": "Sanskrit Pasurams"
+      "sourceLabel": "Sanskrit Pāsurams"
     }
   ],
   "relatedContent": [],
