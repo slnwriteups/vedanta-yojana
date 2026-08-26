@@ -89,9 +89,13 @@ test("C: slug matches deterministic slug generation from the actual source title
   assert.equal(output.slug, "sri-rangam");
 });
 
-test("D: displayName is exactly the source title", () => {
-  assert.equal(output.displayName, rawSource.title);
-  assert.equal(output.displayName, "Sri Rangam");
+test("D: displayName is a disclosed IAST transliteration of the source title", () => {
+  // Was a byte-for-byte match against rawSource.title ("Sri Rangam") until
+  // commit 69e9411 applied the custom Sanskrit/Tamil IAST convention across
+  // all 108 Divya Desam records -- a disclosed editorial change layered on
+  // top of the migration output, the same category as the status/
+  // translations exclusions in test S below, not migration drift.
+  assert.equal(output.displayName, "Shri Raṅgam");
 });
 
 test("E: status is published", () => {
@@ -128,17 +132,19 @@ const kshethramBlock = rawSource.contentBlocks.find(
 ).content as string;
 
 test("H: templeInformation fields match the source's actual labeled values", () => {
-  assert.equal(output.templeInformation.moolavar, extractBetween(kshethramBlock, "Moolavar:", "Thayaar:"));
-  assert.equal(output.templeInformation.thayaar, extractBetween(kshethramBlock, "Thayaar:", "Vimanam:"));
-  assert.equal(output.templeInformation.vimanam, extractBetween(kshethramBlock, "Vimanam:", "Pushkarani:"));
-  assert.equal(output.templeInformation.theertham, extractBetween(kshethramBlock, "Pushkarani:", "Travel:"));
+  // moolavar/thayaar/vimanam/theertham were deliberately transliterated to
+  // the custom IAST convention in commit 69e9411 (a disclosed editorial
+  // change, not migration drift -- see test D above), so they no longer
+  // match the raw, untransliterated source text byte-for-byte. travelNote
+  // contains no Sanskrit-derived terms and is unaffected, so it still
+  // carries the original dynamic source comparison.
   assert.equal(output.templeInformation.travelNote, extractBetween(kshethramBlock, "Travel:", "Azhwar Pasuram:"));
 
-  // Spot-check the actual values, not just internal cross-consistency.
-  assert.equal(output.templeInformation.moolavar, "Sri Ranganathar Perumaal");
-  assert.equal(output.templeInformation.thayaar, "Sri Ranagnayaki Thayaar");
-  assert.equal(output.templeInformation.vimanam, "Pranavaakara Vimanam");
-  assert.equal(output.templeInformation.theertham, "Chandra Pushkarani");
+  // Spot-check the actual (now-transliterated, for the first four) values.
+  assert.equal(output.templeInformation.moolavar, "Shri Raṅganāthar Perumāl");
+  assert.equal(output.templeInformation.thayaar, "Shri Raṅganāyaki Thāyār");
+  assert.equal(output.templeInformation.vimanam, "Praṇavākāra Vimānam");
+  assert.equal(output.templeInformation.theertham, "Chandra Pushkariṇī");
   assert.equal(output.templeInformation.travelNote, "This kshethram is located 8 km from Trichy.");
 });
 
@@ -146,14 +152,14 @@ test("H: templeInformation fields match the source's actual labeled values", () 
 // I. Sthala Puranam preserved verbatim.
 // ---------------------------------------------------------------------------
 
-const sthalaPuranamBlock = rawSource.contentBlocks.find(
-  (b: any) => typeof b.content === "string" && b.content.includes("Sthala Puranam")
-).content as string;
-
-test("I: sthalaPuranam equals the source text after its label, independently extracted", () => {
-  const expected = extractBetween(sthalaPuranamBlock, "Sthala Puranam :", null);
-  assert.equal(output.sthalaPuranam, expected);
-  // Length sanity check guards against silent truncation.
+test("I: sthalaPuranam is a disclosed transliteration (plus a restored episode) of the source text", () => {
+  // No longer a byte-for-byte match against the raw source: commit 69e9411
+  // transliterated this narrative to the custom IAST convention AND
+  // restored a Chola king Dharmavarman episode that had been missing from
+  // the original extraction (both disclosed in that commit's message) --
+  // a deliberate editorial change layered on top of migration, not drift.
+  // The prefix/suffix and length sanity checks below are unaffected by
+  // either change and still hold.
   assert.ok(output.sthalaPuranam.length > 3000, "expected a long-form narrative, not a truncated fragment");
   assert.match(output.sthalaPuranam, /^The idol as we see it today/);
   assert.match(output.sthalaPuranam, /Muktinath$/);
@@ -163,11 +169,11 @@ test("I: sthalaPuranam equals the source text after its label, independently ext
 // J. Azhwar Pasuram preserved verbatim.
 // ---------------------------------------------------------------------------
 
-test("J: azhwarPasuram equals the source text after its label, independently extracted", () => {
-  const expected = extractBetween(kshethramBlock, "Azhwar Pasuram:", null);
-  assert.equal(output.azhwarPasuram, expected);
-  assert.match(output.azhwarPasuram, /^Periya Azhwar: 35 Pasurams/);
-  assert.match(output.azhwarPasuram, /Total: 247 Pasurams$/);
+test("J: azhwarPasuram is a disclosed transliteration of the source text", () => {
+  // No longer a byte-for-byte match against the raw source, for the same
+  // disclosed reason as tests D/H/I above (commit 69e9411's IAST pass).
+  assert.match(output.azhwarPasuram, /^Periya Āzhwār: 35 Pāsurams/);
+  assert.match(output.azhwarPasuram, /Total: 247 Pāsurams$/);
 });
 
 // ---------------------------------------------------------------------------
@@ -314,6 +320,48 @@ test("S: re-running the adapter + transformer against the same source produces a
   // Tamil/Kannada/Hindi content layered on top of the migrated English
   // record, not something the SAP-source migration pipeline knows how to
   // derive or is expected to reproduce.
-  const { translations: _translations, ...outputWithoutTranslations } = output;
-  assert.deepEqual(recomputed, { ...outputWithoutTranslations, status: "draft" });
+  //
+  // `region` is excluded for the same reason again: a later, separate
+  // commit ("Add traditional Sri Vaishnava regional classification...")
+  // hand-added this field directly to every Divya Desam record; the
+  // migration transform (scripts/migration/divya-desam.ts) has no concept
+  // of `region` at all and never produces it.
+  //
+  // `displayName`, `templeInformation`, `sthalaPuranam`, and
+  // `azhwarPasuram` are excluded for the same reason as tests D/H/I/J
+  // above: commit 69e9411 deliberately transliterated these fields to the
+  // custom IAST convention (and, for sthalaPuranam, restored a missing
+  // episode) as a disclosed editorial pass layered on top of the
+  // migration output -- the migration transform, run fresh here against
+  // the untouched raw source, correctly reproduces the ORIGINAL
+  // (untransliterated) text, which is expected to differ from the
+  // current file now.
+  //
+  // `resources[].sourceLabel` was transliterated too (e.g. "Kannada
+  // Pasuram" -> "Kannada Pāsuram"), same disclosed change, same reason --
+  // stripped per-entry below rather than excluding the whole `resources`
+  // array, so language/type/url still get compared field-for-field.
+  const stripSourceLabel = (resources: any[]) =>
+    resources.map(({ sourceLabel: _sourceLabel, ...rest }) => rest);
+
+  const {
+    translations: _translations,
+    region: _region,
+    displayName: _displayName,
+    templeInformation: _templeInformation,
+    sthalaPuranam: _sthalaPuranam,
+    azhwarPasuram: _azhwarPasuram,
+    resources: outputResources,
+    ...outputWithoutDisclosedEdits
+  } = output;
+  const {
+    displayName: _recomputedDisplayName,
+    templeInformation: _recomputedTempleInformation,
+    sthalaPuranam: _recomputedSthalaPuranam,
+    azhwarPasuram: _recomputedAzhwarPasuram,
+    resources: recomputedResources,
+    ...recomputedWithoutDisclosedEdits
+  } = recomputed;
+  assert.deepEqual(stripSourceLabel(recomputedResources), stripSourceLabel(outputResources));
+  assert.deepEqual(recomputedWithoutDisclosedEdits, { ...outputWithoutDisclosedEdits, status: "draft" });
 });
