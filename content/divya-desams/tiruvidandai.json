@@ -2,6 +2,7 @@
   "slug": "tiruvidandai",
   "displayName": "Tiruvidandai",
   "status": "published",
+  "region": "Toṇḍai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page65",
     "extractionConfidence": "high",

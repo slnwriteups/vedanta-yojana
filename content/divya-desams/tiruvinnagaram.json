@@ -2,6 +2,7 @@
   "slug": "tiruvinnagaram",
   "displayName": "Tiruvinnagaram",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page17",
     "extractionConfidence": "high",

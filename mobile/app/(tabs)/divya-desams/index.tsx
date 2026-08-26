@@ -1,14 +1,65 @@
+import { useMemo, useState } from "react";
 import { Stack, useRouter } from "expo-router";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { loadDivyaDesams, loadKnowledgeRecord, type DivyaDesam } from "../../../content-lib/loader.ts";
 import { sourcePageNumber, divyaDesamNumberLabels } from "../../../content-lib/ordering.ts";
 import { imagesByUuid } from "../../../content-lib/image-manifest.generated.ts";
 import { ContentCard } from "../../../components/ContentCard";
-import { layout, spacing, typography, useTheme } from "../../../theme";
+import { layout, radius, spacing, typography, useTheme } from "../../../theme";
 import { sectionTint } from "../../../section-tints.ts";
 import { localizeDivyaDesam, localizeKnowledge } from "../../../../content-lib/i18n.ts";
+import { DIVYA_DESAM_REGION_ORDER, type DivyaDesamRegion } from "../../../../content-lib/schemas/index.ts";
 import { useLanguage } from "../../../language-context.ts";
-import { recordCountLabel, useT } from "../../../ui-strings.ts";
+import { useT } from "../../../ui-strings.ts";
+
+/** The one region that is a celestial abode, not a terrestrial one -- gets "Celestial Divya Desams" instead of "Divya Desams" in the count line. */
+const CELESTIAL_REGION: DivyaDesamRegion = "Viṇṇulaga Tiruppatigaḷ";
+
+/**
+ * "All 108" is a UI-only pseudo-tab, not a content classification -- it
+ * is deliberately NOT a DivyaDesamRegion enum value (that would wrongly
+ * imply every record's own `region` field could be "All 108"). Kept as
+ * a distinct sentinel type so selectedTab can hold either this or a
+ * real region, and the filter below branches on it explicitly.
+ */
+const ALL_TAB = "All 108" as const;
+type DivyaDesamTab = typeof ALL_TAB | DivyaDesamRegion;
+const TABS: readonly DivyaDesamTab[] = [ALL_TAB, ...DIVYA_DESAM_REGION_ORDER];
+
+/**
+ * English-only for now (unlike the rest of this screen, which routes
+ * every string through ui-strings.ts's ta/kn/hi `pick()`): the region
+ * names themselves are proper Sri Vaishnava geographical terms, already
+ * language-invariant like temple/Azhwar names elsewhere in this corpus,
+ * but "N Divya Desams"/"N Celestial Divya Desams" is new UI chrome that
+ * would need real Tamil/Kannada/Hindi translations, not guessed ones --
+ * left as a disclosed gap rather than an invented, possibly-wrong one.
+ */
+function tabCountLabel(tab: DivyaDesamTab, count: number): string {
+  const noun = tab === CELESTIAL_REGION ? "Celestial Divya Desam" : "Divya Desam";
+  return `${count} ${noun}${count === 1 ? "" : "s"}`;
+}
+
+/** "All 108" gets its own longer heading; every real region is just its own name. */
+function tabHeading(tab: DivyaDesamTab): string {
+  return tab === ALL_TAB ? "All 108 Divya Desams" : tab;
+}
+
+/**
+ * The traditional Divya Desam count for a set of records -- NOT
+ * records.length. One record (Tiruttetriambalam Tirumanikoodam) is a
+ * single card/file but represents TWO traditionally-numbered Divya
+ * Desams (#36-37), so a record whose number label is a range ("36-37")
+ * counts as 2. Without this, "All 108" would read 107 and Chōḻa Nāḍu
+ * would read 39, both one short of the traditional total.
+ */
+function traditionalCount(records: DivyaDesam[], numberLabels: Map<string, string>): number {
+  let total = 0;
+  for (const record of records) {
+    total += numberLabels.get(record.slug)?.includes("-") ? 2 : 1;
+  }
+  return total;
+}
 
 /**
  * Phase 6C -- Divya Desam index refined: each card now shows an image
@@ -27,6 +78,16 @@ import { recordCountLabel, useT } from "../../../ui-strings.ts";
  * Each title is now prefixed with its traditional 1-108 number (see
  * ordering.ts#divyaDesamNumberLabels) so the pilgrimage sequence this
  * list is already sorted by is visible, not just implicit.
+ *
+ * "Geographical Classification" tabs: a horizontally-scrolling row of
+ * an "All 108" tab plus the seven traditional Sri Vaishnava regions
+ * (schemas/divya-desam.ts's DIVYA_DESAM_REGION_ORDER) sits above the
+ * list. Selecting a region tab filters the SAME FlatList to just that
+ * region's records via each record's own `region` field; "All 108" (the
+ * default) shows the full, unfiltered, canonically-ordered list -- no
+ * duplicate content, no separate screens/routes, mirroring the existing
+ * "existing entries filtered by an existing field" architecture rather
+ * than introducing a new one.
  */
 
 /** First resolvable image asset for a record, or null -- never a fabricated placeholder. */
@@ -52,6 +113,12 @@ export default function DivyaDesamsIndexScreen() {
   const introduction = loadedIntroduction ? localizeKnowledge(loadedIntroduction, language) : null;
   const tint = sectionTint("divya-desams", theme.scheme);
 
+  const [selectedTab, setSelectedTab] = useState<DivyaDesamTab>(ALL_TAB);
+  const regionRecords = useMemo(
+    () => (selectedTab === ALL_TAB ? records : records.filter((r) => r.region === selectedTab)),
+    [records, selectedTab]
+  );
+
   function renderItem({ item }: { item: DivyaDesam }) {
     return (
       <ContentCard
@@ -69,21 +136,62 @@ export default function DivyaDesamsIndexScreen() {
   return (
     <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <Stack.Screen options={{ title: t("tabDivyaDesams") }} />
-      <Text style={[styles.count, { color: theme.colors.muted }]}>{recordCountLabel(language, records.length)}</Text>
       <FlatList
-        data={records}
+        data={regionRecords}
         keyExtractor={(item) => item.slug}
         renderItem={renderItem}
         contentContainerStyle={styles.list}
         ListHeaderComponent={
-          introduction ? (
-            <ContentCard
-              title={introduction.title}
-              subtitle={t("introCardSubtitle")}
-              tintColor={tint}
-              onPress={() => router.push("/divya-desams/introduction" as never)}
-            />
-          ) : null
+          <View>
+            {introduction ? (
+              <ContentCard
+                title={introduction.title}
+                subtitle={t("introCardSubtitle")}
+                tintColor={tint}
+                onPress={() => router.push("/divya-desams/introduction" as never)}
+              />
+            ) : null}
+            <Text style={[styles.classificationEyebrow, { color: theme.colors.muted }]}>
+              GEOGRAPHICAL CLASSIFICATION
+            </Text>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.tabRow}
+            >
+              {TABS.map((tab) => {
+                const active = tab === selectedTab;
+                return (
+                  <Pressable
+                    key={tab}
+                    onPress={() => setSelectedTab(tab)}
+                    accessibilityRole="button"
+                    accessibilityState={{ selected: active }}
+                    accessibilityLabel={tab}
+                    style={[
+                      styles.tab,
+                      {
+                        backgroundColor: active ? tint : theme.colors.surface,
+                        borderColor: active ? tint : theme.colors.border,
+                      },
+                    ]}
+                  >
+                    <Text
+                      style={[styles.tabText, { color: active ? "#fffaf5" : theme.colors.foreground }]}
+                    >
+                      {tab}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </ScrollView>
+            <Text style={[styles.regionHeading, { color: theme.colors.foreground }]}>
+              {tabHeading(selectedTab)}
+            </Text>
+            <Text style={[styles.count, { color: theme.colors.muted }]}>
+              {tabCountLabel(selectedTab, traditionalCount(regionRecords, numberLabels))}
+            </Text>
+          </View>
         }
       />
     </View>
@@ -101,5 +209,38 @@ const styles = StyleSheet.create({
   },
   list: {
     paddingBottom: layout.tabBarClearance,
+  },
+  classificationEyebrow: {
+    fontSize: typography.eyebrow,
+    fontWeight: "700",
+    letterSpacing: 0.5,
+    paddingHorizontal: layout.screenPadding,
+    paddingTop: spacing.lg,
+    paddingBottom: spacing.sm,
+  },
+  // Horizontal-only: this ScrollView's own contentContainerStyle scrolls
+  // sideways within its row, never the outer FlatList/screen.
+  tabRow: {
+    paddingHorizontal: layout.screenPadding,
+    gap: spacing.sm,
+    paddingBottom: spacing.md,
+  },
+  tab: {
+    borderWidth: 1,
+    borderRadius: radius.lg,
+    paddingHorizontal: spacing.md,
+    minHeight: layout.minTouchTarget,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  tabText: {
+    fontSize: typography.small,
+    fontWeight: "600",
+  },
+  regionHeading: {
+    fontSize: typography.heading,
+    fontWeight: "700",
+    paddingHorizontal: layout.screenPadding,
+    paddingTop: spacing.sm,
   },
 });

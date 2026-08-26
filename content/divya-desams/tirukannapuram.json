@@ -2,6 +2,7 @@
   "slug": "tirukannapuram",
   "displayName": "Tirukannapuram",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page21",
     "extractionConfidence": "high",

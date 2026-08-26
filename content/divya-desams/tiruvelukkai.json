@@ -2,6 +2,7 @@
   "slug": "tiruvelukkai",
   "displayName": "Tiruvelukkai",
   "status": "published",
+  "region": "Toṇḍai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page49",
     "extractionConfidence": "high",

@@ -2,6 +2,7 @@
   "slug": "tiruvegka",
   "displayName": "Tiruvegka",
   "status": "published",
+  "region": "Toṇḍai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page54",
     "extractionConfidence": "high",

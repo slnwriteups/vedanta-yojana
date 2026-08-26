@@ -2,6 +2,7 @@
   "slug": "tirukurungudi",
   "displayName": "Tirukurungudi",
   "status": "published",
+  "region": "Pāṇḍya Nāḍu",
   "migration": {
     "sourcePageId": "page.Page81",
     "extractionConfidence": "high",

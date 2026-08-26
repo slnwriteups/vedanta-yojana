@@ -2,6 +2,7 @@
   "slug": "tirukkurugur-azhwar-tirunagari",
   "displayName": "Tirukkurugur (Āzhwār Tirunagari)",
   "status": "published",
+  "region": "Pāṇḍya Nāḍu",
   "migration": {
     "sourcePageId": "page.Page90",
     "extractionConfidence": "high",

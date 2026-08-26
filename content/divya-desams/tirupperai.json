@@ -2,6 +2,7 @@
   "slug": "tirupperai",
   "displayName": "Tirupperai",
   "status": "published",
+  "region": "Pāṇḍya Nāḍu",
   "migration": {
     "sourcePageId": "page.Page89",
     "extractionConfidence": "high",

@@ -2,6 +2,7 @@
   "slug": "tirumayam",
   "displayName": "Tirumayam",
   "status": "published",
+  "region": "Pāṇḍya Nāḍu",
   "migration": {
     "sourcePageId": "page.Page98",
     "extractionConfidence": "high",

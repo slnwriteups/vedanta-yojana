@@ -2,6 +2,7 @@
   "slug": "tirukoodal",
   "displayName": "Tirukoodal",
   "status": "published",
+  "region": "Pāṇḍya Nāḍu",
   "migration": {
     "sourcePageId": "page.Page93",
     "extractionConfidence": "low",

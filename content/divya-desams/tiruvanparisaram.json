@@ -2,6 +2,7 @@
   "slug": "tiruvanparisaram",
   "displayName": "Tiruvanparisaram",
   "status": "published",
+  "region": "Malai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page80",
     "extractionConfidence": "high",

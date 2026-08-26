@@ -2,6 +2,7 @@
   "slug": "tirupullani",
   "displayName": "Tirupullani",
   "status": "published",
+  "region": "Pāṇḍya Nāḍu",
   "migration": {
     "sourcePageId": "page.Page97",
     "extractionConfidence": "high",

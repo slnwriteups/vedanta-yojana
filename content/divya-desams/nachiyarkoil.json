@@ -2,6 +2,7 @@
   "slug": "nachiyarkoil",
   "displayName": "Nachiyarkoil",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page18",
     "extractionConfidence": "high",

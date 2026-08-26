@@ -2,6 +2,7 @@
   "slug": "tirukachchi-hasthigiri",
   "displayName": "Tirukachchi (Hasthigiri)",
   "status": "published",
+  "region": "Toṇḍai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page46",
     "extractionConfidence": "high",

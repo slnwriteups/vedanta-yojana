@@ -2,6 +2,7 @@
   "slug": "tiruvenkatam",
   "displayName": "Tiruvenkatam",
   "status": "published",
+  "region": "Vada Nāḍu",
   "migration": {
     "sourcePageId": "page.Page109",
     "extractionConfidence": "high",

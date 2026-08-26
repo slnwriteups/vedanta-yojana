@@ -2,6 +2,7 @@
   "slug": "kapisthalam",
   "displayName": "Kapisthalam",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page13",
     "extractionConfidence": "high",

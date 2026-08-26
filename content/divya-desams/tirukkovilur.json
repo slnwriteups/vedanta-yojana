@@ -2,6 +2,7 @@
   "slug": "tirukkovilur",
   "displayName": "Tirukkovilur",
   "status": "published",
+  "region": "Naḍu Nāḍu",
   "migration": {
     "sourcePageId": "page.Page45",
     "extractionConfidence": "high",

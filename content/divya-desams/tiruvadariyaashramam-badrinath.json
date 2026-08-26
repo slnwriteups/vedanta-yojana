@@ -2,6 +2,7 @@
   "slug": "tiruvadariyaashramam-badrinath",
   "displayName": "Tiruvadariyaashramam (Badrināth)",
   "status": "published",
+  "region": "Vada Nāḍu",
   "migration": {
     "sourcePageId": "page.Page103",
     "extractionConfidence": "high",

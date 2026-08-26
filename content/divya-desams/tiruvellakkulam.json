@@ -2,6 +2,7 @@
   "slug": "tiruvellakkulam",
   "displayName": "Tiruvellakkulam",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page41",
     "extractionConfidence": "high",

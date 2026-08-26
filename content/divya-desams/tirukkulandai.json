@@ -2,6 +2,7 @@
   "slug": "tirukkulandai",
   "displayName": "Tirukkulandai",
   "status": "published",
+  "region": "Pāṇḍya Nāḍu",
   "migration": {
     "sourcePageId": "page.Page87",
     "extractionConfidence": "high",

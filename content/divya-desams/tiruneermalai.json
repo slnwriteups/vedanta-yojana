@@ -2,6 +2,7 @@
   "slug": "tiruneermalai",
   "displayName": "Tiruneermalai",
   "status": "published",
+  "region": "Toṇḍai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page64",
     "extractionConfidence": "high",

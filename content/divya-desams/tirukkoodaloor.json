@@ -2,6 +2,7 @@
   "slug": "tirukkoodaloor",
   "displayName": "Tirukkoodaloor",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page12",
     "extractionConfidence": "high",

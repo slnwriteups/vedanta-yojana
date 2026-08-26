@@ -2,6 +2,7 @@
   "slug": "tirukkandam-devaprayag",
   "displayName": "Tirukkandam (Devaprayag)",
   "status": "published",
+  "region": "Vada Nāḍu",
   "migration": {
     "sourcePageId": "page.Page102",
     "extractionConfidence": "high",

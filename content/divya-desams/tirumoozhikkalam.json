@@ -2,6 +2,7 @@
   "slug": "tirumoozhikkalam",
   "displayName": "Tirumoozhikkalam",
   "status": "published",
+  "region": "Malai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page71",
     "extractionConfidence": "high",

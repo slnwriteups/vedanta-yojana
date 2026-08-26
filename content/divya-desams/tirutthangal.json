@@ -2,6 +2,7 @@
   "slug": "tirutthangal",
   "displayName": "Tirutthangal",
   "status": "published",
+  "region": "Pāṇḍya Nāḍu",
   "migration": {
     "sourcePageId": "page.Page92",
     "extractionConfidence": "high",

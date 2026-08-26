@@ -2,6 +2,7 @@
   "slug": "tiruvananthapuram",
   "displayName": "Tiruvanantapuram",
   "status": "published",
+  "region": "Malai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page78",
     "extractionConfidence": "high",

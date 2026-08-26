@@ -2,6 +2,7 @@
   "slug": "tirunaavai",
   "displayName": "Tirunaavai",
   "status": "published",
+  "region": "Malai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page68",
     "extractionConfidence": "high",

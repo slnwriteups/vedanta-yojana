@@ -2,6 +2,7 @@
   "slug": "tirudwarkai-dwarka",
   "displayName": "TiruDwarkai (Dvārakā)",
   "status": "published",
+  "region": "Vada Nāḍu",
   "migration": {
     "sourcePageId": "page.Page107",
     "extractionConfidence": "high",

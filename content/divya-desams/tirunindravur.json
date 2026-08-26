@@ -2,6 +2,7 @@
   "slug": "tirunindravur",
   "displayName": "Tirunindravur",
   "status": "published",
+  "region": "Toṇḍai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page61",
     "extractionConfidence": "high",

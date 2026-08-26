@@ -2,6 +2,7 @@
   "slug": "tirucherai",
   "displayName": "Tirucherai",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page19",
     "extractionConfidence": "high",

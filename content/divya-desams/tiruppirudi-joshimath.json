@@ -2,6 +2,7 @@
   "slug": "tiruppirudi-joshimath",
   "displayName": "Tiruppirudi (Joshimath)",
   "status": "published",
+  "region": "Vada Nāḍu",
   "migration": {
     "sourcePageId": "page.Page101",
     "extractionConfidence": "high",

@@ -2,6 +2,7 @@
   "slug": "tiruvaaranvilai-aranmula",
   "displayName": "Tiruvaaranvilai (Aranmula)",
   "status": "published",
+  "region": "Malai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page76",
     "extractionConfidence": "high",

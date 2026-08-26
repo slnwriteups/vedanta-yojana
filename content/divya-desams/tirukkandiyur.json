@@ -2,6 +2,7 @@
   "slug": "tirukkandiyur",
   "displayName": "Tirukkandiyur",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page11",
     "extractionConfidence": "high",

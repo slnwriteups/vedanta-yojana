@@ -2,6 +2,7 @@
   "slug": "tirukadalmallai",
   "displayName": "Tirukadalmallai",
   "status": "published",
+  "region": "Toṇḍai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page66",
     "extractionConfidence": "high",

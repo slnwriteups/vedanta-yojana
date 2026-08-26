@@ -2,6 +2,7 @@
   "slug": "tirumanimada-kovil",
   "displayName": "Tirumanimada Kovil",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page36",
     "extractionConfidence": "high",

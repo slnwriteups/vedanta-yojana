@@ -2,6 +2,7 @@
   "slug": "tiruvaipadi-gokulam",
   "displayName": "Tiruvaipadi (Gokulam)",
   "status": "published",
+  "region": "Vada Nāḍu",
   "migration": {
     "sourcePageId": "page.Page106",
     "extractionConfidence": "high",

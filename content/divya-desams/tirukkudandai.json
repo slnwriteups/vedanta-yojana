@@ -2,6 +2,7 @@
   "slug": "tirukkudandai",
   "displayName": "Tirukkudandai",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page16",
     "extractionConfidence": "high",

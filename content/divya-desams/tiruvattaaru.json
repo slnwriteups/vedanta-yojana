@@ -2,6 +2,7 @@
   "slug": "tiruvattaaru",
   "displayName": "Tiruvattaaru",
   "status": "published",
+  "region": "Malai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page79",
     "extractionConfidence": "high",

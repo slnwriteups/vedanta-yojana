@@ -2,6 +2,7 @@
   "slug": "tirupuliyur",
   "displayName": "Tirupuliyur",
   "status": "published",
+  "region": "Malai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page75",
     "extractionConfidence": "high",

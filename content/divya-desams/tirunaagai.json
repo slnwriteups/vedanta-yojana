@@ -2,6 +2,7 @@
   "slug": "tirunaagai",
   "displayName": "Tirunaagai",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page23",
     "extractionConfidence": "high",

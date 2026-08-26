@@ -2,6 +2,7 @@
   "slug": "tirukannamangai",
   "displayName": "Tirukannamangai",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page20",
     "extractionConfidence": "high",

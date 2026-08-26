@@ -2,6 +2,7 @@
   "slug": "srivilliputtur",
   "displayName": "Srivilliputtur",
   "status": "published",
+  "region": "Pāṇḍya Nāḍu",
   "migration": {
     "sourcePageId": "page.Page91",
     "extractionConfidence": "high",

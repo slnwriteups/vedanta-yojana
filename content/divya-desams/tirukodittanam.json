@@ -2,6 +2,7 @@
   "slug": "tirukodittanam",
   "displayName": "Tirukodittanam",
   "status": "published",
+  "region": "Malai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page73",
     "extractionConfidence": "high",

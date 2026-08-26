@@ -2,6 +2,7 @@
   "slug": "tiruayodhi-ayodhya",
   "displayName": "Tiruayodhi (Ayodhyā)",
   "status": "published",
+  "region": "Vada Nāḍu",
   "migration": {
     "sourcePageId": "page.Page99",
     "extractionConfidence": "high",

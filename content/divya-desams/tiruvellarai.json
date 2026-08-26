@@ -2,6 +2,7 @@
   "slug": "tiruvellarai",
   "displayName": "Tiruvellarai",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page8",
     "extractionConfidence": "high",

@@ -2,6 +2,7 @@
   "slug": "tiru-naimisharanayam",
   "displayName": "Tiru Naimishāraṇyam",
   "status": "published",
+  "region": "Vada Nāḍu",
   "migration": {
     "sourcePageId": "page.Page100",
     "extractionConfidence": "high",

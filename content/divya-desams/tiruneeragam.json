@@ -2,6 +2,7 @@
   "slug": "tiruneeragam",
   "displayName": "Tiruneeragam",
   "status": "published",
+  "region": "Toṇḍai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page50",
     "extractionConfidence": "high",

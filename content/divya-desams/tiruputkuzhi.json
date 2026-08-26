@@ -2,6 +2,7 @@
   "slug": "tiruputkuzhi",
   "displayName": "Tiruputkuzhi",
   "status": "published",
+  "region": "Toṇḍai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page60",
     "extractionConfidence": "high",

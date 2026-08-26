@@ -2,6 +2,7 @@
   "slug": "tirukakkarai-tirukatkarai",
   "displayName": "Tirukakkarai (Tirukatkarai)",
   "status": "published",
+  "region": "Malai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page70",
     "extractionConfidence": "high",

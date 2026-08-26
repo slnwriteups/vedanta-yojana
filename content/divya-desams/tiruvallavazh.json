@@ -2,6 +2,7 @@
   "slug": "tiruvallavazh",
   "displayName": "Tiruvallavazh",
   "status": "published",
+  "region": "Malai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page72",
     "extractionConfidence": "high",

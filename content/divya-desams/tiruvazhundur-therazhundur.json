@@ -2,6 +2,7 @@
   "slug": "tiruvazhundur-therazhundur",
   "displayName": "Tiruvazhundur(Therazhundur)",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page27",
     "extractionConfidence": "high",

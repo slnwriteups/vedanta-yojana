@@ -2,6 +2,7 @@
   "slug": "tiru-evvellur-tiruvallur",
   "displayName": "Tiru Evvellur (Tiruvallūr)",
   "status": "published",
+  "region": "Toṇḍai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page62",
     "extractionConfidence": "high",

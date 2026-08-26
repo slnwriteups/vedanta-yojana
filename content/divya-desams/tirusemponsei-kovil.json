@@ -2,6 +2,7 @@
   "slug": "tirusemponsei-kovil",
   "displayName": "Tirusemponsei Kovil",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page35",
     "extractionConfidence": "high",

@@ -2,6 +2,7 @@
   "slug": "tirukaaragam",
   "displayName": "Tirukaaragam",
   "status": "published",
+  "region": "Toṇḍai Nāḍu",
   "migration": {
     "sourcePageId": "page.Page55",
     "extractionConfidence": "high",

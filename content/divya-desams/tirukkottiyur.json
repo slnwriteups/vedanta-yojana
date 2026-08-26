@@ -2,6 +2,7 @@
   "slug": "tirukkottiyur",
   "displayName": "Tirukkottiyur",
   "status": "published",
+  "region": "Pāṇḍya Nāḍu",
   "migration": {
     "sourcePageId": "page.Page96",
     "extractionConfidence": "high",

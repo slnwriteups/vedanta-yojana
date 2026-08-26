@@ -2,6 +2,7 @@
   "slug": "tiruchirupuliyur",
   "displayName": "Tiruchirupuliyur",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page28",
     "extractionConfidence": "high",

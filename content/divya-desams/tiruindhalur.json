@@ -2,6 +2,7 @@
   "slug": "tiruindhalur",
   "displayName": "Tiruindhalur",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page30",
     "extractionConfidence": "high",

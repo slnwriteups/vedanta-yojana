@@ -2,6 +2,7 @@
   "slug": "tirukkolur",
   "displayName": "Tirukkolur",
   "status": "published",
+  "region": "Pāṇḍya Nāḍu",
   "migration": {
     "sourcePageId": "page.Page88",
     "extractionConfidence": "high",

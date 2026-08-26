@@ -2,6 +2,7 @@
   "slug": "sri-rangam",
   "displayName": "Shri Raṅgam",
   "status": "published",
+  "region": "Chōḻa Nāḍu",
   "migration": {
     "sourcePageId": "page.Page5",
     "extractionConfidence": "high",

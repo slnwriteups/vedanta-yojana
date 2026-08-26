@@ -2,6 +2,7 @@
   "slug": "tirumogur",
   "displayName": "Tirumogur",
   "status": "published",
+  "region": "Pāṇḍya Nāḍu",
   "migration": {
     "sourcePageId": "page.Page95",
     "extractionConfidence": "high",
