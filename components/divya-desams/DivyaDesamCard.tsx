@@ -8,11 +8,16 @@ import { DraftBadge } from "@/components/shared/DraftBadge";
  * language. The secondary line uses only an already-present field
  * (templeInformation.moolavar, the presiding deity) and is omitted
  * entirely when that field is absent -- never a fabricated summary.
+ *
+ * `number` is the traditional 1-108 Divya Desam number for this record
+ * (see divyaDesamNumberLabels() in the index page) -- a plain-text
+ * prefix, not a fabricated field on the record itself.
  */
-export function DivyaDesamCard({ record }: { record: DivyaDesam }) {
+export function DivyaDesamCard({ record, number }: { record: DivyaDesam; number: string }) {
   return (
     <li className="py-4">
       <Link href={`/divya-desams/${record.slug}`} className="block hover:underline">
+        <span className="mr-2 tabular-nums text-[var(--muted)]">{number}.</span>
         <span className="font-medium">{record.displayName}</span>
       </Link>
       {record.templeInformation.moolavar ? (

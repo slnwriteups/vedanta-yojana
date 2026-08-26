@@ -1,7 +1,7 @@
 import { Stack, useRouter } from "expo-router";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { loadDivyaDesams, loadKnowledgeRecord, type DivyaDesam } from "../../../content-lib/loader.ts";
-import { sourcePageNumber } from "../../../content-lib/ordering.ts";
+import { sourcePageNumber, divyaDesamNumberLabels } from "../../../content-lib/ordering.ts";
 import { imagesByUuid } from "../../../content-lib/image-manifest.generated.ts";
 import { ContentCard } from "../../../components/ContentCard";
 import { layout, spacing, typography, useTheme } from "../../../theme";
@@ -23,6 +23,10 @@ import { recordCountLabel, useT } from "../../../ui-strings.ts";
  * plus the introduction card, reinforcing "you're in this section" as
  * a section-wide identity rather than distinguishing them from each
  * other (their own photos already do that).
+ *
+ * Each title is now prefixed with its traditional 1-108 number (see
+ * ordering.ts#divyaDesamNumberLabels) so the pilgrimage sequence this
+ * list is already sorted by is visible, not just implicit.
  */
 
 /** First resolvable image asset for a record, or null -- never a fabricated placeholder. */
@@ -39,9 +43,11 @@ export default function DivyaDesamsIndexScreen() {
   const theme = useTheme();
   const { language } = useLanguage();
   const t = useT();
-  const records = [...loadDivyaDesams()]
-    .sort((a, b) => sourcePageNumber(a.migration.sourcePageId) - sourcePageNumber(b.migration.sourcePageId))
-    .map((r) => localizeDivyaDesam(r, language));
+  const sortedRecords = [...loadDivyaDesams()].sort(
+    (a, b) => sourcePageNumber(a.migration.sourcePageId) - sourcePageNumber(b.migration.sourcePageId)
+  );
+  const numberLabels = divyaDesamNumberLabels(sortedRecords.map((r) => r.slug));
+  const records = sortedRecords.map((r) => localizeDivyaDesam(r, language));
   const loadedIntroduction = loadKnowledgeRecord("introduction");
   const introduction = loadedIntroduction ? localizeKnowledge(loadedIntroduction, language) : null;
   const tint = sectionTint("divya-desams", theme.scheme);
@@ -49,7 +55,7 @@ export default function DivyaDesamsIndexScreen() {
   function renderItem({ item }: { item: DivyaDesam }) {
     return (
       <ContentCard
-        title={item.displayName}
+        title={`${numberLabels.get(item.slug)}. ${item.displayName}`}
         subtitle={item.templeInformation.moolavar}
         status={item.status}
         needsReview={item.migration.needsReview}

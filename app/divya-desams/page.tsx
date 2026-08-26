@@ -34,10 +34,40 @@ function sourcePageNumber(record: DivyaDesam): number {
   return parseInt(match[1], 10);
 }
 
+/**
+ * Traditional 1-108 Divya Desam numbering, derived positionally from
+ * the same source-page order used for sorting above -- not a new
+ * schema field.
+ *
+ * The corpus has exactly one exception: "Tiruttetriambalam
+ * Tirumanikoodam" is a single content record combining what the source
+ * book numbers as two separate Divya Desams (#36 and #37 -- confirmed
+ * against its own "108-36"/"108-37" image assets), so that one record
+ * displays as "36-37" and the running count advances by two only there.
+ * Every other record advances by one.
+ */
+const MERGED_DIVYA_DESAM_SLUG = "tiruttetriambalam-tirumanikoodam";
+
+function divyaDesamNumberLabels(sortedRecords: DivyaDesam[]): Map<string, string> {
+  const labels = new Map<string, string>();
+  let next = 1;
+  for (const record of sortedRecords) {
+    if (record.slug === MERGED_DIVYA_DESAM_SLUG) {
+      labels.set(record.slug, `${next}-${next + 1}`);
+      next += 2;
+    } else {
+      labels.set(record.slug, String(next));
+      next += 1;
+    }
+  }
+  return labels;
+}
+
 export default function DivyaDesamsIndexPage() {
   const records = [...loadDivyaDesams()].sort(
     (a, b) => sourcePageNumber(a) - sourcePageNumber(b)
   );
+  const numberLabels = divyaDesamNumberLabels(records);
 
   // Links to the "Introduction" record only when it actually resolves
   // through the loader -- never a fabricated link to content that
@@ -66,7 +96,7 @@ export default function DivyaDesamsIndexPage() {
 
       <ul role="list" className="divide-y divide-[var(--border)]">
         {records.map((record) => (
-          <DivyaDesamCard key={record.slug} record={record} />
+          <DivyaDesamCard key={record.slug} record={record} number={numberLabels.get(record.slug)!} />
         ))}
       </ul>
     </div>
