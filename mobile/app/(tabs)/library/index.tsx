@@ -40,6 +40,7 @@ export default function LibraryIndexScreen() {
         tintColor={tint}
         imageAsset={bookCoverAsset(item.slug)}
         monogram={item.title.trim().charAt(0).toUpperCase()}
+        variant="cover"
         onPress={() => router.push(`/library/${item.slug}` as never)}
       />
     );

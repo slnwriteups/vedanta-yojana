@@ -1,7 +1,30 @@
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { Tabs, router } from "expo-router";
+import { Text } from "react-native";
 import { useTheme } from "../../theme";
 import { useT } from "../../ui-strings.ts";
+
+/**
+ * Renders every tab's label with `adjustsFontSizeToFit` so "Divya Desams"
+ * (the longest label, five tabs wide) shrinks just enough to display in
+ * full rather than ellipsizing to "Divya Desa..." -- shorter labels
+ * (Home, Library, Search, Settings) already fit at the base size, so
+ * this only ever kicks in for the one tab that needs it.
+ * `minimumFontScale` caps how far it can shrink so the label never goes
+ * illegibly small on a narrow device.
+ */
+function TabLabel({ color, children }: { color: string; children: string }) {
+  return (
+    <Text
+      numberOfLines={1}
+      adjustsFontSizeToFit
+      minimumFontScale={0.75}
+      style={{ color, fontSize: 11, fontWeight: "500" }}
+    >
+      {children}
+    </Text>
+  );
+}
 
 /**
  * The bottom tab bar: Home, Divya Desams, Library, Search, Settings.
@@ -79,6 +102,7 @@ export default function TabsLayout() {
         // see the nested Stack layouts, divya-desams/_layout.tsx and
         // library/_layout.tsx, for that.)
         headerTransparent: false,
+        tabBarLabel: ({ color, children }) => <TabLabel color={color}>{children}</TabLabel>,
       }}
     >
       <Tabs.Screen

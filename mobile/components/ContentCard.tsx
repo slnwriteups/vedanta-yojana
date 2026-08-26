@@ -26,12 +26,35 @@ import { DraftBadge } from "./DraftBadge";
  * so it never fights with a real thumbnail photo or affects text
  * contrast. When a book has no cover image, the same tint also fills
  * a monogram swatch (`monogram`) in place of the empty thumbnail slot.
+ * Rendered as an absolutely-positioned overlay (not a plain border-left)
+ * inside a card with `overflow: "hidden"`, so the native renderer clips
+ * its top/bottom corners to the SAME `radius.md` curve as the card
+ * shell -- a bare `borderLeftWidth` looks squared-off against a rounded
+ * card at the corners; this doesn't.
+ *
+ * `variant` picks the thumbnail's aspect ratio/size: "square" (56x56,
+ * the original size, still the default so every pre-existing caller is
+ * unaffected), "temple" (a wider 4:3 block for Divya Desam photos), or
+ * "cover" (a taller 2:3 block for Library book-cover art). Purely a
+ * sizing choice -- the image/monogram-fallback logic below is unchanged
+ * regardless of variant.
+ *
+ * A subtle full-card hairline border (`theme.colors.border`, already
+ * ~10% opacity against the surface color in both themes) sits alongside
+ * the existing background/shadow so adjacent cards read as more clearly
+ * separated on the same background.
  *
  * A light haptic (expo-haptics) fires on every tap, alongside the
  * existing onPress -- since this one component backs nearly every
  * tappable row in the app (Home, Library, Divya Desams), this single
  * change gives the whole app a consistent tactile feel.
  */
+const THUMB_SIZE: Record<"square" | "temple" | "cover", { width: number; height: number }> = {
+  square: { width: 56, height: 56 },
+  temple: { width: 108, height: 81 }, // 4:3
+  cover: { width: 64, height: 96 }, // 2:3
+};
+
 export function ContentCard({
   title,
   subtitle,
@@ -40,6 +63,7 @@ export function ContentCard({
   imageAsset,
   tintColor,
   monogram,
+  variant = "square",
   onPress,
 }: {
   title: string;
@@ -49,11 +73,13 @@ export function ContentCard({
   imageAsset?: number | null;
   tintColor?: string;
   monogram?: string;
+  variant?: "square" | "temple" | "cover";
   onPress: () => void;
 }) {
   const theme = useTheme();
   const isDraft = status === "draft";
   const a11yLabel = [title, subtitle, isDraft ? "Draft, under review" : null].filter(Boolean).join(". ");
+  const thumbSize = THUMB_SIZE[variant];
 
   return (
     <Pressable
@@ -68,15 +94,19 @@ export function ContentCard({
         shadows.card,
         {
           backgroundColor: pressed ? theme.colors.surfaceAlt : theme.colors.surface,
-          borderLeftWidth: tintColor ? 4 : 0,
-          borderLeftColor: tintColor ?? "transparent",
+          borderColor: theme.colors.border,
         },
       ]}
     >
+      {tintColor ? <View style={[styles.accentBar, { backgroundColor: tintColor }]} /> : null}
       {imageAsset ? (
-        <Image source={imageAsset} style={[styles.thumb, { backgroundColor: theme.colors.border }]} resizeMode="cover" />
+        <Image
+          source={imageAsset}
+          style={[styles.thumb, thumbSize, { backgroundColor: theme.colors.border }]}
+          resizeMode="cover"
+        />
       ) : monogram && tintColor ? (
-        <View style={[styles.thumb, styles.monogram, { backgroundColor: tintColor }]}>
+        <View style={[styles.thumb, thumbSize, styles.monogram, { backgroundColor: tintColor }]}>
           <Text style={styles.monogramText}>{monogram}</Text>
         </View>
       ) : null}
@@ -98,11 +128,18 @@ const styles = StyleSheet.create({
     marginHorizontal: layout.screenPadding,
     marginBottom: spacing.md,
     borderRadius: radius.md,
+    borderWidth: StyleSheet.hairlineWidth,
     minHeight: layout.minTouchTarget,
+    overflow: "hidden",
+  },
+  accentBar: {
+    position: "absolute",
+    left: 0,
+    top: 0,
+    bottom: 0,
+    width: 4,
   },
   thumb: {
-    width: 56,
-    height: 56,
     borderRadius: radius.md,
   },
   monogram: {

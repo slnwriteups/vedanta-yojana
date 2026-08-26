@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Stack, useRouter } from "expo-router";
 import { FlatList, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { loadDivyaDesams, loadKnowledgeRecord, type DivyaDesam } from "../../../content-lib/loader.ts";
 import { sourcePageNumber, divyaDesamNumberLabels } from "../../../content-lib/ordering.ts";
 import { imagesByUuid } from "../../../content-lib/image-manifest.generated.ts";
@@ -38,11 +39,6 @@ const TABS: readonly DivyaDesamTab[] = [ALL_TAB, ...DIVYA_DESAM_REGION_ORDER];
 function tabCountLabel(tab: DivyaDesamTab, count: number): string {
   const noun = tab === CELESTIAL_REGION ? "Celestial Divya Desam" : "Divya Desam";
   return `${count} ${noun}${count === 1 ? "" : "s"}`;
-}
-
-/** "All 108" gets its own longer heading; every real region is just its own name. */
-function tabHeading(tab: DivyaDesamTab): string {
-  return tab === ALL_TAB ? "All 108 Divya Desams" : tab;
 }
 
 /**
@@ -128,6 +124,7 @@ export default function DivyaDesamsIndexScreen() {
         needsReview={item.migration.needsReview}
         imageAsset={firstImageAsset(item)}
         tintColor={tint}
+        variant="temple"
         onPress={() => router.push(`/divya-desams/${item.slug}` as never)}
       />
     );
@@ -154,40 +151,49 @@ export default function DivyaDesamsIndexScreen() {
             <Text style={[styles.classificationEyebrow, { color: theme.colors.muted }]}>
               GEOGRAPHICAL CLASSIFICATION
             </Text>
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={styles.tabRow}
-            >
-              {TABS.map((tab) => {
-                const active = tab === selectedTab;
-                return (
-                  <Pressable
-                    key={tab}
-                    onPress={() => setSelectedTab(tab)}
-                    accessibilityRole="button"
-                    accessibilityState={{ selected: active }}
-                    accessibilityLabel={tab}
-                    style={[
-                      styles.tab,
-                      {
-                        backgroundColor: active ? tint : theme.colors.surface,
-                        borderColor: active ? tint : theme.colors.border,
-                      },
-                    ]}
-                  >
-                    <Text
-                      style={[styles.tabText, { color: active ? "#fffaf5" : theme.colors.foreground }]}
+            <View style={styles.tabRowWrap}>
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={styles.tabRow}
+              >
+                {TABS.map((tab) => {
+                  const active = tab === selectedTab;
+                  return (
+                    <Pressable
+                      key={tab}
+                      onPress={() => setSelectedTab(tab)}
+                      accessibilityRole="button"
+                      accessibilityState={{ selected: active }}
+                      accessibilityLabel={tab}
+                      style={[
+                        styles.tab,
+                        {
+                          backgroundColor: active ? tint : theme.colors.surface,
+                          borderColor: active ? tint : theme.colors.border,
+                        },
+                      ]}
                     >
-                      {tab}
-                    </Text>
-                  </Pressable>
-                );
-              })}
-            </ScrollView>
-            <Text style={[styles.regionHeading, { color: theme.colors.foreground }]}>
-              {tabHeading(selectedTab)}
-            </Text>
+                      <Text
+                        style={[styles.tabText, { color: active ? "#fffaf5" : theme.colors.foreground }]}
+                      >
+                        {tab}
+                      </Text>
+                    </Pressable>
+                  );
+                })}
+              </ScrollView>
+              {/* Fades the last visible chip toward the screen background to cue
+                  that the row scrolls further right -- purely decorative, so it's
+                  pointerEvents="none" and never intercepts the chip taps beneath it. */}
+              <LinearGradient
+                colors={["transparent", theme.colors.background]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
+                pointerEvents="none"
+                style={styles.tabRowFade}
+              />
+            </View>
             <Text style={[styles.count, { color: theme.colors.muted }]}>
               {tabCountLabel(selectedTab, traditionalCount(regionRecords, numberLabels))}
             </Text>
@@ -225,6 +231,16 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     paddingBottom: spacing.md,
   },
+  tabRowWrap: {
+    position: "relative",
+  },
+  tabRowFade: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: spacing.md,
+    width: 32,
+  },
   tab: {
     borderWidth: 1,
     borderRadius: radius.lg,
@@ -236,11 +252,5 @@ const styles = StyleSheet.create({
   tabText: {
     fontSize: typography.small,
     fontWeight: "600",
-  },
-  regionHeading: {
-    fontSize: typography.heading,
-    fontWeight: "700",
-    paddingHorizontal: layout.screenPadding,
-    paddingTop: spacing.sm,
   },
 });

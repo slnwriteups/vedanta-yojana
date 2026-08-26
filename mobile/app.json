@@ -13,7 +13,11 @@
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.vedanta-yojana"
+      "bundleIdentifier": "com.anonymous.vedanta-yojana",
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "This app connects to your computer's development server on the local network while building the app.",
+        "NSBonjourServices": ["_dev._tcp"]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -25,7 +29,8 @@
       "permissions": [
         "android.permission.RECORD_AUDIO",
         "android.permission.MODIFY_AUDIO_SETTINGS"
-      ]
+      ],
+      "package": "com.anonymous.vedantayojana"
     },
     "plugins": [
       "expo-router",
