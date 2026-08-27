@@ -1,46 +1,105 @@
-import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { Tabs, router } from "expo-router";
-import { Text } from "react-native";
+import { Image, Text, View } from "react-native";
+import type { ImageSourcePropType } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useTheme } from "../../theme";
 import { useT } from "../../ui-strings.ts";
 
 /**
- * Renders every tab's label with `adjustsFontSizeToFit` so "Divya Desams"
- * (the longest label, five tabs wide) shrinks just enough to display in
- * full rather than ellipsizing to "Divya Desa..." -- shorter labels
- * (Home, Library, Search, Settings) already fit at the base size, so
- * this only ever kicks in for the one tab that needs it.
- * `minimumFontScale` caps how far it can shrink so the label never goes
- * illegibly small on a narrow device.
+ * Custom gold nav-icon artwork (designer-supplied; the source PNGs'
+ * plain white photo-backdrop was trimmed to transparent so they sit
+ * correctly on the tab bar in both light and dark theme -- the gold
+ * artwork itself is untouched). Rendered as a fixed-size Image, never
+ * tinted: unlike the old vector glyphs, this artwork's color is fixed
+ * by the source PNG, so the active/inactive distinction below uses
+ * opacity instead of a color swap (the label's color still swaps as
+ * before).
+ */
+const NAV_ICONS = {
+  home: require("../../assets/icons/navigation-icons_home.png") as ImageSourcePropType,
+  divyaDesams: require("../../assets/icons/divya-desams.png") as ImageSourcePropType,
+  library: require("../../assets/icons/navigation-icons_library.png") as ImageSourcePropType,
+  search: require("../../assets/icons/navigation-icons_search.png") as ImageSourcePropType,
+  settings: require("../../assets/icons/navigation-icons_settings.png") as ImageSourcePropType,
+};
+
+const ICON_SIZE = 26;
+// Reserved for every tab (not just Divya Desams) so the two-line label
+// never shifts the bar's icon row relative to the single-line ones.
+const LABEL_LINE_HEIGHT = 13;
+const LABEL_BOX_HEIGHT = LABEL_LINE_HEIGHT * 2;
+const BAR_VERTICAL_PADDING = 6;
+const ICON_LABEL_GAP = 2;
+// icon + gap + the two-line label box, excluding padding/inset (added
+// separately below) -- the default bottom-tabs height heuristic assumes
+// a single-line label, so with a reserved two-line label box it clips
+// against the bottom safe area (the Android gesture bar / iOS home
+// indicator) unless the bar's own height is computed explicitly to
+// include both.
+const BAR_CONTENT_HEIGHT = ICON_SIZE + ICON_LABEL_GAP + LABEL_BOX_HEIGHT;
+
+function TabIcon({ source, focused }: { source: ImageSourcePropType; focused: boolean }) {
+  return (
+    <Image
+      source={source}
+      resizeMode="contain"
+      style={{ width: ICON_SIZE, height: ICON_SIZE, opacity: focused ? 1 : 0.5 }}
+    />
+  );
+}
+
+const labelTextStyle = (color: string) =>
+  ({ color, fontSize: 11, fontWeight: "500", lineHeight: LABEL_LINE_HEIGHT, textAlign: "center" }) as const;
+
+/**
+ * Renders every tab's label with `adjustsFontSizeToFit` so a label
+ * shrinks just enough to display in full rather than ellipsizing --
+ * `minimumFontScale` caps how far it can shrink so it never goes
+ * illegibly small on a narrow device. Every tab reserves the same
+ * two-line-tall box (`LABEL_BOX_HEIGHT`), single-line labels centered
+ * within it, so the bar's icon row stays level across all five tabs.
  */
 function TabLabel({ color, children }: { color: string; children: string }) {
   return (
-    <Text
-      numberOfLines={1}
-      adjustsFontSizeToFit
-      minimumFontScale={0.75}
-      style={{ color, fontSize: 11, fontWeight: "500" }}
-    >
-      {children}
-    </Text>
+    <View style={{ height: LABEL_BOX_HEIGHT, alignItems: "center", justifyContent: "center" }}>
+      <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.75} style={labelTextStyle(color)}>
+        {children}
+      </Text>
+    </View>
+  );
+}
+
+/**
+ * Divya Desams' label is always exactly two lines -- split on the
+ * label's own first space (not a hardcoded "Divya"/"Desams": the ta/kn/
+ * hi translations are each two space-separated words too, so this
+ * generalizes across locales without inventing a translated break).
+ * The underlying string handed to accessibility/navigation (the route's
+ * `title`) is untouched -- this only changes how the label renders.
+ */
+function TwoLineTabLabel({ color, children }: { color: string; children: string }) {
+  const spaceIndex = children.indexOf(" ");
+  if (spaceIndex === -1) return <TabLabel color={color}>{children}</TabLabel>;
+  const first = children.slice(0, spaceIndex);
+  const second = children.slice(spaceIndex + 1);
+  return (
+    <View style={{ height: LABEL_BOX_HEIGHT, alignItems: "center", justifyContent: "center" }}>
+      <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.75} style={labelTextStyle(color)}>
+        {first}
+      </Text>
+      <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.75} style={labelTextStyle(color)}>
+        {second}
+      </Text>
+    </View>
   );
 }
 
 /**
  * The bottom tab bar: Home, Divya Desams, Library, Search, Settings.
- * Each tab gets one deliberately-chosen glyph (Divya Desams uses
- * MaterialIcons' "temple-hindu" -- a real gopuram silhouette, and the
- * one glyph across every family @expo/vector-icons 14.1.0 vendors that
- * reflects what this app is actually about, rather than a generic
- * "building" stand-in; MaterialCommunityIcons has no temple glyph in
- * this vendored version, only MaterialIcons does -- checked directly
- * against the package's own glyph maps rather than assumed. The rest
- * use Ionicons' outline/filled pairs so the active tab reads as
- * filled, matching iOS system-app convention). Restrained on purpose
- * -- a single line-weight glyph per tab, tinted by the same
- * accent/muted pair as everything else, not a multi-color icon set --
- * to keep the "scholarly/spiritual, not SaaS" character from theme.ts
- * intact.
+ * Each tab renders the designer's own custom gold icon artwork (see
+ * NAV_ICONS above) rather than a vector-icon-library glyph -- restrained
+ * on purpose, one antique-gold icon per tab, to keep the
+ * "scholarly/spiritual, not SaaS" character from theme.ts intact.
  *
  * The former Knowledge tab was retired: its one real record, the
  * "introduction" article, was moved to live under the Divya Desams tab
@@ -83,15 +142,24 @@ function TabLabel({ color, children }: { color: string; children: string }) {
 export default function TabsLayout() {
   const theme = useTheme();
   const t = useT();
+  const insets = useSafeAreaInsets();
 
   return (
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: theme.colors.accent,
         tabBarInactiveTintColor: theme.colors.muted,
-        // tabBarStyle.backgroundColor (an opaque theme color, unchanged)
-        // already gives the tab bar a solid background.
-        tabBarStyle: { backgroundColor: theme.colors.surface, borderTopColor: theme.colors.border },
+        // Explicit height (content height + the bottom safe-area inset,
+        // Android's gesture bar / iOS's home indicator): bottom-tabs'
+        // own default height assumes a single-line label and clips the
+        // two-line Divya Desams label against that inset otherwise.
+        tabBarStyle: {
+          backgroundColor: theme.colors.surface,
+          borderTopColor: theme.colors.border,
+          height: BAR_CONTENT_HEIGHT + BAR_VERTICAL_PADDING * 2 + insets.bottom,
+          paddingTop: BAR_VERTICAL_PADDING,
+          paddingBottom: BAR_VERTICAL_PADDING + insets.bottom,
+        },
         headerStyle: { backgroundColor: theme.colors.background },
         headerTintColor: theme.colors.foreground,
         // Explicit, not relying on the default: reported as scrollable
@@ -102,6 +170,11 @@ export default function TabsLayout() {
         // see the nested Stack layouts, divya-desams/_layout.tsx and
         // library/_layout.tsx, for that.)
         headerTransparent: false,
+        // Force Icon-over-Label on every tab: bottom-tabs' own default
+        // switches to a side-by-side "beside-icon" layout past a width
+        // heuristic (e.g. landscape/tablet-ish widths), which would leave
+        // no room for Divya Desams' two-line label underneath its icon.
+        tabBarLabelPosition: "below-icon",
         tabBarLabel: ({ color, children }) => <TabLabel color={color}>{children}</TabLabel>,
       }}
     >
@@ -110,9 +183,7 @@ export default function TabsLayout() {
         options={{
           title: t("tabHome"),
           headerShown: true,
-          tabBarIcon: ({ color, size, focused }) => (
-            <Ionicons name={focused ? "home" : "home-outline"} size={size} color={color} />
-          ),
+          tabBarIcon: ({ focused }) => <TabIcon source={NAV_ICONS.home} focused={focused} />,
         }}
       />
       <Tabs.Screen
@@ -120,7 +191,8 @@ export default function TabsLayout() {
         options={{
           title: t("tabDivyaDesams"),
           headerShown: false,
-          tabBarIcon: ({ color, size }) => <MaterialIcons name="temple-hindu" size={size} color={color} />,
+          tabBarIcon: ({ focused }) => <TabIcon source={NAV_ICONS.divyaDesams} focused={focused} />,
+          tabBarLabel: ({ color, children }) => <TwoLineTabLabel color={color}>{children}</TwoLineTabLabel>,
         }}
         listeners={({ navigation }) => ({
           tabPress: () => {
@@ -133,9 +205,7 @@ export default function TabsLayout() {
         options={{
           title: t("tabLibrary"),
           headerShown: false,
-          tabBarIcon: ({ color, size, focused }) => (
-            <Ionicons name={focused ? "book" : "book-outline"} size={size} color={color} />
-          ),
+          tabBarIcon: ({ focused }) => <TabIcon source={NAV_ICONS.library} focused={focused} />,
         }}
         listeners={({ navigation }) => ({
           tabPress: () => {
@@ -148,9 +218,7 @@ export default function TabsLayout() {
         options={{
           title: t("tabSearch"),
           headerShown: true,
-          tabBarIcon: ({ color, size, focused }) => (
-            <Ionicons name={focused ? "search" : "search-outline"} size={size} color={color} />
-          ),
+          tabBarIcon: ({ focused }) => <TabIcon source={NAV_ICONS.search} focused={focused} />,
         }}
       />
       <Tabs.Screen
@@ -158,9 +226,7 @@ export default function TabsLayout() {
         options={{
           title: t("tabSettings"),
           headerShown: true,
-          tabBarIcon: ({ color, size, focused }) => (
-            <Ionicons name={focused ? "settings" : "settings-outline"} size={size} color={color} />
-          ),
+          tabBarIcon: ({ focused }) => <TabIcon source={NAV_ICONS.settings} focused={focused} />,
         }}
       />
     </Tabs>
