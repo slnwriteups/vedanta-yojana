@@ -23,6 +23,12 @@ import { layout, spacing, typography, useTheme } from "../theme";
  * whatever the status bar's *current* real height is, not a cached
  * assumption about what it normally is. Tabs-level headers (Home,
  * Search, Settings) never had this problem and are left untouched.
+ *
+ * `options.headerRight` -- standard React Navigation option, rendered in
+ * place of the trailing spacer when a screen supplies one (currently
+ * only the chapter reader's bookmark toggle,
+ * library/[book]/[chapter].tsx) so the title stays centered whether or
+ * not a screen has a right-side action.
  */
 export function ScreenHeader({ back, options, navigation }: NativeStackHeaderProps) {
   const theme = useTheme();
@@ -60,7 +66,9 @@ export function ScreenHeader({ back, options, navigation }: NativeStackHeaderPro
         >
           {options.title ?? ""}
         </Text>
-        <View style={styles.backButton} />
+        <View style={styles.backButton}>
+          {options.headerRight?.({ canGoBack: navigation.canGoBack() })}
+        </View>
       </View>
     </View>
   );

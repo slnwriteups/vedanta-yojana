@@ -30,6 +30,8 @@ export const ONBOARDED_STORAGE_KEY = "vy.preferences.onboarded";
 export const LANGUAGE_STORAGE_KEY = "vy.preferences.language";
 /** The last Library chapter the reader had open -- powers Home's "Continue Reading" card. */
 export const LAST_READ_STORAGE_KEY = "vy.preferences.lastRead";
+/** Chapters the reader has explicitly bookmarked -- powers Home's "Bookmarks" section. */
+export const BOOKMARKS_STORAGE_KEY = "vy.preferences.bookmarks";
 
 export function isValidThemeOverride(value: unknown): value is ColorScheme | null {
   return value === null || value === "light" || value === "dark";
@@ -84,4 +86,28 @@ export function isValidLastReadPosition(value: unknown): value is LastReadPositi
     candidate.chapterSlug.length > 0 &&
     typeof candidate.savedAt === "number"
   );
+}
+
+/** One explicitly-bookmarked chapter -- same shape as LastReadPosition, but a list rather than a single overwritten slot, and never written to except by the reader's own bookmark toggle. */
+export interface BookmarkEntry {
+  bookSlug: string;
+  chapterSlug: string;
+  /** Date.now() at save time -- lets Home's Bookmarks section sort newest-first. */
+  savedAt: number;
+}
+
+function isValidBookmarkEntry(value: unknown): value is BookmarkEntry {
+  if (typeof value !== "object" || value === null) return false;
+  const candidate = value as Record<string, unknown>;
+  return (
+    typeof candidate.bookSlug === "string" &&
+    candidate.bookSlug.length > 0 &&
+    typeof candidate.chapterSlug === "string" &&
+    candidate.chapterSlug.length > 0 &&
+    typeof candidate.savedAt === "number"
+  );
+}
+
+export function isValidBookmarkList(value: unknown): value is BookmarkEntry[] {
+  return Array.isArray(value) && value.every(isValidBookmarkEntry);
 }

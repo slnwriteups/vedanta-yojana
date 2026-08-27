@@ -47,6 +47,7 @@ const UI_STRINGS = {
     hi: "पढ़ना जारी रखें",
   },
   homeGetStartedLabel: { en: "Get Started", ta: "தொடங்குங்கள்", kn: "ಪ್ರಾರಂಭಿಸಿ", hi: "शुरू करें" },
+  homeBookmarksLabel: { en: "Bookmarks", ta: "புக்மார்க்குகள்", kn: "ಬುಕ್‌ಮಾರ್ಕ್‌ಗಳು", hi: "बुकमार्क" },
   divyaDesamsCardSubtitle: {
     en: "The 108 sacred abodes of Vishnu venerated by the Alwars.",
     ta: "ஆழ்வார்களால் போற்றப்படும் விஷ்ணுவின் 108 திருத்தலங்கள்.",
@@ -111,6 +112,18 @@ const UI_STRINGS = {
     hi: "यह रिकॉर्ड नहीं मिला।",
   },
 
+  bookmarkAdd: {
+    en: "Bookmark this chapter",
+    ta: "இந்த அத்தியாயத்தை புக்மார்க் செய்யவும்",
+    kn: "ಈ ಅಧ್ಯಾಯವನ್ನು ಬುಕ್‌ಮಾರ್ಕ್ ಮಾಡಿ",
+    hi: "इस अध्याय को बुकमार्क करें",
+  },
+  bookmarkRemove: {
+    en: "Remove bookmark",
+    ta: "புக்மார்க்கை நீக்கு",
+    kn: "ಬುಕ್‌ಮಾರ್ಕ್ ತೆಗೆದುಹಾಕಿ",
+    hi: "बुकमार्क हटाएं",
+  },
   pagerPrevious: { en: "Previous", ta: "முந்தையது", kn: "ಹಿಂದಿನದು", hi: "पिछला" },
   pagerNext: { en: "Next", ta: "அடுத்தது", kn: "ಮುಂದಿನದು", hi: "अगला" },
   tableOfContentsLabel: { en: "Contents", ta: "பொருளடக்கம்", kn: "ಪರಿವಿಡಿ", hi: "विषय-सूची" },

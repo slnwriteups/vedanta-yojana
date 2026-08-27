@@ -9,6 +9,7 @@ import { ThemeProvider } from "../ThemeProvider";
 import { ReadingPreferencesProvider } from "../ReadingPreferencesProvider";
 import { LanguageProvider } from "../LanguageProvider";
 import { ReadingPositionProvider } from "../ReadingPositionProvider";
+import { BookmarksProvider } from "../BookmarksProvider";
 import { WelcomeScreen } from "../components/WelcomeScreen";
 import { OnboardingScreen } from "../components/OnboardingScreen";
 import { ONBOARDED_STORAGE_KEY, isValidCompletedFlag } from "../content-lib/preferences.ts";
@@ -123,10 +124,12 @@ export default function RootLayout() {
       <ReadingPreferencesProvider>
         <LanguageProvider>
           <ReadingPositionProvider>
-            <SafeAreaProvider>
-              <RootStack />
-              <StatusBar style="auto" />
-            </SafeAreaProvider>
+            <BookmarksProvider>
+              <SafeAreaProvider>
+                <RootStack />
+                <StatusBar style="auto" />
+              </SafeAreaProvider>
+            </BookmarksProvider>
           </ReadingPositionProvider>
         </LanguageProvider>
       </ReadingPreferencesProvider>

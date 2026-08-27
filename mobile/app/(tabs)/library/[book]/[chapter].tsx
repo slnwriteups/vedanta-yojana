@@ -1,5 +1,6 @@
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 import * as Haptics from "expo-haptics";
+import { Ionicons } from "@expo/vector-icons";
 import { useEffect, useRef, useState } from "react";
 import {
   AccessibilityInfo,
@@ -29,6 +30,7 @@ import {
 } from "../../../../../content-lib/text-format.ts";
 import { useLanguage } from "../../../../language-context.ts";
 import { useReadingPosition } from "../../../../reading-position-context.ts";
+import { useBookmarks } from "../../../../bookmarks-context.ts";
 import { chapterPositionLabel, minReadLabel, nowReadingAnnouncement, useT } from "../../../../ui-strings.ts";
 
 /**
@@ -92,6 +94,15 @@ import { chapterPositionLabel, minReadLabel, nowReadingAnnouncement, useT } from
  * paragraphRefs + measureLayout, entirely within the same chapter --
  * nothing about the content model, chapter count, or navigation
  * structure changes.
+ *
+ * Bookmark toggle: a header-right button (BookmarksProvider.tsx,
+ * bookmarks-context.ts) explicitly saves/unsaves the WHOLE chapter --
+ * deliberately separate from recordChapterView above, which is
+ * automatic and single-slot ("last chapter viewed"). A bookmark is only
+ * ever added/removed by this direct tap, never inferred from reading
+ * activity, and Home's "Bookmarks" section can hold any number of them.
+ * Rendered through ScreenHeader's standard `options.headerRight` slot
+ * (see components/ScreenHeader.tsx) rather than a bespoke prop.
  */
 const SWIPE_DISTANCE_THRESHOLD = 60;
 export default function LibraryChapterScreen() {
@@ -104,6 +115,7 @@ export default function LibraryChapterScreen() {
   const { language } = useLanguage();
   const t = useT();
   const { recordChapterView } = useReadingPosition();
+  const { isBookmarked, toggleBookmark } = useBookmarks();
   const [progress, setProgress] = useState(0);
   const loadedChapter = loadChapter(bookSlug, chapterSlug);
   const chapter = loadedChapter ? localizeChapter(loadedChapter, language) : null;
@@ -197,10 +209,33 @@ export default function LibraryChapterScreen() {
   const displayBody = chapter.body ? stripLeadingDuplicateTitle(chapter.body, chapter.title) : chapter.body;
   const readingMinutes = displayBody ? estimateReadingMinutes(displayBody) : 0;
   const toc = displayBody ? getTableOfContents(displayBody, chapter.title) : [];
+  const bookmarked = isBookmarked(bookSlug, chapterSlug);
 
   return (
     <View style={[styles.screen, { backgroundColor: theme.colors.background }]} {...panResponder.panHandlers}>
-      <Stack.Screen options={{ title: chapter.title }} />
+      <Stack.Screen
+        options={{
+          title: chapter.title,
+          headerRight: () => (
+            <Pressable
+              onPress={() => {
+                void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                toggleBookmark(bookSlug, chapterSlug);
+              }}
+              accessibilityRole="button"
+              accessibilityLabel={bookmarked ? t("bookmarkRemove") : t("bookmarkAdd")}
+              hitSlop={spacing.sm}
+              style={styles.bookmarkButton}
+            >
+              <Ionicons
+                name={bookmarked ? "bookmark" : "bookmark-outline"}
+                size={24}
+                color={bookmarked ? tint : theme.colors.foreground}
+              />
+            </Pressable>
+          ),
+        }}
+      />
       <View style={[styles.progressTrack, { backgroundColor: theme.colors.border }]}>
         <View style={[styles.progressFill, { backgroundColor: tint, width: `${progress * 100}%` }]} />
       </View>
@@ -304,6 +339,12 @@ export default function LibraryChapterScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+  },
+  bookmarkButton: {
+    width: layout.minTouchTarget,
+    height: layout.minTouchTarget,
+    alignItems: "center",
+    justifyContent: "center",
   },
   progressTrack: {
     height: 3,

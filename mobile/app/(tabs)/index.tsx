@@ -1,6 +1,7 @@
 import { useRouter } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { resolveLastRead } from "../../content-lib/reading-position.ts";
+import { resolveBookmarks } from "../../content-lib/bookmarks.ts";
 import { ContentCard } from "../../components/ContentCard";
 import { layout, spacing, typography, useTheme } from "../../theme";
 import { sectionTint } from "../../section-tints.ts";
@@ -8,6 +9,7 @@ import { bookCoverAsset } from "../../book-covers.ts";
 import { useLanguage } from "../../language-context.ts";
 import { useT } from "../../ui-strings.ts";
 import { useReadingPosition } from "../../reading-position-context.ts";
+import { useBookmarks } from "../../bookmarks-context.ts";
 
 /**
  * UI/UX pass: Home used to just re-list Divya Desams/Library/Search --
@@ -24,6 +26,13 @@ import { useReadingPosition } from "../../reading-position-context.ts";
  * the old three-card menu, this is conditional first-run guidance, not
  * a permanent duplicate of the tab bar -- it disappears for good the
  * moment a reader opens their first chapter.
+ *
+ * "Bookmarks" section: chapters explicitly bookmarked from the reader's
+ * own header button (library/[book]/[chapter].tsx, BookmarksProvider.tsx)
+ * -- deliberately separate from the automatic Continue Reading pointer
+ * above. Renders below it (or below Get Started, first-run) only when
+ * at least one bookmark still resolves to a real chapter, newest-first;
+ * the whole screen is now scrollable since this list has no fixed size.
  */
 export default function HomeScreen() {
   const router = useRouter();
@@ -32,9 +41,15 @@ export default function HomeScreen() {
   const t = useT();
   const { lastRead } = useReadingPosition();
   const resolved = resolveLastRead(lastRead, language);
+  const { bookmarks } = useBookmarks();
+  const resolvedBookmarks = resolveBookmarks(bookmarks, language);
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
+    <ScrollView
+      style={[styles.container, { backgroundColor: theme.colors.background }]}
+      contentContainerStyle={styles.contentContainer}
+      showsVerticalScrollIndicator={false}
+    >
       <View style={styles.hero}>
         <Text style={[styles.title, { color: theme.colors.foreground }]}>Vedanta Yojana</Text>
         <Text style={[styles.description, { color: theme.colors.muted }]}>
@@ -73,13 +88,33 @@ export default function HomeScreen() {
           />
         </View>
       )}
-    </View>
+
+      {resolvedBookmarks.length > 0 ? (
+        <View style={styles.section}>
+          <Text style={[styles.sectionLabel, { color: theme.colors.muted }]}>{t("homeBookmarksLabel")}</Text>
+          {resolvedBookmarks.map((bookmark) => (
+            <ContentCard
+              key={`${bookmark.bookSlug}/${bookmark.chapterSlug}`}
+              title={bookmark.chapterTitle}
+              subtitle={bookmark.bookTitle}
+              tintColor={sectionTint(bookmark.bookSlug, theme.scheme)}
+              imageAsset={bookCoverAsset(bookmark.bookSlug)}
+              monogram={bookmark.bookTitle.trim().charAt(0).toUpperCase()}
+              onPress={() => router.push(`/library/${bookmark.bookSlug}/${bookmark.chapterSlug}` as never)}
+            />
+          ))}
+        </View>
+      ) : null}
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  contentContainer: {
+    paddingBottom: layout.tabBarClearance,
   },
   hero: {
     paddingHorizontal: layout.screenPadding,
