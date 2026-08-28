@@ -189,6 +189,7 @@ npx expo start --dev-client             # for a custom dev client build (eas bui
 npx expo start --android                # (requires Android tooling)
 npx expo start --ios                    # (requires Xcode/iOS tooling)
 npx expo start --tunnel                 # share a live QR code with a remote reviewer, no repo access needed
+npm run start:tunnel                    # dev-client + tunnel — connect from a phone on cellular data / a different network
 node --test tests/*.test.ts             # test suite (Node-native, no Jest) — 44 tests
 ./node_modules/.bin/tsc --noEmit        # TypeScript check
 node scripts/generate-content-manifest.ts   # regenerate the content + image manifest after any /content or public/images change
@@ -225,6 +226,27 @@ tried to find) Metro but couldn't complete the connection. Check, in order:
 
 If none of that resolves it, `npx expo start --dev-client --tunnel`
 routes around local-network issues entirely by tunneling through ngrok.
+
+### Developing over cellular data (not just Wi-Fi)
+
+Metro's default LAN mode requires the phone and the dev machine to be on
+the same local network — a phone on cellular data is on a different
+network entirely and cannot reach the dev machine's local IP no matter
+what. There's no app-side setting that changes this; the fix is to run
+Metro in **tunnel mode**, which exposes it through a public ngrok tunnel
+instead of the LAN, so any device with an internet connection (cellular
+included) can reach it:
+
+```
+npm run start:tunnel        # equivalent to: npx expo start --dev-client --tunnel
+```
+
+`@expo/ngrok` is already a devDependency so this works without an
+interactive "may we install a package?" prompt. Tunnel mode is slower
+than LAN (traffic round-trips through ngrok's servers) and needs the dev
+machine to stay online and reachable, but otherwise the app behaves the
+same — the same custom dev client build works with either LAN or tunnel,
+only the URL it connects to changes.
 
 ## Relationship to the web reference app
 
