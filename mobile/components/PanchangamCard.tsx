@@ -1,0 +1,112 @@
+import { StyleSheet, Text, View } from "react-native";
+import { layout, radius, spacing, typography, useTheme } from "../theme";
+import { shadows } from "../shadows";
+import { useT } from "../ui-strings.ts";
+import type { PanchangamData } from "../services/panchangamService.ts";
+
+/**
+ * Home's full daily-calendar card -- the expanded counterpart to
+ * HomeHeader's compact one-line pill. The pill exists for a
+ * glanceable summary; this card is where every field
+ * services/panchangamService.ts extracts (festival, tithi/paksha,
+ * nakshatram, upcoming Ekadashi) actually gets its own labeled row, the
+ * same way SankalpamCard is the expanded counterpart for the Sankalpam
+ * text. Renders nothing while `panchangam` is still loading (null).
+ */
+export function PanchangamCard({ panchangam }: { panchangam: PanchangamData | null }) {
+  const theme = useTheme();
+  const t = useT();
+
+  if (!panchangam) return null;
+
+  const hasData = panchangam.tithi || panchangam.nakshatram || panchangam.festival;
+  const pakshaTithi = [panchangam.paksha, panchangam.tithi].filter(Boolean).join(" ");
+
+  return (
+    <View style={styles.section}>
+      <Text style={[styles.sectionLabel, { color: theme.colors.muted }]}>{t("homeCalendarLabel")}</Text>
+      <View
+        style={[styles.card, shadows.card, { backgroundColor: theme.colors.surface, borderColor: theme.colors.border }]}
+      >
+        {hasData ? (
+          <>
+            {panchangam.festival ? (
+              <Text style={[styles.festival, { color: theme.colors.accent }]}>{panchangam.festival}</Text>
+            ) : null}
+            {pakshaTithi ? (
+              <Row label={t("homeCalendarTithiLabel")} value={pakshaTithi} muted={theme.colors.muted} fg={theme.colors.foreground} />
+            ) : null}
+            {panchangam.nakshatram ? (
+              <Row
+                label={t("homeCalendarNakshatramLabel")}
+                value={panchangam.nakshatram}
+                muted={theme.colors.muted}
+                fg={theme.colors.foreground}
+              />
+            ) : null}
+            {panchangam.upcomingEkadashiText ? (
+              <Row
+                label={t("homeCalendarEkadashiLabel")}
+                value={panchangam.upcomingEkadashiText}
+                muted={theme.colors.muted}
+                fg={theme.colors.foreground}
+              />
+            ) : null}
+          </>
+        ) : (
+          <Text style={[styles.unavailable, { color: theme.colors.muted }]}>{t("homeLocationUnavailable")}</Text>
+        )}
+      </View>
+    </View>
+  );
+}
+
+function Row({ label, value, muted, fg }: { label: string; value: string; muted: string; fg: string }) {
+  return (
+    <View style={styles.row}>
+      <Text style={[styles.rowLabel, { color: muted }]}>{label}</Text>
+      <Text style={[styles.rowValue, { color: fg }]}>{value}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  section: {
+    gap: spacing.xs,
+  },
+  sectionLabel: {
+    fontSize: typography.eyebrow,
+    textTransform: "uppercase",
+    letterSpacing: 0.5,
+    paddingHorizontal: layout.screenPadding,
+  },
+  card: {
+    marginHorizontal: layout.screenPadding,
+    padding: spacing.md,
+    borderRadius: radius.md,
+    borderWidth: StyleSheet.hairlineWidth,
+    gap: spacing.xs,
+  },
+  festival: {
+    fontSize: typography.body,
+    fontWeight: "700",
+    marginBottom: spacing.xs,
+  },
+  row: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    gap: spacing.md,
+  },
+  rowLabel: {
+    fontSize: typography.small,
+  },
+  rowValue: {
+    fontSize: typography.small,
+    fontWeight: "600",
+    flexShrink: 1,
+    textAlign: "right",
+  },
+  unavailable: {
+    fontSize: typography.small,
+  },
+});

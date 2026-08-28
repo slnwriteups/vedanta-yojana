@@ -103,7 +103,10 @@ export function ContentCard({
         <Image
           source={imageAsset}
           style={[styles.thumb, thumbSize, { backgroundColor: theme.colors.border }]}
-          resizeMode="cover"
+          // "cover" book-art thumbnails show the whole cover uncropped
+          // (a cropped book cover loses its title/author lettering);
+          // "square"/"temple" photo thumbnails still fill their frame.
+          resizeMode={variant === "cover" ? "contain" : "cover"}
         />
       ) : monogram && tintColor ? (
         <View style={[styles.thumb, thumbSize, styles.monogram, { backgroundColor: tintColor }]}>

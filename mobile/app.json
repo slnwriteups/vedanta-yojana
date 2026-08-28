@@ -2,6 +2,7 @@
   "expo": {
     "name": "Vedanta Yojana",
     "slug": "vedanta-yojana",
+    "owner": "slnwriteupss-team",
     "scheme": "vedantayojana",
     "version": "1.0.0",
     "platforms": [
@@ -13,10 +14,15 @@
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.vedanta-yojana",
+      "bundleIdentifier": "com.vedantayojana.app",
+      "buildNumber": "1",
       "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
         "NSLocalNetworkUsageDescription": "This app connects to your computer's development server on the local network while building the app.",
-        "NSBonjourServices": ["_dev._tcp"]
+        "NSBonjourServices": [
+          "_dev._tcp"
+        ],
+        "NSLocationWhenInUseUsageDescription": "Vedanta Yojana uses your approximate location to show today's Panchangam (tithi, nakshatram, Ekadashi) for where you are."
       }
     },
     "android": {
@@ -27,15 +33,30 @@
       },
       "permissions": [
         "android.permission.RECORD_AUDIO",
-        "android.permission.MODIFY_AUDIO_SETTINGS"
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
       ],
-      "package": "com.anonymous.vedantayojana"
+      "package": "com.vedantayojana.app",
+      "versionCode": 2
     },
     "plugins": [
       "expo-router",
       "expo-audio",
       "expo-asset",
-      "expo-font"
-    ]
+      "expo-font",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Vedanta Yojana uses your approximate location to show today's Panchangam (tithi, nakshatram, Ekadashi) for where you are."
+        }
+      ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "fd9baa2d-92be-4e6f-88d4-9c9830516db1"
+      }
+    }
   }
 }

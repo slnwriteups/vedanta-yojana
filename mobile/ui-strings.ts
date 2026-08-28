@@ -48,6 +48,70 @@ const UI_STRINGS = {
   },
   homeGetStartedLabel: { en: "Get Started", ta: "தொடங்குங்கள்", kn: "ಪ್ರಾರಂಭಿಸಿ", hi: "शुरू करें" },
   homeBookmarksLabel: { en: "Bookmarks", ta: "புக்மார்க்குகள்", kn: "ಬುಕ್‌ಮಾರ್ಕ್‌ಗಳು", hi: "बुकमार्क" },
+  /**
+   * The traditional three sandhya (twilight/junction) prayer times --
+   * Prātaḥ (dawn), Mādhyāhnika (midday), Sāyaṃ (dusk) -- give three of
+   * these four greetings their own real Sanskrit terms rather than a
+   * plain "Good Afternoon"/"Good Evening" translation, matching
+   * Suprabhatham's own register (the Venkateswara Suprabhatham morning
+   * hymn this app's tone already leans on). Night has no equivalent
+   * liturgical term, so it keeps the plain traditional "Shubha Ratri".
+   */
+  homeGreetingMorning: { en: "Suprabhatham", ta: "சுப்ரபாதம்", kn: "ಸುಪ್ರಭಾತಂ", hi: "सुप्रभातम्" },
+  homeGreetingAfternoon: {
+    en: "Madhyahna Vandanam",
+    ta: "மத்யாஹ்ன வந்தனம்",
+    kn: "ಮಧ್ಯಾಹ್ನ ವಂದನಂ",
+    hi: "मध्याह्न वंदनम्",
+  },
+  homeGreetingEvening: {
+    en: "Sandhya Vandanam",
+    ta: "சந்த்யா வந்தனம்",
+    kn: "ಸಂಧ್ಯಾ ವಂದನಂ",
+    hi: "संध्या वंदनम्",
+  },
+  homeGreetingNight: { en: "Shubha Ratri", ta: "இனிய இரவு", kn: "ಶುಭ ರಾತ್ರಿ", hi: "शुभ रात्रि" },
+  homeReaderNoun: { en: "Reader", ta: "வாசகரே", kn: "ಓದುಗರೇ", hi: "पाठक" },
+  homeGreetingSubtitle: {
+    en: "Your daily companion for scripture and pilgrimage.",
+    ta: "வேதநூல்களுக்கும் திருத்தல யாத்திரைக்கும் உங்கள் தினசரித் துணை.",
+    kn: "ಗ್ರಂಥಗಳಿಗೂ ತೀರ್ಥಯಾತ್ರೆಗೂ ನಿಮ್ಮ ದೈನಂದಿನ ಒಡನಾಡಿ.",
+    hi: "शास्त्र और तीर्थयात्रा के लिए आपका दैनिक साथी।",
+  },
+  homeSpotlightLabel: {
+    en: "Divya Desam Spotlight",
+    ta: "திவ்ய தேச சிறப்புக் காட்சி",
+    kn: "ದಿವ್ಯ ದೇಶ ವಿಶೇಷ ನೋಟ",
+    hi: "दिव्य देशम स्पॉटलाइट",
+  },
+  resumeButtonLabel: { en: "Resume", ta: "தொடரவும்", kn: "ಮುಂದುವರಿಸಿ", hi: "जारी रखें" },
+  homeSankalpamLabel: {
+    en: "Sankalpam",
+    ta: "சங்கல்பம்",
+    kn: "ಸಂಕಲ್ಪ",
+    hi: "संकल्प",
+  },
+  homeCalendarLabel: {
+    en: "Today's Panchangam",
+    ta: "இன்றைய பஞ்சாங்கம்",
+    kn: "ಇಂದಿನ ಪಂಚಾಂಗ",
+    hi: "आज का पंचांग",
+  },
+  homeCalendarTithiLabel: { en: "Tithi", ta: "திதி", kn: "ತಿಥಿ", hi: "तिथि" },
+  homeCalendarNakshatramLabel: { en: "Nakshatram", ta: "நட்சத்திரம்", kn: "ನಕ್ಷತ್ರ", hi: "नक्षत्र" },
+  homeCalendarFestivalLabel: { en: "Festival", ta: "விழா", kn: "ಹಬ್ಬ", hi: "पर्व" },
+  homeCalendarEkadashiLabel: {
+    en: "Upcoming Ekadashi",
+    ta: "வரவிருக்கும் ஏகாதசி",
+    kn: "ಮುಂಬರುವ ಏಕಾದಶಿ",
+    hi: "आगामी एकादशी",
+  },
+  homeLocationUnavailable: {
+    en: "Enable location access for today's Panchangam",
+    ta: "இன்றைய பஞ்சாங்கத்திற்கு இருப்பிட அணுகலை இயக்கவும்",
+    kn: "ಇಂದಿನ ಪಂಚಾಂಗಕ್ಕಾಗಿ ಸ್ಥಳ ಪ್ರವೇಶವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ",
+    hi: "आज के पंचांग के लिए स्थान एक्सेस चालू करें",
+  },
   divyaDesamsCardSubtitle: {
     en: "The 108 sacred abodes of Vishnu venerated by the Alwars.",
     ta: "ஆழ்வார்களால் போற்றப்படும் விஷ்ணுவின் 108 திருத்தலங்கள்.",
@@ -321,6 +385,22 @@ export function chapterPositionLabel(language: LanguageCode | null, position: nu
     `அத்தியாயம் ${position} / ${total}`,
     `ಅಧ್ಯಾಯ ${position} / ${total}`,
     `अध्याय ${position} / ${total}`
+  );
+}
+
+export function continueReadingProgressLabel(
+  language: LanguageCode | null,
+  position: number,
+  total: number,
+  percentComplete: number,
+  minutesLeft: number
+): string {
+  return pick(
+    language,
+    `Chapter ${position} of ${total} • ${percentComplete}% completed • ${minutesLeft}m left`,
+    `அத்தியாயம் ${position} / ${total} • ${percentComplete}% முடிந்தது • ${minutesLeft} நிமிடம் மீதம்`,
+    `ಅಧ್ಯಾಯ ${position} / ${total} • ${percentComplete}% ಪೂರ್ಣಗೊಂಡಿದೆ • ${minutesLeft} ನಿಮಿಷ ಬಾಕಿ`,
+    `अध्याय ${position} / ${total} • ${percentComplete}% पूर्ण • ${minutesLeft} मिनट शेष`
   );
 }
 

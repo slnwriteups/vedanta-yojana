@@ -88,6 +88,18 @@ export function isValidLastReadPosition(value: unknown): value is LastReadPositi
   );
 }
 
+/**
+ * A reader can have several books open at once -- Home's "Continue
+ * Reading" now shows one card per book with a saved position, not just
+ * the single most-recent one. LAST_READ_STORAGE_KEY now holds an array
+ * of these (at most one entry per bookSlug -- recordChapterView()
+ * replaces that book's own entry, leaving every other book's entry
+ * untouched) rather than one overwritten slot.
+ */
+export function isValidLastReadPositionList(value: unknown): value is LastReadPosition[] {
+  return Array.isArray(value) && value.every(isValidLastReadPosition);
+}
+
 /** One explicitly-bookmarked chapter -- same shape as LastReadPosition, but a list rather than a single overwritten slot, and never written to except by the reader's own bookmark toggle. */
 export interface BookmarkEntry {
   bookSlug: string;

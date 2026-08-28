@@ -25,7 +25,7 @@ import { createContext, useContext } from "react";
  */
 
 const lightColors = {
-  background: "#fbfaf7",
+  background: "#FBF9F5",
   surface: "#ffffff",
   surfaceAlt: "#f3efe7",
   foreground: "#211c16",

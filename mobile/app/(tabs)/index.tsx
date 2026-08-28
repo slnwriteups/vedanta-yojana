@@ -1,48 +1,63 @@
+import { useEffect, useState } from "react";
 import { useRouter } from "expo-router";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { resolveLastRead } from "../../content-lib/reading-position.ts";
-import { resolveBookmarks } from "../../content-lib/bookmarks.ts";
+import { resolveAllLastRead } from "../../content-lib/reading-position.ts";
 import { ContentCard } from "../../components/ContentCard";
+import { HomeHeader } from "../../components/HomeHeader";
+import { ContinueReadingCard } from "../../components/ContinueReadingCard";
+import { DivyaDesamSpotlight } from "../../components/DivyaDesamSpotlight";
+import { PanchangamCard } from "../../components/PanchangamCard";
+import { SankalpamCard } from "../../components/SankalpamCard";
 import { layout, spacing, typography, useTheme } from "../../theme";
 import { sectionTint } from "../../section-tints.ts";
 import { bookCoverAsset } from "../../book-covers.ts";
 import { useLanguage } from "../../language-context.ts";
 import { useT } from "../../ui-strings.ts";
 import { useReadingPosition } from "../../reading-position-context.ts";
-import { useBookmarks } from "../../bookmarks-context.ts";
+import { fetchAhobilaPanchangam, type PanchangamData } from "../../services/panchangamService.ts";
 
 /**
- * UI/UX pass: Home used to just re-list Divya Desams/Library/Search --
- * the exact same three destinations already one tap away in the
- * bottom tab bar, adding a screen without adding value. It's now
- * "Continue Reading": the last chapter the reader had open (tracked by
- * ReadingPositionProvider, recorded from library/[book]/[chapter].tsx
- * on every view), resolved fresh via resolveLastRead so a since-edited
- * or removed chapter never shows a stale title.
+ * UI/UX refactor: Home is now a proper dashboard rather than a plain
+ * scrolling menu -- a greeting + live Panchangam banner (HomeHeader,
+ * services/panchangamService.ts), a "Continue Reading" hero card with a
+ * real progress bar, a horizontally-scrolling "Explore Themes" shelf
+ * over the real Library catalog, and a full-width, day-rotated Divya
+ * Desam spotlight -- each its own file under components/, all reading
+ * from the SAME existing datasets/loaders every other screen uses
+ * (content-lib/loader.ts), never a hardcoded/duplicated list. A Daily
+ * Verse section was explicitly out of scope for this pass and is not
+ * present.
  *
- * With no reading history yet -- a fresh install, or a saved position
- * that no longer resolves -- there's nothing to continue, so Home
- * shows two real entry points (Divya Desams, Library) instead: unlike
- * the old three-card menu, this is conditional first-run guidance, not
- * a permanent duplicate of the tab bar -- it disappears for good the
- * moment a reader opens their first chapter.
+ * The Panchangam fetch is owned here, once, and passed down to both
+ * HomeHeader and SankalpamCard as a plain prop -- avoids two components
+ * independently re-fetching (and re-reading the same AsyncStorage cache
+ * key) for the same day's data.
  *
- * "Bookmarks" section: chapters explicitly bookmarked from the reader's
- * own header button (library/[book]/[chapter].tsx, BookmarksProvider.tsx)
- * -- deliberately separate from the automatic Continue Reading pointer
- * above. Renders below it (or below Get Started, first-run) only when
- * at least one bookmark still resolves to a real chapter, newest-first;
- * the whole screen is now scrollable since this list has no fixed size.
+ * "Continue Reading" still only appears once a reading position exists
+ * (ReadingPositionProvider, recorded from library/[book]/[chapter].tsx);
+ * with no history yet, Home falls back to the same "Get Started" pair
+ * of entry points (Divya Desams, Library) as before. "Bookmarks" is
+ * unchanged from the prior Home and still renders below everything else
+ * when at least one bookmark resolves.
  */
 export default function HomeScreen() {
   const router = useRouter();
   const theme = useTheme();
   const { language } = useLanguage();
   const t = useT();
-  const { lastRead } = useReadingPosition();
-  const resolved = resolveLastRead(lastRead, language);
-  const { bookmarks } = useBookmarks();
-  const resolvedBookmarks = resolveBookmarks(bookmarks, language);
+  const { lastReadByBook } = useReadingPosition();
+  const resolvedList = resolveAllLastRead(lastReadByBook, language);
+
+  const [panchangam, setPanchangam] = useState<PanchangamData | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    fetchAhobilaPanchangam().then((data) => {
+      if (!cancelled) setPanchangam(data);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <ScrollView
@@ -50,24 +65,25 @@ export default function HomeScreen() {
       contentContainerStyle={styles.contentContainer}
       showsVerticalScrollIndicator={false}
     >
-      <View style={styles.hero}>
-        <Text style={[styles.title, { color: theme.colors.foreground }]}>Vedanta Yojana</Text>
-        <Text style={[styles.description, { color: theme.colors.muted }]}>
-          {resolved ? t("homeContinueSubtitle") : t("homeStartSubtitle")}
-        </Text>
-      </View>
+      <HomeHeader panchangam={panchangam} />
 
-      {resolved ? (
+      {resolvedList.length > 0 ? (
         <View style={styles.section}>
           <Text style={[styles.sectionLabel, { color: theme.colors.muted }]}>{t("homeContinueReadingLabel")}</Text>
-          <ContentCard
-            title={resolved.chapterTitle}
-            subtitle={resolved.bookTitle}
-            tintColor={sectionTint(resolved.bookSlug, theme.scheme)}
-            imageAsset={bookCoverAsset(resolved.bookSlug)}
-            monogram={resolved.bookTitle.trim().charAt(0).toUpperCase()}
-            onPress={() => router.push(`/library/${resolved.bookSlug}/${resolved.chapterSlug}` as never)}
-          />
+          {resolvedList.map((resolved) => (
+            <ContinueReadingCard
+              key={resolved.bookSlug}
+              chapterTitle={resolved.chapterTitle}
+              bookTitle={resolved.bookTitle}
+              imageAsset={bookCoverAsset(resolved.bookSlug)}
+              tintColor={sectionTint(resolved.bookSlug, theme.scheme)}
+              monogram={resolved.bookTitle.trim().charAt(0).toUpperCase()}
+              position={resolved.chapterPosition}
+              total={resolved.totalChapters}
+              minutesLeft={resolved.minutesLeft}
+              onPress={() => router.push(`/library/${resolved.bookSlug}/${resolved.chapterSlug}` as never)}
+            />
+          ))}
         </View>
       ) : (
         <View style={styles.section}>
@@ -89,22 +105,9 @@ export default function HomeScreen() {
         </View>
       )}
 
-      {resolvedBookmarks.length > 0 ? (
-        <View style={styles.section}>
-          <Text style={[styles.sectionLabel, { color: theme.colors.muted }]}>{t("homeBookmarksLabel")}</Text>
-          {resolvedBookmarks.map((bookmark) => (
-            <ContentCard
-              key={`${bookmark.bookSlug}/${bookmark.chapterSlug}`}
-              title={bookmark.chapterTitle}
-              subtitle={bookmark.bookTitle}
-              tintColor={sectionTint(bookmark.bookSlug, theme.scheme)}
-              imageAsset={bookCoverAsset(bookmark.bookSlug)}
-              monogram={bookmark.bookTitle.trim().charAt(0).toUpperCase()}
-              onPress={() => router.push(`/library/${bookmark.bookSlug}/${bookmark.chapterSlug}` as never)}
-            />
-          ))}
-        </View>
-      ) : null}
+      <DivyaDesamSpotlight />
+      <PanchangamCard panchangam={panchangam} />
+      <SankalpamCard panchangam={panchangam} />
     </ScrollView>
   );
 }
@@ -115,21 +118,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingBottom: layout.tabBarClearance,
-  },
-  hero: {
-    paddingHorizontal: layout.screenPadding,
-    paddingTop: spacing.xl,
-    paddingBottom: spacing.lg,
-    gap: spacing.sm,
-  },
-  title: {
-    fontSize: typography.title + 4,
-    fontWeight: "700",
-    letterSpacing: 0.2,
-  },
-  description: {
-    fontSize: typography.body,
-    lineHeight: typography.body * typography.readingLineHeight,
+    gap: spacing.lg,
   },
   section: {
     gap: spacing.xs,

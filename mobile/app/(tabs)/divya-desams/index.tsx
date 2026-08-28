@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { Stack, useRouter } from "expo-router";
 import { FlatList, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
 import { loadDivyaDesams, loadKnowledgeRecord, type DivyaDesam } from "../../../content-lib/loader.ts";
 import { sourcePageNumber, divyaDesamNumberLabels } from "../../../content-lib/ordering.ts";
 import { imagesByUuid } from "../../../content-lib/image-manifest.generated.ts";
@@ -154,50 +153,38 @@ export default function DivyaDesamsIndexScreen() {
             <Text style={[styles.classificationEyebrow, { color: theme.colors.muted }]}>
               {t("geoClassificationEyebrow")}
             </Text>
-            <View style={styles.tabRowWrap}>
-              <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                contentContainerStyle={styles.tabRow}
-              >
-                {TABS.map((tab) => {
-                  const active = tab === selectedTab;
-                  const label = tab === ALL_TAB ? t("allDivyaDesamsTab") : regionLabel(tab, language);
-                  return (
-                    <Pressable
-                      key={tab}
-                      onPress={() => setSelectedTab(tab)}
-                      accessibilityRole="button"
-                      accessibilityState={{ selected: active }}
-                      accessibilityLabel={label}
-                      style={[
-                        styles.tab,
-                        {
-                          backgroundColor: active ? tint : theme.colors.surface,
-                          borderColor: active ? tint : theme.colors.border,
-                        },
-                      ]}
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.tabRow}
+            >
+              {TABS.map((tab) => {
+                const active = tab === selectedTab;
+                const label = tab === ALL_TAB ? t("allDivyaDesamsTab") : regionLabel(tab, language);
+                return (
+                  <Pressable
+                    key={tab}
+                    onPress={() => setSelectedTab(tab)}
+                    accessibilityRole="button"
+                    accessibilityState={{ selected: active }}
+                    accessibilityLabel={label}
+                    style={[
+                      styles.tab,
+                      {
+                        backgroundColor: active ? tint : theme.colors.surface,
+                        borderColor: active ? tint : theme.colors.border,
+                      },
+                    ]}
+                  >
+                    <Text
+                      style={[styles.tabText, { color: active ? "#fffaf5" : theme.colors.foreground }]}
                     >
-                      <Text
-                        style={[styles.tabText, { color: active ? "#fffaf5" : theme.colors.foreground }]}
-                      >
-                        {label}
-                      </Text>
-                    </Pressable>
-                  );
-                })}
-              </ScrollView>
-              {/* Fades the last visible chip toward the screen background to cue
-                  that the row scrolls further right -- purely decorative, so it's
-                  pointerEvents="none" and never intercepts the chip taps beneath it. */}
-              <LinearGradient
-                colors={["transparent", theme.colors.background]}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 0 }}
-                pointerEvents="none"
-                style={styles.tabRowFade}
-              />
-            </View>
+                      {label}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </ScrollView>
             <Text style={[styles.count, { color: theme.colors.muted }]}>
               {tabCountLabel(selectedTab, traditionalCount(regionRecords, numberLabels), language)}
             </Text>
@@ -234,16 +221,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: layout.screenPadding,
     gap: spacing.sm,
     paddingBottom: spacing.md,
-  },
-  tabRowWrap: {
-    position: "relative",
-  },
-  tabRowFade: {
-    position: "absolute",
-    top: 0,
-    right: 0,
-    bottom: spacing.md,
-    width: 32,
   },
   tab: {
     borderWidth: 1,
