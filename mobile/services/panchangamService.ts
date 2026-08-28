@@ -280,8 +280,21 @@ function parseDailyCalendar(html: string): ParsedDailyCalendar | null {
   }
   if (!tithiName) return null;
 
-  const nakshatramNameMatch = nakshatramText.match(/^(\S+)/);
-  const nakshatram = nakshatramNameMatch ? capitalize(nakshatramNameMatch[1]) : "";
+  // Six of the 27 nakshatras (Phalguni, Ashadha, Bhadrapada) come back
+  // "p."/"u." prefixed for their Purva/Uttara half -- the same
+  // abbreviation shape as tithi's "s."/"k." paksha prefix, confirmed
+  // against the live endpoint (e.g. "p.badra", "u.shada",
+  // "p.phalguni"). Left unexpanded, this used to capitalize the whole
+  // token verbatim ("P.badra") instead of "Purva Badra".
+  const nakshatramPrefixMatch = nakshatramText.match(/^([pu])\.(\S+)/i);
+  let nakshatram = "";
+  if (nakshatramPrefixMatch) {
+    const qualifier = nakshatramPrefixMatch[1].toLowerCase() === "p" ? "Purva" : "Uttara";
+    nakshatram = `${qualifier} ${capitalize(nakshatramPrefixMatch[2])}`;
+  } else {
+    const nakshatramNameMatch = nakshatramText.match(/^(\S+)/);
+    nakshatram = nakshatramNameMatch ? capitalize(nakshatramNameMatch[1]) : "";
+  }
 
   return { tithi: tithiName, paksha, nakshatram, festival };
 }

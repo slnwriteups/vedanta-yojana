@@ -2,6 +2,8 @@ import { StyleSheet, Text, View } from "react-native";
 import { layout, radius, spacing, typography, useTheme } from "../theme";
 import { shadows } from "../shadows";
 import { useT } from "../ui-strings.ts";
+import { useLanguage } from "../language-context.ts";
+import { nakshatramLabel, pakshaLabel, tithiLabel } from "../panchangam-labels.ts";
 import type { PanchangamData } from "../services/panchangamService.ts";
 
 /**
@@ -16,11 +18,15 @@ import type { PanchangamData } from "../services/panchangamService.ts";
 export function PanchangamCard({ panchangam }: { panchangam: PanchangamData | null }) {
   const theme = useTheme();
   const t = useT();
+  const { language } = useLanguage();
 
   if (!panchangam) return null;
 
   const hasData = panchangam.tithi || panchangam.nakshatram || panchangam.festival;
-  const pakshaTithi = [panchangam.paksha, panchangam.tithi].filter(Boolean).join(" ");
+  const pakshaTithi = [pakshaLabel(panchangam.paksha, language), tithiLabel(panchangam.tithi, language)]
+    .filter(Boolean)
+    .join(" ");
+  const nakshatram = nakshatramLabel(panchangam.nakshatram, language);
 
   return (
     <View style={styles.section}>
@@ -36,10 +42,10 @@ export function PanchangamCard({ panchangam }: { panchangam: PanchangamData | nu
             {pakshaTithi ? (
               <Row label={t("homeCalendarTithiLabel")} value={pakshaTithi} muted={theme.colors.muted} fg={theme.colors.foreground} />
             ) : null}
-            {panchangam.nakshatram ? (
+            {nakshatram ? (
               <Row
                 label={t("homeCalendarNakshatramLabel")}
-                value={panchangam.nakshatram}
+                value={nakshatram}
                 muted={theme.colors.muted}
                 fg={theme.colors.foreground}
               />

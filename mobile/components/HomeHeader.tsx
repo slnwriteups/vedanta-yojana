@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import { Animated, StyleSheet, Text, View } from "react-native";
 import { layout, radius, spacing, typography, useTheme } from "../theme";
 import { useT, type UiStringKey } from "../ui-strings.ts";
+import { useLanguage } from "../language-context.ts";
+import { pakshaLabel, tithiLabel } from "../panchangam-labels.ts";
 import type { PanchangamData } from "../services/panchangamService.ts";
 
 /**
@@ -40,9 +42,12 @@ function PillSkeleton() {
 export function HomeHeader({ panchangam }: { panchangam: PanchangamData | null }) {
   const theme = useTheme();
   const t = useT();
+  const { language } = useLanguage();
   const greeting = `${t(greetingKeyForHour(new Date().getHours()))}, ${t("homeReaderNoun")}`;
 
-  const pakshaTithi = panchangam ? [panchangam.paksha, panchangam.tithi].filter(Boolean).join(" ") : "";
+  const pakshaTithi = panchangam
+    ? [pakshaLabel(panchangam.paksha, language), tithiLabel(panchangam.tithi, language)].filter(Boolean).join(" ")
+    : "";
   const bannerText = panchangam ? [panchangam.upcomingEkadashiText, pakshaTithi].filter(Boolean).join(" • ") : "";
 
   return (
